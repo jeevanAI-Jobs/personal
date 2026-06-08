@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jeevanai.co.in/sitemap.xml
+
+# AI Bot Access - Allow all
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

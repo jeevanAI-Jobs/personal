@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S6X8Q5EY8E');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — AI Search Visibility & GEO Insights | Jeevan AI</title>
+<meta name="description" content="Practical guides on AI search visibility, generative engine optimisation, and why AI recommends your competitor. From the team that ran real audits before building the tool.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog">
+<meta property="og:title" content="Blog — AI Search Visibility & GEO Insights | Jeevan AI">
+<meta property="og:description" content="Practical guides on AI search visibility, GEO, and content strategy for brand managers and marketing teams.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jeevanai.co.in/blog">
+<meta property="og:site_name" content="Jeevan AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Jeevan AI Blog",
+  "url": "https://jeevanai.co.in/blog",
+  "description": "Practical guides on AI search visibility, GEO, and content strategy for brand managers and marketing teams.",
+  "publisher": { "@type": "Organization", "name": "Jeevan AI", "url": "https://jeevanai.co.in",
+    "logo": { "@type": "ImageObject", "url": "https://jeevanai.co.in/assets/logo.png" } }
+}
+</script>
+<style>
+:root{--bg:#0d0d14;--bg-card:#13131f;--bg-card-hover:#17172a;--border:rgba(255,255,255,0.07);--border-hover:rgba(79,142,247,0.4);--accent:#4f8ef7;--accent-dim:rgba(79,142,247,0.12);--text:#e8e8f0;--text-dim:#8888aa;--text-muted:#555577;--tag-bg:rgba(79,142,247,0.1);--tag-text:#7aabff;--white:#ffffff;--radius:12px;--radius-sm:8px;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--max-w:1180px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__logo-mark{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+.nav__links a.active{color:var(--accent)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff;font-size:0.875rem;font-weight:600;transition:opacity 0.2s}
+.nav__cta:hover{opacity:0.88}
+.blog-hero{padding:80px 24px 60px;border-bottom:1px solid var(--border)}
+.blog-hero__inner{max-width:var(--max-w);margin:0 auto}
+.blog-hero__label{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:100px;background:var(--accent-dim);border:1px solid rgba(79,142,247,0.25);font-size:0.78rem;font-weight:600;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:24px}
+.blog-hero__title{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2rem,4vw,3rem);line-height:1.18;letter-spacing:-0.02em;color:var(--white);max-width:640px;margin-bottom:16px}
+.blog-hero__sub{color:var(--text-dim);font-size:1.05rem;max-width:560px;line-height:1.65;margin-bottom:36px}
+.filter-bar{padding:0 24px;border-bottom:1px solid var(--border);overflow-x:auto}
+.filter-bar__inner{max-width:var(--max-w);margin:0 auto;display:flex;gap:4px;padding:16px 0}
+.filter-btn{padding:7px 16px;border-radius:8px;font-size:0.82rem;font-weight:500;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text-dim);transition:all 0.18s;white-space:nowrap;font-family:var(--font-sans)}
+.filter-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.14)}
+.filter-btn.active{background:var(--accent-dim);border-color:rgba(79,142,247,0.35);color:var(--accent)}
+.blog-grid{max-width:var(--max-w);margin:0 auto;padding:48px 24px 96px}
+/* Featured */
+.post-featured{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;margin-bottom:48px;background:var(--bg-card);transition:border-color 0.2s}
+.post-featured:hover{border-color:var(--border-hover)}
+.post-featured__img{background:linear-gradient(135deg,#1a1a40 0%,#0d0d25 50%,#0a1628 100%);min-height:320px;display:flex;align-items:center;justify-content:center}
+.post-featured__img-graphic{width:200px;height:200px;border-radius:50%;border:2px solid rgba(79,142,247,0.2);display:flex;align-items:center;justify-content:center;position:relative}
+.post-featured__img-graphic::before{content:'';position:absolute;width:140px;height:140px;border-radius:50%;border:1px solid rgba(79,142,247,0.15)}
+.post-featured__img-text{font-size:3rem;font-weight:800;color:var(--accent);opacity:0.6;font-family:var(--font-mono)}
+.post-featured__body{padding:40px 44px;display:flex;flex-direction:column;justify-content:center}
+.post-featured__meta{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.post-tag{padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:var(--tag-bg);color:var(--tag-text)}
+.post-tag-geo{background:rgba(79,247,158,0.1);color:#4ff79e}
+.post-tag-compare{background:rgba(127,119,221,0.12);color:#afa9ec}
+.post-tag-usecase{background:rgba(212,83,126,0.1);color:#ed93b1}
+.post-tag-market{background:rgba(247,183,79,0.1);color:#f7b74f}
+.post-tag-glossary{background:rgba(79,142,247,0.1);color:#7aabff}
+.post-date{font-size:0.8rem;color:var(--text-muted)}
+.post-featured__title{font-family:'DM Serif Display',Georgia,serif;font-size:1.7rem;line-height:1.25;color:var(--white);margin-bottom:14px;letter-spacing:-0.01em}
+.post-featured__excerpt{color:var(--text-dim);font-size:0.95rem;line-height:1.65;margin-bottom:28px}
+.post-read-more{display:inline-flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:600;color:var(--accent);transition:gap 0.2s}
+.post-read-more:hover{gap:12px}
+/* Section headers */
+.section-header{margin:56px 0 24px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.section-header h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.4rem;color:var(--white);letter-spacing:-0.01em}
+.section-header p{font-size:0.875rem;color:var(--text-muted);margin-top:4px}
+/* Cards grid */
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.2s}
+.post-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
+.post-card__img{height:140px;display:flex;align-items:center;justify-content:center;font-size:2rem;opacity:0.5}
+.post-card__body{padding:20px;flex:1;display:flex;flex-direction:column}
+.post-card__meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.post-card__title{font-size:0.975rem;font-weight:600;line-height:1.4;color:var(--white);margin-bottom:8px;letter-spacing:-0.01em}
+.post-card__excerpt{color:var(--text-dim);font-size:0.845rem;line-height:1.6;flex:1;margin-bottom:16px}
+.post-card__footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.post-read{font-size:0.8rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px;transition:gap 0.2s}
+.post-read:hover{gap:10px}
+.read-time{font-size:0.78rem;color:var(--text-muted)}
+/* CTA strip */
+.cta-strip{border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(79,142,247,0.06) 0%,transparent 60%);padding:72px 24px}
+.cta-strip__inner{max-width:640px;margin:0 auto;text-align:center}
+.cta-strip__title{font-family:'DM Serif Display',Georgia,serif;font-size:2rem;color:var(--white);margin-bottom:12px}
+.cta-strip__sub{color:var(--text-dim);margin-bottom:32px;font-size:1rem}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);background:var(--accent);color:#fff;font-size:0.95rem;font-weight:600;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.88}
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px}
+.footer__inner{max-width:var(--max-w);margin:0 auto}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer__brand p{color:var(--text-dim);font-size:0.875rem;margin-top:12px;max-width:260px;line-height:1.6}
+.footer__col h5{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:14px}
+.footer__col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer__col li a{font-size:0.875rem;color:var(--text-dim);transition:color 0.2s}
+.footer__col li a:hover{color:var(--text)}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}
+.footer__bottom span{font-size:0.8rem;color:var(--text-muted)}
+@media(max-width:900px){.post-featured{grid-template-columns:1fr}.post-featured__img{min-height:160px}.posts-grid{grid-template-columns:repeat(2,1fr)}.footer__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.posts-grid{grid-template-columns:1fr}.nav__links{display:none}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/blog-index.html" class="active" aria-current="page">Blog</a>
+      <a href="/index.html#about">About</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login">Free Scan →</a>
+  </div>
+</nav>
+
+<header class="blog-hero">
+  <div class="blog-hero__inner">
+    <div class="blog-hero__label"><span>✦</span> Insights</div>
+    <h1 class="blog-hero__title">AI Search Visibility.<br>Written by Practitioners.</h1>
+    <p class="blog-hero__sub">Practical guides on why AI recommends your competitor, how to fix it, and what a real GEO workflow looks like — from the team that ran real audits before building the tool.</p>
+  </div>
+</header>
+
+<div class="filter-bar" role="navigation" aria-label="Content categories">
+  <div class="filter-bar__inner">
+    <button class="filter-btn active" onclick="filterPosts('all',this)">All Content</button>
+    <button class="filter-btn" onclick="filterPosts('why-ai',this)">Why AI Recommends</button>
+    <button class="filter-btn" onclick="filterPosts('geo',this)">GEO Strategy</button>
+    <button class="filter-btn" onclick="filterPosts('seo-geo',this)">SEO + AI Search</button>
+    <button class="filter-btn" onclick="filterPosts('industry',this)">Industry Guides</button>
+    <button class="filter-btn" onclick="filterPosts('compare',this)">Comparisons</button>
+    <button class="filter-btn" onclick="filterPosts('glossary',this)">Glossary</button>
+    <button class="filter-btn" onclick="filterPosts('usecase',this)">Use Cases</button>
+    <button class="filter-btn" onclick="filterPosts('market',this)">Markets</button>
+  </div>
+</div>
+
+<main class="blog-grid" id="blog-main">
+
+  <!-- FEATURED -->
+  <article class="post-featured" data-category="why-ai">
+    <div class="post-featured__img" aria-hidden="true">
+      <div class="post-featured__img-graphic">
+        <span class="post-featured__img-text">?</span>
+      </div>
+    </div>
+    <div class="post-featured__body">
+      <div class="post-featured__meta">
+        <span class="post-tag">Why AI Recommends</span>
+        <span class="post-date"><!-- DATE --></span>
+      </div>
+      <h2 class="post-featured__title">Why ChatGPT Recommends Your Competitor (And Exactly What You're Missing)</h2>
+      <p class="post-featured__excerpt">Your traffic is fine. Your rankings are fine. But when a buyer asks ChatGPT which platform to use in your category, your competitor appears and you don't. Here's exactly why — and the specific content that changes it.</p>
+      <a href="blog/why-chatgpt-recommends-competitor.html" class="post-read-more">Read article <span>→</span></a>
+    </div>
+  </article>
+
+  <!-- ── BLOG POSTS ── -->
+  <div class="section-header" data-category="why-ai geo seo-geo industry">
+    <h2>Blog — AI Visibility & GEO Strategy</h2>
+    <p>24 practitioner guides grounded in real social signal research</p>
+  </div>
+  <div class="posts-grid" id="posts-grid">
+
+    <article class="post-card" data-category="why-ai">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a2040,#0d1525)">🎯</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Why AI Recommends</span></div>
+        <h3 class="post-card__title">The 5 Signals AI Uses to Decide Which Brand to Recommend</h3>
+        <p class="post-card__excerpt">AI doesn't pick brands randomly. It scores every brand on specific buying decision signals. Here's how each signal works.</p>
+        <div class="post-card__footer"><a href="blog/buying-decision-factors-ai-brand-recommendation.html" class="post-read">Read more →</a><span class="read-time">7 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="seo-geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a3030,#0d2020)">⚡</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">SEO + AI Search</span></div>
+        <h3 class="post-card__title">AI Search Visibility vs SEO: Why You Need Both and How They Compound</h3>
+        <p class="post-card__excerpt">A blog that ranks on Google also feeds AI training data. These two disciplines compound — here's the strategy.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-vs-seo.html" class="post-read">Read more →</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="why-ai">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#301a20,#200d15)">📉</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Why AI Recommends</span></div>
+        <h3 class="post-card__title">Your Google Rankings Are Fine. Here's Why You're Still Losing Deals.</h3>
+        <p class="post-card__excerpt">Ranking #1 on Google no longer means winning the buyer. AI answers the query before anyone clicks.</p>
+        <div class="post-card__footer"><a href="blog/google-rankings-fine-losing-deals.html" class="post-read">Read more →</a><span class="read-time">6 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#201a40,#150d2a)">📊</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-geo">GEO Strategy</span></div>
+        <h3 class="post-card__title">What a Good AI Visibility Score Actually Looks Like (With Real Benchmarks)</h3>
+        <p class="post-card__excerpt">An AI Visibility Rate of 42% — is that good? Without benchmarks, every score is meaningless.</p>
+        <div class="post-card__footer"><a href="blog/ai-visibility-score-benchmarks.html" class="post-read">Read more →</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a3020,#0d2015)">✍️</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-geo">GEO Strategy</span></div>
+        <h3 class="post-card__title">How to Write a Blog Post That AI Will Actually Cite</h3>
+        <p class="post-card__excerpt">Most blogs are invisible to AI citation engines — not because they're bad, but because they're structured wrong.</p>
+        <div class="post-card__footer"><a href="blog/how-to-write-content-for-ai-search.html" class="post-read">Read more →</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="why-ai">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1535,#100d25)">🔀</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Why AI Recommends</span></div>
+        <h3 class="post-card__title">The Buying Factor Gap: Why AI Recommends Brands That Aren't Even the Best</h3>
+        <p class="post-card__excerpt">Why content evidence beats product quality in AI recommendations — and the five signals that actually decide who gets cited.</p>
+        <div class="post-card__footer"><a href="blog/why-ai-recommends-wrong-brand.html" class="post-read">Read more →</a><span class="read-time">7 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="industry">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#302010,#20150d)">🛍️</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Industry Guide</span></div>
+        <h3 class="post-card__title">GEO for D2C Brands: What AI Visibility Looks Like in E-commerce</h3>
+        <p class="post-card__excerpt">D2C brands face a specific AI visibility challenge: high competition, review-heavy categories, and buyers who ask ChatGPT before visiting a product page.</p>
+        <div class="post-card__footer"><a href="blog/geo-for-ecommerce-d2c-brands.html" class="post-read">Read more →</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="seo-geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#101a35,#0a1225)">🔍</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">SEO + AI Search</span></div>
+        <h3 class="post-card__title">The Zero-Click Audit: How to Find Out What AI Says About Your Brand Right Now</h3>
+        <p class="post-card__excerpt">No tools required. This free manual process shows you exactly how ChatGPT, Gemini, and Perplexity describe your brand today.</p>
+        <div class="post-card__footer"><a href="blog/how-to-audit-ai-search-visibility.html" class="post-read">Read more →</a><span class="read-time">10 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1a30,#0d0d20)">🗺️</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-geo">GEO Strategy</span></div>
+        <h3 class="post-card__title">The Content Gap Framework: How to Find What AI Is Missing About Your Brand</h3>
+        <p class="post-card__excerpt">A systematic approach to identifying the specific content gaps causing your brand to be skipped in AI recommendations.</p>
+        <div class="post-card__footer"><a href="blog/content-gap-ai-search-visibility.html" class="post-read">Read more →</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="why-ai">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a2535,#0d1825)">🌐</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Why AI Recommends</span></div>
+        <h3 class="post-card__title">The Two Sources That Build Every AI Recommendation — and Why Most Brands Are Only Tracking One</h3>
+        <p class="post-card__excerpt">Your product page matters. So does what real buyers say about you in communities. AI systems weight both.</p>
+        <div class="post-card__footer"><a href="blog/social-proof-ai-recommendations.html" class="post-read">Read more →</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a2030,#0d1420)">📱</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-geo">GEO Strategy</span></div>
+        <h3 class="post-card__title">Most AI Visibility Platforms Give You a Dashboard. Jeevan AI Gives You One Thing to Do Tomorrow Morning.</h3>
+        <p class="post-card__excerpt">The difference between a tool you open daily and one that collects dust is not features — it's whether the signal has been verified to work.</p>
+        <div class="post-card__footer"><a href="blog/ai-visibility-daily-insights.html" class="post-read">Read more →</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#152030,#0d1520)">⚙️</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-geo">GEO Strategy</span></div>
+        <h3 class="post-card__title">I Have GEO Buy-In. Now What? The Exact Order of Operations.</h3>
+        <p class="post-card__excerpt">You have leadership aligned on GEO. Here is the exact four-phase implementation sequence that moves citation rate fastest.</p>
+        <div class="post-card__footer"><a href="blog/geo-order-of-operations.html" class="post-read">Read more →</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1520,#100d18)">🛠️</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-geo">GEO Strategy</span></div>
+        <h3 class="post-card__title">Before You Buy an AI Visibility Tool, Read This. Most Will Mislead You.</h3>
+        <p class="post-card__excerpt">Five questions that separate tools which actually move your citation rate from tools that just give you a score to watch.</p>
+        <div class="post-card__footer"><a href="blog/how-to-choose-ai-visibility-tool.html" class="post-read">Read more →</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="industry">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#0d1a2a,#081220)">🇺🇸</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Industry Guide</span></div>
+        <h3 class="post-card__title">AI Search Visibility for US D2C Brands: The ChatGPT Shopping Playbook</h3>
+        <p class="post-card__excerpt">How US D2C brands can build AI citation presence before the ChatGPT shopping interface locks in competitive positions.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-us-d2c-brands.html" class="post-read">Read more →</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="industry">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#0d1a2a,#081220)">🇺🇸</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Industry Guide</span></div>
+        <h3 class="post-card__title">AI Search Visibility for US SaaS Brands: Win the ChatGPT Shortlist</h3>
+        <p class="post-card__excerpt">44% of SaaS brands score below 50/100 on AI visibility. Here's how US SaaS brands close the gap before competitors do.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-saas-usa.html" class="post-read">Read more →</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="industry">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1a10,#12120a)">🇩🇪</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Industry Guide</span></div>
+        <h3 class="post-card__title">AI Search Visibility for D2C Brands in Germany: Why German Buyers Evaluate Trust Differently</h3>
+        <p class="post-card__excerpt">TÜV, Stiftung Warentest, and DSGVO compliance are trust signals German AI systems weight heavily. Here's the playbook.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-germany-d2c.html" class="post-read">Read more →</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="market-guide">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1410,#0f0a08)">&#127758;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag" style="background:rgba(247,183,79,0.1);color:#f7b74f">Market Guide</span><span class="post-date">May 24, 2026</span></div>
+        <h3 class="post-card__title">AI Search Visibility for D2C Brands in UAE &amp; Saudi Arabia: Why AI Skips Gulf Brands</h3>
+        <p class="post-card__excerpt">The Middle East e-commerce market is booming — but most Gulf D2C brands are invisible in ChatGPT and Gemini. Here's the 5-action playbook to fix it.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-uae-saudi-d2c.html" class="post-read">Read more →</a><span class="read-time">12 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo industry">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#0d1a28,#081018)">&#128187;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-geo">GEO Strategy</span><span class="post-date">May 25, 2026</span></div>
+        <h3 class="post-card__title">Why Your B2B SaaS Brand Is Invisible in ChatGPT — and the GEO Playbook That Fixes It</h3>
+        <p class="post-card__excerpt">Competitors keep showing up in ChatGPT answers. Your SaaS brand doesn't. Here's the difference between GEO, AEO, and AI SEO — and the six-step fix.</p>
+        <div class="post-card__footer"><a href="blog/ai-visibility-saas-brands-chatgpt-fix.html" class="post-read">Read more →</a><span class="read-time">11 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#0d1825,#080f18)">🔍</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Tools</span><span class="post-date">May 28, 2026</span></div>
+        <h3 class="post-card__title">The Simplest AI Visibility Tool in 2026: What to Actually Look For Before You Buy</h3>
+        <p class="post-card__excerpt">Most AI visibility tools show you a score and stop there. 5 questions that tell you in 10 minutes whether any tool is actually useful for brand managers.</p>
+        <div class="post-card__footer"><a href="blog/simplest-ai-visibility-tool-2026.html" class="post-read">Read more &rarr;</a><span class="read-time">8 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#0d1f14,#081408)">&#128200;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Troubleshooting</span><span class="post-date">June 1, 2026</span></div>
+        <h3 class="post-card__title">Why Your AI Visibility Score Dropped (And How to Fix It)</h3>
+        <p class="post-card__excerpt">Five root causes of AI visibility score drops, a recovery table with timelines, and how to tell which cause hit you.</p>
+        <div class="post-card__footer"><a href="blog/ai-visibility-score-dropped.html" class="post-read">Read more &rarr;</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo seo-geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1428,#100d1e)">&#9889;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">GEO Strategy</span><span class="post-date">June 1, 2026</span></div>
+        <h3 class="post-card__title">GEO vs SEO: The Real Difference That Changes What You Build</h3>
+        <p class="post-card__excerpt">SEO and GEO are not the same system. Understanding the differences determines whether your next 4 weeks of content work actually moves your AI recommendation rate.</p>
+        <div class="post-card__footer"><a href="blog/geo-vs-seo-difference.html" class="post-read">Read more &rarr;</a><span class="read-time">10 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="geo">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1a28,#0f0f1e)">&#128300;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag">Research</span><span class="post-date">June 2, 2026</span></div>
+        <h3 class="post-card__title">What AI Actually Uses to Decide Brand Recommendations: 500 Query Study</h3>
+        <p class="post-card__excerpt">We ran 500 queries across ChatGPT, Gemini and Perplexity. The 5 signals that consistently drove recommendations — and what barely moved the needle.</p>
+        <div class="post-card__footer"><a href="blog/what-ai-uses-to-recommend-brands.html" class="post-read">Read more &rarr;</a><span class="read-time">10 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="industry market">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#0d1e2a,#081218)">&#127981;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag" style="background:rgba(247,183,79,0.1);color:#f7b74f">GEO Markets</span><span class="post-date">June 3, 2026</span></div>
+        <h3 class="post-card__title">AI Search Visibility for B2B SaaS in Southeast Asia: The Fastest-Untapped GEO Market</h3>
+        <p class="post-card__excerpt">Singapore, Malaysia and Indonesia are among the fastest-growing ChatGPT markets. Almost no B2B SaaS brand has built Southeast Asia-specific GEO content yet.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-southeast-asia-saas.html" class="post-read">Read more &rarr;</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="industry market">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a2810,#0f1808)">&#127462;&#127482;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag" style="background:rgba(247,183,79,0.1);color:#f7b74f">GEO Markets</span><span class="post-date">June 4, 2026</span></div>
+        <h3 class="post-card__title">AI Search Visibility for D2C Brands in Australia: Why ChatGPT Is Building a Shortlist Your Brand Isn&rsquo;t On</h3>
+        <p class="post-card__excerpt">Australian D2C brands are invisible in ChatGPT despite strong products. Here's the GEO playbook with trust signals unique to AU buyers.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-australia-d2c.html" class="post-read">Read more &rarr;</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="industry market">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a0d14,#100810)">&#127988;</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag" style="background:rgba(247,183,79,0.1);color:#f7b74f">GEO Markets</span><span class="post-date">June 5, 2026</span></div>
+        <h3 class="post-card__title">AI Visibility for Indian EdTech Brands: Why ChatGPT Recommends BYJU&rsquo;S and Skips Everyone Else</h3>
+        <p class="post-card__excerpt">India's EdTech AI visibility is dominated by four brands — but the gap follows an analysable pattern. The placement, accreditation, and faculty signals that smaller brands can build right now.</p>
+        <div class="post-card__footer"><a href="blog/ai-visibility-edtech-india.html" class="post-read">Read more &rarr;</a><span class="read-time">10 min</span></div>
+      </div>
+    </article>
+
+  </div><!-- /posts-grid -->
+
+  <!-- ── GLOSSARY ── -->
+  <div class="section-header" data-category="glossary">
+    <h2>Glossary — GEO & AI Visibility Terms</h2>
+    <p>Plain-English definitions of every term in the AI visibility category</p>
+  </div>
+  <div class="posts-grid">
+    <article class="post-card" data-category="glossary">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#0d1a14,#080f0a)">📖</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-glossary">Glossary</span></div>
+        <h3 class="post-card__title">What Is Generative Engine Optimisation (GEO)?</h3>
+        <p class="post-card__excerpt">A plain-English definition of GEO — the discipline of making your brand visible inside AI-generated answers on ChatGPT, Gemini, and Perplexity.</p>
+        <div class="post-card__footer"><a href="glossary/generative-engine-optimisation.html" class="post-read">Read definition →</a><span class="read-time">3 min</span></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ── USE CASES ── -->
+  <div class="section-header" data-category="usecase">
+    <h2>Use Cases — GEO by Industry</h2>
+    <p>How AI visibility works for specific buyer segments and verticals</p>
+  </div>
+  <div class="posts-grid">
+    <article class="post-card" data-category="usecase">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#200d1a,#150810)">💄</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-usecase">Use Case</span></div>
+        <h3 class="post-card__title">GEO for D2C Beauty and Skincare Brands</h3>
+        <p class="post-card__excerpt">LLMs skip D2C beauty products with thin schema regardless of SEO strength. Here's the GEO framework for beauty brands.</p>
+        <div class="post-card__footer"><a href="use-cases/d2c-beauty-skincare.html" class="post-read">Read guide →</a><span class="read-time">6 min</span></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ── COMPARISONS ── -->
+  <div class="section-header" data-category="compare">
+    <h2>Comparisons — GEO vs Other Disciplines</h2>
+    <p>Honest head-to-head comparisons for brands in active evaluation</p>
+  </div>
+  <div class="posts-grid">
+    <article class="post-card" data-category="compare">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1535,#100d25)">⚖️</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-compare">Compare</span></div>
+        <h3 class="post-card__title">GEO Tool vs SEO Tool: Which One Should You Run First?</h3>
+        <p class="post-card__excerpt">GEO tracking is the missing measurement layer between SEO, content, PR, and how buyers discover brands now. Here's the honest comparison.</p>
+        <div class="post-card__footer"><a href="compare/geo-tool-vs-seo-tool.html" class="post-read">Read comparison →</a><span class="read-time">7 min</span></div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ── MARKETS ── -->
+  <div class="section-header" data-category="market">
+    <h2>Market Guides — AI Visibility by Country</h2>
+    <p>Country-specific AI platform behaviour, trust signals, and GEO strategy</p>
+  </div>
+  <div class="posts-grid">
+    <article class="post-card" data-category="market">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1410,#12100a)">🇮🇳</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-market">Market Guide</span></div>
+        <h3 class="post-card__title">AI Search Visibility in India: The Fastest-Growing AI Search Market the World Is Ignoring</h3>
+        <p class="post-card__excerpt">India is ChatGPT's second-largest market. Gemini leads ChatGPT in India. 640% Perplexity growth. And almost no GEO content exists for this market.</p>
+        <div class="post-card__footer"><a href="markets/india.html" class="post-read">Read guide →</a><span class="read-time">10 min</span></div>
+      </div>
+    </article>
+
+    <article class="post-card" data-category="market">
+      <div class="post-card__img" style="background:linear-gradient(135deg,#1a1a10,#12120a)">🇩🇪</div>
+      <div class="post-card__body">
+        <div class="post-card__meta"><span class="post-tag post-tag-market">Market Guide</span></div>
+        <h3 class="post-card__title">AI Search Visibility for B2B SaaS in Germany and the DACH Market</h3>
+        <p class="post-card__excerpt">67% of Germans use GenAI. The EU AI Act creates a content opportunity no competitor has seized. Here's the DACH GEO playbook.</p>
+        <div class="post-card__footer"><a href="blog/ai-search-visibility-saas-germany.html" class="post-read">Read guide →</a><span class="read-time">9 min</span></div>
+      </div>
+    </article>
+  </div>
+
+</main>
+
+<section class="cta-strip" aria-labelledby="cta-heading">
+  <div class="cta-strip__inner">
+    <h2 class="cta-strip__title" id="cta-heading">See what AI says about your brand right now</h2>
+    <p class="cta-strip__sub">5 queries. Free. No credit card. Results in 10 minutes.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login">Run Free Scan →</a>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
+        <p>Global AI Visibility platform. Find out why AI recommends your competitor and get a content plan to fix it. Built in Bengaluru.</p>
+      </div>
+      <div class="footer__col"><h5>Product</h5><ul><li><a href="/index.html#how-it-works">How It Works</a></li><li><a href="/index.html#features">Features</a></li><li><a href="/index.html#pricing">Pricing</a></li><li><a href="/blog-index.html">Blog</a></li></ul></div>
+      <div class="footer__col"><h5>Content</h5><ul><li><a href="glossary/generative-engine-optimisation.html">GEO Glossary</a></li><li><a href="use-cases/d2c-beauty-skincare.html">Use Cases</a></li><li><a href="compare/geo-tool-vs-seo-tool.html">Comparisons</a></li><li><a href="markets/india.html">Market Guides</a></li></ul></div>
+      <div class="footer__col"><h5>Company</h5><ul><li><a href="/index.html#about">About</a></li><li><a href="mailto:jeevanaijobs@gmail.com">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Jeevan AI. All rights reserved.</span>
+      <span>Bengaluru, India · Global Platform</span>
+      <span>AI Visibility · GEO Optimisation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filterPosts(cat, el) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('[data-category]').forEach(card => {
+    if (cat === 'all' || card.dataset.category === cat || (card.dataset.category && card.dataset.category.includes(cat))) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

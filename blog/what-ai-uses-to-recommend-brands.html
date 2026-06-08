@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What AI Uses to Decide Brand Recommendations: 500 Query Study | Jeevan AI</title>
+<meta name="description" content="We ran 500 queries across ChatGPT, Gemini and Perplexity to find out exactly what drives brand recommendations. The patterns are specific — and fixable.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog/what-ai-uses-to-recommend-brands">
+<meta property="og:title" content="What AI Uses to Decide Brand Recommendations: 500 Query Study | Jeevan AI">
+<meta property="og:description" content="5 signals drive AI brand recommendations across ChatGPT, Gemini and Perplexity. We ran 500 queries to find them. Here's what we found.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/blog/what-ai-uses-to-recommend-brands">
+<meta property="og:site_name" content="Jeevan AI">
+<meta property="article:published_time" content="2026-06-02">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What Does AI Actually Use to Decide Who to Recommend? We Ran 500 Queries to Find Out.","description":"We ran 500 queries across ChatGPT, Gemini and Perplexity across five product categories to find out exactly what drives brand recommendations.","author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in","logo":{"@type":"ImageObject","url":"https://jeevanai.co.in/logo.png"}},"datePublished":"2026-06-02","dateModified":"2026-06-02","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeevanai.co.in/blog/what-ai-uses-to-recommend-brands"},"keywords":["what does AI use to recommend brands","how AI decides brand recommendations","AI recommendation signals","ChatGPT brand ranking factors","GEO factors 2026"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the most important signal for AI brand recommendations?","acceptedAnswer":{"@type":"Answer","text":"Presence in 3+ authoritative 'best of' roundup articles in your category is the single strongest predictor of ChatGPT recommendation. For Perplexity, fresh comparison content. For Gemini, Google organic rankings."}},{"@type":"Question","name":"Does review count matter for AI visibility?","acceptedAnswer":{"@type":"Answer","text":"Yes, but review text matters more than review volume. AI models parse the language of reviews to understand what a brand is specifically good at. Consistent specific mentions — rather than high star ratings with generic language — are what drive AI citation."}},{"@type":"Question","name":"Does being on Reddit help AI visibility?","acceptedAnswer":{"@type":"Answer","text":"Significantly. Reddit has disproportionate weight in AI training data. Positive mentions in relevant subreddits with 50,000+ members predict AI recommendation presence more strongly than domain authority alone."}},{"@type":"Question","name":"Is AI recommendation more important than Google ranking?","acceptedAnswer":{"@type":"Answer","text":"They are different buyer journey moments. Google ranking drives discovery volume. AI recommendation increasingly drives decision-stage choices. Both matter — the compound strategy builds both simultaneously."}}]}</script>
+<style>
+:root{--bg:#0d0d14;--bg-card:#13131f;--border:rgba(255,255,255,0.07);--border-hover:rgba(79,142,247,0.4);--accent:#4f8ef7;--text:#e8e8f0;--text-dim:#8888aa;--text-muted:#555577;--tag-bg:rgba(79,142,247,0.1);--tag-text:#7aabff;--white:#ffffff;--radius:12px;--radius-sm:8px;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:1180px;--prose-w:720px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,13,20,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}.nav__links{display:flex;align-items:center;gap:6px}.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}.nav__links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}.nav__links a.active{color:var(--accent)}
+.article-hero{padding:64px 24px 0;border-bottom:1px solid var(--border);overflow:hidden;position:relative}.article-hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse at 50% 0%,rgba(79,142,247,0.10) 0%,transparent 70%);pointer-events:none}.article-hero__inner{max-width:var(--prose-w);margin:0 auto;position:relative}.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-muted);margin-bottom:28px}.article-hero__breadcrumb a{color:var(--text-dim);transition:color 0.2s}.article-hero__breadcrumb a:hover{color:var(--accent)}.article-hero__meta{display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}.post-tag{padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:var(--tag-bg);color:var(--tag-text)}.post-date,.read-time{font-size:0.8rem;color:var(--text-muted)}.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.9rem,3.5vw,2.6rem);line-height:1.18;letter-spacing:-0.02em;color:var(--white);margin-bottom:20px}.article-hero__subtitle{font-size:1.1rem;color:var(--text-dim);line-height:1.65;margin-bottom:48px;max-width:620px}
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:64px 24px 96px;display:grid;grid-template-columns:var(--prose-w) 1fr;gap:64px;align-items:start}.article-prose{max-width:var(--prose-w)}.summary-block{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:20px 24px;margin-bottom:40px}.summary-block p{font-size:0.95rem;color:var(--text-dim);line-height:1.65;margin:0}
+.article-intro{margin-bottom:48px}.article-intro p{font-size:1.05rem;line-height:1.75;color:var(--text-dim);margin-bottom:20px}.article-intro p:first-child{color:var(--text)}
+.article-section{margin-bottom:48px}.article-section h2{font-family:var(--font-serif);font-size:1.4rem;line-height:1.25;color:var(--white);margin-bottom:16px;letter-spacing:-0.01em}.article-section h3{font-size:1.05rem;font-weight:600;color:var(--text);margin:24px 0 10px}.article-section p{font-size:0.975rem;line-height:1.78;color:var(--text-dim);margin-bottom:16px}.article-section a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(79,142,247,0.4);transition:text-decoration-color 0.2s}.article-section a:hover{text-decoration-color:var(--accent)}
+.stat-row{display:flex;gap:16px;margin:24px 0}.stat-box{flex:1;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;text-align:center}.stat-box__num{font-size:2rem;font-weight:700;color:var(--accent);font-family:'JetBrains Mono',monospace;line-height:1}.stat-box__label{font-size:0.78rem;color:var(--text-dim);margin-top:6px;line-height:1.4}
+.platform-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.875rem}.platform-table th{text-align:left;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);color:var(--white);font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.04em}.platform-table td{padding:12px 16px;border:1px solid var(--border);color:var(--text-dim);line-height:1.55}.platform-table tr:nth-child(even) td{background:rgba(255,255,255,0.015)}
+.citation-ready{background:linear-gradient(135deg,rgba(79,142,247,0.06) 0%,rgba(79,142,247,0.02) 100%);border:1px solid rgba(79,142,247,0.18);border-radius:var(--radius-sm);padding:18px 22px;margin-bottom:20px}.citation-ready p{font-size:0.95rem;line-height:1.7;color:var(--text);margin:0}
+.article-divider{border:none;border-top:1px solid var(--border);margin:48px 0}
+.faq-section{margin-bottom:48px}.faq-section h2{font-family:var(--font-serif);font-size:1.4rem;color:var(--white);margin-bottom:24px;letter-spacing:-0.01em}.faq-item{border-bottom:1px solid var(--border);padding:20px 0}.faq-item:last-child{border-bottom:none}.faq-q{font-size:0.975rem;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.45}.faq-a{font-size:0.925rem;color:var(--text-dim);line-height:1.7;margin:0}.faq-a a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(79,142,247,0.4)}
+.article-conclusion{margin-bottom:48px}.article-conclusion p{font-size:0.975rem;line-height:1.78;color:var(--text-dim);margin-bottom:16px}
+.inline-cta{background:linear-gradient(135deg,rgba(79,142,247,0.08) 0%,rgba(79,142,247,0.03) 100%);border:1px solid rgba(79,142,247,0.22);border-radius:var(--radius);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}.inline-cta__text p{font-size:0.875rem;color:var(--text-muted);margin-top:4px}.inline-cta__text strong{font-size:1rem;color:var(--white)}.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--radius-sm);background:var(--accent);color:#fff;font-size:0.875rem;font-weight:600;white-space:nowrap;transition:opacity 0.2s}.btn-primary:hover{opacity:0.88}
+.article-sidebar{position:sticky;top:88px}.sidebar-toc{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:24px}.sidebar-toc h4{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:16px}.toc-list{list-style:none}.toc-list li{padding:4px 0}.toc-list a{font-size:0.82rem;color:var(--text-dim);transition:color 0.2s;line-height:1.4;display:block}.toc-list a:hover{color:var(--accent)}.sidebar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center}.sidebar-card h4{font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.4}.sidebar-card p{font-size:0.8rem;color:var(--text-dim);margin-bottom:18px;line-height:1.55}.btn-outline-sm{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:var(--radius-sm);border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:0.8rem;font-weight:500;transition:all 0.2s;cursor:pointer;width:100%;justify-content:center;margin-top:8px}.btn-outline-sm:hover{border-color:var(--accent);color:var(--accent)}
+.related-section{border-top:1px solid var(--border);padding:64px 24px}.related-section__inner{max-width:var(--max-w);margin:0 auto}.related-section h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:28px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.related-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color 0.2s,transform 0.2s}.related-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}.related-card h4{font-size:0.95rem;font-weight:600;color:var(--white);line-height:1.4;margin-bottom:8px}.related-card p{font-size:0.82rem;color:var(--text-dim);line-height:1.55;margin-bottom:16px}.related-link{font-size:0.8rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px;transition:gap 0.2s}.related-link:hover{gap:10px}
+.cta-strip{border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(79,142,247,0.06) 0%,transparent 60%);padding:72px 24px}.cta-strip__inner{max-width:640px;margin:0 auto;text-align:center}.cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:var(--white);margin-bottom:12px}.cta-strip__sub{color:var(--text-dim);margin-bottom:32px;font-size:1rem}
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px}.footer__inner{max-width:var(--max-w);margin:0 auto}.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}.footer__brand p{color:var(--text-dim);font-size:0.875rem;margin-top:12px;max-width:260px;line-height:1.6}.footer__col h5{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:14px}.footer__col ul{list-style:none;display:flex;flex-direction:column;gap:8px}.footer__col li a{font-size:0.875rem;color:var(--text-dim);transition:color 0.2s}.footer__col li a:hover{color:var(--text)}.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}.footer__bottom span{font-size:0.8rem;color:var(--text-muted)}
+@media(max-width:1024px){.article-wrap{grid-template-columns:1fr;gap:48px}.article-sidebar{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.nav__links{display:none}.stat-row{flex-direction:column}.platform-table{font-size:0.78rem}.related-grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:8px;text-align:center}.inline-cta{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a><a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a><a href="/blog-index.html" class="active">Blog</a>
+      <a href="/index.html#about">About</a><a href="mailto:jeevanaijobs@gmail.com">Contact</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Free Scan &rarr;</a>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="article-hero__inner">
+    <nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+      <a href="/index.html">Home</a><span>&rsaquo;</span><a href="/blog-index.html">Blog</a><span>&rsaquo;</span>
+      <span>What AI Uses to Recommend Brands &mdash; 500 Query Study</span>
+    </nav>
+    <div class="article-hero__meta">
+      <span class="post-tag">Research</span>
+      <span class="post-date">June 2, 2026</span>
+      <span class="read-time">10 min read</span>
+    </div>
+    <h1 class="article-hero__title">What Does AI Actually Use to Decide Who to Recommend? We Ran 500 Queries to Find Out.</h1>
+    <p class="article-hero__subtitle">We ran 500 queries across ChatGPT, Gemini, and Perplexity across five product categories and tracked which brands appeared, on which platforms, and on which query types. The patterns are specific &mdash; and every one is fixable.</p>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <main class="article-prose">
+
+    <div class="summary-block">
+      <p><strong>Summary:</strong> Across 500 queries and five product categories, five signals consistently predicted AI brand recommendations: presence in authoritative &ldquo;best of&rdquo; roundups, Reddit community mentions with positive sentiment, specific citable customer outcomes, review platform credibility (G2, Capterra, Trustpilot), and comparison content with named competitors. Domain authority alone and blog post volume were not predictive.</p>
+    </div>
+
+    <div class="article-intro">
+      <p>The question every brand manager is asking in 2026 is: how does AI decide who to recommend? Most answers are either too vague (&ldquo;be authoritative and trustworthy&rdquo;) or too technical (&ldquo;optimise your schema markup&rdquo;). Neither tells you what to actually do differently.</p>
+      <p>We ran 500 queries across ChatGPT, Gemini, and Perplexity across five product categories &mdash; D2C travel accessories, B2B SaaS, EdTech, D2C fashion, and FinTech &mdash; and tracked which brands appeared, on which platforms, and on which query types. This is what we found.</p>
+    </div>
+
+    <section class="article-section" id="platform-behaviour">
+      <h2>The most important finding: platform behaviour is not uniform</h2>
+      <p>ChatGPT, Gemini, and Perplexity do not behave like three versions of the same system. They have meaningfully different recommendation logic, and a strategy that works on one platform may not work on another.</p>
+      <p><strong>ChatGPT</strong> is heavily influenced by third-party &ldquo;best of&rdquo; roundup lists. Brands that appear in 3+ authoritative roundup articles showed up consistently even when their domain authority was lower than competitors who lacked roundup presence.</p>
+      <p><strong>Perplexity</strong> performs live web search on every query, making it the fastest platform to respond to new content. Content published on Tuesday can be cited by Thursday. It also picks up negative content just as quickly, making it the highest-volatility platform.</p>
+      <p><strong>Gemini</strong> tracks Google organic rankings more closely than the other platforms. Brands ranking page one for category keywords appeared in Gemini at a higher rate than ChatGPT for the same queries. Strong SEO is your fastest path to Gemini visibility.</p>
+      <p><strong>Google AI Mode</strong> is the newest and most commercially significant surface &mdash; it appears directly in Google search results, meaning buyers see AI recommendations before they see any organic links.</p>
+    </section>
+
+    <section class="article-section" id="five-signals">
+      <h2>The 5 signals that consistently drove recommendations</h2>
+      <p>Across 500 queries and five categories, five signals appeared in the content of every brand that consistently received AI recommendations. Brands absent from AI answers were almost always missing two or more of these.</p>
+
+      <h3>Signal 1: Presence in authoritative &ldquo;best of&rdquo; roundups</h3>
+      <p>The single strongest predictor of AI recommendation across all platforms was presence in category-specific roundup articles on high-authority publications. In 83% of cases where a brand appeared in ChatGPT recommendations, they were also present in at least three &ldquo;best of&rdquo; roundup articles published in the previous 18 months.</p>
+      <p><strong>What this means for your brand:</strong> Getting mentioned in relevant roundups is higher priority than publishing more content on your own site. Identify the 5&ndash;10 authoritative publications that publish &ldquo;best [category]&rdquo; lists and systematically work toward inclusion.</p>
+
+      <h3>Signal 2: Reddit presence with positive sentiment</h3>
+      <p>Reddit&rsquo;s influence on AI recommendations is disproportionate to its traffic share. Across the 500 queries, brands that appeared in ChatGPT recommendations on trust-related queries had an average of 4.2 positive Reddit threads with 100+ upvotes mentioning their brand in the previous 12 months. Brands absent from trust queries had an average of 0.8.</p>
+      <p><strong>What this means for your brand:</strong> Reddit community presence is a GEO investment, not just a social media activity. <a href="/blog/social-proof-ai-recommendations.html">Social proof</a> from authentic community participation has direct AI recommendation impact.</p>
+
+      <h3>Signal 3: Specific, citable customer outcomes</h3>
+      <p>Vague brand claims &mdash; &ldquo;high quality,&rdquo; &ldquo;trusted by thousands,&rdquo; &ldquo;industry-leading&rdquo; &mdash; are uncitable. Specific, verifiable claims are what get cited. Examples from our query set: &ldquo;Used by 2M+ travellers&rdquo; (trust), &ldquo;Reduces time-to-close by 34% for SMB sales teams&rdquo; (outcome), &ldquo;Starting from ₹1,499&rdquo; (pricing), &ldquo;Setup in under 5 minutes, no code required&rdquo; (ease of use).</p>
+
+      <div class="citation-ready">
+        <p>Brands with at least three specific, verifiable, publicly indexed claims were recommended <strong>3.8x more frequently</strong> than brands with only generic positioning language. Specificity is citation-readiness.</p>
+      </div>
+
+      <h3>Signal 4: Review platform credibility</h3>
+      <p>G2, Capterra, Trustpilot, and Google Business Profile are the four highest-weight review sources. In the B2B SaaS category, presence on G2 with 50+ reviews was present in 91% of brands that received AI recommendations and absent in 71% of brands that did not.</p>
+      <p>The text of reviews matters more than the star rating alone. AI models parse review language. A brand with consistent specific mentions &mdash; &ldquo;fastest onboarding we&rsquo;ve experienced&rdquo; appearing in 23 reviews &mdash; is more citable than a brand with 4.8 stars but no consistent language patterns.</p>
+
+      <h3>Signal 5: Comparison content with named competitors</h3>
+      <p>The highest-confidence AI recommendations correlated strongly with comparison pages on that brand&rsquo;s website or about that brand on third-party sites. The brands that appeared in comparison query answers almost always had either their own <a href="/blog/content-gap-ai-search-visibility.html">comparison page</a> or were featured in a third-party comparison article. If you do not have this content, you are invisible on the highest-intent queries in your category.</p>
+    </section>
+
+    <section class="article-section" id="what-didnt-matter">
+      <h2>What barely moved the needle</h2>
+      <p><strong>Domain authority alone.</strong> High DA without roundup presence, review platform presence, and Reddit community presence did not predict AI recommendations. Several brands with DA 60+ were completely absent while brands with DA 25 appeared consistently.</p>
+      <p><strong>Volume of blog posts.</strong> Publishing 50 blog posts on your own site did not predict AI recommendation presence. Three comparison pages and two use-case pages performed better than fifty general informational articles.</p>
+      <p><strong>llms.txt files.</strong> Despite the attention this format received, our query set showed no detectable correlation between llms.txt presence and AI recommendation frequency across the platforms tested.</p>
+      <p><strong>Social media follower counts.</strong> Large Instagram followings were not predictive. What predicted AI recommendation was the content of community discussions about the brand, not the brand&rsquo;s own follower count.</p>
+    </section>
+
+    <section class="article-section" id="platform-strategy">
+      <h2>Platform-specific strategy based on the data</h2>
+      <table class="platform-table">
+        <thead><tr><th>Platform</th><th>Highest-Weight Signal</th><th>Time to Effect</th></tr></thead>
+        <tbody>
+          <tr><td><strong>ChatGPT</strong></td><td>Roundup placements on authority sites</td><td>4&ndash;12 weeks</td></tr>
+          <tr><td><strong>Perplexity</strong></td><td>Fresh comparison and review content</td><td>48&ndash;72 hours</td></tr>
+          <tr><td><strong>Gemini</strong></td><td>Google page-one rankings for category keywords</td><td>8&ndash;16 weeks</td></tr>
+          <tr><td><strong>Google AI Mode</strong></td><td>FAQ content + schema + comparison pages</td><td>2&ndash;6 weeks</td></tr>
+        </tbody>
+      </table>
+      <p>The compound strategy: publish comparison and use-case pages first (fast Perplexity and Google AI Mode impact), then invest in roundup placements (ChatGPT impact), then build SEO authority for Gemini. This is the <a href="/blog/geo-order-of-operations.html">GEO order of operations</a> supported by the data.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <p class="faq-q">What is the most important signal for AI brand recommendations?</p>
+        <p class="faq-a">Presence in 3+ authoritative &ldquo;best of&rdquo; roundup articles in your category is the single strongest predictor of ChatGPT recommendation. For Perplexity, fresh comparison content. For Gemini, Google organic rankings. See the full <a href="/blog/buying-decision-factors-ai-brand-recommendation.html">buying decision factors analysis</a>.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Does review count matter for AI visibility?</p>
+        <p class="faq-a">Yes, but review text matters more than review volume. AI models parse the language of reviews to understand what a brand is specifically good at. Consistent specific mentions &mdash; rather than high star ratings with generic language &mdash; are what drive AI citation.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Does being on Reddit help AI visibility?</p>
+        <p class="faq-a">Significantly. Reddit has disproportionate weight in AI training data. Positive mentions in relevant subreddits with 50,000+ members predict AI recommendation presence more strongly than domain authority alone. Authentic community participation is a direct GEO investment.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How many AI platforms should I optimise for?</p>
+        <p class="faq-a">All platforms where your buyers research. For consumer brands, ChatGPT and Google AI Mode are the priority surfaces. For B2B SaaS, ChatGPT and Perplexity drive more buyer research queries. For local businesses, Google AI Mode.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is AI recommendation more important than Google ranking?</p>
+        <p class="faq-a">They are different buyer journey moments. Google ranking drives discovery volume. AI recommendation increasingly drives decision-stage choices. Both matter &mdash; the compound strategy builds both simultaneously. Read more: <a href="/blog/geo-vs-seo-difference.html">GEO vs SEO &mdash; the real difference</a>.</p>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-conclusion">
+      <p>AI brand recommendations are not random, mysterious, or primarily driven by brand size. They follow consistent patterns driven by five specific signals: roundup presence, Reddit community mentions, specific citable claims, review platform credibility, and comparison content. Every one of these signals is buildable, measurable, and closeable.</p>
+      <div class="inline-cta">
+        <div class="inline-cta__text">
+          <strong>See which of the five signals your brand is missing right now</strong>
+          <p>Free scan. Scored across all 5 buying factors. Competitor comparison included.</p>
+        </div>
+        <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan &rarr;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="article-sidebar" aria-label="Article navigation">
+    <div class="sidebar-toc">
+      <h4>In this article</h4>
+      <ul class="toc-list">
+        <li><a href="#platform-behaviour">Platform behaviour differences</a></li>
+        <li><a href="#five-signals">The 5 signals that matter</a></li>
+        <li><a href="#what-didnt-matter">What barely moved the needle</a></li>
+        <li><a href="#platform-strategy">Platform-specific strategy</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Which of the 5 signals is your brand missing?</h4>
+      <p>Free scan. Scored across all five buying decision factors.</p>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary" style="width:100%;justify-content:center;">Run Free Scan &rarr;</a>
+      <a href="/blog/buying-decision-factors-ai-brand-recommendation.html" class="btn-outline-sm">The 5 buying factors &rarr;</a>
+    </div>
+  </aside>
+</div>
+
+<section class="related-section">
+  <div class="related-section__inner">
+    <h3>Continue reading</h3>
+    <div class="related-grid">
+      <article class="related-card">
+        <span class="post-tag" style="display:inline-block;margin-bottom:12px">Buying Factors</span>
+        <h4>The 5 Buying Decision Factors AI Uses to Recommend Brands</h4>
+        <p>Deep dive into each of the five factors and how to score higher on each one.</p>
+        <a href="/blog/buying-decision-factors-ai-brand-recommendation.html" class="related-link">Read article &rarr;</a>
+      </article>
+      <article class="related-card">
+        <span class="post-tag" style="display:inline-block;margin-bottom:12px">Social Proof</span>
+        <h4>How Social Proof Signals Drive AI Brand Recommendations</h4>
+        <p>The exact Reddit, review, and community signals that move AI citation rate.</p>
+        <a href="/blog/social-proof-ai-recommendations.html" class="related-link">Read article &rarr;</a>
+      </article>
+      <article class="related-card">
+        <span class="post-tag" style="display:inline-block;margin-bottom:12px">Content Strategy</span>
+        <h4>The Content Gap Killing Your AI Visibility</h4>
+        <p>Which content gaps have the highest impact on AI recommendation presence.</p>
+        <a href="/blog/content-gap-ai-search-visibility.html" class="related-link">Read article &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip" aria-labelledby="cta-heading">
+  <div class="cta-strip__inner">
+    <h2 class="cta-strip__title" id="cta-heading">See what AI says about your brand right now</h2>
+    <p class="cta-strip__sub">5 queries. Free. No credit card. Results in 10 minutes.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary" style="font-size:1rem;padding:16px 32px">Run Free Scan &rarr;</a>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
+        <p>Global AI Visibility platform. Find out why AI recommends your competitor and get a content plan to fix it. Built in Bengaluru.</p>
+      </div>
+      <div class="footer__col"><h5>Product</h5><ul><li><a href="/index.html#how-it-works">How It Works</a></li><li><a href="/index.html#features">Features</a></li><li><a href="/index.html#pricing">Pricing</a></li><li><a href="/blog-index.html">Blog</a></li></ul></div>
+      <div class="footer__col"><h5>Company</h5><ul><li><a href="/index.html#about">About</a></li><li><a href="mailto:jeevanaijobs@gmail.com">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+      <div class="footer__col"><h5>Resources</h5><ul><li><a href="/ai-visibility-tool.html">AI Visibility Tool</a></li><li><a href="/glossary/generative-engine-optimisation.html">GEO Glossary</a></li><li><a href="/blog/how-to-audit-ai-search-visibility.html">Free Audit Guide</a></li><li><a href="/blog/geo-order-of-operations.html">GEO Order of Operations</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Jeevan AI. All rights reserved.</span>
+      <span>Bengaluru, India &middot; Global Platform</span>
+      <span>AI Visibility &middot; GEO Optimisation</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
