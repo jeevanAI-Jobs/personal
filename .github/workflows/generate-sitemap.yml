@@ -1,0 +1,34 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - sitemap.xml   # avoid loop: action only commits sitemap.xml, so this prevents re-triggering
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    # Also skip if the Jeevan AI Bot committed (extra safety net)
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so git log dates are available if needed
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate sitemap.xml
+        run: node scripts/generate-sitemap.js
+
+      - name: Commit sitemap if changed
+        run: |
+          git config user.email "saranshraj.srivastava@gmail.com"
+          git config user.name "Jeevan AI Bot"
+          git diff --quiet sitemap.xml && echo "sitemap unchanged, skipping commit" || \
+            (git add sitemap.xml && git commit -m "chore: regenerate sitemap [skip ci]" && git push)
