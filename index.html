@@ -40,13 +40,13 @@
 }
 </script>
 <style>
-:root{--bg: #f6f6fb;--bg-card: #ffffff;--bg-card-hover: #ededf6;--border: rgba(0,0,0,0.08);--border-hover:rgba(79,142,247,0.4);--accent:#4f8ef7;--accent-dim:rgba(79,142,247,0.12);--text: #1a1a2e;--text-dim: #4a4a6a;--text-muted: #7a7a9a;--tag-bg:rgba(79,142,247,0.1);--tag-text: #2060d0;--white: #1a1a2e;--radius:12px;--radius-sm:8px;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--max-w:1180px}
+:root{--bg: #ffffff;--bg-card: #ffffff;--bg-card-hover: #f9fafb;--border: #e5e7eb;--border-hover: rgba(99,102,241,0.45);--accent: #6366f1;--accent-dim: rgba(99,102,241,0.1);--text: #111827;--text-dim: #6b7280;--text-muted: #9ca3af;--tag-bg: rgba(99,102,241,0.1);--tag-text: #4f46e5;--white: #111827;--radius:12px;--radius-sm:8px;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--max-w:1180px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
-.nav{position:sticky;top:0;z-index:100;background: rgba(246,246,251,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav{position:sticky;top:0;z-index:100;background: rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
 .nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
 .nav__logo-mark{width:32px;height:32px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem}
@@ -57,9 +57,9 @@ a{color:inherit;text-decoration:none}
 .nav__cta:hover{opacity:0.88}
 /* HERO */
 .hero{padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse at 50% 0%,rgba(79,142,247,0.13) 0%,transparent 65%);pointer-events:none}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse at 50% 0%,rgba(99,102,241,0.12) 0%,transparent 65%);pointer-events:none}
 .hero__inner{max-width:760px;margin:0 auto;position:relative}
-.hero__badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;background:var(--accent-dim);border:1px solid rgba(79,142,247,0.3);font-size:0.78rem;font-weight:600;color:var(--accent);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:28px}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;background:var(--accent-dim);border:1px solid rgba(99,102,241,0.3);font-size:0.78rem;font-weight:600;color:var(--accent);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:28px}
 .hero__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.1;letter-spacing:-0.03em;color:var(--white);margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--accent)}
@@ -89,7 +89,7 @@ a{color:inherit;text-decoration:none}
 .section-sub{font-size:1.05rem;color:var(--text-dim);line-height:1.7;max-width:560px;margin-bottom:48px}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .step{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
-.step__num{width:36px;height:36px;border-radius:50%;background:var(--accent-dim);border:1px solid rgba(79,142,247,0.3);color:var(--accent);font-size:0.85rem;font-weight:800;font-family:var(--font-mono);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.step__num{width:36px;height:36px;border-radius:50%;background:var(--accent-dim);border:1px solid rgba(99,102,241,0.3);color:var(--accent);font-size:0.85rem;font-weight:800;font-family:var(--font-mono);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .step h3{font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:8px}
 .step p{font-size:0.875rem;color:var(--text-dim);line-height:1.65}
 /* BUYING FACTORS */
@@ -102,7 +102,7 @@ a{color:inherit;text-decoration:none}
 .factor-item__name{font-size:0.93rem;font-weight:600;color:var(--white)}
 .factor-item__desc{font-size:0.8rem;color:var(--text-dim);margin-top:2px}
 .factor-item__bar-wrap{flex:1;height:5px;background: rgba(0,0,0,0.06);border-radius:3px;overflow:hidden;min-width:80px}
-.factor-item__bar{height:100%;border-radius:3px;background:linear-gradient(to right,var(--accent),rgba(79,142,247,0.5))}
+.factor-item__bar{height:100%;border-radius:3px;background:linear-gradient(to right,var(--accent),rgba(99,102,241,0.5))}
 /* SCAN VISUAL */
 .scan-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:440px}
 .scan-card__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
@@ -118,7 +118,7 @@ a{color:inherit;text-decoration:none}
 .pricing{padding:80px 24px;border-top:1px solid var(--border)}
 .pricing__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
 .plan{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
-.plan--featured{border-color:rgba(79,142,247,0.4);background:linear-gradient(135deg,rgba(79,142,247,0.08) 0%,var(--bg-card) 100%)}
+.plan--featured{border-color:rgba(99,102,241,0.4);background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,var(--bg-card) 100%)}
 .plan__badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;white-space:nowrap}
 .plan__name{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:12px}
 .plan__price{font-size:2rem;font-weight:700;color:var(--white);font-family:var(--font-mono);line-height:1}
@@ -133,7 +133,7 @@ a{color:inherit;text-decoration:none}
 .plan--featured .plan__cta:hover{opacity:0.88}
 .plan__note{font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:10px}
 /* TESTIMONIAL */
-.testimonial-strip{padding:64px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(79,142,247,0.04) 0%,transparent 60%)}
+.testimonial-strip{padding:64px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.04) 0%,transparent 60%)}
 .testimonial-strip__inner{max-width:680px;margin:0 auto;text-align:center}
 .testimonial-strip__quote{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;line-height:1.45;color:var(--white);margin-bottom:20px;font-style:italic}
 .testimonial-strip__author{font-size:0.85rem;color:var(--text-muted)}
@@ -148,7 +148,7 @@ a{color:inherit;text-decoration:none}
 .preview-card__link{font-size:0.8rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:5px;transition:gap 0.2s}
 .preview-card__link:hover{gap:9px}
 /* CTA */
-.cta-final{padding:100px 24px;text-align:center;border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(79,142,247,0.07) 0%,transparent 60%)}
+.cta-final{padding:100px 24px;text-align:center;border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,transparent 60%)}
 .cta-final__inner{max-width:640px;margin:0 auto}
 .cta-final h2{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2rem,4vw,3rem);line-height:1.15;letter-spacing:-0.02em;color:var(--white);margin-bottom:16px}
 .cta-final p{font-size:1.05rem;color:var(--text-dim);margin-bottom:36px;line-height:1.65}
@@ -165,6 +165,110 @@ a{color:inherit;text-decoration:none}
 .footer__bottom span{font-size:0.8rem;color:var(--text-muted)}
 @media(max-width:1024px){.factors__inner{grid-template-columns:1fr}.pricing__grid{grid-template-columns:repeat(2,1fr)}.footer__grid{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:768px){.nav__links{display:none}.steps{grid-template-columns:1fr}.stats__inner{grid-template-columns:1fr 1fr}.blog-preview__grid{grid-template-columns:1fr}.pricing__grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:8px;text-align:center}}
+
+/* ═══════════════════════════════════════════════
+   GRADIENT THEME INJECTION
+   ═══════════════════════════════════════════════ */
+
+/* Card depth */
+.step, .plan, .preview-card, .factor-item, .scan-card,
+.post-card, .blog-card, .card, .feature-card, .pricing-card {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.05);
+}
+.step:hover, .preview-card:hover, .post-card:hover, .blog-card:hover {
+  box-shadow: 0 4px 8px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Primary button gradient */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%) !important;
+  box-shadow: 0 2px 6px rgba(99,102,241,0.38);
+}
+.btn-primary:hover {
+  opacity: 0.93;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.42) !important;
+}
+
+/* ── LANDING PAGE HERO GRADIENT ── */
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 45%, #7c3aed 100%) !important;
+  overflow: hidden;
+  position: relative;
+}
+.hero::before {
+  background: radial-gradient(ellipse at 20% 60%, rgba(255,255,255,0.07) 0%, transparent 55%) !important;
+}
+.hero h1                 { color: #ffffff !important; }
+.hero .hero__sub         { color: rgba(255,255,255,0.87) !important; }
+.hero .hero__badge {
+  background:   rgba(255,255,255,0.13) !important;
+  border-color: rgba(255,255,255,0.22) !important;
+  color: #e0e7ff !important;
+}
+.hero .hero__badge-dot   { background: #a5b4fc !important; }
+.hero .hero__note        { color: rgba(255,255,255,0.52) !important; }
+.hero .platforms__label  { color: rgba(255,255,255,0.6) !important; }
+.hero .platform-chip {
+  background:   rgba(255,255,255,0.1) !important;
+  border-color: rgba(255,255,255,0.18) !important;
+  color: rgba(255,255,255,0.82) !important;
+}
+/* Hero primary CTA: white button on gradient */
+.hero .btn-primary {
+  background: #ffffff !important;
+  color: #4338ca !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22) !important;
+}
+.hero .btn-primary:hover {
+  background: #eef2ff !important;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.28) !important;
+}
+/* Hero outline CTA */
+.hero .btn-outline {
+  border-color: rgba(255,255,255,0.35) !important;
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.07) !important;
+}
+.hero .btn-outline:hover {
+  border-color: rgba(255,255,255,0.58) !important;
+  background: rgba(255,255,255,0.13) !important;
+}
+
+/* ── SECTION BACKGROUNDS (visual rhythm) ── */
+/* Stats bar: soft indigo wash */
+.stats {
+  background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%) !important;
+  border-top: 1px solid #e0e7ff;
+  border-bottom: 1px solid #e0e7ff;
+}
+.stat { background: transparent !important; }
+
+/* Testimonial: soft purple wash */
+.testimonial-strip {
+  background: linear-gradient(135deg, #f5f3ff 0%, #eff6ff 100%) !important;
+  border-top: 1px solid #e0e7ff !important;
+  border-bottom: 1px solid #e0e7ff !important;
+}
+
+/* Bottom CTA: matches hero gradient */
+.cta-final {
+  background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 45%, #7c3aed 100%) !important;
+}
+.cta-final * { color: #ffffff !important; }
+.cta-final .btn-primary {
+  background: #ffffff !important;
+  color: #4338ca !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2) !important;
+}
+.cta-final .btn-primary:hover { background: #eef2ff !important; }
+.cta-final .btn-outline {
+  border-color: rgba(255,255,255,0.38) !important;
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.07) !important;
+}
+
 </style>
 </head>
 <body>
@@ -256,7 +360,7 @@ a{color:inherit;text-decoration:none}
       <p style="font-size:0.975rem;color:var(--text-dim);line-height:1.7;margin-bottom:0">AI systems score every brand on five specific buying decision factors before deciding who to recommend. Most tools measure whether you appeared. Jeevan AI measures which factor is causing you to be skipped — and what content closes that specific gap.</p>
       <div class="factors__list">
         <div class="factor-item">
-          <div class="factor-item__icon" style="background:rgba(79,142,247,0.12)">🛡️</div>
+          <div class="factor-item__icon" style="background:rgba(99,102,241,0.1)">🛡️</div>
           <div class="factor-item__body"><div class="factor-item__name">Trust</div><div class="factor-item__desc">Third-party validation, reviews, editorial, community signal</div></div>
           <div class="factor-item__bar-wrap"><div class="factor-item__bar" style="width:72%"></div></div>
         </div>
@@ -288,10 +392,10 @@ a{color:inherit;text-decoration:none}
           <div class="scan-card__title">AI Visibility Score — Sample Brand</div>
           <div class="scan-card__badge">Live scan</div>
         </div>
-        <div class="scan-row"><div class="scan-row__platform">ChatGPT</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:58%;background:linear-gradient(to right,rgba(79,142,247,0.8),rgba(79,142,247,0.4))"></div></div><div class="scan-row__score" style="color:#7aabff">58</div></div>
+        <div class="scan-row"><div class="scan-row__platform">ChatGPT</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:58%;background:linear-gradient(to right,rgba(99,102,241,0.8),rgba(99,102,241,0.4))"></div></div><div class="scan-row__score" style="color:#818cf8">58</div></div>
         <div class="scan-row"><div class="scan-row__platform">Gemini</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:72%;background:linear-gradient(to right,rgba(79,247,158,0.8),rgba(79,247,158,0.4))"></div></div><div class="scan-row__score" style="color:#4ff79e">72</div></div>
         <div class="scan-row"><div class="scan-row__platform">Perplexity</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:34%;background:linear-gradient(to right,rgba(255,80,80,0.8),rgba(255,80,80,0.4))"></div></div><div class="scan-row__score" style="color:rgba(255,80,80,0.9)">34</div></div>
-        <div class="scan-row"><div class="scan-row__platform">Claude</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:61%;background:linear-gradient(to right,rgba(79,142,247,0.7),rgba(79,142,247,0.35))"></div></div><div class="scan-row__score" style="color:#7aabff">61</div></div>
+        <div class="scan-row"><div class="scan-row__platform">Claude</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:61%;background:linear-gradient(to right,rgba(99,102,241,0.7),rgba(99,102,241,0.35))"></div></div><div class="scan-row__score" style="color:#818cf8">61</div></div>
         <div class="scan-row"><div class="scan-row__platform">AI Mode</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:47%;background:linear-gradient(to right,rgba(247,183,79,0.8),rgba(247,183,79,0.4))"></div></div><div class="scan-row__score" style="color:#f7b74f">47</div></div>
         <div style="margin-top:20px;padding:14px;background:rgba(255,80,80,0.06);border:1px solid rgba(255,80,80,0.2);border-radius:8px">
           <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,80,80,0.8);margin-bottom:5px">Critical gap identified</div>
