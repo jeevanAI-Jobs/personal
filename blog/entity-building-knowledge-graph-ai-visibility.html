@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S6X8Q5EY8E');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta -->
+<title>Entity Building and Knowledge Graphs for AI Visibility | Jeevan AI</title>
+<meta name="description" content="AI tools like ChatGPT, Gemini, and Perplexity rely on entity graphs to decide which brands to cite. Here is the technical GEO framework for building brand entity authority in 2026.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog/entity-building-knowledge-graph-ai-visibility">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Entity Building and Knowledge Graphs for AI Visibility">
+<meta property="og:description" content="AI tools like ChatGPT, Gemini, and Perplexity rely on entity graphs to decide which brands to cite. Here is the technical GEO framework for building brand entity authority in 2026.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/blog/entity-building-knowledge-graph-ai-visibility">
+<meta property="og:site_name" content="Jeevan AI">
+<meta property="article:published_time" content="2026-06-12">
+<meta property="article:author" content="Jeevan AI">
+
+<!-- Article Schema (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Entity Building and Knowledge Graphs for AI Visibility",
+  "description": "AI tools like ChatGPT, Gemini, and Perplexity rely on entity graphs to decide which brands to cite. Here is the technical GEO framework for building brand entity authority in 2026.",
+  "author": {
+    "@type": "Organization",
+    "name": "Jeevan AI",
+    "url": "https://jeevanai.co.in"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jeevan AI",
+    "url": "https://jeevanai.co.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jeevanai.co.in/assets/logo.png"
+    }
+  },
+  "datePublished": "2026-06-12",
+  "dateModified": "2026-06-12",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jeevanai.co.in/blog/entity-building-knowledge-graph-ai-visibility"
+  },
+  "keywords": ["entity building AI visibility", "knowledge graph brand SEO", "brand entity GEO", "schema markup AI citations", "how AI recognises brands", "knowledge graph for SaaS brands", "entity authority AI search"]
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a brand entity in the context of AI visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A brand entity is a structured, machine-readable representation of your company that AI systems and search engines can confidently identify and connect to relevant queries. It includes your organisation schema, consistent NAP data (name, address, phone), Wikidata and Google Knowledge Panel entries, and corroborating signals from third-party sources. Brands with a strong entity footprint are cited by AI tools more frequently because the model can confirm who you are without relying on ambiguous text matches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a knowledge graph entry directly improve AI citation rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, with a caveat. A Wikidata or Google Knowledge Graph entry does not guarantee AI citations, but it significantly raises your entity confidence score: the probability that an AI model correctly identifies your brand when it appears in training data or live retrieval. Brands without any knowledge graph presence are often merged with competitors or misidentified, which causes them to be skipped in recommendation responses even when their content quality is high."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which schema markup types matter most for AI visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The three highest-impact schema types for AI visibility are Organization (establishes your brand identity, founding date, and sameAs links), FAQPage (directly surfaces question-answer pairs in AI responses), and HowTo or Article with speakable markup (signals content structure to retrieval-augmented generation systems). BreadcrumbList and Product schema provide secondary signals. The sameAs property inside Organization schema, linking to your Wikidata QID, Crunchbase profile, and LinkedIn page, is consistently the most underused yet highest-leverage implementation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build measurable entity authority?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most brands see meaningful entity signal improvements within 6 to 10 weeks of completing a full entity build: deploying Organization schema, creating a Wikidata entry, claiming and populating a Google Business Profile, and getting third-party citations on three or more high-authority sources. AI citation rate improvements typically follow 4 to 8 weeks after entity signals are indexed, because model training and retrieval index updates operate on their own schedules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a small SaaS brand build a knowledge graph presence without a Wikipedia article?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Wikipedia notability requirements are high and block most early-stage SaaS brands. However, a Wikidata entry has no notability requirement and can be created by anyone. A well-structured Wikidata entry with correct instance-of, industry, founding date, and sameAs links is sufficient to establish a basic knowledge graph footprint. Pair it with schema.org Organization markup on your website and citations on Crunchbase, LinkedIn, G2, and Capterra to build a corroborated entity cluster that AI models can resolve confidently."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ── DESIGN TOKENS (inherited from blog-index) ── */
+  :root {
+    --bg: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f9fafb;
+    --border: #e5e7eb;
+    --border-hover: rgba(99,102,241,0.45);
+    --accent: #6366f1;
+    --accent-dim: rgba(99,102,241,0.1);
+    --accent-glow: rgba(99,102,241,0.06);
+    --text: #111827;
+    --text-dim: #4b5563;
+    --text-muted: #9ca3af;
+    --tag-bg: rgba(99,102,241,0.1);
+    --tag-text: #4f46e5;
+    --white: #ffffff;
+    --radius:         12px;
+    --radius-sm:      8px;
+    --font-sans:      'DM Sans', 'Inter', system-ui, sans-serif;
+    --font-serif:     'DM Serif Display', Georgia, serif;
+    --font-mono:      'JetBrains Mono', monospace;
+    --max-w:          1180px;
+    --prose-w:        720px;
+  }
+
+  /* ── RESET ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: var(--font-sans); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .nav__inner {
+    max-width: var(--max-w); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav__logo {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
+  }
+  .nav__logo-mark {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.9rem;
+  }
+  .nav__links { display: flex; align-items: center; gap: 6px; }
+  .nav__links a {
+    padding: 7px 14px; border-radius: 8px; font-size: 0.875rem;
+    color: var(--text-dim); transition: all 0.2s;
+  }
+  .nav__links a:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+  .nav__links a.active { color: var(--accent); }
+  .nav__cta {
+    padding: 8px 18px; border-radius: 8px;
+    background: var(--accent); color: #fff;
+    font-size: 0.875rem; font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .nav__cta:hover { opacity: 0.88; }
+
+  /* ── ARTICLE HERO ── */
+  .article-hero {
+    padding: 64px 24px 0;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .article-hero__inner {
+    max-width: var(--prose-w); margin: 0 auto; position: relative;
+  }
+  .article-hero__breadcrumb {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.8rem; color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+  .article-hero__breadcrumb a { color: var(--text-dim); transition: color 0.2s; }
+  .article-hero__breadcrumb a:hover { color: var(--accent); }
+  .article-hero__breadcrumb span { color: var(--text-muted); }
+  .article-hero__meta {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 24px; flex-wrap: wrap;
+  }
+  .post-tag {
+    padding: 3px 10px; border-radius: 100px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+    text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text);
+  }
+  .post-date { font-size: 0.8rem; color: var(--text-muted); }
+  .read-time { font-size: 0.8rem; color: var(--text-muted); }
+  .article-hero__title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    line-height: 1.18; letter-spacing: -0.02em;
+    color: var(--white); margin-bottom: 20px;
+  }
+  .article-hero__subtitle {
+    font-size: 1.1rem; color: var(--text-dim);
+    line-height: 1.65; margin-bottom: 40px;
+    max-width: 620px;
+  }
+  /* Hero visual strip */
+  .article-hero__visual {
+    height: 200px;
+    background: linear-gradient(135deg, #111128 0%, #0d0d1e 50%, #0a1225 100%);
+    border-radius: var(--radius) var(--radius) 0 0;
+    border: 1px solid var(--border); border-bottom: none;
+    display: flex; align-items: center; justify-content: center;
+    gap: 32px; padding: 0 40px;
+    position: relative; overflow: hidden;
+  }
+  .article-hero__visual::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(to top, var(--bg), transparent);
+  }
+  .vis-node {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .vis-node__circle {
+    width: 52px; height: 52px; border-radius: 50%;
+    border: 1px solid rgba(99,102,241,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    background: rgba(99,102,241,0.06);
+  }
+  .vis-node__label { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  .vis-arrow {
+    font-size: 1.2rem; color: rgba(99,102,241,0.3);
+    margin-bottom: 20px;
+  }
+  .vis-node--winner .vis-node__circle {
+    border-color: rgba(99,102,241,0.6);
+    background: rgba(99,102,241,0.1);
+    box-shadow: 0 0 20px rgba(99,102,241,0.15);
+  }
+  .vis-node--winner .vis-node__label { color: var(--accent); }
+
+  /* ── ARTICLE LAYOUT ── */
+  .article-wrap {
+    max-width: var(--max-w); margin: 0 auto;
+    padding: 64px 24px 96px;
+    display: grid;
+    grid-template-columns: var(--prose-w) 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  /* ── PROSE ── */
+  .article-prose { max-width: var(--prose-w); }
+
+  /* Summary block */
+  .summary-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  .summary-block p {
+    font-size: 0.95rem; color: var(--text-dim);
+    line-height: 1.65; margin: 0;
+  }
+
+  /* Intro */
+  .article-intro { margin-bottom: 48px; }
+  .article-intro p {
+    font-size: 1.05rem; line-height: 1.75;
+    color: var(--text-dim); margin-bottom: 20px;
+  }
+  .article-intro p:first-child { color: var(--text); }
+
+  /* Body sections */
+  .article-section { margin-bottom: 48px; }
+  .article-section h2 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem; line-height: 1.25;
+    color: var(--white); margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .article-section h3 {
+    font-size: 1.05rem; font-weight: 600;
+    color: var(--text); margin: 24px 0 10px;
+  }
+  .article-section p {
+    font-size: 0.975rem; line-height: 1.78;
+    color: var(--text-dim); margin-bottom: 16px;
+  }
+
+  /* Citation-ready callout */
+  .citation-ready {
+    background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, rgba(99,102,241,0.02) 100%);
+    border: 1px solid rgba(99,102,241,0.18);
+    border-radius: var(--radius-sm);
+    padding: 18px 22px;
+    margin-bottom: 20px;
+  }
+  .citation-ready p {
+    font-size: 0.95rem; line-height: 1.7;
+    color: var(--text); margin: 0;
+  }
+
+  /* Signal table */
+  .signal-table {
+    width: 100%; border-collapse: collapse;
+    margin: 24px 0; font-size: 0.875rem;
+  }
+  .signal-table th {
+    text-align: left; padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .signal-table td {
+    padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-dim); vertical-align: top; line-height: 1.55;
+  }
+  .signal-table tr:last-child td { border-bottom: none; }
+  .signal-name {
+    font-weight: 600; color: var(--text); white-space: nowrap;
+  }
+  .signal-score {
+    font-family: var(--font-mono); font-size: 0.8rem;
+    color: var(--accent); white-space: nowrap;
+  }
+
+  /* Numbered list style */
+  .article-section ol {
+    list-style: none; counter-reset: step-counter;
+    padding: 0; margin: 20px 0;
+  }
+  .article-section ol li {
+    counter-increment: step-counter;
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.95rem; color: var(--text-dim); line-height: 1.65;
+  }
+  .article-section ol li:last-child { border-bottom: none; }
+  .article-section ol li::before {
+    content: counter(step-counter);
+    min-width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent-dim); border: 1px solid rgba(99,102,241,0.25);
+    color: var(--accent); font-size: 0.75rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .article-section ol li strong { color: var(--text); }
+
+  /* Divider */
+  .article-divider {
+    border: none; border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* FAQ */
+  .faq-section { margin-bottom: 48px; }
+  .faq-section h2 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem; color: var(--white);
+    margin-bottom: 24px; letter-spacing: -0.01em;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-size: 0.975rem; font-weight: 600;
+    color: var(--white); margin-bottom: 10px; line-height: 1.45;
+  }
+  .faq-a {
+    font-size: 0.925rem; color: var(--text-dim);
+    line-height: 1.7; margin: 0;
+  }
+
+  /* Conclusion */
+  .article-conclusion { margin-bottom: 48px; }
+  .article-conclusion p {
+    font-size: 0.975rem; line-height: 1.78;
+    color: var(--text-dim); margin-bottom: 16px;
+  }
+
+  /* CTA inline */
+  .inline-cta {
+    background: linear-gradient(135deg, rgba(99,102,241,0.07) 0%, rgba(99,102,241,0.03) 100%);
+    border: 1px solid rgba(99,102,241,0.22);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .inline-cta__text p { font-size: 0.875rem; color: var(--text-muted); margin-top: 4px; }
+  .inline-cta__text strong { font-size: 1rem; color: var(--white); }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: var(--radius-sm);
+    background: var(--accent); color: #fff;
+    font-size: 0.875rem; font-weight: 600; white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+
+  /* ── SIDEBAR ── */
+  .article-sidebar {
+    position: sticky; top: 88px;
+  }
+  .sidebar-toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .sidebar-toc h4 {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 16px;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li { padding: 4px 0; }
+  .toc-list a {
+    font-size: 0.82rem; color: var(--text-dim);
+    transition: color 0.2s; line-height: 1.4;
+    display: block;
+  }
+  .toc-list a:hover { color: var(--accent); }
+  .sidebar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+  }
+  .sidebar-card h4 {
+    font-size: 0.95rem; font-weight: 600; color: var(--white);
+    margin-bottom: 8px; line-height: 1.4;
+  }
+  .sidebar-card p {
+    font-size: 0.8rem; color: var(--text-dim);
+    margin-bottom: 18px; line-height: 1.55;
+  }
+  .btn-outline-sm {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 18px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-dim); font-size: 0.8rem; font-weight: 500;
+    transition: all 0.2s; cursor: pointer; width: 100%; justify-content: center;
+  }
+  .btn-outline-sm:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── RELATED ── */
+  .related-section {
+    border-top: 1px solid var(--border);
+    padding: 64px 24px;
+  }
+  .related-section__inner { max-width: var(--max-w); margin: 0 auto; }
+  .related-section h3 {
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 28px;
+  }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .related-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .related-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+  .related-card .post-tag { margin-bottom: 12px; display: inline-block; }
+  .related-card h4 {
+    font-size: 0.95rem; font-weight: 600; color: var(--white);
+    line-height: 1.4; margin-bottom: 8px;
+  }
+  .related-card p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 16px; }
+  .related-link {
+    font-size: 0.8rem; font-weight: 600; color: var(--accent);
+    display: flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+  .related-link:hover { gap: 10px; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip {
+    border-top: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, transparent 60%);
+    padding: 72px 24px;
+  }
+  .cta-strip__inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .cta-strip__title { font-family: var(--font-serif); font-size: 2rem; color: var(--white); margin-bottom: 12px; }
+  .cta-strip__sub { color: var(--text-dim); margin-bottom: 32px; font-size: 1rem; }
+
+  /* ── FOOTER ── */
+  .footer { border-top: 1px solid var(--border); padding: 48px 24px 32px; }
+  .footer__inner { max-width: var(--max-w); margin: 0 auto; }
+  .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer__brand p { color: var(--text-dim); font-size: 0.875rem; margin-top: 12px; max-width: 260px; line-height: 1.6; }
+  .footer__col h5 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 14px; }
+  .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer__col li a { font-size: 0.875rem; color: var(--text-dim); transition: color 0.2s; }
+  .footer__col li a:hover { color: var(--text); }
+  .footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--border); }
+  .footer__bottom span { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .article-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .article-sidebar { position: static; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .nav__links { display: none; }
+    .article-hero__visual { gap: 16px; padding: 0 20px; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer__grid { grid-template-columns: 1fr; }
+    .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .inline-cta { flex-direction: column; }
+  }
+
+/* ═══════════════════════════════════════════════
+   GRADIENT THEME INJECTION
+   ═══════════════════════════════════════════════ */
+
+/* Card depth */
+.step, .plan, .preview-card, .factor-item, .scan-card,
+.post-card, .blog-card, .card, .feature-card, .pricing-card {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.05);
+}
+.step:hover, .preview-card:hover, .post-card:hover, .blog-card:hover {
+  box-shadow: 0 4px 8px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Primary button gradient */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%) !important;
+  box-shadow: 0 2px 6px rgba(99,102,241,0.38);
+}
+.btn-primary:hover {
+  opacity: 0.93;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.42) !important;
+}
+
+/* ── BLOG ARTICLE HERO GRADIENT ── */
+.article-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 45%, #7c3aed 100%) !important;
+  padding: 64px 24px 72px !important;
+}
+.article-hero__title,
+.article-hero__subtitle,
+.article-hero__breadcrumb,
+.article-hero__breadcrumb a,
+.article-hero__breadcrumb span {
+  color: #ffffff !important;
+}
+.article-hero__breadcrumb a:hover    { opacity: 0.75; }
+.article-hero__subtitle,
+.article-hero__sub { color: rgba(255,255,255,0.84) !important; }
+.article-hero__meta,
+.article-hero__meta span,
+.article-hero__meta time            { color: rgba(255,255,255,0.58) !important; }
+.article-hero__breadcrumb .sep      { color: rgba(255,255,255,0.35) !important; }
+
+/* ── BLOG PROSE TYPOGRAPHY ── */
+.article-prose, .article-section, .article-intro {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #374151;
+}
+.article-section h2 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-top: 2.5rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+.article-section h3 {
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+}
+.article-section p,
+.article-intro p {
+  margin-bottom: 1.3rem;
+}
+.article-section blockquote,
+.article-intro blockquote {
+  border-left: 4px solid #6366f1;
+  background: #f5f3ff;
+  padding: 0.8rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  color: #4b5563;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+.article-section table {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.article-section th {
+  background: #eef2ff;
+  color: #4338ca;
+}
+.article-divider {
+  border-color: #e5e7eb;
+  margin: 2.5rem 0;
+}
+/* Related posts cards */
+.related-posts__card, .related-card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.related-posts__card:hover, .related-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTRAST FIX
+   ═══════════════════════════════════════════════════════════ */
+
+.section-title,
+.section-label { color: #111827; }
+.step h3 { color: #111827; }
+.step p   { color: #374151; }
+.factor-item__name { color: #111827; }
+.scan-card__title { color: #111827; }
+.plan__price  { color: #111827; }
+.plan__name   { color: #6b7280; }
+.preview-card h3 { color: #111827; }
+.preview-card p  { color: #374151; }
+.testimonial-strip__quote  { color: #111827; }
+.testimonial-strip__author { color: #6b7280; }
+.stat__num   { color: var(--accent); }
+.stat__label { color: #4b5563; }
+.inline-cta__text,
+.inline-cta__text strong { color: #111827; }
+.related-posts__title { color: #111827; }
+.article-prose,
+.article-section,
+.article-intro     { color: #374151; }
+.article-section h2 { color: #111827; }
+.article-section h3 { color: #1f2937; }
+.article-section p,
+.article-intro p    { color: #374151; }
+.article-sidebar *,
+.article-meta *     { color: #6b7280; }
+.article-sidebar .btn-primary { color: #ffffff !important; }
+.article-sidebar .btn-outline-sm { color: #4f46e5 !important; }
+
+.hero .hero__sub,
+.hero p,
+.hero .section-sub  { color: rgba(255,255,255,0.88) !important; }
+.cta-final p,
+.cta-final .section-sub,
+.cta-final small    { color: rgba(255,255,255,0.82) !important; }
+.article-hero__meta,
+.article-hero__meta *,
+.article-hero__breadcrumb,
+.article-hero__breadcrumb a,
+.article-hero__breadcrumb span { color: rgba(255,255,255,0.72) !important; }
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover">
+      <span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/blog-index.html" class="active">Blog</a>
+      <a href="/index.html#about">About</a>
+      <a href="mailto:jeevanaijobs@gmail.com">Contact</a>
+    </div>
+    <a href="https://jeevanai.co.in" class="nav__cta">Get Early Access</a>
+  </div>
+</nav>
+
+<!-- ── ARTICLE HERO ── -->
+<header class="article-hero">
+  <div class="article-hero__inner">
+    <nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+      <a href="/index.html">Home</a>
+      <span>&#8250;</span>
+      <a href="/blog-index.html">Blog</a>
+      <span>&#8250;</span>
+      <span>Entity Building &amp; Knowledge Graphs</span>
+    </nav>
+    <div class="article-hero__meta">
+      <span class="post-tag">Technical GEO</span>
+      <span class="post-date">12 Jun 2026</span>
+      <span class="read-time">· 10 min read</span>
+    </div>
+    <h1 class="article-hero__title">Entity Building and Knowledge Graphs:<br>The Technical GEO Foundation Every B2B SaaS Brand Is Missing</h1>
+    <p class="article-hero__subtitle">ChatGPT, Gemini, and Perplexity use structured entity data to confirm which brand you are before they cite you. Most B2B SaaS brands have no entity footprint at all. Here is how to build one.</p>
+
+    <!-- Hero Visual -->
+    <div class="article-hero__visual" role="img" aria-label="Diagram showing entity graph connecting brand to AI platforms">
+      <div class="vis-node">
+        <div class="vis-node__circle">&#127970;</div>
+        <span class="vis-node__label">Brand Entity</span>
+      </div>
+      <span class="vis-arrow">&#8594;</span>
+      <div class="vis-node vis-node--winner">
+        <div class="vis-node__circle">&#128301;</div>
+        <span class="vis-node__label">Knowledge Graph</span>
+      </div>
+      <span class="vis-arrow">&#8594;</span>
+      <div class="vis-node vis-node--winner">
+        <div class="vis-node__circle">&#129302;</div>
+        <span class="vis-node__label">AI Citation</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── ARTICLE BODY ── -->
+<div class="article-wrap">
+
+  <!-- PROSE -->
+  <main class="article-prose" id="article-content">
+
+    <!-- Standalone Summary (AI citation target) -->
+    <div class="summary-block" role="note">
+      <p>Brands that appear consistently in ChatGPT, Gemini, and Perplexity citations share one technical trait: they have a confirmed entity footprint. That means a structured set of corroborated signals, including Organization schema on their website, a Wikidata entry, consistent NAP data across the web, and citations on third-party directories, that allow AI models to identify the brand with high confidence. Without this foundation, even high-quality content fails to generate citations because the model cannot reliably connect the content to the brand. Entity building is the technical GEO layer that most B2B SaaS teams skip entirely.</p>
+    </div>
+
+    <!-- INTRO -->
+    <div class="article-intro">
+      <p>When a buyer asks ChatGPT "what is the best project management tool for distributed engineering teams," the model does not simply scan for the most-mentioned product name. It resolves entities: it looks for brands it can confidently identify, verify against corroborating sources, and connect to the specific query context. Brands with a resolved entity get cited. Brands without one get skipped, even when their content is directly relevant.</p>
+      <p>This is the mechanism that most GEO guides never address. Content quality matters. Backlink authority matters. But before any of that can translate into AI citations, the model needs to know who you are. That requires entity infrastructure: a technical layer of structured signals that tells AI systems, search engines, and knowledge graphs that your brand exists, what it does, and where to find it.</p>
+      <p>This guide covers the five-layer entity framework that Jeevan AI uses when auditing brands for technical GEO readiness. It applies directly to B2B SaaS companies targeting buyers in the US, UK, EU, and SEA markets, where AI-assisted buying research is now standard practice for procurement decisions.</p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <section class="article-section" id="what-is-entity">
+      <h2>What Is a Brand Entity and Why Do AI Tools Rely On It</h2>
+      <div class="citation-ready">
+        <p>A brand entity is a unique, machine-resolvable identifier for your organisation. In AI and search systems, an entity is not just a name: it is a cluster of corroborated signals that allow a model to distinguish your company from similarly named competitors, correctly associate your products with your brand, and connect your brand to the queries where it is relevant. Google's Knowledge Graph, Wikidata, and schema.org are the three primary entity registries that feed into AI retrieval systems in 2026.</p>
+      </div>
+      <p>The practical implication is straightforward. When a user asks Perplexity "best CRM for mid-market SaaS," the model retrieves and ranks candidates. For each candidate, it checks entity confidence: how certain is it that the content it found belongs to the brand it intends to cite? Brands with low entity confidence are downweighted in citations because citing a misidentified brand is a quality failure the model is trained to avoid.</p>
+      <p>For B2B SaaS brands operating in competitive categories, this creates a concrete problem. Many legitimate, well-reviewed products have almost no entity presence outside their own website. Their Wikidata entry does not exist. Their schema markup is absent or minimal. Their name appears on review sites but without structured identifiers linking back to their primary web presence. The model sees fragmented, unconfirmed signals and defaults to the brands it can resolve with confidence: usually the category leaders and any mid-tier brand that has deliberately built entity authority.</p>
+      <h3>The three entity registries that matter most in 2026</h3>
+      <p>Not all entity registries carry equal weight across AI platforms. The table below maps the three primary registries to their relative impact on citation rate across ChatGPT, Gemini, and Perplexity, based on audit patterns observed at Jeevan AI.</p>
+      <table class="signal-table" role="table" aria-label="Entity registry impact on AI citation rate">
+        <thead>
+          <tr>
+            <th>Registry</th>
+            <th>Primary AI systems it feeds</th>
+            <th>Setup difficulty</th>
+            <th>Impact on citation rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="signal-name">Google Knowledge Graph</span></td>
+            <td>Gemini, Google AI Mode, Google Search</td>
+            <td>Medium: requires consistent on-site schema + external signals</td>
+            <td><span class="signal-score">High</span></td>
+          </tr>
+          <tr>
+            <td><span class="signal-name">Wikidata</span></td>
+            <td>ChatGPT, Gemini, Perplexity, Claude</td>
+            <td>Low: manual entry, no notability requirement</td>
+            <td><span class="signal-score">High</span></td>
+          </tr>
+          <tr>
+            <td><span class="signal-name">schema.org (on-site)</span></td>
+            <td>All AI retrieval systems using structured data</td>
+            <td>Low: developer implementation on your own domain</td>
+            <td><span class="signal-score">Medium-High</span></td>
+          </tr>
+          <tr>
+            <td><span class="signal-name">Crunchbase / LinkedIn</span></td>
+            <td>ChatGPT, Perplexity (live retrieval)</td>
+            <td>Low: free account creation and profile population</td>
+            <td><span class="signal-score">Medium</span></td>
+          </tr>
+          <tr>
+            <td><span class="signal-name">G2 / Capterra / Trustpilot</span></td>
+            <td>Perplexity (real-time citations), Gemini</td>
+            <td>Low: claim existing listing or create new one</td>
+            <td><span class="signal-score">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The highest-leverage action for most B2B SaaS brands is creating a Wikidata entry and deploying Organization schema with <code>sameAs</code> links. These two steps alone, completed in a single afternoon, provide the identity anchor that makes all subsequent content work more effective.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- SECTION 2 -->
+    <section class="article-section" id="five-layer-framework">
+      <h2>The Five-Layer Entity Framework for B2B SaaS Brands</h2>
+      <div class="citation-ready">
+        <p>Entity authority is not a single switch. It is built across five layers, each corroborating the others. A brand that completes all five layers creates a self-reinforcing entity cluster: signals on its own site point to external registries, external registries reference back to the site, and third-party citations confirm the same identity from independent sources. This corroboration structure is what gives AI models the confidence to cite the brand repeatedly.</p>
+      </div>
+      <h3>Layer 1: Organization schema on your website</h3>
+      <p>The foundation layer is schema.org Organization markup deployed on your homepage and About page. The critical fields are: <code>name</code> (your exact legal or trade name, used consistently everywhere), <code>url</code> (your canonical homepage), <code>logo</code>, <code>foundingDate</code>, <code>description</code> (a one-sentence statement of what you do, for whom, and in which markets), and <code>sameAs</code> (an array of URLs pointing to your Wikidata entry, Crunchbase profile, LinkedIn company page, and any other canonical third-party registry).</p>
+      <p>The <code>sameAs</code> array is the entity linchpin. It tells every system that processes your schema: "These external profiles are all the same organisation as the one on this domain." Without it, your schema registers your existence but fails to connect you to the corroborating evidence that confirms your identity.</p>
+      <h3>Layer 2: Wikidata entry</h3>
+      <p>Wikidata is the structured data layer of Wikimedia. Unlike Wikipedia, it has no notability requirement: any organisation can create an entry. A Wikidata entry for a B2B SaaS brand should include: <code>instance of: business</code>, <code>industry</code> (using the appropriate Wikidata item), <code>founded</code> (date), <code>headquarters location</code>, <code>official website</code>, <code>described at URL</code> (pointing to your Crunchbase profile), and <code>has quality: software</code> if applicable.</p>
+      <p>Once your Wikidata QID is created, add it to your Organization schema <code>sameAs</code> array. This creates a bidirectional link: your site points to Wikidata, Wikidata points back to your site. AI models treat this reciprocal confirmation as a strong entity signal.</p>
+      <h3>Layer 3: Consistent NAP data across directories</h3>
+      <p>NAP stands for name, address, and phone. In traditional local SEO, NAP consistency is a ranking factor. In AI visibility, the equivalent principle is entity consistency: your brand name, domain, founding year, and description should be identical across every directory where you appear. Inconsistencies, for example, different company names on Crunchbase versus G2 versus your website, reduce entity confidence because the model cannot confirm these profiles refer to the same organisation.</p>
+      <p>Audit your listings on Crunchbase, G2, Capterra, LinkedIn, AngelList, and any industry-specific directories. Standardise the company name, verify the website URL is your canonical domain, and ensure the one-sentence description is consistent. This is low-effort, high-impact work that most teams have never done.</p>
+      <h3>Layer 4: FAQPage and HowTo schema on content pages</h3>
+      <p>Beyond the Organisation layer, content schema directly improves citation rate by structuring your pages in the format AI retrieval systems prefer. FAQPage schema on your FAQ pages and feature pages creates machine-readable question-answer pairs that retrieval-augmented generation (RAG) systems can extract and include in AI responses verbatim. HowTo schema on process-oriented guides signals structured instructional content, which AI models treat as high-confidence citable material.</p>
+      <p>The practical rule: every page on your site that answers a specific buyer question should have FAQPage schema. Every page that describes a workflow or process should have HowTo schema. Both should include <code>mainEntity</code> referencing the Organisation schema on your homepage, explicitly linking the content to your brand entity.</p>
+      <h3>Layer 5: Third-party citation clusters</h3>
+      <p>Entity authority is ultimately confirmed by external sources. If your Wikidata entry and schema markup say you are a leading project management tool for engineering teams, but no third-party source corroborates that claim, AI models assign lower confidence to citations. The entity layer is a foundation, not a substitute for earned authority.</p>
+      <p>The most effective corroboration sources, ranked by AI citation impact, are: independent review site listings with structured data (G2, Capterra, Trustpilot), analyst mentions on domain-authoritative industry sites (TechCrunch, Forrester, Gartner peer insights), structured "best of" lists on high-authority publications, and case study placements on independent blogs in your category. Each of these creates an external node in your entity graph, pointing back to your canonical domain.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- MID-ARTICLE CTA -->
+    <div class="inline-cta">
+      <div class="inline-cta__text">
+        <strong>See How AI Tools Cite Brands Like Yours</strong>
+        <p>Jeevan AI scans your brand across ChatGPT, Gemini, Perplexity, and Google AI Mode and identifies exactly which entity signals are missing.</p>
+      </div>
+      <a href="https://jeevanai.co.in" class="btn-primary">Get Early Access &#8594;</a>
+    </div>
+
+    <hr class="article-divider">
+
+    <!-- SECTION 3 -->
+    <section class="article-section" id="schema-markup">
+      <h2>Schema Markup Specifically for AI Visibility: What to Implement First</h2>
+      <div class="citation-ready">
+        <p>Most schema markup guides are written for traditional SEO: rich snippets, featured snippets, structured results in the Google SERP. AI visibility requires a different prioritisation. The schema types that have the highest impact on AI citation rate are Organisation (entity identity), FAQPage (direct answer injection into AI responses), and BreadcrumbList (content hierarchy signals). Product and Review schema provide secondary benefits for e-commerce and review-heavy categories.</p>
+      </div>
+      <p>The most common schema implementation failure at B2B SaaS brands is partial deployment. A team adds Organisation schema to the homepage but omits <code>sameAs</code>. They add FAQPage schema to one blog post but not to feature pages or comparison pages. The entity layer is only as strong as its weakest connection: partial schema provides partial signals, and partial signals produce inconsistent citations.</p>
+      <h3>The minimum viable entity schema set</h3>
+      <p>If your team has limited engineering bandwidth, implement these three schema types in this order:</p>
+      <ol>
+        <li><strong>Organisation on homepage and About page:</strong> Include <code>name</code>, <code>url</code>, <code>logo</code>, <code>foundingDate</code>, <code>description</code>, and a <code>sameAs</code> array with at least your Wikidata QID, LinkedIn company page URL, and Crunchbase profile URL. This is the identity anchor for your entire entity graph.</li>
+        <li><strong>FAQPage on your main feature pages and pricing page:</strong> Each FAQ item should be a genuine buyer question with a specific, citable answer. Answers longer than 40 words and shorter than 200 words perform best in AI retrieval. Avoid generic answers: "It depends on your needs" is not a citable claim. "Most teams are up and running in under 30 minutes" is.</li>
+        <li><strong>BreadcrumbList on all blog and resource content:</strong> Breadcrumb schema signals content hierarchy to AI retrieval systems, which helps them correctly associate content with your brand entity rather than treating it as an orphaned page. Include the <code>item</code> property pointing back to your homepage Organisation entity.</li>
+      </ol>
+      <h3>Validating your schema implementation</h3>
+      <p>Use Google's Rich Results Test and Schema Markup Validator to confirm there are no errors. Then use Jeevan AI's scan to verify whether the schema is being picked up in AI citations: the most reliable test of entity schema effectiveness is whether the AI platform correctly identifies your brand, category, and key use cases when asked about your space. If the model misidentifies you or omits you from category queries, entity schema is almost always a contributing factor.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- SECTION 4 -->
+    <section class="article-section" id="measuring-entity">
+      <h2>How to Measure Entity Authority Across AI Platforms</h2>
+      <div class="citation-ready">
+        <p>Entity authority is not directly measurable as a single score, but it has four observable proxies: Knowledge Panel presence in Google Search for branded queries, correct identification in ChatGPT responses to "tell me about [brand]" prompts, citation rate across structured buyer queries in Perplexity and Gemini, and consistent brand name resolution across AI tools even when the query uses an abbreviated or variant form of your brand name.</p>
+      </div>
+      <p>The fastest diagnostic is running four structured prompts across ChatGPT, Gemini, and Perplexity simultaneously. First: "What is [Brand Name]?" If the AI gives a confident, accurate one-paragraph summary, entity recognition is working. If it says it cannot find information or confuses you with another brand, entity signals are insufficient. Second: "What does [Brand Name] do?" If the response accurately names your category, key use case, and target customer, entity and content signals are aligned. Third: "Who are the top five [your category] tools for [your buyer type]?" If you appear, entity authority is high enough to generate unprompted citations. Fourth: "Compare [Brand Name] to [Competitor Name]." This is the highest-confidence test: if the AI can accurately contrast the two products, it has resolved both entities with high confidence.</p>
+      <p>Run these four prompts as a baseline before any entity work, and repeat them four weeks after completing your entity build. The improvement in response accuracy and citation frequency is the most direct measure of entity progress available without access to model internals.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- SECTION 5 -->
+    <section class="article-section" id="entity-content-alignment">
+      <h2>Connecting Entity Signals to Content Strategy</h2>
+      <div class="citation-ready">
+        <p>Entity building and content strategy are not separate workstreams. They are the same system. Every content asset your brand publishes should reinforce the entity signals you have established: the same brand name, the same use case framing, the same target audience descriptors, and the same outcome language that appears in your schema markup. Inconsistency between your entity signals and your content creates what AI researchers call entity drift: the model accumulates contradictory signals and reduces citation confidence over time.</p>
+      </div>
+      <p>In practice, this means establishing an entity brief before producing any new content. The entity brief is a one-page document that defines: your canonical brand name (the exact string used in all schema and third-party profiles), your primary category descriptor (the phrase that appears in your Organisation schema description), your top three use cases (the exact phrases used in FAQPage schema), and your primary differentiator claim (the specific, citable claim that distinguishes you from competitors).</p>
+      <p>Every blog post, landing page, case study, and FAQ should use these exact phrases. Not synonyms. Not paraphrases. The exact phrases. AI models build entity representations by aggregating consistent signals. The more consistently your content reinforces the same entity signals, the stronger the model's confidence in citing you for those signals.</p>
+      <p>This is the point where entity building and content gap analysis converge. If your entity brief says your primary use case is "automated revenue recognition for SaaS CFOs" and your blog library has zero posts that use that exact phrase, you have both an entity gap and a content gap. Closing one without the other leaves half the citation opportunity on the table.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <p class="faq-q">What is a brand entity in the context of AI visibility?</p>
+        <p class="faq-a">A brand entity is a structured, machine-readable representation of your company that AI systems and search engines can confidently identify and connect to relevant queries. It includes your organisation schema, consistent NAP data (name, address, phone), Wikidata and Google Knowledge Panel entries, and corroborating signals from third-party sources. Brands with a strong entity footprint are cited by AI tools more frequently because the model can confirm who you are without relying on ambiguous text matches.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Does a knowledge graph entry directly improve AI citation rate?</p>
+        <p class="faq-a">Yes, with a caveat. A Wikidata or Google Knowledge Graph entry does not guarantee AI citations, but it significantly raises your entity confidence score: the probability that an AI model correctly identifies your brand when it appears in training data or live retrieval. Brands without any knowledge graph presence are often merged with competitors or misidentified, which causes them to be skipped in recommendation responses even when their content quality is high.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Which schema markup types matter most for AI visibility?</p>
+        <p class="faq-a">The three highest-impact schema types for AI visibility are Organization (establishes your brand identity, founding date, and sameAs links), FAQPage (directly surfaces question-answer pairs in AI responses), and HowTo or Article with speakable markup (signals content structure to retrieval-augmented generation systems). BreadcrumbList and Product schema provide secondary signals. The sameAs property inside Organization schema, linking to your Wikidata QID, Crunchbase profile, and LinkedIn page, is consistently the most underused yet highest-leverage implementation.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How long does it take to build measurable entity authority?</p>
+        <p class="faq-a">Most brands see meaningful entity signal improvements within 6 to 10 weeks of completing a full entity build: deploying Organization schema, creating a Wikidata entry, claiming and populating a Google Business Profile, and getting third-party citations on three or more high-authority sources. AI citation rate improvements typically follow 4 to 8 weeks after entity signals are indexed, because model training and retrieval index updates operate on their own schedules.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Can a small SaaS brand build a knowledge graph presence without a Wikipedia article?</p>
+        <p class="faq-a">Yes. Wikipedia notability requirements are high and block most early-stage SaaS brands. However, a Wikidata entry has no notability requirement and can be created by anyone. A well-structured Wikidata entry with correct instance-of, industry, founding date, and sameAs links is sufficient to establish a basic knowledge graph footprint. Pair it with schema.org Organization markup on your website and citations on Crunchbase, LinkedIn, G2, and Capterra to build a corroborated entity cluster that AI models can resolve confidently.</p>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- CONCLUSION -->
+    <section class="article-conclusion">
+      <p>Entity building is the unglamorous foundation of technical GEO. It does not produce immediate traffic spikes or visible ranking changes. What it produces is citation reliability: the consistent, predictable presence in AI recommendations that compounds over time as model training data is updated and retrieval indexes are refreshed.</p>
+      <p>The five-layer framework covers all the ground a B2B SaaS brand needs: Organisation schema with sameAs links, a Wikidata entry, NAP consistency across directories, FAQPage and HowTo schema on content pages, and a third-party citation cluster on high-authority external sources. Each layer takes hours, not weeks. Combined, they create the identity infrastructure that turns high-quality content into consistent AI citations.</p>
+      <p>Brands that build entity authority in 2026 will have a structural advantage as AI-assisted buying research becomes the default for B2B procurement. The entity signals you establish today feed into training data and retrieval indexes that shape AI recommendations for the next 18 to 24 months.</p>
+
+      <!-- Inline CTA -->
+      <div class="inline-cta">
+        <div class="inline-cta__text">
+          <strong>See How AI Tools Cite Brands Like Yours</strong>
+          <p>Jeevan AI audits your entity footprint across ChatGPT, Gemini, Perplexity, and Google AI Mode and shows you exactly which signals are missing.</p>
+        </div>
+        <a href="https://jeevanai.co.in" class="btn-primary">Get Early Access &#8594;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar" aria-label="Article navigation and actions">
+
+    <div class="sidebar-toc">
+      <h4>In this article</h4>
+      <ul class="toc-list">
+        <li><a href="#what-is-entity">What is a brand entity and why AI relies on it</a></li>
+        <li><a href="#five-layer-framework">The five-layer entity framework</a></li>
+        <li><a href="#schema-markup">Schema markup for AI visibility</a></li>
+        <li><a href="#measuring-entity">How to measure entity authority</a></li>
+        <li><a href="#entity-content-alignment">Connecting entity signals to content</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Is your brand entity visible to AI?</h4>
+      <p>Jeevan AI diagnoses your entity footprint and shows you the exact schema, Wikidata, and citation gaps that are suppressing your AI citations.</p>
+      <a href="https://jeevanai.co.in" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:10px;">Get Early Access &#8594;</a>
+      <br>
+      <a href="/blog/geo-order-of-operations.html" class="btn-outline-sm">See the GEO order of operations &#8594;</a>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- ── RELATED POSTS ── -->
+<section class="related-section">
+  <div class="related-section__inner">
+    <h3>Continue reading</h3>
+    <div class="related-grid">
+
+      <article class="related-card">
+        <span class="post-tag">Technical GEO</span>
+        <h4>I Have GEO Buy-In. Now What? The Exact Order of Operations</h4>
+        <p>The step-by-step sequence for implementing GEO: what to do first, what to defer, and why the order matters for compounding results.</p>
+        <a href="/blog/geo-order-of-operations.html" class="related-link">Read article &#8594;</a>
+      </article>
+
+      <article class="related-card">
+        <span class="post-tag">GEO Strategy</span>
+        <h4>How to Write a Blog Post That AI Will Actually Cite</h4>
+        <p>The structural and formatting decisions that make content citable by ChatGPT, Gemini, and Perplexity, backed by real citation pattern research.</p>
+        <a href="/blog/how-to-write-content-for-ai-search.html" class="related-link">Read article &#8594;</a>
+      </article>
+
+      <article class="related-card">
+        <span class="post-tag">Why AI Recommends</span>
+        <h4>What AI Uses to Decide Brand Recommendations: 500 Query Study</h4>
+        <p>A structured analysis of 500 buyer queries across ChatGPT, Gemini, and Perplexity reveals which brand signals drive citation frequency.</p>
+        <a href="/blog/what-ai-uses-to-recommend-brands.html" class="related-link">Read article &#8594;</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA STRIP ── -->
+<section class="cta-strip" aria-labelledby="cta-heading">
+  <div class="cta-strip__inner">
+    <h2 class="cta-strip__title" id="cta-heading">See How AI Tools Cite Brands Like Yours</h2>
+    <p class="cta-strip__sub">Audit your entity footprint. Find the gaps. Fix what is costing you citations.</p>
+    <a href="https://jeevanai.co.in" class="btn-primary">Get Early Access &#8594;</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/index.html" class="nav__logo">
+          <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover">
+          <span>Jeevan AI</span>
+        </a>
+        <p>Global AI Visibility platform. Find out why AI recommends your competitor and get a content plan to fix it.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/index.html#how-it-works">How It Works</a></li>
+          <li><a href="/index.html#features">Features</a></li>
+          <li><a href="/index.html#pricing">Pricing</a></li>
+          <li><a href="/blog-index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="mailto:jeevanaijobs@gmail.com">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Compare</h5>
+        <ul>
+          <li><a href="#">vs Otterly.ai</a></li>
+          <li><a href="#">vs Semrush AI</a></li>
+          <li><a href="#">vs Profound</a></li>
+          <li><a href="#">For Agencies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&#169; 2026 Jeevan AI. All rights reserved.</span>
+      <span>Global Platform</span>
+      <span>AI Visibility · GEO Optimisation</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
