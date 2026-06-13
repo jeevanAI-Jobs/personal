@@ -1,0 +1,40 @@
+We ran 500 queries through ChatGPT, Gemini, and Perplexity. Here is what decides who gets recommended.
+
+Five signals separated the brands AI named from the brands it skipped. Most of them are not the ones founders expect.
+
+- - -
+
+Everyone wants to know the same thing in 2026: how does AI decide which brand to recommend? Most answers are either too vague to use ("be authoritative and trustworthy") or too technical to act on ("optimize your schema markup"). Neither tells you what to do differently on Monday morning.
+
+So here is a more useful approach. Across 500 queries spanning five categories, from D2C to B2B SaaS to fintech, a clear set of signals separated the brands that consistently got recommended from the ones that stayed invisible. These are the patterns worth your attention.
+
+First, a finding that changes everything else: the platforms do not behave the same way.
+
+ChatGPT, Gemini, and Perplexity are not three versions of one system. ChatGPT leans heavily on third-party "best of" roundup lists. Perplexity runs a live web search on every query, which makes it the fastest to react to new content and the quickest to pick up anything negative. Gemini tracks Google organic rankings more closely than the others, so strong SEO is your fastest route into it. A strategy that wins on one platform can fall flat on another. If you are optimizing for "AI" as a single thing, you are already behind.
+
+Now the five signals that consistently drove recommendations.
+
+1. Presence in authoritative roundups. This was the single strongest predictor across every platform. Where a brand appeared in AI recommendations, it was usually also present in at least three category "best of" articles on high-authority publications from the previous 18 months. The takeaway is uncomfortable for content teams: getting mentioned in the right roundups can matter more than publishing one more post on your own site. Identify the five to ten publications that run "best [category]" lists and work systematically toward inclusion.
+
+2. Community presence with positive sentiment. Reddit's influence on AI recommendations is wildly out of proportion to its traffic. On trust-related queries, the brands AI named had a meaningful base of positive community threads behind them. The brands it ignored had almost none. Community participation is not a social-media nice-to-have. It is a direct input into what AI says about you.
+
+3. Specific, citable outcomes. Vague claims like "high quality," "trusted by thousands," and "industry-leading" are uncitable, so AI passes over them. Specific, verifiable claims get pulled into answers: "used by 2M+ travelers," "cuts time-to-close by 34% for SMB sales teams," "set up in under five minutes, no code." If a claim can be quoted and checked, it can be cited.
+
+4. Pricing that is actually visible. "Contact sales for pricing" is invisible to an AI trying to help a buyer compare options. Brands that publish clear tiers, with guidance on which tier fits which use case, get surfaced for the enormous volume of price-aware queries that competitors hide from.
+
+5. Structured, extractable content. The same insight buried inside a 2,000-word essay and laid out in a clean FAQ or direct-answer format are not equal in AI's eyes. The structured version gets cited. The buried version does not.
+
+Here is the throughline across all five. AI does not reward the best product. It rewards the brand that makes it easiest to build a confident case for a recommendation. Every one of these signals is a content and distribution decision, not a product decision, which means every one of them is inside your control.
+
+The brands that internalize this in 2026 will compound an advantage that gets harder to close each quarter, because the content you publish now feeds the training data that shapes recommendations a year from now.
+
+If you want to see which of these signals your brand is missing, you can run the audit at jeevanai.co.in.
+
+- - -
+
+Originally published on Jeevan AI: https://jeevanai.co.in/blog/what-ai-uses-to-recommend-brands
+
+When posting to Substack:
+→ Line 1 is the title, line 2 is the subtitle, paste the body below
+→ Set canonical URL (post Settings → SEO → Canonical URL) to: https://jeevanai.co.in/blog/what-ai-uses-to-recommend-brands
+→ Everything below the dashed line stays out of the published post
