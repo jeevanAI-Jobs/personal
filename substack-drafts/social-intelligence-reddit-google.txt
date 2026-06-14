@@ -1,0 +1,38 @@
+The website that decides how AI describes you is not yours
+
+It is Reddit. And most brands are not even looking at it.
+
+- - -
+
+Quick question. When was the last time you read the Reddit threads about your category?
+
+For most brand teams the honest answer is never. Which is a problem, because when a buyer asks ChatGPT or Perplexity which tool to choose, the most influential page in that answer is usually not your website. It is a Reddit thread you have never seen.
+
+This is measurable, not a hunch. In 2026, studies of AI citations found Reddit is the single most cited source across ChatGPT, Perplexity, Gemini, and Google AI Overviews. By one analysis it captures around 40 percent of all citations across the major platforms, and as much as one in five citations on Perplexity. The source the AI trusts most is a forum your marketing team does not control.
+
+Here is why it makes sense. An AI answering a buying question is hunting for content that sounds authentic and experience-based, not promotional. Reddit is full of exactly that: real people saying what worked, what did not, and which tool they would pick again. A thread of lived experience beats a polished landing page every time.
+
+And this is part of a bigger pattern. The evidence AI uses to describe your brand is mostly external. Roughly 85 percent of brand mentions inside AI answers come from third-party sources, not your own site. You can publish the best product page in your category and still lose the answer, because the AI is reflecting the conversation happening elsewhere.
+
+So if you want to understand how AI sees you, look where AI looks. Two signals matter most.
+
+Community signal, where Reddit dominates. The threads about your category, the sentiment in them, and whether your brand even shows up all feed straight into how AI describes you.
+
+Search signal, where Google still feeds the AI layer. How you surface in Google, and which sources it ties to your brand, shapes what the models inherit.
+
+The uncomfortable part is that none of this appears in a normal rankings report. So a competitor who is active and well-reviewed on Reddit quietly gets recommended in your place, and a single inaccurate thread carries more weight than it should, and nobody on your team sees it happen.
+
+What to do is simple to say and slower to do. Do not spam Reddit. Communities punish it, and the AI that learns from them increasingly does too. Instead: monitor the threads where your category lives, participate honestly with your affiliation disclosed, encourage real customers to share real experiences, and publish things worth citing. On the search side, make your pricing, use cases, and proof explicit and easy to quote.
+
+The mindset shift is the whole thing. Your AI perception is not something you publish. It is something you earn in the rooms your buyers already trust.
+
+If you want to see which Reddit threads and sources are shaping how AI describes your brand today, you can run a free scan at jeevanai.co.in.
+
+- - -
+
+Originally published on Jeevan AI: https://jeevanai.co.in/reddit-intelligence
+
+When posting to Substack:
+→ Line 1 is the title, line 2 is the subtitle, paste the body below
+→ Set canonical URL (post Settings → SEO → Canonical URL) to: https://jeevanai.co.in/reddit-intelligence
+→ Everything below the dashed line stays out of the published post

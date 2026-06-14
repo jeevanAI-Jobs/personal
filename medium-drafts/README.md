@@ -15,7 +15,8 @@ Each .txt file contains:
 6. Publish
 
 ## Posts (newest first)
-1. [AI Search Visibility for UK B2B SaaS Brands: The GEO Playbook for 2026](ai-search-visibility-uk-saas.txt) — 2026-06-09
+1. [The Website That Decides Whether AI Recommends You Is Not Yours. It Is Reddit.](social-intelligence-reddit-google.txt) — 2026-06-14 — canonical /reddit-intelligence
+2. [AI Search Visibility for UK B2B SaaS Brands: The GEO Playbook for 2026](ai-search-visibility-uk-saas.txt) — 2026-06-09
 2. [AI Search Visibility for Fintech SaaS Brands: The GEO Playbook for 2026](ai-visibility-fintech-saas.txt) — 2026-06-08
 3. [Why ChatGPT Recommends Your Competitor (And Exactly What You](why-chatgpt-recommends-competitor.txt) — 2026-06-06
 4. [AI Search Visibility for Indian EdTech Brands 2026 | Jeevan AI](ai-visibility-edtech-india.txt) — 2026-06-05

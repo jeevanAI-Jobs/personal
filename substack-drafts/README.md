@@ -25,3 +25,4 @@ The blog post is the SEO and AI-citation asset. The Substack issue is for distri
 1. [Your product is better. AI still recommends your competitor.](why-chatgpt-recommends-competitor.txt) — from /blog/why-chatgpt-recommends-competitor
 2. [We ran 500 queries through ChatGPT, Gemini, and Perplexity.](what-ai-uses-to-recommend-brands.txt) — from /blog/what-ai-uses-to-recommend-brands
 3. [Your Google rankings are fine. Here is why you are still losing deals.](google-rankings-fine-losing-deals.txt) — from /blog/google-rankings-fine-losing-deals
+4. [The website that decides how AI describes you is not yours](social-intelligence-reddit-google.txt) — from /reddit-intelligence
