@@ -1,0 +1,87 @@
+We Measured How Often AI Changes Its Mind About Which Brand to Recommend
+
+Ask AI the same buying question more than once and it often names a different brand. Here is how to measure "AI recommendation volatility," with a method you can run on your own brand this week.
+
+- - -
+
+[ FILL IN BEFORE PUBLISHING: run the scans, replace every value in square brackets with your real measured numbers, then delete this line. Do not publish the bracketed placeholders as if they were findings. ]
+
+Everyone in marketing now repeats the same line: "AI recommendations are inconsistent." It has become a throwaway comment in every GEO talk. But almost nobody has put a number on it. How inconsistent, exactly? Inconsistent enough to ignore, or inconsistent enough to change your strategy?
+
+So we measured it. We took real buying questions, asked them repeatedly across the major AI engines, and counted how often the recommended set of brands actually changed. We are calling the metric AI Recommendation Volatility, and the early numbers are higher than most teams would guess.
+
+What "AI Recommendation Volatility" means
+
+AI Recommendation Volatility is the percentage of times the recommended brand set changes when you ask the same buying question more than once, across runs and light rephrasings, on the same AI engine.
+
+A simple way to read it: a volatility of 0 percent means the AI names the exact same brands every single time. A volatility of 50 percent means half the time you ask, the lineup shifts. The higher the number, the less you can trust any single answer as "what AI thinks about your category."
+
+How we measured it
+
+The method is deliberately simple so anyone can reproduce it.
+
+1. We chose a set of real, commercial buying queries, for example "best [category] tool for [specific buyer]."
+2. For each query, we ran it [N] times per engine, including a few natural rephrasings that mean the same thing.
+3. We did this across ChatGPT, Perplexity, Gemini, and Google AI Mode.
+4. For each run, we recorded the brands named in the recommendation.
+5. Volatility is the share of runs where the recommended brand set differed from the first run.
+
+We ran this through Jeevan AI, which already sends structured query sets across all five engines, so the only manual work was choosing the queries and reading the output.
+
+What we found
+
+[ Replace this paragraph and the table with your real results. Keep the structure. ]
+
+Across [number] queries and [number] total runs, AI Recommendation Volatility averaged [X] percent. In plain terms, on roughly [X] out of every 100 asks, the brand the AI recommended was not the same one it recommended the first time.
+
+Engine | Recommendation Volatility | What changed most often
+ChatGPT | [X]% | [e.g. order of brands, one brand swapped in or out]
+Perplexity | [X]% | [e.g. highest volatility, live web results shifting]
+Gemini | [X]% | [e.g. tracks Google rankings, more stable or less]
+Google AI Mode | [X]% | [e.g. ...]
+
+The single most striking finding: [write your one-sentence surprising takeaway here, for example "Perplexity changed its top recommendation more than one in three times, because it searches the live web on every query."]
+
+Why AI changes its mind
+
+The volatility is not a bug, it is how these systems work, and understanding the causes tells you what to fix.
+
+First, live retrieval. Engines like Perplexity search the web on every query, so a new Reddit thread or article can shift the answer within days. Whoever is freshest and best-cited at the moment of asking wins.
+
+Second, weak entity resolution. When the AI is not fully confident which brand a piece of content belongs to, it hedges, and hedging shows up as instability. Brands with a strong, consistent identity footprint get named more reliably. Brands with a fuzzy one flicker in and out.
+
+Third, thin source coverage. If only one or two sources discuss your category, small changes in those sources swing the whole answer. Categories with rich, diverse third-party coverage produce steadier recommendations.
+
+Why this should change how you work
+
+Here is the uncomfortable implication. If you have ever checked ChatGPT once, seen your brand appear, and concluded "we are fine in AI search," that conclusion may be worth almost nothing. A single answer is one sample from a distribution that moves. The brand that appears at 10 a.m. on Tuesday may be gone by Thursday.
+
+This is why a one-time spot check is the wrong instrument. To know where you really stand, you have to ask the same structured set of questions repeatedly and track the trend, not the snapshot. Volatility is precisely the thing a single check cannot see.
+
+It also reframes the goal. You are not trying to win one answer. You are trying to raise your floor, to be the brand that gets named even on the runs where everything else shifts. That floor is built on the unglamorous fundamentals: a clear entity footprint, consistent positioning, and broad third-party coverage so no single source swings your fate.
+
+Run it on your own brand
+
+You do not need permission or a research budget to reproduce this.
+
+1. Pick five real buying queries in your category, the ones a genuine buyer would type.
+2. Ask each one five times across ChatGPT and Perplexity, with a couple of rephrasings.
+3. Write down the brands named each time.
+4. Count how often the set changed. That is your volatility.
+5. Note whether your brand is in the stable core, the flickering middle, or absent entirely.
+
+If you want it done across all five engines automatically, you can run a free scan at jeevanai.co.in and see your own recommendation stability without the manual logging.
+
+The takeaway is simple. AI does not have a fixed opinion of your category. It has a moving one. The brands that win are not the ones that got lucky on a single answer. They are the ones consistent and well-anchored enough to survive the volatility.
+
+[ Optional: republish this as a quarterly series, "AI Recommendation Volatility Index Q3 2026," so the term and the number stay attributed to you over time. ]
+
+- - -
+
+Originally published on Jeevan AI: https://jeevanai.co.in/blog
+
+When posting to Medium:
+→ FIRST replace every bracketed value with your real scan data. Do not publish placeholders.
+→ If you publish a matching post on your own blog, set the Medium canonical URL to that blog post.
+→ Suggested tags: AI, SEO, GEO, Digital Marketing, Artificial Intelligence
+→ Reuse the exact phrase "AI Recommendation Volatility" everywhere so the term stays attributed to your brand.

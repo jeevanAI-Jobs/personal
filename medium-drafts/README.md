@@ -15,6 +15,7 @@ Each .txt file contains:
 6. Publish
 
 ## Posts (newest first)
+0. [We Measured How Often AI Changes Its Mind About Which Brand to Recommend](ai-recommendation-volatility.txt) — DRAFT, needs real scan data before publishing
 1. [The Website That Decides Whether AI Recommends You Is Not Yours. It Is Reddit.](social-intelligence-reddit-google.txt) — 2026-06-14 — canonical /reddit-intelligence
 2. [AI Search Visibility for UK B2B SaaS Brands: The GEO Playbook for 2026](ai-search-visibility-uk-saas.txt) — 2026-06-09
 2. [AI Search Visibility for Fintech SaaS Brands: The GEO Playbook for 2026](ai-visibility-fintech-saas.txt) — 2026-06-08
