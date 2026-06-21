@@ -41,7 +41,7 @@ jobs:
 
       - name: Commit tracker if updated
         run: |
-          git config user.email "saranshraj.srivastava@gmail.com"
+          git config user.email "229958184+jeevanAI-Jobs@users.noreply.github.com"
           git config user.name "Jeevan AI Bot"
           git add devto-posted.json
           git diff --cached --quiet && echo "no changes" || \

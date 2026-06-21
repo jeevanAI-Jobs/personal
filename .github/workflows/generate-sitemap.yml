@@ -34,7 +34,7 @@ jobs:
 
       - name: Commit if changed
         run: |
-          git config user.email "saranshraj.srivastava@gmail.com"
+          git config user.email "229958184+jeevanAI-Jobs@users.noreply.github.com"
           git config user.name "Jeevan AI Bot"
           git add -A '*.html' sitemap.xml feed.xml
           git diff --cached --quiet && echo "no changes, skipping commit" || \
