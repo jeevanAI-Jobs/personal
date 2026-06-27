@@ -25,7 +25,9 @@ function getMeta(url) {
   if (p === "/blog-index" || p === "/blog") return { priority: "0.9", changefreq: "weekly"  };
   if (p.startsWith("/ai-visibility-tool")) return { priority: "0.9", changefreq: "weekly"  };
   if (p.startsWith("/blog/"))              return { priority: "0.7", changefreq: "monthly" };
-  if (p.startsWith("/compare/"))           return { priority: "0.7", changefreq: "monthly" };
+  if (p.startsWith("/compare/"))           return { priority: "0.8", changefreq: "monthly" };
+  if (p.startsWith("/alternatives/"))      return { priority: "0.8", changefreq: "monthly" };
+  if (p.startsWith("/tools/"))             return { priority: "0.8", changefreq: "monthly" };
   if (p.startsWith("/glossary/"))          return { priority: "0.7", changefreq: "monthly" };
   if (p.startsWith("/use-cases/"))         return { priority: "0.7", changefreq: "monthly" };
   if (p.startsWith("/markets/"))           return { priority: "0.7", changefreq: "monthly" };
