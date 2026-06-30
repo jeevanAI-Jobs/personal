@@ -1,3 +1,7 @@
 [[edge_functions]]
   function = "geo-block"
   path = "/*"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
