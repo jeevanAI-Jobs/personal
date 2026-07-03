@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Canonical Tag Checker — Detect Canonical Issues That Hurt AI Visibility | Jeevan AI</title>
+<meta name="description" content="Paste your page HTML or URL and instantly check if your canonical tag is set correctly, self-referencing, or pointing to a different page. Free, no signup required.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/tools/canonical-checker">
+<meta property="og:title" content="Free Canonical Tag Checker — Detect Issues That Hurt AI Visibility">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jeevanai.co.in/tools/canonical-checker">
+<meta property="og:site_name" content="Jeevan AI">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Canonical Tag Checker","url":"https://jeevanai.co.in/tools/canonical-checker","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"description":"Free tool to check if your canonical tags are correctly set, self-referencing, or pointing to unintended pages — a common cause of duplicate content issues that reduce AI visibility."}
+</script>
+<style>
+:root{--bg:#fff;--border:#e5e7eb;--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--text-dim:#4b5563;--text-muted:#9ca3af;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;--max-w:1180px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap');
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.875rem;font-weight:600;box-shadow:0 2px 6px rgba(99,102,241,0.38)}
+.tool-hero{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 45%,#7c3aed 100%);padding:56px 24px 60px}
+.tool-hero__inner{max-width:700px;margin:0 auto;text-align:center}
+.tool-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);font-size:0.75rem;font-weight:600;color:#e0e7ff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:20px}
+.tool-hero h1{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.6rem);color:#fff;margin-bottom:14px;line-height:1.2}
+.tool-hero p{color:rgba(255,255,255,0.82);font-size:1.05rem;line-height:1.65;max-width:560px;margin:0 auto}
+.tool-wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.form-panel{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px}
+.form-panel h2{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:20px}
+.tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:20px}
+.tab{flex:1;padding:9px 14px;font-size:0.82rem;font-weight:600;cursor:pointer;border:none;background:#f9fafb;color:var(--text-dim);transition:all 0.2s;text-align:center}
+.tab.active{background:var(--accent);color:#fff}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:6px}
+.form-group input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;font-family:var(--font-sans);color:var(--text);background:#fff;transition:border-color 0.2s}
+.form-group input:focus{outline:none;border-color:var(--accent)}
+.form-group textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.8rem;font-family:var(--font-mono);color:var(--text);background:#f8fafc;transition:border-color 0.2s;resize:vertical;min-height:240px;line-height:1.7}
+.form-group textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+.form-group .hint{font-size:0.75rem;color:var(--text-muted);margin-top:4px}
+.btn-check{width:100%;padding:14px;border:none;border-radius:10px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.975rem;font-weight:600;cursor:pointer;transition:opacity 0.2s;box-shadow:0 2px 8px rgba(99,102,241,0.4)}
+.btn-check:hover{opacity:0.88}
+.btn-clear{width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text-dim);font-size:0.875rem;cursor:pointer;margin-top:10px;transition:all 0.2s}
+.btn-clear:hover{border-color:var(--accent);color:var(--accent)}
+.output-panel{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;position:sticky;top:88px}
+.output-panel h2{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:16px}
+.result-main{padding:18px;border-radius:10px;margin-bottom:16px;display:flex;align-items:flex-start;gap:14px}
+.result-pass{background:#f0fdf4;border:1px solid #bbf7d0}
+.result-warn{background:#fffbeb;border:1px solid #fde68a}
+.result-fail{background:#fef2f2;border:1px solid #fecaca}
+.result-icon{font-size:1.5rem;flex-shrink:0}
+.result-body h3{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.result-body p{font-size:0.82rem;color:var(--text-dim);line-height:1.6}
+.result-body code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-family:var(--font-mono);font-size:0.78em;word-break:break-all}
+.checks-list{display:flex;flex-direction:column;gap:8px}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:8px;font-size:0.85rem;line-height:1.5}
+.check-pass{background:#f0fdf4;border:1px solid #bbf7d0}
+.check-fail{background:#fef2f2;border:1px solid #fecaca}
+.check-warn{background:#fffbeb;border:1px solid #fde68a}
+.check-icon{font-size:1rem;flex-shrink:0;margin-top:1px}
+.check-text strong{display:block;font-size:0.82rem;font-weight:600;margin-bottom:2px}
+.check-text span{font-size:0.78rem;color:var(--text-dim)}
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-muted)}
+.empty-state .icon{font-size:2.5rem;margin-bottom:12px}
+.empty-state p{font-size:0.875rem;line-height:1.6}
+.note-box{background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:12px 14px;margin-top:16px;font-size:0.8rem;color:#0369a1;line-height:1.6}
+.faq-section{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.faq-section h2{font-family:var(--font-serif);font-size:1.4rem;color:var(--text);margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #e5e7eb}
+.faq-item{border-bottom:1px solid #f3f4f6;padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:0.975rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.faq-a{font-size:0.9rem;color:var(--text-dim);line-height:1.75}
+.faq-a a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.faq-a code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-family:var(--font-mono);font-size:0.82em}
+.related-tools{background:#f8fafc;border-top:1px solid var(--border);padding:48px 24px}
+.related-tools__inner{max-width:900px;margin:0 auto}
+.related-tools h3{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:20px}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tool-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;transition:border-color 0.2s,transform 0.2s}
+.tool-card:hover{border-color:rgba(99,102,241,0.4);transform:translateY(-2px)}
+.tool-card__icon{font-size:1.4rem;margin-bottom:8px}
+.tool-card h4{font-size:0.875rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.tool-card p{font-size:0.78rem;color:var(--text-dim);line-height:1.5;margin-bottom:10px}
+.tool-card a{font-size:0.78rem;font-weight:600;color:var(--accent)}
+.footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center}
+.footer span{font-size:0.8rem;color:var(--text-muted)}
+.footer a{color:var(--accent)}
+@media(max-width:768px){.tool-wrap{grid-template-columns:1fr}.output-panel{position:static}.tools-grid{grid-template-columns:1fr}.nav__links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo">
+      <img src="/logo.png" alt="Jeevan AI" style="width:32px;height:32px;border-radius:8px;object-fit:cover">
+      <span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/tools/llms-txt-generator.html">llms.txt Generator</a>
+      <a href="/tools/robots-txt-checker.html">Robots.txt Checker</a>
+      <a href="/tools/schema-markup-generator.html">Schema Generator</a>
+      <a href="/generative-engine-optimization-guide.html">GEO Guide</a>
+    </div>
+    <a href="https://jeevanai.co.in" class="nav__cta">Get Early Access</a>
+  </div>
+</nav>
+
+<div class="tool-hero">
+  <div class="tool-hero__inner">
+    <div class="tool-badge">&#128279; Free Tool</div>
+    <h1>Canonical Tag Checker</h1>
+    <p>Paste your page HTML and instantly check if your canonical tag is present, self-referencing, points to an unintended page, or is missing entirely. Canonical issues are a silent cause of reduced AI and search visibility.</p>
+  </div>
+</div>
+
+<div class="tool-wrap">
+
+  <div class="form-panel">
+    <h2>&#128296; Check your canonical tag</h2>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('html', this)">Paste HTML</button>
+      <button class="tab" onclick="switchTab('url', this)">Enter page URL</button>
+    </div>
+
+    <div id="tab-html">
+      <div class="form-group">
+        <label>Page HTML (paste &lt;head&gt; section or full page) *</label>
+        <textarea id="html-input" placeholder="&lt;!DOCTYPE html&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;  &lt;link rel=&quot;canonical&quot; href=&quot;https://yourdomain.com/page&quot;&gt;&#10;  &lt;title&gt;Page Title&lt;/title&gt;&#10;&lt;/head&gt;&#10;..."></textarea>
+        <div class="hint">Paste the full HTML source or just the &lt;head&gt; section. View-source any page with Ctrl+U (Windows) or Cmd+U (Mac).</div>
+      </div>
+      <div class="form-group">
+        <label>Current page URL (optional — to detect self-referencing)</label>
+        <input type="url" id="page-url-html" placeholder="https://yourdomain.com/page" />
+        <div class="hint">Provide the URL of the page you pasted HTML from to check if canonical is self-referencing.</div>
+      </div>
+    </div>
+
+    <div id="tab-url" style="display:none">
+      <div class="form-group">
+        <label>Page URL *</label>
+        <input type="url" id="url-input" placeholder="https://yourdomain.com/page" />
+        <div class="hint">Note: Direct URL fetch is blocked by CORS in browsers. Use the HTML paste method for accurate results, or use our Netlify function (coming soon).</div>
+      </div>
+      <div class="note-box">&#9432; Due to browser security restrictions (CORS), direct URL fetching is not supported in this client-side tool. For best results, view the page source (Ctrl+U / Cmd+U), copy the HTML, and use the "Paste HTML" tab.</div>
+    </div>
+
+    <button class="btn-check" onclick="checkCanonical()">Check Canonical &#8594;</button>
+    <button class="btn-clear" onclick="clearAll()">Clear</button>
+  </div>
+
+  <div class="output-panel">
+    <h2>&#128279; Canonical analysis</h2>
+    <div id="results">
+      <div class="empty-state">
+        <div class="icon">&#128279;</div>
+        <p>Paste your page HTML on the left and click Check to analyze your canonical tag for issues that may reduce AI and search visibility.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <p class="faq-q">What is a canonical tag and why does it matter for AI visibility?</p>
+    <p class="faq-a">A canonical tag (<code>&lt;link rel="canonical" href="..."&gt;</code>) tells search engines and AI crawlers which version of a page is the "official" one. When you have duplicate or near-duplicate content on multiple URLs, a missing or incorrect canonical tag means AI crawlers may index the wrong version, split authority between duplicates, or skip your page entirely. Our <a href="/generative-engine-optimization-guide.html">GEO guide</a> covers all the technical signals that influence AI visibility.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">What does a self-referencing canonical mean?</p>
+    <p class="faq-a">A self-referencing canonical means the page's canonical tag points to itself (the current URL). This is considered best practice and signals to crawlers that this page is the definitive version. If your canonical points to a different URL, that means you are intentionally (or accidentally) telling crawlers to defer to that other page instead.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">My page has no canonical tag. Is that a problem?</p>
+    <p class="faq-a">It depends on your site structure. If you have only one URL per piece of content and no URL parameters, a missing canonical is usually fine. But if your site generates multiple URLs for the same content (e.g. <code>/page?ref=twitter</code>, <code>/page/</code> vs <code>/page</code>), missing canonical tags can cause duplicate content issues. Adding a self-referencing canonical is a safe, low-effort win. Pair it with a proper <a href="/tools/llms-txt-generator.html">llms.txt</a> and <a href="/tools/robots-txt-checker.html">open robots.txt</a> for full AI visibility coverage.</p>
+  </div>
+</div>
+
+<div class="related-tools">
+  <div class="related-tools__inner">
+    <h3>Other free tools</h3>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card__icon">&#129302;</div>
+        <h4>Robots.txt Checker</h4>
+        <p>Check if you are accidentally blocking GPTBot, ClaudeBot, or PerplexityBot from crawling your site.</p>
+        <a href="/tools/robots-txt-checker.html">Open tool &#8594;</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card__icon">&#128196;</div>
+        <h4>llms.txt Generator</h4>
+        <p>Tell AI models exactly which pages on your site are most important. Generate a valid llms.txt in minutes.</p>
+        <a href="/tools/llms-txt-generator.html">Open tool &#8594;</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card__icon">&#60;/&#62;</div>
+        <h4>Schema Markup Generator</h4>
+        <p>Generate structured data that helps AI models correctly identify and cite your brand and content.</p>
+        <a href="/tools/schema-markup-generator.html">Open tool &#8594;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>&#169; 2026 <a href="https://jeevanai.co.in">Jeevan AI</a> · <a href="/tools/robots-txt-checker.html">Robots.txt Checker</a> · <a href="/tools/llms-txt-generator.html">llms.txt Generator</a> · <a href="/generative-engine-optimization-guide.html">GEO Guide</a></span>
+</footer>
+
+<script>
+let activeTab = 'html';
+
+function switchTab(tab, btn) {
+  activeTab = tab;
+  document.getElementById('tab-html').style.display = tab === 'html' ? 'block' : 'none';
+  document.getElementById('tab-url').style.display = tab === 'url' ? 'block' : 'none';
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function normalizeUrl(url) {
+  try {
+    const u = new URL(url);
+    return u.origin + u.pathname.replace(/\/+$/, '') + u.search;
+  } catch { return url.trim().replace(/\/+$/, ''); }
+}
+
+function checkCanonical() {
+  let html = '';
+  let pageUrl = '';
+
+  if (activeTab === 'html') {
+    html = document.getElementById('html-input').value.trim();
+    pageUrl = document.getElementById('page-url-html').value.trim();
+    if (!html) { alert('Paste your page HTML first.'); return; }
+  } else {
+    const urlVal = document.getElementById('url-input').value.trim();
+    if (!urlVal) { alert('Enter a page URL.'); return; }
+    renderResults(null, urlVal, 'cors-limited');
+    return;
+  }
+
+  // Parse canonical from HTML
+  const canonicalMatch = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["'][^>]*>/i)
+    || html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["'][^>]*>/i);
+
+  const canonicalUrl = canonicalMatch ? canonicalMatch[1].trim() : null;
+  renderResults(canonicalUrl, pageUrl, 'html-parsed', html);
+}
+
+function renderResults(canonicalUrl, pageUrl, mode, html) {
+  const checks = [];
+  let mainResult = null;
+
+  if (mode === 'cors-limited') {
+    document.getElementById('results').innerHTML = `<div class="result-main result-warn"><div class="result-icon">&#9888;</div><div class="result-body"><h3>URL fetch not supported in browser</h3><p>Browser security (CORS) prevents direct URL fetching. To check this page: open it in your browser, press <strong>Ctrl+U</strong> (Windows) or <strong>Cmd+U</strong> (Mac) to view source, copy the HTML, switch to the "Paste HTML" tab, and run the check there.</p></div></div>`;
+    return;
+  }
+
+  if (!canonicalUrl) {
+    mainResult = { type: 'warn', icon: '&#9888;', title: 'No canonical tag found', body: 'This page has no &lt;link rel="canonical"&gt; tag. If you have duplicate URLs for this content, add a self-referencing canonical to signal the preferred URL to crawlers.' };
+    checks.push({ pass: false, label: 'Canonical tag present', detail: 'Add: &lt;link rel="canonical" href="https://yourdomain.com/this-page"&gt; inside &lt;head&gt;' });
+  } else {
+    mainResult = { type: 'pass', icon: '&#10003;', title: 'Canonical tag found', body: `<code>${canonicalUrl}</code>` };
+    checks.push({ pass: true, label: 'Canonical tag present', detail: canonicalUrl });
+
+    // HTTPS check
+    if (canonicalUrl.startsWith('https://')) {
+      checks.push({ pass: true, label: 'Uses HTTPS', detail: 'Canonical URL uses HTTPS — correct' });
+    } else if (canonicalUrl.startsWith('http://')) {
+      checks.push({ warn: true, label: 'Uses HTTP (not HTTPS)', detail: 'Update canonical to use https:// for security and crawler trust' });
+      mainResult.type = 'warn';
+    }
+
+    // Absolute URL check
+    if (canonicalUrl.startsWith('http')) {
+      checks.push({ pass: true, label: 'Absolute URL', detail: 'Canonical is an absolute URL — correct' });
+    } else {
+      checks.push({ pass: false, label: 'Relative URL detected', detail: 'Canonicals must be absolute URLs (start with https://). Relative paths can cause crawler confusion.' });
+      mainResult.type = 'fail';
+    }
+
+    // Self-referencing check
+    if (pageUrl) {
+      const normPage = normalizeUrl(pageUrl);
+      const normCanon = normalizeUrl(canonicalUrl);
+      if (normPage === normCanon) {
+        checks.push({ pass: true, label: 'Self-referencing canonical', detail: 'Canonical points to this page — correct for most cases' });
+      } else {
+        checks.push({ warn: true, label: 'Points to a different page', detail: `Canonical: ${canonicalUrl} — this page defers authority to that URL. Is this intentional?` });
+        if (mainResult.type === 'pass') mainResult.type = 'warn';
+        mainResult.body += `<br><br>This page is deferring to: <code>${canonicalUrl}</code><br>Current page: <code>${pageUrl}</code><br>If this is unintentional, update the canonical to point to this page.`;
+      }
+    } else {
+      checks.push({ warn: true, label: 'Self-referencing check skipped', detail: 'Enter the current page URL above to check if canonical is self-referencing' });
+    }
+
+    // Trailing slash consistency
+    if (canonicalUrl.endsWith('/') && !canonicalUrl.endsWith('://')) {
+      checks.push({ warn: true, label: 'Trailing slash in canonical', detail: 'Ensure your server consistently uses trailing slash (or not) to avoid duplicate indexing.' });
+    } else {
+      checks.push({ pass: true, label: 'No trailing slash issues detected', detail: 'URL format looks consistent' });
+    }
+  }
+
+  // Check for multiple canonical tags
+  if (html) {
+    const allCanonicals = (html.match(/<link[^>]+rel=["']canonical["'][^>]*>/gi) || []).concat(html.match(/<link[^>]+href=["'][^"']*["'][^>]+rel=["']canonical["'][^>]*>/gi) || []);
+    const unique = [...new Set(allCanonicals)];
+    if (unique.length > 1) {
+      checks.push({ pass: false, label: `Multiple canonical tags (${unique.length} found)`, detail: 'Only one canonical tag is allowed per page. Remove duplicates immediately.' });
+      mainResult.type = 'fail';
+    } else if (unique.length === 1) {
+      checks.push({ pass: true, label: 'Single canonical tag', detail: 'Only one canonical tag found — correct' });
+    }
+  }
+
+  const mainClass = mainResult.type === 'pass' ? 'result-pass' : mainResult.type === 'warn' ? 'result-warn' : 'result-fail';
+  let html2 = `<div class="result-main ${mainClass}"><div class="result-icon">${mainResult.icon}</div><div class="result-body"><h3>${mainResult.title}</h3><p>${mainResult.body}</p></div></div>`;
+  html2 += '<div class="checks-list">';
+  checks.forEach(c => {
+    const cls = c.pass ? 'check-pass' : c.warn ? 'check-warn' : 'check-fail';
+    const icon = c.pass ? '&#10003;' : c.warn ? '&#9888;' : '&#10007;';
+    html2 += `<div class="check-item ${cls}"><span class="check-icon">${icon}</span><div class="check-text"><strong>${c.label}</strong><span>${c.detail}</span></div></div>`;
+  });
+  html2 += '</div>';
+  document.getElementById('results').innerHTML = html2;
+}
+
+function clearAll() {
+  document.getElementById('html-input').value = '';
+  document.getElementById('page-url-html').value = '';
+  if (document.getElementById('url-input')) document.getElementById('url-input').value = '';
+  document.getElementById('results').innerHTML = '<div class="empty-state"><div class="icon">&#128279;</div><p>Paste your page HTML on the left and click Check to analyze your canonical tag.</p></div>';
+}
+</script>
+</body>
+</html>

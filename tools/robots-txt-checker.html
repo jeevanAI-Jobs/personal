@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Robots.txt Checker — Are You Blocking AI Crawlers? | Jeevan AI</title>
+<meta name="description" content="Paste your robots.txt and instantly see if you are accidentally blocking GPTBot, ClaudeBot, PerplexityBot, or other AI crawlers. Free, no signup required.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/tools/robots-txt-checker">
+<meta property="og:title" content="Free Robots.txt Checker — Are You Blocking AI Crawlers?">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jeevanai.co.in/tools/robots-txt-checker">
+<meta property="og:site_name" content="Jeevan AI">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Robots.txt AI Crawler Checker","url":"https://jeevanai.co.in/tools/robots-txt-checker","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"description":"Free tool to check if your robots.txt is blocking AI crawlers like GPTBot, ClaudeBot, PerplexityBot, or CCBot."}
+</script>
+<style>
+:root{--bg:#fff;--border:#e5e7eb;--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--text-dim:#4b5563;--text-muted:#9ca3af;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;--max-w:1180px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap');
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.875rem;font-weight:600;box-shadow:0 2px 6px rgba(99,102,241,0.38)}
+.tool-hero{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 45%,#7c3aed 100%);padding:56px 24px 60px}
+.tool-hero__inner{max-width:700px;margin:0 auto;text-align:center}
+.tool-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);font-size:0.75rem;font-weight:600;color:#e0e7ff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:20px}
+.tool-hero h1{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.6rem);color:#fff;margin-bottom:14px;line-height:1.2}
+.tool-hero p{color:rgba(255,255,255,0.82);font-size:1.05rem;line-height:1.65;max-width:560px;margin:0 auto}
+.tool-wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.form-panel{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px}
+.form-panel h2{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:20px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:6px}
+.form-group textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.8rem;font-family:var(--font-mono);color:var(--text);background:#f8fafc;transition:border-color 0.2s;resize:vertical;min-height:260px;line-height:1.7}
+.form-group textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+.form-group .hint{font-size:0.75rem;color:var(--text-muted);margin-top:4px}
+.btn-check{width:100%;padding:14px;border:none;border-radius:10px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.975rem;font-weight:600;cursor:pointer;transition:opacity 0.2s;box-shadow:0 2px 8px rgba(99,102,241,0.4)}
+.btn-check:hover{opacity:0.88}
+.btn-clear{width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--text-dim);font-size:0.875rem;cursor:pointer;margin-top:10px;transition:all 0.2s}
+.btn-clear:hover{border-color:var(--accent);color:var(--accent)}
+.output-panel{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;position:sticky;top:88px}
+.output-panel h2{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:16px}
+.bot-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.bot-card{padding:12px 14px;border-radius:10px;border:1px solid var(--border)}
+.bot-card.blocked{background:#fef2f2;border-color:#fecaca}
+.bot-card.allowed{background:#f0fdf4;border-color:#bbf7d0}
+.bot-card.unknown{background:#f8fafc;border-color:#e5e7eb}
+.bot-name{font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.bot-status{font-size:0.72rem;font-weight:600}
+.bot-status.blocked{color:#dc2626}
+.bot-status.allowed{color:#16a34a}
+.bot-status.unknown{color:var(--text-muted)}
+.bot-desc{font-size:0.7rem;color:var(--text-muted);margin-top:3px}
+.summary-bar{padding:14px 16px;border-radius:10px;margin-bottom:16px;font-size:0.875rem;font-weight:600;display:flex;align-items:center;gap:8px}
+.summary-clear{background:#f0fdf4;border:1px solid #bbf7d0;color:#16a34a}
+.summary-warn{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+.summary-danger{background:#fef2f2;border:1px solid #fecaca;color:#dc2626}
+.raw-section{margin-top:16px}
+.raw-section summary{font-size:0.8rem;font-weight:600;color:var(--text-dim);cursor:pointer;padding:8px 0}
+.raw-box{background:#0f172a;border-radius:8px;padding:14px;margin-top:8px}
+.raw-box pre{font-family:var(--font-mono);font-size:0.75rem;color:#94a3b8;white-space:pre-wrap;word-break:break-word;line-height:1.7;max-height:200px;overflow-y:auto}
+.empty-state{text-align:center;padding:40px 20px;color:var(--text-muted)}
+.empty-state .icon{font-size:2.5rem;margin-bottom:12px}
+.empty-state p{font-size:0.875rem;line-height:1.6}
+.faq-section{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.faq-section h2{font-family:var(--font-serif);font-size:1.4rem;color:var(--text);margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid #e5e7eb}
+.faq-item{border-bottom:1px solid #f3f4f6;padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:0.975rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.faq-a{font-size:0.9rem;color:var(--text-dim);line-height:1.75}
+.faq-a a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.faq-a code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-family:var(--font-mono);font-size:0.82em}
+.related-tools{background:#f8fafc;border-top:1px solid var(--border);padding:48px 24px}
+.related-tools__inner{max-width:900px;margin:0 auto}
+.related-tools h3{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:20px}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tool-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;transition:border-color 0.2s,transform 0.2s}
+.tool-card:hover{border-color:rgba(99,102,241,0.4);transform:translateY(-2px)}
+.tool-card__icon{font-size:1.4rem;margin-bottom:8px}
+.tool-card h4{font-size:0.875rem;font-weight:600;color:var(--text);margin-bottom:4px}
+.tool-card p{font-size:0.78rem;color:var(--text-dim);line-height:1.5;margin-bottom:10px}
+.tool-card a{font-size:0.78rem;font-weight:600;color:var(--accent)}
+.footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center}
+.footer span{font-size:0.8rem;color:var(--text-muted)}
+.footer a{color:var(--accent)}
+@media(max-width:768px){.tool-wrap{grid-template-columns:1fr}.output-panel{position:static}.bot-grid{grid-template-columns:1fr}.tools-grid{grid-template-columns:1fr}.nav__links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo">
+      <img src="/logo.png" alt="Jeevan AI" style="width:32px;height:32px;border-radius:8px;object-fit:cover">
+      <span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/tools/llms-txt-generator.html">llms.txt Generator</a>
+      <a href="/tools/llms-txt-validator.html">llms.txt Validator</a>
+      <a href="/tools/canonical-checker.html">Canonical Checker</a>
+      <a href="/generative-engine-optimization-guide.html">GEO Guide</a>
+      <a href="/blog-index.html">Blog</a>
+    </div>
+    <a href="https://jeevanai.co.in" class="nav__cta">Get Early Access</a>
+  </div>
+</nav>
+
+<div class="tool-hero">
+  <div class="tool-hero__inner">
+    <div class="tool-badge">&#129302; Free Tool</div>
+    <h1>Robots.txt AI Crawler Checker</h1>
+    <p>Paste your robots.txt and instantly see which AI crawlers are blocked or allowed. GPTBot, ClaudeBot, PerplexityBot, CCBot and more — know your status in seconds.</p>
+  </div>
+</div>
+
+<div class="tool-wrap">
+
+  <div class="form-panel">
+    <h2>&#128196; Paste your robots.txt</h2>
+    <div class="form-group">
+      <label>robots.txt content *</label>
+      <textarea id="robots-input" placeholder="User-agent: *&#10;Disallow:&#10;&#10;User-agent: GPTBot&#10;Disallow: /&#10;&#10;Sitemap: https://yourdomain.com/sitemap.xml"></textarea>
+      <div class="hint">Find your robots.txt at yourdomain.com/robots.txt — copy and paste the full content here.</div>
+    </div>
+    <button class="btn-check" onclick="checkRobots()">Check AI Crawlers &#8594;</button>
+    <button class="btn-clear" onclick="clearAll()">Clear</button>
+  </div>
+
+  <div class="output-panel">
+    <h2>&#129302; AI Crawler Status</h2>
+    <div id="results">
+      <div class="empty-state">
+        <div class="icon">&#129302;</div>
+        <p>Paste your robots.txt on the left and click Check to see which AI crawlers you are blocking or allowing.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <p class="faq-q">Which AI crawlers does this tool check?</p>
+    <p class="faq-a">This tool checks for GPTBot (OpenAI/ChatGPT), ClaudeBot (Anthropic), PerplexityBot (Perplexity AI), CCBot (Common Crawl, used for training data), Google-Extended (Google's AI training opt-out), Applebot-Extended (Apple AI), and OAI-SearchBot (OpenAI real-time search). These are the most impactful AI crawlers for brand visibility in 2025 and 2026.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Should I block or allow AI crawlers?</p>
+    <p class="faq-a">For AI visibility, you generally want to <strong>allow</strong> AI crawlers. Blocking GPTBot means ChatGPT cannot crawl your site for real-time answers. Blocking PerplexityBot means Perplexity will not include your pages in cited responses. The only crawler you might selectively block is CCBot if you do not want your content used for training datasets, which is separate from real-time retrieval. See our <a href="/generative-engine-optimization-guide.html">GEO guide</a> for the full strategy.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">How do I allow a specific AI crawler?</p>
+    <p class="faq-a">Remove the specific <code>User-agent: GPTBot / Disallow: /</code> block from your robots.txt. Or if you have a wildcard block (<code>User-agent: * / Disallow: /</code>), add an explicit allow block: <code>User-agent: GPTBot / Allow: /</code> after it. Then re-upload your robots.txt.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">My robots.txt allows all bots. Am I fully visible in AI results?</p>
+    <p class="faq-a">robots.txt is necessary but not sufficient. AI visibility also depends on your <a href="/tools/llms-txt-generator.html">llms.txt file</a>, schema markup, off-site citations, and content quality. Check our <a href="/tools/ai-visibility-checker.html">AI Visibility Checker</a> for a fuller picture.</p>
+  </div>
+</div>
+
+<div class="related-tools">
+  <div class="related-tools__inner">
+    <h3>Other free tools</h3>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="tool-card__icon">&#128196;</div>
+        <h4>llms.txt Generator</h4>
+        <p>Tell AI models which pages on your site to prioritize. Generate a properly formatted llms.txt in minutes.</p>
+        <a href="/tools/llms-txt-generator.html">Open tool &#8594;</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card__icon">&#128279;</div>
+        <h4>Canonical Checker</h4>
+        <p>Check if your canonical tags are set correctly so AI crawlers index the right version of your pages.</p>
+        <a href="/tools/canonical-checker.html">Open tool &#8594;</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-card__icon">&#60;/&#62;</div>
+        <h4>Schema Markup Generator</h4>
+        <p>Generate Organization and FAQ JSON-LD schema that helps AI models identify and cite your brand.</p>
+        <a href="/tools/schema-markup-generator.html">Open tool &#8594;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>&#169; 2026 <a href="https://jeevanai.co.in">Jeevan AI</a> · <a href="/tools/llms-txt-generator.html">llms.txt Generator</a> · <a href="/tools/canonical-checker.html">Canonical Checker</a> · <a href="/generative-engine-optimization-guide.html">GEO Guide</a></span>
+</footer>
+
+<script>
+const AI_BOTS = [
+  { agent: 'GPTBot', name: 'GPTBot', platform: 'ChatGPT / OpenAI', desc: 'Used for ChatGPT real-time browsing and training' },
+  { agent: 'ClaudeBot', name: 'ClaudeBot', platform: 'Claude / Anthropic', desc: 'Anthropic\'s web crawler for Claude AI' },
+  { agent: 'PerplexityBot', name: 'PerplexityBot', platform: 'Perplexity AI', desc: 'Powers Perplexity\'s cited search results' },
+  { agent: 'CCBot', name: 'CCBot', platform: 'Common Crawl', desc: 'Training data for many LLMs incl. GPT-3/4' },
+  { agent: 'Google-Extended', name: 'Google-Extended', platform: 'Google AI / Bard', desc: 'Google\'s AI products training opt-out' },
+  { agent: 'OAI-SearchBot', name: 'OAI-SearchBot', platform: 'OpenAI Search', desc: 'OpenAI\'s real-time search index crawler' },
+  { agent: 'Applebot-Extended', name: 'Applebot-Extended', platform: 'Apple AI', desc: 'Apple Intelligence and Siri training data' },
+  { agent: 'Bytespider', name: 'Bytespider', platform: 'TikTok / ByteDance', desc: 'ByteDance AI model training crawler' },
+];
+
+function parseRobots(text) {
+  const lines = text.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('#'));
+  const rules = {};
+  let currentAgents = [];
+
+  lines.forEach(line => {
+    const lower = line.toLowerCase();
+    if (lower.startsWith('user-agent:')) {
+      const agent = line.slice(11).trim();
+      currentAgents = [agent];
+    } else if (lower.startsWith('disallow:')) {
+      const path = line.slice(9).trim();
+      currentAgents.forEach(a => {
+        if (!rules[a]) rules[a] = { disallow: [], allow: [] };
+        rules[a].disallow.push(path);
+      });
+    } else if (lower.startsWith('allow:')) {
+      const path = line.slice(6).trim();
+      currentAgents.forEach(a => {
+        if (!rules[a]) rules[a] = { disallow: [], allow: [] };
+        rules[a].allow.push(path);
+      });
+    }
+  });
+
+  return rules;
+}
+
+function isBotBlocked(rules, botAgent) {
+  const agent = botAgent.toLowerCase();
+  const wildcard = rules['*'];
+  const specific = Object.entries(rules).find(([k]) => k.toLowerCase() === agent);
+
+  // Check specific rule first
+  if (specific) {
+    const [, r] = specific;
+    const blocked = r.disallow.includes('/') || r.disallow.some(d => d === '/' || d === '');
+    const allowed = r.allow.includes('/') || r.allow.length === 0 || r.disallow.length === 0;
+    if (r.disallow.includes('/') && !r.allow.includes('/')) return 'blocked';
+    if (r.disallow.length === 0 || r.disallow.every(d => d === '')) return 'allowed';
+    return 'partial';
+  }
+
+  // Fall back to wildcard
+  if (wildcard) {
+    if (wildcard.disallow.includes('/') || wildcard.disallow.some(d => d === '/')) return 'blocked-via-wildcard';
+    if (wildcard.disallow.length === 0 || wildcard.disallow.every(d => d === '')) return 'allowed';
+  }
+
+  return 'allowed'; // Not mentioned = allowed by default
+}
+
+function checkRobots() {
+  const raw = document.getElementById('robots-input').value.trim();
+  if (!raw) { alert('Paste your robots.txt content first.'); return; }
+
+  const rules = parseRobots(raw);
+  let blockedCount = 0;
+  let partialCount = 0;
+
+  let botHtml = '<div class="bot-grid">';
+  AI_BOTS.forEach(bot => {
+    const status = isBotBlocked(rules, bot.agent);
+    let cardClass = 'allowed';
+    let statusText = 'Allowed';
+    let statusClass = 'allowed';
+    if (status === 'blocked') { cardClass = 'blocked'; statusText = 'Blocked'; statusClass = 'blocked'; blockedCount++; }
+    else if (status === 'blocked-via-wildcard') { cardClass = 'blocked'; statusText = 'Blocked (wildcard)'; statusClass = 'blocked'; blockedCount++; }
+    else if (status === 'partial') { cardClass = 'unknown'; statusText = 'Partial block'; statusClass = 'unknown'; partialCount++; }
+
+    botHtml += `<div class="bot-card ${cardClass}"><div class="bot-name">${bot.name}</div><div class="bot-status ${statusClass}">${statusClass === 'blocked' ? '✕' : statusClass === 'unknown' ? '⚠' : '✓'} ${statusText}</div><div class="bot-desc">${bot.platform}</div></div>`;
+  });
+  botHtml += '</div>';
+
+  let summaryClass = 'summary-clear';
+  let summaryText = '&#10003; No AI crawlers are blocked. Your site is open to AI indexing.';
+  if (blockedCount > 0 || partialCount > 0) {
+    summaryClass = blockedCount > 3 ? 'summary-danger' : 'summary-warn';
+    summaryText = `&#9888; ${blockedCount} AI crawler${blockedCount !== 1 ? 's' : ''} blocked${partialCount > 0 ? ', ' + partialCount + ' partially blocked' : ''}. This may reduce your AI search visibility.`;
+  }
+
+  const html = `<div class="summary-bar ${summaryClass}">${summaryText}</div>${botHtml}<details class="raw-section"><summary>View parsed rules (${Object.keys(rules).length} user-agents found)</summary><div class="raw-box"><pre>${JSON.stringify(rules, null, 2)}</pre></div></details>`;
+  document.getElementById('results').innerHTML = html;
+}
+
+function clearAll() {
+  document.getElementById('robots-input').value = '';
+  document.getElementById('results').innerHTML = '<div class="empty-state"><div class="icon">&#129302;</div><p>Paste your robots.txt on the left and click Check to see which AI crawlers you are blocking or allowing.</p></div>';
+}
+</script>
+</body>
+</html>
