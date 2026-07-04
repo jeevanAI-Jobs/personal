@@ -1,0 +1,114 @@
+# Jeevan AI -- Full Content Index
+
+> Jeevan AI is a GEO (Generative Engine Optimization) platform that helps brands appear when AI engines like ChatGPT, Perplexity, Gemini, Claude, and Google AI Mode answer buying questions. It monitors AI visibility, identifies gaps, and delivers structured content plans to fix brand positioning.
+
+## About Jeevan AI
+
+Jeevan AI was built by practitioners who ran real AI visibility audits before writing product code. The platform is based in India and serves B2B SaaS brands, D2C companies, agencies, local businesses, and any brand that needs to appear in AI-generated answers.
+
+The core insight behind Jeevan AI: AI engines do not rank websites -- they recommend brands. The signals they use are different from Google: entity clarity, third-party citations, Reddit discussions, review site presence, structured data, and content that directly answers buying questions. Jeevan AI measures all of these and tells brands exactly what to fix.
+
+## The 5 Buying Factors AI Uses to Recommend Brands
+
+1. **Pricing Clarity** -- AI needs to understand what something costs to recommend it confidently
+2. **Use Case Fit** -- AI matches brands to specific problems; generic positioning leads to wrong-category placement
+3. **Trust Signals** -- Third-party citations, review sites, Reddit mentions, press coverage
+4. **Ease of Use Evidence** -- Specific claims about onboarding, setup time, and user experience
+5. **Quality Evidence** -- Case studies, outcomes, numbers, customer results
+
+## All Blog Posts
+
+### GEO Fundamentals
+- [GEO vs SEO Difference](https://jeevanai.co.in/blog/geo-vs-seo-difference)
+- [AEO vs GEO Difference](https://jeevanai.co.in/blog/aeo-vs-geo-difference)
+- [AI Search Visibility vs SEO](https://jeevanai.co.in/blog/ai-search-visibility-vs-seo.html)
+- [What AI Uses to Recommend Brands](https://jeevanai.co.in/blog/what-ai-uses-to-recommend-brands)
+- [AI Brand Recommendation Factors](https://jeevanai.co.in/blog/ai-brand-recommendation-factors)
+- [GEO Order of Operations](https://jeevanai.co.in/blog/geo-order-of-operations.html)
+- [How to Write Content for AI Search](https://jeevanai.co.in/blog/how-to-write-content-for-ai-search)
+- [Content Formats AI Search Cites](https://jeevanai.co.in/blog/content-formats-ai-search-cites-data)
+- [Schema Markup for AI Visibility](https://jeevanai.co.in/blog/schema-markup-ai-visibility)
+- [Entity Building and Knowledge Graph](https://jeevanai.co.in/blog/entity-building-knowledge-graph-ai-visibility)
+- [Social Proof and AI Recommendations](https://jeevanai.co.in/blog/social-proof-ai-recommendations.html)
+- [Become a Source AI Wants to Cite](https://jeevanai.co.in/blog/become-source-ai-wants-to-cite)
+- [10 Signs You Are Invisible in AI Search](https://jeevanai.co.in/blog/10-signs-invisible-ai-search)
+
+### Auditing and Strategy
+- [How to Audit AI Search Visibility](https://jeevanai.co.in/blog/how-to-audit-ai-search-visibility)
+- [AI Visibility Checklist for B2B SaaS](https://jeevanai.co.in/blog/ai-visibility-checklist-b2b-saas)
+- [AI Visibility Metrics and KPIs](https://jeevanai.co.in/blog/ai-visibility-metrics-kpis)
+- [AI Visibility Score Benchmarks](https://jeevanai.co.in/blog/ai-visibility-score-benchmarks.html)
+- [AI Visibility Score Dropped](https://jeevanai.co.in/blog/ai-visibility-score-dropped)
+- [Competitive AI Brand Audit](https://jeevanai.co.in/blog/competitive-ai-brand-audit)
+- [Competitor Benchmarking in ChatGPT](https://jeevanai.co.in/blog/competitor-benchmarking-chatgpt-step-by-step)
+- [AI Brand Recommendation Analysis](https://jeevanai.co.in/blog/ai-brand-recommendation-analysis)
+- [Content Gap for AI Search Visibility](https://jeevanai.co.in/blog/content-gap-ai-search-visibility.html)
+- [AI Brand Tracking vs Social Listening](https://jeevanai.co.in/blog/ai-brand-tracking-vs-social-listening)
+- [Multi-LLM Brand Monitoring](https://jeevanai.co.in/blog/multi-llm-brand-monitoring)
+
+### Fixing AI Visibility Problems
+- [Why ChatGPT Recommends Competitor](https://jeevanai.co.in/blog/why-chatgpt-recommends-competitor)
+- [Fix Incorrect AI Brand Information](https://jeevanai.co.in/blog/fix-incorrect-ai-brand-information)
+- [Why AI Recommends Wrong Brand](https://jeevanai.co.in/blog/why-ai-recommends-wrong-brand.html)
+- [Why AI Mispositions Brands Wrong Category](https://jeevanai.co.in/blog/why-ai-mispositions-brands-wrong-category)
+- [AI Cold Start Problem for New Brands](https://jeevanai.co.in/blog/ai-cold-start-problem-new-brands)
+- [Why Google Reviews Don't Help ChatGPT](https://jeevanai.co.in/blog/why-google-reviews-dont-help-chatgpt-visibility)
+- [Google Rankings Fine but Losing Deals](https://jeevanai.co.in/blog/google-rankings-fine-losing-deals.html)
+- [Citation Decay: Why AI Stops Citing You](https://jeevanai.co.in/blog/citation-decay-why-ai-stops-citing-you)
+- [How to Build a Brand Entity Page](https://jeevanai.co.in/blog/how-to-build-brand-entity-page)
+- [Does llms.txt Work: Data](https://jeevanai.co.in/blog/does-llms-txt-work-data)
+
+### Platform-Specific Playbooks
+- [ChatGPT Brand Visibility Playbook](https://jeevanai.co.in/blog/chatgpt-brand-tracking-india-b2b-saas-2026)
+- [Perplexity AI Brand Visibility Playbook](https://jeevanai.co.in/blog/perplexity-ai-brand-visibility-playbook)
+- [Gemini Brand Visibility Playbook](https://jeevanai.co.in/blog/gemini-brand-visibility-playbook)
+- [Claude AI Brand Visibility Playbook](https://jeevanai.co.in/blog/claude-ai-brand-visibility-playbook)
+- [Google AI Mode Brand Visibility Playbook](https://jeevanai.co.in/blog/google-ai-mode-brand-visibility-playbook)
+- [ChatGPT vs Perplexity: Which to Optimize First](https://jeevanai.co.in/blog/chatgpt-vs-perplexity-which-to-optimize-first)
+
+### Industry Verticals
+- [AI Visibility for B2B SaaS India](https://jeevanai.co.in/blog/ai-visibility-b2b-saas-india)
+- [AI Visibility for Fintech SaaS](https://jeevanai.co.in/blog/ai-visibility-fintech-saas)
+- [AI Visibility for Healthtech SaaS](https://jeevanai.co.in/blog/ai-visibility-healthtech-saas)
+- [AI Visibility for Legaltech SaaS](https://jeevanai.co.in/blog/ai-visibility-legaltech-saas)
+- [AI Visibility for Martech Brands](https://jeevanai.co.in/blog/ai-visibility-martech-brands)
+- [AI Visibility for Edtech India](https://jeevanai.co.in/blog/ai-visibility-edtech-india)
+- [AI Visibility for Proptech Brands](https://jeevanai.co.in/blog/ai-visibility-proptech-brands)
+- [AI Visibility for Cleantech and Sustainability](https://jeevanai.co.in/blog/ai-visibility-cleantech-sustainability)
+- [AI Visibility for D2C India](https://jeevanai.co.in/blog/ai-visibility-d2c-india)
+- [AI Visibility for Consumer Goods and FMCG](https://jeevanai.co.in/blog/ai-visibility-consumer-goods-fmcg)
+- [AI Visibility for Professional Services](https://jeevanai.co.in/blog/ai-visibility-professional-services)
+- [AI Visibility for Agencies](https://jeevanai.co.in/blog/ai-visibility-for-agencies)
+- [Why B2B SaaS Is Invisible in AI Search](https://jeevanai.co.in/blog/why-b2b-saas-invisible-ai-search-root-causes)
+- [Why Cybersecurity SaaS Is Invisible in AI Search](https://jeevanai.co.in/blog/why-cybersecurity-saas-invisible-ai-search)
+- [Why HRtech Brands Are Invisible in AI Search](https://jeevanai.co.in/blog/why-hrtech-brands-invisible-ai-search)
+- [GEO for Ecommerce and D2C Brands](https://jeevanai.co.in/blog/geo-for-ecommerce-d2c-brands)
+- [GEO for Restaurants and Hospitality](https://jeevanai.co.in/blog/geo-for-restaurants-hospitality)
+- [GEO for Healthcare Providers](https://jeevanai.co.in/blog/geo-healthcare-providers-dentists-clinics)
+- [GEO for Accountants and Bookkeepers](https://jeevanai.co.in/blog/geo-for-accountants-bookkeepers)
+- [GEO for Law Firms](https://jeevanai.co.in/blog/geo-for-law-firms-local)
+- [GEO for Contractors and Tradespeople](https://jeevanai.co.in/blog/geo-for-contractors-tradespeople)
+- [GEO for Home Services: Plumbers, HVAC, Electricians](https://jeevanai.co.in/blog/geo-home-services-plumbers-hvac-electricians)
+- [GEO for Personal Brand Consultants](https://jeevanai.co.in/blog/geo-personal-brand-consultants)
+
+### Geographic Markets
+- [AI Search Visibility for US D2C Brands](https://jeevanai.co.in/blog/ai-search-visibility-us-d2c-brands.html)
+- [AI Search Visibility for SaaS USA](https://jeevanai.co.in/blog/ai-search-visibility-saas-usa)
+- [AI Search Visibility for Canada SaaS](https://jeevanai.co.in/blog/ai-search-visibility-canada-saas)
+- [AI Search Visibility for UK SaaS](https://jeevanai.co.in/blog/ai-search-visibility-uk-saas)
+- [AI Search Visibility for Germany D2C](https://jeevanai.co.in/blog/ai-search-visibility-germany-d2c.html)
+- [AI Search Visibility for France SaaS](https://jeevanai.co.in/blog/ai-search-visibility-france-saas)
+- [AI Search Visibility for Netherlands SaaS](https://jeevanai.co.in/blog/ai-search-visibility-netherlands-saas)
+- [AI Search Visibility for Southeast Asia SaaS](https://jeevanai.co.in/blog/ai-search-visibility-southeast-asia-saas)
+- [AI Search Visibility for UAE and Saudi D2C](https://jeevanai.co.in/blog/ai-search-visibility-uae-saudi-d2c.html)
+- [AI Search Visibility for Australia D2C](https://jeevanai.co.in/blog/ai-search-visibility-australia-d2c)
+
+### Tools and Budget
+- [How to Choose an AI Visibility Tool](https://jeevanai.co.in/blog/how-to-choose-ai-visibility-tool.html)
+- [Simplest AI Visibility Tool 2026](https://jeevanai.co.in/blog/simplest-ai-visibility-tool-2026)
+- [GEO Tool Pricing India Budget Tiers](https://jeevanai.co.in/blog/geo-tool-pricing-india-budget-tiers)
+- [AI Brand Perception Tools India Under 5000](https://jeevanai.co.in/blog/ai-brand-perception-tools-india-under-5000)
+- [SEO vs GEO Budget Allocation](https://jeevanai.co.in/blog/seo-vs-geo-budget-allocation)
+- [Jeevan AI vs Peec, Otterly, Profound](https://jeevanai.co.in/blog/jeevan-ai-vs-peec-otterly-profound)
+- [Skeptical of GEO Tools](https://jeevanai.co.in/blog/skeptical-of-geo-tools)
+- [Review Sites and AI Citations for B2B SaaS](https://jeevanai.co.in/blog/review-sites-ai-citations-b2b-saas)

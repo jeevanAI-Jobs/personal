@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 Sitemap: https://jeevanai.co.in/sitemap.xml
@@ -36,3 +36,5 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
+
+LLMs: https://jeevanai.co.in/llms.txt

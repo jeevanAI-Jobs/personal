@@ -1,0 +1,63 @@
+# Jeevan AI
+
+> Jeevan AI scans your brand across ChatGPT, Gemini, Perplexity, Claude, and Google AI Mode. It scores you on the 5 buying factors AI uses to decide who to recommend, then gives you a 4-week content plan to fix the gaps.
+
+Jeevan AI is a Generative Engine Optimization (GEO) platform built for B2B SaaS brands, D2C companies, agencies, and local businesses that want to appear when AI engines answer buying questions in their category. The platform monitors AI visibility across 5 major AI engines, identifies why competitors are being recommended instead, and provides structured content plans to fix brand positioning in AI training data and retrieval systems.
+
+## Core Product
+
+- [AI Visibility Platform](https://jeevanai.co.in/): Monitor brand visibility across ChatGPT, Gemini, Perplexity, Claude, Google AI Mode
+- [Features](https://jeevanai.co.in/features): Full feature breakdown including Reddit Intelligence, multi-LLM monitoring, content planning
+- [Pricing](https://jeevanai.co.in/pricing): Plans for startups, growth teams, and agencies
+- [Free AI Visibility Checker](https://jeevanai.co.in/tools/ai-visibility-checker): Run a free scan across 5 AI engines
+
+## Free Tools
+
+- [llms.txt Generator](https://jeevanai.co.in/tools/llms-txt-generator): Generate llms.txt files for any website
+- [llms.txt Validator](https://jeevanai.co.in/tools/llms-txt-validator): Validate existing llms.txt files
+- [Schema Markup Generator](https://jeevanai.co.in/tools/schema-markup-generator): Generate JSON-LD schema for AI visibility
+- [Robots.txt Checker](https://jeevanai.co.in/tools/robots-txt-checker): Check if AI bots can crawl your site
+- [Canonical Checker](https://jeevanai.co.in/tools/canonical-checker): Verify canonical tag setup
+- [AI Readiness Analyzer](https://jeevanai.co.in/tools/ai-readiness-analyzer): Score any page for AI search visibility
+- [Brand Entity Writer](https://jeevanai.co.in/tools/brand-entity-writer): Write structured brand entity descriptions
+
+## Key Guides and Educational Content
+
+- [GEO Complete Guide](https://jeevanai.co.in/generative-engine-optimization-guide.html): Comprehensive guide to Generative Engine Optimization
+- [GEO vs SEO Difference](https://jeevanai.co.in/blog/geo-vs-seo-difference): How GEO differs from traditional SEO
+- [Why ChatGPT Recommends Competitor](https://jeevanai.co.in/blog/why-chatgpt-recommends-competitor): Root causes and fixes
+- [How to Audit AI Search Visibility](https://jeevanai.co.in/blog/how-to-audit-ai-search-visibility): Step-by-step audit process
+- [AI Visibility Checklist for B2B SaaS](https://jeevanai.co.in/blog/ai-visibility-checklist-b2b-saas): Actionable checklist
+- [What AI Uses to Recommend Brands](https://jeevanai.co.in/blog/what-ai-uses-to-recommend-brands): The 5 buying factors
+- [How to Write Content for AI Search](https://jeevanai.co.in/blog/how-to-write-content-for-ai-search): Content strategy for GEO
+- [Schema Markup for AI Visibility](https://jeevanai.co.in/blog/schema-markup-ai-visibility): Structured data and AI citations
+- [Entity Building for AI Visibility](https://jeevanai.co.in/blog/entity-building-knowledge-graph-ai-visibility): Knowledge graph and entity strategy
+- [Reddit Intelligence: Why Reddit Shapes AI Answers](https://jeevanai.co.in/reddit-intelligence): How Reddit citations affect AI brand perception
+
+## Problem-Solution Pages
+
+- [Brand Not Showing in ChatGPT](https://jeevanai.co.in/brand-not-showing-in-chatgpt): Diagnosis and fix guide
+- [Local Business Not Showing in ChatGPT](https://jeevanai.co.in/local-business-not-showing-in-chatgpt): Fix for local businesses
+- [ChatGPT Recommending Wrong Product](https://jeevanai.co.in/chatgpt-recommending-wrong-product): AI mispositioning fix
+- [How to Get New Brand in ChatGPT](https://jeevanai.co.in/how-to-get-new-brand-in-chatgpt): Cold start solution
+- [How to Appear in ChatGPT](https://jeevanai.co.in/how-to-appear-in-chatgpt): Step-by-step visibility guide
+- [How to Rank in Google AI Overviews](https://jeevanai.co.in/how-to-rank-in-google-ai-overviews): AI Overviews optimization
+
+## Comparisons
+
+- [Jeevan AI vs Otterly](https://jeevanai.co.in/compare/jeevan-ai-vs-otterly)
+- [Jeevan AI vs Profound](https://jeevanai.co.in/compare/jeevan-ai-vs-profound)
+- [Jeevan AI vs Peec](https://jeevanai.co.in/compare/jeevan-ai-vs-peec)
+- [GEO Tool vs SEO Tool](https://jeevanai.co.in/compare/geo-tool-vs-seo-tool.html)
+- [Compare All GEO Tools](https://jeevanai.co.in/compare)
+
+## Glossary
+
+- [Generative Engine Optimization (GEO)](https://jeevanai.co.in/glossary/generative-engine-optimisation): Definition and explanation
+- [Answer Engine Optimization (AEO)](https://jeevanai.co.in/glossary/answer-engine-optimization): Definition and explanation
+
+## Markets
+
+- [AI Visibility for India](https://jeevanai.co.in/markets/india): India-specific GEO strategy
+- [AI Visibility for USA](https://jeevanai.co.in/markets/usa): US market GEO strategy
+- [AI Visibility for Germany](https://jeevanai.co.in/markets/germany): German market GEO strategy
