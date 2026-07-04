@@ -847,6 +847,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Problem-solution blog posts -->
+  <url>
+    <loc>https://jeevanai.co.in/blog/local-business-not-showing-in-chatgpt</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jeevanai.co.in/blog/chatgpt-recommending-wrong-product</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jeevanai.co.in/blog/how-to-get-new-brand-in-chatgpt</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Problem-solution pages -->
   <url>
     <loc>https://jeevanai.co.in/local-business-not-showing-in-chatgpt</loc>
