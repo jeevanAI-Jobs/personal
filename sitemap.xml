@@ -819,6 +819,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- How-to guides -->
+  <url>
+    <loc>https://jeevanai.co.in/how-to-appear-in-chatgpt</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jeevanai.co.in/how-to-rank-in-google-ai-overviews</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Compare hub and India budget guide -->
   <url>
     <loc>https://jeevanai.co.in/compare</loc>
