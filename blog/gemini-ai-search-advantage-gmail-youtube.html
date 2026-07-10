@@ -81,22 +81,91 @@ footer{border-top:1px solid var(--border);padding:32px 24px;text-align:center;fo
 footer a{color:var(--text-dim)}
 @media(max-width:600px){.nav__links{display:none}.article-wrap{padding:32px 16px 60px}.advantage-grid{grid-template-columns:1fr}}
 </style>
+<style>
+.article-hero{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 45%,#7c3aed 100%);padding:56px 24px 64px}
+.article-hero__inner{max-width:740px;margin:0 auto}
+.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-size:0.82rem}
+.article-hero__breadcrumb a{color:rgba(255,255,255,0.65);text-decoration:none}
+.article-hero__breadcrumb span{color:rgba(255,255,255,0.45)}
+.article-hero__meta{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.article-hero__meta .post-tag{display:inline-block;padding:4px 10px;border-radius:4px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;background:rgba(255,255,255,0.15);color:#fff}
+.article-hero__meta .post-date,.article-hero__meta .read-time{font-size:0.82rem;color:rgba(255,255,255,0.65)}
+.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.8rem,4vw,2.4rem);color:#fff;line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px}
+.article-hero__subtitle{font-size:1.05rem;color:rgba(255,255,255,0.82);line-height:1.65;max-width:620px;margin:0}
+.article-wrap{max-width:1060px!important;padding:48px 24px 80px!important;display:grid!important;grid-template-columns:1fr 260px;gap:48px;align-items:start}
+.article-prose>.article-meta,.article-prose>h1,.article-prose>.article-lede{display:none}
+.article-sidebar{position:sticky;top:84px}
+.sidebar-toc{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px}
+.sidebar-toc h4{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:14px}
+.toc-list{list-style:none;padding:0}
+.toc-list li{margin-bottom:8px}
+.toc-list a{font-size:0.82rem;color:var(--text-dim);display:block;padding:4px 8px;border-radius:6px;text-decoration:none}
+.toc-list a:hover{color:var(--accent);background:rgba(99,102,241,0.08)}
+.sidebar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+.sidebar-card h4{font-size:0.9rem;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.4}
+.sidebar-card p{font-size:0.8rem;color:var(--text-dim);margin-bottom:16px;line-height:1.55}
+.btn-primary-sm{display:block;width:100%;box-sizing:border-box;padding:10px 20px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-weight:600;font-size:0.875rem;text-align:center;text-decoration:none}
+.related-section{border-top:1px solid var(--border);padding:56px 24px}
+.related-section__inner{max-width:1060px;margin:0 auto}
+.related-section__inner>h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:28px}
+.related-grid-2{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card-2{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color 0.2s,transform 0.2s}
+.related-card-2:hover{border-color:rgba(99,102,241,0.4);transform:translateY(-2px)}
+.related-card-2 .r-tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;text-transform:uppercase;background:rgba(99,102,241,0.12);color:#a5b4fc;margin-bottom:10px}
+.related-card-2 h4{font-size:0.9rem;font-weight:600;color:var(--white);line-height:1.4;margin-bottom:6px}
+.related-card-2 p{font-size:0.8rem;color:var(--text-dim);line-height:1.5;margin-bottom:14px}
+.related-card-2 a.r-link{font-size:0.8rem;font-weight:600;color:var(--accent);text-decoration:none}
+.cta-strip{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 45%,#7c3aed 100%);padding:56px 24px;text-align:center}
+.cta-strip__inner{max-width:600px;margin:0 auto}
+.cta-strip__title{font-family:var(--font-serif);font-size:1.8rem;color:#fff;margin-bottom:12px;line-height:1.2}
+.cta-strip__sub{color:rgba(255,255,255,0.8);margin-bottom:28px;font-size:1rem}
+.btn-cta-white{display:inline-block;padding:14px 32px;border-radius:8px;background:#fff;color:#4338ca;font-weight:700;font-size:0.95rem;text-decoration:none}
+.footer-full{border-top:1px solid var(--border);padding:48px 24px 32px}
+.footer-full__inner{max-width:1060px;margin:0 auto}
+.footer-full__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-full__brand p{color:var(--text-dim);font-size:0.875rem;margin-top:12px;max-width:260px;line-height:1.6}
+.footer-full__col h5{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:14px}
+.footer-full__col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.footer-full__col li a{font-size:0.875rem;color:var(--text-dim)}
+.footer-full__col li a:hover{color:var(--text)}
+.footer-full__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}
+.footer-full__bottom span{font-size:0.8rem;color:var(--text-muted)}
+@media(max-width:1024px){.article-wrap{grid-template-columns:1fr!important;gap:48px!important}.article-sidebar{position:static}.related-grid-2{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.related-grid-2{grid-template-columns:1fr}.footer-full__grid{grid-template-columns:1fr}.footer-full__bottom{flex-direction:column;gap:8px;text-align:center}}
+</style>
 </head>
 <body>
-<nav class="nav">
+<nav class="nav" role="navigation" aria-label="Main navigation">
 <div class="nav__inner">
-<a href="/" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" width="28" height="28">Jeevan AI</a>
+<a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
 <div class="nav__links">
-<a href="/">Home</a>
+<a href="/index.html#how-it-works">How It Works</a>
+<a href="/index.html#features">Features</a>
+<a href="/index.html#pricing">Pricing</a>
 <a href="/blog-index.html">Blog</a>
-<a href="/generative-engine-optimization-guide.html">GEO Guide</a>
-<a href="/reddit-intelligence">Reddit Intel</a>
+<a href="/index.html#about">About</a>
+<a href="mailto:jeevanaijobs@gmail.com">Contact</a>
 </div>
-<a href="https://app.jeevanai.co.in" class="nav__cta">Try Free</a>
+<a href="https://jeevanai.co.in" class="nav__cta">Get Early Access</a>
 </div>
 </nav>
 
+<header class="article-hero">
+<div class="article-hero__inner">
+<nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+<a href="/index.html">Home</a><span>&rsaquo;</span><a href="/blog-index.html">Blog</a><span>&rsaquo;</span><span>Gemini AI Search Advantage</span>
+</nav>
+<div class="article-hero__meta">
+<span class="post-tag">Platform Strategy</span>
+<span class="post-date">11 Jul 2026</span>
+<span class="read-time">&middot; 8 min read</span>
+</div>
+<h1 class="article-hero__title">Why Gemini Has the AI Search Advantage Nobody Is Talking About</h1>
+<p class="article-hero__subtitle">Gemini's Gmail, Calendar, and YouTube integration gives it a first-party data edge no other AI search engine can replicate. Here is what it means for your GEO strategy.</p>
+</div>
+</header>
 <div class="article-wrap">
+<main class="article-prose" id="article-content">
 <div class="article-meta">
 <span class="tag">Platform Strategy</span>
 <span class="date">July 11, 2026</span>
@@ -152,7 +221,7 @@ footer a{color:var(--text-dim)}
 </ul>
 
 <div class="callout">
-<p><strong>From r/SEO discussions (July 2026):</strong> Marketing strategists noting that "YouTube transcripts could become a huge advantage for Google" because Gemini has direct native access to them, while ChatGPT must access YouTube via web browsing. The structural advantage compounds every time a new video is published.</p>
+<p><strong><a href="https://www.reddit.com/r/SEO/comments/1uroeze/" target="_blank" rel="noopener">From r/SEO discussions (July 2026)</a>:</strong> Marketing strategists noting that "YouTube transcripts could become a huge advantage for Google" because Gemini has direct native access to them, while ChatGPT must access YouTube via web browsing. The structural advantage compounds every time a new video is published.</p>
 </div>
 
 <h2>Why Gemini's Answer Surface Is Growing Fastest</h2>
@@ -207,21 +276,71 @@ footer a{color:var(--text-dim)}
 <a href="https://app.jeevanai.co.in" class="btn">Try Jeevan AI Free</a>
 </div>
 
-<div class="related">
-<h3>Related reading</h3>
-<div class="related-grid">
-<div class="related-card"><a href="/blog/gemini-brand-visibility-playbook">Gemini Brand Visibility Playbook</a></div>
-<div class="related-card"><a href="/blog/youtube-ai-citations-strategy">YouTube AI Citations: 56% Rise</a></div>
-<div class="related-card"><a href="/blog/google-ai-mode-brand-visibility-playbook">Google AI Mode Playbook</a></div>
-<div class="related-card"><a href="/blog/chatgpt-vs-google-ai-mode-geo-budget">ChatGPT vs Google AI Mode</a></div>
-<div class="related-card"><a href="/blog/entity-building-knowledge-graph-ai-visibility">Entity Building for AI Visibility</a></div>
-<div class="related-card"><a href="/generative-engine-optimization-guide.html">Complete GEO Guide</a></div>
+</main>
+<aside class="article-sidebar">
+<div class="sidebar-toc">
+<h4>In this article</h4>
+<ul class="toc-list">
+<li><a href="#">First-Party Data Advantage</a></li>
+<li><a href="#">YouTube Transcript Play</a></li>
+<li><a href="#">Gemini's Growing Answer Surface</a></li>
+<li><a href="#">What Gemini Actually Cites</a></li>
+<li><a href="#">Personalization Asymmetry</a></li>
+<li><a href="#">Gemini-Specific GEO Strategy</a></li>
+</ul>
+</div>
+<div class="sidebar-card">
+<h4>Track AI Visibility</h4>
+<p>Monitor your brand citations across ChatGPT, Gemini, and Perplexity.</p>
+<a href="https://jeevanai.co.in" class="btn-primary-sm">Get Early Access</a>
+</div>
+</aside>
+</div>
+<section class="related-section">
+<div class="related-section__inner">
+<h3>Related Reading</h3>
+<div class="related-grid-2">
+<div class="related-card-2"><span class="r-tag">Tool Playbook</span><h4>Google AI Mode: The Brand Visibility Playbook</h4><p>The exact playbook to get your brand cited in Google AI Mode with traffic credit attached.</p><a href="/blog/google-ai-mode-brand-visibility-playbook" class="r-link">Read article &rarr;</a></div>
+<div class="related-card-2"><span class="r-tag">Platform Strategy</span><h4>ChatGPT vs Google AI Mode: Where to Focus</h4><p>ChatGPT has the users. Google AI Mode has purchase intent. Here is the framework for deciding where to invest.</p><a href="/blog/chatgpt-vs-google-ai-mode-geo-budget" class="r-link">Read article &rarr;</a></div>
+<div class="related-card-2"><span class="r-tag">GEO Strategy</span><h4>The Reddit-to-AI Pipeline</h4><p>Why forum presence is now a core GEO signal and how to build it strategically.</p><a href="/blog/reddit-to-ai-pipeline-forum-citations" class="r-link">Read article &rarr;</a></div>
 </div>
 </div>
+</section>
+<section class="cta-strip">
+<div class="cta-strip__inner">
+<h2 class="cta-strip__title">Track Your AI Visibility</h2>
+<p class="cta-strip__sub">See exactly where your brand appears across ChatGPT, Gemini, Perplexity, and Google AI Mode.</p>
+<a href="https://jeevanai.co.in" class="btn-cta-white">Get Early Access Free</a>
 </div>
-
-<footer>
-<p>&copy; 2026 Jeevan AI &mdash; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="/blog-index.html">Blog</a> &middot; <a href="/investors">Investors</a></p>
+</section>
+<footer class="footer-full">
+<div class="footer-full__inner">
+<div class="footer-full__grid">
+<div class="footer-full__brand">
+<a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:32px;height:32px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
+<p>AI visibility monitoring for brands that care about being found in the AI era.</p>
+</div>
+<div class="footer-full__col"><h5>Product</h5><ul>
+<li><a href="/index.html#how-it-works">How It Works</a></li>
+<li><a href="/index.html#features">Features</a></li>
+<li><a href="/index.html#pricing">Pricing</a></li>
+</ul></div>
+<div class="footer-full__col"><h5>Company</h5><ul>
+<li><a href="/index.html#about">About</a></li>
+<li><a href="mailto:jeevanaijobs@gmail.com">Contact</a></li>
+<li><a href="/investors">Investors</a></li>
+</ul></div>
+<div class="footer-full__col"><h5>Resources</h5><ul>
+<li><a href="/blog-index.html">Blog</a></li>
+<li><a href="/generative-engine-optimization-guide.html">GEO Guide</a></li>
+<li><a href="/privacy.html">Privacy Policy</a></li>
+</ul></div>
+</div>
+<div class="footer-full__bottom">
+<span>&copy; 2026 Jeevan AI. All rights reserved.</span>
+<span><a href="/privacy.html">Privacy</a> &middot; <a href="/blog-index.html">Blog</a></span>
+</div>
+</div>
 </footer>
 </body>
 </html>
