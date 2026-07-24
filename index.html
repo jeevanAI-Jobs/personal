@@ -379,6 +379,13 @@ a{color:inherit;text-decoration:none}
 .article-hero__breadcrumb a,
 .article-hero__breadcrumb span { color: rgba(255,255,255,0.72) !important; }
 
+/* DEMO VIDEO */
+.demo-section{padding:80px 24px;border-top:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,rgba(99,102,241,0.03) 100%)}
+.demo-section__inner{max-width:var(--max-w);margin:0 auto;text-align:center}
+.demo-section__header{max-width:600px;margin:0 auto 48px}
+.demo-video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 8px 40px rgba(99,102,241,0.18),0 2px 8px rgba(0,0,0,0.08);border:1px solid rgba(99,102,241,0.2);max-width:900px;margin:0 auto}
+.demo-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:16px}
+
 /* COMMUNITY BAR */
 .community-bar{background:#ff4500;padding:9px 24px;text-align:center}
 .community-bar a{color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:10px;opacity:1;transition:opacity 0.2s}
@@ -531,6 +538,20 @@ a{color:inherit;text-decoration:none}
         <h3>Get the plan</h3>
         <p>A 4-week content calendar is generated from your gap analysis — grounded in your Knowledge Base and social signal data. Every brief is specific enough for a writer to execute without asking a single question.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO VIDEO -->
+<section class="demo-section" aria-labelledby="demo-title">
+  <div class="demo-section__inner">
+    <div class="demo-section__header">
+      <div class="section-label">See it in action</div>
+      <h2 class="section-title" id="demo-title">Watch a live Jeevan AI scan</h2>
+      <p class="section-sub" style="margin-bottom:0">See how Jeevan AI scans a brand across ChatGPT, Gemini, Perplexity, and Google AI Mode — and surfaces exactly why a competitor is being recommended instead.</p>
+    </div>
+    <div class="demo-video-wrap">
+      <iframe src="https://www.youtube.com/embed/UYLnGuC2k1Q" title="Jeevan AI Demo — Live Brand Scan" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
