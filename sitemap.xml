@@ -1108,5 +1108,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://jeevanai.co.in/questions-about-ga4-traffic-drops-ai-overviews</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jeevanai.co.in/questions-about-tracking-ai-referral-traffic</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
 </urlset>

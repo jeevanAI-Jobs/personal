@@ -33,7 +33,11 @@
 {"@type":"Question","name":"How do GEO tools differ from traditional SEO platforms?","acceptedAnswer":{"@type":"Answer","text":"Traditional SEO platforms track keyword rankings in Google search. GEO tools track how your brand appears inside AI-generated answers across ChatGPT, Perplexity, Gemini, and Claude. Instead of position 1 to 10, GEO tools measure whether your brand is mentioned, how it is described, which competitors appear alongside or instead of you, and what content gaps are causing AI to skip your brand."}},
 {"@type":"Question","name":"What factors do AI models use to recommend brands?","acceptedAnswer":{"@type":"Answer","text":"AI models use five main factors to decide which brands to recommend: authority and credibility signals such as consistent entity definitions across the web; structured data that makes brand information machine-readable; citation presence in Reddit, forums, and review platforms that AI engines use as training and retrieval sources; content that directly answers buyer questions in the relevant category; and comparison coverage where the brand is discussed alongside its competitors."}},
 {"@type":"Question","name":"What is a FAQ schema generator?","acceptedAnswer":{"@type":"Answer","text":"A FAQ schema generator creates FAQPage JSON-LD structured data markup that you paste into your page head. This markup makes your question and answer pairs machine-readable, which helps AI engines extract and cite them and can trigger rich results in Google Search. Jeevan AI offers a free AI Schema Generator that reads your live URL and generates complete JSON-LD from your actual page content, and a manual Schema Markup Generator for building FAQ schema from scratch."}},
-{"@type":"Question","name":"Why is our B2B SaaS brand invisible in ChatGPT and Perplexity answers?","acceptedAnswer":{"@type":"Answer","text":"B2B SaaS brands are most commonly invisible in AI answers for three reasons: the brand entity is not consistently defined across the website, G2, LinkedIn, and Crunchbase, so AI cannot confidently classify the product; the brand has no presence in the Reddit and Quora discussions AI engines use as citation sources for category recommendations; and product pages are written for SEO keywords rather than the direct answer format AI engines extract from."}}
+{"@type":"Question","name":"Why is our B2B SaaS brand invisible in ChatGPT and Perplexity answers?","acceptedAnswer":{"@type":"Answer","text":"B2B SaaS brands are most commonly invisible in AI answers for three reasons: the brand entity is not consistently defined across the website, G2, LinkedIn, and Crunchbase, so AI cannot confidently classify the product; the brand has no presence in the Reddit and Quora discussions AI engines use as citation sources for category recommendations; and product pages are written for SEO keywords rather than the direct answer format AI engines extract from."}},
+{"@type":"Question","name":"Why did my GA4 traffic drop after Google AI Overviews expanded?","acceptedAnswer":{"@type":"Answer","text":"When Google AI Overviews appear for a query, users read the synthesized answer directly in search results without clicking through. Your page continues to rank and earn impressions, but the click no longer happens. This is the zero-click effect. It affects informational and how-to queries most severely. Rankings have not changed and there is no technical penalty. The correct response is to shift the success metric for informational content from sessions to AI citation rate. If your content is cited inside the AI Overview, your brand is still reaching the user during their research phase."}},
+{"@type":"Question","name":"How do I track ChatGPT and Perplexity referral traffic in GA4?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT traffic appears as referral sessions from chat.openai.com in GA4. Perplexity traffic appears under perplexity.ai. Gemini traffic appears under gemini.google.com. Create a custom channel grouping in GA4 that buckets these together with claude.ai into a single AI Referral channel. A significant portion of AI-driven traffic arrives as direct because some AI interfaces strip referrer headers before the click. Track branded search volume in parallel to estimate the total AI-influenced demand including the unattributed direct portion."}},
+{"@type":"Question","name":"Do paid ChatGPT ads improve organic AI brand recommendations?","acceptedAnswer":{"@type":"Answer","text":"No. Paid advertising and organic AI recommendations operate through completely separate systems. ChatGPT ads run through a real-time auction external to the language model itself. Organic recommendations come from the model's training data and live web retrieval, based on authority signals like entity consistency, structured data, and citation presence in forums. Paying for ad placement does not feed into retrieval scoring and does not improve how the model describes or recommends your brand in organic responses."}},
+{"@type":"Question","name":"Does social media presence help with AI search visibility?","acceptedAnswer":{"@type":"Answer","text":"Certain social platforms contribute to AI citation authority more than others. Reddit is the highest-value social platform for AI citations because AI engines like Perplexity and ChatGPT actively retrieve from Reddit threads for peer recommendation queries. LinkedIn matters for B2B brand authority signals. Twitter and Instagram have almost no direct citation value but increase overall brand mention volume that AI may pick up during training updates. The highest-leverage social investment for AI visibility is creating substantive Reddit discussions in the subreddits your buyers actually use."}}
 ]}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -93,6 +97,8 @@
   .cat-schema{border-left:3px solid #0284c7}
   .cat-research .query-card__cat{color:#db2777}
   .cat-research{border-left:3px solid #db2777}
+  .cat-analytics .query-card__cat{color:#0891b2}
+  .cat-analytics{border-left:3px solid #0891b2}
 
   /* RESULT COUNT */
   .result-count{font-size:0.84rem;color:var(--text-muted);margin-bottom:20px}
@@ -161,6 +167,7 @@
     <button class="tab-btn" data-cat="brand" onclick="filterCat('brand',this)">&#x1F4CA; AI Brand Tracking <span class="count" id="cnt-brand"></span></button>
     <button class="tab-btn" data-cat="schema" onclick="filterCat('schema',this)">&#x1F527; Schema &amp; Structured Data <span class="count" id="cnt-schema"></span></button>
     <button class="tab-btn" data-cat="research" onclick="filterCat('research',this)">&#x1F50D; Competitor Research <span class="count" id="cnt-research"></span></button>
+    <button class="tab-btn" data-cat="analytics" onclick="filterCat('analytics',this)">&#x1F4C8; GA4 &amp; Analytics <span class="count" id="cnt-analytics"></span></button>
   </div>
 
   <p class="result-count" id="resultCount"></p>
@@ -601,6 +608,58 @@
       <a href="/blog/geo-order-of-operations.html" class="query-card__link">Read full answer &rarr;</a>
     </div>
 
+    <!-- ANALYTICS / GA4 CATEGORY -->
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">why did my ga4 traffic drop after google ai overviews</p>
+      <a href="/blog/ga4-traffic-drop-google-ai-overviews.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">google ai overviews impressions up sessions down what does it mean</p>
+      <a href="/blog/ga4-traffic-drop-google-ai-overviews.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">how to track chatgpt referral traffic in ga4</p>
+      <a href="/blog/ga4-traffic-drop-google-ai-overviews.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">perplexity referral traffic showing up in ga4 as direct</p>
+      <a href="/blog/ga4-traffic-drop-google-ai-overviews.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">ai share of voice metric what is it and how do you measure it</p>
+      <a href="/blog/ga4-traffic-drop-google-ai-overviews.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">does paying for chatgpt ads help with organic ai brand recommendations</p>
+      <a href="/blog/chatgpt-ads-organic-ai-visibility.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">chatgpt ads vs organic ai visibility difference</p>
+      <a href="/blog/chatgpt-ads-organic-ai-visibility.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">do google ai mode ads influence organic citation rates</p>
+      <a href="/blog/ai-mode-ads-vs-organic-citations.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">social media signals that help with ai search rankings</p>
+      <a href="/blog/social-media-signals-ai-search-authority.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+    <div class="query-card cat-analytics" data-cat="analytics">
+      <span class="query-card__cat">GA4 &amp; Analytics</span>
+      <p class="query-card__text">reddit posts for ai citation strategy does it actually work</p>
+      <a href="/blog/reddit-ai-citation-source-strategy.html" class="query-card__link">Read full answer &rarr;</a>
+    </div>
+
   </div><!-- end query-grid -->
 
   <!-- STATIC ANSWER SECTIONS — for Google and LLM extraction -->
@@ -634,6 +693,13 @@
       <h2>FAQ schema generators and structured data for AI search visibility</h2>
       <p>FAQPage JSON-LD schema is one of the highest-leverage structured data types for AI search visibility. When you mark up your question and answer pairs as FAQPage schema, AI engines can extract them as machine-readable knowledge rather than having to infer meaning from raw HTML. A FAQ schema generator creates this markup automatically so you do not have to write JSON by hand.</p>
       <p>Jeevan AI offers two free schema tools: the <a href="/tools/ai-schema-generator.html">AI Schema Generator</a> reads your live URL and generates complete JSON-LD from your actual page content — Organization, FAQPage, Article, Product, whatever fits. The <a href="/tools/schema-markup-generator.html">Schema Markup Generator</a> lets you build FAQ schema, Organization schema, and Person schema manually by filling in a simple form. Both tools output copy-paste ready code for your page head.</p>
+    </div>
+
+    <div class="answer-block" id="answer-analytics">
+      <h2>GA4 traffic drops, ChatGPT referral tracking, and measuring AI visibility</h2>
+      <p>The most common analytics question in 2026 is some version of: impressions are flat, rankings have not moved, but GA4 sessions are down. This is the zero-click effect from Google AI Overviews. When AI Overviews appear consistently for a query type, users consume the answer in the results page and the click no longer happens. There is no algorithm penalty and no technical issue to fix. The ranking held but the click did not follow.</p>
+      <p>The correct measurement response is to track AI citation rate alongside sessions. If your content is being cited inside the AI Overview, your brand is reaching the buyer during their research phase even without a click. <a href="/blog/ga4-traffic-drop-google-ai-overviews.html">The full breakdown of why GA4 traffic drops after AI Overviews expand</a> covers how to segment affected queries in Search Console, how to set up an AI Referral channel grouping in GA4, and how to interpret the impressions-vs-sessions divergence correctly.</p>
+      <p>On the paid side: ChatGPT and Google AI Mode ads run through auction systems that are entirely separate from the organic recommendation layer. Paying for ads does not improve your brand's citation rate in organic AI responses. The two channels do not talk to each other at the scoring level.</p>
     </div>
 
   </div><!-- end answers -->
@@ -714,7 +780,7 @@
 var cards = document.querySelectorAll('.query-card');
 
 function updateCounts() {
-  var cats = ['competitor','india','concepts','brand','schema','research'];
+  var cats = ['competitor','india','concepts','brand','schema','research','analytics'];
   var all = 0;
   cats.forEach(function(cat) {
     var n = document.querySelectorAll('.query-card[data-cat="'+cat+'"]').length;
