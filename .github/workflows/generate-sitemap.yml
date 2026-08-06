@@ -10,6 +10,8 @@ on:
 jobs:
   sitemap-and-feed:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
 
     steps:
