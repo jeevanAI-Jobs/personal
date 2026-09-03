@@ -7,24 +7,23 @@
 <link rel="icon" type="image/png" href="/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Search Pipeline Attribution: How to Connect GEO to Revenue | Jeevan AI</title>
-<meta name="description" content="How to attribute pipeline and revenue to AI search visibility. Covers dark traffic analysis, UTM strategy for AI tools, form attribution setup, and the CRM fields that close the loop.">
+<meta name="description" content="How to attribute pipeline and closed revenue to your AI visibility investment. Covers dark traffic analysis, form attribution fields, CRM setup, Perplexity referrers, and AI SoV correlation.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://jeevanai.co.in/blog/ai-search-pipeline-attribution">
 <meta property="og:title" content="AI Search Pipeline Attribution: How to Connect GEO to Revenue | Jeevan AI">
-<meta property="og:description" content="The complete setup guide for attributing pipeline and revenue to AI search. Dark traffic analysis, form attribution, and CRM field setup.">
+<meta property="og:description" content="Five-part setup to track which deals came in through AI citations. Dark traffic analysis, form fields, CRM tagging, Perplexity referrers, and AI SoV correlation.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://jeevanai.co.in/blog/ai-search-pipeline-attribution">
 <meta property="og:site_name" content="Jeevan AI">
 <meta property="article:published_time" content="2026-09-04">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"AI Search Pipeline Attribution: How to Connect GEO to Revenue","description":"The complete technical and operational setup guide for attributing B2B pipeline and revenue to AI search visibility. Covers dark traffic analysis, form attribution design, CRM field structure, and the reporting framework that connects AI share of voice to closed deals.","author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in","logo":{"@type":"ImageObject","url":"https://jeevanai.co.in/assets/logo.png"}},"datePublished":"2026-09-04","dateModified":"2026-09-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeevanai.co.in/blog/ai-search-pipeline-attribution"},"keywords":["ai search attribution","geo pipeline","ai visibility revenue","b2b ai attribution","dark traffic attribution","chatgpt pipeline attribution"]}
+{"@context":"https://schema.org","@type":"Article","headline":"AI Search Pipeline Attribution: How to Connect GEO to Revenue","description":"How to attribute B2B pipeline and revenue to AI search visibility. Covers dark traffic analysis, form attribution fields, CRM setup, Perplexity referrers, and AI share of voice correlation frameworks.","author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in","logo":{"@type":"ImageObject","url":"https://jeevanai.co.in/assets/logo.png"}},"datePublished":"2026-09-04","dateModified":"2026-09-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeevanai.co.in/blog/ai-search-pipeline-attribution"},"keywords":["ai search attribution","geo attribution pipeline","dark traffic attribution","ai visibility revenue impact","perplexity attribution","chatgpt referral traffic"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Why is AI search so hard to attribute in standard analytics?","acceptedAnswer":{"@type":"Answer","text":"AI tools like ChatGPT and Perplexity do not pass referrer data when a user clicks from their interface to your website. This means a buyer who researched you on ChatGPT for 20 minutes and then navigated to your site directly appears in your analytics as direct traffic with no source. Standard UTM tracking and channel attribution models were designed for clickable referrers: Google, LinkedIn, email. They have no way to capture discovery that happened in a private AI session. This is why AI search creates what practitioners call a dark traffic problem: real buyer activity that shows up as unexplained direct traffic."}},
-{"@type":"Question","name":"What is the simplest way to start attributing AI-discovered pipeline?","acceptedAnswer":{"@type":"Answer","text":"The highest-leverage starting point is adding a 'how did you hear about us' question to every demo request and trial signup form, with AI tools listed as explicit options. Options should include ChatGPT, Perplexity, Google AI Overviews, Claude, and 'other AI tool' as a catch-all. This is not technically perfect attribution, but it captures self-reported discovery that is surprisingly accurate for buyers who are asked at the moment of high intent. In my experience, adding this question alone reveals that 20 to 40 percent of pipeline was first discovered via AI within a quarter or two of enabling it."}},
-{"@type":"Question","name":"How do I distinguish AI-attributed dark traffic from other direct traffic?","acceptedAnswer":{"@type":"Answer","text":"Look at the behavioral profile of dark traffic rather than trying to identify AI referrers technically. AI-attributed dark traffic typically has three distinguishing characteristics: higher time on pricing pages on first visit (buyers who researched via AI already know what you do and skip to pricing), lower bounce rates on landing pages (they already have context), and higher demo request rates per session than traffic from organic search. When you segment your direct traffic by these behavioral proxies and compare conversion rates, the AI-discovery cohort usually stands out clearly and consistently."}},
-{"@type":"Question","name":"Can I see which AI platforms are sending me traffic?","acceptedAnswer":{"@type":"Answer","text":"Partially. Perplexity is the most trackable because it includes citation links and passes partial referrer data for some link clicks. You can filter for perplexity.ai in your referrer data to get a floor estimate of Perplexity-attributed visits. ChatGPT, Claude, and Google AI Overviews either do not pass referrer data or pass it inconsistently. For a full picture across all platforms, you need a combination of referrer analysis, form attribution data, and AI share of voice measurement from a dedicated platform that tracks your brand appearance rate in AI responses."}}
+{"@type":"Question","name":"Why does most AI search traffic show up as direct traffic in analytics?","acceptedAnswer":{"@type":"Answer","text":"AI tools like ChatGPT, Claude, and Perplexity do not pass a referrer header when a user navigates to your site from a cited link. The browser either sends no referrer at all or sends the chatgpt.com or claude.ai domain, which analytics tools either lose in filtering or bucket as direct. This is the dark traffic problem. Perplexity is the partial exception: it passes a referrer header consistently, so Perplexity-sourced traffic is detectable in analytics."}},
+{"@type":"Question","name":"What form field options should I add for AI attribution?","acceptedAnswer":{"@type":"Answer","text":"Add a required 'How did you hear about us?' dropdown with AI-specific options separated from generic options. Effective options are: ChatGPT or Claude, Perplexity, Google AI Overview, AI search tool (other), plus the standard organic search, LinkedIn, event or referral, and customer referral options. The key is making AI tools explicit named options rather than lumping them into 'other' or 'social media', where buyers who discovered you through AI will not recognize themselves."}},
+{"@type":"Question","name":"How do I correlate AI share of voice with pipeline in a way that's credible to finance?","acceptedAnswer":{"@type":"Answer","text":"Build a three-variable correlation model. Track monthly AI share of voice alongside monthly AI-attributed form submissions and monthly dark traffic volume. Run this as a quarterly analysis rather than monthly to reduce noise. When all three move in the same direction for two or more consecutive quarters, you have a credible causal claim. Add deal-level data by asking sales to confirm AI as a discovery source on calls and logging it in a CRM field."}}
 ]}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -61,47 +60,76 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .article-section{margin-bottom:48px}
 .article-section h2{font-family:var(--font-serif);font-size:1.5rem;color:#111827;margin-bottom:16px;margin-top:2.5rem;padding-bottom:0.5rem;border-bottom:2px solid #e5e7eb}
 .article-section h3{font-size:1.05rem;font-weight:700;color:#111827;margin:1.5rem 0 0.5rem}
-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.9rem}
-th{background:#f3f4f6;padding:10px 14px;text-align:left;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.04em;color:#374151;border:1px solid #e5e7eb}
-td{padding:10px 14px;border:1px solid #e5e7eb;color:#374151;vertical-align:top}
-tr:nth-child(even) td{background:#fafafa}
-.steps-list{display:grid;gap:14px;margin:24px 0;counter-reset:steps}
-.step-item{display:grid;grid-template-columns:32px 1fr;gap:14px;padding:16px 20px;border:1px solid var(--border);border-radius:10px;counter-increment:steps}
-.step-item__num{width:32px;height:32px;background:#065f46;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.82rem;flex-shrink:0}
-.step-item__title{font-weight:700;font-size:0.9rem;margin-bottom:4px;color:#111827}
-.step-item__body{font-size:0.85rem;color:#4b5563;line-height:1.6}
-.code-snippet{background:#0f172a;color:#e2e8f0;border-radius:8px;padding:16px 20px;font-size:0.82rem;line-height:1.7;margin:16px 0;overflow-x:auto}
-.code-snippet .comment{color:#64748b}
-.code-snippet .key{color:#7dd3fc}
-.code-snippet .val{color:#86efac}
-.dark-traffic-box{background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:24px 28px;margin:28px 0}
-.dark-traffic-box__title{font-weight:700;font-size:0.95rem;color:#065f46;margin-bottom:14px}
-.dark-traffic-signals{display:grid;gap:10px}
-.signal{display:flex;gap:12px;font-size:0.88rem;color:#374151;line-height:1.55}
-.signal-icon{color:#16a34a;font-weight:900;flex-shrink:0}
-.cta-block{background:linear-gradient(135deg,#052e16,#065f46);border-radius:16px;padding:40px;margin:48px 0;text-align:center;color:#fff}
-.cta-block h3{font-family:var(--font-serif);font-size:1.6rem;margin-bottom:12px}
-.cta-block p{color:rgba(255,255,255,0.8);font-size:1rem;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
-.cta-btn{display:inline-block;background:#fff;color:#052e16;padding:14px 32px;border-radius:10px;font-weight:700;font-size:0.95rem;transition:opacity 0.2s}
-.cta-btn:hover{opacity:0.9}
-.sidebar{position:sticky;top:84px}
-.sidebar-widget{background:#f9fafb;border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px}
-.sidebar-widget h4{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:16px}
-.sidebar-links{display:flex;flex-direction:column;gap:10px}
-.sidebar-links a{font-size:0.875rem;color:var(--text-dim);display:flex;align-items:start;gap:8px;line-height:1.45;transition:color 0.2s}
-.sidebar-links a:hover{color:var(--accent)}
-.sidebar-links a::before{content:'→';color:var(--accent);flex-shrink:0;margin-top:1px}
-.faq-section{margin-top:48px}
-.faq-item{border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:12px}
-.faq-item h3{font-size:1rem;font-weight:700;color:#111827;margin-bottom:10px}
-.faq-item p{font-size:0.9rem;color:#4b5563;line-height:1.7;margin:0}
-@media(max-width:900px){.article-wrap{grid-template-columns:1fr;gap:48px}.sidebar{position:static}}
+.content-link{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:2px}
+.content-link:hover{text-decoration-color:var(--accent)}
+.article-divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+.inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07),rgba(99,102,241,0.03));border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:40px}
+.inline-cta__text p{font-size:0.875rem;color:var(--text-muted);margin-top:4px}
+.inline-cta__text strong{font-size:1rem;color:#111827}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.875rem;font-weight:600;white-space:nowrap;transition:opacity 0.2s;box-shadow:0 2px 6px rgba(99,102,241,0.38)}
+.btn-primary:hover{opacity:0.93}
+.btn-outline-sm{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;border:1px solid var(--border);color:#4f46e5;font-size:0.8rem;font-weight:500;transition:all 0.2s;width:100%;justify-content:center}
+.btn-outline-sm:hover{border-color:var(--accent);color:var(--accent)}
+.article-sidebar{position:sticky;top:88px}
+.sidebar-toc{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px}
+.sidebar-toc h4{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:16px}
+.toc-list{list-style:none}
+.toc-list li{padding:4px 0}
+.toc-list a{font-size:0.82rem;color:var(--text-dim);transition:color 0.2s;line-height:1.4;display:block}
+.toc-list a:hover{color:var(--accent)}
+.sidebar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+.sidebar-card h4{font-size:0.95rem;font-weight:600;color:#111827;margin-bottom:8px;line-height:1.4}
+.sidebar-card p{font-size:0.8rem;color:var(--text-dim);margin-bottom:18px;line-height:1.55}
+.faq-section h2{font-family:var(--font-serif);font-size:1.4rem;color:#111827;margin-bottom:24px}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:0.975rem;font-weight:600;color:#111827;margin-bottom:10px}
+.faq-a{font-size:0.925rem;color:var(--text-dim);line-height:1.7;margin:0}
+.related-section{border-top:1px solid var(--border);padding:64px 24px}
+.related-section__inner{max-width:var(--max-w);margin:0 auto}
+.related-section h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:28px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color 0.2s,transform 0.2s}
+.related-card:hover{border-color:rgba(99,102,241,0.45);transform:translateY(-2px)}
+.related-card .post-tag{margin-bottom:12px;display:inline-block;background:rgba(99,102,241,0.1);color:#818cf8}
+.related-card h4{font-size:0.95rem;font-weight:600;color:#111827;line-height:1.4;margin-bottom:8px}
+.related-card p{font-size:0.82rem;color:var(--text-dim);line-height:1.55;margin-bottom:16px}
+.related-link{font-size:0.8rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px;transition:gap 0.2s}
+.related-link:hover{gap:10px}
+.cta-strip{border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.06),transparent 60%);padding:72px 24px}
+.cta-strip__inner{max-width:640px;margin:0 auto;text-align:center}
+.cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:#111827;margin-bottom:12px}
+.cta-strip__sub{color:var(--text-dim);margin-bottom:32px;font-size:1rem}
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px}
+.footer__inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer__brand{font-size:0.875rem;color:var(--text-muted)}
+.footer__links{display:flex;gap:20px}
+.footer__links a{font-size:0.875rem;color:var(--text-muted);transition:color 0.2s}
+.footer__links a:hover{color:var(--text)}
+.setup-steps{margin:28px 0}
+.setup-step{display:grid;grid-template-columns:44px 1fr;gap:20px;margin-bottom:24px;align-items:start}
+.setup-step__num{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#059669,#065f46);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;flex-shrink:0}
+.setup-step__content h3{font-size:1rem;font-weight:700;color:#111827;margin-bottom:6px}
+.setup-step__content p{font-size:0.9rem;color:#374151;line-height:1.65;margin-bottom:0}
+.code-block{background:#1e293b;border-radius:8px;padding:18px 20px;margin:16px 0;overflow-x:auto}
+.code-block code{font-size:0.78rem;color:#e2e8f0;font-family:'Courier New',monospace;line-height:1.6;white-space:pre}
+.signal-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:24px 28px;margin:24px 0}
+.signal-box__title{font-weight:700;font-size:0.95rem;color:#166534;margin-bottom:14px}
+.signal-list{list-style:none}
+.signal-list li{display:flex;gap:10px;font-size:0.88rem;color:#374151;line-height:1.55;margin-bottom:10px}
+.signal-list li::before{content:"●";color:#22c55e;font-size:0.6rem;margin-top:5px;flex-shrink:0}
+.score-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.875rem}
+.score-table th{background:#f9fafb;padding:10px 14px;text-align:left;font-weight:600;color:#374151;border-bottom:2px solid var(--border)}
+.score-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:#374151;vertical-align:top}
+.score-table tr:last-child td{border-bottom:none}
+@media(max-width:900px){.article-wrap{grid-template-columns:1fr}.article-sidebar{display:none}.related-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.nav__links{display:none}}
 </style>
 </head>
 <body>
 <nav class="nav">
 <div class="nav__inner">
-<a href="/" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" width="28" height="28"><span>Jeevan AI</span></a>
+<a href="/" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" width="28" height="28">Jeevan AI</a>
 <div class="nav__links">
 <a href="/blog-index.html" class="active">Blog</a>
 <a href="/#features">Features</a>
@@ -111,219 +139,241 @@ tr:nth-child(even) td{background:#fafafa}
 </div>
 </nav>
 
-<div class="article-hero">
+<section class="article-hero">
 <div class="article-hero__inner">
 <div class="article-hero__breadcrumb">
-<a href="/">Home</a><span>/</span><a href="/blog-index.html">Blog</a><span>/</span><span>AI Pipeline Attribution</span>
+<a href="/">Home</a><span>/</span><a href="/blog-index.html">Blog</a><span>/</span><span>Attribution</span>
 </div>
 <div class="article-hero__meta">
-<span class="post-tag">Revenue Attribution</span>
-<span class="post-tag">Analytics</span>
-<span>September 4, 2026</span>
-<span>10 min read</span>
+<span class="post-tag">Attribution</span>
+<span>Sep 4, 2026</span>
+<span>11 min read</span>
 </div>
 <h1 class="article-hero__title">AI Search Pipeline Attribution: How to Connect GEO to Revenue</h1>
-<p class="article-hero__subtitle">AI search does not pass referrer data. Here is the complete technical and operational setup for attributing real pipeline and revenue to your AI visibility investments.</p>
+<p class="article-hero__subtitle">Most AI-sourced buyers arrive with no referrer. Here is the five-part setup for attributing pipeline and closed revenue to your AI visibility investment.</p>
 </div>
-</div>
+</section>
 
 <div class="article-wrap">
-<main class="article-prose">
+<article class="article-prose">
 
 <div class="summary-block">
-<p><strong>The short version:</strong> ChatGPT and most AI tools do not send referrer data, which means buyers they send to your site show up as direct traffic. This guide covers the five-part attribution setup that closes this gap: dark traffic analysis, form attribution, CRM field structure, behavioral cohort analysis, and AI share of voice correlation. Together they give you a credible attribution model without requiring any changes to how AI tools work.</p>
+<p><strong>The attribution gap:</strong> B2B buyers increasingly discover vendors through AI tools, but that discovery rarely shows up in analytics. The traffic arrives as direct. The buyer signs a deal months later and nobody knows where the relationship started. This guide covers how to close that attribution gap across five layers: form fields, dark traffic analysis, Perplexity referrers, CRM tagging, and AI share of voice correlation.</p>
 </div>
 
-<div class="article-intro">
-<p>The hardest thing about justifying AI visibility investment is that standard analytics cannot see it. A buyer spends 30 minutes on ChatGPT researching your category, builds a mental shortlist, and then types your URL directly into their browser. Your analytics says: direct traffic. Your attribution model says: direct. Your channel report says: unknown.</p>
-<p>This is not a small problem. In most B2B SaaS companies today, 25 to 40 percent of demo requests arrive with no referrer data. Before 2024, this was typically branded search from ads, word-of-mouth, or prior brand awareness. Now, a substantial portion of that dark traffic is AI-assisted discovery. But because the attribution model cannot see it, the AI visibility investment that created it gets no credit.</p>
-<p>The result: marketing teams under-invest in AI visibility because the ROI is invisible in their dashboards, even when it is real in their pipeline.</p>
+<div class="article-intro" id="intro">
+<p>Pipeline attribution for AI search is harder than organic search attribution and easier than most teams think. The hard part is that AI tools do not pass referrer headers in most cases, so the standard UTM-based attribution that works for Google and LinkedIn does not work for ChatGPT or Claude. The easy part is that buyers who discovered you through AI have distinctive behavioral characteristics you can use as a proxy, and many of them will tell you directly if you ask.</p>
+<p>For context on how B2B buyers use AI tools during vendor research, see the <a href="/blog/b2b-buyer-ai-search-behavior-2026/" class="content-link">B2B buyer AI search behavior guide</a>. For the CMO-level framework for reporting on AI-influenced pipeline, see the <a href="/blog/ai-visibility-strategy-for-cmos/" class="content-link">CMO operational playbook</a>. This guide is the implementation layer: exactly what to set up and how.</p>
 </div>
 
-<div class="article-section">
-<h2>Why Standard Attribution Fails for AI Search</h2>
-<p>Attribution models were built for a world where every channel leaves a trace. Google passes UTM parameters. LinkedIn sends referrer headers. Email links carry tracking codes. The click itself is the signal.</p>
-<p>AI tools broke this model in two ways. First, conversations in ChatGPT and Claude happen in private sessions that never send referrer data when the user navigates away. Second, most buyers who discover a brand through AI do not click a link from the AI interface. They close the chat window and open a new browser tab. The attribution chain is broken before the session even starts on your site.</p>
+<div class="article-section" id="why-dark-traffic">
+<h2>Why AI Traffic Is Invisible in Most Analytics</h2>
+<p>When a user clicks a citation link in ChatGPT, Claude, or Gemini, the browser typically sends no HTTP referrer header to your server. Your analytics platform sees an unattributed session and files it as direct. This is the dark traffic problem that makes <a href="/blog/ai-search-traffic-converts-better-than-organic/" class="content-link">AI-sourced traffic conversion data</a> so difficult to isolate: the sessions are converting at higher rates than organic, but they are invisible in source attribution.</p>
 
-<table>
-<tr><th>Channel</th><th>Attribution Method</th><th>AI Search Equivalent</th></tr>
-<tr><td>Google Organic</td><td>Referrer: google.com</td><td>No referrer (private session)</td></tr>
-<tr><td>LinkedIn Ads</td><td>UTM + referrer: linkedin.com</td><td>No UTM, no referrer</td></tr>
-<tr><td>Email Newsletter</td><td>UTM parameters in link</td><td>No link, buyer navigates directly</td></tr>
-<tr><td>Perplexity</td><td>Partial referrer data for some links</td><td>Best trackable AI source</td></tr>
-<tr><td>Word of Mouth</td><td>Self-reported on forms</td><td>Same method works for AI</td></tr>
+<p>Perplexity is the exception. Perplexity consistently passes a referrer of perplexity.ai, so Perplexity-sourced traffic is detectable in analytics under the referral channel. You can verify this right now by checking your analytics for sessions with referrer containing "perplexity".</p>
+
+<table class="score-table">
+<thead>
+<tr><th>AI Platform</th><th>Referrer Behavior</th><th>Analytics Visibility</th></tr>
+</thead>
+<tbody>
+<tr><td>ChatGPT / OpenAI</td><td>No referrer passed</td><td>Shows as direct traffic</td></tr>
+<tr><td>Claude / Anthropic</td><td>No referrer passed</td><td>Shows as direct traffic</td></tr>
+<tr><td>Perplexity</td><td>Passes perplexity.ai referrer</td><td>Visible in referral channel</td></tr>
+<tr><td>Google AI Overview</td><td>Google referrer (varies)</td><td>May appear as organic/Google</td></tr>
+<tr><td>Gemini (standalone)</td><td>No referrer passed</td><td>Shows as direct traffic</td></tr>
+</tbody>
 </table>
-
-<p>Perplexity is the most directly trackable AI source because it surfaces citation links that pass partial referrer data. You can segment perplexity.ai in your referrer reports today. For ChatGPT, Claude, and Google AI Overviews, the self-reporting approach is the most reliable method.</p>
 </div>
 
-<div class="article-section">
-<h2>The Five-Part Attribution Setup</h2>
-<p>No single method gives you complete AI attribution. The approach that works is combining five complementary signals into a coherent picture.</p>
+<div class="article-section" id="form-attribution">
+<h2>Part 1: Form Attribution Fields</h2>
+<p>Self-report is the most direct attribution method and more reliable than most marketers assume. Buyers who discovered you through an AI tool often have a clear memory of it, especially since AI search is still a relatively new behavior that stands out in their mental model.</p>
 
-<h3>Part 1: Form Attribution (Implement First)</h3>
-<p>Add a "how did you first hear about us?" field to every demo request, trial signup, and contact form. Include these as explicit options:</p>
-<div class="code-snippet">
-<span class="comment">// Form options for AI source attribution</span><br>
-<span class="key">options:</span> [<br>
-&nbsp;&nbsp;<span class="val">"ChatGPT or OpenAI"</span>,<br>
-&nbsp;&nbsp;<span class="val">"Perplexity"</span>,<br>
-&nbsp;&nbsp;<span class="val">"Google AI Overviews"</span>,<br>
-&nbsp;&nbsp;<span class="val">"Claude (Anthropic)"</span>,<br>
-&nbsp;&nbsp;<span class="val">"Other AI tool"</span>,<br>
-&nbsp;&nbsp;<span class="val">"Google Search"</span>,<br>
-&nbsp;&nbsp;<span class="val">"LinkedIn"</span>,<br>
-&nbsp;&nbsp;<span class="val">"Word of mouth"</span>,<br>
-&nbsp;&nbsp;<span class="val">"Other"</span><br>
-]
-</div>
-<p>This is not a perfect attribution method but it is the most direct. Buyers filling in a demo form are at peak intent and usually answer honestly. In my experience, 20-40 percent report an AI tool as their first discovery channel within a few months of enabling this question. Map this field to a CRM property so you can track AI-discovered pipeline through the full sales cycle.</p>
-
-<h3>Part 2: Dark Traffic Behavioral Cohort Analysis</h3>
-<p>Direct traffic is not uniform. AI-discovered buyers behave differently from other direct traffic because they arrive with prior research. Segment your direct traffic by these behavioral signals to identify the AI-discovery cohort:</p>
-
-<div class="dark-traffic-box">
-<div class="dark-traffic-box__title">Behavioral signals of AI-discovered direct traffic</div>
-<div class="dark-traffic-signals">
-<div class="signal"><span class="signal-icon">+</span><div><strong>Higher time on pricing page on first visit.</strong> Buyers who researched via AI already understand the product and skip straight to pricing. Direct traffic with first-session pricing page visits that are above average for time-on-page is a reliable AI-discovery signal.</div></div>
-<div class="signal"><span class="signal-icon">+</span><div><strong>Lower bounce rate than average direct traffic.</strong> AI-informed buyers have context. They do not land on your homepage and immediately leave. Lower bounce rates in direct traffic segments correlate with prior AI research.</div></div>
-<div class="signal"><span class="signal-icon">+</span><div><strong>Higher demo/trial conversion rate per session.</strong> If a subset of direct traffic converts to demo at 2-3x the rate of organic traffic, these are typically high-intent buyers who came pre-qualified from AI research.</div></div>
-<div class="signal"><span class="signal-icon">+</span><div><strong>First visit directly to product-specific pages.</strong> Buyers who discovered you through an AI response about a specific use case often land directly on the relevant product page, not the homepage.</div></div>
-</div>
-</div>
-
-<h3>Part 3: Perplexity Referrer Tracking</h3>
-<p>Set up a filter in your analytics tool for sessions where referrer contains "perplexity.ai." Perplexity passes referrer data for many outbound clicks, making it the most directly measurable AI traffic source. Track monthly:</p>
-<ul style="list-style:disc;padding-left:24px;line-height:2;color:#374151;font-size:1.05rem">
-<li>Sessions from perplexity.ai</li>
-<li>Conversion rate of Perplexity sessions vs overall direct</li>
-<li>Landing pages most commonly reached from Perplexity</li>
-</ul>
-
-<h3>Part 4: CRM Pipeline Tracking</h3>
-<p>Create a CRM property called "AI Discovery Source" with values mapped from your form. For any deal where this field is populated with an AI tool, tag the opportunity as "AI-influenced." Then track these metrics at the deal level:</p>
-
-<table>
-<tr><th>CRM Metric</th><th>What It Tells You</th></tr>
-<tr><td>AI-influenced deal count by quarter</td><td>Volume of AI-discovered pipeline</td></tr>
-<tr><td>AI-influenced deal ACV vs non-AI</td><td>Whether AI-discovered buyers are larger or smaller deals</td></tr>
-<tr><td>AI-influenced deal win rate vs non-AI</td><td>Whether AI-discovered buyers close at higher rates (they often do)</td></tr>
-<tr><td>Sales cycle length for AI-influenced deals</td><td>Whether prior AI research shortens the sales cycle</td></tr>
-</table>
-
-<h3>Part 5: AI Share of Voice Correlation</h3>
-<p>The final piece is correlating your <a href="/blog/what-is-ai-share-of-voice">AI share of voice</a> trends with your dark traffic and AI-attributed pipeline trends. If AI share of voice increases 15 percentage points in a quarter and your dark traffic volume increases proportionally, that is strong evidence of a causal relationship. This correlation is the closest thing to a closed attribution loop that is available without data from inside the AI platforms themselves.</p>
-</div>
-
-<div class="article-section">
-<h2>Building the Attribution Report</h2>
-<p>A monthly AI attribution report needs to combine all five signals into a single view. Here is the structure that works for both internal teams and executive reporting:</p>
-
-<div class="steps-list">
-<div class="step-item">
-<div class="step-item__num">1</div>
-<div>
-<div class="step-item__title">AI Share of Voice (by platform)</div>
-<div class="step-item__body">Current month vs prior month for ChatGPT, Perplexity, Google AI Overviews, Claude. This is your leading indicator: changes here predict changes in pipeline 4-8 weeks later.</div>
-</div>
-</div>
-<div class="step-item">
-<div class="step-item__num">2</div>
-<div>
-<div class="step-item__title">Dark Traffic Volume and Conversion Rate</div>
-<div class="step-item__body">Direct traffic sessions, demo conversion rate of direct traffic, and behavioral cohort analysis for the AI-discovery segment. Month-over-month trend.</div>
-</div>
-</div>
-<div class="step-item">
-<div class="step-item__num">3</div>
-<div>
-<div class="step-item__title">Perplexity Referrer Sessions</div>
-<div class="step-item__body">Sessions from perplexity.ai, landing pages, and conversion rates. This is your most directly attributable AI traffic number.</div>
-</div>
-</div>
-<div class="step-item">
-<div class="step-item__num">4</div>
-<div>
-<div class="step-item__title">Form-Attributed AI Pipeline</div>
-<div class="step-item__body">New deals this month where "how did you hear" response was an AI tool. Total ACV, deal count, win rate versus non-AI deals.</div>
-</div>
-</div>
-<div class="step-item">
-<div class="step-item__num">5</div>
-<div>
-<div class="step-item__title">Content Citation Wins</div>
-<div class="step-item__body">Which specific content pieces were cited by AI tools this month. Track from Perplexity citation reports and from your AI monitoring platform. This tells you what to produce more of.</div>
-</div>
+<div class="setup-steps">
+<div class="setup-step">
+<div class="setup-step__num">1</div>
+<div class="setup-step__content">
+<h3>Add a "How did you hear about us?" dropdown to every demo and contact form</h3>
+<p>Make AI tools explicit named options, not a catch-all "other" bucket. Buyers who discovered you through ChatGPT will not select "social media" or "other" if the form does not name AI tools specifically.</p>
 </div>
 </div>
 </div>
 
-<div class="cta-block">
-<h3>See Your AI Attribution Data</h3>
-<p>Jeevan AI tracks your brand appearance rate across ChatGPT, Perplexity, Google AI Overviews, and Claude. Correlate AI share of voice changes with your pipeline data to close the attribution loop.</p>
-<a href="https://dashboard.jeevanai.co.in/auth/login" class="cta-btn">Go to Dashboard</a>
+<p>Effective option list for the HTDYHAU dropdown:</p>
+
+<div class="code-block"><code>options = [
+  "ChatGPT or Claude",
+  "Perplexity",
+  "Google AI Overview",
+  "AI search tool (other)",
+  "Google / organic search",
+  "LinkedIn",
+  "Industry publication or blog",
+  "Event or webinar",
+  "Colleague or peer referral",
+  "Customer referral",
+  "Other"
+]</code></div>
+
+<p>For shorter forms where a dropdown is too heavy, add a single checkbox: "Did an AI tool help you find or learn about us?" with a text box for details. This captures the binary signal without adding form friction. Map the responses to a dedicated CRM field, not a notes field, so you can query it.</p>
 </div>
 
-<div class="article-section">
-<h2>Related Reading</h2>
-<ul style="list-style:none;padding:0;display:grid;gap:10px">
-<li><a href="/blog/what-is-ai-share-of-voice" style="color:var(--accent);font-weight:600">What Is AI Share of Voice</a> - The leading indicator that predicts pipeline changes</li>
-<li><a href="/blog/ai-visibility-metrics-kpis" style="color:var(--accent);font-weight:600">AI Visibility Metrics and KPIs</a> - Full measurement framework</li>
-<li><a href="/blog/geo-roi-framework-prove-ai-visibility-value" style="color:var(--accent);font-weight:600">GEO ROI Framework</a> - Proving value to stakeholders using this attribution data</li>
-<li><a href="/blog/ai-visibility-strategy-for-cmos" style="color:var(--accent);font-weight:600">AI Visibility Strategy for CMOs</a> - How to present attribution data at the executive level</li>
-<li><a href="/blog/b2b-buyer-ai-search-behavior-2026" style="color:var(--accent);font-weight:600">How B2B Buyers Use AI Search</a> - Why dark traffic is growing and what drives it</li>
-<li><a href="/blog/ai-search-traffic-converts-better-than-organic" style="color:var(--accent);font-weight:600">AI Search Traffic Converts Better Than Organic</a> - Data on conversion rate differences by source</li>
+<div class="article-section" id="dark-traffic">
+<h2>Part 2: Dark Traffic Behavioral Signals</h2>
+<p>Not every buyer will fill in the attribution field accurately. For sessions that arrive as direct traffic but show ICP-characteristic behavior, you can use behavioral signals as a high-confidence proxy for AI referral.</p>
+
+<div class="signal-box">
+<div class="signal-box__title">Behavioral Signals of AI-Referred Visitors</div>
+<ul class="signal-list">
+<li><strong>Entry page is a deep solution page, not the homepage.</strong> Organic search lands on any indexed page. AI citations link to specific resources. If direct traffic is landing on your pricing page or a specific use-case page, AI is a likely source.</li>
+<li><strong>Session engagement is high from the first visit.</strong> AI-referred buyers have already done research before arriving. They exhibit shorter time-to-contact and lower bounce rates than cold direct traffic.</li>
+<li><strong>ICP firmographic match.</strong> If your ICP is Series A-C SaaS in the US and the direct traffic is from that firmographic profile, it is disproportionately likely to be AI-referred versus truly direct.</li>
+<li><strong>Multiple visits in a short window.</strong> Buyers doing AI-assisted research often revisit after prompting the AI again. A pattern of 3-5 visits in 72 hours with no search attribution is consistent with AI-assisted consideration.</li>
+<li><strong>Form or demo request on first or second visit.</strong> AI-referred buyers arrive with more context and convert faster. First-visit demo requests from direct traffic are a strong AI-referral proxy.</li>
 </ul>
 </div>
 
-<div class="faq-section">
-<h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:24px;color:#111827">Frequently Asked Questions</h2>
-<div class="faq-item">
-<h3>Why is AI search so hard to attribute in standard analytics?</h3>
-<p>AI tools like ChatGPT and Perplexity do not pass referrer data when a user navigates from their interface to your website. Buyers appear as direct traffic. Standard UTM tracking and channel models were designed for clickable referrers and cannot capture discovery that happened in a private AI session.</p>
+<p>Segment your direct traffic in analytics by entry page, session depth, and engagement rate. The "high-quality direct" segment will correlate strongly with your AI SoV movement over time. This pattern is documented in the <a href="/blog/ai-search-traffic-converts-better-than-organic/" class="content-link">AI search conversion behavior data</a>.</p>
 </div>
-<div class="faq-item">
-<h3>What is the simplest way to start attributing AI-discovered pipeline?</h3>
-<p>Add "how did you hear about us" to every demo and signup form, listing ChatGPT, Perplexity, Google AI Overviews, and Claude as explicit options. In my experience, 20-40 percent of pipeline self-reports AI discovery within a quarter of enabling this question.</p>
+
+<div class="article-section" id="perplexity">
+<h2>Part 3: Perplexity Referrer Tracking</h2>
+<p>Because Perplexity passes a referrer, you can track it explicitly. Set up a dedicated analytics segment or UTM override to capture all sessions where the referrer matches "perplexity.ai". This gives you a clean, direct view of Perplexity-attributed traffic and its conversion behavior.</p>
+
+<p>For a more precise view, check your Perplexity traffic against your <a href="/blog/what-is-ai-share-of-voice/" class="content-link">AI share of voice score</a> on Perplexity specifically. A higher Perplexity SoV score should correspond to higher Perplexity referral traffic. When the two move together over 60-90 days, you have a causal signal rather than just a correlation. The <a href="/blog/competitive-ai-brand-audit/" class="content-link">competitive AI brand audit</a> framework covers how to benchmark your Perplexity visibility specifically.</p>
 </div>
-<div class="faq-item">
-<h3>How do I distinguish AI-attributed dark traffic from other direct traffic?</h3>
-<p>Segment by behavior: higher pricing page time on first visit, lower bounce rates, and higher demo conversion rates are the reliable signals of AI-pre-qualified buyers. These behavioral proxies let you size the AI-discovery cohort without requiring referrer data.</p>
+
+<div class="article-section" id="crm-setup">
+<h2>Part 4: CRM Setup for AI Attribution</h2>
+<p>Your form attribution data only becomes useful if it reaches the CRM in a queryable way. Three things to configure:</p>
+
+<div class="setup-steps">
+<div class="setup-step">
+<div class="setup-step__num">1</div>
+<div class="setup-step__content">
+<h3>Add a dedicated "AI Discovery Source" field to your Lead and Contact objects</h3>
+<p>Do not rely on the existing Lead Source or Campaign field. Those are already mapped to other attribution models. A dedicated field keeps AI attribution clean and queryable without disturbing historical data.</p>
 </div>
-<div class="faq-item">
-<h3>Can I see which AI platforms are sending me traffic?</h3>
-<p>Perplexity is directly trackable via referrer data. ChatGPT, Claude, and Google AI Overviews require form attribution or AI share of voice correlation to measure. A full picture requires combining all three approaches.</p>
+</div>
+<div class="setup-step">
+<div class="setup-step__num">2</div>
+<div class="setup-step__content">
+<h3>Train sales to ask and log it on discovery calls</h3>
+<p>Add "How did you first hear about us, was AI involved in your research?" as a standard discovery question. Log the answer in the AI Discovery Source field. Sales confirmation correlates the form self-report with a human verification, making the attribution more credible to finance.</p>
+</div>
+</div>
+<div class="setup-step">
+<div class="setup-step__num">3</div>
+<div class="setup-step__content">
+<h3>Build a quarterly AI-influenced pipeline report</h3>
+<p>A simple CRM report filtered to records where AI Discovery Source is non-null, showing total pipeline value and closed-won revenue. This is the number you take to the CMO and board. Keep it a separate line item from total pipeline, not merged into it.</p>
+</div>
+</div>
 </div>
 </div>
 
-</main>
-<aside class="sidebar">
-<div class="sidebar-widget">
-<h4>Related Articles</h4>
-<div class="sidebar-links">
-<a href="/blog/what-is-ai-share-of-voice">AI Share of Voice</a>
-<a href="/blog/ai-visibility-metrics-kpis">AI Visibility KPIs</a>
-<a href="/blog/geo-roi-framework-prove-ai-visibility-value">GEO ROI Framework</a>
-<a href="/blog/ai-visibility-strategy-for-cmos">CMO Strategy Guide</a>
-<a href="/blog/b2b-buyer-ai-search-behavior-2026">B2B Buyer AI Research</a>
+<div class="article-section" id="sov-correlation">
+<h2>Part 5: AI SoV Correlation</h2>
+<p>The final layer is correlating your AI share of voice movement with pipeline outcomes over time. This is the strategic proof layer that turns tactical attribution into a business case for continued investment.</p>
+
+<p>Build a quarterly correlation model with three variables: monthly AI SoV score, monthly AI-attributed form submissions, and monthly dark traffic volume. When all three move in the same direction for two or more consecutive quarters, you have a credible causal claim rather than just a correlation.</p>
+
+<p>This is the data behind the board presentation framework in the <a href="/blog/ai-visibility-strategy-for-cmos/" class="content-link">CMO playbook</a> and the ROI model in the <a href="/blog/geo-roi-framework-prove-ai-visibility-value/" class="content-link">GEO ROI framework</a>. Start with a 3-month baseline before any major GEO activities, so you can show a before/after comparison.</p>
+</div>
+
+<hr class="article-divider">
+
+<div class="faq-section" id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<p class="faq-q">Why does most AI search traffic show up as direct traffic in analytics?</p>
+<p class="faq-a">ChatGPT, Claude, and Gemini do not pass referrer headers when users click citation links. The browser sends no source information, so analytics files the session as direct traffic. Perplexity is the exception and passes a perplexity.ai referrer consistently, so Perplexity-sourced traffic is visible under the referral channel.</p>
+</div>
+<div class="faq-item">
+<p class="faq-q">What form field options should I add for AI attribution?</p>
+<p class="faq-a">Add explicit named options: "ChatGPT or Claude," "Perplexity," "Google AI Overview," "AI search tool (other)" -- separate from organic search, LinkedIn, or event options. Buyers who discovered you through AI will not self-select into "other" if the form does not name AI tools specifically.</p>
+</div>
+<div class="faq-item">
+<p class="faq-q">How do I correlate AI share of voice with pipeline in a way that's credible to finance?</p>
+<p class="faq-a">Track three variables monthly: AI SoV score, AI-attributed form submissions, and dark traffic volume with high engagement. Run as a quarterly analysis to reduce noise. When all three move in the same direction for two consecutive quarters, you have a credible causal claim. Add deal-level CRM confirmation from sales discovery calls to strengthen it.</p>
 </div>
 </div>
-<div class="sidebar-widget">
-<h4>Attribution Checklist</h4>
-<div style="font-size:0.85rem;color:var(--text-dim);line-height:2">
-<div>Form attribution field added</div>
-<div>Perplexity referrer filter set</div>
-<div>CRM AI discovery field created</div>
-<div>Dark traffic cohort segmented</div>
-<div>AI SoV correlation tracked</div>
+
+<div class="inline-cta">
+<div class="inline-cta__text">
+<strong>Track your AI share of voice alongside pipeline</strong>
+<p>Jeevan AI connects AI citation tracking with attribution data so you can show revenue impact alongside visibility metrics.</p>
 </div>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Go to Dashboard &rarr;</a>
 </div>
-<div class="sidebar-widget" style="background:linear-gradient(135deg,#052e16,#065f46);border:none">
-<h4 style="color:rgba(255,255,255,0.7)">Track AI Attribution</h4>
-<p style="font-size:0.85rem;color:rgba(255,255,255,0.85);margin:12px 0">AI share of voice plus pipeline correlation in one view.</p>
-<a href="https://dashboard.jeevanai.co.in/auth/login" style="display:block;text-align:center;background:#fff;color:#052e16;padding:10px;border-radius:8px;font-weight:700;font-size:0.875rem">Go to Dashboard</a>
+
+</article>
+
+<aside class="article-sidebar">
+<div class="sidebar-toc">
+<h4>In this article</h4>
+<ul class="toc-list">
+<li><a href="#why-dark-traffic">Why AI traffic is invisible</a></li>
+<li><a href="#form-attribution">Part 1: Form attribution</a></li>
+<li><a href="#dark-traffic">Part 2: Dark traffic signals</a></li>
+<li><a href="#perplexity">Part 3: Perplexity tracking</a></li>
+<li><a href="#crm-setup">Part 4: CRM setup</a></li>
+<li><a href="#sov-correlation">Part 5: AI SoV correlation</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="sidebar-card">
+<h4>See where you rank in AI answers</h4>
+<p>Jeevan AI tracks your brand's citation rate across ChatGPT, Perplexity, and Google AI Overviews.</p>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-outline-sm">Go to Dashboard &rarr;</a>
 </div>
 </aside>
 </div>
+
+<section class="related-section">
+<div class="related-section__inner">
+<h3>Related Articles</h3>
+<div class="related-grid">
+<a href="/blog/ai-search-traffic-converts-better-than-organic/" class="related-card">
+<span class="post-tag">Data</span>
+<h4>AI Search Traffic Converts Better Than Organic</h4>
+<p>Why AI-referred buyers convert faster and at higher rates than traditional organic search traffic.</p>
+<span class="related-link">Read article <span>&rarr;</span></span>
+</a>
+<a href="/blog/ai-visibility-strategy-for-cmos/" class="related-card">
+<span class="post-tag">CMO Playbook</span>
+<h4>AI Visibility Strategy for CMOs: The 2026 Operational Playbook</h4>
+<p>How CMOs should structure measurement, ownership, and board reporting for AI visibility.</p>
+<span class="related-link">Read article <span>&rarr;</span></span>
+</a>
+<a href="/blog/geo-roi-framework-prove-ai-visibility-value/" class="related-card">
+<span class="post-tag">ROI</span>
+<h4>GEO ROI Framework: Prove AI Visibility Value to Stakeholders</h4>
+<p>Convert AI SoV data and pipeline attribution into a board-ready business case.</p>
+<span class="related-link">Read article <span>&rarr;</span></span>
+</a>
+</div>
+</div>
+</section>
+
+<section class="cta-strip">
+<div class="cta-strip__inner">
+<h2 class="cta-strip__title">Attribution starts with visibility data.</h2>
+<p class="cta-strip__sub">Jeevan AI tracks your brand's AI citation rate across all major platforms so you have the upstream data to build a complete attribution model.</p>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Go to Dashboard &rarr;</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer__inner">
+<span class="footer__brand">&copy; 2026 Jeevan AI. All rights reserved.</span>
+<div class="footer__links">
+<a href="/">Home</a>
+<a href="/blog-index.html">Blog</a>
+<a href="/#pricing">Pricing</a>
+</div>
+</div>
+</footer>
 </body>
 </html>
