@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Brand Recommendation Analysis: A Complete Guide | Jeevan AI</title>
+<meta name="description" content="Learn how to analyze AI brand recommendations, identify why AI picks certain brands, and turn those signals into a content strategy that improves your citations.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog/ai-brand-recommendation-analysis-guide">
+<meta property="og:title" content="AI Brand Recommendation Analysis: A Complete Guide">
+<meta property="og:description" content="Step-by-step framework to analyze why AI recommends certain brands, decode the signals behind those choices, and build content that closes the gap.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/blog/ai-brand-recommendation-analysis-guide">
+<meta property="og:site_name" content="Jeevan AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Brand Recommendation Analysis: A Complete Guide",
+  "description": "Step-by-step framework to analyze why AI recommends certain brands, decode the signals behind those choices, and build content that closes the gap.",
+  "url": "https://jeevanai.co.in/blog/ai-brand-recommendation-analysis-guide",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "author": {"@type": "Organization", "name": "Jeevan AI"},
+  "publisher": {"@type": "Organization", "name": "Jeevan AI", "url": "https://jeevanai.co.in",
+    "logo": {"@type": "ImageObject", "url": "https://jeevanai.co.in/assets/logo.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jeevanai.co.in/blog/ai-brand-recommendation-analysis-guide"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is AI brand recommendation analysis?",
+      "acceptedAnswer": {"@type": "Answer", "text": "AI brand recommendation analysis is the process of querying AI tools with your category keywords, recording which brands they name, and systematically identifying what signals, content, and authority sources caused those brands to be selected over others."}
+    },
+    {
+      "@type": "Question",
+      "name": "Why does AI recommend some brands and not others?",
+      "acceptedAnswer": {"@type": "Answer", "text": "AI recommends brands that appear across multiple authoritative sources, have clear entity definitions, publish structured content that directly answers buyer questions, and are cited in third-party editorial coverage. Frequency and context of mentions across independent sources is the single largest factor."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do you analyze what signals made an AI recommend a competitor?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Start by running the same query across ChatGPT, Perplexity, and Gemini. Record every brand named. For each named competitor, audit their content coverage for that query type, check their third-party citation profile, review their schema implementation, and compare entity completeness. The gap between their footprint and yours is your content brief."}
+    },
+    {
+      "@type": "Question",
+      "name": "How often should you run AI brand recommendation analysis?",
+      "acceptedAnswer": {"@type": "Answer", "text": "For active GEO programs, run a structured analysis monthly. Run an unstructured spot-check weekly by querying your top 5 category queries manually. After publishing new content, recheck the relevant queries within 2 to 4 weeks to confirm citation rate movement."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI recommendation analysis be automated?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Partially. Query sampling, response logging, and brand mention counting can be automated via API. But signal interpretation, identifying why a brand was cited and what content drove it, still requires human analysis or a dedicated AI visibility platform that surfaces the root cause."}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;--font-sans:'DM Sans',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:1180px;--prose-w:720px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--muted);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff;font-size:0.875rem;font-weight:600;transition:opacity 0.2s}
+.nav__cta:hover{opacity:0.88}
+@media(max-width:640px){.nav__links{display:none}}
+
+.article-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:72px 24px 64px;position:relative;overflow:hidden}
+.article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(99,102,241,0.18) 0%,transparent 65%);pointer-events:none}
+.article-hero__inner{max-width:var(--max-w);margin:0 auto;position:relative}
+.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:rgba(255,255,255,0.55);margin-bottom:24px}
+.article-hero__breadcrumb a{color:rgba(255,255,255,0.55);transition:color 0.2s}
+.article-hero__breadcrumb a:hover{color:rgba(255,255,255,0.9)}
+.article-hero__tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(99,102,241,0.2);border:1px solid rgba(99,102,241,0.35);font-size:0.75rem;font-weight:600;color:#a5b4fc;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px}
+.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.18;color:#fff;max-width:760px;margin-bottom:20px;letter-spacing:-0.02em}
+.article-hero__meta{display:flex;align-items:center;gap:20px;font-size:0.85rem;color:rgba(255,255,255,0.6)}
+.article-hero__meta span{display:flex;align-items:center;gap:6px}
+
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:56px 24px 96px;display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:start}
+@media(max-width:960px){.article-wrap{grid-template-columns:1fr}}
+
+.article-prose h2{font-family:var(--font-serif);font-size:1.55rem;color:var(--text);margin:2.4rem 0 1rem;letter-spacing:-0.01em}
+.article-prose h3{font-size:1.1rem;font-weight:700;color:var(--text);margin:1.8rem 0 0.7rem}
+.article-prose p{color:#374151;line-height:1.78;margin-bottom:1.1rem;font-size:1.0rem}
+.article-prose ul,.article-prose ol{margin:0.8rem 0 1.2rem 1.5rem;color:#374151;line-height:1.75}
+.article-prose li{margin-bottom:0.45rem}
+.article-prose strong{color:var(--text);font-weight:600}
+.article-prose blockquote{border-left:3px solid var(--accent);padding:16px 20px;background:rgba(99,102,241,0.05);border-radius:0 8px 8px 0;margin:1.5rem 0;font-style:italic;color:var(--muted)}
+
+.content-link{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color 0.2s}
+.content-link:hover{text-decoration-color:var(--accent)}
+
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.9rem;overflow-x:auto;display:block}
+.data-table th{background:#f3f4f6;color:var(--text);font-weight:600;padding:10px 14px;text-align:left;white-space:nowrap}
+.data-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:#374151;vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:#f9fafb}
+
+.phase-block{border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:1.5rem 0;background:var(--card)}
+.phase-block__label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--accent);margin-bottom:8px}
+.phase-block__title{font-family:var(--font-serif);font-size:1.2rem;color:var(--text);margin-bottom:12px}
+.phase-block__list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.phase-block__list li{display:flex;gap:10px;color:#374151;font-size:0.93rem}
+.phase-block__list li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0}
+
+.inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,rgba(124,58,237,0.07) 100%);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:28px 32px;margin:2.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text{font-size:1rem;font-weight:600;color:var(--text);max-width:480px}
+.inline-cta__text span{display:block;font-size:0.875rem;font-weight:400;color:var(--muted);margin-top:4px}
+.inline-cta__btn{padding:11px 24px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.9rem;white-space:nowrap;transition:opacity 0.2s}
+.inline-cta__btn:hover{opacity:0.88}
+
+.faq-block{margin:2.5rem 0}
+.faq-block h2{font-family:var(--font-serif);font-size:1.55rem;color:var(--text);margin-bottom:1.2rem}
+p.faq-q{font-weight:700;color:var(--text);margin-bottom:0.3rem;margin-top:1.2rem}
+p.faq-a{color:#374151;margin-bottom:0.8rem}
+
+.article-sidebar{position:sticky;top:88px}
+.sidebar-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.sidebar-card h4{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:16px}
+.sidebar-toc{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.sidebar-toc a{font-size:0.875rem;color:var(--muted);transition:color 0.2s;display:block;padding:2px 0}
+.sidebar-toc a:hover{color:var(--accent)}
+.sidebar-cta{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:12px;padding:24px;color:#fff}
+.sidebar-cta h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.sidebar-cta p{font-size:0.85rem;color:rgba(255,255,255,0.72);margin-bottom:16px}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:11px 20px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.875rem;width:100%;transition:opacity 0.2s;text-align:center}
+.btn-primary:hover{opacity:0.88}
+.btn-outline-sm{display:block;text-align:center;padding:9px 20px;border-radius:8px;border:1px solid rgba(99,102,241,0.4);color:var(--accent);font-size:0.85rem;font-weight:600;margin-top:10px;transition:all 0.2s}
+.btn-outline-sm:hover{background:var(--accent-dim)}
+
+.related-section{border-top:1px solid var(--border);padding:56px 24px}
+.related-section__inner{max-width:var(--max-w);margin:0 auto}
+.related-posts__title{font-family:var(--font-serif);font-size:1.5rem;color:var(--text);margin-bottom:32px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:720px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;transition:border-color 0.2s}
+.related-card:hover{border-color:rgba(99,102,241,0.4)}
+.related-card__tag{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent);margin-bottom:8px}
+.related-card__title{font-size:0.92rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:10px}
+.related-card__link{font-size:0.82rem;color:var(--accent);font-weight:600}
+
+.cta-strip{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 50%,#7c3aed 100%);padding:72px 24px;text-align:center}
+.cta-strip__inner{max-width:600px;margin:0 auto}
+.cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:#fff;margin-bottom:12px}
+.cta-strip__sub{color:rgba(255,255,255,0.8);margin-bottom:32px}
+.cta-strip .btn-white{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;background:#fff;color:#4338ca;font-weight:700;font-size:0.95rem;transition:opacity 0.2s}
+.cta-strip .btn-white:hover{opacity:0.92}
+
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px;background:var(--bg)}
+.footer__inner{max-width:var(--max-w);margin:0 auto}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:720px){.footer__grid{grid-template-columns:1fr 1fr}}
+.footer__brand p{color:var(--muted);font-size:0.875rem;margin-top:12px;max-width:260px;line-height:1.6}
+.footer__col h5{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:14px}
+.footer__col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer__col li a{font-size:0.875rem;color:var(--muted);transition:color 0.2s}
+.footer__col li a:hover{color:var(--text)}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}
+.footer__bottom span{font-size:0.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/blog-index.html">Blog</a>
+      <a href="/index.html#about">About</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Sign In</a>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+      <a href="/index.html">Home</a><span>/</span>
+      <a href="/blog-index.html">Blog</a><span>/</span>
+      <span>AI Brand Recommendation Analysis</span>
+    </nav>
+    <div class="article-hero__tag">Brand Analysis</div>
+    <h1 class="article-hero__title">AI Brand Recommendation Analysis: Why AI Picks Certain Brands and How to Decode the Signals</h1>
+    <div class="article-hero__meta">
+      <span>Sept 7, 2026</span>
+      <span>14 min read</span>
+      <span>Jeevan AI</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-wrap">
+  <article class="article-prose">
+
+    <p>You query ChatGPT: "Which CRM should a 50-person B2B team use?" It names three platforms. Yours is not one of them. You query again: "Best project management tools for remote engineering teams." Three names. Still not yours.</p>
+
+    <p>This is not a ranking problem. It is a signal problem. And it is entirely diagnosable.</p>
+
+    <p>AI brand recommendation analysis is the practice of systematically examining which brands AI tools recommend for your category queries, identifying the signals that drove those recommendations, and converting that analysis into a prioritized content plan. Done consistently, it shifts you from guessing why you are absent to knowing exactly what to build.</p>
+
+    <p>This guide covers the complete analysis framework: how to run the queries, what to look for in the output, how to audit the brands that are named, and how to convert the gap into content that moves your citation rate.</p>
+
+    <h2>What AI Recommendation Analysis Actually Tells You</h2>
+
+    <p>When an AI tool recommends a brand, it is not making an aesthetic choice. It is retrieving the brand that appears most clearly and consistently in the content it has access to for that specific query context. The recommendation is a symptom of a content and authority footprint, not a ranking decision.</p>
+
+    <p>An AI recommendation analysis tells you four things:</p>
+
+    <ul>
+      <li>Which brands have achieved sufficient signal density for your category queries</li>
+      <li>What content structures and formats are being retrieved in those answers</li>
+      <li>Which third-party sources the AI is drawing authority from</li>
+      <li>The specific query types where you have no footprint at all</li>
+    </ul>
+
+    <p>The analysis does not tell you what the AI "thinks" of your brand. It tells you what evidence the AI found, or did not find, when it assembled its answer.</p>
+
+    <h2>The Query Framework: Where to Start</h2>
+
+    <p>Most teams make the mistake of querying their own brand name first. That is not where the opportunity is. Start with the queries your buyers use before they know your name.</p>
+
+    <div class="phase-block">
+      <div class="phase-block__label">Query Type 1</div>
+      <div class="phase-block__title">Category Discovery Queries</div>
+      <ul class="phase-block__list">
+        <li>"Best [category] tools for [buyer type]"</li>
+        <li>"What [category] software does [company size] use"</li>
+        <li>"[Category] platforms for [use case]"</li>
+      </ul>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-block__label">Query Type 2</div>
+      <div class="phase-block__title">Problem-First Queries</div>
+      <ul class="phase-block__list">
+        <li>"How do teams solve [specific problem]"</li>
+        <li>"What is the best way to [outcome]"</li>
+        <li>"Tools that help with [pain point]"</li>
+      </ul>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-block__label">Query Type 3</div>
+      <div class="phase-block__title">Comparison Queries</div>
+      <ul class="phase-block__list">
+        <li>"[Competitor] vs alternatives"</li>
+        <li>"[Competitor] vs [Competitor] for [use case]"</li>
+        <li>"Alternatives to [category leader]"</li>
+      </ul>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-block__label">Query Type 4</div>
+      <div class="phase-block__title">Validation Queries</div>
+      <ul class="phase-block__list">
+        <li>"Is [your brand] reliable / worth it / good for [use case]"</li>
+        <li>"[Your brand] reviews for [buyer segment]"</li>
+        <li>"What do people say about [your brand]"</li>
+      </ul>
+    </div>
+
+    <p>Run every query across at least three platforms: ChatGPT, Perplexity, and Gemini. The brands named by all three have the strongest cross-platform authority. Brands named by only one or two have platform-specific advantages worth examining separately.</p>
+
+    <h2>Recording and Organizing the Output</h2>
+
+    <p>Before you can analyze, you need clean data. Build a simple spreadsheet with these columns for each query run.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Query</th>
+          <th>Platform</th>
+          <th>Brands named</th>
+          <th>Your brand present?</th>
+          <th>Position if present</th>
+          <th>Competitor cited first</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Best CRM for B2B teams</td>
+          <td>ChatGPT</td>
+          <td>HubSpot, Salesforce, Pipedrive</td>
+          <td>No</td>
+          <td>N/A</td>
+          <td>HubSpot</td>
+        </tr>
+        <tr>
+          <td>Best CRM for B2B teams</td>
+          <td>Perplexity</td>
+          <td>HubSpot, Zoho, Freshsales</td>
+          <td>No</td>
+          <td>N/A</td>
+          <td>HubSpot</td>
+        </tr>
+        <tr>
+          <td>CRM alternatives to Salesforce</td>
+          <td>ChatGPT</td>
+          <td>HubSpot, Pipedrive, Monday.com</td>
+          <td>No</td>
+          <td>N/A</td>
+          <td>HubSpot</td>
+        </tr>
+        <tr>
+          <td>CRM tools for remote teams</td>
+          <td>Gemini</td>
+          <td>HubSpot, Copper, Streak</td>
+          <td>No</td>
+          <td>N/A</td>
+          <td>HubSpot</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>After running 15 to 20 queries across three platforms, patterns emerge. You will see which competitors hold the highest citation frequency, which query types you are completely absent from, and where you occasionally appear but are not cited first.</p>
+
+    <h2>Auditing the Brands That Get Cited</h2>
+
+    <p>The most valuable part of AI brand recommendation analysis is understanding what made the cited brands citable. This is a content and authority audit, not a backlink or traffic analysis.</p>
+
+    <p>For the top two or three brands that appear most frequently across your query runs, complete the following checks.</p>
+
+    <h3>Content Coverage Audit</h3>
+
+    <p>Search the cited brand's website and blog for content directly matching your query types. A brand that appears in "best CRM for remote teams" almost always has a dedicated page or article targeting that exact phrase. Check: do they have a page that directly answers each of the query types where they were cited? If yes, that is the content gap you need to close.</p>
+
+    <h3>Third-Party Citation Profile</h3>
+
+    <p>Search for the brand name plus your category on Google. Look at the types of sites linking and mentioning them: G2, Capterra, TechCrunch, industry newsletters, analyst reports. AI retrieval heavily weights editorial mentions on recognized publisher domains. A brand mentioned in 20 independent editorial contexts outweighs one with 200 backlinks from low-authority sources.</p>
+
+    <h3>Schema and Structured Data</h3>
+
+    <p>Use Google's Rich Results Test on the competitor's key pages. Brands with Organization schema, FAQPage schema, and Product schema provide AI systems with explicit, machine-readable confirmation of what they do and who they serve. This removes ambiguity from the retrieval decision. For more detail on this, see the full guide on <a href="/blog/schema-markup-ai-visibility/" class="content-link">schema markup for AI visibility</a>.</p>
+
+    <h3>Entity Completeness</h3>
+
+    <p>Search the brand in Google Knowledge Panel, Wikidata, and LinkedIn. Brands with a Knowledge Panel, a complete Wikidata entry, and a well-structured LinkedIn company page have a far higher entity completeness score. AI tools use entity graphs to confirm a brand's identity before citing it. Missing entity signals create retrieval friction even when the content is strong.</p>
+
+    <div class="inline-cta">
+      <div class="inline-cta__text">
+        Stop manually auditing AI answers.
+        <span>Jeevan AI tracks your brand across ChatGPT, Perplexity, and Gemini automatically, and shows you exactly which competitors are being recommended instead.</span>
+      </div>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="inline-cta__btn">Go to Dashboard</a>
+    </div>
+
+    <h2>The Gap Analysis: Turning Audit Findings into a Content Brief</h2>
+
+    <p>Once you have audited the brands that are being cited, the gap analysis maps the distance between their footprint and yours across four dimensions.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>What to measure</th>
+          <th>Typical gap for absent brands</th>
+          <th>Fix</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Direct query coverage</td>
+          <td>Pages targeting your exact query phrases</td>
+          <td>0 pages vs 3 to 8 for cited brands</td>
+          <td>Create dedicated content per query type</td>
+        </tr>
+        <tr>
+          <td>Third-party editorial mentions</td>
+          <td>Independent editorial citations in the last 12 months</td>
+          <td>Under 10 vs 30 to 100+ for cited brands</td>
+          <td>PR, analyst outreach, community contributions</td>
+        </tr>
+        <tr>
+          <td>Schema implementation</td>
+          <td>FAQPage, Organization, Product schema on key pages</td>
+          <td>0 to 1 types vs 3 to 5 for cited brands</td>
+          <td>Implement full schema stack</td>
+        </tr>
+        <tr>
+          <td>Entity completeness</td>
+          <td>Knowledge Panel, Wikidata, LinkedIn completeness</td>
+          <td>Partial or absent vs complete for cited brands</td>
+          <td>Entity building sequence</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The gap analysis is not a score. It is a prioritized list. Fix the gaps with the highest frequency impact first. Direct query coverage gaps are usually the fastest to close because you control your own content production.</p>
+
+    <h2>How to Use This Analysis to Brief Content</h2>
+
+    <p>The recommendation analysis output maps directly to a content brief structure. For each query type where you are absent, the brief should specify:</p>
+
+    <ul>
+      <li>The exact query phrase the content needs to answer directly in the first 150 words</li>
+      <li>The brands it needs to acknowledge, because comparison queries require your content to contextualize you relative to named competitors</li>
+      <li>The specific outcomes and use cases to name, matching the language in the queries where cited brands appear</li>
+      <li>The schema types to implement on that specific page</li>
+      <li>The internal links to supporting evidence pages, so the AI has a citation path from the answer page back to your authority content</li>
+    </ul>
+
+    <p>For a complete brief template with AI citation optimization built in, the <a href="/blog/geo-content-brief-template/" class="content-link">GEO content brief template</a> covers the exact format that makes writers produce AI-citation-optimized content without extra guidance.</p>
+
+    <h2>Platform-Specific Signal Differences</h2>
+
+    <p>One of the findings that surprises most teams doing AI recommendation analysis for the first time: the same brand can have very different citation rates across platforms for the same query. This happens because each platform retrieves differently.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Primary retrieval signal</th>
+          <th>What moves your citation rate fastest</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ChatGPT</td>
+          <td>Training data and web browsing (with Browse enabled)</td>
+          <td>Third-party editorial coverage, entity completeness</td>
+        </tr>
+        <tr>
+          <td>Perplexity</td>
+          <td>Live web search, strongly weights structured direct-answer content</td>
+          <td>Direct-answer page structure, fresh content, structured headers</td>
+        </tr>
+        <tr>
+          <td>Gemini</td>
+          <td>Google Search index, Knowledge Graph, E-E-A-T signals</td>
+          <td>Google Search rankings, Schema markup, Knowledge Panel presence</td>
+        </tr>
+        <tr>
+          <td>Microsoft Copilot</td>
+          <td>Bing index, enterprise data context</td>
+          <td>Bing presence, LinkedIn presence, Microsoft-indexed documentation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>A brand absent from ChatGPT but present on Perplexity typically has strong web content but weak training-data authority. A brand present on Gemini but absent from ChatGPT often has good SEO but limited third-party editorial coverage. The cross-platform comparison is a diagnostic tool, not just a score.</p>
+
+    <h2>Tracking Progress Over Time</h2>
+
+    <p>AI recommendation analysis is only useful if you run it consistently. A one-time audit tells you where you are. Monthly tracking tells you whether your content investments are working.</p>
+
+    <p>Build a simple tracking system with three columns per month: queries run, brands cited, your citation frequency as a percentage. If you run 20 queries across three platforms, that is 60 total query runs. If your brand appears in 12 of those 60 runs, your citation frequency is 20 percent. A structured GEO program should move that number by 5 to 10 percentage points per quarter in the first year.</p>
+
+    <p>For teams that want to track this without running queries manually every month, the alternative is a dedicated AI visibility platform that does continuous query sampling. The <a href="/blog/automated-vs-manual-ai-visibility-tracking/" class="content-link">comparison between automated and manual AI visibility tracking</a> covers when the operational overhead of manual tracking justifies investment in automation.</p>
+
+    <p>The most important thing is consistency. Skipping a month means losing trend data. If something you published caused a citation jump, you want to see it clearly in the monthly data so you can replicate the format.</p>
+
+    <h2>What to Do When AI Describes Your Brand Inaccurately</h2>
+
+    <p>A variant of the recommendation analysis problem: you do appear in AI answers, but the description is wrong. AI describes you as serving a segment you have moved away from, names a feature you deprecated, or positions you in a category adjacent to where you actually compete.</p>
+
+    <p>This is an entity and content freshness problem. The AI retrieved an older version of your brand from training data or from stale cached content. The fix is a targeted correction sequence:</p>
+
+    <ul>
+      <li>Publish a dedicated "What is [your brand]" page with explicit schema markup and clear positioning language</li>
+      <li>Update your Wikidata entry, LinkedIn About section, and Crunchbase profile with current positioning</li>
+      <li>Get editorial coverage from recognized publications with updated positioning language</li>
+      <li>Add FAQPage schema to your homepage and product pages that directly answer "what does [your brand] do"</li>
+    </ul>
+
+    <p>Correction takes longer than initial establishment because you are overwriting an existing signal pattern. Most brands see meaningful AI description improvement within 60 to 90 days of a consistent correction sequence.</p>
+
+    <div class="inline-cta">
+      <div class="inline-cta__text">
+        See exactly how AI describes your brand across platforms.
+        <span>The Jeevan AI dashboard runs cross-platform brand analysis and flags description inaccuracies so you can fix them before they cost you deals.</span>
+      </div>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="inline-cta__btn">Go to Dashboard</a>
+    </div>
+
+    <h2>The Competitive Intelligence Layer</h2>
+
+    <p>AI recommendation analysis is also competitive intelligence. The patterns in who gets cited and for which query types reveal your competitors' content strategy, their third-party authority investments, and the buyer segments they have explicitly targeted.</p>
+
+    <p>A competitor that appears in every "for [specific industry]" query variant has clearly built a vertical content strategy. One that appears in comparison queries for every major competitor has an "alternatives" content program running. One that appears consistently on Perplexity but not ChatGPT is investing in fresh web content rather than training-data authority.</p>
+
+    <p>For the full competitive analysis process, the guide on <a href="/blog/competitive-ai-brand-audit/" class="content-link">running a competitive AI brand audit</a> covers the four-stage methodology for mapping a competitor's AI footprint and scoring the signal gap.</p>
+
+    <h2>Common Analysis Mistakes</h2>
+
+    <p>Several patterns consistently lead teams to draw wrong conclusions from recommendation analysis.</p>
+
+    <p><strong>Querying too few platforms.</strong> A brand absent from ChatGPT but present on Perplexity looks absent if you only check one platform. Multi-platform coverage is not optional.</p>
+
+    <p><strong>Confusing citation with recommendation.</strong> Being mentioned in an AI answer is not the same as being recommended. If the AI mentions you as a "some teams also use" footnote versus naming you first in a shortlist, those are different signal levels. Track position and framing, not just presence.</p>
+
+    <p><strong>Auditing the wrong competitor content.</strong> Teams often audit a cited competitor's homepage instead of the specific pages that are being retrieved. The homepage is often the weakest signal source. Look for the article, guide, or comparison page that aligns with the query type where they are cited.</p>
+
+    <p><strong>Treating it as a one-time project.</strong> AI search changes. New content is indexed. Training data updates. A snapshot from three months ago may not reflect the current citation landscape. Monthly is the minimum viable tracking cadence.</p>
+
+    <div class="faq-block">
+      <h2>Frequently Asked Questions</h2>
+
+      <p class="faq-q">What is AI brand recommendation analysis?</p>
+      <p class="faq-a">AI brand recommendation analysis is the process of querying AI tools with your category keywords, recording which brands they name, and systematically identifying what signals, content, and authority sources caused those brands to be selected over others.</p>
+
+      <p class="faq-q">Why does AI recommend some brands and not others?</p>
+      <p class="faq-a">AI recommends brands that appear across multiple authoritative sources, have clear entity definitions, publish structured content that directly answers buyer questions, and are cited in third-party editorial coverage. Frequency and context of mentions across independent sources is the single largest factor.</p>
+
+      <p class="faq-q">How do you analyze what signals made an AI recommend a competitor?</p>
+      <p class="faq-a">Start by running the same query across ChatGPT, Perplexity, and Gemini. Record every brand named. For each named competitor, audit their content coverage for that query type, check their third-party citation profile, review their schema implementation, and compare entity completeness. The gap between their footprint and yours is your content brief.</p>
+
+      <p class="faq-q">How often should you run AI brand recommendation analysis?</p>
+      <p class="faq-a">For active GEO programs, run a structured analysis monthly. Run an unstructured spot-check weekly by querying your top 5 category queries manually. After publishing new content, recheck the relevant queries within 2 to 4 weeks to confirm citation rate movement.</p>
+
+      <p class="faq-q">Can AI recommendation analysis be automated?</p>
+      <p class="faq-a">Partially. Query sampling, response logging, and brand mention counting can be automated via API. But signal interpretation, identifying why a brand was cited and what content drove it, still requires human analysis or a dedicated AI visibility platform that surfaces the root cause.</p>
+    </div>
+
+  </article>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <h4>Contents</h4>
+      <ul class="sidebar-toc">
+        <li><a href="#what-analysis-tells-you">What Analysis Tells You</a></li>
+        <li><a href="#query-framework">The Query Framework</a></li>
+        <li><a href="#recording-output">Recording the Output</a></li>
+        <li><a href="#auditing-cited-brands">Auditing Cited Brands</a></li>
+        <li><a href="#gap-analysis">Gap Analysis</a></li>
+        <li><a href="#content-brief">Briefing Content</a></li>
+        <li><a href="#platform-signals">Platform Signal Differences</a></li>
+        <li><a href="#tracking-progress">Tracking Progress</a></li>
+        <li><a href="#competitive-intelligence">Competitive Intelligence</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-cta">
+      <h4>Track AI recommendations automatically</h4>
+      <p>Jeevan AI runs cross-platform brand monitoring so you always know which queries cite you and which cite competitors.</p>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Go to Dashboard</a>
+      <a href="/blog/geo-audit-checklist-2026/" class="btn-outline-sm">Free GEO Audit Checklist</a>
+    </div>
+  </aside>
+</div>
+
+<section class="related-section">
+  <div class="related-section__inner">
+    <h2 class="related-posts__title">Related Guides</h2>
+    <div class="related-grid">
+      <a href="/blog/competitive-ai-brand-audit/" class="related-card">
+        <div class="related-card__tag">Brand Audit</div>
+        <div class="related-card__title">The Competitive AI Brand Audit: Map Your Rival's AI Footprint</div>
+        <div class="related-card__link">Read more →</div>
+      </a>
+      <a href="/blog/what-ai-uses-to-recommend-brands/" class="related-card">
+        <div class="related-card__tag">Why AI Recommends</div>
+        <div class="related-card__title">What AI Uses to Recommend Brands: The 6 Core Signals</div>
+        <div class="related-card__link">Read more →</div>
+      </a>
+      <a href="/blog/geo-audit-checklist-2026/" class="related-card">
+        <div class="related-card__tag">GEO Strategy</div>
+        <div class="related-card__title">GEO Audit Checklist 2026: 20 Questions to Diagnose AI Visibility</div>
+        <div class="related-card__link">Read more →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip__inner">
+    <h2 class="cta-strip__title">Stop guessing. Start tracking.</h2>
+    <p class="cta-strip__sub">Jeevan AI monitors your brand across every major AI platform, shows you which queries cite you and which cite competitors, and flags the exact signals you need to fix.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-white">Go to Dashboard →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/index.html" style="display:flex;align-items:center;gap:10px;font-weight:700;font-size:1rem">
+          <img src="/logo.png" alt="Jeevan AI" style="width:32px;height:32px;border-radius:8px">Jeevan AI
+        </a>
+        <p>AI visibility monitoring for B2B brands. See how AI recommends you, fix the gaps, and track the lift.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/index.html#features">Features</a></li>
+          <li><a href="/index.html#pricing">Pricing</a></li>
+          <li><a href="https://dashboard.jeevanai.co.in/auth/login">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="/blog-index.html">Blog</a></li>
+          <li><a href="/blog/geo-audit-checklist-2026/">GEO Checklist</a></li>
+          <li><a href="/blog/what-is-ai-share-of-voice/">AI Share of Voice</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="mailto:hello@jeevanai.co.in">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Jeevan AI. All rights reserved.</span>
+      <span><a href="/privacy.html" style="color:var(--muted)">Privacy</a> · <a href="/terms.html" style="color:var(--muted)">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
