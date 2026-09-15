@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Some of Your Content Gaps Keep Coming Back (And How to Dismiss Them) | Jeevan AI</title>
+<meta name="description" content="Jeevan AI's gap rating lets you mark gaps as Useful, Moderate, or Low with a reason. Low-rated topics stop coming back in future scan suggestions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/updates/content-gaps-keep-coming-back">
+<meta property="og:title" content="Why Some of Your Content Gaps Keep Coming Back (And How to Dismiss Them)">
+<meta property="og:description" content="Rate content gaps as Useful, Moderate, or Low. Mark a gap Low with a reason and it stops resurfacing in future scan suggestions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/updates/content-gaps-keep-coming-back">
+<meta property="og:site_name" content="Jeevan AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Some of Your Content Gaps Keep Coming Back (And How to Dismiss Them)",
+  "description": "Jeevan AI's gap rating lets you mark gaps as Useful, Moderate, or Low with a reason. Low-rated topics stop coming back in future scan suggestions.",
+  "url": "https://jeevanai.co.in/updates/content-gaps-keep-coming-back",
+  "datePublished": "2026-09-16",
+  "dateModified": "2026-09-16",
+  "author": {"@type": "Organization", "name": "Jeevan AI"},
+  "publisher": {"@type": "Organization", "name": "Jeevan AI", "url": "https://jeevanai.co.in",
+    "logo": {"@type": "ImageObject", "url": "https://jeevanai.co.in/assets/logo.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jeevanai.co.in/updates/content-gaps-keep-coming-back"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens when I mark a gap as Low with a reason?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The reason text is saved against that topic and added to the context the AI uses when generating gap suggestions in your next scan. It will avoid suggesting topics close to what you marked Low, rather than producing a slightly reworded version of the same idea."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does the rating persist across scans?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Ratings are saved against the topic, not against a single scan run. If the same or a closely related gap surfaces in a future scan, the previous rating carries over."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Moderate and Low?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Moderate means the topic could be relevant in some future context but is not a priority now. Low means the topic is not useful for your brand and you want to stop seeing it suggested. Only Low-rated topics with a reason affect future suggestions."}
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I find the ratings filter?",
+      "acceptedAnswer": {"@type": "Answer", "text": "In the Content Planner, look for the Show dropdown near the top of the gap list. Options are All, Useful, Moderate, and Low. Switching to Low gives you a view of everything you have dismissed and the reasons you gave."}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;--font-sans:'DM Sans',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:1180px;--prose-w:720px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--muted);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff;font-size:0.875rem;font-weight:600;transition:opacity 0.2s}
+.nav__cta:hover{opacity:0.88}
+@media(max-width:640px){.nav__links{display:none}}
+
+.article-hero{background:linear-gradient(135deg,#0a1628 0%,#1e2d40 50%,#2d3561 100%);padding:72px 24px 64px;position:relative;overflow:hidden}
+.article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(99,102,241,0.18) 0%,transparent 65%);pointer-events:none}
+.article-hero__inner{max-width:var(--max-w);margin:0 auto;position:relative}
+.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:rgba(255,255,255,0.55);margin-bottom:24px}
+.article-hero__breadcrumb a{color:rgba(255,255,255,0.55);transition:color 0.2s}
+.article-hero__breadcrumb a:hover{color:rgba(255,255,255,0.9)}
+.article-hero__tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(99,102,241,0.2);border:1px solid rgba(99,102,241,0.35);font-size:0.75rem;font-weight:600;color:#a5b4fc;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px}
+.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.18;color:#fff;max-width:760px;margin-bottom:20px;letter-spacing:-0.02em}
+.article-hero__meta{display:flex;align-items:center;gap:20px;font-size:0.85rem;color:rgba(255,255,255,0.6)}
+.article-hero__meta span{display:flex;align-items:center;gap:6px}
+
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:56px 24px 96px;display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:start}
+@media(max-width:960px){.article-wrap{grid-template-columns:1fr}}
+
+.article-prose h2{font-family:var(--font-serif);font-size:1.55rem;color:var(--text);margin:2.4rem 0 1rem;letter-spacing:-0.01em}
+.article-prose h3{font-size:1.1rem;font-weight:700;color:var(--text);margin:1.8rem 0 0.7rem}
+.article-prose p{color:#374151;line-height:1.78;margin-bottom:1.1rem;font-size:1.0rem}
+.article-prose ul,.article-prose ol{margin:0.8rem 0 1.2rem 1.5rem;color:#374151;line-height:1.75}
+.article-prose li{margin-bottom:0.45rem}
+.article-prose strong{color:var(--text);font-weight:600}
+.article-prose blockquote{border-left:3px solid var(--accent);padding:16px 20px;background:rgba(99,102,241,0.05);border-radius:0 8px 8px 0;margin:1.5rem 0;font-style:italic;color:var(--muted)}
+
+.content-link{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color 0.2s}
+.content-link:hover{text-decoration-color:var(--accent)}
+
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.9rem;overflow-x:auto;display:block}
+.data-table th{background:#f3f4f6;color:var(--text);font-weight:600;padding:10px 14px;text-align:left;white-space:nowrap}
+.data-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:#374151;vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:#f9fafb}
+
+.rating-badge{display:inline-flex;align-items:center;padding:4px 10px;border-radius:100px;font-size:0.78rem;font-weight:700;letter-spacing:0.04em}
+.badge-useful{background:#dcfce7;color:#166534}
+.badge-moderate{background:#fef9c3;color:#854d0e}
+.badge-low{background:#fee2e2;color:#991b1b}
+
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.5rem 0}
+@media(max-width:640px){.before-after{grid-template-columns:1fr}}
+.ba-card{border:1px solid var(--border);border-radius:10px;padding:18px 20px;background:var(--card)}
+.ba-card__label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px}
+.ba-card--before .ba-card__label{color:#991b1b}
+.ba-card--after .ba-card__label{color:#166534}
+.ba-card__gap{font-size:0.88rem;color:var(--text);font-weight:600;margin-bottom:6px}
+.ba-card__detail{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+.mechanic-block{border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:1.5rem 0;background:#f9fafb}
+.mechanic-block h4{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:8px}
+.mechanic-block p{font-size:0.88rem;color:#374151;line-height:1.6;margin:0}
+
+.inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,rgba(124,58,237,0.07) 100%);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:28px 32px;margin:2.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text{font-size:1rem;font-weight:600;color:var(--text);max-width:480px}
+.inline-cta__text span{display:block;font-size:0.875rem;font-weight:400;color:var(--muted);margin-top:4px}
+.inline-cta__btn{padding:11px 24px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.9rem;white-space:nowrap;transition:opacity 0.2s}
+.inline-cta__btn:hover{opacity:0.88}
+
+.faq-block{margin:2.5rem 0}
+.faq-block h2{font-family:var(--font-serif);font-size:1.55rem;color:var(--text);margin-bottom:1.2rem}
+p.faq-q{font-weight:700;color:var(--text);margin-bottom:0.3rem;margin-top:1.2rem}
+p.faq-a{color:#374151;margin-bottom:0.8rem}
+
+.article-sidebar{position:sticky;top:88px}
+.sidebar-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.sidebar-card h4{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:16px}
+.sidebar-toc{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.sidebar-toc a{font-size:0.875rem;color:var(--muted);transition:color 0.2s;display:block;padding:2px 0}
+.sidebar-toc a:hover{color:var(--accent)}
+.sidebar-cta{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:12px;padding:24px;color:#fff}
+.sidebar-cta h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.sidebar-cta p{font-size:0.85rem;color:rgba(255,255,255,0.72);margin-bottom:16px}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:11px 20px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.875rem;width:100%;transition:opacity 0.2s;text-align:center}
+.btn-primary:hover{opacity:0.88}
+.btn-outline-sm{display:block;text-align:center;padding:9px 20px;border-radius:8px;border:1px solid rgba(99,102,241,0.4);color:var(--accent);font-size:0.85rem;font-weight:600;margin-top:10px;transition:all 0.2s}
+.btn-outline-sm:hover{background:var(--accent-dim)}
+
+.related-section{border-top:1px solid var(--border);padding:56px 24px}
+.related-section__inner{max-width:var(--max-w);margin:0 auto}
+.related-posts__title{font-family:var(--font-serif);font-size:1.5rem;color:var(--text);margin-bottom:32px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:720px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;transition:border-color 0.2s}
+.related-card:hover{border-color:rgba(99,102,241,0.4)}
+.related-card__tag{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent);margin-bottom:8px}
+.related-card__title{font-size:0.92rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:10px}
+.related-card__link{font-size:0.82rem;color:var(--accent);font-weight:600}
+
+.cta-strip{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 50%,#7c3aed 100%);padding:72px 24px;text-align:center}
+.cta-strip__inner{max-width:600px;margin:0 auto}
+.cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:#fff;margin-bottom:12px}
+.cta-strip__sub{color:rgba(255,255,255,0.8);margin-bottom:32px}
+.cta-strip .btn-white{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;background:#fff;color:#4338ca;font-weight:700;font-size:0.95rem;transition:opacity 0.2s}
+.cta-strip .btn-white:hover{opacity:0.92}
+
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px;background:var(--bg)}
+.footer__inner{max-width:var(--max-w);margin:0 auto}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:720px){.footer__grid{grid-template-columns:1fr 1fr}}
+.footer__brand p{color:var(--muted);font-size:0.875rem;margin-top:12px;max-width:260px;line-height:1.6}
+.footer__col h5{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:14px}
+.footer__col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer__col li a{font-size:0.875rem;color:var(--muted);transition:color 0.2s}
+.footer__col li a:hover{color:var(--text)}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}
+.footer__bottom span{font-size:0.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/blog-index.html">Blog</a>
+      <a href="/index.html#about">About</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Sign In</a>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <div class="article-hero__breadcrumb">
+      <a href="/index.html">Home</a>
+      <span>/</span>
+      <a href="/updates/">Updates</a>
+      <span>/</span>
+      <span>Content Planner</span>
+    </div>
+    <div class="article-hero__tag">Product Update</div>
+    <h1 class="article-hero__title">Why Some of Your Content Gaps Keep Coming Back (And How to Actually Dismiss Them)</h1>
+    <div class="article-hero__meta">
+      <span>Sep 16, 2026</span>
+      <span>5 min read</span>
+      <span>Jeevan AI Team</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-wrap">
+<article class="article-prose">
+
+<p>If you have used the Content Planner for more than one scan cycle, you have probably noticed this: a gap topic you already decided was not relevant for your brand shows up again. Slightly reworded, same idea.</p>
+
+<p>This happens because most AI-powered suggestion tools generate fresh recommendations each run without any memory of what you have already ruled out. The result is a list that grows by volume but does not get more accurate over time.</p>
+
+<p>The gap rating feature in Jeevan AI's Content Planner is built to fix this. Here is specifically how it works and what to expect after you start using it.</p>
+
+<h2 id="the-three-ratings">The three ratings</h2>
+
+<p>Each gap card in the Content Planner has three rating buttons: <span class="rating-badge badge-useful">Useful</span>, <span class="rating-badge badge-moderate">Moderate</span>, and <span class="rating-badge badge-low">Low</span>.</p>
+
+<p><strong>Useful</strong> means this is a real gap worth closing. It goes to the top of your working queue and stays visible in your default Content Planner view.</p>
+
+<p><strong>Moderate</strong> means the topic is plausible but not urgent. It stays in the list but moves lower. You might act on it in a future sprint or if the relevant buying factor score drops further.</p>
+
+<p><strong>Low</strong> means this topic does not fit your brand and you do not want to see it again. When you select Low, a text field opens asking you why. That reason matters. It is not optional feedback, it is the data that makes future suggestions different.</p>
+
+<h2 id="what-low-with-reason-does">What marking Low with a reason actually does</h2>
+
+<p>The reason text you enter for a Low-rated gap is saved against that topic in your account. When Jeevan AI generates the next batch of gap suggestions for your brand, that saved reason is included in the prompt context the AI uses.</p>
+
+<p>The effect is straightforward: the next scan will not suggest topics semantically close to what you have already dismissed with a reason. It does not hallucinate a workaround to your objection. It generates something genuinely different instead.</p>
+
+<div class="mechanic-block">
+  <h4>How this actually works in the system</h4>
+  <p>Your Low-rated reasons are passed as negative context to the suggestion prompt. This is not "AI learning" in a continuous or model-fine-tuning sense. It is a direct prompt-context mechanism: the AI sees what you have ruled out and the reason, and generates within those constraints. Simple, but effective at reducing repeat suggestions.</p>
+</div>
+
+<p>Importantly, the rating is saved against the topic, not against a single scan run. If the same or a closely related gap surfaces in a future scan, the rating carries over automatically. You do not need to re-rate it each time.</p>
+
+<h2 id="before-after">Before and after: the same brand, two scans apart</h2>
+
+<p>This is an illustrative example, not real customer data.</p>
+
+<div class="before-after">
+  <div class="ba-card ba-card--before">
+    <div class="ba-card__label">Scan 1 suggestion</div>
+    <div class="ba-card__gap">Compare pricing plans for different team sizes</div>
+    <div class="ba-card__detail">Rated Low. Reason entered: "We're fixed-price, no tiered or team-size pricing. Comparison content would be misleading."</div>
+  </div>
+  <div class="ba-card ba-card--after">
+    <div class="ba-card__label">Scan 2 suggestion (same buying factor)</div>
+    <div class="ba-card__gap">Transparent per-seat cost breakdown vs annual commitment options</div>
+    <div class="ba-card__detail">Rated Low again. Same reason applied. Scan 3 then produced: "Total cost of ownership guide comparing one-time vs subscription pricing" which was relevant and rated Useful.</div>
+  </div>
+</div>
+
+<p>The system did not immediately produce the perfect suggestion. It took two feedback iterations. But the direction of suggestions changed with each one, which is the expected behavior.</p>
+
+<h2 id="using-the-filter">Using the filter to review what you have dismissed</h2>
+
+<p>In the Content Planner, look for the <strong>Show</strong> dropdown near the top of the gap list. It has four options: All, Useful, Moderate, and Low.</p>
+
+<p>Switching to Low gives you a view of everything you have dismissed and the reasons you gave. This is useful for two things:</p>
+
+<ul>
+  <li>Auditing whether a past Low rating still applies. Business context changes. A "we don't offer that" reason from three months ago may no longer hold if your product has expanded.</li>
+  <li>Reviewing the quality of the reason text you entered. Short or vague reasons ("not relevant") do less to guide future suggestions than specific ones ("we do not serve enterprise customers, only SMBs under 50 seats").</li>
+</ul>
+
+<div class="inline-cta">
+  <div class="inline-cta__text">Rate your open content gaps
+    <span>Open the Content Planner and use the Show filter to see everything that is still unrated.</span>
+  </div>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="inline-cta__btn">Open Content Planner</a>
+</div>
+
+<h2 id="writing-better-reasons">Writing reasons that actually work</h2>
+
+<p>The specificity of your reason text directly affects how much the next scan suggestions change. Here are examples of weak vs strong reasons for the same dismissal:</p>
+
+<table class="data-table">
+  <thead><tr><th>Gap topic</th><th>Weak reason</th><th>Strong reason</th></tr></thead>
+  <tbody>
+    <tr><td>Enterprise security compliance page</td><td>Not relevant</td><td>We serve SMBs only, none of our customers have enterprise compliance requirements</td></tr>
+    <tr><td>Multilingual product documentation</td><td>Don't need this</td><td>We're English-only for now, no plans to support other languages in the next 12 months</td></tr>
+    <tr><td>Freemium tier comparison content</td><td>No</td><td>We don't offer a freemium plan and have no plans to. Paid-only product.</td></tr>
+    <tr><td>Agency partnership program overview</td><td>Not a priority</td><td>We don't have a reseller or agency channel. Direct sales only.</td></tr>
+  </tbody>
+</table>
+
+<p>Strong reasons have two qualities: they state what is specifically not true about your business, and they give enough context that a future suggestion round can generate something genuinely adjacent rather than restating the rejected premise.</p>
+
+<div class="faq-block" id="faq">
+<h2>Frequently asked questions</h2>
+
+<p class="faq-q">What happens when I mark a gap as Low with a reason?</p>
+<p class="faq-a">The reason text is saved against that topic and added to the context the AI uses when generating gap suggestions in your next scan. It will avoid suggesting topics close to what you marked Low, rather than producing a slightly reworded version of the same idea.</p>
+
+<p class="faq-q">Does the rating persist across scans?</p>
+<p class="faq-a">Yes. Ratings are saved against the topic, not against a single scan run. If the same or a closely related gap surfaces in a future scan, the previous rating carries over automatically.</p>
+
+<p class="faq-q">What is the difference between Moderate and Low?</p>
+<p class="faq-a">Moderate means the topic could be relevant in some future context but is not a priority now. Low means the topic does not fit your brand and you want to stop seeing it suggested. Only Low-rated topics with a reason affect future suggestions.</p>
+
+<p class="faq-q">Where do I find the ratings filter?</p>
+<p class="faq-a">In the Content Planner, look for the Show dropdown near the top of the gap list. Options are All, Useful, Moderate, and Low. Switching to Low gives you a view of everything you have dismissed and the reasons you gave.</p>
+</div>
+
+</article>
+
+<aside class="article-sidebar">
+  <div class="sidebar-card">
+    <h4>In this article</h4>
+    <ul class="sidebar-toc">
+      <li><a href="#the-three-ratings">The three ratings</a></li>
+      <li><a href="#what-low-with-reason-does">What Low with reason does</a></li>
+      <li><a href="#before-after">Before and after</a></li>
+      <li><a href="#using-the-filter">Using the filter</a></li>
+      <li><a href="#writing-better-reasons">Writing better reasons</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-cta">
+    <h4>Content Planner</h4>
+    <p>Rate your open gaps and stop seeing the same suggestions cycle back through every scan.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Open Dashboard</a>
+    <a href="/blog-index.html" class="btn-outline-sm">Read more articles</a>
+  </div>
+</aside>
+</div>
+
+<section class="related-section">
+  <div class="related-section__inner">
+    <p class="related-posts__title">More from Jeevan AI</p>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="related-card__tag">Product</div>
+        <div class="related-card__title">Ask Claude What Your Brand's AI Visibility Score Is</div>
+        <a href="/updates/ask-claude-ai-visibility-score/" class="related-card__link">Read more &rarr;</a>
+      </div>
+      <div class="related-card">
+        <div class="related-card__tag">GEO</div>
+        <div class="related-card__title">What Determines Whether ChatGPT Recommends You Or Your Competitor</div>
+        <a href="/updates/chatgpt-recommends-competitor-not-you/" class="related-card__link">Read more &rarr;</a>
+      </div>
+      <div class="related-card">
+        <div class="related-card__tag">GEO</div>
+        <div class="related-card__title">GEO Content Briefs: From Visibility to Citations</div>
+        <a href="/blog/geo-content-briefs-visibility-to-citations/" class="related-card__link">Read more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip__inner">
+    <p class="cta-strip__title">See Your Brand's AI Visibility Score</p>
+    <p class="cta-strip__sub">Scan how ChatGPT, Gemini, and Perplexity cite your brand. Find and close the content gaps that are costing you citations.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-white">Get Started &rarr;</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/index.html" style="display:flex;align-items:center;gap:10px;font-weight:700;font-size:1rem">
+          <img src="/logo.png" alt="Jeevan AI" style="width:32px;height:32px;border-radius:7px">Jeevan AI
+        </a>
+        <p>AI visibility platform for brands that want to be cited across ChatGPT, Gemini, and Perplexity.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/index.html#features">Features</a></li>
+          <li><a href="/index.html#pricing">Pricing</a></li>
+          <li><a href="https://dashboard.jeevanai.co.in/auth/login">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/blog-index.html">Blog</a></li>
+          <li><a href="/blog/ai-brand-recommendation-analysis-guide/">GEO Guide</a></li>
+          <li><a href="/updates/">Updates</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Jeevan AI. All rights reserved.</span>
+      <span>Made in India</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Determines Whether ChatGPT Recommends You Or Your Competitor | Jeevan AI</title>
+<meta name="description" content="Why ChatGPT recommends your competitor instead of you: how AI platforms score buying factors, and why Google rank 1 doesn't guarantee AI citations.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/updates/chatgpt-recommends-competitor-not-you">
+<meta property="og:title" content="What Determines Whether ChatGPT Recommends You Or Your Competitor">
+<meta property="og:description" content="AI platforms answer buyer questions by matching specific buying criteria, not brand recognition. Here is how the mechanism actually works.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/updates/chatgpt-recommends-competitor-not-you">
+<meta property="og:site_name" content="Jeevan AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Determines Whether ChatGPT Recommends You Or Your Competitor",
+  "description": "Why ChatGPT recommends your competitor instead of you: how AI platforms score buying factors, and why Google rank 1 doesn't guarantee AI citations.",
+  "url": "https://jeevanai.co.in/updates/chatgpt-recommends-competitor-not-you",
+  "datePublished": "2026-09-16",
+  "dateModified": "2026-09-16",
+  "author": {"@type": "Organization", "name": "Jeevan AI"},
+  "publisher": {"@type": "Organization", "name": "Jeevan AI", "url": "https://jeevanai.co.in",
+    "logo": {"@type": "ImageObject", "url": "https://jeevanai.co.in/assets/logo.png"}},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://jeevanai.co.in/updates/chatgpt-recommends-competitor-not-you"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does ChatGPT recommend my competitor instead of my brand?",
+      "acceptedAnswer": {"@type": "Answer", "text": "AI platforms build recommendations from content that directly addresses the specific buying criteria in the question, not from general brand recognition or search ranking. If your competitor has published content that specifically answers pricing transparency, integration depth, or security posture questions while your brand's content does not address those same angles, the competitor gets cited."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does ranking number one on Google guarantee AI citations?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Google ranking reflects relevance to a keyword query. AI citation reflects how well your content addresses the specific buying criteria a buyer question implies. A brand can rank first on Google for a category keyword and still be invisible in AI recommendations if its content does not address the comparison angles buyers ask about."}
+    },
+    {
+      "@type": "Question",
+      "name": "What are buying factors and why do they matter for AI visibility?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Buying factors are the specific criteria a buyer evaluates when making a purchasing decision in your category, such as pricing transparency, integration depth, delivery speed, or security posture. AI platforms score brands against these factors based on what has been written about them. A single overall visibility score can hide that a brand is strong on some factors and weak on others."}
+    },
+    {
+      "@type": "Question",
+      "name": "How can I find out which buying factors my brand is weak on?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Jeevan AI scans how ChatGPT, Gemini, and Perplexity answer real buyer questions in your category and scores your brand against competitors on the specific buying factors those questions imply. The per-factor breakdown shows exactly where your content coverage is weak compared to the brands being cited instead of you."}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;--font-sans:'DM Sans',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:1180px;--prose-w:720px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--muted);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff;font-size:0.875rem;font-weight:600;transition:opacity 0.2s}
+.nav__cta:hover{opacity:0.88}
+@media(max-width:640px){.nav__links{display:none}}
+
+.article-hero{background:linear-gradient(135deg,#1a0a2e 0%,#2d1b69 50%,#4338ca 100%);padding:72px 24px 64px;position:relative;overflow:hidden}
+.article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(99,102,241,0.18) 0%,transparent 65%);pointer-events:none}
+.article-hero__inner{max-width:var(--max-w);margin:0 auto;position:relative}
+.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:rgba(255,255,255,0.55);margin-bottom:24px}
+.article-hero__breadcrumb a{color:rgba(255,255,255,0.55);transition:color 0.2s}
+.article-hero__breadcrumb a:hover{color:rgba(255,255,255,0.9)}
+.article-hero__tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(99,102,241,0.2);border:1px solid rgba(99,102,241,0.35);font-size:0.75rem;font-weight:600;color:#a5b4fc;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px}
+.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.18;color:#fff;max-width:760px;margin-bottom:20px;letter-spacing:-0.02em}
+.article-hero__meta{display:flex;align-items:center;gap:20px;font-size:0.85rem;color:rgba(255,255,255,0.6)}
+.article-hero__meta span{display:flex;align-items:center;gap:6px}
+
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:56px 24px 96px;display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:start}
+@media(max-width:960px){.article-wrap{grid-template-columns:1fr}}
+
+.article-prose h2{font-family:var(--font-serif);font-size:1.55rem;color:var(--text);margin:2.4rem 0 1rem;letter-spacing:-0.01em}
+.article-prose h3{font-size:1.1rem;font-weight:700;color:var(--text);margin:1.8rem 0 0.7rem}
+.article-prose p{color:#374151;line-height:1.78;margin-bottom:1.1rem;font-size:1.0rem}
+.article-prose ul,.article-prose ol{margin:0.8rem 0 1.2rem 1.5rem;color:#374151;line-height:1.75}
+.article-prose li{margin-bottom:0.45rem}
+.article-prose strong{color:var(--text);font-weight:600}
+.article-prose blockquote{border-left:3px solid var(--accent);padding:16px 20px;background:rgba(99,102,241,0.05);border-radius:0 8px 8px 0;margin:1.5rem 0;font-style:italic;color:var(--muted)}
+
+.content-link{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:3px;transition:text-decoration-color 0.2s}
+.content-link:hover{text-decoration-color:var(--accent)}
+
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.9rem;overflow-x:auto;display:block}
+.data-table th{background:#f3f4f6;color:var(--text);font-weight:600;padding:10px 14px;text-align:left;white-space:nowrap}
+.data-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:#374151;vertical-align:top}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover td{background:#f9fafb}
+
+.factor-row{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)}
+.factor-row:last-child{border-bottom:none}
+.factor-row__num{min-width:28px;height:28px;border-radius:50%;background:var(--accent-dim);color:var(--accent);font-size:0.82rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.factor-row__content h4{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:3px}
+.factor-row__content p{font-size:0.87rem;color:var(--muted);line-height:1.5;margin:0}
+.factor-list{border:1px solid var(--border);border-radius:12px;padding:0 20px;background:var(--card);margin:1.5rem 0}
+
+.score-example{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin:1.5rem 0}
+.score-example h4{font-size:0.9rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:16px}
+.score-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.score-row:last-child{margin-bottom:0}
+.score-label{font-size:0.88rem;color:var(--text);min-width:170px;font-weight:500}
+.score-bar-wrap{flex:1;background:#f3f4f6;border-radius:100px;height:8px;overflow:hidden}
+.score-bar{height:8px;border-radius:100px}
+.score-num{font-size:0.82rem;font-weight:700;color:var(--text);min-width:28px;text-align:right}
+.bar-strong{background:#6366f1}
+.bar-mid{background:#a5b4fc}
+.bar-weak{background:#e5e7eb}
+
+.inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,rgba(124,58,237,0.07) 100%);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:28px 32px;margin:2.5rem 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta__text{font-size:1rem;font-weight:600;color:var(--text);max-width:480px}
+.inline-cta__text span{display:block;font-size:0.875rem;font-weight:400;color:var(--muted);margin-top:4px}
+.inline-cta__btn{padding:11px 24px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.9rem;white-space:nowrap;transition:opacity 0.2s}
+.inline-cta__btn:hover{opacity:0.88}
+
+.faq-block{margin:2.5rem 0}
+.faq-block h2{font-family:var(--font-serif);font-size:1.55rem;color:var(--text);margin-bottom:1.2rem}
+p.faq-q{font-weight:700;color:var(--text);margin-bottom:0.3rem;margin-top:1.2rem}
+p.faq-a{color:#374151;margin-bottom:0.8rem}
+
+.article-sidebar{position:sticky;top:88px}
+.sidebar-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.sidebar-card h4{font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:16px}
+.sidebar-toc{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}
+.sidebar-toc a{font-size:0.875rem;color:var(--muted);transition:color 0.2s;display:block;padding:2px 0}
+.sidebar-toc a:hover{color:var(--accent)}
+.sidebar-cta{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:12px;padding:24px;color:#fff}
+.sidebar-cta h4{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.sidebar-cta p{font-size:0.85rem;color:rgba(255,255,255,0.72);margin-bottom:16px}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:11px 20px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.875rem;width:100%;transition:opacity 0.2s;text-align:center}
+.btn-primary:hover{opacity:0.88}
+.btn-outline-sm{display:block;text-align:center;padding:9px 20px;border-radius:8px;border:1px solid rgba(99,102,241,0.4);color:var(--accent);font-size:0.85rem;font-weight:600;margin-top:10px;transition:all 0.2s}
+.btn-outline-sm:hover{background:var(--accent-dim)}
+
+.related-section{border-top:1px solid var(--border);padding:56px 24px}
+.related-section__inner{max-width:var(--max-w);margin:0 auto}
+.related-posts__title{font-family:var(--font-serif);font-size:1.5rem;color:var(--text);margin-bottom:32px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:720px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;transition:border-color 0.2s}
+.related-card:hover{border-color:rgba(99,102,241,0.4)}
+.related-card__tag{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent);margin-bottom:8px}
+.related-card__title{font-size:0.92rem;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:10px}
+.related-card__link{font-size:0.82rem;color:var(--accent);font-weight:600}
+
+.cta-strip{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 50%,#7c3aed 100%);padding:72px 24px;text-align:center}
+.cta-strip__inner{max-width:600px;margin:0 auto}
+.cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:#fff;margin-bottom:12px}
+.cta-strip__sub{color:rgba(255,255,255,0.8);margin-bottom:32px}
+.cta-strip .btn-white{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;background:#fff;color:#4338ca;font-weight:700;font-size:0.95rem;transition:opacity 0.2s}
+.cta-strip .btn-white:hover{opacity:0.92}
+
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px;background:var(--bg)}
+.footer__inner{max-width:var(--max-w);margin:0 auto}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:720px){.footer__grid{grid-template-columns:1fr 1fr}}
+.footer__brand p{color:var(--muted);font-size:0.875rem;margin-top:12px;max-width:260px;line-height:1.6}
+.footer__col h5{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:14px}
+.footer__col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer__col li a{font-size:0.875rem;color:var(--muted);transition:color 0.2s}
+.footer__col li a:hover{color:var(--text)}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}
+.footer__bottom span{font-size:0.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/blog-index.html">Blog</a>
+      <a href="/index.html#about">About</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Sign In</a>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <div class="article-hero__breadcrumb">
+      <a href="/index.html">Home</a>
+      <span>/</span>
+      <a href="/updates/">Updates</a>
+      <span>/</span>
+      <span>AI Visibility</span>
+    </div>
+    <div class="article-hero__tag">GEO Education</div>
+    <h1 class="article-hero__title">What Determines Whether ChatGPT Recommends You Or Your Competitor</h1>
+    <div class="article-hero__meta">
+      <span>Sep 16, 2026</span>
+      <span>7 min read</span>
+      <span>Jeevan AI Team</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-wrap">
+<article class="article-prose">
+
+<p>If you type "best [your category] for [your use case]" into ChatGPT and your competitor's name comes back instead of yours, the instinct is to assume it is a brand awareness problem. You are not well known enough. The competitor has more reviews or more backlinks.</p>
+
+<p>Sometimes that is true. But based on scanning thousands of queries across ChatGPT, Gemini, and Perplexity, the more common pattern is different: the competitor gets cited because their content directly addresses what the buyer question implies, and yours does not.</p>
+
+<p>This is a content coverage problem, not a brand recognition problem. And it is fixable.</p>
+
+<h2 id="what-ai-platforms-are-actually-doing">What AI platforms are actually doing when they answer buyer questions</h2>
+
+<p>When a buyer asks ChatGPT something like "which project management tool has the easiest setup for a 10-person team," the AI is not pulling a popularity ranking. It is trying to answer the specific question, which means finding content that addresses the specific criterion the question implies: setup complexity for small teams.</p>
+
+<p>AI platforms build their answers from what has been written about brands across the web, sorted by how directly that content addresses the specific buying criteria in the question. A brand with a detailed, searchable page on "setup time for small teams" has an advantage over one that only publishes generic feature pages, regardless of which brand is more recognized overall.</p>
+
+<p>This is the core of why Google ranking does not translate directly to AI citations. Google ranking reflects relevance to a keyword query. AI citation reflects how well your content addresses the specific buying criteria a buyer question implies. The two can diverge significantly.</p>
+
+<h2 id="buying-factors">The buying factor problem</h2>
+
+<p>Buyer questions are not random. For any given product category, there is a finite set of criteria buyers actually care about when making a decision. These are buying factors.</p>
+
+<p>For a B2B SaaS tool, buying factors might include:</p>
+
+<div class="factor-list">
+  <div class="factor-row">
+    <div class="factor-row__num">1</div>
+    <div class="factor-row__content"><h4>Pricing transparency</h4><p>Does the brand clearly explain its pricing tiers, what is included at each level, and how costs scale?</p></div>
+  </div>
+  <div class="factor-row">
+    <div class="factor-row__num">2</div>
+    <div class="factor-row__content"><h4>Integration depth</h4><p>Does the brand document which tools it integrates with, and how deeply those integrations work?</p></div>
+  </div>
+  <div class="factor-row">
+    <div class="factor-row__num">3</div>
+    <div class="factor-row__content"><h4>Security posture</h4><p>Does the brand publish clear information about data handling, certifications, and compliance?</p></div>
+  </div>
+  <div class="factor-row">
+    <div class="factor-row__num">4</div>
+    <div class="factor-row__content"><h4>Onboarding and setup speed</h4><p>Does the brand communicate how quickly a new customer can get up and running?</p></div>
+  </div>
+  <div class="factor-row">
+    <div class="factor-row__num">5</div>
+    <div class="factor-row__content"><h4>Support responsiveness</h4><p>Does the brand publish SLAs, response time commitments, or customer service access details?</p></div>
+  </div>
+</div>
+
+<p>AI platforms implicitly score brands against these factors when answering buyer questions. A brand strong across all factors gets cited for a wide range of queries. A brand strong on some and silent on others only gets cited when the buyer question matches the factors they have covered.</p>
+
+<h2 id="the-single-score-problem">Why a single visibility score hides the problem</h2>
+
+<p>Some tools report a single AI visibility percentage. Brand X is visible 34% of the time across AI queries. That tells you something is wrong. It does not tell you what.</p>
+
+<p>The single score averages across all the buying factors in your category. A brand could score high on pricing transparency, near zero on security posture, and land at a mid-range overall number that looks mediocre but is actually a specific, fixable problem.</p>
+
+<p>Here is an illustrative example of what a per-factor breakdown looks like for two brands in the same category:</p>
+
+<div class="score-example">
+  <h4>Illustrative per-factor scores (not real data)</h4>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div>
+      <p style="font-size:0.82rem;font-weight:700;color:var(--accent);margin-bottom:12px">Your Brand</p>
+      <div class="score-row"><span class="score-label">Pricing transparency</span><div class="score-bar-wrap"><div class="score-bar bar-strong" style="width:72%"></div></div><span class="score-num">72</span></div>
+      <div class="score-row"><span class="score-label">Integration depth</span><div class="score-bar-wrap"><div class="score-bar bar-weak" style="width:18%"></div></div><span class="score-num">18</span></div>
+      <div class="score-row"><span class="score-label">Security posture</span><div class="score-bar-wrap"><div class="score-bar bar-weak" style="width:12%"></div></div><span class="score-num">12</span></div>
+      <div class="score-row"><span class="score-label">Onboarding speed</span><div class="score-bar-wrap"><div class="score-bar bar-mid" style="width:55%"></div></div><span class="score-num">55</span></div>
+      <div class="score-row"><span class="score-label">Support access</span><div class="score-bar-wrap"><div class="score-bar bar-mid" style="width:40%"></div></div><span class="score-num">40</span></div>
+    </div>
+    <div>
+      <p style="font-size:0.82rem;font-weight:700;color:#6b7280;margin-bottom:12px">Competitor Being Cited</p>
+      <div class="score-row"><span class="score-label">Pricing transparency</span><div class="score-bar-wrap"><div class="score-bar bar-mid" style="width:48%"></div></div><span class="score-num">48</span></div>
+      <div class="score-row"><span class="score-label">Integration depth</span><div class="score-bar-wrap"><div class="score-bar bar-strong" style="width:81%"></div></div><span class="score-num">81</span></div>
+      <div class="score-row"><span class="score-label">Security posture</span><div class="score-bar-wrap"><div class="score-bar bar-strong" style="width:76%"></div></div><span class="score-num">76</span></div>
+      <div class="score-row"><span class="score-label">Onboarding speed</span><div class="score-bar-wrap"><div class="score-bar bar-mid" style="width:60%"></div></div><span class="score-num">60</span></div>
+      <div class="score-row"><span class="score-label">Support access</span><div class="score-bar-wrap"><div class="score-bar bar-mid" style="width:55%"></div></div><span class="score-num">55</span></div>
+    </div>
+  </div>
+</div>
+
+<p>In this example, your brand scores better than the competitor on pricing transparency, but the competitor scores much higher on integration depth and security posture. For any buyer question that implies those two factors, the competitor gets cited. For pricing questions, you do. A single overall number would average these together and tell you nothing actionable.</p>
+
+<h2 id="what-gap-finder-does">What the gap finder does with this</h2>
+
+<p>Knowing you are weak on integration depth does not tell you what to write. Gap Finder turns that per-factor weakness into a specific content topic.</p>
+
+<p>For example, a low score on integration depth might translate to specific gaps like:</p>
+
+<ul>
+  <li>A dedicated integrations page listing every connected tool with setup instructions</li>
+  <li>A comparison page showing how your Salesforce integration works vs a competitor's</li>
+  <li>An article answering "does [your product] integrate with [specific tool]" for your top five buyer tools</li>
+</ul>
+
+<p>These are the topics where your competitor has content that directly answers buyer questions, and you do not. Closing these gaps is how you show up in AI recommendations for those queries.</p>
+
+<div class="inline-cta">
+  <div class="inline-cta__text">See where your brand stands on each buying factor
+    <span>Jeevan AI scores your brand per-factor and shows exactly where competitors are being cited instead of you.</span>
+  </div>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="inline-cta__btn">Run a Scan</a>
+</div>
+
+<h2 id="why-rank-1-isnt-enough">Why ranking number one on Google is not enough</h2>
+
+<p>This pattern consistently comes up when scanning brands that rank at the top of Google results for their category but get almost no AI citations. The disconnect follows a consistent pattern:</p>
+
+<ul>
+  <li>Their content is optimized for ranking keywords, not for buyer questions about specific criteria</li>
+  <li>They have one or two factors well covered (often the ones Google rewards) but gaps on the factors AI questions probe</li>
+  <li>Competitors with lower Google rankings have more specific buyer-criteria content and get cited more</li>
+</ul>
+
+<p>Google search was built around keywords. AI search is built around questions. The type of content that answers a specific buyer question is different from the type that ranks for a broad keyword, even if both describe the same product.</p>
+
+<h2 id="what-to-do-about-it">What to do about it</h2>
+
+<p>The practical steps are:</p>
+
+<ol>
+  <li>Find out which buying factors your category involves and how your brand scores on each versus the competitors being cited</li>
+  <li>Identify the specific queries where your competitor is named and you are not, and what those queries imply about the buying factor involved</li>
+  <li>Create content that directly addresses that buying factor for your brand, with the specificity a buyer question requires</li>
+  <li>Track whether citations in that topic area shift over subsequent scans</li>
+</ol>
+
+<p>This is different from general content marketing. The goal is not volume or keyword density. It is coverage of the specific comparison angles buyers ask about when making decisions in your category.</p>
+
+<p>If you want to see where your own brand stands on this, a Jeevan AI scan runs these queries, scores per factor, and gives you the specific gap topics to address.</p>
+
+<div class="faq-block" id="faq">
+<h2>Frequently asked questions</h2>
+
+<p class="faq-q">Why does ChatGPT recommend my competitor instead of my brand?</p>
+<p class="faq-a">AI platforms build recommendations from content that directly addresses the specific buying criteria in the question, not from general brand recognition or search ranking. If your competitor has published content that specifically answers pricing transparency, integration depth, or security posture questions while yours does not address those same angles, the competitor gets cited.</p>
+
+<p class="faq-q">Does ranking number one on Google guarantee AI citations?</p>
+<p class="faq-a">No. Google ranking reflects relevance to a keyword query. AI citation reflects how well your content addresses the specific buying criteria a buyer question implies. A brand can rank first on Google for a category keyword and still be invisible in AI recommendations if its content does not address the comparison angles buyers ask about.</p>
+
+<p class="faq-q">What are buying factors and why do they matter for AI visibility?</p>
+<p class="faq-a">Buying factors are the specific criteria a buyer evaluates when making a purchasing decision in your category, such as pricing transparency, integration depth, delivery speed, or security posture. AI platforms score brands against these factors based on what has been written about them. A single overall visibility score hides that a brand may be strong on some factors and missing on others.</p>
+
+<p class="faq-q">How can I find out which buying factors my brand is weak on?</p>
+<p class="faq-a">Jeevan AI scans how ChatGPT, Gemini, and Perplexity answer real buyer questions in your category and scores your brand against competitors on the specific buying factors those questions imply. The per-factor breakdown shows exactly where your content coverage is weak compared to the brands being cited instead of you.</p>
+</div>
+
+</article>
+
+<aside class="article-sidebar">
+  <div class="sidebar-card">
+    <h4>In this article</h4>
+    <ul class="sidebar-toc">
+      <li><a href="#what-ai-platforms-are-actually-doing">What AI platforms actually do</a></li>
+      <li><a href="#buying-factors">The buying factor problem</a></li>
+      <li><a href="#the-single-score-problem">Why a single score hides it</a></li>
+      <li><a href="#what-gap-finder-does">What Gap Finder does</a></li>
+      <li><a href="#why-rank-1-isnt-enough">Why rank 1 isn't enough</a></li>
+      <li><a href="#what-to-do-about-it">What to do about it</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-cta">
+    <h4>See your per-factor score</h4>
+    <p>Scan your brand against competitors across every buying factor in your category.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run a Scan</a>
+    <a href="/blog-index.html" class="btn-outline-sm">Read more articles</a>
+  </div>
+</aside>
+</div>
+
+<section class="related-section">
+  <div class="related-section__inner">
+    <p class="related-posts__title">More from Jeevan AI</p>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="related-card__tag">Product</div>
+        <div class="related-card__title">Ask Claude What Your Brand's AI Visibility Score Is</div>
+        <a href="/updates/ask-claude-ai-visibility-score/" class="related-card__link">Read more &rarr;</a>
+      </div>
+      <div class="related-card">
+        <div class="related-card__tag">Product</div>
+        <div class="related-card__title">Why Some of Your Content Gaps Keep Coming Back</div>
+        <a href="/updates/content-gaps-keep-coming-back/" class="related-card__link">Read more &rarr;</a>
+      </div>
+      <div class="related-card">
+        <div class="related-card__tag">GEO</div>
+        <div class="related-card__title">AI Brand Recommendation Analysis: A Complete Guide</div>
+        <a href="/blog/ai-brand-recommendation-analysis-guide/" class="related-card__link">Read more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip__inner">
+    <p class="cta-strip__title">Find Out Why ChatGPT Isn't Citing Your Brand</p>
+    <p class="cta-strip__sub">Scan your AI visibility score, see per-factor breakdowns, and find the specific content gaps keeping you out of AI recommendations.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-white">Get Started &rarr;</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/index.html" style="display:flex;align-items:center;gap:10px;font-weight:700;font-size:1rem">
+          <img src="/logo.png" alt="Jeevan AI" style="width:32px;height:32px;border-radius:7px">Jeevan AI
+        </a>
+        <p>AI visibility platform for brands that want to be cited across ChatGPT, Gemini, and Perplexity.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/index.html#features">Features</a></li>
+          <li><a href="/index.html#pricing">Pricing</a></li>
+          <li><a href="https://dashboard.jeevanai.co.in/auth/login">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Learn</h5>
+        <ul>
+          <li><a href="/blog-index.html">Blog</a></li>
+          <li><a href="/blog/ai-brand-recommendation-analysis-guide/">GEO Guide</a></li>
+          <li><a href="/updates/">Updates</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Jeevan AI. All rights reserved.</span>
+      <span>Made in India</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
