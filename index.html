@@ -512,10 +512,14 @@ a{color:inherit;text-decoration:none}
       <button id="iaBtn" onclick="iaAnalyze()">Check it free &rarr;</button>
     </div>
     <div style="margin-top:10px;text-align:center">
-      <button onclick="iaToggleExtra()" id="iaExtraToggle" style="background:none;border:none;color:rgba(165,180,252,0.7);font-size:0.8rem;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;padding:2px 0">+ Add a competitor URL for gap analysis</button>
+      <button onclick="iaToggleExtra()" id="iaExtraToggle" style="background:none;border:none;color:rgba(165,180,252,0.7);font-size:0.8rem;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;padding:2px 0">+ Add competitor / reference URLs for gap analysis</button>
     </div>
-    <div id="iaExtraFields" style="display:none;flex-direction:column;gap:8px;margin-top:10px;max-width:580px;margin-left:auto;margin-right:auto">
-      <input type="url" id="iaExtra1" placeholder="Competitor URL (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
+    <div id="iaExtraFields" style="display:none;flex-direction:column;gap:6px;margin-top:10px;max-width:580px;margin-left:auto;margin-right:auto">
+      <span style="font-size:0.72rem;font-weight:600;color:rgba(165,180,252,0.6);letter-spacing:0.05em;text-transform:uppercase">Competitors <span style="font-weight:400">(separate report generated)</span></span>
+      <input type="url" id="iaExtra1" placeholder="Competitor URL 1 (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
+      <input type="url" id="iaExtra2" placeholder="Competitor URL 2 (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
+      <span style="font-size:0.72rem;font-weight:600;color:rgba(165,180,252,0.6);letter-spacing:0.05em;text-transform:uppercase;margin-top:4px">Reference URL <span style="font-weight:400">(gap context only)</span></span>
+      <input type="url" id="iaRef" placeholder="Reference URL (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
     </div>
     <div class="ia-status" id="iaStatus">Fetching and analyzing your page...</div>
     <div class="ia-err" id="iaErr"></div>
@@ -1003,7 +1007,7 @@ a{color:inherit;text-decoration:none}
     var btn=document.getElementById('iaExtraToggle');
     var open=f.style.display!=='none'&&f.style.display!=='';
     f.style.display=open?'none':'flex';
-    btn.textContent=open?'+ Add a competitor URL for gap analysis':'- Hide competitor URL';
+    btn.textContent=open?'+ Add competitor / reference URLs for gap analysis':'- Hide extra URLs';
   };
 
   window.iaAnalyze = async function(){
@@ -1021,13 +1025,16 @@ a{color:inherit;text-decoration:none}
       document.getElementById('iaFullLink').href = 'https://jeevanai.co.in/report/?brand='+encodeURIComponent(domainSlug);
     }
 
-    var extra1=(document.getElementById('iaExtra1').value||"").trim();
-    var extra_urls=extra1?[extra1]:[];
+    var comp1=(document.getElementById('iaExtra1').value||"").trim();
+    var comp2=(document.getElementById('iaExtra2').value||"").trim();
+    var ref=(document.getElementById('iaRef').value||"").trim();
+    var competitor_urls=[comp1,comp2].filter(Boolean);
+    var extra_urls=[...competitor_urls,ref].filter(Boolean);
     var statusEl=document.getElementById('iaStatus');
     statusEl.textContent=extra_urls.length?'Fetching and analyzing '+(extra_urls.length+1)+' pages...':'Checking for saved report...';
 
     try{
-      var res = await fetch(IA_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:url,extra_urls:extra_urls})});
+      var res = await fetch(IA_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:url,extra_urls:extra_urls,competitor_urls:competitor_urls})});
       var data = await res.json();
       document.getElementById('iaStatus').classList.remove('show');
       document.getElementById('iaBtn').disabled = false;

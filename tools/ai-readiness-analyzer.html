@@ -126,6 +126,8 @@
   .extra-fields input{padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;font-family:var(--font-sans);color:var(--text)}
   .extra-fields input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
   .extra-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+  .extra-label{font-size:0.78rem;font-weight:600;color:var(--text-dim);letter-spacing:0.02em}
+  .extra-label span{font-weight:400;color:var(--text-muted)}
   .cache-notice{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:10px 14px;margin-top:14px;font-size:0.83rem;color:#92400e}
   .btn-reanalyze{padding:6px 12px;border-radius:7px;border:1px solid #f59e0b;background:#fff;color:#92400e;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--font-sans);white-space:nowrap}
   .btn-reanalyze:hover{background:#fffbeb}
@@ -189,10 +191,14 @@
       <button class="btn-go" id="goBtn" onclick="analyze()">Analyze Page &rarr;</button>
     </div>
     <div class="extra-urls" id="extraUrlsWrap">
-      <button class="extra-toggle" onclick="toggleExtra()" type="button" id="extraToggleBtn">+ Add a competitor URL for gap analysis</button>
+      <button class="extra-toggle" onclick="toggleExtra()" type="button" id="extraToggleBtn">+ Add competitor / reference URLs for gap analysis</button>
       <div class="extra-fields" id="extraFields" style="display:none">
-        <input type="url" id="extraUrl1" placeholder="Competitor URL (optional)" autocomplete="off">
-        <p class="extra-hint">Claude will compare this page against yours, highlight what they cover that you don't, and generate a separate report for them too.</p>
+        <label class="extra-label">Competitors <span>(separate report generated for each)</span></label>
+        <input type="url" id="extraUrl1" placeholder="Competitor URL 1 (optional)" autocomplete="off">
+        <input type="url" id="extraUrl2" placeholder="Competitor URL 2 (optional)" autocomplete="off">
+        <label class="extra-label" style="margin-top:4px">Reference URL <span>(for gap context only, no separate report)</span></label>
+        <input type="url" id="refUrl" placeholder="Reference URL (optional)" autocomplete="off">
+        <p class="extra-hint">Claude compares all pages against yours and surfaces what you're missing.</p>
       </div>
     </div>
     <p class="hint">Public pages only (not behind a login). Analysis takes 15-30 seconds.</p>
@@ -322,21 +328,24 @@ async function analyze(force){
   var domainSlug = slugFromUrl(url);
   if(domainSlug){ window._lastReportSlug = domainSlug; }
 
-  var extra1 = (document.getElementById('extraUrl1').value||"").trim();
-  var extra_urls = extra1 ? [extra1] : [];
+  var comp1 = (document.getElementById('extraUrl1').value||"").trim();
+  var comp2 = (document.getElementById('extraUrl2').value||"").trim();
+  var refUrl = (document.getElementById('refUrl').value||"").trim();
+  var competitor_urls = [comp1, comp2].filter(Boolean);
+  var extra_urls = [...competitor_urls, refUrl].filter(Boolean);
 
   var statusEl = document.getElementById('statusText');
   statusEl.textContent = force
     ? 'Running fresh analysis (this may take 15-30 seconds)...'
     : extra_urls.length
-      ? 'Fetching and analyzing '+(extra_urls.length+1)+' pages...'
+      ? 'Fetching and analyzing '+(extra_urls.length+1)+' pages...'+(competitor_urls.length?' Competitor reports will also be generated.':'')
       : 'Checking for saved report...';
 
   try{
     var res = await fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: url, extra_urls: extra_urls, force: force === true })
+      body: JSON.stringify({ url: url, extra_urls: extra_urls, competitor_urls: competitor_urls, force: force === true })
     });
     var data = await res.json();
     setBusy(false);

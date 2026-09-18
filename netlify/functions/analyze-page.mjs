@@ -199,12 +199,18 @@ export async function handler(event, context) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return json(500, { error: "Server not configured: ANTHROPIC_API_KEY is missing." });
 
-  let primaryUrl, extraUrls, force;
+  let primaryUrl, extraUrls, competitorUrls, force;
   try {
     const body = JSON.parse(event.body || "{}");
     primaryUrl = normalizeUrl(body.url);
+    // extra_urls = all pages for gap analysis (competitors + reference)
     extraUrls = (Array.isArray(body.extra_urls) ? body.extra_urls : [])
-      .map(normalizeUrl).filter(Boolean).slice(0, 1);
+      .map(normalizeUrl).filter(Boolean).slice(0, 3);
+    // competitor_urls = subset of extra_urls that get their own report page
+    competitorUrls = new Set(
+      (Array.isArray(body.competitor_urls) ? body.competitor_urls : [])
+        .map(normalizeUrl).filter(Boolean).slice(0, 2)
+    );
     force = body.force === true;
   } catch {
     return json(400, { error: "Invalid request body." });
@@ -214,7 +220,7 @@ export async function handler(event, context) {
   const cacheKey = domainCacheKey(primaryUrl);
   const TTL = 90 * 24 * 60 * 60;
 
-  // 1. Return cache if no competitors and no force flag.
+  // 1. Return cache if no extra pages and no force flag.
   if (!force && extraUrls.length === 0 && cacheKey) {
     try {
       const store = getStore({ name: "audit-reports", context });
@@ -235,11 +241,14 @@ export async function handler(event, context) {
     return json(200, { error: `Could not load your page: ${primary.error}. Check it is publicly accessible.` });
   }
 
-  // 3. Run Claude analyses in parallel: primary (with gap data) + one per valid competitor.
-  const validExtras = extras.filter(e => !e.error);
+  // extras that are competitors (get own report) vs reference-only (gap analysis only)
+  const competitorExtras = extras.filter(e => !e.error && competitorUrls.has(e.url));
+  const allValidExtras = extras.filter(e => !e.error);
+
+  // 3. Run Claude analyses in parallel: primary (with all pages for gap analysis) + one per competitor.
   const claudePromises = [
-    callClaude(buildPrimaryPrompt(primary, extras), apiKey),
-    ...validExtras.map(e => callClaude(buildCompetitorPrompt(e), apiKey)),
+    callClaude(buildPrimaryPrompt(primary, allValidExtras), apiKey),
+    ...competitorExtras.map(e => callClaude(buildCompetitorPrompt(e), apiKey)),
   ];
 
   let analysisResults;
@@ -261,8 +270,8 @@ export async function handler(event, context) {
     brand: cd.brand || cd.domain || "Competitor",
     domain: cd.domain || "",
     score: cd.score || 0,
-    url: validExtras[i].url,
-    cacheKey: domainCacheKey(validExtras[i].url),
+    url: competitorExtras[i].url,
+    cacheKey: domainCacheKey(competitorExtras[i].url),
   }));
 
   // 5. Save all reports to Blobs with cross-links.
