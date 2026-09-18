@@ -274,7 +274,7 @@ export async function handler(event, context) {
     cacheKey: domainCacheKey(competitorExtras[i].url),
   }));
 
-  // 5. Save all reports to Blobs with cross-links.
+  // 5. Save all reports to Blobs with cross-links, and update the report index for the sitemap.
   try {
     const store = getStore({ name: "audit-reports", context });
 
@@ -303,6 +303,23 @@ export async function handler(event, context) {
       };
       return saveReport(store, payload, TTL);
     }));
+
+    // Update the report index used by the sitemap function.
+    // Read existing index, merge new entries, deduplicate by slug, save back.
+    const allNewEntries = [
+      { slug: brandSlug, brand: primaryData.brand || primaryData.domain || "brand", analyzedAt },
+      ...competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, analyzedAt })),
+    ];
+    try {
+      const existing = await store.get("_report-index", { type: "json" }) || [];
+      const existingSlugs = new Set(existing.map(e => e.slug));
+      const merged = [
+        ...allNewEntries.filter(e => !existingSlugs.has(e.slug)),
+        ...existing,
+      ].slice(0, 5000); // cap at 5000 entries
+      await store.setJSON("_report-index", merged);
+    } catch { /* index update is best-effort */ }
+
   } catch {
     // Blobs write failed — still return the primary result.
     return json(200, { url: primaryUrl, ...primaryData, slug: brandSlug, reportSlug: brandSlug, cached: false,
