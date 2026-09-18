@@ -6,15 +6,18 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - name: Fetch sitemap from Netlify
         run: |
           curl -sf "https://frabjous-maamoul-49a6fd.netlify.app/.netlify/functions/sitemap-reports" \
-            -o website/sitemap-reports.xml || true
+            -o website/sitemap-reports.xml \
+            || echo '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>' > website/sitemap-reports.xml
       - name: Commit if changed
         run: |
           git config user.name "jeevanAI-Jobs"
           git config user.email "229958184+jeevanAI-Jobs@users.noreply.github.com"
           git add website/sitemap-reports.xml
-          git diff --cached --quiet || git commit -m "chore: update report sitemap [skip ci]" && git push
+          git diff --cached --quiet || (git commit -m "chore: update report sitemap [skip ci]" && git push)
