@@ -1,13 +1,13 @@
 // AI-Readiness Page Analyzer — Netlify serverless function.
-// Scrapes the primary URL + up to 2 optional extra URLs, sends all content to Claude
-// for a brand-specific report with gap analysis, and stores it under a brand slug.
+// Checks Netlify Blobs cache by domain before calling Claude.
+// Same domain = return saved report (no API cost). Pass force:true to re-analyze.
 
 import { getStore } from "@netlify/blobs";
 
 const MODEL = "claude-opus-4-8";
-const MAX_HTML_CHARS = 10000; // per page, lower to fit multiple pages in prompt
+const MAX_HTML_CHARS = 10000;
 
-const SYSTEM_PROMPT_BASE = `You are an AI search visibility analyst writing a client-facing diagnostic report. Your job is to tell a brand exactly how AI engines see them RIGHT NOW, what is costing them citations, and why Jeevan AI would help.
+const SYSTEM_PROMPT = `You are an AI search visibility analyst writing a client-facing diagnostic report. Your job is to tell a brand exactly how AI engines see them RIGHT NOW, what is costing them citations, and why Jeevan AI would help.
 
 Rules:
 - Reference actual content from the page. No generic observations.
@@ -40,7 +40,7 @@ Return ONLY valid JSON, no markdown:
   ],
   "jeevanai_value": "<2 sentences: what Jeevan AI would specifically track and surface for this brand. Name the brand, the category, and 1-2 specific Jeevan AI features.>"
 }
-The categories array must contain all six factors in order. The gaps array should have 3-5 items; if no extra pages were provided, generate gaps based on what competitor pages in this category would typically cover.`;
+The categories array must contain all six factors in order. The gaps array should have 3-5 items; if no extra pages were provided, generate gaps based on what competitor pages in this category typically cover.`;
 
 function corsHeaders() {
   return {
@@ -63,6 +63,13 @@ function normalizeUrl(raw) {
     const parsed = new URL(u);
     if (!/^https?:$/.test(parsed.protocol)) return null;
     return parsed.toString();
+  } catch { return null; }
+}
+
+// Cache key from domain — same brand, same cache regardless of which page they analyzed.
+function domainCacheKey(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "").replace(/\./g, "-").toLowerCase();
   } catch { return null; }
 }
 
@@ -111,7 +118,7 @@ async function scrapePage(url) {
     if (!res.ok) return { url, error: `HTTP ${res.status}` };
     const html = await res.text();
     return { url, schemaTypes: detectSchemaTypes(html), content: cleanHtml(html) };
-  } catch (e) {
+  } catch {
     return { url, error: "Could not reach URL" };
   }
 }
@@ -130,20 +137,35 @@ export async function handler(event) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return json(500, { error: "Server not configured: ANTHROPIC_API_KEY is missing." });
 
-  let primaryUrl, extraUrls;
+  let primaryUrl, extraUrls, force;
   try {
     const body = JSON.parse(event.body || "{}");
     primaryUrl = normalizeUrl(body.url);
     extraUrls = (Array.isArray(body.extra_urls) ? body.extra_urls : [])
-      .map(normalizeUrl)
-      .filter(Boolean)
-      .slice(0, 2);
+      .map(normalizeUrl).filter(Boolean).slice(0, 2);
+    force = body.force === true;
   } catch {
     return json(400, { error: "Invalid request body." });
   }
   if (!primaryUrl) return json(400, { error: "Please enter a valid website URL." });
 
-  // 1. Scrape all pages in parallel.
+  const cacheKey = domainCacheKey(primaryUrl);
+
+  // 1. Check cache — skip Claude if we have a saved report for this domain.
+  //    Skip cache check if force:true or if extra_urls were provided (gap analysis = fresh run).
+  if (!force && extraUrls.length === 0 && cacheKey) {
+    try {
+      const store = getStore("audit-reports");
+      const cached = await store.get(cacheKey, { type: "json" });
+      if (cached) {
+        return json(200, { ...cached, cached: true, cachedAt: cached.analyzedAt });
+      }
+    } catch {
+      // Blobs unavailable — fall through to fresh analysis.
+    }
+  }
+
+  // 2. Scrape all pages in parallel.
   const [primary, ...extras] = await Promise.all([
     scrapePage(primaryUrl),
     ...extraUrls.map(scrapePage),
@@ -153,7 +175,7 @@ export async function handler(event) {
     return json(200, { error: `Could not load your page: ${primary.error}. Check it is publicly accessible.` });
   }
 
-  // 2. Build the analysis prompt.
+  // 3. Build the analysis prompt.
   let userContent =
     `Write a brand-specific AI visibility report for the PRIMARY page below.\n` +
     `PRIMARY URL: ${primary.url}\n` +
@@ -164,18 +186,18 @@ export async function handler(event) {
     userContent += `\n\n--- ADDITIONAL PAGES FOR GAP ANALYSIS ---`;
     extras.forEach((e, i) => {
       if (e.error) {
-        userContent += `\n\nADDITIONAL PAGE ${i + 1}: ${e.url} — could not be fetched (${e.error}), skip it.`;
+        userContent += `\n\nADDITIONAL PAGE ${i + 1}: ${e.url} — could not be fetched, skip it.`;
       } else {
         userContent +=
           `\n\nADDITIONAL PAGE ${i + 1}: ${e.url}\n` +
-          `Schema types: ${e.schemaTypes.length ? e.schemaTypes.join(", ") : "none"}\n` +
+          `Schema: ${e.schemaTypes.length ? e.schemaTypes.join(", ") : "none"}\n` +
           `CONTENT:\n${e.content}`;
       }
     });
     userContent += `\n\nIdentify topics, questions, and evidence in the ADDITIONAL PAGES that the PRIMARY page is missing. These become the gaps array.`;
   }
 
-  // 3. Ask Claude.
+  // 4. Call Claude.
   let data;
   try {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
@@ -188,7 +210,7 @@ export async function handler(event) {
       body: JSON.stringify({
         model: MODEL,
         max_tokens: 3500,
-        system: SYSTEM_PROMPT_BASE,
+        system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: userContent }],
       }),
     });
@@ -201,23 +223,29 @@ export async function handler(event) {
     return json(502, { error: "Could not complete the analysis. Please try again." });
   }
 
-  // 4. Build slug: "{brand}-ai-search-visibility"
-  const slug = brandToSlug(data.brand || data.domain || "brand");
+  // 5. Build slugs and save to Blobs.
+  const brandSlug = brandToSlug(data.brand || data.domain || "brand");
   const reportPayload = {
     url: primaryUrl,
     extra_urls: extraUrls,
     analyzedAt: new Date().toISOString(),
-    slug,
+    slug: brandSlug,
+    cacheKey,
     ...data,
   };
 
-  // 5. Save to Netlify Blobs under the slug.
   try {
     const store = getStore("audit-reports");
-    await store.setJSON(slug, reportPayload, { ttl: 90 * 24 * 60 * 60 });
+    const TTL = 90 * 24 * 60 * 60; // 90 days
+    // Save under domain key (for cache lookup on next run) and brand slug (for public URL).
+    const saves = [store.setJSON(brandSlug, reportPayload, { ttl: TTL })];
+    if (cacheKey && cacheKey !== brandSlug) {
+      saves.push(store.setJSON(cacheKey, reportPayload, { ttl: TTL }));
+    }
+    await Promise.all(saves);
   } catch {
-    return json(200, { url: primaryUrl, ...data, slug });
+    return json(200, { url: primaryUrl, ...data, slug: brandSlug, cached: false });
   }
 
-  return json(200, { url: primaryUrl, ...data, slug, reportSlug: slug });
+  return json(200, { url: primaryUrl, ...data, slug: brandSlug, reportSlug: brandSlug, cached: false });
 }

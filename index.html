@@ -1008,7 +1008,7 @@ a{color:inherit;text-decoration:none}
     var extra1=(document.getElementById('iaExtra1').value||"").trim();
     var extra_urls=extra1?[extra1]:[];
     var statusEl=document.getElementById('iaStatus');
-    statusEl.textContent=extra_urls.length?'Fetching and analyzing '+(extra_urls.length+1)+' pages...':'Fetching and analyzing your page...';
+    statusEl.textContent=extra_urls.length?'Fetching and analyzing '+(extra_urls.length+1)+' pages...':'Checking for saved report...';
 
     try{
       var res = await fetch(IA_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:url,extra_urls:extra_urls})});

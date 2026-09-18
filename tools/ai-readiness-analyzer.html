@@ -126,6 +126,9 @@
   .extra-fields input{padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;font-family:var(--font-sans);color:var(--text)}
   .extra-fields input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
   .extra-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+  .cache-notice{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:10px 14px;margin-top:14px;font-size:0.83rem;color:#92400e}
+  .btn-reanalyze{padding:6px 12px;border-radius:7px;border:1px solid #f59e0b;background:#fff;color:#92400e;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--font-sans);white-space:nowrap}
+  .btn-reanalyze:hover{background:#fffbeb}
   .share-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#f5f3ff;border:1px solid rgba(99,102,241,0.25);border-radius:12px;padding:14px 18px;margin-top:18px}
   .share-bar__left{display:flex;flex-direction:column;gap:2px}
   .share-bar__label{font-weight:600;font-size:0.88rem;color:#3730a3}
@@ -204,10 +207,14 @@
         <h3>Top fixes, in priority order</h3>
         <ol id="topfix"></ol>
       </div>
+      <div class="cache-notice" id="cacheNotice" style="display:none">
+        <span id="cacheNoticeText"></span>
+        <button onclick="reAnalyze()" class="btn-reanalyze">Re-analyze fresh</button>
+      </div>
       <div class="share-bar" id="shareBar" style="display:none">
         <div class="share-bar__left">
           <span class="share-bar__label">Share this report</span>
-          <span class="share-bar__sub">Anyone with the link can view it for 30 days</span>
+          <span class="share-bar__sub">Anyone with the link can view it for 90 days</span>
         </div>
         <button class="btn-share" id="shareBtn" onclick="copyShareLink()">Copy shareable link</button>
       </div>
@@ -273,6 +280,10 @@ function showError(msg){
   e.classList.add('show');
 }
 
+function reAnalyze(){
+  analyze(true);
+}
+
 function toggleExtra(){
   var fields = document.getElementById('extraFields');
   var btn = document.getElementById('extraToggleBtn');
@@ -281,7 +292,7 @@ function toggleExtra(){
   btn.textContent = open ? '+ Add a competitor or another URL for gap analysis' : '- Hide extra URLs';
 }
 
-async function analyze(){
+async function analyze(force){
   var url = document.getElementById('urlInput').value.trim();
   if(!url){ showError("Please enter a website URL."); return; }
   document.getElementById('err').classList.remove('show');
@@ -293,15 +304,17 @@ async function analyze(){
   var extra_urls = [extra1, extra2].filter(Boolean);
 
   var statusEl = document.getElementById('statusText');
-  statusEl.textContent = extra_urls.length
-    ? 'Fetching and analyzing '+(extra_urls.length+1)+' pages...'
-    : 'Fetching and analyzing your page...';
+  statusEl.textContent = force
+    ? 'Running fresh analysis (this may take 15-30 seconds)...'
+    : extra_urls.length
+      ? 'Fetching and analyzing '+(extra_urls.length+1)+' pages...'
+      : 'Checking for saved report...';
 
   try{
     var res = await fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: url, extra_urls: extra_urls })
+      body: JSON.stringify({ url: url, extra_urls: extra_urls, force: force === true })
     });
     var data = await res.json();
     setBusy(false);
@@ -344,6 +357,16 @@ function render(data){
     fixes.forEach(function(f){ var li=document.createElement('li'); li.textContent=f; ol.appendChild(li); });
     wrap.style.display = "block";
   }else{ wrap.style.display = "none"; }
+
+  // Cache notice
+  var cacheNotice = document.getElementById('cacheNotice');
+  if(data.cached){
+    var dateStr = data.cachedAt ? new Date(data.cachedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '';
+    document.getElementById('cacheNoticeText').textContent = 'Showing saved report' + (dateStr ? ' from '+dateStr : '') + '. Results are consistent across runs.';
+    cacheNotice.style.display = 'flex';
+  } else {
+    cacheNotice.style.display = 'none';
+  }
 
   // Show share bar if backend returned a slug.
   var shareBar = document.getElementById('shareBar');
