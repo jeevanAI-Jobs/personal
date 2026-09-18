@@ -511,6 +511,12 @@ a{color:inherit;text-decoration:none}
       <input type="url" id="iaUrl" placeholder="https://yourcompany.com/page" autocomplete="off" inputmode="url">
       <button id="iaBtn" onclick="iaAnalyze()">Check it free &rarr;</button>
     </div>
+    <div style="margin-top:10px;text-align:center">
+      <button onclick="iaToggleExtra()" id="iaExtraToggle" style="background:none;border:none;color:rgba(165,180,252,0.7);font-size:0.8rem;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;padding:2px 0">+ Add a competitor URL for gap analysis</button>
+    </div>
+    <div id="iaExtraFields" style="display:none;flex-direction:column;gap:8px;margin-top:10px;max-width:580px;margin-left:auto;margin-right:auto">
+      <input type="url" id="iaExtra1" placeholder="Competitor URL (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
+    </div>
     <div class="ia-status" id="iaStatus">Fetching and analyzing your page...</div>
     <div class="ia-err" id="iaErr"></div>
     <div class="ia-result" id="iaResult">
@@ -982,6 +988,14 @@ a{color:inherit;text-decoration:none}
 
   function iaColorFor(s){return s>=70?"#4ade80":s>=40?"#fbbf24":"#f87171"}
 
+  window.iaToggleExtra = function(){
+    var f=document.getElementById('iaExtraFields');
+    var btn=document.getElementById('iaExtraToggle');
+    var open=f.style.display!=='none'&&f.style.display!=='';
+    f.style.display=open?'none':'flex';
+    btn.textContent=open?'+ Add a competitor URL for gap analysis':'- Hide competitor URL';
+  };
+
   window.iaAnalyze = async function(){
     var url = document.getElementById('iaUrl').value.trim();
     if(!url){iaShowErr("Please enter a website URL.");return;}
@@ -991,8 +1005,13 @@ a{color:inherit;text-decoration:none}
     document.getElementById('iaBtn').disabled = true;
     _iaReportId = null;
 
+    var extra1=(document.getElementById('iaExtra1').value||"").trim();
+    var extra_urls=extra1?[extra1]:[];
+    var statusEl=document.getElementById('iaStatus');
+    statusEl.textContent=extra_urls.length?'Fetching and analyzing '+(extra_urls.length+1)+' pages...':'Fetching and analyzing your page...';
+
     try{
-      var res = await fetch(IA_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:url})});
+      var res = await fetch(IA_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:url,extra_urls:extra_urls})});
       var data = await res.json();
       document.getElementById('iaStatus').classList.remove('show');
       document.getElementById('iaBtn').disabled = false;

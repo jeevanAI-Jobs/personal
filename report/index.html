@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Visibility Report | Jeevan AI</title>
-<meta name="description" content="See how AI engines like ChatGPT, Gemini, and Perplexity currently perceive and cite this brand — and what it would take to improve.">
+<title>AI Search Visibility Report | Jeevan AI</title>
+<meta name="description" content="See how AI engines like ChatGPT, Gemini, and Perplexity currently perceive and cite this brand, what content gaps are costing citations, and how to close them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -33,39 +33,46 @@ a{color:inherit;text-decoration:none}
 .error-state{display:none;text-align:center;padding:60px 24px}
 .error-state h2{font-family:var(--font-serif);font-size:1.6rem;margin-bottom:12px}
 .error-state p{color:var(--muted);margin-bottom:24px}
+.btn-primary{display:inline-block;padding:11px 24px;border-radius:9px;background:var(--accent);color:#fff;font-weight:700;font-size:0.88rem}
 
 .report-content{display:none}
 
 /* Report header */
-.report-header{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#1e3a8a 100%);border-radius:16px;padding:32px;margin-bottom:24px;color:#fff}
-.report-header__brand-row{display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-.brand-domain{font-size:0.82rem;color:rgba(165,180,252,0.8);text-decoration:underline;text-underline-offset:2px}
+.report-header{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#1e3a8a 100%);border-radius:16px;padding:32px;margin-bottom:20px;color:#fff}
+.report-header__top-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.report-badge{font-size:0.7rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;background:rgba(165,180,252,0.15);border:1px solid rgba(165,180,252,0.3);padding:4px 12px;border-radius:100px;color:#a5b4fc}
+.brand-domain-link{font-size:0.85rem;color:rgba(165,180,252,0.85);text-decoration:underline;text-underline-offset:3px}
 .report-header__score-row{display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
 .score-ring{flex-shrink:0;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-weight:700;color:#fff}
-.report-header__score-body{}
-.report-header__label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:rgba(165,180,252,0.7);margin-bottom:4px}
-.report-header__verdict{font-family:var(--font-serif);font-size:1.2rem;color:#fff;line-height:1.4;margin-bottom:8px}
+.report-header__score-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:rgba(165,180,252,0.7);margin-bottom:4px}
+.report-header__verdict{font-family:var(--font-serif);font-size:1.2rem;color:#fff;line-height:1.4;margin-bottom:6px}
 .report-header__date{font-size:0.78rem;color:rgba(255,255,255,0.4)}
-
-/* AI Summary */
 .ai-summary-block{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;margin-top:20px}
-.ai-summary-block__label{font-size:0.7rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#a5b4fc;margin-bottom:8px}
-.ai-summary-block p{font-size:0.92rem;color:rgba(255,255,255,0.8);line-height:1.65}
+.ai-summary-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#a5b4fc;margin-bottom:8px}
+.ai-summary-text{font-size:0.92rem;color:rgba(255,255,255,0.82);line-height:1.65}
+
+/* Gaps section */
+.gaps-section{margin-bottom:20px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.section-head h2{font-family:var(--font-serif);font-size:1.1rem;color:var(--text)}
+.section-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 9px;border-radius:100px}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-purple{background:#ede9fe;color:#5b21b6}
+.gap-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--bad);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+.gap-card__topic{font-weight:600;font-size:0.9rem;color:var(--text);margin-bottom:4px}
+.gap-card__why{font-size:0.84rem;color:var(--muted);line-height:1.5;margin-bottom:6px}
+.gap-card__fix{font-size:0.84rem;color:var(--text);line-height:1.5}
+.gap-card__fix b{color:var(--accent)}
 
 /* Jeevan AI value block */
-.jeevanai-block{background:linear-gradient(135deg,#312e81 0%,#4338ca 100%);border-radius:14px;padding:22px 24px;margin-bottom:24px;position:relative;overflow:hidden}
+.jeevanai-block{background:linear-gradient(135deg,#312e81 0%,#4338ca 100%);border-radius:14px;padding:24px 26px;margin-bottom:20px;position:relative;overflow:hidden}
 .jeevanai-block::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.05)}
-.jeevanai-block__label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#a5b4fc;margin-bottom:8px}
-.jeevanai-block h3{font-family:var(--font-serif);font-size:1.1rem;color:#fff;margin-bottom:10px}
-.jeevanai-block p{font-size:0.9rem;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:16px}
-.jeevanai-block .btn-white{display:inline-block;padding:10px 22px;border-radius:9px;background:#fff;color:#4338ca;font-weight:700;font-size:0.88rem}
+.jeevanai-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#a5b4fc;margin-bottom:8px}
+.jeevanai-title{font-family:var(--font-serif);font-size:1.1rem;color:#fff;margin-bottom:10px}
+.jeevanai-text{font-size:0.9rem;color:rgba(255,255,255,0.82);line-height:1.65;margin-bottom:18px}
+.btn-white{display:inline-block;padding:10px 22px;border-radius:9px;background:#fff;color:#4338ca;font-weight:700;font-size:0.88rem}
 
 /* Factor cards */
-.factors-section{margin-bottom:24px}
-.factors-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.factors-head h2{font-family:var(--font-serif);font-size:1.1rem;color:var(--text)}
-.factors-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 9px;border-radius:100px;background:#ede9fe;color:#5b21b6}
-
 .cats{display:flex;flex-direction:column;gap:10px}
 .cat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
 .cat__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
@@ -78,12 +85,11 @@ a{color:inherit;text-decoration:none}
 .cat__fix b{color:var(--accent)}
 
 /* Locked section */
-.lock-section{position:relative;margin-bottom:24px}
+.lock-section{position:relative;margin-bottom:20px}
 .lock-blur{filter:blur(5px);pointer-events:none;user-select:none;opacity:0.55}
 .lock-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;z-index:2;background:radial-gradient(ellipse at center,rgba(250,250,250,0.97) 20%,rgba(250,250,250,0.88) 100%);border-radius:12px;padding:24px;text-align:center}
 .lock-title{font-family:var(--font-serif);font-size:1.05rem;color:var(--text)}
 .lock-sub{font-size:0.84rem;color:var(--muted);max-width:360px;line-height:1.5}
-.btn-primary{display:inline-block;padding:11px 24px;border-radius:9px;background:var(--accent);color:#fff;font-weight:700;font-size:0.88rem}
 
 /* Top fix */
 .fix-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px}
@@ -91,13 +97,12 @@ a{color:inherit;text-decoration:none}
 .fix-text{font-size:0.87rem;color:var(--text);line-height:1.55}
 
 /* Share bar */
-.share-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.share-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
 .share-bar__text{font-weight:600;font-size:0.9rem}
 .share-bar__sub{font-size:0.78rem;color:var(--muted)}
 .btn-copy{padding:9px 16px;border-radius:8px;background:var(--accent-dim);color:var(--accent);font-weight:600;font-size:0.83rem;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-sans)}
 .btn-copy.copied{background:#dcfce7;color:#059669}
 
-/* Footer */
 .footer-simple{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
 </style>
 </head>
@@ -121,62 +126,70 @@ a{color:inherit;text-decoration:none}
 
   <div class="error-state" id="errorState">
     <h2>Report not found</h2>
-    <p id="errorMsg">This report may have expired or the link is incorrect. Run a new analysis to generate one.</p>
-    <a href="/tools/ai-readiness-analyzer.html" class="btn-primary" style="margin-bottom:12px">Run a new analysis</a>
+    <p id="errorMsg">This report may have expired. Run a new analysis to generate a fresh one.</p>
+    <a href="/tools/ai-readiness-analyzer.html" class="btn-primary">Run a new analysis</a>
   </div>
 
   <div class="report-content" id="reportContent">
 
-    <!-- Header with score -->
     <div class="report-header">
-      <div class="report-header__brand-row">
-        <span id="reportBadge" style="font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:rgba(165,180,252,0.15);border:1px solid rgba(165,180,252,0.3);padding:4px 12px;border-radius:100px;color:#a5b4fc">AI Visibility Report</span>
-        <a id="brandLink" href="#" class="brand-domain" target="_blank" rel="noopener"></a>
+      <div class="report-header__top-row">
+        <span class="report-badge">AI Search Visibility Report</span>
+        <a id="brandDomainLink" href="#" class="brand-domain-link" target="_blank" rel="noopener"></a>
       </div>
       <div class="report-header__score-row">
         <div class="score-ring" id="scoreRing"></div>
-        <div class="report-header__score-body">
-          <div class="report-header__label">Overall AI Visibility Score</div>
+        <div>
+          <div class="report-header__score-label">Overall AI Visibility Score</div>
           <div class="report-header__verdict" id="verdict"></div>
           <div class="report-header__date" id="analyzedDate"></div>
         </div>
       </div>
       <div class="ai-summary-block">
-        <div class="ai-summary-block__label">What AI engines see today</div>
-        <p id="aiSummary"></p>
+        <div class="ai-summary-label">What AI engines see today</div>
+        <p class="ai-summary-text" id="aiSummary"></p>
       </div>
+    </div>
+
+    <!-- Content Gaps -->
+    <div class="gaps-section" id="gapsSection">
+      <div class="section-head">
+        <h2>Content Gaps Costing Citations</h2>
+        <span class="section-tag tag-red" id="gapsCount"></span>
+      </div>
+      <div id="gapsList"></div>
     </div>
 
     <!-- Jeevan AI value -->
     <div class="jeevanai-block">
-      <div class="jeevanai-block__label">Where Jeevan AI comes in</div>
-      <h3>How Jeevan AI would help <span id="jaBrand"></span></h3>
-      <p id="jeevanaiValue"></p>
+      <div class="jeevanai-label">Where Jeevan AI comes in</div>
+      <h3 class="jeevanai-title">How Jeevan AI would help <span id="jaBrand"></span></h3>
+      <p class="jeevanai-text" id="jeevanaiValue"></p>
       <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-white">Start free brand scan</a>
     </div>
 
-    <!-- 2 visible factors -->
-    <div class="factors-section">
-      <div class="factors-head">
+    <!-- 2 visible factor cards -->
+    <div class="factors-section" style="margin-bottom:20px">
+      <div class="section-head">
         <h2>Factor Breakdown</h2>
-        <span class="factors-tag">2 of 6 shown</span>
+        <span class="section-tag tag-purple">2 of 6 shown</span>
       </div>
       <div class="cats" id="visibleCats"></div>
     </div>
 
-    <!-- 4 locked factors -->
+    <!-- 4 locked factor cards -->
     <div class="lock-section">
       <div class="lock-blur cats" id="lockedCats"></div>
       <div class="lock-overlay">
         <div class="lock-title">4 more scored factors in the full report</div>
-        <div class="lock-sub">Sign up free to see the complete 6-factor breakdown, a competitor comparison, and a content fix plan tailored to your brand.</div>
+        <div class="lock-sub">Sign up free to see all 6 factors, a competitor comparison, and a content plan for your brand.</div>
         <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">See full report free</a>
       </div>
     </div>
 
     <!-- Top fix -->
-    <div style="margin-bottom:24px">
-      <div class="factors-head"><h2>Top Priority Fix</h2></div>
+    <div style="margin-bottom:20px">
+      <div class="section-head"><h2>Top Priority Fix</h2></div>
       <div id="topFix"></div>
     </div>
 
@@ -189,8 +202,7 @@ a{color:inherit;text-decoration:none}
       <button class="btn-copy" id="copyBtn" onclick="copyLink()">Copy link</button>
     </div>
 
-    <!-- Analyze another -->
-    <div style="text-align:center;padding:8px 0 16px">
+    <div style="text-align:center;padding:4px 0 12px">
       <a href="/tools/ai-readiness-analyzer.html" style="font-size:0.85rem;color:var(--accent);font-weight:600">Analyze a different page &rarr;</a>
     </div>
 
@@ -208,11 +220,10 @@ var API = "https://frabjous-maamoul-49a6fd.netlify.app/.netlify/functions/get-re
 function colorFor(s){return s>=70?"#059669":s>=40?"#d97706":"#dc2626"}
 function tintFor(s){return s>=70?"#d1fae5":s>=40?"#fef3c7":"#fee2e2"}
 function esc(s){var d=document.createElement('div');d.textContent=String(s||"");return d.innerHTML}
-
 function fmtDate(iso){
-  if(!iso) return "";
-  try{return "Analyzed "+new Date(iso).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});}
-  catch{return ""}
+  if(!iso)return"";
+  try{return"Analyzed "+new Date(iso).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});}
+  catch{return"";}
 }
 
 function renderCat(c){
@@ -232,36 +243,75 @@ function render(data){
   var brand=data.brand||data.domain||"This brand";
   var slug=data.slug||"";
 
-  // Dynamic meta
-  document.title=(brand?" "+brand+" AI Visibility Report | Jeevan AI":"AI Visibility Report | Jeevan AI");
+  // Dynamic meta + title for SEO
+  document.title=brand+" AI Search Visibility Report | Jeevan AI";
   var metaDesc=document.querySelector('meta[name="description"]');
-  if(metaDesc && data.verdict) metaDesc.setAttribute('content',data.verdict+" See the full report on Jeevan AI.");
+  if(metaDesc && data.verdict) metaDesc.setAttribute('content',data.verdict+" Full AI search visibility report by Jeevan AI.");
+
+  // Open Graph
+  var ogTitle=document.querySelector('meta[property="og:title"]');
+  if(!ogTitle){ogTitle=document.createElement('meta');ogTitle.setAttribute('property','og:title');document.head.appendChild(ogTitle);}
+  ogTitle.setAttribute('content',brand+" AI Search Visibility Report | Jeevan AI");
 
   // Canonical
   var canonical=document.querySelector('link[rel="canonical"]');
   if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical);}
   canonical.href='https://jeevanai.co.in/report/?brand='+encodeURIComponent(slug);
 
-  // Brand link to their homepage
-  var brandLink=document.getElementById('brandLink');
-  brandLink.textContent=data.domain||data.url||"";
-  brandLink.href=data.url||("#");
-  brandLink.title="Visit "+brand+" website";
+  // JSON-LD for the report page (helps AI engines understand the page)
+  var ldScript=document.createElement('script');
+  ldScript.type='application/ld+json';
+  ldScript.text=JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":brand+" AI Search Visibility Report",
+    "description":data.verdict||"AI visibility report for "+brand,
+    "url":"https://jeevanai.co.in/report/?brand="+encodeURIComponent(slug),
+    "publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},
+    "datePublished":data.analyzedAt||new Date().toISOString(),
+    "about":{"@type":"Organization","name":brand,"url":data.url||"#"}
+  });
+  document.head.appendChild(ldScript);
 
-  // Score
+  // Brand link back to analyzed page
+  var brandLink=document.getElementById('brandDomainLink');
+  brandLink.textContent=data.domain||data.url||brand;
+  brandLink.href=data.url||"#";
+  brandLink.title="Visit "+brand;
+
+  // Score ring
   var ring=document.getElementById('scoreRing');
   ring.textContent=score;
   ring.style.background=colorFor(score);
 
-  document.getElementById('verdict').textContent=data.verdict||"Analysis complete.";
+  document.getElementById('verdict').textContent=data.verdict||"";
   document.getElementById('analyzedDate').textContent=fmtDate(data.analyzedAt);
   document.getElementById('aiSummary').textContent=data.ai_summary||"";
 
+  // Gaps
+  var gaps=(data.gaps||[]);
+  var gapsList=document.getElementById('gapsList');
+  var gapsSection=document.getElementById('gapsSection');
+  gapsList.innerHTML="";
+  if(gaps.length>0){
+    document.getElementById('gapsCount').textContent=gaps.length+" identified";
+    gaps.slice(0,3).forEach(function(g){
+      var d=document.createElement('div');d.className='gap-card';
+      d.innerHTML=
+        '<div class="gap-card__topic">'+esc(g.topic)+'</div>'+
+        '<div class="gap-card__why">'+esc(g.why)+'</div>'+
+        '<div class="gap-card__fix"><b>Add:</b> '+esc(g.fix)+'</div>';
+      gapsList.appendChild(d);
+    });
+  }else{
+    gapsSection.style.display='none';
+  }
+
   // Jeevan AI block
   document.getElementById('jaBrand').textContent=brand;
-  document.getElementById('jeevanaiValue').textContent=data.jeevanai_value||"Jeevan AI tracks how often AI engines cite this brand across ChatGPT, Gemini, and Perplexity, scores it against competitors on each buying factor, and surfaces content gaps before they cost leads.";
+  document.getElementById('jeevanaiValue').textContent=data.jeevanai_value||"Jeevan AI tracks how often AI engines cite "+brand+" across ChatGPT, Gemini, and Perplexity, scores it against competitors on each buying factor, and surfaces content gaps before they cost leads.";
 
-  // Factors: 2 visible, 4 locked
+  // Factor cards: 2 visible, 4 locked
   var cats=data.categories||[];
   var vis=document.getElementById('visibleCats');
   var lock=document.getElementById('lockedCats');
@@ -304,7 +354,7 @@ function copyLink(){
 (async function(){
   var params=new URLSearchParams(window.location.search);
   var brand=params.get('brand')||"";
-  if(!brand){showError("No brand in URL. Run an analysis to generate a shareable report.");return;}
+  if(!brand){showError("No brand parameter in URL. Run an analysis to generate a report.");return;}
 
   try{
     var res=await fetch(API+"?brand="+encodeURIComponent(brand));

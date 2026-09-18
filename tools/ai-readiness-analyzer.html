@@ -120,6 +120,12 @@
   .topfix h3{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);margin-bottom:10px}
   .topfix ol{margin:0;padding-left:20px}
   .topfix li{font-size:0.95rem;color:#374151;margin-bottom:7px;line-height:1.55}
+  .extra-urls{margin-top:12px}
+  .extra-toggle{background:none;border:none;color:var(--accent);font-size:0.85rem;font-weight:600;cursor:pointer;padding:4px 0;font-family:var(--font-sans)}
+  .extra-fields{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+  .extra-fields input{padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.9rem;font-family:var(--font-sans);color:var(--text)}
+  .extra-fields input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+  .extra-hint{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
   .share-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#f5f3ff;border:1px solid rgba(99,102,241,0.25);border-radius:12px;padding:14px 18px;margin-top:18px}
   .share-bar__left{display:flex;flex-direction:column;gap:2px}
   .share-bar__label{font-weight:600;font-size:0.88rem;color:#3730a3}
@@ -172,7 +178,15 @@
       <input type="url" id="urlInput" placeholder="https://yourcompany.com/page" autocomplete="off" inputmode="url">
       <button class="btn-go" id="goBtn" onclick="analyze()">Analyze Page &rarr;</button>
     </div>
-    <p class="hint">Public pages only (not behind a login). Analysis takes 10-20 seconds.</p>
+    <div class="extra-urls" id="extraUrlsWrap">
+      <button class="extra-toggle" onclick="toggleExtra()" type="button" id="extraToggleBtn">+ Add a competitor or another URL for gap analysis</button>
+      <div class="extra-fields" id="extraFields" style="display:none">
+        <input type="url" id="extraUrl1" placeholder="Competitor or related URL (optional)" autocomplete="off">
+        <input type="url" id="extraUrl2" placeholder="Second URL (optional)" autocomplete="off">
+        <p class="extra-hint">Claude will compare these pages against yours and highlight what they cover that you don't.</p>
+      </div>
+    </div>
+    <p class="hint">Public pages only (not behind a login). Analysis takes 15-30 seconds.</p>
 
     <div class="status" id="status"><span class="spinner"></span><span id="statusText">Fetching and analyzing your page...</span></div>
     <div class="err" id="err"></div>
@@ -259,6 +273,14 @@ function showError(msg){
   e.classList.add('show');
 }
 
+function toggleExtra(){
+  var fields = document.getElementById('extraFields');
+  var btn = document.getElementById('extraToggleBtn');
+  var open = fields.style.display !== 'none';
+  fields.style.display = open ? 'none' : 'flex';
+  btn.textContent = open ? '+ Add a competitor or another URL for gap analysis' : '- Hide extra URLs';
+}
+
 async function analyze(){
   var url = document.getElementById('urlInput').value.trim();
   if(!url){ showError("Please enter a website URL."); return; }
@@ -266,11 +288,20 @@ async function analyze(){
   document.getElementById('results').classList.remove('show');
   setBusy(true);
 
+  var extra1 = (document.getElementById('extraUrl1').value||"").trim();
+  var extra2 = (document.getElementById('extraUrl2').value||"").trim();
+  var extra_urls = [extra1, extra2].filter(Boolean);
+
+  var statusEl = document.getElementById('statusText');
+  statusEl.textContent = extra_urls.length
+    ? 'Fetching and analyzing '+(extra_urls.length+1)+' pages...'
+    : 'Fetching and analyzing your page...';
+
   try{
     var res = await fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url: url })
+      body: JSON.stringify({ url: url, extra_urls: extra_urls })
     });
     var data = await res.json();
     setBusy(false);
