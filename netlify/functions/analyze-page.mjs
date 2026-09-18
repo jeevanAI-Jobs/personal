@@ -192,6 +192,37 @@ async function saveReport(store, payload, TTL) {
   await Promise.all(saves);
 }
 
+async function pushSitemapToGithub(entries) {
+  const pat = process.env.GITHUB_PAT;
+  if (!pat) return;
+
+  const BASE = "https://jeevanai.co.in";
+  const urls = entries.map(e => {
+    const loc = `${BASE}/report/?brand=${encodeURIComponent(e.slug)}`;
+    const lastmod = (e.analyzedAt || new Date().toISOString()).slice(0, 10);
+    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`;
+  }).join("\n");
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
+
+  const apiBase = "https://api.github.com/repos/jeevanAI-Jobs/personal/contents/website/sitemap-reports.xml";
+  const headers = {
+    "Authorization": `Bearer ${pat}`,
+    "Accept": "application/vnd.github+json",
+    "Content-Type": "application/json",
+  };
+
+  // Get current file SHA (needed for update).
+  let sha;
+  try {
+    const r = await fetch(apiBase, { headers });
+    if (r.ok) { const d = await r.json(); sha = d.sha; }
+  } catch { /* new file */ }
+
+  const body = { message: "chore: update report sitemap [skip ci]", content: Buffer.from(xml).toString("base64") };
+  if (sha) body.sha = sha;
+  await fetch(apiBase, { method: "PUT", headers, body: JSON.stringify(body) });
+}
+
 export async function handler(event, context) {
   if (event.httpMethod === "OPTIONS") return { statusCode: 204, headers: corsHeaders(), body: "" };
   if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
@@ -318,8 +349,9 @@ export async function handler(event, context) {
         ...existing,
       ].slice(0, 5000); // cap at 5000 entries
       await store.setJSON("_report-index", merged);
-      // Ping search engines to re-crawl the sitemap.
-      const sitemapUrl = encodeURIComponent("https://frabjous-maamoul-49a6fd.netlify.app/.netlify/functions/sitemap-reports");
+      // Push updated sitemap to GitHub Pages and ping search engines.
+      await pushSitemapToGithub(merged);
+      const sitemapUrl = encodeURIComponent("https://jeevanai.co.in/sitemap-reports.xml");
       await Promise.allSettled([
         fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`),
         fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`),
