@@ -189,12 +189,10 @@
       <button class="btn-go" id="goBtn" onclick="analyze()">Analyze Page &rarr;</button>
     </div>
     <div class="extra-urls" id="extraUrlsWrap">
-      <button class="extra-toggle" onclick="toggleExtra()" type="button" id="extraToggleBtn">+ Add competitor URLs for gap analysis (up to 3)</button>
+      <button class="extra-toggle" onclick="toggleExtra()" type="button" id="extraToggleBtn">+ Add a competitor URL for gap analysis</button>
       <div class="extra-fields" id="extraFields" style="display:none">
         <input type="url" id="extraUrl1" placeholder="Competitor URL (optional)" autocomplete="off">
-        <input type="url" id="extraUrl2" placeholder="Second URL (optional)" autocomplete="off">
-        <input type="url" id="extraUrl3" placeholder="Third URL (optional)" autocomplete="off">
-        <p class="extra-hint">Claude will compare these pages against yours and highlight what they cover that you don't.</p>
+        <p class="extra-hint">Claude will compare this page against yours, highlight what they cover that you don't, and generate a separate report for them too.</p>
       </div>
     </div>
     <p class="hint">Public pages only (not behind a login). Analysis takes 15-30 seconds.</p>
@@ -301,7 +299,7 @@ function toggleExtra(){
   var btn = document.getElementById('extraToggleBtn');
   var open = fields.style.display !== 'none';
   fields.style.display = open ? 'none' : 'flex';
-  btn.textContent = open ? '+ Add a competitor or another URL for gap analysis' : '- Hide extra URLs';
+  btn.textContent = open ? '+ Add a competitor URL for gap analysis' : '- Hide competitor URL';
 }
 
 function slugFromUrl(url){
@@ -325,9 +323,7 @@ async function analyze(force){
   if(domainSlug){ window._lastReportSlug = domainSlug; }
 
   var extra1 = (document.getElementById('extraUrl1').value||"").trim();
-  var extra2 = (document.getElementById('extraUrl2').value||"").trim();
-  var extra3 = (document.getElementById('extraUrl3').value||"").trim();
-  var extra_urls = [extra1, extra2, extra3].filter(Boolean);
+  var extra_urls = extra1 ? [extra1] : [];
 
   var statusEl = document.getElementById('statusText');
   statusEl.textContent = force

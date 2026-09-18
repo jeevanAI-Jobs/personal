@@ -204,7 +204,7 @@ export async function handler(event, context) {
     const body = JSON.parse(event.body || "{}");
     primaryUrl = normalizeUrl(body.url);
     extraUrls = (Array.isArray(body.extra_urls) ? body.extra_urls : [])
-      .map(normalizeUrl).filter(Boolean).slice(0, 3);
+      .map(normalizeUrl).filter(Boolean).slice(0, 1);
     force = body.force === true;
   } catch {
     return json(400, { error: "Invalid request body." });
