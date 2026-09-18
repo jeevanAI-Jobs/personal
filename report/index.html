@@ -96,6 +96,17 @@ a{color:inherit;text-decoration:none}
 .fix-num{flex-shrink:0;width:24px;height:24px;border-radius:6px;background:var(--accent-dim);color:var(--accent);font-size:0.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
 .fix-text{font-size:0.87rem;color:var(--text);line-height:1.55}
 
+/* Compare section */
+.compare-section{margin-bottom:20px}
+.compare-grid{display:flex;flex-direction:column;gap:10px}
+.compare-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;text-decoration:none}
+.compare-card:hover{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-dim)}
+.compare-card__left{display:flex;align-items:center;gap:12px}
+.compare-card__ring{flex-shrink:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:#fff}
+.compare-card__brand{font-weight:600;font-size:0.9rem;color:var(--text)}
+.compare-card__domain{font-size:0.78rem;color:var(--muted)}
+.compare-card__cta{font-size:0.82rem;font-weight:600;color:var(--accent);white-space:nowrap}
+
 /* Share bar */
 .share-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
 .share-bar__text{font-weight:600;font-size:0.9rem}
@@ -191,6 +202,24 @@ a{color:inherit;text-decoration:none}
     <div style="margin-bottom:20px">
       <div class="section-head"><h2>Top Priority Fix</h2></div>
       <div id="topFix"></div>
+    </div>
+
+    <!-- Compare with section — shown when competitor reports were generated -->
+    <div class="compare-section" id="compareSection" style="display:none">
+      <div class="section-head">
+        <h2 id="compareHeading">Compare AI Visibility</h2>
+        <span class="section-tag tag-purple" id="compareTag"></span>
+      </div>
+      <div class="compare-grid" id="compareGrid"></div>
+    </div>
+
+    <!-- Also linked from section — shown when this IS a competitor report -->
+    <div class="compare-section" id="comparedToSection" style="display:none">
+      <div class="section-head">
+        <h2>Also in this comparison</h2>
+        <span class="section-tag tag-purple">Related report</span>
+      </div>
+      <div class="compare-grid" id="comparedToGrid"></div>
     </div>
 
     <!-- Share bar -->
@@ -327,6 +356,59 @@ function render(data){
     var d=document.createElement('div');d.className='fix-item';
     d.innerHTML='<span class="fix-num">1</span><span class="fix-text">'+esc(fixes[0])+'</span>';
     fixEl.appendChild(d);
+  }
+
+  // competitor_reports: shown when this is the primary report
+  var compReports = data.competitor_reports || [];
+  var compareSection = document.getElementById('compareSection');
+  var compareGrid = document.getElementById('compareGrid');
+  compareGrid.innerHTML = "";
+  if(compReports.length > 0){
+    document.getElementById('compareHeading').textContent = brand + " vs Competitors — AI Visibility";
+    document.getElementById('compareTag').textContent = compReports.length + " competitor"+(compReports.length>1?"s":"")+" analyzed";
+    compReports.forEach(function(cr){
+      var s = Math.max(0, Math.min(100, parseInt(cr.score,10)||0));
+      var href = "https://jeevanai.co.in/report/?brand=" + encodeURIComponent(cr.slug||"");
+      var a = document.createElement('a');
+      a.href = href;
+      a.className = 'compare-card';
+      a.innerHTML =
+        '<div class="compare-card__left">'+
+        '<div class="compare-card__ring" style="background:'+colorFor(s)+'">'+s+'</div>'+
+        '<div><div class="compare-card__brand">'+esc(cr.brand||cr.domain)+'</div>'+
+        '<div class="compare-card__domain">'+esc(cr.domain||cr.url||"")+'</div></div>'+
+        '</div>'+
+        '<span class="compare-card__cta">See '+esc(cr.brand||"competitor")+" AI visibility report &rarr;</span>";
+      compareGrid.appendChild(a);
+    });
+    compareSection.style.display = 'block';
+  } else {
+    compareSection.style.display = 'none';
+  }
+
+  // compared_to: shown when this IS a competitor report (back-link to primary)
+  var comparedTo = data.compared_to || [];
+  var comparedToSection = document.getElementById('comparedToSection');
+  var comparedToGrid = document.getElementById('comparedToGrid');
+  comparedToGrid.innerHTML = "";
+  if(comparedTo.length > 0){
+    comparedTo.forEach(function(ct){
+      var href = "https://jeevanai.co.in/report/?brand=" + encodeURIComponent(ct.slug||"");
+      var a = document.createElement('a');
+      a.href = href;
+      a.className = 'compare-card';
+      a.innerHTML =
+        '<div class="compare-card__left">'+
+        '<div class="compare-card__ring" style="background:var(--accent)">AI</div>'+
+        '<div><div class="compare-card__brand">'+esc(ct.brand||ct.domain)+'</div>'+
+        '<div class="compare-card__domain">'+esc(ct.domain||ct.url||"")+'</div></div>'+
+        '</div>'+
+        '<span class="compare-card__cta">See '+esc(ct.brand||"this brand")+" AI visibility report &rarr;</span>";
+      comparedToGrid.appendChild(a);
+    });
+    comparedToSection.style.display = 'block';
+  } else {
+    comparedToSection.style.display = 'none';
   }
 
   document.getElementById('loadingState').style.display='none';

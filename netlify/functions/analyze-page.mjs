@@ -130,52 +130,29 @@ function parseClaudeJson(text) {
   return JSON.parse(text.slice(start, end + 1));
 }
 
-export async function handler(event, context) {
-  if (event.httpMethod === "OPTIONS") return { statusCode: 204, headers: corsHeaders(), body: "" };
-  if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
+async function callClaude(userContent, apiKey) {
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      max_tokens: 3500,
+      system: SYSTEM_PROMPT,
+      messages: [{ role: "user", content: userContent }],
+    }),
+  });
+  const payload = await res.json();
+  if (!res.ok) throw new Error(`Claude API ${res.status}`);
+  const textBlock = (payload.content || []).find((b) => b.type === "text");
+  if (!textBlock) throw new Error("Empty Claude response");
+  return parseClaudeJson(textBlock.text);
+}
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) return json(500, { error: "Server not configured: ANTHROPIC_API_KEY is missing." });
-
-  let primaryUrl, extraUrls, force;
-  try {
-    const body = JSON.parse(event.body || "{}");
-    primaryUrl = normalizeUrl(body.url);
-    extraUrls = (Array.isArray(body.extra_urls) ? body.extra_urls : [])
-      .map(normalizeUrl).filter(Boolean).slice(0, 3);
-    force = body.force === true;
-  } catch {
-    return json(400, { error: "Invalid request body." });
-  }
-  if (!primaryUrl) return json(400, { error: "Please enter a valid website URL." });
-
-  const cacheKey = domainCacheKey(primaryUrl);
-
-  // 1. Check cache — skip Claude if we have a saved report for this domain.
-  //    Skip cache check if force:true or if extra_urls were provided (gap analysis = fresh run).
-  if (!force && extraUrls.length === 0 && cacheKey) {
-    try {
-      const store = getStore({ name: "audit-reports", context });
-      const cached = await store.get(cacheKey, { type: "json" });
-      if (cached) {
-        return json(200, { ...cached, cached: true, cachedAt: cached.analyzedAt });
-      }
-    } catch {
-      // Blobs unavailable — fall through to fresh analysis.
-    }
-  }
-
-  // 2. Scrape all pages in parallel.
-  const [primary, ...extras] = await Promise.all([
-    scrapePage(primaryUrl),
-    ...extraUrls.map(scrapePage),
-  ]);
-
-  if (primary.error) {
-    return json(200, { error: `Could not load your page: ${primary.error}. Check it is publicly accessible.` });
-  }
-
-  // 3. Build the analysis prompt.
+function buildPrimaryPrompt(primary, extras) {
   let userContent =
     `Write a brand-specific AI visibility report for the PRIMARY page below.\n` +
     `PRIMARY URL: ${primary.url}\n` +
@@ -196,56 +173,139 @@ export async function handler(event, context) {
     });
     userContent += `\n\nIdentify topics, questions, and evidence in the ADDITIONAL PAGES that the PRIMARY page is missing. These become the gaps array.`;
   }
+  return userContent;
+}
 
-  // 4. Call Claude.
-  let data;
+function buildCompetitorPrompt(page) {
+  return (
+    `Write a brand-specific AI visibility report for this page.\n` +
+    `URL: ${page.url}\n` +
+    `Schema types detected: ${page.schemaTypes.length ? page.schemaTypes.join(", ") : "none"}\n\n` +
+    `PAGE CONTENT:\n${page.content}`
+  );
+}
+
+async function saveReport(store, payload, TTL) {
+  const saves = [store.setJSON(payload.slug, payload, { ttl: TTL })];
+  const ck = payload.cacheKey;
+  if (ck && ck !== payload.slug) saves.push(store.setJSON(ck, payload, { ttl: TTL }));
+  await Promise.all(saves);
+}
+
+export async function handler(event, context) {
+  if (event.httpMethod === "OPTIONS") return { statusCode: 204, headers: corsHeaders(), body: "" };
+  if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
+
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) return json(500, { error: "Server not configured: ANTHROPIC_API_KEY is missing." });
+
+  let primaryUrl, extraUrls, force;
   try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
-      },
-      body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 3500,
-        system: SYSTEM_PROMPT,
-        messages: [{ role: "user", content: userContent }],
-      }),
-    });
-    const payload = await res.json();
-    if (!res.ok) return json(502, { error: `Analysis service error (${res.status}). Please try again.` });
-    const textBlock = (payload.content || []).find((b) => b.type === "text");
-    if (!textBlock) return json(502, { error: "Empty analysis response. Please try again." });
-    data = parseClaudeJson(textBlock.text);
+    const body = JSON.parse(event.body || "{}");
+    primaryUrl = normalizeUrl(body.url);
+    extraUrls = (Array.isArray(body.extra_urls) ? body.extra_urls : [])
+      .map(normalizeUrl).filter(Boolean).slice(0, 3);
+    force = body.force === true;
+  } catch {
+    return json(400, { error: "Invalid request body." });
+  }
+  if (!primaryUrl) return json(400, { error: "Please enter a valid website URL." });
+
+  const cacheKey = domainCacheKey(primaryUrl);
+  const TTL = 90 * 24 * 60 * 60;
+
+  // 1. Return cache if no competitors and no force flag.
+  if (!force && extraUrls.length === 0 && cacheKey) {
+    try {
+      const store = getStore({ name: "audit-reports", context });
+      const cached = await store.get(cacheKey, { type: "json" });
+      if (cached) return json(200, { ...cached, cached: true, cachedAt: cached.analyzedAt });
+    } catch { /* fall through */ }
+  }
+
+  // 2. Scrape all pages in parallel.
+  const allScraped = await Promise.all([
+    scrapePage(primaryUrl),
+    ...extraUrls.map(scrapePage),
+  ]);
+  const primary = allScraped[0];
+  const extras = allScraped.slice(1);
+
+  if (primary.error) {
+    return json(200, { error: `Could not load your page: ${primary.error}. Check it is publicly accessible.` });
+  }
+
+  // 3. Run Claude analyses in parallel: primary (with gap data) + one per valid competitor.
+  const validExtras = extras.filter(e => !e.error);
+  const claudePromises = [
+    callClaude(buildPrimaryPrompt(primary, extras), apiKey),
+    ...validExtras.map(e => callClaude(buildCompetitorPrompt(e), apiKey)),
+  ];
+
+  let analysisResults;
+  try {
+    analysisResults = await Promise.all(claudePromises);
   } catch {
     return json(502, { error: "Could not complete the analysis. Please try again." });
   }
 
-  // 5. Build slugs and save to Blobs.
-  const brandSlug = brandToSlug(data.brand || data.domain || "brand");
-  const reportPayload = {
-    url: primaryUrl,
-    extra_urls: extraUrls,
-    analyzedAt: new Date().toISOString(),
-    slug: brandSlug,
-    cacheKey,
-    ...data,
-  };
+  const primaryData = analysisResults[0];
+  const competitorDataList = analysisResults.slice(1);
 
+  // 4. Build slugs.
+  const brandSlug = brandToSlug(primaryData.brand || primaryData.domain || "brand");
+  const analyzedAt = new Date().toISOString();
+
+  const competitorMeta = competitorDataList.map((cd, i) => ({
+    slug: brandToSlug(cd.brand || cd.domain || "competitor"),
+    brand: cd.brand || cd.domain || "Competitor",
+    domain: cd.domain || "",
+    score: cd.score || 0,
+    url: validExtras[i].url,
+    cacheKey: domainCacheKey(validExtras[i].url),
+  }));
+
+  // 5. Save all reports to Blobs with cross-links.
   try {
     const store = getStore({ name: "audit-reports", context });
-    const TTL = 90 * 24 * 60 * 60; // 90 days
-    // Save under domain key (for cache lookup on next run) and brand slug (for public URL).
-    const saves = [store.setJSON(brandSlug, reportPayload, { ttl: TTL })];
-    if (cacheKey && cacheKey !== brandSlug) {
-      saves.push(store.setJSON(cacheKey, reportPayload, { ttl: TTL }));
-    }
-    await Promise.all(saves);
+
+    // Primary report includes competitor_reports for the "Compare with" section.
+    const primaryPayload = {
+      url: primaryUrl,
+      extra_urls: extraUrls,
+      analyzedAt,
+      slug: brandSlug,
+      cacheKey,
+      competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })),
+      ...primaryData,
+    };
+    await saveReport(store, primaryPayload, TTL);
+
+    // Each competitor report stores compared_to so it can link back.
+    await Promise.all(competitorMeta.map((meta, i) => {
+      const payload = {
+        url: meta.url,
+        extra_urls: [],
+        analyzedAt,
+        slug: meta.slug,
+        cacheKey: meta.cacheKey,
+        compared_to: [{ slug: brandSlug, brand: primaryData.brand || primaryData.domain || "the analyzed brand", domain: primaryData.domain || "", url: primaryUrl }],
+        ...competitorDataList[i],
+      };
+      return saveReport(store, payload, TTL);
+    }));
   } catch {
-    return json(200, { url: primaryUrl, ...data, slug: brandSlug, cached: false });
+    // Blobs write failed — still return the primary result.
+    return json(200, { url: primaryUrl, ...primaryData, slug: brandSlug, reportSlug: brandSlug, cached: false,
+      competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, score: m.score, url: m.url })) });
   }
 
-  return json(200, { url: primaryUrl, ...data, slug: brandSlug, reportSlug: brandSlug, cached: false });
+  return json(200, {
+    url: primaryUrl,
+    ...primaryData,
+    slug: brandSlug,
+    reportSlug: brandSlug,
+    cached: false,
+    competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })),
+  });
 }

@@ -135,6 +135,13 @@
   .share-bar__sub{font-size:0.78rem;color:var(--text-muted)}
   .btn-share{padding:9px 18px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.84rem;cursor:pointer;font-family:var(--font-sans);white-space:nowrap;transition:opacity 0.2s}
   .btn-share:hover{opacity:0.88}
+  .comp-links{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .comp-link-card{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:#fff;text-decoration:none;font-family:var(--font-sans)}
+  .comp-link-card:hover{border-color:var(--accent);background:#f5f3ff}
+  .comp-link-card__left{display:flex;align-items:center;gap:10px}
+  .comp-link-card__ring{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.82rem;font-weight:700;color:#fff;flex-shrink:0}
+  .comp-link-card__brand{font-weight:600;font-size:0.86rem;color:#111827}
+  .comp-link-card__cta{font-size:0.8rem;font-weight:600;color:var(--accent)}
   .result-cta{margin-top:22px;text-align:center;padding-top:20px;border-top:1px solid var(--border)}
   .result-cta p{font-size:0.95rem;color:var(--text-dim);margin-bottom:12px}
   .btn-primary{display:inline-flex;padding:12px 24px;border-radius:9px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-weight:600;font-size:0.92rem}
@@ -218,6 +225,10 @@
           <span class="share-bar__sub">Anyone with the link can view it for 90 days</span>
         </div>
         <button class="btn-share" id="shareBtn" onclick="copyShareLink()">Copy shareable link</button>
+      </div>
+      <div id="compLinksWrap" style="display:none">
+        <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#6b7280;margin-bottom:8px;margin-top:16px">Competitor reports also generated</div>
+        <div class="comp-links" id="compLinks"></div>
       </div>
       <div class="result-cta">
         <p>Want to know if AI engines actually <strong>cite your brand</strong> across ChatGPT, Claude, Perplexity, and Gemini, and track it over time?</p>
@@ -391,6 +402,31 @@ function render(data){
     shareBar.style.display = 'flex';
   } else {
     shareBar.style.display = 'none';
+  }
+
+  // Show competitor report links if generated.
+  var compReports = data.competitor_reports || [];
+  var compLinksWrap = document.getElementById('compLinksWrap');
+  var compLinks = document.getElementById('compLinks');
+  compLinks.innerHTML = "";
+  if(compReports.length > 0){
+    compReports.forEach(function(cr){
+      var s = Math.max(0, Math.min(100, parseInt(cr.score,10)||0));
+      var col = s>=70?"#059669":s>=40?"#d97706":"#dc2626";
+      var href = 'https://jeevanai.co.in/report/?brand=' + encodeURIComponent(cr.slug||"");
+      var a = document.createElement('a');
+      a.href = href; a.target = '_blank'; a.className = 'comp-link-card';
+      a.innerHTML =
+        '<div class="comp-link-card__left">'+
+        '<div class="comp-link-card__ring" style="background:'+col+'">'+s+'</div>'+
+        '<div class="comp-link-card__brand">'+(cr.brand||cr.domain||"Competitor")+' AI Visibility Report</div>'+
+        '</div>'+
+        '<span class="comp-link-card__cta">View report &rarr;</span>';
+      compLinks.appendChild(a);
+    });
+    compLinksWrap.style.display = 'block';
+  } else {
+    compLinksWrap.style.display = 'none';
   }
 
   document.getElementById('results').classList.add('show');
