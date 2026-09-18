@@ -318,6 +318,12 @@ export async function handler(event, context) {
         ...existing,
       ].slice(0, 5000); // cap at 5000 entries
       await store.setJSON("_report-index", merged);
+      // Ping search engines to re-crawl the sitemap.
+      const sitemapUrl = encodeURIComponent("https://frabjous-maamoul-49a6fd.netlify.app/.netlify/functions/sitemap-reports");
+      await Promise.allSettled([
+        fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`),
+        fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`),
+      ]);
     } catch { /* index update is best-effort */ }
 
   } catch {
