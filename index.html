@@ -988,6 +988,16 @@ a{color:inherit;text-decoration:none}
 
   function iaColorFor(s){return s>=70?"#4ade80":s>=40?"#fbbf24":"#f87171"}
 
+  // Derive slug from URL domain on the client — no need to wait for backend.
+  function iaSlugFromUrl(url){
+    try{
+      var u=url.trim();
+      if(!/^https?:\/\//i.test(u)) u='https://'+u;
+      var host=new URL(u).hostname.replace(/^www\./,'');
+      return host.replace(/\./g,'-').toLowerCase()+'-ai-search-visibility';
+    }catch{return null;}
+  }
+
   window.iaToggleExtra = function(){
     var f=document.getElementById('iaExtraFields');
     var btn=document.getElementById('iaExtraToggle');
@@ -1003,7 +1013,13 @@ a{color:inherit;text-decoration:none}
     document.getElementById('iaResult').classList.remove('show');
     document.getElementById('iaStatus').classList.add('show');
     document.getElementById('iaBtn').disabled = true;
-    _iaReportId = null;
+
+    // Set report link immediately from domain — works even before API returns.
+    var domainSlug = iaSlugFromUrl(url);
+    _iaReportId = domainSlug;
+    if(domainSlug){
+      document.getElementById('iaFullLink').href = 'https://jeevanai.co.in/report/?brand='+encodeURIComponent(domainSlug);
+    }
 
     var extra1=(document.getElementById('iaExtra1').value||"").trim();
     var extra_urls=extra1?[extra1]:[];
@@ -1037,14 +1053,12 @@ a{color:inherit;text-decoration:none}
     ring.style.background = iaColorFor(score);
     document.getElementById('iaVerdict').textContent = data.verdict||"Analysis complete.";
 
-    if(data.reportSlug || data.slug){
-      _iaReportId = data.reportSlug || data.slug;
-      var fullUrl = "https://jeevanai.co.in/report/?brand=" + encodeURIComponent(_iaReportId);
-      document.getElementById('iaFullLink').href = fullUrl;
+    // Use backend slug if available (brand-based), else keep domain slug set before call.
+    var slug = data.reportSlug || data.slug || _iaReportId;
+    if(slug){
+      _iaReportId = slug;
+      document.getElementById('iaFullLink').href = 'https://jeevanai.co.in/report/?brand='+encodeURIComponent(slug);
       document.getElementById('iaShareBtn').style.display = 'inline-block';
-    } else {
-      document.getElementById('iaFullLink').href = "/tools/ai-readiness-analyzer.html";
-      document.getElementById('iaShareBtn').style.display = 'none';
     }
 
     document.getElementById('iaResult').classList.add('show');

@@ -16,7 +16,7 @@ function json(statusCode, body) {
   return { statusCode, headers: corsHeaders(), body: JSON.stringify(body) };
 }
 
-export async function handler(event) {
+export async function handler(event, context) {
   if (event.httpMethod === "OPTIONS") return { statusCode: 204, headers: corsHeaders(), body: "" };
   if (event.httpMethod !== "GET") return json(405, { error: "Method not allowed" });
 
@@ -25,7 +25,7 @@ export async function handler(event) {
   if (!brand) return json(400, { error: "Missing brand parameter." });
 
   try {
-    const store = getStore("audit-reports");
+    const store = getStore({ name: "audit-reports", context });
     const report = await store.get(brand, { type: "json" });
     if (!report) return json(404, { error: "Report not found. Run a new analysis to generate one." });
     return json(200, report);

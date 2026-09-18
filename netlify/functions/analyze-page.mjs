@@ -130,7 +130,7 @@ function parseClaudeJson(text) {
   return JSON.parse(text.slice(start, end + 1));
 }
 
-export async function handler(event) {
+export async function handler(event, context) {
   if (event.httpMethod === "OPTIONS") return { statusCode: 204, headers: corsHeaders(), body: "" };
   if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
 
@@ -155,7 +155,7 @@ export async function handler(event) {
   //    Skip cache check if force:true or if extra_urls were provided (gap analysis = fresh run).
   if (!force && extraUrls.length === 0 && cacheKey) {
     try {
-      const store = getStore("audit-reports");
+      const store = getStore({ name: "audit-reports", context });
       const cached = await store.get(cacheKey, { type: "json" });
       if (cached) {
         return json(200, { ...cached, cached: true, cachedAt: cached.analyzedAt });
@@ -235,7 +235,7 @@ export async function handler(event) {
   };
 
   try {
-    const store = getStore("audit-reports");
+    const store = getStore({ name: "audit-reports", context });
     const TTL = 90 * 24 * 60 * 60; // 90 days
     // Save under domain key (for cache lookup on next run) and brand slug (for public URL).
     const saves = [store.setJSON(brandSlug, reportPayload, { ttl: TTL })];

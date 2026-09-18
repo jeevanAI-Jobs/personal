@@ -292,12 +292,25 @@ function toggleExtra(){
   btn.textContent = open ? '+ Add a competitor or another URL for gap analysis' : '- Hide extra URLs';
 }
 
+function slugFromUrl(url){
+  try{
+    var u = url.trim();
+    if(!/^https?:\/\//i.test(u)) u = 'https://'+u;
+    var host = new URL(u).hostname.replace(/^www\./,'');
+    return host.replace(/\./g,'-').toLowerCase()+'-ai-search-visibility';
+  }catch{ return null; }
+}
+
 async function analyze(force){
   var url = document.getElementById('urlInput').value.trim();
   if(!url){ showError("Please enter a website URL."); return; }
   document.getElementById('err').classList.remove('show');
   document.getElementById('results').classList.remove('show');
   setBusy(true);
+
+  // Pre-derive slug so share bar works even before API responds.
+  var domainSlug = slugFromUrl(url);
+  if(domainSlug){ window._lastReportSlug = domainSlug; }
 
   var extra1 = (document.getElementById('extraUrl1').value||"").trim();
   var extra2 = (document.getElementById('extraUrl2').value||"").trim();
@@ -368,10 +381,11 @@ function render(data){
     cacheNotice.style.display = 'none';
   }
 
-  // Show share bar if backend returned a slug.
+  // Update slug from backend (brand-based) if returned, else keep domain slug set before call.
+  var slug = data.reportSlug || data.slug || window._lastReportSlug;
   var shareBar = document.getElementById('shareBar');
-  if(data.reportSlug || data.slug){
-    window._lastReportSlug = data.reportSlug || data.slug;
+  if(slug){
+    window._lastReportSlug = slug;
     shareBar.style.display = 'flex';
   } else {
     shareBar.style.display = 'none';
