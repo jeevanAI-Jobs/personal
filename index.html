@@ -1018,9 +1018,9 @@ a{color:inherit;text-decoration:none}
     ring.style.background = iaColorFor(score);
     document.getElementById('iaVerdict').textContent = data.verdict||"Analysis complete.";
 
-    if(data.reportId){
-      _iaReportId = data.reportId;
-      var fullUrl = "https://jeevanai.co.in/report/?id=" + encodeURIComponent(data.reportId);
+    if(data.reportSlug || data.slug){
+      _iaReportId = data.reportSlug || data.slug;
+      var fullUrl = "https://jeevanai.co.in/report/?brand=" + encodeURIComponent(_iaReportId);
       document.getElementById('iaFullLink').href = fullUrl;
       document.getElementById('iaShareBtn').style.display = 'inline-block';
     } else {
@@ -1033,7 +1033,7 @@ a{color:inherit;text-decoration:none}
 
   window.iaCopyLink = function(){
     if(!_iaReportId) return;
-    var url = "https://jeevanai.co.in/report/?id=" + encodeURIComponent(_iaReportId);
+    var url = "https://jeevanai.co.in/report/?brand=" + encodeURIComponent(_iaReportId);
     var btn = document.getElementById('iaShareBtn');
     navigator.clipboard.writeText(url).then(function(){
       btn.textContent = "Copied!";

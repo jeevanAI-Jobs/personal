@@ -314,10 +314,10 @@ function render(data){
     wrap.style.display = "block";
   }else{ wrap.style.display = "none"; }
 
-  // Show share bar if backend returned a reportId.
+  // Show share bar if backend returned a slug.
   var shareBar = document.getElementById('shareBar');
-  if(data.reportId){
-    window._lastReportId = data.reportId;
+  if(data.reportSlug || data.slug){
+    window._lastReportSlug = data.reportSlug || data.slug;
     shareBar.style.display = 'flex';
   } else {
     shareBar.style.display = 'none';
@@ -328,9 +328,9 @@ function render(data){
 }
 
 function copyShareLink(){
-  var id = window._lastReportId;
+  var id = window._lastReportSlug;
   if(!id) return;
-  var url = 'https://jeevanai.co.in/report/?id=' + encodeURIComponent(id);
+  var url = 'https://jeevanai.co.in/report/?brand=' + encodeURIComponent(id);
   var btn = document.getElementById('shareBtn');
   navigator.clipboard.writeText(url).then(function(){
     btn.textContent = 'Copied!';
