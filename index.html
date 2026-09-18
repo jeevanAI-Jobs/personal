@@ -512,10 +512,12 @@ a{color:inherit;text-decoration:none}
       <button id="iaBtn" onclick="iaAnalyze()">Check it free &rarr;</button>
     </div>
     <div style="margin-top:10px;text-align:center">
-      <button onclick="iaToggleExtra()" id="iaExtraToggle" style="background:none;border:none;color:rgba(165,180,252,0.7);font-size:0.8rem;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;padding:2px 0">+ Add a competitor URL for gap analysis</button>
+      <button onclick="iaToggleExtra()" id="iaExtraToggle" style="background:none;border:none;color:rgba(165,180,252,0.7);font-size:0.8rem;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;padding:2px 0">+ Add competitor URLs for gap analysis (up to 3)</button>
     </div>
     <div id="iaExtraFields" style="display:none;flex-direction:column;gap:8px;margin-top:10px;max-width:580px;margin-left:auto;margin-right:auto">
       <input type="url" id="iaExtra1" placeholder="Competitor URL (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
+      <input type="url" id="iaExtra2" placeholder="Second URL (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
+      <input type="url" id="iaExtra3" placeholder="Third URL (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
     </div>
     <div class="ia-status" id="iaStatus">Fetching and analyzing your page...</div>
     <div class="ia-err" id="iaErr"></div>
@@ -1003,7 +1005,7 @@ a{color:inherit;text-decoration:none}
     var btn=document.getElementById('iaExtraToggle');
     var open=f.style.display!=='none'&&f.style.display!=='';
     f.style.display=open?'none':'flex';
-    btn.textContent=open?'+ Add a competitor URL for gap analysis':'- Hide competitor URL';
+    btn.textContent=open?'+ Add competitor URLs for gap analysis (up to 3)':'- Hide competitor URLs';
   };
 
   window.iaAnalyze = async function(){
@@ -1022,7 +1024,9 @@ a{color:inherit;text-decoration:none}
     }
 
     var extra1=(document.getElementById('iaExtra1').value||"").trim();
-    var extra_urls=extra1?[extra1]:[];
+    var extra2=(document.getElementById('iaExtra2').value||"").trim();
+    var extra3=(document.getElementById('iaExtra3').value||"").trim();
+    var extra_urls=[extra1,extra2,extra3].filter(Boolean);
     var statusEl=document.getElementById('iaStatus');
     statusEl.textContent=extra_urls.length?'Fetching and analyzing '+(extra_urls.length+1)+' pages...':'Checking for saved report...';
 
