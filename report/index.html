@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Visibility Report | Jeevan AI</title>
+<meta name="description" content="See how well this page performs for AI search citations across ChatGPT, Gemini, and Perplexity.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;--good:#059669;--warn:#d97706;--bad:#dc2626;--font-sans:'DM Sans',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:860px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__cta{padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff;font-size:0.875rem;font-weight:600}
+
+.report-wrap{max-width:var(--max-w);margin:0 auto;padding:40px 24px 80px}
+
+/* Loading state */
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;gap:16px}
+.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading p{color:var(--muted);font-size:0.95rem}
+
+/* Error state */
+.error-state{display:none;text-align:center;padding:60px 24px}
+.error-state h2{font-family:var(--font-serif);font-size:1.6rem;margin-bottom:12px}
+.error-state p{color:var(--muted);margin-bottom:24px}
+.btn-primary{display:inline-block;padding:12px 28px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;font-size:0.95rem}
+
+/* Report content */
+.report-content{display:none}
+
+/* Analyzed URL bar */
+.url-bar{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:32px;font-size:0.875rem;color:var(--muted);overflow:hidden}
+.url-bar__label{flex-shrink:0;font-weight:600;color:var(--text)}
+.url-bar__url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Score hero */
+.score-hero{display:flex;align-items:center;gap:32px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin-bottom:28px}
+@media(max-width:560px){.score-hero{flex-direction:column;text-align:center;padding:24px 20px;gap:20px}}
+.score-ring{flex-shrink:0;width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:#fff;font-family:var(--font-sans)}
+.score-hero__body{}
+.score-hero__label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:4px}
+.score-hero__verdict{font-family:var(--font-serif);font-size:1.3rem;color:var(--text);line-height:1.35}
+.score-hero__date{font-size:0.8rem;color:var(--muted);margin-top:6px}
+
+/* Section headings */
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.section-head h2{font-family:var(--font-serif);font-size:1.15rem;color:var(--text)}
+.section-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:3px 9px;border-radius:100px;background:#ede9fe;color:#5b21b6}
+
+/* Category cards */
+.cats{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.cat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.cat__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cat__name{font-weight:600;font-size:0.9rem}
+.cat__score{font-size:0.8rem;font-weight:700;padding:2px 8px;border-radius:6px}
+.bar{height:5px;background:#f3f4f6;border-radius:3px;margin-bottom:10px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px;transition:width 0.8s ease}
+.cat__finding{font-size:0.85rem;color:var(--muted);margin-bottom:5px}
+.cat__fix{font-size:0.85rem;color:var(--text)}
+.cat__fix b{color:var(--accent)}
+
+/* Locked section */
+.lock-section{position:relative;margin-bottom:28px}
+.lock-blur{filter:blur(6px);pointer-events:none;user-select:none;opacity:0.6}
+.lock-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;z-index:2;background:radial-gradient(ellipse at center,rgba(250,250,250,0.96) 0%,rgba(250,250,250,0.85) 100%);border-radius:12px;padding:24px;text-align:center}
+.lock-icon{font-size:1.6rem}
+.lock-title{font-family:var(--font-serif);font-size:1.1rem;color:var(--text)}
+.lock-sub{font-size:0.85rem;color:var(--muted);max-width:380px;line-height:1.5}
+
+/* Top fixes */
+.fixes{margin-bottom:32px}
+.fix-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px}
+.fix-num{flex-shrink:0;width:24px;height:24px;border-radius:6px;background:var(--accent-dim);color:var(--accent);font-size:0.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.fix-text{font-size:0.88rem;color:var(--text);line-height:1.5}
+
+/* CTA strip */
+.cta-strip{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 50%,#7c3aed 100%);border-radius:16px;padding:36px 32px;text-align:center;margin-bottom:32px}
+.cta-strip h2{font-family:var(--font-serif);font-size:1.5rem;color:#fff;margin-bottom:8px}
+.cta-strip p{color:rgba(255,255,255,0.75);font-size:0.95rem;margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-strip__btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-white{padding:11px 26px;border-radius:9px;background:#fff;color:#4338ca;font-weight:700;font-size:0.9rem;display:inline-block}
+.btn-ghost{padding:11px 26px;border-radius:9px;border:1.5px solid rgba(255,255,255,0.4);color:#fff;font-weight:600;font-size:0.9rem;display:inline-block}
+
+/* Share bar */
+.share-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.share-bar__text{font-size:0.9rem;color:var(--text);font-weight:500}
+.share-bar__sub{font-size:0.8rem;color:var(--muted)}
+.btn-copy{padding:9px 18px;border-radius:8px;background:var(--accent-dim);color:var(--accent);font-weight:600;font-size:0.85rem;border:none;cursor:pointer;transition:background 0.2s;white-space:nowrap}
+.btn-copy:hover{background:rgba(99,102,241,0.18)}
+.btn-copy.copied{background:#dcfce7;color:#059669}
+
+.footer-simple{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Sign In</a>
+  </div>
+</nav>
+
+<div class="report-wrap">
+
+  <div class="loading" id="loadingState">
+    <div class="spinner"></div>
+    <p>Loading report...</p>
+  </div>
+
+  <div class="error-state" id="errorState">
+    <h2>Report not found</h2>
+    <p id="errorMsg">This report may have expired or the link is incorrect. Reports are stored for 30 days.</p>
+    <a href="/tools/ai-readiness-analyzer.html" class="btn-primary">Run a new analysis</a>
+  </div>
+
+  <div class="report-content" id="reportContent">
+
+    <div class="url-bar">
+      <span class="url-bar__label">Analyzed:</span>
+      <span class="url-bar__url" id="analyzedUrl"></span>
+    </div>
+
+    <div class="score-hero">
+      <div class="score-ring" id="scoreRing">--</div>
+      <div class="score-hero__body">
+        <div class="score-hero__label">AI Visibility Score</div>
+        <div class="score-hero__verdict" id="verdict"></div>
+        <div class="score-hero__date" id="analyzedDate"></div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <h2>Factor Breakdown</h2>
+      <span class="section-tag">2 of 6 shown</span>
+    </div>
+    <div class="cats" id="visibleCats"></div>
+
+    <div class="lock-section">
+      <div class="lock-blur cats" id="lockedCats"></div>
+      <div class="lock-overlay">
+        <div class="lock-icon">&#128274;</div>
+        <div class="lock-title">4 more factors are in the full report</div>
+        <div class="lock-sub">Sign up to see all 6 scored factors, a competitor visibility comparison, and a month-by-month improvement plan.</div>
+        <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">See full report free</a>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <h2>Top Fix</h2>
+    </div>
+    <div class="fixes" id="topFix"></div>
+
+    <div class="cta-strip">
+      <h2>Get Your Complete AI Visibility Report</h2>
+      <p>See all 6 scored factors, how you compare to competitors, and a step-by-step fix plan. Free on Jeevan AI.</p>
+      <div class="cta-strip__btns">
+        <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-white">Start free, no credit card</a>
+        <a href="/tools/ai-readiness-analyzer.html" class="btn-ghost">Analyze another page</a>
+      </div>
+    </div>
+
+    <div class="share-bar">
+      <div>
+        <div class="share-bar__text">Share this report</div>
+        <div class="share-bar__sub">Anyone with this link can view it for 30 days</div>
+      </div>
+      <button class="btn-copy" id="copyBtn" onclick="copyLink()">Copy link</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer-simple">
+  <a href="/index.html" style="color:inherit">Jeevan AI</a> &middot; AI visibility platform &middot;
+  <a href="/tools/ai-readiness-analyzer.html" style="color:var(--accent)">Run your own analysis</a>
+</div>
+
+<script>
+var API = "/.netlify/functions/get-report";
+
+function colorFor(s){return s>=70?"#059669":s>=40?"#d97706":"#dc2626"}
+function tintFor(s){return s>=70?"#d1fae5":s>=40?"#fef3c7":"#fee2e2"}
+function esc(s){var d=document.createElement('div');d.textContent=s||"";return d.innerHTML}
+
+function fmtDate(iso){
+  if(!iso) return "";
+  try{
+    var d=new Date(iso);
+    return "Analyzed " + d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+  }catch{return ""}
+}
+
+function renderCat(c){
+  var s=Math.max(0,Math.min(100,parseInt(c.score,10)||0));
+  var div=document.createElement('div');
+  div.className='cat';
+  div.innerHTML=
+    '<div class="cat__top"><span class="cat__name">'+esc(c.name)+'</span>'+
+    '<span class="cat__score" style="color:'+colorFor(s)+';background:'+tintFor(s)+'">'+s+'/100</span></div>'+
+    '<div class="bar"><i style="width:'+s+'%;background:'+colorFor(s)+'"></i></div>'+
+    '<div class="cat__finding">'+esc(c.finding)+'</div>'+
+    '<div class="cat__fix"><b>Fix:</b> '+esc(c.fix)+'</div>';
+  return div;
+}
+
+function render(data){
+  var score=Math.max(0,Math.min(100,parseInt(data.score,10)||0));
+  document.getElementById('analyzedUrl').textContent=data.url||"";
+  document.getElementById('verdict').textContent=data.verdict||"Analysis complete.";
+  document.getElementById('analyzedDate').textContent=fmtDate(data.analyzedAt);
+
+  var ring=document.getElementById('scoreRing');
+  ring.textContent=score;
+  ring.style.background=colorFor(score);
+
+  var cats=data.categories||[];
+  var visEl=document.getElementById('visibleCats');
+  var lockEl=document.getElementById('lockedCats');
+  visEl.innerHTML="";lockEl.innerHTML="";
+
+  cats.slice(0,2).forEach(function(c){visEl.appendChild(renderCat(c));});
+  cats.slice(2).forEach(function(c){lockEl.appendChild(renderCat(c));});
+
+  var fix0=document.getElementById('topFix');
+  fix0.innerHTML="";
+  var fixes=data.top_fixes||[];
+  if(fixes[0]){
+    var div=document.createElement('div');
+    div.className='fix-item';
+    div.innerHTML='<span class="fix-num">1</span><span class="fix-text">'+esc(fixes[0])+'</span>';
+    fix0.appendChild(div);
+  }
+
+  document.getElementById('loadingState').style.display='none';
+  document.getElementById('reportContent').style.display='block';
+}
+
+function showError(msg){
+  document.getElementById('loadingState').style.display='none';
+  if(msg) document.getElementById('errorMsg').textContent=msg;
+  document.getElementById('errorState').style.display='block';
+}
+
+function copyLink(){
+  var btn=document.getElementById('copyBtn');
+  navigator.clipboard.writeText(window.location.href).then(function(){
+    btn.textContent='Copied!';
+    btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy link';btn.classList.remove('copied');},2000);
+  }).catch(function(){
+    btn.textContent='Copy link';
+  });
+}
+
+(async function(){
+  var params=new URLSearchParams(window.location.search);
+  var id=params.get('id');
+  if(!id){showError("No report ID in URL. Run an analysis to generate a shareable report.");return;}
+
+  try{
+    var res=await fetch(API+"?id="+encodeURIComponent(id));
+    var data=await res.json();
+    if(!res.ok||data.error){showError(data.error||"Could not load report.");return;}
+    render(data);
+  }catch(e){
+    showError("Could not load report. Please check your connection and try again.");
+  }
+})();
+</script>
+</body>
+</html>

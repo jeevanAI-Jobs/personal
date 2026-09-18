@@ -3,6 +3,8 @@
 // The Claude API key lives ONLY here, in the ANTHROPIC_API_KEY environment variable
 // (set in Netlify → Site settings → Environment variables). It never reaches the browser.
 
+import { getStore } from "@netlify/blobs";
+
 const MODEL = "claude-opus-4-8"; // swap to "claude-sonnet-4-6" for faster/cheaper responses
 const MAX_HTML_CHARS = 12000;
 
@@ -149,5 +151,15 @@ export async function handler(event) {
     return json(502, { error: "Could not complete the analysis. Please try again." });
   }
 
-  return json(200, { url, ...data });
+  // 3. Save report to Netlify Blobs for shareable URL.
+  const reportId = crypto.randomUUID();
+  try {
+    const store = getStore("audit-reports");
+    await store.setJSON(reportId, { url, analyzedAt: new Date().toISOString(), ...data }, { ttl: 30 * 24 * 60 * 60 });
+  } catch {
+    // Non-fatal: report still returns, just won't have a shareable link.
+    return json(200, { url, ...data });
+  }
+
+  return json(200, { url, ...data, reportId });
 }

@@ -120,6 +120,12 @@
   .topfix h3{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);margin-bottom:10px}
   .topfix ol{margin:0;padding-left:20px}
   .topfix li{font-size:0.95rem;color:#374151;margin-bottom:7px;line-height:1.55}
+  .share-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#f5f3ff;border:1px solid rgba(99,102,241,0.25);border-radius:12px;padding:14px 18px;margin-top:18px}
+  .share-bar__left{display:flex;flex-direction:column;gap:2px}
+  .share-bar__label{font-weight:600;font-size:0.88rem;color:#3730a3}
+  .share-bar__sub{font-size:0.78rem;color:var(--text-muted)}
+  .btn-share{padding:9px 18px;border:none;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.84rem;cursor:pointer;font-family:var(--font-sans);white-space:nowrap;transition:opacity 0.2s}
+  .btn-share:hover{opacity:0.88}
   .result-cta{margin-top:22px;text-align:center;padding-top:20px;border-top:1px solid var(--border)}
   .result-cta p{font-size:0.95rem;color:var(--text-dim);margin-bottom:12px}
   .btn-primary{display:inline-flex;padding:12px 24px;border-radius:9px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-weight:600;font-size:0.92rem}
@@ -183,6 +189,13 @@
       <div class="topfix" id="topfixWrap" style="display:none">
         <h3>Top fixes, in priority order</h3>
         <ol id="topfix"></ol>
+      </div>
+      <div class="share-bar" id="shareBar" style="display:none">
+        <div class="share-bar__left">
+          <span class="share-bar__label">Share this report</span>
+          <span class="share-bar__sub">Anyone with the link can view it for 30 days</span>
+        </div>
+        <button class="btn-share" id="shareBtn" onclick="copyShareLink()">Copy shareable link</button>
       </div>
       <div class="result-cta">
         <p>Want to know if AI engines actually <strong>cite your brand</strong> across ChatGPT, Claude, Perplexity, and Gemini, and track it over time?</p>
@@ -301,8 +314,40 @@ function render(data){
     wrap.style.display = "block";
   }else{ wrap.style.display = "none"; }
 
+  // Show share bar if backend returned a reportId.
+  var shareBar = document.getElementById('shareBar');
+  if(data.reportId){
+    window._lastReportId = data.reportId;
+    shareBar.style.display = 'flex';
+  } else {
+    shareBar.style.display = 'none';
+  }
+
   document.getElementById('results').classList.add('show');
   document.getElementById('results').scrollIntoView({behavior:'smooth'});
+}
+
+function copyShareLink(){
+  var id = window._lastReportId;
+  if(!id) return;
+  var url = 'https://jeevanai.co.in/report/?id=' + encodeURIComponent(id);
+  var btn = document.getElementById('shareBtn');
+  navigator.clipboard.writeText(url).then(function(){
+    btn.textContent = 'Copied!';
+    btn.style.background = '#dcfce7';
+    btn.style.color = '#059669';
+    setTimeout(function(){ btn.textContent = 'Copy shareable link'; btn.style.background = ''; btn.style.color = ''; }, 2200);
+  }).catch(function(){
+    // fallback: select a temp input
+    var inp = document.createElement('input');
+    inp.value = url;
+    document.body.appendChild(inp);
+    inp.select();
+    document.execCommand('copy');
+    document.body.removeChild(inp);
+    btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = 'Copy shareable link'; }, 2200);
+  });
 }
 
 document.getElementById('urlInput').addEventListener('keydown', function(e){
