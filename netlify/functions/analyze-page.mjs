@@ -189,6 +189,10 @@ async function saveReport(store, payload, TTL) {
   const saves = [store.setJSON(payload.slug, payload, { ttl: TTL })];
   const ck = payload.cacheKey;
   if (ck && ck !== payload.slug) saves.push(store.setJSON(ck, payload, { ttl: TTL }));
+  // Also save under domain-based slug (e.g. "atoddlerthing-com-ai-search-visibility")
+  // so client-side pre-computed slug always resolves.
+  const ckSlug = ck ? ck + "-ai-search-visibility" : null;
+  if (ckSlug && ckSlug !== payload.slug) saves.push(store.setJSON(ckSlug, payload, { ttl: TTL }));
   await Promise.all(saves);
 }
 
