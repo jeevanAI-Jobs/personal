@@ -196,6 +196,32 @@ async function saveReport(store, payload, TTL) {
   await Promise.all(saves);
 }
 
+async function pushFileToGithub(pat, repoPath, content, commitMsg) {
+  const apiUrl = `https://api.github.com/repos/jeevanAI-Jobs/personal/contents/${repoPath}`;
+  const headers = {
+    "Authorization": `Bearer ${pat}`,
+    "Accept": "application/vnd.github+json",
+    "Content-Type": "application/json",
+  };
+  let sha;
+  try {
+    const r = await fetch(apiUrl, { headers });
+    if (r.ok) { const d = await r.json(); sha = d.sha; }
+  } catch { /* new file */ }
+  const body = { message: commitMsg, content: Buffer.from(content).toString("base64") };
+  if (sha) body.sha = sha;
+  await fetch(apiUrl, { method: "PUT", headers, body: JSON.stringify(body) });
+}
+
+async function pushReportJson(slug, data) {
+  const pat = process.env.GITHUB_PAT;
+  if (!pat) return;
+  try {
+    const content = JSON.stringify(data);
+    await pushFileToGithub(pat, `website/report-data/${slug}.json`, content, `chore: add report ${slug} [skip ci]`);
+  } catch { /* best-effort */ }
+}
+
 async function pushSitemapToGithub(entries) {
   const pat = process.env.GITHUB_PAT;
   if (!pat) return;
@@ -207,24 +233,9 @@ async function pushSitemapToGithub(entries) {
     return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`;
   }).join("\n");
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
-
-  const apiBase = "https://api.github.com/repos/jeevanAI-Jobs/personal/contents/website/sitemap-reports.xml";
-  const headers = {
-    "Authorization": `Bearer ${pat}`,
-    "Accept": "application/vnd.github+json",
-    "Content-Type": "application/json",
-  };
-
-  // Get current file SHA (needed for update).
-  let sha;
   try {
-    const r = await fetch(apiBase, { headers });
-    if (r.ok) { const d = await r.json(); sha = d.sha; }
-  } catch { /* new file */ }
-
-  const body = { message: "chore: update report sitemap [skip ci]", content: Buffer.from(xml).toString("base64") };
-  if (sha) body.sha = sha;
-  await fetch(apiBase, { method: "PUT", headers, body: JSON.stringify(body) });
+    await pushFileToGithub(pat, "website/sitemap-reports.xml", xml, "chore: update report sitemap [skip ci]");
+  } catch { /* best-effort */ }
 }
 
 export async function handler(event, context) {
@@ -324,6 +335,8 @@ export async function handler(event, context) {
       ...primaryData,
     };
     await saveReport(store, primaryPayload, TTL);
+    // Push primary report as static JSON file for permanent storage.
+    pushReportJson(brandSlug, primaryPayload);
 
     // Each competitor report stores compared_to so it can link back.
     await Promise.all(competitorMeta.map((meta, i) => {
@@ -336,6 +349,7 @@ export async function handler(event, context) {
         compared_to: [{ slug: brandSlug, brand: primaryData.brand || primaryData.domain || "the analyzed brand", domain: primaryData.domain || "", url: primaryUrl }],
         ...competitorDataList[i],
       };
+      pushReportJson(meta.slug, payload);
       return saveReport(store, payload, TTL);
     }));
 
@@ -363,7 +377,16 @@ export async function handler(event, context) {
     } catch { /* index update is best-effort */ }
 
   } catch {
-    // Blobs write failed — still return the primary result.
+    // Blobs write failed — push JSON to GitHub and still return the primary result.
+    const fallbackPayload = { url: primaryUrl, ...primaryData, slug: brandSlug, cacheKey, analyzedAt,
+      competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })) };
+    pushReportJson(brandSlug, fallbackPayload);
+    competitorMeta.forEach((meta, i) => {
+      const cp = { url: meta.url, analyzedAt, slug: meta.slug, cacheKey: meta.cacheKey,
+        compared_to: [{ slug: brandSlug, brand: primaryData.brand || primaryData.domain || "the analyzed brand", domain: primaryData.domain || "", url: primaryUrl }],
+        ...competitorDataList[i] };
+      pushReportJson(meta.slug, cp);
+    });
     return json(200, { url: primaryUrl, ...primaryData, slug: brandSlug, reportSlug: brandSlug, cached: false,
       competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, score: m.score, url: m.url })) });
   }
