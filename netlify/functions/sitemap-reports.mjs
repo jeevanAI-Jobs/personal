@@ -1,6 +1,5 @@
 // Dynamic sitemap for AI visibility report pages.
 // GET /.netlify/functions/sitemap-reports
-// Returns sitemap XML listing all generated report pages on jeevanai.co.in
 
 import { getStore } from "@netlify/blobs";
 
@@ -13,7 +12,7 @@ export async function handler(event, context) {
 
   let entries = [];
   try {
-    const store = getStore({ name: "audit-reports", context });
+    const store = getStore("audit-reports");
     entries = await store.get("_report-index", { type: "json" }) || [];
   } catch {
     entries = [];
