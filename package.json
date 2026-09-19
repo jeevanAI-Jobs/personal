@@ -1,1 +1,1 @@
-{"name":"jeevanai-website","version":"1.0.0","private":true,"dependencies":{"@netlify/blobs":"^8.1.0"}}
+{"name":"jeevanai-website","version":"1.0.0","private":true,"dependencies":{"@netlify/blobs":"^6.0.0"}}
