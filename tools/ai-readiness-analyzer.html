@@ -405,6 +405,8 @@ function render(data){
   if(slug){
     window._lastReportSlug = slug;
     shareBar.style.display = 'flex';
+    // Save to sessionStorage so report page can render without Blobs
+    try{ sessionStorage.setItem('report_'+slug, JSON.stringify(data)); }catch(e){}
   } else {
     shareBar.style.display = 'none';
   }
