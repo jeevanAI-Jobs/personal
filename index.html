@@ -1066,6 +1066,8 @@ a{color:inherit;text-decoration:none}
       _iaReportId = slug;
       document.getElementById('iaFullLink').href = 'https://jeevanai.co.in/report/?brand='+encodeURIComponent(slug);
       document.getElementById('iaShareBtn').style.display = 'inline-block';
+      // Save to sessionStorage so report page can render without Blobs
+      try{ sessionStorage.setItem('report_'+slug, JSON.stringify(data)); }catch(e){}
     }
 
     document.getElementById('iaResult').classList.add('show');
