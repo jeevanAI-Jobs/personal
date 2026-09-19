@@ -258,7 +258,7 @@ export async function handler(event, context) {
   // 1. Return cache if no extra pages and no force flag.
   if (!force && extraUrls.length === 0 && cacheKey) {
     try {
-      const store = getStore("audit-reports");
+      const store = getStore({ name: "audit-reports", context });
       const cached = await store.get(cacheKey, { type: "json" });
       if (cached) return json(200, { ...cached, cached: true, cachedAt: cached.analyzedAt });
     } catch { /* fall through */ }
@@ -311,7 +311,7 @@ export async function handler(event, context) {
 
   // 5. Save all reports to Blobs with cross-links, and update the report index for the sitemap.
   try {
-    const store = getStore("audit-reports");
+    const store = getStore({ name: "audit-reports", context });
 
     // Primary report includes competitor_reports for the "Compare with" section.
     const primaryPayload = {
