@@ -25,11 +25,11 @@ export async function handler(event, context) {
   if (!brand) return json(400, { error: "Missing brand parameter." });
 
   try {
-    const store = getStore({ name: "audit-reports", context });
+    const store = getStore("audit-reports");
     const report = await store.get(brand, { type: "json" });
     if (!report) return json(404, { error: "Report not found. Run a new analysis to generate one." });
     return json(200, report);
-  } catch {
-    return json(500, { error: "Could not retrieve report. Please try again." });
+  } catch (err) {
+    return json(500, { error: "Could not retrieve report. Please try again.", detail: String(err) });
   }
 }
