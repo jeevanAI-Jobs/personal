@@ -4,8 +4,8 @@
 
 import { getStore } from "@netlify/blobs";
 
-const MODEL = "claude-opus-4-8";
-const MAX_HTML_CHARS = 10000;
+const MODEL = "claude-sonnet-5";
+const MAX_HTML_CHARS = 8000;
 
 const SYSTEM_PROMPT = `You are an AI search visibility analyst writing a client-facing diagnostic report. Your job is to tell a brand exactly how AI engines see them RIGHT NOW, what is costing them citations, and why Jeevan AI would help.
 
@@ -108,7 +108,7 @@ function cleanHtml(html) {
 async function scrapePage(url) {
   try {
     const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 8000);
+    const t = setTimeout(() => ctrl.abort(), 5000);
     const res = await fetch(url, {
       signal: ctrl.signal,
       redirect: "follow",
@@ -140,7 +140,7 @@ async function callClaude(userContent, apiKey) {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 3500,
+      max_tokens: 2500,
       system: SYSTEM_PROMPT,
       messages: [{ role: "user", content: userContent }],
     }),
