@@ -438,13 +438,29 @@ function copyLink(){
   var brand=params.get('brand')||"";
   if(!brand){showError("No brand parameter in URL. Run an analysis to generate a report.");return;}
 
+  // 1. SessionStorage — instant if same session
+  try{
+    var cached=sessionStorage.getItem('report_'+brand);
+    if(cached){render(JSON.parse(cached));return;}
+  }catch(e){}
+
+  // 2. Static JSON file — permanent, pushed to GitHub when report was generated
+  try{
+    var staticRes=await fetch('/report-data/'+encodeURIComponent(brand)+'.json');
+    if(staticRes.ok){var staticData=await staticRes.json();if(!staticData.error){render(staticData);return;}}
+  }catch(e){}
+
+  // 3. Fallback: get-report function (Blobs)
   try{
     var res=await fetch(API+"?brand="+encodeURIComponent(brand));
     var data=await res.json();
-    if(!res.ok||data.error){showError(data.error||"Could not load report.");return;}
+    if(!res.ok||data.error){
+      showError('This report link has expired. <a href="/tools/ai-readiness-analyzer.html" style="color:var(--accent)">Run a new analysis</a> to regenerate it.');
+      return;
+    }
     render(data);
   }catch(e){
-    showError("Could not load report. Check your connection and try again.");
+    showError('This report link has expired. <a href="/tools/ai-readiness-analyzer.html" style="color:var(--accent)">Run a new analysis</a> to regenerate it.');
   }
 })();
 </script>
