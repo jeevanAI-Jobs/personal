@@ -369,13 +369,13 @@ async function pushSitemapToGithub(entries) {
 
   const BASE = "https://jeevanai.co.in";
   const urls = entries.map(e => {
-    const loc = `${BASE}/report/?brand=${encodeURIComponent(e.slug)}`;
+    const loc = `${BASE}/report/${encodeURIComponent(e.slug)}/`;
     const lastmod = (e.analyzedAt || new Date().toISOString()).slice(0, 10);
     return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`;
   }).join("\n");
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
   try {
-    await pushFileToGithub(pat, "website/sitemap-reports.xml", xml, "chore: update report sitemap [skip ci]");
+    await pushFileToGithub(pat, "sitemap-reports.xml", xml, "chore: update report sitemap [skip ci]");
   } catch { /* best-effort */ }
 }
 
