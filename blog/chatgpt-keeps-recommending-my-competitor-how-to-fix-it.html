@@ -66,10 +66,10 @@
     },
     {
       "@type": "Question",
-      "name": "Does running Google Ads or Paid Search help with ChatGPT recommendations?",
+      "name": "Does running Google Ads or paid search help with ChatGPT recommendations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. ChatGPT recommendations are based on organic content signals, not paid ad spend. You need to earn citations through content, reviews, and third-party mentions — not pay for placements."
+        "text": "No. ChatGPT recommendations are based on organic content signals, not paid ad spend. You need to earn citations through content, reviews, and third-party mentions."
       }
     },
     {
@@ -86,289 +86,538 @@
 
 <style>
   :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
     --bg: #ffffff;
-    --bg-alt: #f8fafc;
-    --text: #111827;
-    --text-muted: #6b7280;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f9fafb;
     --border: #e5e7eb;
-    --accent: #dbeafe;
-    --warn: #fef3c7;
-    --warn-text: #92400e;
-    --success: #d1fae5;
-    --success-text: #065f46;
+    --border-hover: rgba(99,102,241,0.45);
+    --accent: #6366f1;
+    --accent-dim: rgba(99,102,241,0.1);
+    --accent-glow: rgba(99,102,241,0.06);
+    --text: #111827;
+    --text-dim: #4b5563;
+    --text-muted: #9ca3af;
+    --tag-bg: rgba(99,102,241,0.1);
+    --tag-text: #4f46e5;
+    --white: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --font-sans: 'DM Sans', 'Inter', system-ui, sans-serif;
+    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --max-w: 1180px;
+    --prose-w: 720px;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
 
   /* NAV */
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 60px; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 100; }
-  .nav-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
-  .nav-logo img { height: 28px; }
-  .nav-cta { background: var(--primary); color: #fff; padding: 8px 18px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; text-decoration: none; }
-  .nav-cta:hover { background: var(--primary-dark); }
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 24px; }
+  .nav__inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav__logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
+  .nav__logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
+  .nav__links { display: flex; align-items: center; gap: 6px; }
+  .nav__links a { padding: 7px 14px; border-radius: 8px; font-size: 0.875rem; color: var(--text-dim); transition: all 0.2s; }
+  .nav__links a:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+  .nav__links a.active { color: var(--accent); }
+  .nav__cta { padding: 8px 18px; border-radius: 8px; background: var(--accent); color: #fff; font-size: 0.875rem; font-weight: 600; transition: opacity 0.2s; }
+  .nav__cta:hover { opacity: 0.88; }
 
-  /* BREADCRUMB */
-  .breadcrumb { max-width: 800px; margin: 20px auto 0; padding: 0 24px; font-size: 0.8rem; color: var(--text-muted); }
-  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--primary); }
-  .breadcrumb span { margin: 0 6px; }
+  /* ARTICLE HERO */
+  .article-hero { padding: 64px 24px 0; border-bottom: 1px solid var(--border); overflow: hidden; position: relative; }
+  .article-hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 300px; background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.10) 0%, transparent 70%); pointer-events: none; }
+  .article-hero__inner { max-width: var(--prose-w); margin: 0 auto; position: relative; }
+  .article-hero__breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 28px; }
+  .article-hero__breadcrumb a { color: var(--text-dim); transition: color 0.2s; }
+  .article-hero__breadcrumb a:hover { color: var(--accent); }
+  .article-hero__meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  .post-tag { padding: 3px 10px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: var(--tag-bg); color: var(--tag-text); }
+  .post-date { font-size: 0.8rem; color: var(--text-muted); }
+  .read-time { font-size: 0.8rem; color: var(--text-muted); }
+  .article-hero__title { font-family: var(--font-serif); font-size: clamp(1.9rem, 3.5vw, 2.6rem); line-height: 1.18; letter-spacing: -0.02em; color: var(--white); margin-bottom: 20px; }
+  .article-hero__subtitle { font-size: 1.1rem; color: var(--text-dim); line-height: 1.65; margin-bottom: 40px; max-width: 620px; }
+  .article-hero__visual { height: 160px; background: linear-gradient(135deg, #111128 0%, #0d0d1e 50%, #0a1225 100%); border-radius: var(--radius) var(--radius) 0 0; border: 1px solid var(--border); border-bottom: none; display: flex; align-items: center; justify-content: center; gap: 32px; padding: 0 40px; position: relative; overflow: hidden; }
+  .article-hero__visual::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to top, var(--bg), transparent); }
+  .vis-node { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .vis-node__circle { width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(99,102,241,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; background: rgba(99,102,241,0.06); }
+  .vis-node__label { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; }
+  .vis-arrow { font-size: 1.2rem; color: rgba(99,102,241,0.3); margin-bottom: 20px; }
+  .vis-node--winner .vis-node__circle { border-color: rgba(99,102,241,0.6); background: rgba(99,102,241,0.1); box-shadow: 0 0 20px rgba(99,102,241,0.15); }
+  .vis-node--winner .vis-node__label { color: var(--accent); }
 
-  /* ARTICLE */
-  article { max-width: 800px; margin: 0 auto; padding: 32px 24px 64px; }
-  .post-tag { display: inline-block; background: var(--warn); color: var(--warn-text); font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
-  h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
-  .post-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 32px; }
-  h2 { font-size: 1.35rem; font-weight: 700; margin: 36px 0 14px; color: var(--text); }
-  h3 { font-size: 1.1rem; font-weight: 700; margin: 24px 0 10px; color: var(--text); }
-  p { margin-bottom: 16px; }
-  ul, ol { padding-left: 22px; margin-bottom: 16px; }
-  li { margin-bottom: 8px; }
-  a { color: var(--primary); }
+  /* ARTICLE LAYOUT */
+  .article-wrap { max-width: var(--max-w); margin: 0 auto; padding: 64px 24px 96px; display: grid; grid-template-columns: var(--prose-w) 1fr; gap: 64px; align-items: start; }
+  .article-prose { max-width: var(--prose-w); }
 
-  /* CALLOUT */
-  .callout { background: var(--accent); border-left: 4px solid var(--primary); border-radius: 8px; padding: 16px 20px; margin: 24px 0; }
-  .callout p { margin: 0; font-size: 0.95rem; }
-  .callout strong { color: var(--primary-dark); }
+  /* SUMMARY BLOCK */
+  .summary-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 20px 24px; margin-bottom: 40px; }
+  .summary-block p { font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; margin: 0; }
 
-  .warn-box { background: var(--warn); border-left: 4px solid #f59e0b; border-radius: 8px; padding: 16px 20px; margin: 24px 0; }
-  .warn-box p { margin: 0; font-size: 0.95rem; }
+  /* INTRO */
+  .article-intro { margin-bottom: 48px; }
+  .article-intro p { font-size: 1.05rem; line-height: 1.75; color: var(--text-dim); margin-bottom: 20px; }
+  .article-intro p:first-child { color: var(--text); }
 
-  .success-box { background: var(--success); border-left: 4px solid #10b981; border-radius: 8px; padding: 16px 20px; margin: 24px 0; }
-  .success-box p { margin: 0; font-size: 0.95rem; color: var(--success-text); }
+  /* BODY SECTIONS */
+  .article-section { margin-bottom: 48px; }
+  .article-section h2 { font-family: var(--font-serif); font-size: 1.4rem; line-height: 1.25; color: var(--white); margin-bottom: 16px; letter-spacing: -0.01em; }
+  .article-section h3 { font-size: 1.05rem; font-weight: 600; color: var(--text); margin: 24px 0 10px; }
+  .article-section p { font-size: 0.975rem; line-height: 1.78; color: var(--text-dim); margin-bottom: 16px; }
+  .article-section ol { list-style: none; counter-reset: step-counter; padding: 0; margin: 20px 0; }
+  .article-section ol li { counter-increment: step-counter; display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; }
+  .article-section ol li:last-child { border-bottom: none; }
+  .article-section ol li::before { content: counter(step-counter); min-width: 26px; height: 26px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(99,102,241,0.25); color: var(--accent); font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .article-section ol li strong { color: var(--text); }
+  .article-section ul { padding-left: 20px; margin: 16px 0; }
+  .article-section ul li { font-size: 0.95rem; color: var(--text-dim); line-height: 1.65; margin-bottom: 8px; }
+  .article-section ul li strong { color: var(--text); }
 
-  /* STEPS */
-  .steps { list-style: none; padding: 0; margin: 24px 0; counter-reset: step; }
-  .steps li { counter-increment: step; display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
-  .step-body h3 { margin: 0 0 6px; font-size: 1rem; }
-  .step-body p { margin: 0; font-size: 0.9rem; color: #374151; }
+  /* CITATION-READY CALLOUT */
+  .citation-ready { background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, rgba(99,102,241,0.02) 100%); border: 1px solid rgba(99,102,241,0.18); border-radius: var(--radius-sm); padding: 18px 22px; margin-bottom: 20px; }
+  .citation-ready p { font-size: 0.95rem; line-height: 1.7; color: var(--text); margin: 0; }
 
   /* SIGNAL TABLE */
-  .signal-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
-  .signal-table th { background: #1e3a8a; color: #fff; padding: 10px 14px; text-align: left; }
-  .signal-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  .signal-table tr:nth-child(even) td { background: var(--bg-alt); }
+  .signal-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.875rem; }
+  .signal-table th { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .signal-table td { padding: 12px 14px; border-bottom: 1px solid rgba(0,0,0,0.05); color: var(--text-dim); vertical-align: top; line-height: 1.55; }
+  .signal-table tr:last-child td { border-bottom: none; }
+  .signal-name { font-weight: 600; color: var(--text); white-space: nowrap; }
+  .signal-score { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); white-space: nowrap; }
   .pill { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
   .pill-high { background: #fee2e2; color: #991b1b; }
-  .pill-med { background: var(--warn); color: var(--warn-text); }
+  .pill-med { background: #fef3c7; color: #92400e; }
 
-  /* CTA */
-  .cta-block { background: linear-gradient(135deg, #1e3a8a, #4338ca); color: #fff; border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
-  .cta-block h2 { color: #fff; margin: 0 0 10px; font-size: 1.4rem; }
-  .cta-block p { color: rgba(255,255,255,0.85); margin-bottom: 20px; font-size: 0.95rem; }
-  .cta-btn { display: inline-block; background: #fff; color: var(--primary-dark); padding: 12px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1rem; }
-  .cta-btn:hover { background: #e0e7ff; }
+  /* DIVIDER */
+  .article-divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  /* INLINE CTA */
+  .inline-cta { background: linear-gradient(135deg, rgba(99,102,241,0.07) 0%, rgba(99,102,241,0.03) 100%); border: 1px solid rgba(99,102,241,0.22); border-radius: var(--radius); padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .inline-cta__text p { font-size: 0.875rem; color: var(--text-muted); margin-top: 4px; }
+  .inline-cta__text strong { font-size: 1rem; color: var(--white); }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: var(--radius-sm); background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%); color: #fff; font-size: 0.875rem; font-weight: 600; white-space: nowrap; transition: opacity 0.2s; box-shadow: 0 2px 6px rgba(99,102,241,0.38); }
+  .btn-primary:hover { opacity: 0.88; }
 
   /* FAQ */
-  .faq-section { margin-top: 48px; }
-  .faq-section h2 { color: var(--text); }
-  .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
-  .faq-q { font-weight: 700; color: #111827; margin-bottom: 8px; font-size: 1rem; }
-  .faq-a { color: #374151; font-size: 0.95rem; }
+  .faq-section { margin-bottom: 48px; }
+  .faq-section h2 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--white); margin-bottom: 24px; letter-spacing: -0.01em; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-size: 0.975rem; font-weight: 600; color: var(--white); margin-bottom: 10px; line-height: 1.45; }
+  .faq-a { font-size: 0.925rem; color: var(--text-dim); line-height: 1.7; margin: 0; }
+
+  /* CONCLUSION */
+  .article-conclusion { margin-bottom: 48px; }
+  .article-conclusion p { font-size: 0.975rem; line-height: 1.78; color: var(--text-dim); margin-bottom: 16px; }
+
+  /* SIDEBAR */
+  .article-sidebar { position: sticky; top: 88px; }
+  .sidebar-toc { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 24px; }
+  .sidebar-toc h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 16px; }
+  .toc-list { list-style: none; }
+  .toc-list li { padding: 4px 0; }
+  .toc-list a { font-size: 0.82rem; color: var(--text-dim); transition: color 0.2s; line-height: 1.4; display: block; }
+  .toc-list a:hover { color: var(--accent); }
+  .sidebar-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; }
+  .sidebar-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 8px; line-height: 1.4; }
+  .sidebar-card p { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 18px; line-height: 1.55; }
+  .btn-outline-sm { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: transparent; color: var(--text-dim); font-size: 0.8rem; font-weight: 500; transition: all 0.2s; cursor: pointer; width: 100%; justify-content: center; }
+  .btn-outline-sm:hover { border-color: var(--accent); color: var(--accent); }
 
   /* RELATED */
-  .related { background: var(--bg-alt); border-radius: 10px; padding: 24px; margin-top: 48px; }
-  .related h3 { font-size: 1rem; margin-bottom: 14px; color: var(--text); }
-  .related ul { list-style: none; padding: 0; margin: 0; }
-  .related li { margin-bottom: 10px; }
-  .related a { color: var(--primary); font-size: 0.9rem; text-decoration: none; }
-  .related a:hover { text-decoration: underline; }
+  .related-section { border-top: 1px solid var(--border); padding: 64px 24px; }
+  .related-section__inner { max-width: var(--max-w); margin: 0 auto; }
+  .related-section h3 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 28px; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .related-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, transform 0.2s; }
+  .related-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+  .related-card .post-tag { margin-bottom: 12px; display: inline-block; }
+  .related-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 8px; }
+  .related-card p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 16px; }
+  .related-link { font-size: 0.8rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+  .related-link:hover { gap: 10px; }
 
-  @media (max-width: 600px) {
-    article { padding: 24px 16px 48px; }
+  /* CTA STRIP */
+  .cta-strip { border-top: 1px solid var(--border); background: linear-gradient(135deg, rgba(99,102,241,0.06) 0%, transparent 60%); padding: 72px 24px; }
+  .cta-strip__inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .cta-strip__title { font-family: var(--font-serif); font-size: 2rem; color: var(--white); margin-bottom: 12px; }
+  .cta-strip__sub { color: var(--text-dim); margin-bottom: 32px; font-size: 1rem; }
+
+  /* FOOTER */
+  .footer { border-top: 1px solid var(--border); padding: 48px 24px 32px; }
+  .footer__inner { max-width: var(--max-w); margin: 0 auto; }
+  .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer__brand p { color: var(--text-dim); font-size: 0.875rem; margin-top: 12px; max-width: 260px; line-height: 1.6; }
+  .footer__col h5 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 14px; }
+  .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer__col li a { font-size: 0.875rem; color: var(--text-dim); transition: color 0.2s; }
+  .footer__col li a:hover { color: var(--text); }
+  .footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--border); }
+  .footer__bottom span { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .article-wrap { grid-template-columns: 1fr; gap: 48px; }
+    .article-sidebar { position: static; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
   }
+  @media (max-width: 600px) {
+    .nav__links { display: none; }
+    .related-grid { grid-template-columns: 1fr; }
+    .footer__grid { grid-template-columns: 1fr; }
+    .footer__bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .inline-cta { flex-direction: column; }
+  }
+
+  /* CONTRAST FIX */
+  .article-section h2 { font-size: 1.5rem; color: #111827; margin-top: 2.5rem; margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e5e7eb; }
+  .article-section h3 { font-size: 1.2rem; color: #1f2937; margin-top: 1.75rem; margin-bottom: 0.6rem; }
+  .article-prose, .article-section, .article-intro { font-size: 1.1rem; line-height: 1.85; color: #374151; }
+  .article-section p, .article-intro p { color: #374151; margin-bottom: 1.3rem; }
+  .faq-q { color: #111827 !important; }
+  .faq-section h2 { color: #111827 !important; }
+  .article-conclusion p { color: #374151; }
+  .inline-cta__text, .inline-cta__text strong { color: #111827; }
+  .related-card h4 { color: #111827; }
+  .sidebar-card h4 { color: #111827; }
+  .sidebar-toc h4 { color: #6b7280; }
+  .article-sidebar * { color: #6b7280; }
+  .article-sidebar .btn-primary { color: #ffffff !important; }
+  .article-sidebar .btn-outline-sm { color: #4f46e5 !important; }
+  .cta-strip__title { color: #111827; }
+  .article-hero__meta, .article-hero__meta * { color: rgba(255,255,255,0.72) !important; }
+  .article-hero__breadcrumb a { color: rgba(255,255,255,0.72) !important; }
+  .article-hero__breadcrumb span { color: rgba(255,255,255,0.4) !important; }
+  .article-hero__subtitle { color: rgba(255,255,255,0.84) !important; }
+  .article-hero__title { color: #ffffff !important; }
+  .signal-table th { color: #6b7280; }
+  .signal-table td { color: #4b5563; }
+  .citation-ready p { color: #111827; }
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="/">
-    <img src="/logo.png" alt="Jeevan AI">
-    Jeevan AI
-  </a>
-  <a class="nav-cta" href="https://dashboard.jeevanai.co.in/auth/login">Sign In</a>
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover">
+      <span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/blog-index.html" class="active">Blog</a>
+      <a href="/index.html#about">About</a>
+      <a href="mailto:jeevanaijobs@gmail.com">Contact</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Sign In</a>
+  </div>
 </nav>
 
-<div class="breadcrumb">
-  <a href="/">Home</a><span>›</span>
-  <a href="/blog-index.html">Blog</a><span>›</span>
-  ChatGPT Keeps Recommending My Competitor
+<!-- ARTICLE HERO -->
+<header class="article-hero">
+  <div class="article-hero__inner">
+    <nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+      <a href="/index.html">Home</a>
+      <span>›</span>
+      <a href="/blog-index.html">Blog</a>
+      <span>›</span>
+      <span>ChatGPT Keeps Recommending My Competitor</span>
+    </nav>
+    <div class="article-hero__meta">
+      <span class="post-tag">AI Visibility Fix</span>
+      <span class="post-date">21 Sep 2026</span>
+      <span class="read-time">· 9 min read</span>
+    </div>
+    <h1 class="article-hero__title">ChatGPT Keeps Recommending My Competitor:<br>How to Fix It</h1>
+    <p class="article-hero__subtitle">You search your category in ChatGPT. Your competitor appears. You don't. This is a content signal gap — not a product gap — and it is fixable with a specific sequence of actions.</p>
+
+    <div class="article-hero__visual" role="img" aria-label="Diagram showing competitor winning AI recommendation">
+      <div class="vis-node">
+        <div class="vis-node__circle">🏢</div>
+        <span class="vis-node__label">Your Brand</span>
+      </div>
+      <span class="vis-arrow">→</span>
+      <div class="vis-node">
+        <div class="vis-node__circle">🤖</div>
+        <span class="vis-node__label">AI Engine</span>
+      </div>
+      <span class="vis-arrow">→</span>
+      <div class="vis-node vis-node--winner">
+        <div class="vis-node__circle">🏆</div>
+        <span class="vis-node__label">Competitor Wins</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <!-- PROSE -->
+  <main class="article-prose" id="article-content">
+
+    <div class="summary-block" role="note">
+      <p>ChatGPT recommends brands based on buying decision signals: Use Case Fit, Trust Evidence, Pricing Clarity, and Ease of Use. If your competitor is appearing and you are not, they are scoring higher on at least one of these factors. The gap is almost always in content structure — not in the product itself. This guide shows the exact sequence to close it.</p>
+    </div>
+
+    <div class="article-intro">
+      <p>You search for your category in ChatGPT. Your competitor shows up. You try different phrasings — same result. You have a better product, better reviews, and higher Google rankings. None of it matters in that moment.</p>
+      <p>This is not bad luck. It is a content signal gap. AI search platforms do not browse the internet in real time — they synthesise evidence from what they have indexed and learned to recommend the brand they can most confidently name. If your competitor clears that confidence threshold and you do not, they win the recommendation every time.</p>
+      <p>The fix is specific and measurable. This is the exact sequence.</p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <section class="article-section" id="why-this-happens">
+      <h2>Why Your Competitor Is Winning Right Now</h2>
+      <div class="citation-ready">
+        <p>The brands that consistently appear in AI recommendations have not necessarily built better products. They have published more specific, structured content that maps directly to the buying questions their customers ask. In Jeevan AI's audits across six industries, the AI-favoured competitor almost always outperforms on Use Case Fit — not because they are objectively stronger, but because their content makes it easier for AI to build a case for recommending them.</p>
+      </div>
+      <p>The core mechanism: AI systems score each brand against buying decision signals relevant to the query being asked. A brand with a page titled "Best CRM for plumbing businesses — setup in 15 minutes" will be surfaced for a plumber asking ChatGPT for a CRM recommendation. A brand with a generic "CRM for small businesses" homepage will not.</p>
+      <table class="signal-table" role="table" aria-label="Buying decision factors scored by AI">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>What AI looks for</th>
+            <th>Gap risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="signal-name">Use Case Fit</span></td>
+            <td>Dedicated pages or content for the buyer's specific industry, role, or problem</td>
+            <td><span class="pill pill-high">Highest</span></td>
+          </tr>
+          <tr>
+            <td><span class="signal-name">Pricing Clarity</span></td>
+            <td>Clear pricing tiers, "starts at" language, comparison framing</td>
+            <td><span class="pill pill-high">High</span></td>
+          </tr>
+          <tr>
+            <td><span class="signal-name">Trust Evidence</span></td>
+            <td>G2/Capterra ratings, customer quotes, Reddit discussions, press mentions</td>
+            <td><span class="pill pill-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td><span class="signal-name">Ease of Use</span></td>
+            <td>"Easy", "no-code", "setup in X minutes" language in third-party sources</td>
+            <td><span class="pill pill-med">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- SECTION 2 -->
+    <section class="article-section" id="five-step-fix">
+      <h2>The 5-Step Fix</h2>
+      <div class="citation-ready">
+        <p>The sequence matters. Publishing a generic "what is [your category]" blog post will not move your AI mention rate. Publishing content that directly addresses the use case your competitor is winning on will begin to move it within 4&ndash;6 weeks.</p>
+      </div>
+      <ol>
+        <li><strong>Run an AI visibility audit first.</strong> Ask ChatGPT 15&ndash;20 queries that your ideal buyer would ask. Note the exact query patterns where your competitor wins and you do not. You need data, not guesses.</li>
+        <li><strong>Map every use case your competitor owns.</strong> Go through their sitemap and blog. List every "for [industry]" or "for [role]" page they have published. These are the exact gaps you need to fill.</li>
+        <li><strong>Publish dedicated use case pages.</strong> One page per use case. The page should answer: who it is for, what specific problem it solves, how your product handles that use case, what results look like, and what it costs. Write about outcomes for a specific buyer — not features in the abstract.</li>
+        <li><strong>Build third-party citations.</strong> Your own website is a weak signal. Get your brand discussed on Reddit authentically, reviewed on G2 and Capterra, and mentioned in niche industry newsletters. Each citation is a vote for your brand in AI training data.</li>
+        <li><strong>Monitor your AI mention share monthly.</strong> Fix and forget does not work. AI recommendations shift as new content is published. Track your brand's share of AI mentions monthly against the same query set.</li>
+      </ol>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- SECTION 3 -->
+    <section class="article-section" id="timeline">
+      <h2>How Long Does This Take?</h2>
+      <p>Most brands see measurable improvement in AI mention share within 6&ndash;10 weeks of consistent execution. Here is a realistic timeline:</p>
+      <ul>
+        <li><strong>Week 1&ndash;2:</strong> Audit completed, use case gaps identified, content calendar built</li>
+        <li><strong>Week 3&ndash;6:</strong> First 5&ndash;8 use case pages published, G2 and Capterra profiles updated</li>
+        <li><strong>Week 6&ndash;10:</strong> Third-party citations accumulating, first AI mention improvements visible</li>
+        <li><strong>Month 3+:</strong> Compounding effect kicks in as content gets cited and cross-referenced across the web</li>
+      </ul>
+      <p>In my experience, brands that publish 8+ targeted use case pages and earn 10+ external citations within 60 days consistently move from "not mentioned" to "regularly recommended" for their core queries.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- SECTION 4 -->
+    <section class="article-section" id="what-doesnt-work">
+      <h2>What Does Not Work</h2>
+      <p>Save three months of wasted effort by avoiding these:</p>
+      <ul>
+        <li><strong>Keyword stuffing your homepage</strong> — AI reads intent and structure, not keyword density</li>
+        <li><strong>Buying reviews in bulk</strong> — AI can detect inauthentic review patterns; quality matters more than volume</li>
+        <li><strong>Waiting for Google rankings to fix it</strong> — Google SEO rankings and AI recommendation share have different drivers</li>
+        <li><strong>Optimising only for ChatGPT</strong> — Gemini, Perplexity, and Claude all have separate recommendation patterns; build for the category</li>
+        <li><strong>Running more Google Ads</strong> — Paid spend has zero effect on organic AI recommendations</li>
+      </ul>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <p class="faq-q">Why does ChatGPT keep recommending my competitor instead of me?</p>
+        <p class="faq-a">ChatGPT surfaces brands based on buying decision signals like Use Case Fit, Pricing Clarity, Trust Evidence, and Ease of Use. If your competitor has more content matching the specific query being asked, they win the recommendation. It is almost always a content structure gap, not a product quality gap.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How long does it take to fix AI visibility after content changes?</p>
+        <p class="faq-a">Most brands see measurable improvement in 6&ndash;10 weeks after publishing targeted content and building third-party citations. AI models update their understanding of brands as new information gets indexed and cited across the web.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Does running Google Ads or paid search help with ChatGPT recommendations?</p>
+        <p class="faq-a">No. ChatGPT recommendations are based on organic content signals, not paid ad spend. You need to earn citations through content, reviews, and third-party mentions — paid placements have no effect on organic AI recommendations.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">What is the single most effective fix for AI competitor preference?</p>
+        <p class="faq-a">Writing dedicated use case pages that match the exact queries buyers ask AI tools. If a buyer asks ChatGPT "best CRM for plumbers" and your competitor has a page explicitly for that use case and you do not, they will always win that recommendation.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Do I need to optimise separately for ChatGPT, Gemini, and Perplexity?</p>
+        <p class="faq-a">Not entirely. The underlying signals — use case content, third-party citations, trust evidence — work across all AI platforms. However, each model has different weighting. Gemini leans heavily on Google properties; Perplexity pulls more from recent web content. A strong base strategy lifts all platforms, with minor adjustments per channel.</p>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <!-- CONCLUSION -->
+    <section class="article-conclusion">
+      <p>The AI recommendation gap is specific, measurable, and fixable. Your competitor is appearing in ChatGPT results not because they have a better product — but because their content makes it easier for AI to build a case for recommending them.</p>
+      <p>The sequence is: audit to identify which signal is causing the gap, publish content that closes it, re-scan to confirm movement. That loop is what turns AI visibility from a vague concern into a managed channel.</p>
+
+      <div class="inline-cta">
+        <div class="inline-cta__text">
+          <strong>See exactly where your competitor has the edge</strong>
+          <p>Free AI visibility scan across 5 platforms, scored against your buying decision signals.</p>
+        </div>
+        <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar" aria-label="Article navigation and actions">
+
+    <div class="sidebar-toc">
+      <h4>In this article</h4>
+      <ul class="toc-list">
+        <li><a href="#why-this-happens">Why your competitor is winning</a></li>
+        <li><a href="#five-step-fix">The 5-step fix</a></li>
+        <li><a href="#timeline">How long does this take?</a></li>
+        <li><a href="#what-doesnt-work">What does not work</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>See what AI says about your brand right now</h4>
+      <p>5 queries across ChatGPT, Gemini &amp; Perplexity. Free. No credit card.</p>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary" style="width:100%;justify-content:center;margin-bottom:12px;">Run Free Scan →</a>
+      <a href="/blog/ai-visibility-score-benchmarks.html" class="btn-outline-sm">What's a good score? →</a>
+    </div>
+
+  </aside>
+
 </div>
 
-<article>
-  <span class="post-tag">AI Visibility Fix</span>
-  <h1>ChatGPT Keeps Recommending My Competitor: How to Fix It</h1>
-  <p class="post-meta">21 Sep 2026 &middot; 9 min read</p>
+<!-- RELATED POSTS -->
+<section class="related-section">
+  <div class="related-section__inner">
+    <h3>Continue reading</h3>
+    <div class="related-grid">
 
-  <p>You search for your category in ChatGPT. Your competitor shows up. You do not. You try different phrasings. Same result. This is not bad luck and it is not because your product is worse.</p>
+      <article class="related-card">
+        <span class="post-tag">Why AI Recommends</span>
+        <h4>Why ChatGPT Recommends Your Competitor (The Root Causes Explained)</h4>
+        <p>A deep-dive into the five buying decision factors that determine AI brand recommendations and why most brands are losing on Use Case Fit.</p>
+        <a href="/blog/why-chatgpt-recommends-competitor.html" class="related-link">Read article →</a>
+      </article>
 
-  <p>It is a content signal gap. And it is fixable with a specific set of actions, not vague "create more content" advice.</p>
+      <article class="related-card">
+        <span class="post-tag">GEO Strategy</span>
+        <h4>The Right Order to Fix Your AI Visibility</h4>
+        <p>Not all content gaps have equal impact. This is the correct sequence for closing the AI recommendation gap without wasting effort.</p>
+        <a href="/blog/geo-order-of-operations.html" class="related-link">Read article →</a>
+      </article>
 
-  <div class="callout">
-    <p><strong>The core problem:</strong> ChatGPT surfaces brands based on buying decision signals distributed across the web. If your competitor has stronger signals for the queries your buyers are asking, they win the recommendation. Full stop.</p>
-  </div>
+      <article class="related-card">
+        <span class="post-tag">GEO Strategy</span>
+        <h4>Content Gaps That Are Costing You AI Recommendations</h4>
+        <p>The specific types of content gaps that cause brands to be passed over in AI recommendations — and how to identify which ones apply to you.</p>
+        <a href="/blog/content-gap-ai-search-visibility.html" class="related-link">Read article →</a>
+      </article>
 
-  <h2>Why This Is Happening to You Specifically</h2>
-
-  <p>AI models do not browse the internet in real-time. They build a probabilistic model of which brands get recommended for which queries based on training data and retrieval signals. The brands that win are those whose content pattern-matches most clearly to what a buyer is asking.</p>
-
-  <p>There are five buying decision factors that drive AI recommendations. Your competitor is likely winning on one or more of these:</p>
-
-  <table class="signal-table">
-    <thead>
-      <tr><th>Factor</th><th>What AI looks for</th><th>Gap risk</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Use Case Fit</strong></td>
-        <td>Dedicated pages or content for the buyer's specific industry, role, or problem</td>
-        <td><span class="pill pill-high">Highest</span></td>
-      </tr>
-      <tr>
-        <td><strong>Pricing Clarity</strong></td>
-        <td>Clear pricing tiers, "starts at" language, comparison framing</td>
-        <td><span class="pill pill-high">High</span></td>
-      </tr>
-      <tr>
-        <td><strong>Trust Evidence</strong></td>
-        <td>G2/Capterra ratings, customer quotes, press mentions, Reddit discussions</td>
-        <td><span class="pill pill-med">Medium</span></td>
-      </tr>
-      <tr>
-        <td><strong>Ease of Use</strong></td>
-        <td>"Easy", "no-code", "setup in X minutes" language in third-party sources</td>
-        <td><span class="pill pill-med">Medium</span></td>
-      </tr>
-      <tr>
-        <td><strong>Authority Signals</strong></td>
-        <td>Wikipedia presence, high-DA backlinks, analyst mentions</td>
-        <td><span class="pill pill-med">Medium</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>In most cases, the brand losing to a competitor is losing on <strong>Use Case Fit</strong>. Your competitor wrote a page titled "Best CRM for Plumbers" and you wrote a generic features page. When a plumber asks ChatGPT, the answer writes itself.</p>
-
-  <h2>The 5-Step Fix</h2>
-
-  <ol class="steps">
-    <li>
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <h3>Run an AI visibility audit first</h3>
-        <p>Before fixing anything, know exactly where the gap is. Ask ChatGPT 15-20 queries that your ideal buyer would ask. Screenshot which brands appear and which do not. Note the exact query patterns where your competitor wins. You need data, not guesses.</p>
-      </div>
-    </li>
-    <li>
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <h3>Map every use case your competitor owns</h3>
-        <p>Go through your competitor's sitemap and blog. List every use case page, vertical page, and "for [industry]" page they have published. These are the exact gaps you need to fill. If they have 12 use case pages and you have 2, that is your answer.</p>
-      </div>
-    </li>
-    <li>
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h3>Publish dedicated use case pages</h3>
-        <p>Write one page per use case. The page should answer: who it is for, what specific problem it solves, how it works for that use case, what results look like, and what it costs. Do not write about features in the abstract. Write about outcomes for a specific type of buyer.</p>
-      </div>
-    </li>
-    <li>
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <h3>Build third-party citations</h3>
-        <p>Your own website is a weak signal. AI trusts what the rest of the internet says about you. Get your brand discussed on Reddit (authentic, not spam), reviewed on G2 and Capterra, and mentioned in niche industry newsletters. Each citation is a vote for your brand in AI training.</p>
-      </div>
-    </li>
-    <li>
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <h3>Monitor your AI mention share monthly</h3>
-        <p>Fix and forget does not work. AI recommendations shift as new content is published and as training data updates. Track your brand's share of AI mentions monthly. The brands that compound are the ones that treat GEO as an ongoing program, not a one-time fix.</p>
-      </div>
-    </li>
-  </ol>
-
-  <div class="warn-box">
-    <p><strong>Common mistake:</strong> Publishing all use case pages in one week, then stopping. AI content authority compounds over time. Consistent monthly publishing beats a one-time burst every time.</p>
-  </div>
-
-  <h2>How Long Does This Take?</h2>
-
-  <p>Most brands see measurable improvement in AI mention share within 6-10 weeks of consistent execution. Here is a realistic timeline:</p>
-
-  <ul>
-    <li><strong>Week 1-2:</strong> Audit completed, use case gaps identified, content calendar built</li>
-    <li><strong>Week 3-6:</strong> First 5-8 use case pages published, G2/Capterra profiles updated</li>
-    <li><strong>Week 6-10:</strong> Third-party citations starting to accumulate, first AI mention improvements visible</li>
-    <li><strong>Month 3+:</strong> Compounding effect kicks in as content gets cited and cross-referenced</li>
-  </ul>
-
-  <div class="success-box">
-    <p>In my experience, brands that publish 8+ targeted use case pages and earn 10+ external citations within 60 days consistently move from "not mentioned" to "regularly recommended" for their core queries.</p>
-  </div>
-
-  <h2>What Does Not Work</h2>
-
-  <p>Save yourself 3 months of wasted effort by avoiding these:</p>
-
-  <ul>
-    <li><strong>Keyword stuffing your homepage</strong> -- AI reads intent and structure, not keyword density</li>
-    <li><strong>Buying reviews in bulk</strong> -- AI can detect inauthentic review patterns; quality over quantity</li>
-    <li><strong>Waiting for Google rankings to fix it</strong> -- Google SEO rankings and AI recommendation share are separate signals with different drivers</li>
-    <li><strong>Optimizing only for ChatGPT</strong> -- Gemini, Perplexity, and Claude all have separate recommendation patterns; build for the category, not one platform</li>
-    <li><strong>Running more Google Ads</strong> -- Paid spend has zero effect on organic AI recommendations</li>
-  </ul>
-
-  <div class="cta-block">
-    <h2>See Exactly Where Your Competitor Has the Edge</h2>
-    <p>Run a free AI visibility scan. We show you which buying decision factors your competitor is winning on and which use cases they own that you do not.</p>
-    <a class="cta-btn" href="https://dashboard.jeevanai.co.in/auth/login">Run Free Scan</a>
-  </div>
-
-  <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <p class="faq-q">Why does ChatGPT keep recommending my competitor instead of me?</p>
-      <p class="faq-a">ChatGPT surfaces brands based on signals like Use Case Fit, Pricing Clarity, Trust Evidence, and Ease of Use. If your competitor has more content matching the specific query being asked, they win the recommendation. It is almost always a content structure gap, not a product quality gap.</p>
     </div>
-
-    <div class="faq-item">
-      <p class="faq-q">How long does it take to fix AI visibility after content changes?</p>
-      <p class="faq-a">Most brands see measurable improvement in 6-10 weeks after publishing targeted content and building third-party citations. AI models update their understanding of brands as new information gets indexed and cited across the web.</p>
-    </div>
-
-    <div class="faq-item">
-      <p class="faq-q">Does running Google Ads or paid search help with ChatGPT recommendations?</p>
-      <p class="faq-a">No. ChatGPT recommendations are based on organic content signals, not paid ad spend. You need to earn citations through content, reviews, and third-party mentions.</p>
-    </div>
-
-    <div class="faq-item">
-      <p class="faq-q">What is the single most effective fix for AI competitor preference?</p>
-      <p class="faq-a">Writing dedicated use case pages that match the exact queries buyers ask AI tools. If a buyer asks ChatGPT "best CRM for plumbers" and your competitor has a page explicitly for that use case and you do not, they will always win that recommendation.</p>
-    </div>
-
-    <div class="faq-item">
-      <p class="faq-q">Do I need to optimize separately for ChatGPT, Gemini, and Perplexity?</p>
-      <p class="faq-a">Not entirely. The underlying signals (use case content, third-party citations, trust evidence) work across all AI platforms. However, each model has different weighting. Gemini leans heavily on Google properties; Perplexity pulls more from recent web content. A strong base strategy lifts all platforms, with minor adjustments per channel.</p>
-    </div>
-  </section>
-
-  <div class="related">
-    <h3>Related Reading</h3>
-    <ul>
-      <li><a href="/blog/why-chatgpt-recommends-competitor.html">Why ChatGPT Recommends Your Competitor (The Root Causes Explained)</a></li>
-      <li><a href="/blog/competitive-ai-brand-audit.html">How to Run a Competitive AI Brand Audit</a></li>
-      <li><a href="/blog/content-gap-ai-search-visibility.html">Content Gaps That Are Costing You AI Recommendations</a></li>
-      <li><a href="/blog/geo-order-of-operations.html">The Right Order to Fix Your AI Visibility</a></li>
-      <li><a href="/markets/india.html">AI Visibility in the Indian Market: What's Different</a></li>
-    </ul>
   </div>
+</section>
 
-</article>
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cta-strip__inner">
+    <h2 class="cta-strip__title">Stop losing recommendations to your competitor</h2>
+    <p class="cta-strip__sub">Run a free AI visibility scan. See which buying decision factors your competitor is winning on and exactly what content to publish first.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="nav__logo">
+          <img src="/logo.png" alt="Jeevan AI" style="width:32px;height:32px;border-radius:8px;object-fit:cover">
+          <span style="font-weight:700;font-size:1rem;">Jeevan AI</span>
+        </div>
+        <p>AI visibility platform for brands that want to be recommended by ChatGPT, Gemini, and Perplexity.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/index.html#features">Features</a></li>
+          <li><a href="/index.html#pricing">Pricing</a></li>
+          <li><a href="https://dashboard.jeevanai.co.in/auth/login">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="/blog-index.html">Blog</a></li>
+          <li><a href="/markets/india.html">India Market</a></li>
+          <li><a href="/compare/best-geo-tool-india-2026/">Compare Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="mailto:jeevanaijobs@gmail.com">Contact</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Jeevan AI. All rights reserved.</span>
+      <span>Built for brands that want to be found by AI.</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
