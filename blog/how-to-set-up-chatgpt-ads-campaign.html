@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Set Up a ChatGPT Ad Campaign Step by Step (2026) | Jeevan AI</title>
+<meta name="description" content="Step-by-step guide to setting up a ChatGPT ad campaign in 2026 — account setup, Context Hints, creative limits, oCPC bidding, and what to check before you go live.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog/how-to-set-up-chatgpt-ads-campaign">
+<meta property="og:title" content="How to Set Up a ChatGPT Ad Campaign Step by Step (2026)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/blog/how-to-set-up-chatgpt-ads-campaign">
+<meta property="og:site_name" content="Jeevan AI">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Set Up a ChatGPT Ad Campaign",
+  "description": "Step-by-step guide to setting up a ChatGPT ad campaign using OpenAI's Ads Manager in 2026.",
+  "url": "https://jeevanai.co.in/blog/how-to-set-up-chatgpt-ads-campaign",
+  "publisher": {"@type": "Organization", "name": "Jeevan AI", "url": "https://jeevanai.co.in"},
+  "step": [
+    {"@type": "HowToStep", "name": "Create an OpenAI Ads Manager account", "text": "Go to ads.openai.com and create an account with your business email. Connect your brand domain for verification."},
+    {"@type": "HowToStep", "name": "Define your Context Hints", "text": "Write 3 to 5 semantic descriptions of the conversation contexts you want to appear in. Describe your buyer's problems, not your product features."},
+    {"@type": "HowToStep", "name": "Write your ad creative", "text": "Headline up to 16 characters, description up to 32 characters, destination URL. Test 2 to 3 variants."},
+    {"@type": "HowToStep", "name": "Set your budget and CPC target", "text": "Set a minimum $25 daily budget, target oCPC of $3 to $5 for most categories. Start conservative."},
+    {"@type": "HowToStep", "name": "Set up conversion tracking", "text": "Install the OpenAI pixel or use UTM parameters to track which ChatGPT clicks convert on your landing page."},
+    {"@type": "HowToStep", "name": "Launch and monitor for 2 to 3 weeks", "text": "Let the oCPC system calibrate before making bid or targeting changes. Review after 14 to 21 days."}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you access OpenAI's Ads Manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenAI's Ads Manager is available at ads.openai.com. You create a separate account from your ChatGPT user account using a business email address. After account creation, you need to verify your brand domain, connect a payment method, and complete any policy acceptance steps before you can launch a campaign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Context Hints and how do you write them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Context Hints are semantic descriptions that tell ChatGPT's ad system which conversation contexts to show your ad in. They are not keywords — you describe the situation or problem your ideal buyer would be discussing, not the product you sell. For example, instead of writing 'CRM software,' a B2B SaaS company would write 'someone asking how to manage a growing sales team' or 'a conversation about tracking deal pipeline across multiple reps.' Good Context Hints describe buyer problems and research contexts; poor Context Hints describe product features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the creative character limits for ChatGPT ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT ads have strict creative limits: headline maximum 16 characters, description maximum 32 characters, and a destination URL. The 16-character headline is extremely constraining — it is roughly two short words or one longer brand name. The 32-character description is three to five words. These limits require radically stripped-down creative that communicates value in a fraction of the space available in Google Ads or social media ads."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--bg:#ffffff;--bg-card:#ffffff;--border:#e5e7eb;--accent:#6366f1;--accent-dim:rgba(99,102,241,0.08);--text:#111827;--text-dim:#4b5563;--text-muted:#9ca3af;--white:#ffffff;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--font-mono:'JetBrains Mono',monospace;--max-w:1180px;--prose-w:720px;--radius:12px;--radius-sm:8px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.875rem;font-weight:600}
+.article-hero{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 45%,#7c3aed 100%);padding:56px 24px 64px}
+.article-hero__inner{max-width:var(--prose-w);margin:0 auto}
+.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.78rem;color:rgba(255,255,255,0.65);margin-bottom:20px}
+.article-hero__breadcrumb a{color:rgba(255,255,255,0.7)}
+.article-tag{display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);font-size:0.72rem;font-weight:700;color:#fff;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px}
+.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.9rem,3.5vw,2.7rem);line-height:1.18;letter-spacing:-0.02em;color:#fff;margin-bottom:16px}
+.article-hero__meta{display:flex;align-items:center;gap:16px;font-size:0.8rem;color:rgba(255,255,255,0.7);flex-wrap:wrap}
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:56px 24px 84px;display:grid;grid-template-columns:var(--prose-w) 1fr;gap:56px;align-items:start}
+.article-prose{max-width:var(--prose-w)}
+.article-intro{font-size:1.05rem;color:var(--text-dim);line-height:1.78;margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid var(--border)}
+.article-section{margin-bottom:40px}
+.article-section h2{font-family:var(--font-serif);font-size:1.4rem;color:#111827;margin-bottom:14px;letter-spacing:-0.01em;line-height:1.3}
+.article-section h3{font-size:1rem;font-weight:700;color:#1f2937;margin:24px 0 10px}
+.article-section p{font-size:0.975rem;line-height:1.78;color:var(--text-dim);margin-bottom:14px}
+.article-section a{color:var(--accent);text-decoration:underline;text-decoration-color:rgba(99,102,241,0.35)}
+.article-section ul{padding-left:20px;margin-bottom:14px}
+.article-section ul li{font-size:0.95rem;color:var(--text-dim);line-height:1.75;margin-bottom:5px}
+.step-box{display:flex;gap:18px;padding:20px;border:1px solid var(--border);border-radius:var(--radius);margin:16px 0;background:var(--bg-card)}
+.step-box__num{min-width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-size:0.9rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-mono)}
+.step-box__content strong{font-size:0.95rem;color:#111827;display:block;margin-bottom:5px}
+.step-box__content p{font-size:0.875rem;color:var(--text-dim);line-height:1.65;margin:0}
+.callout{background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(99,102,241,0.02));border:1px solid rgba(99,102,241,0.18);border-radius:var(--radius-sm);padding:18px 22px;margin:20px 0}
+.callout p{font-size:0.93rem;color:var(--text);line-height:1.7;margin:0}
+.char-demo{display:flex;flex-direction:column;gap:10px;background:#f8fafc;border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 20px;margin:16px 0;font-family:var(--font-mono);font-size:0.85rem}
+.char-row{display:flex;align-items:center;gap:10px}
+.char-row__label{width:100px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);flex-shrink:0}
+.char-row__box{display:flex;gap:2px}
+.char-cell{width:14px;height:20px;border-radius:2px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--text-dim)}
+.char-cell.filled{background:var(--accent);border-color:var(--accent);color:#fff}
+.char-row__num{font-size:0.75rem;color:var(--text-muted);margin-left:4px}
+.article-divider{border:none;border-top:1px solid var(--border);margin:36px 0}
+.faq-section h2{font-family:var(--font-serif);font-size:1.35rem;color:#111827;margin-bottom:20px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:0.95rem;font-weight:600;color:#111827;margin-bottom:8px;line-height:1.4}
+.faq-a{font-size:0.9rem;color:var(--text-dim);line-height:1.7;margin:0}
+.inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07),rgba(99,102,241,0.03));border:1px solid rgba(99,102,241,0.22);border-radius:var(--radius);padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:28px}
+.inline-cta__text strong{font-size:0.975rem;color:#111827;display:block}
+.inline-cta__text p{font-size:0.84rem;color:var(--text-muted);margin-top:3px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:var(--radius-sm);background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.875rem;font-weight:600;white-space:nowrap;box-shadow:0 2px 6px rgba(99,102,241,0.38)}
+.article-sidebar{position:sticky;top:88px}
+.sidebar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px}
+.sidebar-card h4{font-size:0.93rem;font-weight:600;color:#111827;margin-bottom:8px;line-height:1.4}
+.sidebar-card p{font-size:0.8rem;color:var(--text-dim);margin-bottom:16px;line-height:1.55}
+.sidebar-toc h4{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:14px}
+.toc-list{list-style:none}
+.toc-list li{padding:3px 0}
+.toc-list a{font-size:0.8rem;color:var(--text-dim);transition:color 0.2s;display:block;line-height:1.4}
+.toc-list a:hover{color:var(--accent)}
+.related-posts{border-top:1px solid var(--border);padding:48px 24px}
+.related-posts__inner{max-width:var(--max-w);margin:0 auto}
+.related-posts__title{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card{border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:border-color 0.2s,transform 0.2s}
+.related-card:hover{border-color:rgba(99,102,241,0.4);transform:translateY(-2px)}
+.related-card__tag{font-size:0.7rem;font-weight:700;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.related-card h4{font-size:0.875rem;font-weight:600;color:#111827;margin-bottom:4px;line-height:1.4}
+.related-card p{font-size:0.78rem;color:var(--text-dim);line-height:1.5;margin-bottom:10px}
+.related-card a.read-more{font-size:0.78rem;font-weight:600;color:var(--accent)}
+.footer{border-top:1px solid var(--border);padding:40px 24px 28px}
+.footer__inner{max-width:var(--max-w);margin:0 auto}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px}
+.footer__bottom span{font-size:0.78rem;color:var(--text-muted)}
+@media(max-width:1024px){.article-wrap{grid-template-columns:1fr;gap:40px}.article-sidebar{position:static}}
+@media(max-width:768px){.nav__links{display:none}.related-grid{grid-template-columns:1fr}.inline-cta{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
+    <div class="nav__links">
+      <a href="/index.html#how-it-works">How It Works</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/blog-index.html">Blog</a>
+      <a href="/markets/india.html">Markets</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Sign In</a>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="article-hero__inner">
+    <nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+      <a href="/index.html">Home</a><span>›</span><a href="/blog-index.html">Blog</a><span>›</span><span>Paid AI Ads</span>
+    </nav>
+    <div class="article-tag">Paid AI Ads</div>
+    <h1 class="article-hero__title">How to Set Up a ChatGPT Ad Campaign Step by Step (2026)</h1>
+    <div class="article-hero__meta">
+      <span>Sep 20, 2026</span>
+      <span>&#183;</span>
+      <span>12 min read</span>
+    </div>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <main class="article-prose">
+
+    <p class="article-intro">OpenAI's self-serve Ads Manager is live. Getting a campaign running takes about 30 minutes — but there are five decisions along the way that determine whether your ChatGPT ads generate any results or just burn the $25 daily minimum. This is the complete setup walkthrough, with the decisions explained.</p>
+
+    <section class="article-section" id="before-you-start">
+      <h2>Before You Start — What You Need</h2>
+      <p>Before creating an Ads Manager account, have these ready:</p>
+      <ul>
+        <li>A business email address (personal Gmail accounts may be flagged for verification)</li>
+        <li>Your brand's domain — you will need to verify ownership</li>
+        <li>A payment method — credit card or approved business payment method</li>
+        <li>At least one landing page URL that is live and functional</li>
+        <li>Your three to five Context Hints drafted (more on this below — this is the most important pre-work)</li>
+        <li>Your ad creative written — headline (16 chars max), description (32 chars max)</li>
+      </ul>
+      <div class="callout">
+        <p><strong>The creative constraint is real:</strong> 16 characters for a headline is approximately two short words or one longer brand name. Write your creative before you open the Ads Manager — most teams underestimate how hard the character limits are until they are sitting in the setup flow with no working copy.</p>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="creative-limits">
+      <h2>The Creative Character Limits — Visualised</h2>
+      <p>ChatGPT ads have the most restrictive creative limits of any major ad platform. Here is what 16 and 32 characters look like:</p>
+
+      <div class="char-demo" aria-label="Character limit visualisation for ChatGPT ads">
+        <div class="char-row">
+          <span class="char-row__label">Headline</span>
+          <div class="char-row__box" id="headline-cells"></div>
+          <span class="char-row__num">16 chars max</span>
+        </div>
+        <div class="char-row">
+          <span class="char-row__label">Description</span>
+          <div class="char-row__box" id="desc-cells"></div>
+          <span class="char-row__num">32 chars max</span>
+        </div>
+      </div>
+      <script>
+        function makeCells(id, count, fillText) {
+          const el = document.getElementById(id);
+          for (let i = 0; i < count; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'char-cell' + (i < fillText.length ? ' filled' : '');
+            cell.textContent = fillText[i] || '';
+            el.appendChild(cell);
+          }
+        }
+        makeCells('headline-cells', 16, 'Fix your AI rank');
+        makeCells('desc-cells', 32, 'See why ChatGPT skips your brand');
+      </script>
+
+      <p>Example B2B headline: "Fix your AI rank" — 16 chars. Example description: "See why ChatGPT skips your brand" — 32 chars. Notice there is no room for a value proposition, a feature list, or any nuance. Every character is load-bearing. Test at least 2 headline and description variants to find what gets the click.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="context-hints">
+      <h2>Writing Context Hints — The Most Important Step</h2>
+      <p>Context Hints are the targeting mechanism for ChatGPT ads. They are semantic descriptions of the conversation contexts you want to appear in — not keywords. This is the decision that has the highest impact on whether your budget reaches the right users.</p>
+      <p><strong>How to write Context Hints that work:</strong></p>
+      <ul>
+        <li>Describe the buyer's problem, not your product. "Someone asking how to track which AI systems are recommending their competitors" — not "AI visibility platform."</li>
+        <li>Be specific about the situation. "A conversation where someone is researching why their brand is not appearing in ChatGPT responses" outperforms "AI marketing."</li>
+        <li>Include the buyer's role or context if relevant. "A marketing manager at a B2B SaaS company asking about brand visibility in AI tools."</li>
+        <li>Write 3 to 5 hints, not 1 or 20. Too few and the system has limited eligible contexts. Too many and you dilute your signal.</li>
+      </ul>
+      <div class="callout">
+        <p><strong>Context Hints vs keywords:</strong> if you think of Context Hints as keywords, you will write the wrong things. "CRM software" is a keyword. "Someone asking for help choosing CRM software for a 20-person sales team" is a Context Hint. The second one describes a conversation — which is what ChatGPT's targeting system matches against.</p>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="setup-steps">
+      <h2>The Setup Steps — In Order</h2>
+
+      <div class="step-box">
+        <div class="step-box__num">1</div>
+        <div class="step-box__content">
+          <strong>Create your Ads Manager account</strong>
+          <p>Go to ads.openai.com and sign up with your business email. You will go through identity verification and may need to accept advertiser policies. Domain verification is required — connect your brand domain to confirm you are advertising for a legitimate business.</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box__num">2</div>
+        <div class="step-box__content">
+          <strong>Set up payment</strong>
+          <p>Add a credit card or approved payment method. The system will confirm the $25 daily minimum at this point. Set your billing threshold — the amount at which the system charges your card mid-cycle — to avoid surprise charges.</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box__num">3</div>
+        <div class="step-box__content">
+          <strong>Create your first campaign and ad set</strong>
+          <p>Campaign structure mirrors other ad platforms: Campaign (objective) > Ad Set (targeting and budget) > Ad (creative). Choose your campaign objective. For most brand awareness purposes, "traffic" or "awareness" objectives are appropriate. Pipeline-focused campaigns may use "conversion" objectives if you have pixel tracking in place.</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box__num">4</div>
+        <div class="step-box__content">
+          <strong>Enter your Context Hints</strong>
+          <p>In the ad set targeting section, enter your 3 to 5 Context Hints. Write each one as a complete sentence describing a conversation context. The system shows a preview of how many conversations your hints are estimated to match — use this as a signal for whether you are too broad or too specific.</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box__num">5</div>
+        <div class="step-box__content">
+          <strong>Set budget and oCPC target</strong>
+          <p>Set your daily budget (minimum $25). Set your target CPC — $3 to $5 is the current market range for most categories. Start conservative: $3 to $4 target CPC for the first 2 weeks while the system calibrates, then adjust based on click volume.</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box__num">6</div>
+        <div class="step-box__content">
+          <strong>Create your ad creative</strong>
+          <p>Enter your headline (max 16 characters), description (max 32 characters), and destination URL. Create 2 to 3 variants — different headlines on the same destination URL is a valid starting point. The system will rotate variants and weight toward the better-performing one after sufficient click data.</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box__num">7</div>
+        <div class="step-box__content">
+          <strong>Set up conversion tracking</strong>
+          <p>Add UTM parameters to your destination URL before launch — at minimum, utm_source=chatgpt&amp;utm_medium=cpc&amp;utm_campaign=[your campaign name]. If you have access to the OpenAI pixel, install it for more granular conversion tracking. Without tracking, you will know how many clicks you got but not how many converted — which makes it impossible to evaluate actual ROI.</p>
+        </div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-box__num">8</div>
+        <div class="step-box__content">
+          <strong>Submit for review and launch</strong>
+          <p>OpenAI reviews ads before they go live — typically 24 to 48 hours. Once approved, your ads enter delivery. Do not make changes to Context Hints or creative in the first 14 days — let the oCPC system calibrate without interruption. Review performance at the 14-day and 30-day marks.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="after-launch">
+      <h2>After Launch — What to Watch and When to Optimise</h2>
+      <p>The most common mistake new ChatGPT advertisers make is optimising too early. The oCPC system needs 2 to 3 weeks of data to calibrate which conversation contexts produce clicks that match your target CPC. Changing Context Hints or bids in week one resets the calibration and extends the learning period.</p>
+      <p>After 14 to 21 days, review these metrics:</p>
+      <ul>
+        <li><strong>Impression share:</strong> if low, your Context Hints may be too specific — widen them</li>
+        <li><strong>Click-through rate:</strong> below 0.5% suggests creative is not resonating in context — test different headlines</li>
+        <li><strong>Actual CPC vs target:</strong> consistently above target suggests high competition for your contexts — lower the target or broaden hints</li>
+        <li><strong>Landing page conversion rate (via UTM/pixel):</strong> below 1% suggests audience-landing page mismatch — the context is attracting users whose intent does not match your landing page offer</li>
+      </ul>
+      <div class="callout">
+        <p><strong>The organic GEO benchmark:</strong> before making significant ChatGPT Ads budget increases, benchmark your organic AI presence. If ChatGPT and Gemini are already recommending your brand organically for your target queries, paid ads in those same contexts may compete with your own organic citations rather than supplementing them. In my experience with AI visibility audits, brands with strong organic AI presence often achieve better engagement metrics from organic citations than from paid placements on the same platform — which changes the ROI case for paid spend significantly.</p>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <p class="faq-q">How do you access OpenAI's Ads Manager?</p>
+        <p class="faq-a">OpenAI's Ads Manager is at ads.openai.com. You create a separate account from your ChatGPT user account using a business email. After account creation, you need to verify your brand domain, connect a payment method, and accept advertiser policies before launching a campaign.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What are Context Hints and how do you write them?</p>
+        <p class="faq-a">Context Hints are semantic descriptions of the conversation contexts you want your ad to appear in. They describe buyer problems and research situations, not product features. "Someone asking how to manage a growing sales team" is a Context Hint. "CRM software" is a keyword — not a Context Hint. Write 3 to 5 complete sentences describing the conversations where your ideal buyer is most likely to encounter your ad.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What are the creative character limits for ChatGPT ads?</p>
+        <p class="faq-a">Headline maximum 16 characters, description maximum 32 characters, plus a destination URL. These are extremely constraining compared to Google Ads or social media formats — approximately two short words for a headline and five to seven words for a description. Write your creative in advance before entering the Ads Manager setup flow.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How long does it take for ChatGPT ads to be approved?</p>
+        <p class="faq-a">OpenAI typically reviews and approves new ads within 24 to 48 hours. Changes to existing campaigns — new creative, modified Context Hints — also go through review. Factor this into your launch timeline if you have a specific date to hit.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">When should I change my ChatGPT ad after launching?</p>
+        <p class="faq-a">Wait at least 14 to 21 days before making targeting or bid changes. The oCPC system needs this calibration period to optimise effectively. Making changes in week one resets the learning period. After 14 to 21 days, review impression share, CTR, actual CPC versus target, and landing page conversion rate — then make one change at a time to isolate what is working.</p>
+      </div>
+    </section>
+
+    <div class="inline-cta">
+      <div class="inline-cta__text">
+        <strong>Check your organic AI visibility before spending on paid ChatGPT ads</strong>
+        <p>Brands with strong organic GEO presence often get better results than paid placements on the same platform. Free scan, 10 minutes.</p>
+      </div>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan →</a>
+    </div>
+
+  </main>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-card sidebar-toc">
+      <h4>In this guide</h4>
+      <ul class="toc-list">
+        <li><a href="#before-you-start">Before you start</a></li>
+        <li><a href="#creative-limits">Creative limits</a></li>
+        <li><a href="#context-hints">Writing Context Hints</a></li>
+        <li><a href="#setup-steps">Setup steps (8 steps)</a></li>
+        <li><a href="#after-launch">After launch</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Creative cheat sheet</h4>
+      <ul class="toc-list" style="gap:0">
+        <li style="padding:5px 0;border-bottom:1px solid var(--border)"><span style="font-weight:700;color:#111827">16 chars</span> <span style="color:var(--text-dim);font-size:0.8rem">headline limit</span></li>
+        <li style="padding:5px 0;border-bottom:1px solid var(--border)"><span style="font-weight:700;color:#111827">32 chars</span> <span style="color:var(--text-dim);font-size:0.8rem">description limit</span></li>
+        <li style="padding:5px 0"><span style="font-weight:700;color:#111827">3-5 hints</span> <span style="color:var(--text-dim);font-size:0.8rem">Context Hints sweet spot</span></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Related reading</h4>
+      <ul class="toc-list">
+        <li><a href="/blog/chatgpt-cpc-cost-breakdown-2026.html">ChatGPT Ads cost breakdown →</a></li>
+        <li><a href="/blog/chatgpt-ads-vs-google-ads-b2b.html">ChatGPT Ads vs Google Ads →</a></li>
+        <li><a href="/blog/chatgpt-cpc-ads-b2b-saas-guide.html">B2B ChatGPT Ads guide →</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<section class="related-posts">
+  <div class="related-posts__inner">
+    <h3 class="related-posts__title">Keep reading</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="related-card__tag">Paid AI Ads</div>
+        <h4>ChatGPT CPC Cost Breakdown 2026</h4>
+        <p>Every cost number before you budget — CPC, daily minimums, cost per lead math.</p>
+        <a href="/blog/chatgpt-cpc-cost-breakdown-2026.html" class="read-more">Read more →</a>
+      </div>
+      <div class="related-card">
+        <div class="related-card__tag">Paid AI Ads</div>
+        <h4>ChatGPT Ads vs Google Ads for B2B</h4>
+        <p>Which channel delivers better pipeline — and when to use both.</p>
+        <a href="/blog/chatgpt-ads-vs-google-ads-b2b.html" class="read-more">Read more →</a>
+      </div>
+      <div class="related-card">
+        <div class="related-card__tag">GEO</div>
+        <h4>Why ChatGPT Recommends Your Competitor</h4>
+        <p>The buying factors that determine AI citation decisions — and how to fix the gap.</p>
+        <a href="/blog/why-chatgpt-recommends-competitor.html" class="read-more">Read more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__bottom">
+      <span>&#169; 2026 Jeevan AI. All rights reserved.</span>
+      <span>Noida, India &#183; Global Platform</span>
+      <span><a href="/blog-index.html" style="color:var(--text-muted)">Blog</a> &#183; <a href="/markets/india.html" style="color:var(--text-muted)">Markets</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
