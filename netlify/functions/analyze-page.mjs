@@ -5,16 +5,11 @@
 import { getStore } from "@netlify/blobs";
 
 const MODEL = "claude-haiku-4-5-20251001";
-const MAX_HTML_CHARS = 4000;
+const MAX_HTML_CHARS = 3000;
 
-const SYSTEM_PROMPT = `You are an AI search visibility analyst. Score a brand page and return ONLY valid JSON, no markdown.
-
-Score these six factors (0-100): Entity Clarity, Extractable Structure, Schema Markup, FAQ Coverage, Answer-Led Content, Specificity & Evidence.
-
-Return this exact JSON shape:
-{"brand":"<name>","domain":"<domain>","category":"<5-8 words>","score":<0-100>,"verdict":"<1 sentence>","ai_summary":"<2 sentences>","categories":[{"name":"<factor>","score":<0-100>,"finding":"<1 sentence>","fix":"<1 action>"}],"top_fixes":["<fix1>","<fix2>","<fix3>"],"gaps":[{"topic":"<topic>","why":"<why>","fix":"<action>"}],"jeevanai_value":"<2 sentences>"}
-
-Rules: all 6 factors in categories array; 3-5 gaps; reference actual page content; name the brand in verdict.`;
+const SYSTEM_PROMPT = `AI visibility analyst. Return ONLY compact JSON, no markdown, no extra whitespace.
+Fields: brand(str) domain(str) category(≤6 words) score(0-100 int) verdict(≤12 words naming brand) ai_summary(≤20 words) categories(array of 6: name score finding≤10words fix≤10words) top_fixes(3 strings ≤10words each) gaps(3 items: topic≤6words why≤8words fix≤8words) jeevanai_value(≤20 words)
+Six factor names in order: Entity Clarity, Extractable Structure, Schema Markup, FAQ Coverage, Answer-Led Content, Specificity & Evidence`;
 
 function corsHeaders() {
   return {
@@ -114,7 +109,7 @@ async function callClaude(userContent, apiKey) {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 2000,
+      max_tokens: 900,
       system: SYSTEM_PROMPT,
       messages: [{ role: "user", content: userContent }],
     }),
