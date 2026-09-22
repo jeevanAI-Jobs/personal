@@ -91,6 +91,20 @@ a{color:inherit;text-decoration:none}
 .back-link a{font-size:0.85rem;color:var(--accent);font-weight:600}
 .footer{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:620px){.comp-grid{grid-template-columns:1fr}.wrap{padding:24px 16px 60px}.report-header{padding:24px 18px}.score-ring{width:72px;height:72px;font-size:1.5rem}.improve-cta{flex-direction:column}}
+
+.meth-box{background:#f8faff;border:1px solid #e0e7ff;border-radius:14px;padding:20px 24px;margin-bottom:28px}
+.meth-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#6366f1;margin-bottom:10px}
+.meth-intro{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.meth-factors{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.meth-factor{background:#fff;border:1px solid #e0e7ff;border-radius:8px;padding:10px 12px}
+.meth-factor-name{font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.meth-factor-desc{font-size:0.73rem;color:var(--muted);line-height:1.5}
+.source-tag{font-size:0.68rem;font-weight:600;color:#6366f1;background:#ede9fe;padding:1px 6px;border-radius:4px;margin-left:4px;vertical-align:middle}
+.analyst-note{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-radius:12px;padding:18px 22px;margin-bottom:28px}
+.analyst-note-label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#92400e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.analyst-note-text{font-size:0.88rem;color:#78350f;line-height:1.7}
+@media(max-width:620px){.meth-factors{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -117,6 +131,22 @@ a{color:inherit;text-decoration:none}
     <div class="ai-summary"><div class="ai-summary-label">What AI engines see today</div><p class="ai-summary-text">The Bear House has carved a clear positioning in premium men's everyday basics in India but scores only 52 on AI visibility. The brand appears occasionally in AI recommendations for premium men's clothing but lacks the FAQ schema, comparison content, and editorial depth that would make it a consistent citation for quality men's basics queries.</p></div>
   </div>
   <div class="ai-context"><div class="ai-context-label">Why this score matters</div>The Bear House has done something genuinely difficult in Indian D2C fashion: established a premium positioning for everyday men's basics without celebrity backing or a massive marketing budget. The brand has a loyal customer base and clear product identity. The AI visibility problem is a structural one. Premium brand positioning requires a lot of justification content for AI engines to cite it confidently. When a buyer asks why The Bear House is worth the premium over a standard brand, AI engines need a page on The Bear House website that answers this question clearly and specifically. That page does not exist. Neither does a fabric quality page, a sizing guide structured for AI extraction, or a comparison against mainstream brands. The brand's story is being told by fashion reviewers and bloggers rather than by The Bear House itself, which means AI engines cite those third parties as the source of truth for the brand rather than thebearhouse.in.</div>
+  <div class="meth-box">
+  <div class="meth-label">How we scored this</div>
+  <p class="meth-intro">Our analysts reviewed the brand's website, schema markup, and indexed content against 6 weighted factors that determine how often AI engines like ChatGPT, Perplexity, and Gemini cite a brand. Each factor is scored 0 to 100. The overall score is the average.</p>
+  <div class="meth-factors">
+    <div class="meth-factor"><div class="meth-factor-name">Entity Clarity</div><div class="meth-factor-desc">Can AI engines identify who this brand is and what it does?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Extractable Structure</div><div class="meth-factor-desc">Are headings, tables, and text blocks parseable by AI crawlers?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Schema Markup</div><div class="meth-factor-desc">Is FAQPage, Organization, HowTo, or Article schema implemented?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">FAQ Coverage</div><div class="meth-factor-desc">Are the buyer questions AI engines receive actually answered?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Answer-Led Content</div><div class="meth-factor-desc">Does each page open with a direct answer to a stated question?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Specificity &amp; Evidence</div><div class="meth-factor-desc">Are specific numbers, patents, and verifiable claims present?</div></div>
+  </div>
+</div>
+  <div class="analyst-note">
+  <div class="analyst-note-label">&#128269; Analyst note</div>
+  <div class="analyst-note-text">The Bear House scores 52/100 — 17 points behind Snitch but 14 points ahead of Better Basics. Without Shark Tank backing, the brand has had to build entity signals purely through product quality and community word-of-mouth. The result is a recognizable but not AI-dominant brand. Its FAQ Coverage score of 42 is the critical gap: no FAQ schema means AI engines cannot use The Bear House as an answer source even when it is the right recommendation.</div>
+</div>
   <div class="section"><div class="section-head"><h2>Content Gaps Costing AI Citations</h2><span class="tag tag-red">3 gaps found</span></div><div class="gap-card"><div class="gap-topic">Premium men's basics India worth buying versus fast fashion</div><div class="gap-why">The core buyer decision query for any premium basics brand. AI engines receive this question from buyers considering The Bear House versus cheaper alternatives. No Bear House page answers it with specific data.</div><div class="gap-fix"><b>What to do:</b> Publish a value justification page: The Bear House tee versus a Rs 400 fast fashion tee on fabric weight, wash durability, cost per wear, and comfort. Use real numbers. This page would be cited every time AI engines answer premium basics value queries for India.</div></div><div class="gap-card"><div class="gap-topic">The Bear House sizing guide for Indian body types</div><div class="gap-why">Sizing is the top pre-purchase question for all clothing brands. AI engines route this to third-party size reviews because The Bear House does not have a structured sizing FAQ with specific measurement data.</div><div class="gap-fix"><b>What to do:</b> Publish a sizing guide with a measurement table for each product category. Include how Bear House sizing compares to standard Indian brands by chest, shoulder, and length. Add FAQPage schema with 6 sizing questions.</div></div><div class="gap-card"><div class="gap-topic">Best men's clothing brands India for minimalist wardrobe</div><div class="gap-why">The minimalist and capsule wardrobe trend is a fast-growing query cluster in India. The Bear House's positioning of quality everyday basics is a direct fit for this query but no page targets it.</div><div class="gap-fix"><b>What to do:</b> Publish a capsule wardrobe guide: how to build a 10-piece functional men's wardrobe in India with quality basics. Feature Bear House pieces for each wardrobe slot. Include cost per piece and cost per wear calculation. Add HowTo schema.</div></div></div>
   <div class="improve-cta">
     <div class="improve-cta-text"><div class="label">Ready to improve?</div><div class="title">Improve The Bear House's AI visibility &mdash; start free</div><div class="sub">Track citations across ChatGPT, Perplexity &amp; Gemini. Get a weekly fix plan.</div></div>
