@@ -441,14 +441,16 @@ export async function handler(event, context) {
     competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })),
   };
 
-  // 6. Fire-and-forget saves/pushes — don't block the response.
+  // 6. Push primary report to GitHub (awaited — creates /report-data/{slug}.json on GitHub Pages).
+  const primaryPayload = { url: primaryUrl, extra_urls: extraUrls, analyzedAt, slug: brandSlug, cacheKey,
+    competitor_reports: responsePayload.competitor_reports, ...primaryData };
+  await pushReportJson(brandSlug, primaryPayload);
+
+  // 7. Fire-and-forget the rest: Blobs save, competitors, sitemap.
   (async () => {
     try {
       const store = getStore({ name: "audit-reports", context });
-      const primaryPayload = { url: primaryUrl, extra_urls: extraUrls, analyzedAt, slug: brandSlug, cacheKey,
-        competitor_reports: responsePayload.competitor_reports, ...primaryData };
       await saveReport(store, primaryPayload, TTL);
-      pushReportJson(brandSlug, primaryPayload);
       await Promise.all(competitorMeta.map((meta, i) => {
         const payload = { url: meta.url, extra_urls: [], analyzedAt, slug: meta.slug, cacheKey: meta.cacheKey,
           compared_to: [{ slug: brandSlug, brand: primaryData.brand || primaryData.domain || "brand", domain: primaryData.domain || "", url: primaryUrl }],
@@ -456,7 +458,6 @@ export async function handler(event, context) {
         pushReportJson(meta.slug, payload);
         return saveReport(store, payload, TTL);
       }));
-      // Update report index + sitemap (best-effort, slow ops)
       const allNewEntries = [
         { slug: brandSlug, brand: primaryData.brand || primaryData.domain || "brand", analyzedAt },
         ...competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, analyzedAt })),
