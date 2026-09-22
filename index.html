@@ -184,37 +184,6 @@ a{color:inherit;text-decoration:none}
 @media(max-width:1024px){.factors__inner{grid-template-columns:1fr}.pricing__grid{grid-template-columns:repeat(2,1fr)}.footer__grid{grid-template-columns:1fr 1fr 1fr}}
 @media(max-width:768px){.nav__links{display:none}.steps{grid-template-columns:1fr}.stats__inner{grid-template-columns:1fr 1fr}.blog-preview__grid{grid-template-columns:1fr}.pricing__grid{grid-template-columns:1fr}.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;gap:8px;text-align:center}}
 
-/* INSTANT ANALYZER SECTION */
-.instant-analyzer{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#1e3a8a 100%);padding:56px 24px}
-.instant-analyzer__inner{max-width:720px;margin:0 auto;text-align:center}
-.instant-analyzer__eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a5b4fc;margin-bottom:12px}
-.instant-analyzer__title{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.5rem,2.8vw,2rem);color:#fff;margin-bottom:10px;letter-spacing:-0.01em}
-.instant-analyzer__sub{font-size:0.95rem;color:rgba(255,255,255,0.6);margin-bottom:28px}
-.ia-form{display:flex;gap:8px;max-width:580px;margin:0 auto}
-.ia-form input{flex:1;padding:13px 16px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:#fff;font-size:0.95rem;font-family:'DM Sans',system-ui,sans-serif;outline:none;transition:border-color 0.2s}
-.ia-form input::placeholder{color:rgba(255,255,255,0.35)}
-.ia-form input:focus{border-color:rgba(165,180,252,0.6);background:rgba(255,255,255,0.12)}
-.ia-form button{flex-shrink:0;padding:13px 22px;border-radius:10px;border:none;background:#6366f1;color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;transition:opacity 0.2s;white-space:nowrap}
-.ia-form button:hover{opacity:0.88}
-.ia-form button:disabled{opacity:0.5;cursor:default}
-@media(max-width:520px){.ia-form{flex-direction:column}}
-.ia-status{margin-top:14px;font-size:0.88rem;color:rgba(255,255,255,0.5);display:none}
-.ia-status.show{display:block}
-.ia-err{margin-top:12px;background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3);color:#fca5a5;border-radius:8px;padding:10px 14px;font-size:0.88rem;display:none}
-.ia-err.show{display:block}
-.ia-result{margin-top:24px;display:none}
-.ia-result.show{display:flex}
-.ia-result{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:20px 24px;align-items:center;gap:20px;flex-wrap:wrap;text-align:left;max-width:580px;margin-left:auto;margin-right:auto}
-.ia-score-ring{flex-shrink:0;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35rem;font-weight:700;color:#fff}
-.ia-result__body{flex:1;min-width:180px}
-.ia-result__label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(165,180,252,0.8);margin-bottom:3px}
-.ia-result__verdict{font-size:0.9rem;color:#fff;line-height:1.45;margin-bottom:10px}
-.ia-result__links{display:flex;gap:10px;flex-wrap:wrap}
-.ia-result__link-main{padding:8px 16px;border-radius:8px;background:#6366f1;color:#fff;font-size:0.83rem;font-weight:700}
-.ia-result__link-share{padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.85);font-size:0.83rem;font-weight:600;cursor:pointer;background:none;font-family:'DM Sans',system-ui,sans-serif}
-.ia-result__link-share:hover{background:rgba(255,255,255,0.08)}
-.ia-result__link-share.copied{border-color:rgba(74,222,128,0.4);color:#4ade80}
-
 /* AUDIT STRIP */
 .audit-strip{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);padding:32px 24px}
 .audit-strip__inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -500,42 +469,6 @@ a{color:inherit;text-decoration:none}
     <span class="platform-chip">Google AI Mode</span>
   </div>
 </div>
-
-<!-- INSTANT ANALYZER -->
-<section class="instant-analyzer" aria-label="Free AI visibility page analyzer">
-  <div class="instant-analyzer__inner">
-    <div class="instant-analyzer__eyebrow">Free · Instant · No signup</div>
-    <h2 class="instant-analyzer__title">How AI-ready is your page?</h2>
-    <p class="instant-analyzer__sub">Paste any public URL and get an AI visibility score in under 20 seconds.</p>
-    <div class="ia-form">
-      <input type="url" id="iaUrl" placeholder="https://yourcompany.com/page" autocomplete="off" inputmode="url">
-      <button id="iaBtn" onclick="iaAnalyze()">Check it free &rarr;</button>
-    </div>
-    <div style="margin-top:10px;text-align:center">
-      <button onclick="iaToggleExtra()" id="iaExtraToggle" style="background:none;border:none;color:rgba(165,180,252,0.7);font-size:0.8rem;cursor:pointer;font-family:'DM Sans',system-ui,sans-serif;padding:2px 0">+ Add competitor / reference URLs for gap analysis</button>
-    </div>
-    <div id="iaExtraFields" style="display:none;flex-direction:column;gap:6px;margin-top:10px;max-width:580px;margin-left:auto;margin-right:auto">
-      <span style="font-size:0.72rem;font-weight:600;color:rgba(165,180,252,0.6);letter-spacing:0.05em;text-transform:uppercase">Competitors <span style="font-weight:400">(separate report generated)</span></span>
-      <input type="url" id="iaExtra1" placeholder="Competitor URL 1 (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
-      <input type="url" id="iaExtra2" placeholder="Competitor URL 2 (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
-      <span style="font-size:0.72rem;font-weight:600;color:rgba(165,180,252,0.6);letter-spacing:0.05em;text-transform:uppercase;margin-top:4px">Reference URL <span style="font-weight:400">(gap context only)</span></span>
-      <input type="url" id="iaRef" placeholder="Reference URL (optional)" autocomplete="off" style="padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-size:0.88rem;font-family:'DM Sans',system-ui,sans-serif;outline:none">
-    </div>
-    <div class="ia-status" id="iaStatus">Fetching and analyzing your page...</div>
-    <div class="ia-err" id="iaErr"></div>
-    <div class="ia-result" id="iaResult">
-      <div class="ia-score-ring" id="iaRing"></div>
-      <div class="ia-result__body">
-        <div class="ia-result__label">AI Visibility Score</div>
-        <div class="ia-result__verdict" id="iaVerdict"></div>
-        <div class="ia-result__links">
-          <a id="iaFullLink" href="#" class="ia-result__link-main" target="_blank">See full report &rarr;</a>
-          <button class="ia-result__link-share" id="iaShareBtn" onclick="iaCopyLink()">Copy shareable link</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- TEAM -->
 <section aria-labelledby="team-heading" style="border-top:1px solid var(--border);padding:80px 24px;background:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 100%)">
@@ -985,117 +918,6 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
-<script>
-(function(){
-  var IA_API = "https://frabjous-maamoul-49a6fd.netlify.app/.netlify/functions/analyze-page";
-  var _iaReportId = null;
-
-  function iaColorFor(s){return s>=70?"#4ade80":s>=40?"#fbbf24":"#f87171"}
-
-  // Derive slug from URL domain on the client — no need to wait for backend.
-  function iaSlugFromUrl(url){
-    try{
-      var u=url.trim();
-      if(!/^https?:\/\//i.test(u)) u='https://'+u;
-      var host=new URL(u).hostname.replace(/^www\./,'');
-      return host.replace(/\./g,'-').toLowerCase()+'-ai-search-visibility';
-    }catch{return null;}
-  }
-
-  window.iaToggleExtra = function(){
-    var f=document.getElementById('iaExtraFields');
-    var btn=document.getElementById('iaExtraToggle');
-    var open=f.style.display!=='none'&&f.style.display!=='';
-    f.style.display=open?'none':'flex';
-    btn.textContent=open?'+ Add competitor / reference URLs for gap analysis':'- Hide extra URLs';
-  };
-
-  window.iaAnalyze = async function(){
-    var url = document.getElementById('iaUrl').value.trim();
-    if(!url){iaShowErr("Please enter a website URL.");return;}
-    document.getElementById('iaErr').classList.remove('show');
-    document.getElementById('iaResult').classList.remove('show');
-    document.getElementById('iaStatus').classList.add('show');
-    document.getElementById('iaBtn').disabled = true;
-
-    // Set report link immediately from domain — works even before API returns.
-    var domainSlug = iaSlugFromUrl(url);
-    _iaReportId = domainSlug;
-    if(domainSlug){
-      document.getElementById('iaFullLink').href = 'https://jeevanai.co.in/report/'+encodeURIComponent(domainSlug)+'/';
-    }
-
-    var comp1=(document.getElementById('iaExtra1').value||"").trim();
-    var comp2=(document.getElementById('iaExtra2').value||"").trim();
-    var ref=(document.getElementById('iaRef').value||"").trim();
-    var competitor_urls=[comp1,comp2].filter(Boolean);
-    var extra_urls=[...competitor_urls,ref].filter(Boolean);
-    var statusEl=document.getElementById('iaStatus');
-    statusEl.textContent=extra_urls.length?'Fetching and analyzing '+(extra_urls.length+1)+' pages...':'Checking for saved report...';
-
-    try{
-      var res = await fetch(IA_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:url,extra_urls:extra_urls,competitor_urls:competitor_urls})});
-      var data = await res.json();
-      document.getElementById('iaStatus').classList.remove('show');
-      document.getElementById('iaBtn').disabled = false;
-      if(data.error){iaShowErr(data.error);return;}
-      iaRender(data);
-    }catch(e){
-      document.getElementById('iaStatus').classList.remove('show');
-      document.getElementById('iaBtn').disabled = false;
-      iaShowErr("Could not reach the analyzer. Please try again.");
-    }
-  };
-
-  function iaShowErr(msg){
-    var el = document.getElementById('iaErr');
-    el.textContent = msg;
-    el.classList.add('show');
-  }
-
-  function iaRender(data){
-    var score = Math.max(0,Math.min(100,parseInt(data.score,10)||0));
-    var ring = document.getElementById('iaRing');
-    ring.textContent = score;
-    ring.style.background = iaColorFor(score);
-    document.getElementById('iaVerdict').textContent = data.verdict||"Analysis complete.";
-
-    // Use backend slug if available (brand-based), else keep domain slug set before call.
-    var slug = data.reportSlug || data.slug || _iaReportId;
-    if(slug){
-      _iaReportId = slug;
-      document.getElementById('iaFullLink').href = 'https://jeevanai.co.in/report/'+encodeURIComponent(slug)+'/';
-      document.getElementById('iaShareBtn').style.display = 'inline-block';
-      // Save to sessionStorage so report page can render without Blobs
-      try{ sessionStorage.setItem('report_'+slug, JSON.stringify(data)); }catch(e){}
-    }
-
-    document.getElementById('iaResult').classList.add('show');
-  }
-
-  window.iaCopyLink = function(){
-    if(!_iaReportId) return;
-    var url = "https://jeevanai.co.in/report/" + encodeURIComponent(_iaReportId) + "/";
-    var btn = document.getElementById('iaShareBtn');
-    navigator.clipboard.writeText(url).then(function(){
-      btn.textContent = "Copied!";
-      btn.classList.add('copied');
-      setTimeout(function(){btn.textContent="Copy shareable link";btn.classList.remove('copied');},2200);
-    }).catch(function(){
-      var inp = document.createElement('input');
-      inp.value = url;
-      document.body.appendChild(inp);
-      inp.select();
-      document.execCommand('copy');
-      document.body.removeChild(inp);
-      btn.textContent = "Copied!";
-      setTimeout(function(){btn.textContent="Copy shareable link";},2200);
-    });
-  };
-
-  document.getElementById('iaUrl').addEventListener('keydown',function(e){if(e.key==='Enter')iaAnalyze();});
-})();
-</script>
 
 </body>
 </html>
