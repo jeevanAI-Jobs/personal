@@ -99,22 +99,36 @@ function parseClaudeJson(text) {
   return JSON.parse(text.slice(start, end + 1));
 }
 
-async function callClaude(userContent, apiKey) {
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      max_tokens: 900,
-      system: SYSTEM_PROMPT,
-      messages: [{ role: "user", content: userContent }],
-    }),
-  });
+async function callClaude(userContent, apiKey, attempt = 0) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 22000);
+  let res;
+  try {
+    res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      signal: ctrl.signal,
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 8192,
+        system: SYSTEM_PROMPT,
+        messages: [{ role: "user", content: userContent }],
+      }),
+    });
+  } finally {
+    clearTimeout(t);
+  }
   const payload = await res.json();
+  if (res.status === 429 || res.status === 529) {
+    if (attempt < 1) {
+      await new Promise(r => setTimeout(r, 2000));
+      return callClaude(userContent, apiKey, attempt + 1);
+    }
+  }
   if (!res.ok) throw new Error(`Claude API ${res.status}: ${JSON.stringify(payload)}`);
   const textBlock = (payload.content || []).find((b) => b.type === "text");
   if (!textBlock) throw new Error("Empty Claude response");
@@ -441,14 +455,13 @@ export async function handler(event, context) {
     competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })),
   };
 
-  // 6. Push primary report to GitHub (awaited — creates /report-data/{slug}.json on GitHub Pages).
+  // 6. Fire-and-forget all saves (GitHub push, Blobs, competitors, sitemap).
   const primaryPayload = { url: primaryUrl, extra_urls: extraUrls, analyzedAt, slug: brandSlug, cacheKey,
     competitor_reports: responsePayload.competitor_reports, ...primaryData };
-  await pushReportJson(brandSlug, primaryPayload);
 
-  // 7. Fire-and-forget the rest: Blobs save, competitors, sitemap.
   (async () => {
     try {
+      await pushReportJson(brandSlug, primaryPayload);
       const store = getStore({ name: "audit-reports", context });
       await saveReport(store, primaryPayload, TTL);
       await Promise.all(competitorMeta.map((meta, i) => {
