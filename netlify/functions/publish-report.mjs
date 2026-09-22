@@ -408,12 +408,17 @@ export async function handler(event, context) {
 
   if (!brand) return json(400, { error: "Missing brand parameter" });
 
-  // 1. Read report from Netlify Blobs
+  // 1. Use report data from body if provided, else read from Netlify Blobs
   let data;
   try {
-    const store = getStore({ name: "audit-reports", context });
-    data = await store.get(brand, { type: "json" });
-    if (!data) return json(404, { error: `No report found for brand: ${brand}. Run a scan first.` });
+    const body2 = JSON.parse(event.body || "{}");
+    if (body2.report && typeof body2.report === "object") {
+      data = body2.report;
+    } else {
+      const store = getStore({ name: "audit-reports", context });
+      data = await store.get(brand, { type: "json" });
+      if (!data) return json(404, { error: `No report found for brand: ${brand}. Run a scan first.` });
+    }
   } catch (err) {
     return json(500, { error: `Failed to read report: ${err.message}` });
   }
