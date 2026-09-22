@@ -91,6 +91,20 @@ a{color:inherit;text-decoration:none}
 .back-link a{font-size:0.85rem;color:var(--accent);font-weight:600}
 .footer{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:620px){.comp-grid{grid-template-columns:1fr}.wrap{padding:24px 16px 60px}.report-header{padding:24px 18px}.score-ring{width:72px;height:72px;font-size:1.5rem}.improve-cta{flex-direction:column}}
+
+.meth-box{background:#f8faff;border:1px solid #e0e7ff;border-radius:14px;padding:20px 24px;margin-bottom:28px}
+.meth-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#6366f1;margin-bottom:10px}
+.meth-intro{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.meth-factors{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.meth-factor{background:#fff;border:1px solid #e0e7ff;border-radius:8px;padding:10px 12px}
+.meth-factor-name{font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.meth-factor-desc{font-size:0.73rem;color:var(--muted);line-height:1.5}
+.source-tag{font-size:0.68rem;font-weight:600;color:#6366f1;background:#ede9fe;padding:1px 6px;border-radius:4px;margin-left:4px;vertical-align:middle}
+.analyst-note{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-radius:12px;padding:18px 22px;margin-bottom:28px}
+.analyst-note-label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#92400e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.analyst-note-text{font-size:0.88rem;color:#78350f;line-height:1.7}
+@media(max-width:620px){.meth-factors{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -117,6 +131,22 @@ a{color:inherit;text-decoration:none}
     <div class="ai-summary"><div class="ai-summary-label">What AI engines see today</div><p class="ai-summary-text">Cosmic Byte dominates the budget gaming peripherals segment in India by sales volume on Flipkart and Amazon. AI engines barely know it exists. When Indian buyers ask for a budget gaming keyboard recommendation, ChatGPT and Perplexity almost never mention Cosmic Byte despite it being the market leader by units sold. The website has no FAQ schema, no comparison content, and no editorial material AI engines can extract.</p></div>
   </div>
   <div class="ai-context"><div class="ai-context-label">Why this score matters</div>Cosmic Byte has built something impressive purely through distribution: it is the first brand most Indian buyers encounter when searching for gaming peripherals on Flipkart or Amazon. The brand's products appear in the first results for budget gaming keyboard, gaming mouse under Rs 1000, and gaming headset India on every major Indian e-commerce platform. The AI visibility problem is stark in contrast. When the same buyer switches from Flipkart search to asking ChatGPT which gaming keyboard to buy under Rs 2000 in India, Cosmic Byte is typically absent. The AI engine cites international brands like Redragon, Zebronics, or occasionally Keychron for entry-level options. This is a direct sales conversion loss. Buyers who ask AI engines for recommendations and do not see Cosmic Byte go to Redragon or Zebronics instead. The fix is straightforward but requires systematic content work: FAQ schema, comparison pages, and editorial content that explains why Cosmic Byte is the right choice for Indian buyers on a budget.</div>
+  <div class="meth-box">
+  <div class="meth-label">How we scored this</div>
+  <p class="meth-intro">Our analysts reviewed the brand's website, schema markup, and indexed content against 6 weighted factors that determine how often AI engines like ChatGPT, Perplexity, and Gemini cite a brand. Each factor is scored 0 to 100. The overall score is the average.</p>
+  <div class="meth-factors">
+    <div class="meth-factor"><div class="meth-factor-name">Entity Clarity</div><div class="meth-factor-desc">Can AI engines identify who this brand is and what it does?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Extractable Structure</div><div class="meth-factor-desc">Are headings, tables, and text blocks parseable by AI crawlers?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Schema Markup</div><div class="meth-factor-desc">Is FAQPage, Organization, HowTo, or Article schema implemented?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">FAQ Coverage</div><div class="meth-factor-desc">Are the buyer questions AI engines receive actually answered?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Answer-Led Content</div><div class="meth-factor-desc">Does each page open with a direct answer to a stated question?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Specificity &amp; Evidence</div><div class="meth-factor-desc">Are specific numbers, patents, and verifiable claims present?</div></div>
+  </div>
+</div>
+  <div class="analyst-note">
+  <div class="analyst-note-label">&#128269; Analyst note</div>
+  <div class="analyst-note-text">Cosmic Byte presents the starkest paradox in this audit: likely the highest sales volume brand across all 15 reports, yet the second-lowest AI visibility at 38/100. Its dominance on Flipkart and Amazon India does not translate to AI engine citations because AI engines learn from website content and schema, not marketplace listings. Every gaming peripheral query that Cosmic Byte should win by market share is currently being answered by citations to Redragon and international brands.</div>
+</div>
   <div class="section"><div class="section-head"><h2>Content Gaps Costing AI Citations</h2><span class="tag tag-red">3 gaps found</span></div><div class="gap-card"><div class="gap-topic">Best gaming keyboard India under Rs 2000 with warranty</div><div class="gap-why">This is the highest-volume gaming keyboard query from Indian buyers. Cosmic Byte has the best product answer for this query by price and availability. AI engines do not cite Cosmic Byte for it because no Cosmic Byte page is structured to answer this question directly.</div><div class="gap-fix"><b>What to do:</b> Publish a buyer guide: best Cosmic Byte gaming keyboards under Rs 1500 and Rs 2000, with a comparison table showing switch type, actuation force, backlight options, and warranty duration for each model. Open with a direct answer: here is the best Cosmic Byte keyboard under Rs 2000. Add FAQPage schema with 6 pricing-tier questions.</div></div><div class="gap-card"><div class="gap-topic">Gaming peripheral brand India Flipkart warranty and after-sales support</div><div class="gap-why">Warranty support is the top concern for Indian gaming peripheral buyers. AI engines route this query to consumer forums and Reddit because no brand website answers it directly for India.</div><div class="gap-fix"><b>What to do:</b> Publish an India warranty and support page: list warranty duration by product category, describe the claim process step by step, provide the support contact for India, and include a table showing which products have manufacturer warranty versus seller warranty on Flipkart and Amazon.</div></div><div class="gap-card"><div class="gap-topic">Cosmic Byte versus Zebronics versus Redragon gaming peripherals India</div><div class="gap-why">Indian buyers researching gaming peripherals compare these three brands explicitly on AI engines before purchasing. Whichever brand page owns this comparison gets cited for all three brand queries.</div><div class="gap-fix"><b>What to do:</b> Publish a comparison guide: Cosmic Byte versus Zebronics versus Redragon on build quality, price range, warranty, and India-specific availability. Frame Cosmic Byte's strengths honestly: widest SKU range, best Flipkart availability, most competitive pricing at the Rs 1000 to Rs 2000 range. Add schema markup.</div></div></div>
   <div class="improve-cta">
     <div class="improve-cta-text"><div class="label">Ready to improve?</div><div class="title">Improve Cosmic Byte's AI visibility &mdash; start free</div><div class="sub">Track citations across ChatGPT, Perplexity &amp; Gemini. Get a weekly fix plan.</div></div>
