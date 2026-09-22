@@ -91,6 +91,20 @@ a{color:inherit;text-decoration:none}
 .back-link a{font-size:0.85rem;color:var(--accent);font-weight:600}
 .footer{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:620px){.comp-grid{grid-template-columns:1fr}.wrap{padding:24px 16px 60px}.report-header{padding:24px 18px}.score-ring{width:72px;height:72px;font-size:1.5rem}.improve-cta{flex-direction:column}}
+
+.meth-box{background:#f8faff;border:1px solid #e0e7ff;border-radius:14px;padding:20px 24px;margin-bottom:28px}
+.meth-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#6366f1;margin-bottom:10px}
+.meth-intro{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.meth-factors{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.meth-factor{background:#fff;border:1px solid #e0e7ff;border-radius:8px;padding:10px 12px}
+.meth-factor-name{font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.meth-factor-desc{font-size:0.73rem;color:var(--muted);line-height:1.5}
+.source-tag{font-size:0.68rem;font-weight:600;color:#6366f1;background:#ede9fe;padding:1px 6px;border-radius:4px;margin-left:4px;vertical-align:middle}
+.analyst-note{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-radius:12px;padding:18px 22px;margin-bottom:28px}
+.analyst-note-label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#92400e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.analyst-note-text{font-size:0.88rem;color:#78350f;line-height:1.7}
+@media(max-width:620px){.meth-factors{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -117,6 +131,22 @@ a{color:inherit;text-decoration:none}
     <div class="ai-summary"><div class="ai-summary-label">What AI engines see today</div><p class="ai-summary-text">Cub McPaws is a recognized D2C kids footwear brand in India with a clear product identity around comfortable, ergonomically designed shoes for children. AI engines cite it occasionally for kids shoe queries in India. The gap is in health-led content: parents asking about foot development, podiatrist recommendations, and ergonomic footwear for toddlers are being answered by international sources rather than Cub McPaws.</p></div>
   </div>
   <div class="ai-context"><div class="ai-context-label">Why this score matters</div>Cub McPaws has established itself in the Indian D2C kids footwear market with a focus on soft soles and ergonomic design for young children. The brand appeals to parents who are thinking beyond just size and style, wanting shoes that support healthy foot development. This is a strong positioning with growing demand. The AI visibility gap is that the brand does not have enough published content to intercept parents early in their research journey. When a parent asks an AI engine about ergonomic shoes for toddlers India, or which kids shoe brand is good for flat-footed children, Cub McPaws rarely appears. The brand's own positioning makes it the right answer to these questions, but no page on the site makes that case in structured, extractable form.</div>
+  <div class="meth-box">
+  <div class="meth-label">How we scored this</div>
+  <p class="meth-intro">Our analysts reviewed the brand's website, schema markup, and indexed content against 6 weighted factors that determine how often AI engines like ChatGPT, Perplexity, and Gemini cite a brand. Each factor is scored 0 to 100. The overall score is the average.</p>
+  <div class="meth-factors">
+    <div class="meth-factor"><div class="meth-factor-name">Entity Clarity</div><div class="meth-factor-desc">Can AI engines identify who this brand is and what it does?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Extractable Structure</div><div class="meth-factor-desc">Are headings, tables, and text blocks parseable by AI crawlers?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Schema Markup</div><div class="meth-factor-desc">Is FAQPage, Organization, HowTo, or Article schema implemented?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">FAQ Coverage</div><div class="meth-factor-desc">Are the buyer questions AI engines receive actually answered?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Answer-Led Content</div><div class="meth-factor-desc">Does each page open with a direct answer to a stated question?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Specificity &amp; Evidence</div><div class="meth-factor-desc">Are specific numbers, patents, and verifiable claims present?</div></div>
+  </div>
+</div>
+  <div class="analyst-note">
+  <div class="analyst-note-label">&#128269; Analyst note</div>
+  <div class="analyst-note-text">Cub McPaws scores 52/100 in the Footwear category — identical to The Bear House in Clothing. Both brands share the same structural profile: good product identity, reasonable entity clarity, but weak FAQ infrastructure. The Footwear category health-query opportunity is larger than the Clothing equivalent: parents actively research foot development before buying kids shoes, and this research is happening on AI engines rather than search engines for an increasing share of Indian parents.</div>
+</div>
   <div class="section"><div class="section-head"><h2>Content Gaps Costing AI Citations</h2><span class="tag tag-red">3 gaps found</span></div><div class="gap-card"><div class="gap-topic">When should toddlers wear hard soled shoes India</div><div class="gap-why">This is one of the most searched parenting footwear questions in India. Parents want a clear answer backed by a credible source. AI engines route this to international parenting sites. Cub McPaws' product range is built around this exact transition but no page on the site answers the question.</div><div class="gap-fix"><b>What to do:</b> Publish a guide: soft sole versus hard sole shoes for Indian toddlers, when to make the switch. Include: soft soles recommended for ages 0 to 18 months while indoors, flexible thin soles for 18 months to 3 years as walking develops, structured soles from 3 years when outdoor activity increases. Add FAQPage schema with 5 transition questions. This page would be cited every time an Indian parent asks this question.</div></div><div class="gap-card"><div class="gap-topic">Best kids shoes India for healthy foot development podiatrist recommended</div><div class="gap-why">Parents who are health-conscious specifically look for podiatrist-backed recommendations. AI engines cannot find a Cub McPaws page making this case, so they cite international brands or generic parenting content instead.</div><div class="gap-fix"><b>What to do:</b> Get a paediatric podiatrist or orthopedic doctor to review Cub McPaws footwear design and publish the review on the site with the doctor's name and qualification. Publish a foot health guide co-authored with or reviewed by the doctor. This single piece of content would significantly lift AI citation frequency for health-led kids shoe queries in India.</div></div><div class="gap-card"><div class="gap-topic">Kids shoe size chart India age wise toddler to school age</div><div class="gap-why">Parents need a reliable Indian kids shoe size chart before buying online. Most existing charts are in UK or EU sizes without Indian conversion. A well-structured Indian size chart page from a kids shoe brand would own this query permanently.</div><div class="gap-fix"><b>What to do:</b> Publish a comprehensive Indian kids shoe size chart: age from 0 to 10 years, foot length in cm, Indian size, UK size, EU size, and which Cub McPaws model is recommended. Include a printable measuring guide. Add HowTo schema for the measuring steps. This page would generate consistent organic and AI traffic from every parent buying kids shoes online in India.</div></div></div>
   <div class="improve-cta">
     <div class="improve-cta-text"><div class="label">Ready to improve?</div><div class="title">Improve Cub McPaws's AI visibility &mdash; start free</div><div class="sub">Track citations across ChatGPT, Perplexity &amp; Gemini. Get a weekly fix plan.</div></div>
