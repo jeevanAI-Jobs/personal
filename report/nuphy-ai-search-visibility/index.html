@@ -91,6 +91,20 @@ a{color:inherit;text-decoration:none}
 .back-link a{font-size:0.85rem;color:var(--accent);font-weight:600}
 .footer{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:620px){.comp-grid{grid-template-columns:1fr}.wrap{padding:24px 16px 60px}.report-header{padding:24px 18px}.score-ring{width:72px;height:72px;font-size:1.5rem}.improve-cta{flex-direction:column}}
+
+.meth-box{background:#f8faff;border:1px solid #e0e7ff;border-radius:14px;padding:20px 24px;margin-bottom:28px}
+.meth-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#6366f1;margin-bottom:10px}
+.meth-intro{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.meth-factors{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.meth-factor{background:#fff;border:1px solid #e0e7ff;border-radius:8px;padding:10px 12px}
+.meth-factor-name{font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.meth-factor-desc{font-size:0.73rem;color:var(--muted);line-height:1.5}
+.source-tag{font-size:0.68rem;font-weight:600;color:#6366f1;background:#ede9fe;padding:1px 6px;border-radius:4px;margin-left:4px;vertical-align:middle}
+.analyst-note{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-radius:12px;padding:18px 22px;margin-bottom:28px}
+.analyst-note-label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#92400e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.analyst-note-text{font-size:0.88rem;color:#78350f;line-height:1.7}
+@media(max-width:620px){.meth-factors{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -117,6 +131,22 @@ a{color:inherit;text-decoration:none}
     <div class="ai-summary"><div class="ai-summary-label">What AI engines see today</div><p class="ai-summary-text">Nuphy has built strong AI visibility in the enthusiast mechanical keyboard community. Its Air75 and Air60 slim wireless keyboards are consistently cited by AI engines for compact keyboard recommendations globally. The gap is in India-specific content: pricing with duties, India availability, and comparison against Keychron for the Indian buyer who is choosing between the two brands.</p></div>
   </div>
   <div class="ai-context"><div class="ai-context-label">Why this score matters</div>Nuphy occupies a specific niche in the keyboard market that Keychron does not fully cover: slim, low-profile mechanical keyboards with a Mac aesthetic at competitive prices. The Air75 and Halo75 are well-regarded in the keyboard community and appear frequently on Reddit and YouTube, which translates into AI engine citations. The challenge for Nuphy is that it sits exactly between the budget gaming bracket and the premium enthusiast bracket. Indian buyers considering Nuphy are almost always also considering Keychron. This comparison is handled almost entirely by third-party reviews rather than Nuphy's own content. Nuphy's website does a good job with product specifications and community content but lacks structured FAQ and comparison content that would help AI engines recommend Nuphy specifically for the buyer who would benefit most from a low-profile slim mechanical keyboard.</div>
+  <div class="meth-box">
+  <div class="meth-label">How we scored this</div>
+  <p class="meth-intro">Our analysts reviewed the brand's website, schema markup, and indexed content against 6 weighted factors that determine how often AI engines like ChatGPT, Perplexity, and Gemini cite a brand. Each factor is scored 0 to 100. The overall score is the average.</p>
+  <div class="meth-factors">
+    <div class="meth-factor"><div class="meth-factor-name">Entity Clarity</div><div class="meth-factor-desc">Can AI engines identify who this brand is and what it does?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Extractable Structure</div><div class="meth-factor-desc">Are headings, tables, and text blocks parseable by AI crawlers?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Schema Markup</div><div class="meth-factor-desc">Is FAQPage, Organization, HowTo, or Article schema implemented?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">FAQ Coverage</div><div class="meth-factor-desc">Are the buyer questions AI engines receive actually answered?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Answer-Led Content</div><div class="meth-factor-desc">Does each page open with a direct answer to a stated question?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Specificity &amp; Evidence</div><div class="meth-factor-desc">Are specific numbers, patents, and verifiable claims present?</div></div>
+  </div>
+</div>
+  <div class="analyst-note">
+  <div class="analyst-note-label">&#128269; Analyst note</div>
+  <div class="analyst-note-text">Nuphy sits in the middle of the Equipment cluster at 54/100. The brand has strong product identity in the slim wireless keyboard niche and benefits from enthusiast community coverage on Reddit and Keyboard subreddits. Its main vulnerability is comparison queries: Indian buyers choosing between Nuphy and Keychron ask AI engines for guidance and neither brand's website answers the comparison directly. The brand that publishes this comparison first will own the query for both brands.</div>
+</div>
   <div class="section"><div class="section-head"><h2>Content Gaps Costing AI Citations</h2><span class="tag tag-red">3 gaps found</span></div><div class="gap-card"><div class="gap-topic">Nuphy Air75 versus Keychron K3 Pro India which to buy</div><div class="gap-why">This is the single highest-volume buyer decision query for both Nuphy and Keychron in India's enthusiast segment. Buyers who have narrowed to these two brands ask AI engines for a final recommendation. Neither brand's website answers this comparison directly, so AI engines cite Reddit threads.</div><div class="gap-fix"><b>What to do:</b> Publish a comparison page: Nuphy Air75 versus Keychron K3 Pro for Indian buyers. Cover: price difference in India, switch feel comparison, battery life, Mac compatibility, and who each keyboard is best for. Include a recommendation table by buyer type. Add FAQPage schema with 8 comparison questions. This page would own the comparison query for both brands.</div></div><div class="gap-card"><div class="gap-topic">Low profile mechanical keyboard worth it for long typing sessions India</div><div class="gap-why">Low-profile switch feel is the primary objection buyers raise before purchasing a slim keyboard. AI engines receive this question frequently and currently answer it from Reddit and YouTube reviews because no keyboard brand website addresses it authoritatively.</div><div class="gap-fix"><b>What to do:</b> Publish a guide: are low-profile mechanical keyboards worth it for programmers and writers. Use Nuphy keyboards as the reference. Cover: how low-profile actuation compares to standard MX switches for fatigue over a 6-hour session, who benefits most from low-profile form factor. Add FAQPage schema.</div></div><div class="gap-card"><div class="gap-topic">Nuphy keyboard India price shipping duty total cost</div><div class="gap-why">Same problem as Keychron: Indian buyers need total landed cost before deciding between a direct import and waiting for local availability. Nuphy does not publish this for India.</div><div class="gap-fix"><b>What to do:</b> Publish an India pricing page: show USD price, add shipping to India (approximately Rs 1000 to Rs 2000), add estimated import duty (10 to 20 percent), show total INR cost for the Air75, Air60, Halo75, and Field75. Update quarterly. This page captures all India cost queries and reduces purchase abandonment from Indian buyers.</div></div></div>
   <div class="improve-cta">
     <div class="improve-cta-text"><div class="label">Ready to improve?</div><div class="title">Improve Nuphy's AI visibility &mdash; start free</div><div class="sub">Track citations across ChatGPT, Perplexity &amp; Gemini. Get a weekly fix plan.</div></div>
