@@ -426,7 +426,7 @@ export async function handler(event, context) {
     analysisResults = await Promise.all(claudePromises);
   } catch (err) {
     console.error("[analyze-page] Claude error:", err.message);
-    return json(502, { error: "Could not complete the analysis. Please try again." });
+    return json(502, { error: "Could not complete the analysis. Please try again.", _debug: err.message });
   }
 
   const primaryData = analysisResults[0];
