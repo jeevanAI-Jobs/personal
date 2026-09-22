@@ -91,6 +91,20 @@ a{color:inherit;text-decoration:none}
 .back-link a{font-size:0.85rem;color:var(--accent);font-weight:600}
 .footer{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
 @media(max-width:620px){.comp-grid{grid-template-columns:1fr}.wrap{padding:24px 16px 60px}.report-header{padding:24px 18px}.score-ring{width:72px;height:72px;font-size:1.5rem}.improve-cta{flex-direction:column}}
+
+.meth-box{background:#f8faff;border:1px solid #e0e7ff;border-radius:14px;padding:20px 24px;margin-bottom:28px}
+.meth-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#6366f1;margin-bottom:10px}
+.meth-intro{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.meth-factors{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.meth-factor{background:#fff;border:1px solid #e0e7ff;border-radius:8px;padding:10px 12px}
+.meth-factor-name{font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:2px}
+.meth-factor-desc{font-size:0.73rem;color:var(--muted);line-height:1.5}
+.source-tag{font-size:0.68rem;font-weight:600;color:#6366f1;background:#ede9fe;padding:1px 6px;border-radius:4px;margin-left:4px;vertical-align:middle}
+.analyst-note{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-radius:12px;padding:18px 22px;margin-bottom:28px}
+.analyst-note-label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#92400e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.analyst-note-text{font-size:0.88rem;color:#78350f;line-height:1.7}
+@media(max-width:620px){.meth-factors{grid-template-columns:1fr 1fr}}
+
 </style>
 </head>
 <body>
@@ -117,6 +131,22 @@ a{color:inherit;text-decoration:none}
     <div class="ai-summary"><div class="ai-summary-label">What AI engines see today</div><p class="ai-summary-text">Keychron is one of the most cited keyboard brands globally on AI engines. When anyone asks ChatGPT which mechanical keyboard to buy, Keychron almost always appears. The visibility gap is specific to India: Indian buyer queries about pricing, availability, customs duties, warranty support, and whether to buy from keychron.com or a local reseller are not answered on the Keychron website. These are the queries that determine whether the Indian buyer completes the purchase.</p></div>
   </div>
   <div class="ai-context"><div class="ai-context-label">Why this score matters</div>Keychron occupies a rare position in the keyboard market: a brand that enthusiasts actively recommend to each other on Reddit, YouTube, and Twitter. This earned media translates directly into AI engine citations. ChatGPT, Perplexity, and Gemini cite Keychron consistently for mechanical keyboard queries globally. The gap shows up when the query becomes India-specific. A buyer in Bengaluru asking which Keychron keyboard to buy, what the import duty will be, whether the Indian warranty covers keyboard defects, or whether the Q1 Pro or K8 Pro is better for an Indian home office setup gets an answer sourced from Reddit threads and YouTube reviews rather than keychron.com. This is a significant conversion opportunity being left on the table. The brand's own website could own every India-specific buyer decision query with a single well-structured India FAQ page. The technical product documentation, the switch comparison guides, and the build guides are already exceptional. The India-specific commercial content does not exist.</div>
+  <div class="meth-box">
+  <div class="meth-label">How we scored this</div>
+  <p class="meth-intro">Our analysts reviewed the brand's website, schema markup, and indexed content against 6 weighted factors that determine how often AI engines like ChatGPT, Perplexity, and Gemini cite a brand. Each factor is scored 0 to 100. The overall score is the average.</p>
+  <div class="meth-factors">
+    <div class="meth-factor"><div class="meth-factor-name">Entity Clarity</div><div class="meth-factor-desc">Can AI engines identify who this brand is and what it does?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Extractable Structure</div><div class="meth-factor-desc">Are headings, tables, and text blocks parseable by AI crawlers?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Schema Markup</div><div class="meth-factor-desc">Is FAQPage, Organization, HowTo, or Article schema implemented?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">FAQ Coverage</div><div class="meth-factor-desc">Are the buyer questions AI engines receive actually answered?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Answer-Led Content</div><div class="meth-factor-desc">Does each page open with a direct answer to a stated question?</div></div>
+    <div class="meth-factor"><div class="meth-factor-name">Specificity &amp; Evidence</div><div class="meth-factor-desc">Are specific numbers, patents, and verifiable claims present?</div></div>
+  </div>
+</div>
+  <div class="analyst-note">
+  <div class="analyst-note-label">&#128269; Analyst note</div>
+  <div class="analyst-note-text">Keychron scores highest in the Equipment category at 68/100 — the third-highest score across all 15 brands audited. Its global entity strength is exceptional: years of Reddit community advocacy, YouTube reviews, and tech media coverage have made Keychron one of the most AI-cited hardware brands globally. The India-specific gap is entirely a content gap: no India pricing page, no reseller guide, no customs duty FAQ. These are fast to create and would immediately capture high-intent Indian buyer queries.</div>
+</div>
   <div class="section"><div class="section-head"><h2>Content Gaps Costing AI Citations</h2><span class="tag tag-red">3 gaps found</span></div><div class="gap-card"><div class="gap-topic">Keychron keyboard price in India with import duty and total cost</div><div class="gap-why">This is the highest-volume India-specific Keychron query on AI engines. Every Indian buyer considering Keychron first calculates the total landed cost: product price plus shipping plus import duty. AI engines currently pull this answer from Reddit threads and YouTube comments because Keychron does not publish it.</div><div class="gap-fix"><b>What to do:</b> Publish a landing cost calculator page for India: show the base price in USD, convert at current rate, add 10 to 20 percent import duty range, add shipping cost, and show the total in INR for the K8 Pro, Q1 Pro, V1, K2 Pro, and K3 Pro. Update quarterly. Add FAQPage schema with 6 pricing questions. This page captures every India cost query.</div></div><div class="gap-card"><div class="gap-topic">Best Keychron keyboard for Indian home office and programmers India</div><div class="gap-why">Indian tech workers and programmers are Keychron's highest-intent buyer segment in India. They ask AI engines which Keychron model to buy for coding, for extended typing sessions, for a 60 percent versus full-size layout. No Keychron page answers this for the Indian context.</div><div class="gap-fix"><b>What to do:</b> Publish a buyer guide: best Keychron keyboards for Indian programmers and home office workers. Cover the top 4 use cases with a recommended model for each: daily coding, home office productivity, gaming plus work, and compact travel setup. Include rupee prices. Add FAQPage schema. This page would own the Indian programmer keyboard query entirely.</div></div><div class="gap-card"><div class="gap-topic">Keychron India warranty and official resellers list</div><div class="gap-why">Warranty and after-sales support are the top two objections Indian buyers raise when considering a direct import. AI engines route this query to Reddit because no Keychron page answers it for India.</div><div class="gap-fix"><b>What to do:</b> Create a dedicated India support page: list every authorized reseller in India with city and contact, state clearly whether warranty transfers to India-based buyers, describe the RMA process from India, and provide an India-specific support email or WhatsApp contact. Add FAQPage schema with 8 warranty questions.</div></div></div>
   <div class="improve-cta">
     <div class="improve-cta-text"><div class="label">Ready to improve?</div><div class="title">Improve Keychron's AI visibility &mdash; start free</div><div class="sub">Track citations across ChatGPT, Perplexity &amp; Gemini. Get a weekly fix plan.</div></div>
