@@ -22,10 +22,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#6366f1;--text:#111827;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;--font-sans:'DM Sans',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:1000px}
+:root{--accent:#6366f1;--text:#111827;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;--font-sans:'DM Sans',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:1040px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;line-height:1.6}
 a{color:inherit;text-decoration:none}
+button{font-family:var(--font-sans);cursor:pointer;border:none;background:none}
 .nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
 .nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
@@ -43,36 +44,57 @@ a{color:inherit;text-decoration:none}
 .sec-label{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .sec-title{font-family:var(--font-serif);font-size:1.4rem;margin-bottom:8px}
 .sec-sub{font-size:0.9rem;color:var(--muted);margin-bottom:28px;line-height:1.6}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-bottom:48px}
-.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 16px;transition:box-shadow 0.15s,transform 0.15s}
+
+/* Category overview grid */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:52px}
+.cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;transition:box-shadow 0.15s,transform 0.15s}
 .cat-card--active{cursor:pointer;border-color:#6366f1}
-.cat-card--active:hover{box-shadow:0 6px 20px rgba(99,102,241,0.12);transform:translateY(-2px)}
-.cat-card--soon{opacity:0.65}
-.cat-card-name{font-weight:700;font-size:0.92rem;margin-bottom:4px}
-.cat-card-meta{font-size:0.78rem;color:var(--muted);margin-bottom:10px}
-.cat-card-badge{display:inline-block;font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:100px;background:#ede9fe;color:#5b21b6}
+.cat-card--active:hover,.cat-card--active:focus{box-shadow:0 6px 20px rgba(99,102,241,0.14);transform:translateY(-2px);outline:none}
+.cat-card--active.is-selected{background:#ede9fe;border-color:#6366f1;box-shadow:0 0 0 2px #6366f1}
+.cat-card--soon{opacity:0.6;cursor:default}
+.cat-card-name{font-weight:700;font-size:0.9rem;margin-bottom:3px}
+.cat-card-meta{font-size:0.75rem;color:var(--muted);margin-bottom:10px}
+.cat-card-badge{display:inline-block;font-size:0.67rem;font-weight:700;padding:2px 8px;border-radius:100px;background:#ede9fe;color:#5b21b6}
 .cat-card-badge--soon{background:#f3f4f6;color:#9ca3af}
-.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:48px}
+
+/* Filter pills */
+.filter-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.fpill{padding:7px 16px;border-radius:100px;border:1.5px solid var(--border);font-size:0.83rem;font-weight:600;color:var(--muted);background:var(--card);transition:all 0.15s}
+.fpill:hover{border-color:#6366f1;color:#6366f1}
+.fpill--active{background:#6366f1;border-color:#6366f1;color:#fff}
+.fpill-count{display:inline-block;background:rgba(255,255,255,0.25);border-radius:100px;padding:0 6px;font-size:0.75rem;margin-left:3px}
+.fpill:not(.fpill--active) .fpill-count{background:#f3f4f6;color:var(--muted)}
+
+/* Brand grid */
+.brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:16px;margin-bottom:48px}
 .brand-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:box-shadow 0.15s,transform 0.15s;display:block}
 .brand-card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.09);transform:translateY(-2px)}
+.brand-card.hidden{display:none}
 .brand-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
 .brand-name{font-weight:700;font-size:1rem;margin-bottom:2px}
 .brand-domain{font-size:0.8rem;color:var(--muted)}
 .card-st{display:inline-block;margin-top:5px;font-size:0.72rem;font-weight:700;color:#b45309;background:#fef3c7;border:1px solid #fde68a;padding:2px 8px;border-radius:100px}
 .brand-score{flex-shrink:0;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;color:#fff}
-.brand-cat{font-size:0.78rem;color:var(--muted);margin-bottom:6px}
-.brand-verdict{font-size:0.87rem;line-height:1.5;margin-bottom:14px}
+.brand-cat-tag{font-size:0.75rem;font-weight:600;color:var(--accent);background:#ede9fe;display:inline-block;padding:2px 8px;border-radius:100px;margin-bottom:8px}
+.brand-verdict{font-size:0.87rem;line-height:1.5;margin-bottom:14px;color:var(--text)}
 .brand-cta{font-size:0.82rem;font-weight:700;color:var(--accent)}
+.no-results{display:none;text-align:center;padding:48px 24px;color:var(--muted);font-size:0.95rem;grid-column:1/-1}
+.no-results.show{display:block}
+
+/* CTA block */
 .cta-block{background:linear-gradient(135deg,#312e81 0%,#4338ca 100%);border-radius:16px;padding:36px;text-align:center;color:#fff;margin-bottom:48px}
 .cta-block h2{font-family:var(--font-serif);font-size:1.5rem;margin-bottom:12px}
 .cta-block p{font-size:0.95rem;color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 24px;line-height:1.65}
 .btn-white{display:inline-block;padding:12px 26px;border-radius:9px;background:#fff;color:#4338ca;font-weight:700;font-size:0.9rem}
+
+/* FAQ */
 .faq-section h2{font-family:var(--font-serif);font-size:1.3rem;margin-bottom:20px}
 .faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:10px}
 .faq-q{font-weight:600;font-size:0.9rem;margin-bottom:8px}
 .faq-a{font-size:0.87rem;color:var(--muted);line-height:1.65}
+
 .footer{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
-@media(max-width:600px){.hero{padding:48px 20px}.wrap{padding:32px 16px 60px}.hero-stats{gap:20px}}
+@media(max-width:600px){.hero{padding:48px 20px}.wrap{padding:32px 16px 60px}.hero-stats{gap:20px}.cat-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -87,8 +109,8 @@ a{color:inherit;text-decoration:none}
   <p class="hero-sub">We analyzed D2C brands across all Shark Tank India categories to show exactly where AI engines are sending buyers instead of you.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-num">20</div><div class="hero-stat-label">Categories covered</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Reports published</div></div>
     <div class="hero-stat"><div class="hero-stat-num">319+</div><div class="hero-stat-label">Brands tracked</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">202+</div><div class="hero-stat-label">Shark Tank deals</div></div>
     <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">AI visibility factors</div></div>
   </div>
   <a href="https://dashboard.jeevanai.co.in/auth/login" class="hero-cta">Check your brand free &rarr;</a>
@@ -97,12 +119,12 @@ a{color:inherit;text-decoration:none}
 <div class="wrap">
   <div class="sec-label">Browse by category</div>
   <h2 class="sec-title">All Shark Tank India Categories</h2>
-  <p class="sec-sub">Reports are live for Baby Care. More categories publishing weekly — Baby Care brands are below.</p>
-  <div class="cat-grid"><a href="#baby-care" class="cat-card cat-card--active">
+  <p class="sec-sub">Click an active category to filter reports. More categories publishing weekly.</p>
+  <div class="cat-grid" id="catGrid"><button class="cat-card cat-card--active" data-filter="baby-care" onclick="filterCat('baby-care')">
   <div class="cat-card-name">Baby Care</div>
   <div class="cat-card-meta">5 brands &bull; 3 deals</div>
-  <div class="cat-card-badge">Reports live</div>
-</a><div class="cat-card cat-card--soon">
+  <div class="cat-card-badge">3 reports live</div>
+</button><div class="cat-card cat-card--soon">
   <div class="cat-card-name">Beverages</div>
   <div class="cat-card-meta">24 brands &bull; 11 deals</div>
   <div class="cat-card-badge cat-card-badge--soon">Coming soon</div>
@@ -180,35 +202,39 @@ a{color:inherit;text-decoration:none}
   <div class="cat-card-badge cat-card-badge--soon">Coming soon</div>
 </div></div>
 
-  <div id="baby-care">
-    <div class="sec-label">Baby Care · Reports live</div>
-    <h2 class="sec-title">Baby Care Brand AI Visibility Scores</h2>
-    <p class="sec-sub">Cloth diapers, muslin essentials and sustainable baby products — which brands AI engines actually recommend when parents ask.</p>
-    <div class="brand-grid"><a href="/report/a-toddler-thing-ai-search-visibility/" class="brand-card">
+  <div class="sec-label">AI Visibility Reports</div>
+  <h2 class="sec-title" id="reportsHeading">All Reports <span id="reportCount" style="font-size:1rem;color:var(--muted);font-family:var(--font-sans);font-weight:400">(3 published)</span></h2>
+  <p class="sec-sub" id="reportsSub">Cloth diapers, muslin essentials and sustainable baby products — which brands AI engines actually recommend.</p>
+
+  <div class="filter-bar" id="filterBar"><button class="fpill fpill--active" data-filter="all" onclick="filterCat('all')">All reports</button><button class="fpill" data-filter="baby-care" onclick="filterCat('baby-care')">Baby Care <span class="fpill-count">3</span></button></div>
+
+  <div class="brand-grid" id="brandGrid">
+    <a href="/report/a-toddler-thing-ai-search-visibility/" class="brand-card" data-category="baby-care">
   <div class="brand-card-top">
     <div><div class="brand-name">A Toddler Thing</div><div class="brand-domain">atoddlerthing.com</div><span class="card-st">🦈 Shark Tank India Season 3</span></div>
     <div class="brand-score" style="background:#d97706">48</div>
   </div>
-  <div class="brand-cat">Baby Care</div>
+  <div class="brand-cat-tag">Baby Care</div>
   <div class="brand-verdict">A Toddler Thing's Shark Tank story is invisible to AI engines</div>
   <div class="brand-cta">View Mini Audit &rarr;</div>
-</a><a href="/report/superbottoms-ai-search-visibility/" class="brand-card">
+</a><a href="/report/superbottoms-ai-search-visibility/" class="brand-card" data-category="baby-care">
   <div class="brand-card-top">
     <div><div class="brand-name">SuperBottoms</div><div class="brand-domain">superbottoms.com</div></div>
     <div class="brand-score" style="background:#059669">71</div>
   </div>
-  <div class="brand-cat">Baby Care</div>
+  <div class="brand-cat-tag">Baby Care</div>
   <div class="brand-verdict">SuperBottoms leads cloth diaper AI citations but loses comparison queries</div>
   <div class="brand-cta">View Mini Audit &rarr;</div>
-</a><a href="/report/bumberry-ai-search-visibility/" class="brand-card">
+</a><a href="/report/bumberry-ai-search-visibility/" class="brand-card" data-category="baby-care">
   <div class="brand-card-top">
     <div><div class="brand-name">Bumberry</div><div class="brand-domain">bumberry.com</div></div>
     <div class="brand-score" style="background:#d97706">58</div>
   </div>
-  <div class="brand-cat">Baby Care</div>
+  <div class="brand-cat-tag">Baby Care</div>
   <div class="brand-verdict">Bumberry's 13-year pioneer story earns zero AI citations today</div>
   <div class="brand-cta">View Mini Audit &rarr;</div>
-</a></div>
+</a>
+    <div class="no-results" id="noResults">No reports in this category yet. Check back soon.</div>
   </div>
 
   <div class="cta-block">
@@ -242,4 +268,42 @@ a{color:inherit;text-decoration:none}
   <a href="/index.html" style="color:inherit">Jeevan AI</a> &middot; AI visibility platform &middot;
   <a href="/reports/" style="color:var(--accent)">All reports</a> &middot; <a href="/blog/" style="color:inherit">Blog</a>
 </footer>
+
+<script>
+var current = 'all';
+
+function filterCat(slug) {
+  current = slug;
+  var cards = document.querySelectorAll('.brand-card');
+  var pills = document.querySelectorAll('.fpill');
+  var catBtns = document.querySelectorAll('.cat-card--active');
+  var visible = 0;
+
+  // update pills
+  pills.forEach(function(p) {
+    p.classList.toggle('fpill--active', p.dataset.filter === slug);
+  });
+
+  // update category card highlight
+  catBtns.forEach(function(b) {
+    b.classList.toggle('is-selected', slug !== 'all' && b.dataset.filter === slug);
+  });
+
+  // show/hide brand cards
+  cards.forEach(function(c) {
+    if (slug === 'all' || c.dataset.category === slug) {
+      c.classList.remove('hidden');
+      visible++;
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+
+  // no results
+  document.getElementById('noResults').classList.toggle('show', visible === 0);
+
+  // update count label
+  document.getElementById('reportCount').textContent = '(' + visible + ' report' + (visible !== 1 ? 's' : '') + ')';
+}
+</script>
 </body></html>
