@@ -10,14 +10,14 @@
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://jeevanai.co.in/reports/">
 <meta property="og:title" content="AI Visibility Reports — Shark Tank India Brands | Jeevan AI">
-<meta property="og:description" content="AI search visibility mini audits for Shark Tank India brands across Baby Care, Healthy Food, Skin Care, Clothing and 16 more categories.">
+<meta property="og:description" content="AI search visibility mini audits for Shark Tank India brands across Baby Care, Beverages, Skin Care, Clothing and 16 more categories.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://jeevanai.co.in/reports/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"AI Visibility Reports for Shark Tank India Brands","description":"AI search visibility scores and mini audits for Shark Tank India D2C brands across 20 categories.","url":"https://jeevanai.co.in/reports/","publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which Shark Tank India brands are visible on ChatGPT and Perplexity?","acceptedAnswer":{"@type":"Answer","text":"Based on Jeevan AI analysis, most Shark Tank India brands score below 60 out of 100 on AI visibility. In the Baby Care category, SuperBottoms leads at 71, followed by Bumberry at 58 and A Toddler Thing at 48. The primary gap for most D2C brands is the absence of FAQ schema and conversational content that AI engines need to extract answers from."}},
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which Shark Tank India brands are visible on ChatGPT and Perplexity?","acceptedAnswer":{"@type":"Answer","text":"Based on Jeevan AI analysis, most Shark Tank India brands score below 60 out of 100 on AI visibility. In Baby Care, SuperBottoms leads at 71. In Beverages, Coolberg leads at 64. The primary gap for most D2C brands is the absence of FAQ schema and conversational content that AI engines need to extract and cite."}},
 {"@type":"Question","name":"What is AI visibility and why does it matter for Indian D2C brands?","acceptedAnswer":{"@type":"Answer","text":"AI visibility measures how often and how accurately AI engines like ChatGPT, Perplexity, Gemini and Google AI Mode mention and recommend your brand when buyers ask category questions. For Indian D2C brands, AI visibility is critical because an increasing share of purchase research now starts with an AI query rather than a Google search."}},
 {"@type":"Question","name":"How does Jeevan AI measure AI visibility for brands?","acceptedAnswer":{"@type":"Answer","text":"Jeevan AI scores brands on six factors: Entity Clarity, Extractable Structure, Schema Markup, FAQ Coverage, Answer-Led Content, and Specificity and Evidence. Each factor scores 0 to 100. The overall score reflects how reliably AI engines can identify, verify, and cite the brand across ChatGPT, Perplexity, Gemini and Google AI Mode."}},
 {"@type":"Question","name":"Can a Shark Tank India brand improve its AI visibility score?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Shark Tank India backstory is a powerful credibility signal that AI engines would cite frequently, but only if it is structured correctly on the brand's own site. Adding a dedicated brand story page with founder narrative, investment details, and FAQPage schema can improve AI visibility scores by 15 to 25 points within 6 to 8 weeks."}},
-{"@type":"Question","name":"What content changes improve a brand's ChatGPT citation rate fastest?","acceptedAnswer":{"@type":"Answer","text":"The three fastest-impact changes are: adding FAQPage schema to category and home pages, publishing a dedicated comparison page answering buyer questions like brand versus competitor, and creating a brand entity page with specific trust signals such as reviews, certifications, and awards. These typically show improvement in 4 to 8 weeks."}}]}</script>
+{"@type":"Question","name":"What content changes improve a brand's ChatGPT citation rate fastest?","acceptedAnswer":{"@type":"Answer","text":"The three fastest-impact changes are: adding FAQPage schema to category and home pages, publishing a dedicated comparison page answering buyer questions like brand versus competitor, and creating a brand entity page with specific trust signals. These typically show improvement in 4 to 8 weeks."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
@@ -42,7 +42,6 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
 .sec-label{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .sec-title{font-family:var(--font-serif);font-size:1.4rem;margin-bottom:8px}
 .sec-sub{font-size:0.9rem;color:var(--muted);margin-bottom:28px;line-height:1.6}
-/* Category grid */
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-bottom:52px}
 .cat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:left;transition:box-shadow 0.15s,transform 0.15s}
 .cat-card--active{cursor:pointer;border-color:#a5b4fc}
@@ -53,21 +52,18 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
 .cat-card-meta{font-size:0.74rem;color:var(--muted);margin-bottom:10px}
 .cat-card-badge{display:inline-block;font-size:0.67rem;font-weight:700;padding:2px 8px;border-radius:100px;background:#ede9fe;color:#5b21b6}
 .cat-card-badge--soon{background:#f3f4f6;color:#9ca3af}
-/* Filter pills */
 .filter-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
 .fpill{padding:7px 16px;border-radius:100px;border:1.5px solid var(--border);font-size:0.83rem;font-weight:600;color:var(--muted);background:var(--card);transition:all 0.15s}
 .fpill:hover{border-color:#6366f1;color:#6366f1}
 .fpill--active{background:#6366f1;border-color:#6366f1;color:#fff}
 .fpill-count{display:inline-block;background:rgba(255,255,255,0.25);border-radius:100px;padding:0 6px;font-size:0.75rem;margin-left:3px}
 .fpill:not(.fpill--active) .fpill-count{background:#f3f4f6;color:var(--muted)}
-/* Brand cards */
 .brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:16px;margin-bottom:48px}
 .brand-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;transition:box-shadow 0.15s,transform 0.15s;display:block}
 .brand-card:hover{box-shadow:0 8px 28px rgba(0,0,0,0.09);transform:translateY(-2px)}
 .brand-card.hidden{display:none}
 .brand-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
 .brand-card-info{display:flex;align-items:flex-start;gap:12px;flex:1;min-width:0}
-/* Logo */
 .brand-logo-wrap{flex-shrink:0;width:48px;height:48px}
 .brand-logo{width:48px;height:48px;border-radius:10px;object-fit:contain;border:1px solid var(--border);background:#fff;padding:4px}
 .brand-logo-fallback{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:1rem;font-weight:700;align-items:center;justify-content:center;flex-shrink:0}
@@ -80,12 +76,10 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
 .brand-cta{font-size:0.82rem;font-weight:700;color:var(--accent)}
 .no-results{display:none;text-align:center;padding:48px 24px;color:var(--muted);font-size:0.95rem;grid-column:1/-1}
 .no-results.show{display:block}
-/* CTA */
 .cta-block{background:linear-gradient(135deg,#312e81 0%,#4338ca 100%);border-radius:16px;padding:36px;text-align:center;color:#fff;margin-bottom:48px}
 .cta-block h2{font-family:var(--font-serif);font-size:1.5rem;margin-bottom:12px}
 .cta-block p{font-size:0.95rem;color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 24px;line-height:1.65}
 .btn-white{display:inline-block;padding:12px 26px;border-radius:9px;background:#fff;color:#4338ca;font-weight:700;font-size:0.9rem}
-/* FAQ */
 .faq-section h2{font-family:var(--font-serif);font-size:1.3rem;margin-bottom:20px}
 .faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:10px}
 .faq-q{font-weight:600;font-size:0.9rem;margin-bottom:8px}
@@ -99,20 +93,18 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
   <a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
   <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Check your brand</a>
 </div></nav>
-
 <div class="hero">
   <div class="hero-eye">Mini Audits by Team Jeevan AI</div>
   <h1>How visible are Shark Tank India brands on ChatGPT, Perplexity and Gemini?</h1>
   <p class="hero-sub">We analyzed D2C brands across all Shark Tank India categories to show exactly where AI engines are sending buyers instead of you.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-num">20</div><div class="hero-stat-label">Categories covered</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">Reports published</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">Reports published</div></div>
     <div class="hero-stat"><div class="hero-stat-num">319+</div><div class="hero-stat-label">Brands tracked</div></div>
     <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">AI visibility factors</div></div>
   </div>
   <a href="https://dashboard.jeevanai.co.in/auth/login" class="hero-cta">Check your brand free &rarr;</a>
 </div>
-
 <div class="wrap">
   <div class="sec-label">Browse by category</div>
   <h2 class="sec-title">All Shark Tank India Categories</h2>
@@ -121,11 +113,11 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
   <div class="cat-card-name">Baby Care</div>
   <div class="cat-card-meta">5 brands &bull; 3 deals</div>
   <div class="cat-card-badge">3 reports live</div>
-</button><div class="cat-card cat-card--soon">
+</button><button class="cat-card cat-card--active" data-filter="beverages" onclick="filterCat('beverages')">
   <div class="cat-card-name">Beverages</div>
   <div class="cat-card-meta">24 brands &bull; 11 deals</div>
-  <div class="cat-card-badge cat-card-badge--soon">Coming soon</div>
-</div><div class="cat-card cat-card--soon">
+  <div class="cat-card-badge">3 reports live</div>
+</button><div class="cat-card cat-card--soon">
   <div class="cat-card-name">Clothing</div>
   <div class="cat-card-meta">26 brands &bull; 21 deals</div>
   <div class="cat-card-badge cat-card-badge--soon">Coming soon</div>
@@ -198,28 +190,17 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
   <div class="cat-card-meta">28 brands &bull; 16 deals</div>
   <div class="cat-card-badge cat-card-badge--soon">Coming soon</div>
 </div></div>
-
   <div class="sec-label">AI Visibility Reports</div>
-  <h2 class="sec-title">All Reports <span id="reportCount" style="font-size:1rem;color:var(--muted);font-family:var(--font-sans);font-weight:400">(3 published)</span></h2>
+  <h2 class="sec-title">All Reports <span id="reportCount" style="font-size:1rem;color:var(--muted);font-family:var(--font-sans);font-weight:400">(6 published)</span></h2>
   <p class="sec-sub">Which brands AI engines actually recommend when buyers ask.</p>
-  <div class="filter-bar" id="filterBar"><button class="fpill fpill--active" data-filter="all" onclick="filterCat('all')">All reports</button><button class="fpill" data-filter="baby-care" onclick="filterCat('baby-care')">Baby Care <span class="fpill-count">3</span></button></div>
+  <div class="filter-bar" id="filterBar"><button class="fpill fpill--active" data-filter="all" onclick="filterCat('all')">All reports</button><button class="fpill" data-filter="baby-care" onclick="filterCat('baby-care')">Baby Care <span class="fpill-count">3</span></button><button class="fpill" data-filter="beverages" onclick="filterCat('beverages')">Beverages <span class="fpill-count">3</span></button></div>
   <div class="brand-grid" id="brandGrid">
     <a href="/report/a-toddler-thing-ai-search-visibility/" class="brand-card" data-category="baby-care">
   <div class="brand-card-top">
-    <div class="brand-card-info">
-      <div class="brand-logo-wrap">
-  <img class="brand-logo"
-    src="https://logo.clearbit.com/atoddlerthing.com"
-    alt="A Toddler Thing logo"
-    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="brand-card-info"><div class="brand-logo-wrap">
+  <img class="brand-logo" src="https://logo.clearbit.com/atoddlerthing.com" alt="A Toddler Thing logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
   <div class="brand-logo-fallback" style="display:none">AT</div>
-</div>
-      <div>
-        <div class="brand-name">A Toddler Thing</div>
-        <div class="brand-domain">atoddlerthing.com</div>
-        <span class="card-st">🦈 Shark Tank India Season 3</span>
-      </div>
-    </div>
+</div><div><div class="brand-name">A Toddler Thing</div><div class="brand-domain">atoddlerthing.com</div><span class="card-st">🦈 Shark Tank India Season 3</span></div></div>
     <div class="brand-score" style="background:#d97706">48</div>
   </div>
   <div class="brand-cat-tag">Baby Care</div>
@@ -227,20 +208,10 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
   <div class="brand-cta">View Mini Audit &rarr;</div>
 </a><a href="/report/superbottoms-ai-search-visibility/" class="brand-card" data-category="baby-care">
   <div class="brand-card-top">
-    <div class="brand-card-info">
-      <div class="brand-logo-wrap">
-  <img class="brand-logo"
-    src="https://logo.clearbit.com/superbottoms.com"
-    alt="SuperBottoms logo"
-    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="brand-card-info"><div class="brand-logo-wrap">
+  <img class="brand-logo" src="https://logo.clearbit.com/superbottoms.com" alt="SuperBottoms logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
   <div class="brand-logo-fallback" style="display:none">SU</div>
-</div>
-      <div>
-        <div class="brand-name">SuperBottoms</div>
-        <div class="brand-domain">superbottoms.com</div>
-        
-      </div>
-    </div>
+</div><div><div class="brand-name">SuperBottoms</div><div class="brand-domain">superbottoms.com</div></div></div>
     <div class="brand-score" style="background:#059669">71</div>
   </div>
   <div class="brand-cat-tag">Baby Care</div>
@@ -248,77 +219,78 @@ a{color:inherit;text-decoration:none} button{font-family:var(--font-sans);cursor
   <div class="brand-cta">View Mini Audit &rarr;</div>
 </a><a href="/report/bumberry-ai-search-visibility/" class="brand-card" data-category="baby-care">
   <div class="brand-card-top">
-    <div class="brand-card-info">
-      <div class="brand-logo-wrap">
-  <img class="brand-logo"
-    src="https://logo.clearbit.com/bumberry.com"
-    alt="Bumberry logo"
-    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="brand-card-info"><div class="brand-logo-wrap">
+  <img class="brand-logo" src="https://logo.clearbit.com/bumberry.com" alt="Bumberry logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
   <div class="brand-logo-fallback" style="display:none">BU</div>
-</div>
-      <div>
-        <div class="brand-name">Bumberry</div>
-        <div class="brand-domain">bumberry.com</div>
-        
-      </div>
-    </div>
+</div><div><div class="brand-name">Bumberry</div><div class="brand-domain">bumberry.com</div></div></div>
     <div class="brand-score" style="background:#d97706">58</div>
   </div>
   <div class="brand-cat-tag">Baby Care</div>
   <div class="brand-verdict">13-year pioneer story earns zero AI citations today</div>
   <div class="brand-cta">View Mini Audit &rarr;</div>
+</a><a href="/report/3-sisters-drinks-ai-search-visibility/" class="brand-card" data-category="beverages">
+  <div class="brand-card-top">
+    <div class="brand-card-info"><div class="brand-logo-wrap">
+  <img class="brand-logo" src="https://logo.clearbit.com/3sistersdrinks.com" alt="3 Sisters Drinks logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="brand-logo-fallback" style="display:none">3S</div>
+</div><div><div class="brand-name">3 Sisters Drinks</div><div class="brand-domain">3sistersdrinks.com</div><span class="card-st">🦈 Shark Tank India Season 5</span></div></div>
+    <div class="brand-score" style="background:#d97706">42</div>
+  </div>
+  <div class="brand-cat-tag">Beverages</div>
+  <div class="brand-verdict">Real distribution, zero AI discoverability</div>
+  <div class="brand-cta">View Mini Audit &rarr;</div>
+</a><a href="/report/coolberg-ai-search-visibility/" class="brand-card" data-category="beverages">
+  <div class="brand-card-top">
+    <div class="brand-card-info"><div class="brand-logo-wrap">
+  <img class="brand-logo" src="https://logo.clearbit.com/coolberg.com" alt="Coolberg logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="brand-logo-fallback" style="display:none">CO</div>
+</div><div><div class="brand-name">Coolberg</div><div class="brand-domain">coolberg.com</div></div></div>
+    <div class="brand-score" style="background:#d97706">64</div>
+  </div>
+  <div class="brand-cat-tag">Beverages</div>
+  <div class="brand-verdict">Leads non-alcoholic beer citations but loses buyer advisory queries</div>
+  <div class="brand-cta">View Mini Audit &rarr;</div>
+</a><a href="/report/jimmys-cocktails-ai-search-visibility/" class="brand-card" data-category="beverages">
+  <div class="brand-card-top">
+    <div class="brand-card-info"><div class="brand-logo-wrap">
+  <img class="brand-logo" src="https://logo.clearbit.com/jimmyscocktails.com" alt="Jimmy's Cocktails logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="brand-logo-fallback" style="display:none">JC</div>
+</div><div><div class="brand-name">Jimmy's Cocktails</div><div class="brand-domain">jimmyscocktails.com</div></div></div>
+    <div class="brand-score" style="background:#d97706">57</div>
+  </div>
+  <div class="brand-cat-tag">Beverages</div>
+  <div class="brand-verdict">Wins mocktail queries but misses non-alcoholic beer searches</div>
+  <div class="brand-cta">View Mini Audit &rarr;</div>
 </a>
     <div class="no-results" id="noResults">No reports in this category yet. Check back soon.</div>
   </div>
-
   <div class="cta-block">
     <h2>Is your brand on this list?</h2>
     <p>Jeevan AI tracks your brand every week across ChatGPT, Perplexity, Gemini and Google AI Mode. See the gaps. Fix them before competitors do.</p>
     <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-white">Run a free brand scan &rarr;</a>
   </div>
-
-  <div class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-  <div class="faq-q">Which Shark Tank India brands are visible on ChatGPT and Perplexity?</div>
-  <div class="faq-a">Based on Jeevan AI analysis, most Shark Tank India brands score below 60 out of 100 on AI visibility. In the Baby Care category, SuperBottoms leads at 71, followed by Bumberry at 58 and A Toddler Thing at 48. The primary gap for most D2C brands is the absence of FAQ schema and conversational content that AI engines need to extract answers from.</div>
-</div><div class="faq-item">
-  <div class="faq-q">What is AI visibility and why does it matter for Indian D2C brands?</div>
-  <div class="faq-a">AI visibility measures how often and how accurately AI engines like ChatGPT, Perplexity, Gemini and Google AI Mode mention and recommend your brand when buyers ask category questions. For Indian D2C brands, AI visibility is critical because an increasing share of purchase research now starts with an AI query rather than a Google search.</div>
-</div><div class="faq-item">
-  <div class="faq-q">How does Jeevan AI measure AI visibility for brands?</div>
-  <div class="faq-a">Jeevan AI scores brands on six factors: Entity Clarity, Extractable Structure, Schema Markup, FAQ Coverage, Answer-Led Content, and Specificity and Evidence. Each factor scores 0 to 100. The overall score reflects how reliably AI engines can identify, verify, and cite the brand across ChatGPT, Perplexity, Gemini and Google AI Mode.</div>
-</div><div class="faq-item">
-  <div class="faq-q">Can a Shark Tank India brand improve its AI visibility score?</div>
-  <div class="faq-a">Yes. The Shark Tank India backstory is a powerful credibility signal that AI engines would cite frequently, but only if it is structured correctly on the brand's own site. Adding a dedicated brand story page with founder narrative, investment details, and FAQPage schema can improve AI visibility scores by 15 to 25 points within 6 to 8 weeks.</div>
-</div><div class="faq-item">
-  <div class="faq-q">What content changes improve a brand's ChatGPT citation rate fastest?</div>
-  <div class="faq-a">The three fastest-impact changes are: adding FAQPage schema to category and home pages, publishing a dedicated comparison page answering buyer questions like brand versus competitor, and creating a brand entity page with specific trust signals such as reviews, certifications, and awards. These typically show improvement in 4 to 8 weeks.</div>
+  <div class="faq-section"><h2>Frequently Asked Questions</h2><div class="faq-item"><div class="faq-q">Which Shark Tank India brands are visible on ChatGPT and Perplexity?</div><div class="faq-a">Based on Jeevan AI analysis, most Shark Tank India brands score below 60 out of 100 on AI visibility. In Baby Care, SuperBottoms leads at 71. In Beverages, Coolberg leads at 64. The primary gap for most D2C brands is the absence of FAQ schema and conversational content that AI engines need to extract and cite.</div></div><div class="faq-item"><div class="faq-q">What is AI visibility and why does it matter for Indian D2C brands?</div><div class="faq-a">AI visibility measures how often and how accurately AI engines like ChatGPT, Perplexity, Gemini and Google AI Mode mention and recommend your brand when buyers ask category questions. For Indian D2C brands, AI visibility is critical because an increasing share of purchase research now starts with an AI query rather than a Google search.</div></div><div class="faq-item"><div class="faq-q">How does Jeevan AI measure AI visibility for brands?</div><div class="faq-a">Jeevan AI scores brands on six factors: Entity Clarity, Extractable Structure, Schema Markup, FAQ Coverage, Answer-Led Content, and Specificity and Evidence. Each factor scores 0 to 100. The overall score reflects how reliably AI engines can identify, verify, and cite the brand across ChatGPT, Perplexity, Gemini and Google AI Mode.</div></div><div class="faq-item"><div class="faq-q">Can a Shark Tank India brand improve its AI visibility score?</div><div class="faq-a">Yes. The Shark Tank India backstory is a powerful credibility signal that AI engines would cite frequently, but only if it is structured correctly on the brand's own site. Adding a dedicated brand story page with founder narrative, investment details, and FAQPage schema can improve AI visibility scores by 15 to 25 points within 6 to 8 weeks.</div></div><div class="faq-item"><div class="faq-q">What content changes improve a brand's ChatGPT citation rate fastest?</div><div class="faq-a">The three fastest-impact changes are: adding FAQPage schema to category and home pages, publishing a dedicated comparison page answering buyer questions like brand versus competitor, and creating a brand entity page with specific trust signals. These typically show improvement in 4 to 8 weeks.</div></div></div>
 </div>
-  </div>
-</div>
-
 <footer class="footer">
   <a href="/index.html" style="color:inherit">Jeevan AI</a> &middot; AI visibility platform &middot;
   <a href="/reports/" style="color:var(--accent)">All reports</a> &middot; <a href="/blog/" style="color:inherit">Blog</a>
 </footer>
-
 <script>
-var current = 'all';
-function filterCat(slug) {
-  current = slug;
-  var cards = document.querySelectorAll('.brand-card');
-  var pills = document.querySelectorAll('.fpill');
-  var catBtns = document.querySelectorAll('.cat-card--active');
-  var visible = 0;
-  pills.forEach(function(p) { p.classList.toggle('fpill--active', p.dataset.filter === slug); });
-  catBtns.forEach(function(b) { b.classList.toggle('is-selected', slug !== 'all' && b.dataset.filter === slug); });
-  cards.forEach(function(c) {
-    if (slug === 'all' || c.dataset.category === slug) { c.classList.remove('hidden'); visible++; }
-    else { c.classList.add('hidden'); }
+var current='all';
+function filterCat(slug){
+  current=slug;
+  var cards=document.querySelectorAll('.brand-card');
+  var pills=document.querySelectorAll('.fpill');
+  var catBtns=document.querySelectorAll('.cat-card--active');
+  var visible=0;
+  pills.forEach(function(p){p.classList.toggle('fpill--active',p.dataset.filter===slug);});
+  catBtns.forEach(function(b){b.classList.toggle('is-selected',slug!=='all'&&b.dataset.filter===slug);});
+  cards.forEach(function(c){
+    if(slug==='all'||c.dataset.category===slug){c.classList.remove('hidden');visible++;}
+    else{c.classList.add('hidden');}
   });
-  document.getElementById('noResults').classList.toggle('show', visible === 0);
-  document.getElementById('reportCount').textContent = '(' + visible + ' report' + (visible !== 1 ? 's' : '') + ')';
+  document.getElementById('noResults').classList.toggle('show',visible===0);
+  document.getElementById('reportCount').textContent='('+visible+' report'+(visible!==1?'s':'')+')';
 }
 </script>
 </body></html>
