@@ -368,7 +368,7 @@ function render(data){
     document.getElementById('compareTag').textContent = compReports.length + " competitor"+(compReports.length>1?"s":"")+" analyzed";
     compReports.forEach(function(cr){
       var s = Math.max(0, Math.min(100, parseInt(cr.score,10)||0));
-      var href = "https://jeevanai.co.in/report/?brand=" + encodeURIComponent(cr.slug||"");
+      var href = "https://jeevanai.co.in/report/" + encodeURIComponent(cr.slug||"") + "/";
       var a = document.createElement('a');
       a.href = href;
       a.className = 'compare-card';
@@ -437,6 +437,9 @@ function copyLink(){
   var params=new URLSearchParams(window.location.search);
   var brand=params.get('brand')||"";
   if(!brand){showError("No brand parameter in URL. Run an analysis to generate a report.");return;}
+
+  // Redirect ?brand=slug → /report/slug/ (static pages)
+  window.location.replace('/report/'+encodeURIComponent(brand)+'/');
 
   // 1. SessionStorage — instant if same session
   try{
