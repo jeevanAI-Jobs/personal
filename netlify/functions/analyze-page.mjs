@@ -4,43 +4,17 @@
 
 import { getStore } from "@netlify/blobs";
 
-const MODEL = "claude-sonnet-5";
-const MAX_HTML_CHARS = 8000;
+const MODEL = "claude-haiku-4-5-20251001";
+const MAX_HTML_CHARS = 4000;
 
-const SYSTEM_PROMPT = `You are an AI search visibility analyst writing a client-facing diagnostic report. Your job is to tell a brand exactly how AI engines see them RIGHT NOW, what is costing them citations, and why Jeevan AI would help.
+const SYSTEM_PROMPT = `You are an AI search visibility analyst. Score a brand page and return ONLY valid JSON, no markdown.
 
-Rules:
-- Reference actual content from the page. No generic observations.
-- Name the brand in every key field.
-- Frame everything from the buyer's perspective: "when someone asks ChatGPT or Perplexity about [category], here is what happens."
-- If additional pages are provided, identify specific content gaps — topics or questions those pages answer that the primary page does not.
+Score these six factors (0-100): Entity Clarity, Extractable Structure, Schema Markup, FAQ Coverage, Answer-Led Content, Specificity & Evidence.
 
-Score the PRIMARY page on these six factors (0-100 each):
-1. Entity Clarity — does the page state in the first 200 words what this brand is, who it serves, and what makes it different?
-2. Extractable Structure — are sections self-contained 60-150 word chunks an AI can quote verbatim, or is it wall-to-wall marketing copy?
-3. Schema Markup — is JSON-LD structured data present and accurate?
-4. FAQ Coverage — does the page directly answer the questions a buyer would ask an AI before choosing this brand?
-5. Answer-Led Content — does the page lead with direct, quotable answers and specific claims, or vague slogans?
-6. Specificity & Evidence — concrete numbers, named results, certifications, and credibility signals an AI can quote.
+Return this exact JSON shape:
+{"brand":"<name>","domain":"<domain>","category":"<5-8 words>","score":<0-100>,"verdict":"<1 sentence>","ai_summary":"<2 sentences>","categories":[{"name":"<factor>","score":<0-100>,"finding":"<1 sentence>","fix":"<1 action>"}],"top_fixes":["<fix1>","<fix2>","<fix3>"],"gaps":[{"topic":"<topic>","why":"<why>","fix":"<action>"}],"jeevanai_value":"<2 sentences>"}
 
-Return ONLY valid JSON, no markdown:
-{
-  "brand": "<actual brand name from the page>",
-  "domain": "<root domain without www, e.g. hubspot.com>",
-  "category": "<what this brand does in 5-8 words>",
-  "score": <int 0-100 overall>,
-  "verdict": "<1 sentence naming the brand and its specific AI visibility situation>",
-  "ai_summary": "<2 sentences: what happens when a buyer asks ChatGPT or Perplexity about this brand's category. Reference a specific gap or strength from the page.>",
-  "categories": [
-    {"name":"<factor>","score":<int 0-100>,"finding":"<1-2 sentences, specific to this page content>","fix":"<1 concrete action for this specific page>"}
-  ],
-  "top_fixes": ["<fix 1, specific and actionable>","<fix 2>","<fix 3>"],
-  "gaps": [
-    {"topic":"<topic or question missing from primary page>","why":"<why AI engines need this to recommend this brand>","fix":"<specific section or content to add>"}
-  ],
-  "jeevanai_value": "<2 sentences: what Jeevan AI would specifically track and surface for this brand. Name the brand, the category, and 1-2 specific Jeevan AI features.>"
-}
-The categories array must contain all six factors in order. The gaps array should have 3-5 items; if no extra pages were provided, generate gaps based on what competitor pages in this category typically cover.`;
+Rules: all 6 factors in categories array; 3-5 gaps; reference actual page content; name the brand in verdict.`;
 
 function corsHeaders() {
   return {
@@ -108,15 +82,15 @@ function cleanHtml(html) {
 async function scrapePage(url) {
   try {
     const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 5000);
+    const t = setTimeout(() => ctrl.abort(), 4000);
     const res = await fetch(url, {
       signal: ctrl.signal,
       redirect: "follow",
       headers: { "User-Agent": "Mozilla/5.0 (compatible; JeevanAI-Analyzer/1.0; +https://jeevanai.co.in)" },
     });
-    clearTimeout(t);
-    if (!res.ok) return { url, error: `HTTP ${res.status}` };
+    if (!res.ok) { clearTimeout(t); return { url, error: `HTTP ${res.status}` }; }
     const html = await res.text();
+    clearTimeout(t);
     return { url, schemaTypes: detectSchemaTypes(html), content: cleanHtml(html) };
   } catch {
     return { url, error: "Could not reach URL" };
@@ -140,13 +114,13 @@ async function callClaude(userContent, apiKey) {
     },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 2500,
+      max_tokens: 2000,
       system: SYSTEM_PROMPT,
       messages: [{ role: "user", content: userContent }],
     }),
   });
   const payload = await res.json();
-  if (!res.ok) throw new Error(`Claude API ${res.status}`);
+  if (!res.ok) throw new Error(`Claude API ${res.status}: ${JSON.stringify(payload)}`);
   const textBlock = (payload.content || []).find((b) => b.type === "text");
   if (!textBlock) throw new Error("Empty Claude response");
   return parseClaudeJson(textBlock.text);
@@ -441,7 +415,8 @@ export async function handler(event, context) {
   let analysisResults;
   try {
     analysisResults = await Promise.all(claudePromises);
-  } catch {
+  } catch (err) {
+    console.error("[analyze-page] Claude error:", err.message);
     return json(502, { error: "Could not complete the analysis. Please try again." });
   }
 
@@ -461,83 +436,48 @@ export async function handler(event, context) {
     cacheKey: domainCacheKey(competitorExtras[i].url),
   }));
 
-  // 5. Save all reports to Blobs with cross-links, and update the report index for the sitemap.
-  try {
-    const store = getStore({ name: "audit-reports", context });
-
-    // Primary report includes competitor_reports for the "Compare with" section.
-    const primaryPayload = {
-      url: primaryUrl,
-      extra_urls: extraUrls,
-      analyzedAt,
-      slug: brandSlug,
-      cacheKey,
-      competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })),
-      ...primaryData,
-    };
-    await saveReport(store, primaryPayload, TTL);
-    // Push primary report as static JSON file for permanent storage.
-    pushReportJson(brandSlug, primaryPayload);
-
-    // Each competitor report stores compared_to so it can link back.
-    await Promise.all(competitorMeta.map((meta, i) => {
-      const payload = {
-        url: meta.url,
-        extra_urls: [],
-        analyzedAt,
-        slug: meta.slug,
-        cacheKey: meta.cacheKey,
-        compared_to: [{ slug: brandSlug, brand: primaryData.brand || primaryData.domain || "the analyzed brand", domain: primaryData.domain || "", url: primaryUrl }],
-        ...competitorDataList[i],
-      };
-      pushReportJson(meta.slug, payload);
-      return saveReport(store, payload, TTL);
-    }));
-
-    // Update the report index used by the sitemap function.
-    // Read existing index, merge new entries, deduplicate by slug, save back.
-    const allNewEntries = [
-      { slug: brandSlug, brand: primaryData.brand || primaryData.domain || "brand", analyzedAt },
-      ...competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, analyzedAt })),
-    ];
-    try {
-      const existing = await store.get("_report-index", { type: "json" }) || [];
-      const existingSlugs = new Set(existing.map(e => e.slug));
-      const merged = [
-        ...allNewEntries.filter(e => !existingSlugs.has(e.slug)),
-        ...existing,
-      ].slice(0, 5000); // cap at 5000 entries
-      await store.setJSON("_report-index", merged);
-      // Push updated sitemap to GitHub Pages and ping search engines.
-      await pushSitemapToGithub(merged);
-      const sitemapUrl = encodeURIComponent("https://jeevanai.co.in/sitemap-reports.xml");
-      await Promise.allSettled([
-        fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`),
-        fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`),
-      ]);
-    } catch { /* index update is best-effort */ }
-
-  } catch {
-    // Blobs write failed — push JSON to GitHub and still return the primary result.
-    const fallbackPayload = { url: primaryUrl, ...primaryData, slug: brandSlug, cacheKey, analyzedAt,
-      competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })) };
-    pushReportJson(brandSlug, fallbackPayload);
-    competitorMeta.forEach((meta, i) => {
-      const cp = { url: meta.url, analyzedAt, slug: meta.slug, cacheKey: meta.cacheKey,
-        compared_to: [{ slug: brandSlug, brand: primaryData.brand || primaryData.domain || "the analyzed brand", domain: primaryData.domain || "", url: primaryUrl }],
-        ...competitorDataList[i] };
-      pushReportJson(meta.slug, cp);
-    });
-    return json(200, { url: primaryUrl, ...primaryData, slug: brandSlug, reportSlug: brandSlug, cached: false,
-      competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, score: m.score, url: m.url })) });
-  }
-
-  return json(200, {
+  // 5. Build the response payload.
+  const responsePayload = {
     url: primaryUrl,
     ...primaryData,
     slug: brandSlug,
     reportSlug: brandSlug,
     cached: false,
     competitor_reports: competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, domain: m.domain, score: m.score, url: m.url })),
-  });
+  };
+
+  // 6. Fire-and-forget saves/pushes — don't block the response.
+  (async () => {
+    try {
+      const store = getStore({ name: "audit-reports", context });
+      const primaryPayload = { url: primaryUrl, extra_urls: extraUrls, analyzedAt, slug: brandSlug, cacheKey,
+        competitor_reports: responsePayload.competitor_reports, ...primaryData };
+      await saveReport(store, primaryPayload, TTL);
+      pushReportJson(brandSlug, primaryPayload);
+      await Promise.all(competitorMeta.map((meta, i) => {
+        const payload = { url: meta.url, extra_urls: [], analyzedAt, slug: meta.slug, cacheKey: meta.cacheKey,
+          compared_to: [{ slug: brandSlug, brand: primaryData.brand || primaryData.domain || "brand", domain: primaryData.domain || "", url: primaryUrl }],
+          ...competitorDataList[i] };
+        pushReportJson(meta.slug, payload);
+        return saveReport(store, payload, TTL);
+      }));
+      // Update report index + sitemap (best-effort, slow ops)
+      const allNewEntries = [
+        { slug: brandSlug, brand: primaryData.brand || primaryData.domain || "brand", analyzedAt },
+        ...competitorMeta.map(m => ({ slug: m.slug, brand: m.brand, analyzedAt })),
+      ];
+      const existing = await store.get("_report-index", { type: "json" }) || [];
+      const existingSlugs = new Set(existing.map(e => e.slug));
+      const merged = [...allNewEntries.filter(e => !existingSlugs.has(e.slug)), ...existing].slice(0, 5000);
+      await store.setJSON("_report-index", merged);
+      await pushSitemapToGithub(merged);
+      const sitemapUrl = encodeURIComponent("https://jeevanai.co.in/sitemap-reports.xml");
+      Promise.allSettled([
+        fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`),
+        fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`),
+      ]);
+    } catch { /* best-effort */ }
+  })();
+
+  return json(200, responsePayload);
 }
