@@ -417,7 +417,7 @@ function render(data){
 
 function showError(msg){
   document.getElementById('loadingState').style.display='none';
-  if(msg) document.getElementById('errorMsg').textContent=msg;
+  if(msg) document.getElementById('errorMsg').innerHTML=msg;
   document.getElementById('errorState').style.display='block';
 }
 
