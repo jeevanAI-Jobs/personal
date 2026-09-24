@@ -32,9 +32,9 @@
   "operatingSystem": "Web",
   "offers": [
     { "@type": "Offer", "name": "Free Scan", "price": "0", "priceCurrency": "USD" },
-    { "@type": "Offer", "name": "Starter", "price": "49", "priceCurrency": "USD" },
-    { "@type": "Offer", "name": "Pro", "price": "149", "priceCurrency": "USD" },
-    { "@type": "Offer", "name": "Agency", "price": "399", "priceCurrency": "USD" }
+    { "@type": "Offer", "name": "Starter", "price": "49", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" },
+    { "@type": "Offer", "name": "Pro", "price": "149", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" },
+    { "@type": "Offer", "name": "Agency", "price": "399", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" }
   ],
   "author": { "@type": "Organization", "name": "Jeevan AI", "url": "https://jeevanai.co.in" }
 }
@@ -150,6 +150,8 @@ a{color:inherit;text-decoration:none}
 .plan--featured .plan__cta{background:var(--accent);color:#fff;border-color:var(--accent)}
 .plan--featured .plan__cta:hover{opacity:0.88}
 .plan__note{font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:10px}
+.plan__cta--soon,.plan--featured .plan__cta--soon{background:transparent;color:var(--text-muted);border:1px dashed var(--border);cursor:not-allowed;user-select:none}
+.plan__cta--soon:hover,.plan--featured .plan__cta--soon:hover{background:transparent;opacity:1;color:var(--text-muted);border-color:var(--border)}
 /* TESTIMONIAL */
 .testimonial-strip{padding:64px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.04) 0%,transparent 60%)}
 .testimonial-strip__inner{max-width:680px;margin:0 auto;text-align:center}
@@ -635,7 +637,7 @@ a{color:inherit;text-decoration:none}
   <div class="section__inner">
     <div class="section-label">Pricing</div>
     <h2 class="section-title" id="pricing-title">Start free. Scale when it works.</h2>
-    <p class="section-sub" style="margin-bottom:0">First 50 paid customers get free upgrades for 12 months on any plan.</p>
+    <p class="section-sub" style="margin-bottom:0">Paid plans are coming soon. The Free plan is open today.</p>
     <div class="pricing__grid">
       <div class="plan">
         <div class="plan__name">Free</div>
@@ -665,7 +667,7 @@ a{color:inherit;text-decoration:none}
           <li>Re-Scan tracking</li>
           <li>1 brand</li>
         </ul>
-        <a href="https://dashboard.jeevanai.co.in/auth/login">Get Started</a>
+        <span class="plan__cta plan__cta--soon" aria-disabled="true">Coming soon</span>
       </div>
       <div class="plan plan--featured">
         <div class="plan__badge">Most popular</div>
@@ -682,8 +684,7 @@ a{color:inherit;text-decoration:none}
           <li>Weekly digest</li>
           <li>3 brands</li>
         </ul>
-        <a href="https://dashboard.jeevanai.co.in/auth/login">Get Pro</a>
-        <p class="plan__note">Early access: upgrades free for 12 months</p>
+        <span class="plan__cta plan__cta--soon" aria-disabled="true">Coming soon</span>
       </div>
       <div class="plan">
         <div class="plan__name">Agency</div>
@@ -699,7 +700,7 @@ a{color:inherit;text-decoration:none}
           <li>Onboarding call</li>
           <li>API access</li>
         </ul>
-        <a href="https://dashboard.jeevanai.co.in/auth/login">Contact Us</a>
+        <span class="plan__cta plan__cta--soon" aria-disabled="true">Coming soon</span>
       </div>
     </div>
     <p style="text-align:center;margin-top:32px;font-size:0.95rem"><a href="/pricing.html" style="color:var(--accent);font-weight:600">See full plan details, what is included, and pricing FAQ &#8594;</a></p>
@@ -844,7 +845,7 @@ a{color:inherit;text-decoration:none}
     <h2 id="cta-final-title">See what AI says about your brand right now</h2>
     <p>5 queries. Free. No credit card. Results in 10 minutes. Find out exactly why your competitor is being recommended instead of you.</p>
     <a href="https://dashboard.jeevanai.co.in/auth/login" style="font-size:1rem;padding:16px 36px">Run Free Scan →</a>
-    <p style="font-size:0.8rem;color:var(--text-muted);margin-top:14px">Early access: first 50 paid customers get free upgrades for 12 months on any plan</p>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-top:14px">Paid plans are coming soon. The Free plan is open today.</p>
   </div>
 </section>
 
