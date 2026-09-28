@@ -101,6 +101,28 @@ a{color:inherit;text-decoration:none}
 .analyst-note-label{font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#92400e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .analyst-note-text{font-size:0.88rem;color:#78350f;line-height:1.7}
 @media(max-width:620px){.comp-grid{grid-template-columns:1fr}.wrap{padding:24px 16px 60px}.report-header{padding:24px 18px}.score-ring{width:72px;height:72px;font-size:1.5rem}.improve-cta{flex-direction:column}.meth-factors{grid-template-columns:1fr 1fr}}
+
+/* Shark Tank badge */
+.shark-tank-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f2847 100%);
+  border: 1.5px solid #2563eb;
+  color: #93c5fd;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.shark-tank-badge::before {
+  content: "🦈";
+  font-size: 0.85rem;
+}
+
 </style>
 </head>
 <body>
@@ -113,6 +135,7 @@ a{color:inherit;text-decoration:none}
     <div class="header-meta">
       <span class="report-badge">AI Search Visibility Report</span>
       <span class="mini-audit-badge">Mini Audit &middot; Team Jeevan AI</span>
+    <span class="shark-tank-badge">Shark Tank India S3 E29 &middot; Rs1Cr / 1.33% + 0.67% advisory</span>
       <a href="https://www.arata.in/" class="domain-link" target="_blank" rel="noopener">arata.in</a>
     </div>
     <div class="score-row">
