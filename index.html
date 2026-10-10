@@ -95,7 +95,7 @@ a{color:inherit;text-decoration:none}
 .platform-chip{padding:6px 14px;border-radius:100px;border:1px solid var(--border);font-size:0.8rem;color:var(--text-dim);background:var(--bg-card)}
 /* STATS */
 .stats{padding:72px 24px;border-bottom:1px solid var(--border)}
-.stats__inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius)}
+.stats__inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius)}
 .stat{background:var(--bg);padding:32px 28px}
 .stat__num{font-size:2.2rem;font-weight:700;color:var(--accent);font-family:var(--font-mono);line-height:1}
 .stat__label{font-size:0.875rem;color:var(--text-dim);margin-top:6px;line-height:1.4}
@@ -134,7 +134,7 @@ a{color:inherit;text-decoration:none}
 .scan-row__score{font-size:0.78rem;font-family:var(--font-mono);min-width:36px;text-align:right}
 /* PRICING */
 .pricing{padding:80px 24px;border-top:1px solid var(--border)}
-.pricing__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.pricing__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px}
 .plan{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
 .plan--featured{border-color:rgba(99,102,241,0.4);background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,var(--bg-card) 100%)}
 .plan__badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;white-space:nowrap}
@@ -641,64 +641,67 @@ a{color:inherit;text-decoration:none}
     <div class="pricing__grid">
       <div class="plan">
         <div class="plan__name">Free</div>
-        <div class="plan__price">$0</div>
+        <div class="plan__price">&#8377;0</div>
         <div class="plan__period">forever</div>
         <hr class="plan__divider">
         <ul class="plan__features">
-          <li>5 buying queries scanned</li>
-          <li>ChatGPT, Gemini, Perplexity</li>
-          <li>Buying factor score breakdown</li>
-          <li>Top 3 gaps identified</li>
+          <li>8 tracked questions</li>
+          <li>ChatGPT + Gemini</li>
+          <li>1 scan per month</li>
           <li>1 brand</li>
         </ul>
         <a href="https://dashboard.jeevanai.co.in/auth/login">Run Free Scan</a>
       </div>
       <div class="plan">
-        <div class="plan__name">Starter</div>
-        <div class="plan__price">$49</div>
-        <div class="plan__period">/month</div>
+        <div class="plan__name">Hobby</div>
+        <div class="plan__price">&#8377;2,500</div>
+        <div class="plan__period">/month &middot; $29</div>
         <hr class="plan__divider">
         <ul class="plan__features">
-          <li>25 queries scanned</li>
-          <li>All 5 AI platforms</li>
-          <li>Full gap analysis</li>
-          <li>4-week content calendar</li>
-          <li>Brief generation</li>
-          <li>Re-Scan tracking</li>
-          <li>1 brand</li>
+          <li>25 tracked questions</li>
+          <li>ChatGPT + Gemini</li>
+          <li>2 scans per month</li>
+          <li>2 articles/month</li>
         </ul>
         <span class="plan__cta plan__cta--soon" aria-disabled="true">Coming soon</span>
       </div>
       <div class="plan plan--featured">
         <div class="plan__badge">Most popular</div>
-        <div class="plan__name">Pro</div>
-        <div class="plan__price">$149</div>
-        <div class="plan__period">/month</div>
+        <div class="plan__name">Starter</div>
+        <div class="plan__price">&#8377;5,000</div>
+        <div class="plan__period">/month &middot; $49</div>
         <hr class="plan__divider">
         <ul class="plan__features">
-          <li>Everything in Starter</li>
-          <li>Social Intelligence feed</li>
-          <li>Knowledge Base (100 items)</li>
-          <li>Intelligence chat</li>
-          <li>Competitor monitoring</li>
-          <li>Weekly digest</li>
-          <li>3 brands</li>
+          <li>50 tracked questions</li>
+          <li>+ Perplexity (3 platforms)</li>
+          <li>2 scans per month</li>
+          <li>4 articles/month</li>
+        </ul>
+        <span class="plan__cta plan__cta--soon" aria-disabled="true">Coming soon</span>
+      </div>
+      <div class="plan">
+        <div class="plan__name">Growth</div>
+        <div class="plan__price">&#8377;15,000</div>
+        <div class="plan__period">/month &middot; $149</div>
+        <hr class="plan__divider">
+        <ul class="plan__features">
+          <li>75 questions per brand</li>
+          <li>All 4 platforms incl. Claude</li>
+          <li>3 scans per month</li>
+          <li>2 brands</li>
         </ul>
         <span class="plan__cta plan__cta--soon" aria-disabled="true">Coming soon</span>
       </div>
       <div class="plan">
         <div class="plan__name">Agency</div>
-        <div class="plan__price">$399</div>
-        <div class="plan__period">/month</div>
+        <div class="plan__price">&#8377;40,000</div>
+        <div class="plan__period">/month &middot; $399</div>
         <hr class="plan__divider">
         <ul class="plan__features">
-          <li>Everything in Pro</li>
-          <li>Unlimited brands</li>
-          <li>White-label reports</li>
-          <li>Client-level dashboards</li>
-          <li>Priority support</li>
-          <li>Onboarding call</li>
-          <li>API access</li>
+          <li>100 questions per brand</li>
+          <li>All 4 AI platforms</li>
+          <li>3 scans per month</li>
+          <li>4 brands</li>
         </ul>
         <span class="plan__cta plan__cta--soon" aria-disabled="true">Coming soon</span>
       </div>
