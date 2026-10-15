@@ -9,7 +9,7 @@
     <description>Actionable strategies to get your brand cited in ChatGPT, Perplexity, Gemini, and Google AI Mode.</description>
     <language>en-us</language>
     <atom:link href="https://jeevanai.co.in/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 14 Oct 2026 12:34:41 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 18:41:43 GMT</lastBuildDate>
     <image>
       <url>https://jeevanai.co.in/logo.png</url>
       <title>Jeevan AI Blog — AI Visibility &amp; GEO Strategies</title>
@@ -17,11 +17,208 @@
     </image>
 
     <item>
+      <title>AI Visibility Audit for Indian Brands: How to Read the Sources List (2026)</title>
+      <link>https://jeevanai.co.in/blog/ai-visibility-audit-sources-list-indian-brands</link>
+      <guid isPermaLink="true">https://jeevanai.co.in/blog/ai-visibility-audit-sources-list-indian-brands</guid>
+      <description>Ran an AI visibility audit? Here is how Indian founders can sort the sources ChatGPT, Gemini and Perplexity list into 5 buckets and turn them into a 30-day action plan.</description>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<div class="summary-block">
+      <p>The sources list next to an AI answer suggests where AI tools look when they build answers in your category. Sort every source into 5 buckets (your site, competitor pages, marketplaces and listings, editorial and review content, communities), read the pattern, and follow a simple 30-day plan. Treat one audit as a snapshot, not a verdict.</p>
+    </div>
+
+    <div class="article-intro">
+      <p>If you have run a basic AI visibility audit, you already have a sheet that looks something like this: ten buyer questions, three AI tools, and for each answer a note on whether your brand was mentioned, which competitors showed up, and which websites were listed as sources.</p>
+      <p>Most founders look at the first two columns, feel either relieved or worried, and close the sheet.</p>
+      <p>The third column is the one that may be most useful. The sources list suggests where AI tools are looking when they build an answer in your category. If you know where they look, you know where you may need to be featured.</p>
+      <p>This guide is for Indian founders, D2C brands and marketers who have done the audit (or are about to) and want to know what to do next. If you have not run one yet, start with our step-by-step manual audit guide: <a href="https://jeevanai.co.in/blog/how-to-audit-ai-search-visibility.html" style="color:#4f46e5;text-decoration:underline">The Zero-Click Audit: What AI Says About Your Brand Right Now</a>. Then come back here.</p>
+    </div>
+
+    <section class="article-section" id="why-sources-matter">
+      <h2>Why the sources list matters more in India right now</h2>
+      <p>Indian buyers are using AI tools for shopping decisions at a pace that may surprise many brands.</p>
+      <p>BCG's Global Consumer Radar, reported in January 2026, found that 64 percent of Indian respondents use generative AI to research brands and products as part of the purchase journey, and that shopping-related use grew about 35 percent between February and November 2025 (<a href="https://www.bcg.com/news/6january2026-india-global-leader-genai-for-shopping" rel="noopener" target="_blank">BCG</a>). Sensor Tower data reported by TechCrunch suggests India became one of the largest markets for generative AI app downloads in 2025 (<a href="https://techcrunch.com/?p=3095753" rel="noopener" target="_blank">TechCrunch</a>).</p>
+      <p>These are vendor and consultancy figures with their own methods, so treat them as direction, not precision. The direction is clear enough: more of your buyers' research may now start with a question to ChatGPT, Gemini or Perplexity, not a search results page.</p>
+      <p>When an AI tool answers that question, it often draws on other websites. Some platforms show those websites as sources or citations. That list is a rare window into the inputs behind the answer.</p>
+    </section>
+
+    <section class="article-section" id="what-is-a-source">
+      <h2>What a "source" actually is (and what it is not)</h2>
+      <p>Before you act on the list, it helps to be careful about what it represents.</p>
+      <ul>
+        <li><strong>A source is a website the AI tool listed alongside its answer.</strong> On some platforms these appear as inline links. On others they show up as a separate list at the end. The meaning may differ by platform.</li>
+        <li><strong>A source is not proof of cause.</strong> A website being listed does not mean it alone made the AI mention a brand. It suggests the page was retrieved or used while building that answer.</li>
+        <li><strong>Sources change between runs.</strong> Ask the same question tomorrow and you may see a different set. One audit is a snapshot.</li>
+      </ul>
+      <p>So the goal is not to chase one link. The goal is to spot patterns: the same domains or the same type of website appearing again and again across your questions and platforms.</p>
+    </section>
+
+    <section class="article-section" id="five-buckets">
+      <h2>The 5 buckets: sort every source you found</h2>
+      <p>Take every source from your audit sheet and put it into one of five buckets. This takes about 20 minutes for a 10-question audit and makes the next step much clearer.</p>
+
+      <h3>Bucket 1: Your own website</h3>
+      <p>Pages on your own domain: product pages, blog posts, FAQ pages, about page.</p>
+      <p><strong>What it may tell you:</strong> AI tools can find and read your site for at least some questions. Note which pages were listed. They are your strongest assets for AI answers right now.</p>
+      <p><strong>What if it is empty:</strong> your site may not answer the questions buyers ask in plain language, or key pages may be hard for crawlers to read.</p>
+
+      <h3>Bucket 2: Competitor-owned pages</h3>
+      <p>A competitor's own website, often their blog, comparison page or "best X for Y" article.</p>
+      <p><strong>What it may tell you:</strong> competitors may be publishing content that directly answers buyer questions. A competitor's "Brand A vs Brand B" page being listed in answers about your category is a strong signal.</p>
+      <p>This bucket is often the most uncomfortable one, and the most useful.</p>
+
+      <h3>Bucket 3: Marketplaces and listings</h3>
+      <p>In India this bucket can be large: marketplace product pages, quick commerce listings, aggregator and directory pages, and comparison sites.</p>
+      <p>Research from outside India points in the same direction. A Yext study of 6.8 million AI citations across ChatGPT, Gemini and Perplexity (July to August 2025) reported that first-party websites and listings together made up about 86 percent of the citations it tracked, with listings alone at about 42 percent (<a href="https://www.yext.com/blog/ai-citations-86-percent-of-sources-are-brand-managed" rel="noopener" target="_blank">Yext</a>). That study focused on location-based queries in retail, finance, healthcare and food service, so it may not map neatly to every D2C category. It still suggests that listings you already control can matter a lot.</p>
+      <p><strong>What it may tell you:</strong> your marketplace listings may be speaking for you in AI answers. Titles, descriptions, ratings and review counts on those pages may be part of what the AI reads.</p>
+
+      <h3>Bucket 4: Editorial and review content</h3>
+      <p>Media articles, "top 10" lists, gift guides, expert roundups, review blogs and YouTube reviews. For Indian brands, this often includes business and startup media, lifestyle publications and niche review blogs in your category.</p>
+      <p><strong>What it may tell you:</strong> these are the third parties that may shape how AI describes your category. If the same two or three listicles keep appearing as sources, being included in them (or in pages like them) may be worth more than another ad campaign.</p>
+
+      <h3>Bucket 5: Communities and forums</h3>
+      <p>Reddit threads, Quora answers, community forums and comment-heavy pages.</p>
+      <p>The share of these sources varies a lot by platform, by month and by study. Some aggregated reports claim Reddit shows up in a large share of answers, while other studies found forums made up only a small share of citations once query type and location were accounted for (<a href="https://everything-pr.com/chatgpt-citation-source-index-2026" rel="noopener" target="_blank">Everything-PR summary</a>, <a href="https://www.yext.com/blog/ai-citations-86-percent-of-sources-are-brand-managed" rel="noopener" target="_blank">Yext</a>). The honest summary is that it depends. Your own audit is the best guide for your category.</p>
+      <p><strong>What it may tell you:</strong> real buyers are discussing your category in public, and AI tools may be reading those discussions.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="four-profiles">
+      <h2>Reading the pattern: 4 common profiles</h2>
+      <p>Once your sources are sorted, the mix usually falls into one of these profiles. Each points to a different first move.</p>
+
+      <h3>Profile A: "Competitors own the answer"</h3>
+      <p>Bucket 2 is heavy. Competitor blogs and comparison pages keep showing up.</p>
+      <p><strong>First move:</strong> publish honest, specific answers to the same buyer questions on your own site. A clear comparison page, a "who is this for" section, and an FAQ written in your buyers' words. Do not copy competitor pages. Answer the question better and more plainly.</p>
+
+      <h3>Profile B: "Marketplaces speak for you"</h3>
+      <p>Bucket 3 is heavy. Your own site barely appears, but marketplace listings do.</p>
+      <p><strong>First move:</strong> treat your top marketplace listings like landing pages. Check that product titles clearly say what the product is and who it is for, that descriptions answer the common questions, and that you are actively collecting genuine reviews. Make sure the same facts (price range, size, ingredients, warranty) match across your site and every listing. Mixed signals may confuse both buyers and AI tools.</p>
+
+      <h3>Profile C: "The listicles decide"</h3>
+      <p>Bucket 4 is heavy. The same few editorial pages appear across many questions.</p>
+      <p><strong>First move:</strong> make a short outreach list. For each recurring article, note the author or publication, what kind of brands they feature, and what they would need from you (samples, data, a founder quote, a genuine story). Pitch with something useful, not a request for a link. Also look for gaps: is there a "best X for Y in India" angle that no one has covered well yet?</p>
+
+      <h3>Profile D: "Nobody is talking about anyone"</h3>
+      <p>Sources are thin, scattered, or mostly generic sites. No clear leader.</p>
+      <p><strong>First move:</strong> this may be an opening. In categories where AI tools have little strong material to draw on, the brand that publishes the clearest, most specific answers first may have an easier time getting mentioned. Start with your own site and one or two community answers that genuinely help.</p>
+    </section>
+
+    <section class="article-section" id="thirty-day-plan">
+      <h2>A 30-day plan built from your sources list</h2>
+      <p>Here is a simple plan that works for most small Indian teams. It assumes one person spending a few hours a week.</p>
+
+      <h3>Week 1: Fix what you own</h3>
+      <ul>
+        <li>List the 5 questions where you were not mentioned but competitors were.</li>
+        <li>For each one, check if your site has a page that answers it directly in the first few lines. If not, add a clear FAQ section or a short new page.</li>
+        <li>Check that your key pages load properly and are not blocked from crawlers. Google's own guidance says the same SEO fundamentals apply to its AI features, with no special extra markup required (<a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener" target="_blank">Google Search Central</a>).</li>
+      </ul>
+
+      <h3>Week 2: Clean up your listings</h3>
+      <ul>
+        <li>Open your top 3 marketplace or directory listings.</li>
+        <li>Make titles and descriptions specific: what it is, who it is for, the key facts.</li>
+        <li>Make sure prices, sizes and claims match your own website.</li>
+        <li>Reply to recent reviews, especially questions.</li>
+      </ul>
+
+      <h3>Week 3: Reach the third parties</h3>
+      <ul>
+        <li>From Bucket 4, pick the 5 editorial pages that appeared most often.</li>
+        <li>Send a short, useful pitch to each: a product to try, a data point from your business, or a genuine customer story.</li>
+        <li>From Bucket 5, find 3 public threads where a buyer asked a question you can genuinely help with. Answer as a person, disclose that you work at the brand, and do not spam links.</li>
+      </ul>
+
+      <h3>Week 4: Re-run and compare</h3>
+      <ul>
+        <li>Run the exact same questions on the same platforms, in fresh chats.</li>
+        <li>Compare: were you mentioned more often? Did new sources appear? Did any of your pages start showing up as a source?</li>
+        <li>Expect small, uneven changes. AI answers vary between runs, so look at the trend over two or three months, not one week.</li>
+      </ul>
+    </section>
+
+    <div class="callout">
+      <p>Many Indian buyers type in a mix of Hindi and English, or in regional languages. If your audit only uses polished English questions, you may be missing how real buyers ask. Add two or three questions in the way your customers actually talk.</p>
+    </div>
+
+    <section class="article-section" id="mistakes">
+      <h2>Mistakes to avoid</h2>
+      <p><strong>Chasing a single source.</strong> One listicle being listed once is noise. Act on domains or source types that repeat.</p>
+      <p><strong>Treating the audit as a verdict.</strong> "We are not in ChatGPT" after one run may simply be one sample. Run it again on another day before drawing conclusions.</p>
+      <p><strong>Ignoring language.</strong> Test a few questions in the mix of languages your buyers actually use, not only polished English.</p>
+      <p><strong>Over-optimising your own site and forgetting everyone else.</strong> In tested queries, AI answers often draw on third-party pages. Your website matters, but it is rarely the only voice.</p>
+      <p><strong>Paying for fake reviews or planted forum posts.</strong> Beyond being against most platforms' rules, this can damage trust with buyers who notice, and it may not help anyway.</p>
+    </section>
+
+    <section class="article-section" id="manual-vs-automated">
+      <h2>When to move from manual to automated tracking</h2>
+      <p>A manual audit is a great starting point. It starts to break down when:</p>
+      <ul>
+        <li>you want to track more than 10 to 15 questions,</li>
+        <li>you want to compare 4 or 5 AI platforms every month,</li>
+        <li>you need to show a trend to your team or investors, or</li>
+        <li>you want every source collected and counted across runs, not copied by hand.</li>
+      </ul>
+      <p>That is the point where a tracking tool may save real time. Jeevan AI runs your buyer questions across ChatGPT, Gemini, Perplexity, Claude and Google AI Mode, lists every source the platforms returned, and shows which competitors are mentioned when you are not. But the manual version in this guide will teach you how to think about the data, which is worth doing first either way.</p>
+    </section>
+
+    
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan</a>
+    </div>
+
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <p class="faq-q">How many questions do I need for a useful AI visibility audit?</p>
+        <p class="faq-a">Ten is a good start for one product category. Mix question types: &quot;best X for Y&quot;, &quot;X vs Y&quot; and &quot;is X worth it&quot;. More questions give more reliable patterns, but manual effort grows quickly beyond 15.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Why do different AI tools show different sources?</p>
+        <p class="faq-a">Each platform retrieves and displays sources in its own way, and some show far more sources than others. The meaning of a listed source may also differ by platform. That is why it helps to check at least three tools and compare patterns, not individual links.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Should Indian brands focus on ChatGPT or Gemini first?</p>
+        <p class="faq-a">Reports suggest ChatGPT has a large lead in daily users in India, but Google&#x27;s AI features reach buyers who still start on Google Search. In practice, check both, plus Perplexity, and let your own audit tell you where the biggest gaps are.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Does being listed as a source mean AI will recommend my brand?</p>
+        <p class="faq-a">Not necessarily. A source being listed suggests it was used while building the answer. Your brand still needs to be described clearly and positively on those pages to be mentioned in the answer itself.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How often should I repeat the audit?</p>
+        <p class="faq-a">Monthly is a practical rhythm for most brands. AI answers change between runs and over time, so a monthly check with the same questions gives you a trend you can trust more than any single snapshot.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Do marketplace listings really matter for AI answers?</p>
+        <p class="faq-a">They can. Research such as the Yext citation study suggests listings can be a large share of citations, at least for location-based queries. Check your own audit: if marketplace or listing pages appear among your sources, treat them as public pages that may speak for your brand.</p>
+      </div>
+    </section>
+
+    <section class="article-section" id="sources">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.bcg.com/news/6january2026-india-global-leader-genai-for-shopping" rel="noopener" target="_blank">BCG: India a global leader in using GenAI for shopping (January 2026)</a></li>
+        <li><a href="https://techcrunch.com/?p=3095753" rel="noopener" target="_blank">TechCrunch: ChatGPT in India (Sensor Tower data)</a></li>
+        <li><a href="https://www.yext.com/blog/ai-citations-86-percent-of-sources-are-brand-managed" rel="noopener" target="_blank">Yext: AI Doesn't Rank, It Cites (October 2025)</a></li>
+        <li><a href="https://everything-pr.com/chatgpt-citation-source-index-2026" rel="noopener" target="_blank">Everything-PR: ChatGPT Citation Source Index 2026 (aggregated, secondary)</a></li>
+        <li><a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener" target="_blank">Google Search Central: AI features and your website</a></li>
+      </ul>
+    </section>]]></content:encoded>
+    </item>
+
+    <item>
       <title>AI Agents Are Browsing for Your Buyers. Is Your Brand Ready?</title>
       <link>https://jeevanai.co.in/blog/ai-agents-brand-visibility</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/ai-agents-brand-visibility</guid>
       <description>Autonomous AI agents from OpenAI, Anthropic, and Perplexity are researching and buying on behalf of users. Here is what brands need to do to be found.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-box"><p>An overview of how autonomous AI agents change brand discovery, what Perplexity Spaces means for research visibility, and the practical steps brands can take to be retrievable by agentic systems.</p></div>
     <div class="article-section">
       <p>AI search was already changing buyer behaviour. The next shift may be larger: autonomous AI agents that browse, compare, and act on behalf of buyers without the buyer touching a keyboard for each step. Understanding how these agents work, and what they look for, is becoming a practical concern for brand and marketing teams.</p>
@@ -76,7 +273,7 @@
       <link>https://jeevanai.co.in/blog/ai-recommended-as-trust-signal</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/ai-recommended-as-trust-signal</guid>
       <description>When ChatGPT or Perplexity names your brand, that recommendation is a new form of social proof. Here is how to capture and deploy it in marketing.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-box"><p>A practical guide to capturing AI citations from ChatGPT, Perplexity, and Gemini, and deploying them as social proof on landing pages, in sales decks, and in email sequences, with guidance on keeping captures current.</p></div>
     <div class="article-section">
       <p>Social proof has always been a cornerstone of high-converting marketing. Testimonials, review counts, press logos, and analyst rankings all serve the same function: reducing buyer uncertainty by showing that credible third parties chose or endorsed you. AI citations are emerging as a new form of this proof, and the brands that capture and deploy them early may have a measurable edge in competitive consideration.</p>
@@ -131,7 +328,7 @@
       <link>https://jeevanai.co.in/blog/ai-search-dark-traffic-attribution</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/ai-search-dark-traffic-attribution</guid>
       <description>AI tools may be influencing more of your revenue than GA4 shows. Here is what AI dark traffic is, why it is undercounted, and how to measure it.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-box"><p>What AI dark traffic is, why GA4 systematically undercounts AI-influenced sessions, how to capture the visible portion using custom channel groupings, and what proxy signals reveal the dark traffic portion.</p></div>
     <div class="article-section">
       <p>GA4 may be undercounting AI's contribution to your revenue, and the gap is probably larger than you expect. When buyers discover your brand through ChatGPT or Perplexity and navigate to your site without clicking a tracked link, that session arrives as direct traffic with no attribution signal. This is AI dark traffic, and understanding its mechanics is the first step toward measuring it.</p>
@@ -183,7 +380,7 @@
       <link>https://jeevanai.co.in/blog/chatgpt-keeps-recommending-my-competitor-how-to-fix-it</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/chatgpt-keeps-recommending-my-competitor-how-to-fix-it</guid>
       <description></description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
 
@@ -192,7 +389,7 @@
       <link>https://jeevanai.co.in/blog/chatgpt-keeps-recommending-my-competitor-how-to-fix-it</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/chatgpt-keeps-recommending-my-competitor-how-to-fix-it</guid>
       <description>ChatGPT recommends your competitor every time. Here is a 5-step fix based on how AI systems actually decide which brand to surface, with no guesswork.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-block" role="note">
       <p>ChatGPT recommends brands based on buying decision signals: Use Case Fit, Trust Evidence, Pricing Clarity, and Ease of Use. If your competitor is appearing and you are not, they are scoring higher on at least one of these factors. The gap is almost always in content structure — not in the product itself. This guide shows the exact sequence to close it.</p>
     </div>
@@ -340,7 +537,7 @@
       <link>https://jeevanai.co.in/blog/cmo-guide-ai-visibility-2026</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/cmo-guide-ai-visibility-2026</guid>
       <description>AI visibility is now a CMO-level issue. Here is how to think about budget allocation, CAC implications, and reporting AI visibility progress to the board.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-box"><p>A boardroom-level guide to AI visibility for CMOs: how AI search affects customer acquisition cost, how to allocate budget across SEO and GEO, which KPIs to track, and how to frame AI visibility for a board audience.</p></div>
     <div class="article-section">
       <p>AI search is no longer a fringe topic for content teams. For CMOs, the relevant question is no longer whether AI tools affect buyer behaviour, but how to quantify that effect, allocate budget against it, and report progress in a language the board understands. This guide addresses the strategic layer: what AI visibility means for marketing investment, how to think about it alongside SEO and paid, and what a reporting framework looks like.</p>
@@ -394,7 +591,7 @@
       <link>https://jeevanai.co.in/blog/first-party-reviews-d2c-ai-citations</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/first-party-reviews-d2c-ai-citations</guid>
       <description>For D2C brands, review presence on Trustpilot, Google Reviews, and own product pages may directly influence AI citation rate. Here is the playbook.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-box"><p>How review signals feed AI recommendation engines for consumer brands, which platforms matter most for D2C AI visibility, how first-party review schema contributes, and how to maintain the review velocity that signals freshness to AI systems.</p></div>
     <div class="article-section">
       <p>D2C brands have long known that reviews drive conversion. The newer dynamic is that review presence and quality may now also drive AI citation rate, creating a second lever on top of the direct conversion impact. Understanding how review signals feed into AI recommendation systems is becoming a practical GEO concern for consumer brand teams.</p>
@@ -442,7 +639,7 @@
       <link>https://jeevanai.co.in/blog/how-to-set-up-chatgpt-ads-campaign</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/how-to-set-up-chatgpt-ads-campaign</guid>
       <description>Step-by-step guide to setting up a ChatGPT ad campaign in 2026 — account setup, Context Hints, creative limits, oCPC bidding, and what to check before you go live.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p class="article-intro">OpenAI's self-serve Ads Manager is live. Getting a campaign running takes about 30 minutes — but there are five decisions along the way that determine whether your ChatGPT ads generate any results or just burn the $25 daily minimum. This is the complete setup walkthrough, with the decisions explained.</p>
 
     <section class="article-section" id="before-you-start">
@@ -624,7 +821,7 @@
       <link>https://jeevanai.co.in/blog/notebooklm-brand-authority</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/notebooklm-brand-authority</guid>
       <description>Buyers use Google NotebookLM to interrogate vendor documents before decisions. Here is what content earns a place in the research notebook and why it matters.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-box"><p>What Google NotebookLM is, how buyers use it in pre-purchase research, the content formats and characteristics that earn a place in research notebooks, and how consistent research-quality publishing builds compounding brand authority.</p></div>
     <div class="article-section">
       <p>Google NotebookLM has become a genuine research tool for buyers, analysts, and knowledge workers who need to digest and compare long-form content. For brands, the question is: what does it take to have your content be the document that ends up in a buyer's notebook when they are doing serious pre-purchase research? The answer is less about SEO and more about document quality and authority.</p>
@@ -679,7 +876,7 @@
       <link>https://jeevanai.co.in/blog/perplexity-spaces-brand-visibility</link>
       <guid isPermaLink="true">https://jeevanai.co.in/blog/perplexity-spaces-brand-visibility</guid>
       <description>Perplexity Spaces is a collaborative AI research workspace used by buyers and analysts. Here is what it means for brand visibility and what to do about it.</description>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 GMT</pubDate>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<div class="summary-box"><p>What Perplexity Spaces is, who uses it for purchase research, how brands can indirectly improve their presence in Spaces-based research, and what content characteristics earn strong Perplexity citation rates.</p></div>
     <div class="article-section">
       <p>Perplexity has moved from a novelty search tool to a serious research platform used by buyers, analysts, and professionals for structured multi-session investigation. Perplexity Spaces, its collaborative research workspace feature, represents a distinct visibility surface that brand and content teams are beginning to think about systematically. Here is what it is, who uses it, and what brands can do to increase their presence in Spaces-based research.</p>
