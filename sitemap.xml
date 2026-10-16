@@ -205,13 +205,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jeevanai.co.in/blog/chatgpt-keeps-recommending-my-competitor-how-to-fix-it</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jeevanai.co.in/blog/cmo-guide-ai-visibility-2026</loc>
+    <loc>https://jeevanai.co.in/blog/why-chatgpt-recommends-competitor</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -697,12 +691,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jeevanai.co.in/blog/why-chatgpt-recommends-competitor</loc>
-    <lastmod>2026-09-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://jeevanai.co.in/markets/india</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -770,12 +758,6 @@
   </url>
   <url>
     <loc>https://jeevanai.co.in/blog/ai-visibility-insurtech-saas</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jeevanai.co.in/blog/automated-vs-manual-ai-visibility-tracking</loc>
     <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -920,12 +902,6 @@
   </url>
   <url>
     <loc>https://jeevanai.co.in/blog/ai-describing-product-wrong</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://jeevanai.co.in/blog/chatgpt-recommends-my-competitor</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1555,12 +1531,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jeevanai.co.in/blog/ai-brand-recommendation-analysis</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://jeevanai.co.in/blog/ai-visibility-metrics-kpis</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -1809,6 +1779,12 @@
   <url>
     <loc>https://jeevanai.co.in/blog/geo-for-ecommerce-d2c-brands</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jeevanai.co.in/blog/chatgpt-recommends-my-competitor</loc>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
