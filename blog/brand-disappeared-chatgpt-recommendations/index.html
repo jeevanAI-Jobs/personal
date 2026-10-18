@@ -39,25 +39,21 @@
       "@type": "Question",
       "name": "Why did my brand disappear from ChatGPT recommendations overnight?",
       "acceptedAnswer": {"@type": "Answer", "text": "Sudden disappearance from ChatGPT recommendations typically traces to one of five causes: a crawl-budget issue blocking AI crawlers from accessing your content, knowledge graph entity detachment where the AI can no longer confidently identify your brand, a spike in negative third-party reviews on G2 or Reddit that shifted sentiment signals, a competitor updating their schema or content to directly capture your query space, or a model baseline cutoff shift that moved your brand outside the active retrieval window. Each cause has a distinct diagnostic signature and a different fix."}
-      }
     },
     {
       "@type": "Question",
       "name": "How quickly can a brand recover from ChatGPT citation loss?",
       "acceptedAnswer": {"@type": "Answer", "text": "Recovery speed depends entirely on the failure mode. Crawl-budget issues can be resolved in hours once the robots.txt or noindex directive is corrected, with AI crawler re-indexing typically occurring within 3 to 7 days. Knowledge graph entity detachment requires 2 to 6 weeks of consistent authority signal rebuilding. Negative review spikes require a sustained response program of 4 to 8 weeks. Competitor schema wins may require ongoing content and schema investment to reclaim the query space. Model cutoff shifts resolve on their own at the next model update, typically 2 to 4 months."}
-      }
     },
     {
       "@type": "Question",
       "name": "What is knowledge graph detachment and how does it cause AI citation loss?",
       "acceptedAnswer": {"@type": "Answer", "text": "Knowledge graph detachment occurs when the language model loses confidence in associating a brand entity with its category, capabilities, or location. This happens when the primary sources the model used to anchor that association are removed, contradicted, or outcompeted by newer content. Symptoms include the model describing your category accurately but omitting your brand name, or describing a brand that sounds like yours but with incorrect details. The fix is rebuilding entity anchor sources: Wikidata entries, Crunchbase profiles, G2 reviews, and canonical brand pages with complete Organization schema."}
-      }
     },
     {
       "@type": "Question",
       "name": "How do I know if a competitor's content update caused my ChatGPT disappearance?",
       "acceptedAnswer": {"@type": "Answer", "text": "Run the same prompts that previously surfaced your brand and observe which brand now appears in your place. If a specific competitor has replaced you consistently across 5 or more related queries, check when they last published or updated content on that topic using their sitemap or a crawl tool. Look specifically at their schema markup for relevant entity assertions. If they updated FAQ schema, added specific use-case pages, or published comparison content in the same period your citations dropped, competitor content is the most likely cause."}
-      }
     }
   ]
 }
