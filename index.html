@@ -61,8 +61,8 @@
   --accent-2:    #818cf8;
   --accent-dim:  rgba(99,102,241,0.15);
   --text:        #f1f5f9;
-  --text-dim:    rgba(241,245,249,0.62);
-  --text-muted:  rgba(241,245,249,0.38);
+  --text-dim:    rgba(241,245,249,0.80);
+  --text-muted:  rgba(241,245,249,0.55);
   --tag-bg:      rgba(99,102,241,0.18);
   --tag-text:    #a5b4fc;
   --white:       #ffffff;
@@ -436,7 +436,7 @@ a{color:inherit;text-decoration:none}
 
 /* 1. GRADIENT TEXT on section headings */
 .section-title {
-  background: linear-gradient(135deg, #111827 0%, #4338ca 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -834,6 +834,66 @@ section + section,
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+
+
+/* ─── CONTRAST FIXES ─── */
+
+/* Ensure all body text readable on dark */
+.step p, .preview-card p, .factor-item__desc,
+.section-sub, .plan__features li, .footer__brand p,
+.footer__col li a, .testimonial-strip__quote,
+.audit-card p, .scan-card, .hero-mockup__title {
+  color: rgba(241,245,249,0.80) !important;
+}
+
+/* Headings always bright white */
+.step h3, .preview-card h3, .audit-card h3,
+.plan__price, .factor-item__name, .scan-card__title,
+.footer__col h5, .stat__label {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+}
+
+/* Stat label specifically */
+.stat__label { color: rgba(241,245,249,0.72) !important; }
+
+/* Plan features checkmarks and text */
+.plan__features li { color: rgba(241,245,249,0.78) !important; }
+.plan__name { color: rgba(241,245,249,0.5) !important; }
+.plan__period { color: rgba(241,245,249,0.45) !important; }
+.plan__note { color: rgba(241,245,249,0.4) !important; }
+
+/* Section titles on dark sections — bright */
+.section-title {
+  color: #f1f5f9 !important;
+}
+
+/* Nav links readable */
+.nav__links a { color: rgba(241,245,249,0.72) !important; }
+.nav__links a:hover { color: #f1f5f9 !important; }
+.nav__logo { color: #f1f5f9 !important; }
+
+/* Footer links */
+.footer__col li a { color: rgba(241,245,249,0.62) !important; }
+.footer__col li a:hover { color: #f1f5f9 !important; }
+.footer__bottom span { color: rgba(241,245,249,0.4) !important; }
+
+/* Blog preview tags */
+.preview-card__tag { background: rgba(99,102,241,0.2) !important; color: #a5b4fc !important; }
+
+/* Dividers readable */
+.plan__divider { border-color: rgba(255,255,255,0.08) !important; }
+
+/* Scan row text */
+.scan-row__platform { color: rgba(241,245,249,0.6) !important; }
+.scan-row__score { color: rgba(241,245,249,0.75) !important; }
+
+/* Hero sub text */
+.hero__sub { color: rgba(255,255,255,0.88) !important; }
+.hero__note { color: rgba(255,255,255,0.55) !important; }
+
+/* Platform label */
+.platforms__label { color: rgba(241,245,249,0.5) !important; }
 
 </style>
 </head>
