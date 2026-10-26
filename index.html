@@ -407,6 +407,129 @@ a{color:inherit;text-decoration:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
 @media(max-width:600px){.updates-bar__hide{display:none}}
 
+
+/* ═══════════════════════════════════════════════
+   MODERN UI REFRESH — 2026-10-26
+   Pure CSS, zero content changes
+   ═══════════════════════════════════════════════ */
+
+/* 1. GRADIENT TEXT on section headings */
+.section-title {
+  background: linear-gradient(135deg, #111827 0%, #4338ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 2. STEP CARDS — colored top border + stronger shadow */
+.step {
+  border-top: 3px solid transparent;
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)),
+                    linear-gradient(135deg, #6366f1, #7c3aed);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-top: 3px solid;
+  border-image: linear-gradient(135deg, #6366f1, #7c3aed) 1;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(99,102,241,0.14) !important;
+}
+.step__num {
+  background: linear-gradient(135deg, #6366f1, #7c3aed) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.35);
+}
+
+/* 3. STATS — individual raised cards, not divided grid */
+.stats__inner {
+  background: transparent !important;
+  border: none !important;
+  gap: 16px !important;
+}
+.stat {
+  background: #ffffff !important;
+  border: 1px solid #e0e7ff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08) !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(99,102,241,0.13) !important;
+}
+.stat__num {
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 4. SECTION RHYTHM — alternating light backgrounds */
+.section:nth-of-type(even) {
+  background: linear-gradient(180deg, #f8faff 0%, #f5f3ff 100%);
+}
+.blog-preview {
+  background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%) !important;
+}
+.factors {
+  background: linear-gradient(180deg, #f5f3ff 0%, #eff6ff 100%) !important;
+}
+
+/* 5. PREVIEW CARDS — gradient border on hover */
+.preview-card {
+  border: 1px solid #e5e7eb;
+  transition: all 0.25s;
+}
+.preview-card:hover {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #6366f1, 0 8px 24px rgba(99,102,241,0.12) !important;
+  transform: translateY(-3px);
+}
+
+/* 6. PLAN CARDS — featured card glow */
+.plan--featured {
+  box-shadow: 0 0 0 1px rgba(99,102,241,0.5), 0 8px 32px rgba(99,102,241,0.18) !important;
+}
+
+/* 7. SECTION LABEL — pill background */
+.section-label {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  font-size: 0.72rem !important;
+}
+
+/* 8. FACTOR ITEMS — subtle left accent */
+.factor-item {
+  border-left: 3px solid var(--accent) !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.factor-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(99,102,241,0.1) !important;
+}
+
+/* 9. PLATFORM CHIPS — subtle hover */
+.platform-chip {
+  transition: all 0.2s;
+}
+.platform-chip:hover {
+  border-color: rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.05);
+  color: var(--accent);
+}
+
+/* 10. AUDIT CARDS — enhanced glow */
+.audit-card--full {
+  border-color: rgba(99,102,241,0.4) !important;
+  box-shadow: 0 0 0 1px rgba(99,102,241,0.2), 0 4px 16px rgba(99,102,241,0.15);
+}
+
 </style>
 </head>
 <body>
