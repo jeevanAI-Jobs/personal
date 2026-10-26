@@ -610,3 +610,159 @@ h1, h2, h3, h4, h5, h6,
 [style*="border: 1px solid #e5e7eb"] {
   border-color: rgba(255,255,255,0.09) !important;
 }
+
+
+/* =====================================================
+   BLOG PAGE DARK MODE FIXES
+   Targets specific classes from blog/index.html template
+   ===================================================== */
+
+/* Nav — override white sticky nav */
+.nav {
+  background: rgba(13,17,23,0.92) !important;
+  border-bottom-color: rgba(255,255,255,0.09) !important;
+}
+.nav__links a { color: rgba(241,245,249,0.72) !important; }
+.nav__links a:hover { color: #f1f5f9 !important; background: rgba(255,255,255,0.06) !important; }
+
+/* Article prose text */
+.article-intro p, .article-section p,
+.article-prose p, .prose p {
+  color: rgba(241,245,249,0.85) !important;
+}
+.article-section h2, .article-section h3,
+.article-prose h2, .article-prose h3,
+.article-intro h2, .article-intro h3 {
+  color: #f1f5f9 !important;
+  border-bottom-color: rgba(255,255,255,0.09) !important;
+}
+
+/* Service list items (the dim headings in screenshot) */
+.service-title, .service-item__title { color: #f1f5f9 !important; }
+.service-desc, .service-item__desc { color: rgba(241,245,249,0.75) !important; }
+.service-icon {
+  background: rgba(56,189,248,0.12) !important;
+  border-color: rgba(56,189,248,0.25) !important;
+}
+.service-item { border-bottom-color: rgba(255,255,255,0.07) !important; }
+
+/* Decision cards — white/light purple & green boxes */
+.decision-card {
+  background: #1c2128 !important;
+  border-color: rgba(255,255,255,0.09) !important;
+  color: #f1f5f9 !important;
+}
+.decision-card.agency {
+  background: rgba(109,40,217,0.12) !important;
+  border-color: rgba(109,40,217,0.3) !important;
+}
+.decision-card.tool {
+  background: rgba(21,128,61,0.12) !important;
+  border-color: rgba(21,128,61,0.3) !important;
+}
+.decision-card h3, .decision-card__label { color: #f1f5f9 !important; }
+.decision-card li { color: rgba(241,245,249,0.82) !important; border-bottom-color: rgba(255,255,255,0.06) !important; }
+.decision-card.agency .decision-card__label { color: #a78bfa !important; }
+.decision-card.tool .decision-card__label { color: #4ade80 !important; }
+.decision-card.agency li::before { color: #a78bfa !important; }
+.decision-card.tool li::before { color: #4ade80 !important; }
+
+/* Pricing table */
+.pricing-table th {
+  background: #1c2128 !important;
+  color: #f1f5f9 !important;
+  border-bottom-color: rgba(56,189,248,0.3) !important;
+}
+.pricing-table td {
+  color: rgba(241,245,249,0.82) !important;
+  border-bottom-color: rgba(255,255,255,0.06) !important;
+}
+.pricing-table tr:hover td { background: rgba(255,255,255,0.03) !important; }
+
+/* Insight box — the orange/cream box (white in dark mode) */
+.insight-box, [class*="insight-box"], [class*="callout"],
+[class*="info-box"], [class*="note-box"], [class*="tip-box"] {
+  background: rgba(249,115,22,0.08) !important;
+  border-color: rgba(249,115,22,0.3) !important;
+  border-left-color: #f97316 !important;
+}
+.insight-box p, [class*="insight-box"] p {
+  color: rgba(241,245,249,0.85) !important;
+}
+
+/* Summary / intro block */
+.summary-block {
+  background: #1c2128 !important;
+  border-color: rgba(255,255,255,0.09) !important;
+  border-left-color: #38bdf8 !important;
+}
+.summary-block p { color: rgba(241,245,249,0.80) !important; }
+
+/* FAQ section in blog */
+.faq-q { color: #f1f5f9 !important; font-weight: 700 !important; }
+.faq-a { color: rgba(241,245,249,0.80) !important; }
+.faq-item { border-bottom-color: rgba(255,255,255,0.07) !important; }
+.faq-section h2 { color: #f1f5f9 !important; }
+
+/* Inline CTA box */
+.inline-cta, [class*="inline-cta"], [class*="cta-box"] {
+  background: rgba(56,189,248,0.07) !important;
+  border-color: rgba(56,189,248,0.25) !important;
+}
+.inline-cta h3, .inline-cta p { color: #f1f5f9 !important; }
+
+/* Article layout — collapse sidebar on all screens for blog */
+.article-wrap {
+  display: block !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 48px 24px 80px !important;
+}
+/* TOC sidebar — hide on desktop too for cleaner read */
+.article-sidebar, .toc, .table-of-contents,
+[class*="sidebar"], [class*="toc-"] {
+  display: none !important;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid #38bdf8 !important;
+  background: rgba(56,189,248,0.05) !important;
+  padding: 12px 20px !important;
+  color: rgba(241,245,249,0.85) !important;
+}
+
+/* Code blocks */
+code, pre {
+  background: #161b22 !important;
+  color: #7dd3fc !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Breadcrumb */
+.article-hero__breadcrumb, .breadcrumb { color: rgba(255,255,255,0.75) !important; }
+
+/* General: any remaining hardcoded dark text */
+.article-prose [style*="color:#111827"],
+.article-prose [style*="color:#374151"],
+.article-prose [style*="color:#4b5563"] {
+  color: rgba(241,245,249,0.85) !important;
+}
+
+/* Any remaining white/cream colored boxes in prose */
+.article-prose [style*="background:#fff"],
+.article-prose [style*="background: #fff"],
+.article-prose [style*="background:#f9fafb"],
+.article-prose [style*="background:#fff8f0"],
+.article-prose [style*="background:#f0fdf4"],
+.article-prose [style*="background:#f5f3ff"],
+.article-prose [style*="background:#fffbeb"] {
+  background: #1c2128 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Mobile: collapse 2-column layouts */
+@media (max-width: 900px) {
+  .decision-grid { grid-template-columns: 1fr !important; }
+  .article-wrap { padding: 32px 16px 64px !important; }
+}
