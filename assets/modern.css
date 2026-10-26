@@ -1,3 +1,161 @@
+/* ===================================================
+   GLOBAL DARK MODE — applied to all pages via modern.css
+   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg:          #0d1117;
+  --bg-1:        #161b22;
+  --bg-card:     #1c2128;
+  --bg-card-hover:#21262d;
+  --border:      rgba(255,255,255,0.09);
+  --border-hover:rgba(56,189,248,0.55);
+  --accent:      #38bdf8;
+  --accent-2:    #7dd3fc;
+  --accent-dim:  rgba(56,189,248,0.15);
+  --tag-bg:      rgba(56,189,248,0.15);
+  --tag-text:    #7dd3fc;
+  --text:        #f1f5f9;
+  --text-dim:    rgba(241,245,249,0.80);
+  --text-muted:  rgba(241,245,249,0.55);
+  --font-sans:   'Inter','Inter var',system-ui,sans-serif;
+}
+
+*,*::before,*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nav / header */
+header, nav, .nav, .site-header, .header {
+  background: rgba(13,17,23,0.92) !important;
+  border-bottom: 1px solid var(--border) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+header a, nav a, .nav a, .nav__logo, .nav__links a {
+  color: var(--text-dim) !important;
+}
+header a:hover, nav a:hover { color: var(--text) !important; }
+
+/* Main content area */
+main, .main, article, .content, .post, .blog-post,
+.post-body, .page-content, .container, .wrapper {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+/* All headings */
+h1,h2,h3,h4,h5,h6 {
+  color: var(--text) !important;
+}
+
+/* Paragraphs & text */
+p, li, span, td, th, blockquote, label, figcaption {
+  color: var(--text-dim) !important;
+}
+
+/* Links */
+a { color: var(--accent) !important; }
+a:hover { color: var(--accent-2) !important; }
+
+/* Cards & sections */
+.card, .post-card, .blog-card, .article-card,
+.feature-card, .plan-card, .preview-card,
+[class*="card"], section, .section {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+.card:hover, .post-card:hover, .blog-card:hover,
+[class*="card"]:hover {
+  background: var(--bg-card-hover) !important;
+  border-color: var(--border-hover) !important;
+}
+
+/* Sections with explicit bg */
+.bg-white, .bg-gray-50, .bg-gray-100,
+[style*="background: #fff"], [style*="background:#fff"],
+[style*="background: white"], [style*="background-color: white"],
+[style*="background-color:#fff"] {
+  background: var(--bg-1) !important;
+}
+
+/* Tags / badges / chips */
+.tag, .badge, .chip, .label,
+[class*="tag-"], [class*="-tag"],
+[class*="badge"], [class*="chip"] {
+  background: var(--tag-bg) !important;
+  color: var(--tag-text) !important;
+  border: 1px solid rgba(56,189,248,0.2) !important;
+}
+
+/* Inputs & forms */
+input, textarea, select {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 8px;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Buttons */
+.btn, button, [class*="btn-"], [class*="-btn"],
+a.cta, .cta-btn {
+  background: var(--accent) !important;
+  color: #0d1117 !important;
+  border: none !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+.btn:hover, button:hover { opacity: 0.88 !important; }
+
+/* Blog listing page specific */
+.blog-index, .post-list, .posts-grid,
+.blog-grid, .articles, .article-list {
+  background: var(--bg) !important;
+}
+.post-meta, .post-date, .meta, .date,
+.author, .read-time {
+  color: var(--text-muted) !important;
+}
+.post-title, .article-title, h2 a, h3 a {
+  color: var(--text) !important;
+}
+
+/* Tables */
+table { border-collapse: collapse; width: 100%; }
+th { background: var(--bg-card) !important; color: var(--text) !important; }
+td { border-color: var(--border) !important; color: var(--text-dim) !important; }
+tr:nth-child(even) td { background: rgba(255,255,255,0.02) !important; }
+
+/* Horizontal rules & dividers */
+hr, .divider { border-color: var(--border) !important; }
+
+/* Footer */
+footer, .footer, .site-footer {
+  background: var(--bg-1) !important;
+  border-top: 1px solid var(--border) !important;
+  color: var(--text-muted) !important;
+}
+footer a, .footer a { color: var(--text-dim) !important; }
+footer a:hover, .footer a:hover { color: var(--accent) !important; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(56,189,248,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(56,189,248,0.5); }
+
+
 /* Jeevan AI — Modern UI: scroll-reveal, gradient text, card polish */
 
 /* Gradient text on section headings */
