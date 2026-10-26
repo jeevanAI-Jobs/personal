@@ -818,3 +818,56 @@ code, pre {
 }
 .nav__links a { color: rgba(241,245,249,0.72) !important; }
 .nav__links a:hover { background: rgba(255,255,255,0.05) !important; color: #f1f5f9 !important; }
+
+/* == GLOBAL WHITE-CARD FIX =========================================
+   Forces any white/near-white card backgrounds to dark.
+   Needed because text overrides above make all text light,
+   so white-bg cards would show invisible light-on-white text.
+   =================================================================== */
+
+[style*="background:#ffffff"],
+[style*="background: #ffffff"],
+[style*="background:white"],
+[style*="background: white"],
+[style*="background-color:#ffffff"],
+[style*="background-color: #ffffff"] {
+  background: #1c2128 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #f1f5f9 !important;
+}
+
+[style*="background:#f9fafb"],
+[style*="background: #f9fafb"],
+[style*="background:#f8fafc"],
+[style*="background:#f3f4f6"],
+[style*="background:#eff6ff"],
+[style*="background:#f5f3ff"],
+[style*="background:#fefce8"],
+[style*="background:#fff7ed"],
+[style*="background:#fef2f2"],
+[style*="background:#e7f0ff"],
+[style*="background:#e5f4fd"],
+[style*="background:#e6f4ea"] {
+  background: #161b22 !important;
+  border-color: rgba(255,255,255,0.07) !important;
+}
+
+a[style*="background:#fff"],
+a[style*="background: #fff"],
+a[style*="background:#ffffff"],
+a[style*="background: #ffffff"] {
+  background: #1c2128 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #f1f5f9 !important;
+}
+a[style*="background:#ffffff"]:hover {
+  border-color: rgba(56,189,248,0.4) !important;
+}
+
+.testimonial, .review-card, .case-study,
+[class*="testimonial"], [class*="review"],
+[class*="quote"], [class*="profile"] {
+  background: #1c2128 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #f1f5f9 !important;
+}
