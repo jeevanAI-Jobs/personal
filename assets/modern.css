@@ -766,3 +766,55 @@ code, pre {
   .decision-grid { grid-template-columns: 1fr !important; }
   .article-wrap { padding: 32px 16px 64px !important; }
 }
+
+/* ── bg-soft override (pill/chip light bg fix) ── */
+:root { --bg-soft: #161b22 !important; }
+.pill, [class*="chip"], [class*="tag"] {
+  background: #161b22 !important;
+  color: rgba(241,245,249,0.82) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+/* ── inline-cta strong/heading fix ── */
+.inline-cta__text strong,
+.inline-cta strong,
+.inline-cta h2, .inline-cta h3, .inline-cta h4 {
+  color: #f1f5f9 !important;
+}
+.inline-cta__text p, .inline-cta p {
+  color: rgba(241,245,249,0.75) !important;
+}
+/* Button inside inline-cta stays teal */
+.inline-cta .btn-primary, .inline-cta a[class*="btn"] {
+  background: #38bdf8 !important;
+  color: #0d1117 !important;
+}
+
+/* ── features.html section h2, factors, feat-cards ── */
+.section h2, .section__label { color: #f1f5f9 !important; }
+.factor__name { color: #f1f5f9 !important; }
+.factor__desc { color: rgba(241,245,249,0.78) !important; }
+.factor {
+  background: #1c2128 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+.feat-card {
+  background: #1c2128 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+.feat-card h3 { color: #f1f5f9 !important; }
+.feat-card p  { color: rgba(241,245,249,0.78) !important; }
+.callout {
+  background: rgba(99,102,241,0.06) !important;
+  border-color: rgba(99,102,241,0.22) !important;
+}
+.callout h3 { color: #f1f5f9 !important; }
+.callout p  { color: rgba(241,245,249,0.78) !important; }
+
+/* ── nav fix ── */
+.nav {
+  background: rgba(13,17,23,0.95) !important;
+  border-bottom-color: rgba(255,255,255,0.07) !important;
+}
+.nav__links a { color: rgba(241,245,249,0.72) !important; }
+.nav__links a:hover { background: rgba(255,255,255,0.05) !important; color: #f1f5f9 !important; }
