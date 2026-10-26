@@ -70,6 +70,7 @@
   .footer p{font-size:0.85rem;color:var(--text-muted)}.footer a{color:var(--text-dim)}
   @media(max-width:620px){.nav__links{display:none}}
 </style>
+  <link rel="stylesheet" href="/assets/modern.css">
 </head>
 <body>
 <nav class="nav"><div class="nav__inner">
@@ -127,5 +128,6 @@ async function run(){
 }
 function copyOut(){navigator.clipboard.writeText(document.getElementById('rewritten').textContent).then(function(){var b=document.querySelector('.copy-btn');var t=b.textContent;b.textContent='Copied!';setTimeout(function(){b.textContent=t;},1400);});}
 </script>
+<script src="/assets/modern.js" defer></script>
 </body>
 </html>
