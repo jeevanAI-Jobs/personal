@@ -961,6 +961,12 @@ section + section,
 .hero-mockup__stat strong { color: #fff !important; margin-right: 3px; }
 @media(max-width:600px){ .hero-mockup { display: none; } }
 
+
+.hero-mockup__logo {
+  width: 22px; height: 22px; border-radius: 5px;
+  object-fit: cover; flex-shrink: 0;
+}
+
 </style>
 </head>
 <body>
@@ -1020,28 +1026,28 @@ section + section,
   <div class="hero-mockup__rows">
     <div class="hero-mockup__row">
       <span class="hero-mockup__platform">
-        <span class="hero-mockup__icon" style="background:#10a37f">G</span>ChatGPT
+        <img src="/assets/logos/chatgpt.png" class="hero-mockup__logo" alt="ChatGPT">ChatGPT
       </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--mid" style="width:38%"></div></div>
       <span class="hero-mockup__score">38<span class="hero-mockup__score-label">/100</span></span>
     </div>
     <div class="hero-mockup__row">
       <span class="hero-mockup__platform">
-        <span class="hero-mockup__icon" style="background:#20808d">P</span>Perplexity
+        <img src="/assets/logos/perplexity.png" class="hero-mockup__logo" alt="Perplexity">Perplexity
       </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--mid" style="width:52%"></div></div>
       <span class="hero-mockup__score">52<span class="hero-mockup__score-label">/100</span></span>
     </div>
     <div class="hero-mockup__row">
       <span class="hero-mockup__platform">
-        <span class="hero-mockup__icon" style="background:#4285f4">Ge</span>Gemini
+        <img src="/assets/logos/gemini.png" class="hero-mockup__logo" alt="Gemini">Gemini
       </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--low" style="width:24%"></div></div>
       <span class="hero-mockup__score">24<span class="hero-mockup__score-label">/100</span></span>
     </div>
     <div class="hero-mockup__row">
       <span class="hero-mockup__platform">
-        <span class="hero-mockup__icon" style="background:#ea4335">AI</span>Google AI
+        <img src="/assets/logos/claude.png" class="hero-mockup__logo" alt="Claude">Claude
       </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--good" style="width:71%"></div></div>
       <span class="hero-mockup__score">71<span class="hero-mockup__score-label">/100</span></span>
