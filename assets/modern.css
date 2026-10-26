@@ -1,0 +1,112 @@
+/* Jeevan AI — Modern UI: scroll-reveal, gradient text, card polish */
+
+/* Gradient text on section headings */
+.section-title {
+  background: linear-gradient(135deg, #111827 0%, #4338ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scroll-reveal base (JS adds .revealed) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* Shimmer on CTA buttons */
+@keyframes jaiShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.btn--primary, .cta__btn, a[href*="auth/login"].btn {
+  background: linear-gradient(90deg,#4338ca,#7c3aed,#6366f1,#4338ca) !important;
+  background-size: 300% auto !important;
+  animation: jaiShimmer 4s linear infinite !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+/* Card hover lift */
+.step, .plan, .preview-card, .audit-card {
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.step:hover, .plan:hover, .preview-card:hover, .audit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(99,102,241,0.14) !important;
+}
+
+/* Glassmorphism on step cards */
+.step {
+  background: rgba(255,255,255,0.76) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(99,102,241,0.18) !important;
+}
+.step__num {
+  background: linear-gradient(135deg,#6366f1,#7c3aed) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Stats as individual cards */
+.stats__inner { background: transparent !important; border: none !important; gap: 16px !important; }
+.stat {
+  background: #fff !important;
+  border: 1px solid #e0e7ff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08) !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.stat:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(99,102,241,0.13) !important; }
+.stat__num {
+  background: linear-gradient(135deg,#6366f1,#7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section label pill */
+.section-label {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  font-size: 0.72rem !important;
+}
+
+/* Factor items */
+.factor-item {
+  border-left: 3px solid #6366f1 !important;
+  transition: transform 0.2s;
+}
+.factor-item:hover { transform: translateX(4px); }
+
+/* Platform chips */
+.platform-chip { transition: all 0.2s; }
+.platform-chip:hover {
+  border-color: rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.05);
+  color: #6366f1;
+}
+
+/* Featured plan glow */
+@keyframes borderGlow {
+  0%,100% { box-shadow: 0 0 0 1px rgba(99,102,241,0.5), 0 8px 32px rgba(99,102,241,0.18); }
+  50%      { box-shadow: 0 0 0 2px rgba(124,58,237,0.7), 0 12px 40px rgba(124,58,237,0.28); }
+}
+.plan--featured { animation: borderGlow 3s ease-in-out infinite !important; }
+
+/* Preview card hover border */
+.preview-card { border: 1px solid #e5e7eb; }
+.preview-card:hover {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #6366f1, 0 8px 24px rgba(99,102,241,0.12) !important;
+}
+
+/* Tinted section backgrounds */
+.blog-preview { background: linear-gradient(180deg,#f8faff 0%,#fff 100%) !important; }
+.factors      { background: linear-gradient(180deg,#f5f3ff 0%,#eff6ff 100%) !important; }
