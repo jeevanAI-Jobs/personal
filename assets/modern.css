@@ -268,3 +268,196 @@ footer a:hover, .footer a:hover { color: var(--accent) !important; }
 /* Tinted section backgrounds */
 .blog-preview { background: linear-gradient(180deg,#f8faff 0%,#fff 100%) !important; }
 .factors      { background: linear-gradient(180deg,#f5f3ff 0%,#eff6ff 100%) !important; }
+
+
+/* =====================================================
+   ISSUE FIXES
+   ===================================================== */
+
+/* Fix 1: Prevent horizontal overflow on all pages */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+* { max-width: 100%; }
+img, video, iframe, embed, object { max-width: 100% !important; height: auto; }
+
+/* Fix 2: Step cards — force dark background (overrides gray inline styles) */
+.step, .step-card, [class*="step"],
+.how-it-works .card, .steps .card,
+.step__body, .step-body {
+  background: #1c2128 !important;
+  border: 1px solid rgba(56,189,248,0.15) !important;
+  color: #f1f5f9 !important;
+  border-radius: 12px !important;
+}
+.step h3, .step h2, .step__title, .step-title,
+[class*="step"] h3, [class*="step"] h2 {
+  color: #f1f5f9 !important;
+}
+.step p, .step__desc, [class*="step"] p {
+  color: rgba(241,245,249,0.80) !important;
+}
+/* Step number circle */
+.step__num, .step-num, .step__number, .step-number {
+  background: linear-gradient(135deg,#0ea5e9,#38bdf8) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Fix 3: Platform chips — fix invisible text */
+.platform, .platform-chip, [class*="platform"],
+.platforms span, .platform-list span,
+.platform-tag, .ai-platform {
+  background: rgba(56,189,248,0.12) !important;
+  color: #7dd3fc !important;
+  border: 1px solid rgba(56,189,248,0.25) !important;
+  border-radius: 100px !important;
+  padding: 6px 14px !important;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+  display: inline-block !important;
+}
+/* Also target white/light pill shapes directly */
+[style*="background: white"] span,
+[style*="background:#fff"] span,
+[style*="background: #fff"] span,
+[style*="border-radius: 9999"] {
+  background: rgba(56,189,248,0.12) !important;
+  color: #7dd3fc !important;
+}
+
+/* Fix 4: Two-column / sidebar layouts — collapse on all screens */
+.two-col, .two-column, .layout-two-col,
+.content-sidebar, .sidebar-layout,
+.grid-2, [class*="col-2"],
+.features-grid, .feature-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+}
+/* Remove any fixed left margins/padding from content areas */
+.content, .post-content, .article-content,
+.main-content, .page-content, .post-body {
+  margin-left: 0 !important;
+  padding-left: clamp(16px, 4vw, 48px) !important;
+  padding-right: clamp(16px, 4vw, 48px) !important;
+}
+/* Fix sidebar pushing content */
+.sidebar, .side-nav, .left-sidebar, [class*="sidebar"] {
+  display: none !important;
+}
+/* Sections: full width, no overflow */
+section, .section {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Fix 5: Factor items (Trust, Use Case Fit etc.) */
+.factor, .factor-item, [class*="factor"],
+.buying-factor, [class*="buying"] {
+  background: #1c2128 !important;
+  border: 1px solid rgba(56,189,248,0.12) !important;
+  border-left: 3px solid #38bdf8 !important;
+  color: #f1f5f9 !important;
+  padding: 16px 20px !important;
+  border-radius: 8px !important;
+}
+.factor h3, .factor h4, .factor__name,
+[class*="factor"] h3, [class*="factor"] h4 {
+  color: #f1f5f9 !important;
+}
+.factor p, .factor__desc, [class*="factor"] p {
+  color: rgba(241,245,249,0.75) !important;
+}
+
+/* Fix 6: Container max-width and centering */
+.container, .wrapper, .inner, .content-wrap,
+[class*="container"], [class*="wrapper"] {
+  max-width: min(1200px, 100%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(16px, 4vw, 48px) !important;
+  padding-right: clamp(16px, 4vw, 48px) !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix 7: Horizontal rule / section divider white lines */
+hr {
+  border: none !important;
+  border-top: 1px solid rgba(255,255,255,0.07) !important;
+  margin: 32px 0 !important;
+}
+
+/* Fix 8: CTA button at bottom — dark outline button fix */
+.cta-outline, .btn-outline, [class*="btn-ghost"],
+a[style*="border: 1px solid"] {
+  background: transparent !important;
+  border: 1px solid rgba(56,189,248,0.5) !important;
+  color: #38bdf8 !important;
+}
+.cta-outline:hover, .btn-outline:hover {
+  background: rgba(56,189,248,0.1) !important;
+}
+
+/* Fix 9: Mobile nav — hamburger menu */
+@media(max-width: 768px) {
+  /* Hide nav links, show hamburger */
+  .nav__links, .nav-links, .header__links, header ul,
+  nav ul:not(.active) {
+    display: none !important;
+  }
+  .nav__links.open, .nav-links.open,
+  nav ul.active {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 60px !important; left: 0 !important; right: 0 !important;
+    background: #0d1117 !important;
+    padding: 24px !important;
+    border-bottom: 1px solid rgba(56,189,248,0.15) !important;
+    z-index: 9999 !important;
+    gap: 16px !important;
+  }
+  .nav__links.open a, .nav-links.open a { font-size: 1rem !important; }
+
+  /* Hamburger icon injected by modern.js */
+  .nav-hamburger {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    cursor: pointer !important;
+    padding: 8px !important;
+    margin-left: auto !important;
+  }
+  .nav-hamburger span {
+    display: block !important;
+    width: 22px !important; height: 2px !important;
+    background: #f1f5f9 !important;
+    border-radius: 2px !important;
+    transition: 0.25s !important;
+  }
+
+  /* Stack grids vertically on mobile */
+  .grid, .steps, .features, .plans, .cards,
+  [class*="grid"], [class*="-row"], [class*="flex-row"] {
+    flex-direction: column !important;
+    display: flex !important;
+  }
+
+  /* Full width cards on mobile */
+  .step, .plan, .card, .feature-card, [class*="card"] {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  /* Hero font size */
+  h1 { font-size: clamp(1.8rem, 7vw, 3rem) !important; }
+  h2 { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
+
+  /* Hide heavy decorative elements */
+  .hero-mockup, .hero__visual, [class*="orb"],
+  [class*="decoration"], [class*="bg-blob"] {
+    display: none !important;
+  }
+}
