@@ -530,6 +530,122 @@ a{color:inherit;text-decoration:none}
   box-shadow: 0 0 0 1px rgba(99,102,241,0.2), 0 4px 16px rgba(99,102,241,0.15);
 }
 
+
+/* ═══════════════════════════════════════════════
+   SMART FEEL LAYER — 2026-10-26
+   ═══════════════════════════════════════════════ */
+
+/* ANIMATED ORBS in hero */
+.hero { position: relative; overflow: hidden; }
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.hero::before {
+  width: 420px; height: 420px;
+  background: rgba(99,102,241,0.35);
+  top: -100px; left: -80px;
+}
+.hero::after {
+  width: 300px; height: 300px;
+  background: rgba(124,58,237,0.28);
+  bottom: -60px; right: -40px;
+  animation-delay: -4s;
+}
+@keyframes orbFloat {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(24px,-20px) scale(1.06); }
+  66%      { transform: translate(-16px,14px) scale(0.95); }
+}
+
+/* SCROLL REVEAL — base state (JS adds .revealed) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GLASSMORPHISM on step cards */
+.step {
+  background: rgba(255,255,255,0.72) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(99,102,241,0.18) !important;
+}
+
+/* DOT GRID on how-it-works section */
+.how-it-works {
+  background-image: radial-gradient(circle, rgba(99,102,241,0.12) 1px, transparent 1px) !important;
+  background-size: 28px 28px !important;
+  background-color: #f8faff !important;
+}
+
+/* SHIMMER on primary CTA buttons */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.btn--primary, .cta__btn, a[href*="auth/login"].btn {
+  background: linear-gradient(90deg, #4338ca, #7c3aed, #6366f1, #4338ca) !important;
+  background-size: 300% auto !important;
+  animation: shimmer 4s linear infinite !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+/* GLOWING BORDER animation on featured plan */
+@keyframes borderGlow {
+  0%,100% { box-shadow: 0 0 0 1px rgba(99,102,241,0.5), 0 8px 32px rgba(99,102,241,0.18); }
+  50%      { box-shadow: 0 0 0 2px rgba(124,58,237,0.7), 0 12px 40px rgba(124,58,237,0.28); }
+}
+.plan--featured {
+  animation: borderGlow 3s ease-in-out infinite !important;
+}
+
+/* STAT COUNTER — highlight while counting */
+.stat__num.counting {
+  opacity: 0.7;
+  transition: opacity 0.1s;
+}
+
+/* HERO H1 — subtle text shimmer */
+.hero__title {
+  background: linear-gradient(135deg, #fff 0%, #c7d2fe 40%, #fff 60%, #e0e7ff 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* TYPING CURSOR on hero subtitle */
+.hero__sub::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  color: rgba(255,255,255,0.6);
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* SMOOTH BORDERS on section transitions */
+.section + .section,
+.how-it-works + section,
+section + .how-it-works {
+  border-top: 1px solid rgba(99,102,241,0.08);
+}
+
 </style>
 </head>
 <body>
@@ -1045,6 +1161,52 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
+
+
+<script>
+/* SCROLL REVEAL */
+(function() {
+  const targets = document.querySelectorAll(
+    '.step, .plan, .preview-card, .stat, .factor-item, .section-title, .platform-chip'
+  );
+  targets.forEach(function(el) { el.classList.add('reveal'); });
+  const io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  targets.forEach(function(el) { io.observe(el); });
+})();
+
+/* COUNTER ANIMATION on stats */
+(function() {
+  function animateCounter(el) {
+    var text = el.textContent.trim();
+    var match = text.match(/^([\d,]+)(\S*)$/);
+    if (!match) return;
+    var end = parseInt(match[1].replace(/,/g, ''));
+    var suffix = match[2] || '';
+    var start = 0, duration = 1600, step = 16;
+    var timer = setInterval(function() {
+      start += Math.ceil(end / (duration / step));
+      if (start >= end) { start = end; clearInterval(timer); }
+      el.textContent = start.toLocaleString('en-IN') + suffix;
+    }, step);
+  }
+  var io2 = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        io2.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat__num').forEach(function(el) { io2.observe(el); });
+})();
+</script>
 
 </body>
 </html>
