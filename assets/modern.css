@@ -461,3 +461,60 @@ a[style*="border: 1px solid"] {
     display: none !important;
   }
 }
+
+
+/* ── FAQ question text fix ──────────────────────────────────── */
+/* Questions must be fully bright — not muted */
+details summary,
+.faq__question, .faq-question,
+.accordion__question, .accordion-question,
+[class*="faq"] dt, [class*="faq"] summary,
+[class*="accordion"] summary,
+[class*="question"], dt {
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  font-size: 1rem !important;
+  list-style: none !important;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::marker { display: none; }
+
+/* FAQ answer text */
+details p, details li, details div,
+.faq__answer, .faq-answer,
+[class*="faq"] dd, [class*="accordion"] .content {
+  color: rgba(241,245,249,0.82) !important;
+}
+
+/* FAQ container */
+details, .faq-item, .faq__item,
+[class*="faq-item"], [class*="accordion-item"] {
+  background: #1c2128 !important;
+  border: 1px solid rgba(56,189,248,0.12) !important;
+  border-radius: 10px !important;
+  padding: 18px 22px !important;
+  margin-bottom: 10px !important;
+}
+details[open] {
+  border-color: rgba(56,189,248,0.35) !important;
+}
+
+/* FAQ expand arrow */
+details summary::after {
+  content: '+';
+  float: right;
+  font-size: 1.2rem;
+  color: #38bdf8;
+  transition: transform 0.2s;
+}
+details[open] summary::after {
+  content: '−';
+}
+
+/* Also fix: any heading inside a faq/accordion that was getting muted */
+[class*="faq"] h2, [class*="faq"] h3, [class*="faq"] h4,
+[class*="question"] h2, [class*="question"] h3 {
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+}
