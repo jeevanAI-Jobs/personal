@@ -51,20 +51,20 @@
 </script>
 <style>
 :root{
-  --bg:          #08080e;
-  --bg-1:        #0f0f17;
-  --bg-card:     #111119;
-  --bg-card-hover:#17171f;
-  --border:      rgba(255,255,255,0.08);
-  --border-hover:rgba(99,102,241,0.55);
-  --accent:      #6366f1;
-  --accent-2:    #818cf8;
-  --accent-dim:  rgba(99,102,241,0.15);
+  --bg:          #0d1117;
+  --bg-1:        #161b22;
+  --bg-card:     #1c2128;
+  --bg-card-hover:#21262d;
+  --border:      rgba(255,255,255,0.09);
+  --border-hover:rgba(56,189,248,0.55);
+  --accent:      #38bdf8;
+  --accent-2:    #7dd3fc;
+  --accent-dim:  rgba(56,189,248,0.15);
   --text:        #f1f5f9;
   --text-dim:    rgba(241,245,249,0.80);
   --text-muted:  rgba(241,245,249,0.55);
-  --tag-bg:      rgba(99,102,241,0.18);
-  --tag-text:    #a5b4fc;
+  --tag-bg:      rgba(56,189,248,0.15);
+  --tag-text:    #7dd3fc;
   --white:       #ffffff;
   --radius:      12px;
   --radius-sm:   8px;
@@ -88,7 +88,7 @@ a{color:inherit;text-decoration:none}
 .nav__cta:hover{opacity:0.88}
 /* HERO */
 .hero{padding:100px 24px 80px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse at 50% 0%,rgba(99,102,241,0.12) 0%,transparent 65%);pointer-events:none}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:500px;background:radial-gradient(ellipse at 50% 0%,rgba(56,189,248,0.12) 0%,transparent 65%);pointer-events:none}
 .hero__inner{max-width:760px;margin:0 auto;position:relative}
 .hero__badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;background:var(--accent-dim);border:1px solid rgba(99,102,241,0.3);font-size:0.78rem;font-weight:600;color:var(--accent);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:28px}
 .hero__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
@@ -107,8 +107,8 @@ a{color:inherit;text-decoration:none}
 .hero__audit-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;font-size:0.87rem;font-weight:600;color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);transition:background 0.15s}
 .hero__audit-btn:hover{background:rgba(255,255,255,0.14);color:#fff}
 .hero__audit-btn span{font-size:0.72rem;font-weight:700;padding:2px 8px;border-radius:100px;background:rgba(74,222,128,0.18);color:#4ade80;border:1px solid rgba(74,222,128,0.3)}
-.hero__audit-btn--full{background:rgba(99,102,241,0.25);border-color:rgba(99,102,241,0.45)}
-.hero__audit-btn--full:hover{background:rgba(99,102,241,0.38)}
+.hero__audit-btn--full{background:rgba(56,189,248,0.22);border-color:rgba(56,189,248,0.45)}
+.hero__audit-btn--full:hover{background:rgba(56,189,248,0.35)}
 /* PLATFORMS */
 .platforms{padding:32px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .platforms__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
@@ -141,7 +141,7 @@ a{color:inherit;text-decoration:none}
 .factor-item__name{font-size:0.93rem;font-weight:600;color:var(--white)}
 .factor-item__desc{font-size:0.8rem;color:var(--text-dim);margin-top:2px}
 .factor-item__bar-wrap{flex:1;height:5px;background: rgba(0,0,0,0.06);border-radius:3px;overflow:hidden;min-width:80px}
-.factor-item__bar{height:100%;border-radius:3px;background:linear-gradient(to right,var(--accent),rgba(99,102,241,0.5))}
+.factor-item__bar{height:100%;border-radius:3px;background:linear-gradient(to right,var(--accent),rgba(56,189,248,0.5))}
 /* SCAN VISUAL */
 .scan-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;max-width:440px}
 .scan-card__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
@@ -157,7 +157,7 @@ a{color:inherit;text-decoration:none}
 .pricing{padding:80px 24px;border-top:1px solid var(--border)}
 .pricing__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:48px}
 .plan{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;position:relative}
-.plan--featured{border-color:rgba(99,102,241,0.4);background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,var(--bg-card) 100%)}
+.plan--featured{border-color:rgba(56,189,248,0.4);background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,var(--bg-card) 100%)}
 .plan__badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:100px;background:var(--accent);color:#fff;font-size:0.72rem;font-weight:700;white-space:nowrap}
 .plan__name{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:12px}
 .plan__price{font-size:2rem;font-weight:700;color:var(--white);font-family:var(--font-mono);line-height:1}
@@ -212,12 +212,12 @@ a{color:inherit;text-decoration:none}
 .audit-strip__inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .audit-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;transition:background 0.18s}
 .audit-card:hover{background:rgba(255,255,255,0.1)}
-.audit-card__label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a5b4fc}
+.audit-card__label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7dd3fc}
 .audit-card h3{font-size:1.02rem;font-weight:700;color:#fff;line-height:1.3}
 .audit-card p{font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.55;flex:1}
 .audit-card__btn{display:inline-flex;align-items:center;gap:6px;margin-top:4px;padding:10px 18px;border-radius:8px;font-size:0.85rem;font-weight:700;width:fit-content}
 .audit-card--reddit .audit-card__btn{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2)}
-.audit-card--full .audit-card__btn{background:#6366f1;color:#fff}
+.audit-card--full .audit-card__btn{background:#38bdf8;color:#fff}
 .audit-card__tag{font-size:0.72rem;font-weight:600;padding:3px 9px;border-radius:100px;background:rgba(74,222,128,0.15);color:#4ade80;border:1px solid rgba(74,222,128,0.25);width:fit-content}
 @media(max-width:600px){.audit-strip__inner{grid-template-columns:1fr}}
 
@@ -238,17 +238,17 @@ a{color:inherit;text-decoration:none}
 
 /* Primary button gradient */
 .btn-primary {
-  background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%) !important;
-  box-shadow: 0 2px 6px rgba(99,102,241,0.38);
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
+  box-shadow: 0 2px 6px rgba(56,189,248,0.35);
 }
 .btn-primary:hover {
   opacity: 0.93;
-  box-shadow: 0 4px 14px rgba(99,102,241,0.42) !important;
+  box-shadow: 0 4px 14px rgba(56,189,248,0.4) !important;
 }
 
 /* ── LANDING PAGE HERO GRADIENT ── */
 .hero {
-  background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 45%, #7c3aed 100%) !important;
+  background: linear-gradient(135deg, #0d1117 0%, #0f2744 45%, #0c4a6e 100%) !important;
   overflow: hidden;
   position: relative;
 }
@@ -256,14 +256,14 @@ a{color:inherit;text-decoration:none}
   background: radial-gradient(ellipse at 20% 60%, rgba(255,255,255,0.07) 0%, transparent 55%) !important;
 }
 .hero h1                 { color: #ffffff !important; }
-.hero h1 em { color: #c7d2fe !important; }
+.hero h1 em { color: #bae6fd !important; }
 .hero .hero__sub         { color: rgba(255,255,255,0.87) !important; }
 .hero .hero__badge {
   background:   rgba(255,255,255,0.13) !important;
   border-color: rgba(255,255,255,0.22) !important;
-  color: #e0e7ff !important;
+  color: #e0f2fe !important;
 }
-.hero .hero__badge-dot   { background: #a5b4fc !important; }
+.hero .hero__badge-dot   { background: #7dd3fc !important; }
 .hero .hero__note        { color: rgba(255,255,255,0.52) !important; }
 .hero .platforms__label  { color: rgba(255,255,255,0.6) !important; }
 .hero .platform-chip {
@@ -274,11 +274,11 @@ a{color:inherit;text-decoration:none}
 /* Hero primary CTA: white button on gradient */
 .hero .btn-primary {
   background: #ffffff !important;
-  color: #4338ca !important;
+  color: #0ea5e9 !important;
   box-shadow: 0 4px 16px rgba(0,0,0,0.22) !important;
 }
 .hero .btn-primary:hover {
-  background: #eef2ff !important;
+  background: #f0f9ff !important;
   box-shadow: 0 6px 22px rgba(0,0,0,0.28) !important;
 }
 /* Hero outline CTA */
@@ -295,30 +295,30 @@ a{color:inherit;text-decoration:none}
 /* ── SECTION BACKGROUNDS (visual rhythm) ── */
 /* Stats bar: soft indigo wash */
 .stats {
-  background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%) !important;
-  border-top: 1px solid #e0e7ff;
-  border-bottom: 1px solid #e0e7ff;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%) !important;
+  border-top: 1px solid #e0f2fe;
+  border-bottom: 1px solid #e0f2fe;
 }
 .stat { background: transparent !important; }
 
 /* Testimonial: soft purple wash */
 .testimonial-strip {
   background: linear-gradient(135deg, #f5f3ff 0%, #eff6ff 100%) !important;
-  border-top: 1px solid #e0e7ff !important;
-  border-bottom: 1px solid #e0e7ff !important;
+  border-top: 1px solid #e0f2fe !important;
+  border-bottom: 1px solid #e0f2fe !important;
 }
 
 /* Bottom CTA: matches hero gradient */
 .cta-final {
-  background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 45%, #7c3aed 100%) !important;
+  background: linear-gradient(135deg, #0d1117 0%, #0f2744 45%, #0c4a6e 100%) !important;
 }
 .cta-final * { color: #ffffff !important; }
 .cta-final .btn-primary {
   background: #ffffff !important;
-  color: #4338ca !important;
+  color: #0ea5e9 !important;
   box-shadow: 0 4px 14px rgba(0,0,0,0.2) !important;
 }
-.cta-final .btn-primary:hover { background: #eef2ff !important; }
+.cta-final .btn-primary:hover { background: #f0f9ff !important; }
 .cta-final .btn-outline {
   border-color: rgba(255,255,255,0.38) !important;
   color: #ffffff !important;
@@ -391,7 +391,7 @@ a{color:inherit;text-decoration:none}
 .article-meta *     { color: #6b7280; }
 /* Sidebar CTA buttons must stay readable, not dimmed by .article-sidebar * */
 .article-sidebar .btn-primary { color: #ffffff !important; }
-.article-sidebar .btn-outline-sm { color: #4f46e5 !important; }
+.article-sidebar .btn-outline-sm { color: #0369a1 !important; }
 
 /* ── Gradient sections: force text white ── */
 /* These were failing because --white resolved to #111827.
@@ -416,11 +416,11 @@ a{color:inherit;text-decoration:none}
 .demo-section{padding:80px 24px;border-top:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,rgba(99,102,241,0.03) 100%)}
 .demo-section__inner{max-width:var(--max-w);margin:0 auto;text-align:center}
 .demo-section__header{max-width:600px;margin:0 auto 48px}
-.demo-video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 8px 40px rgba(99,102,241,0.18),0 2px 8px rgba(0,0,0,0.08);border:1px solid rgba(99,102,241,0.2);max-width:900px;margin:0 auto}
+.demo-video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;box-shadow:0 8px 40px rgba(56,189,248,0.18),0 2px 8px rgba(0,0,0,0.08);border:1px solid rgba(56,189,248,0.2);max-width:900px;margin:0 auto}
 .demo-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:16px}
 
 /* UPDATES BAR */
-.updates-bar{background:linear-gradient(135deg,#4338ca,#6366f1);padding:9px 24px;text-align:center}
+.updates-bar{background:linear-gradient(135deg,#0ea5e9,#38bdf8);padding:9px 24px;text-align:center}
 .updates-bar a{color:#fff;font-size:0.82rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:10px;opacity:1;transition:opacity 0.2s}
 .updates-bar a:hover{opacity:0.88}
 .updates-bar__badge{display:inline-flex;align-items:center;justify-content:center;padding:2px 8px;border-radius:4px;background:rgba(255,255,255,0.2);font-size:0.72rem;font-weight:800;letter-spacing:0.04em;flex-shrink:0}
@@ -436,7 +436,7 @@ a{color:inherit;text-decoration:none}
 
 /* 1. GRADIENT TEXT on section headings */
 .section-title {
-  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #7dd3fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -446,22 +446,22 @@ a{color:inherit;text-decoration:none}
 .step {
   border-top: 3px solid transparent;
   background-image: linear-gradient(var(--bg-card), var(--bg-card)),
-                    linear-gradient(135deg, #6366f1, #7c3aed);
+                    linear-gradient(135deg, #38bdf8, #0284c7);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border-top: 3px solid;
-  border-image: linear-gradient(135deg, #6366f1, #7c3aed) 1;
+  border-image: linear-gradient(135deg, #38bdf8, #0284c7) 1;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .step:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(99,102,241,0.14) !important;
+  box-shadow: 0 12px 28px rgba(56,189,248,0.12) !important;
 }
 .step__num {
-  background: linear-gradient(135deg, #6366f1, #7c3aed) !important;
+  background: linear-gradient(135deg, #38bdf8, #0284c7) !important;
   color: #fff !important;
   border: none !important;
-  box-shadow: 0 2px 8px rgba(99,102,241,0.35);
+  box-shadow: 0 2px 8px rgba(56,189,248,0.28);
 }
 
 /* 3. STATS — individual raised cards, not divided grid */
@@ -472,17 +472,17 @@ a{color:inherit;text-decoration:none}
 }
 .stat {
   background: #ffffff !important;
-  border: 1px solid #e0e7ff !important;
+  border: 1px solid #e0f2fe !important;
   border-radius: 12px !important;
-  box-shadow: 0 2px 8px rgba(99,102,241,0.08) !important;
+  box-shadow: 0 2px 8px rgba(56,189,248,0.07) !important;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .stat:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(99,102,241,0.13) !important;
+  box-shadow: 0 8px 20px rgba(56,189,248,0.1) !important;
 }
 .stat__num {
-  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -506,13 +506,13 @@ a{color:inherit;text-decoration:none}
 }
 .preview-card:hover {
   border-color: transparent;
-  box-shadow: 0 0 0 2px #6366f1, 0 8px 24px rgba(99,102,241,0.12) !important;
+  box-shadow: 0 0 0 2px #38bdf8, 0 8px 24px rgba(56,189,248,0.12) !important;
   transform: translateY(-3px);
 }
 
 /* 6. PLAN CARDS — featured card glow */
 .plan--featured {
-  box-shadow: 0 0 0 1px rgba(99,102,241,0.5), 0 8px 32px rgba(99,102,241,0.18) !important;
+  box-shadow: 0 0 0 1px rgba(56,189,248,0.5), 0 8px 32px rgba(56,189,248,0.18) !important;
 }
 
 /* 7. SECTION LABEL — pill background */
@@ -520,8 +520,8 @@ a{color:inherit;text-decoration:none}
   display: inline-block;
   padding: 4px 12px;
   border-radius: 100px;
-  background: rgba(99,102,241,0.1);
-  border: 1px solid rgba(99,102,241,0.2);
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.2);
   font-size: 0.72rem !important;
 }
 
@@ -532,7 +532,7 @@ a{color:inherit;text-decoration:none}
 }
 .factor-item:hover {
   transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(99,102,241,0.1) !important;
+  box-shadow: 0 4px 12px rgba(56,189,248,0.1) !important;
 }
 
 /* 9. PLATFORM CHIPS — subtle hover */
@@ -540,15 +540,15 @@ a{color:inherit;text-decoration:none}
   transition: all 0.2s;
 }
 .platform-chip:hover {
-  border-color: rgba(99,102,241,0.4);
+  border-color: rgba(56,189,248,0.4);
   background: rgba(99,102,241,0.05);
   color: var(--accent);
 }
 
 /* 10. AUDIT CARDS — enhanced glow */
 .audit-card--full {
-  border-color: rgba(99,102,241,0.4) !important;
-  box-shadow: 0 0 0 1px rgba(99,102,241,0.2), 0 4px 16px rgba(99,102,241,0.15);
+  border-color: rgba(56,189,248,0.4) !important;
+  box-shadow: 0 0 0 1px rgba(56,189,248,0.2), 0 4px 16px rgba(56,189,248,0.15);
 }
 
 
@@ -569,12 +569,12 @@ a{color:inherit;text-decoration:none}
 }
 .hero::before {
   width: 420px; height: 420px;
-  background: rgba(99,102,241,0.35);
+  background: rgba(56,189,248,0.28);
   top: -100px; left: -80px;
 }
 .hero::after {
   width: 300px; height: 300px;
-  background: rgba(124,58,237,0.28);
+  background: rgba(14,165,233,0.22);
   bottom: -60px; right: -40px;
   animation-delay: -4s;
 }
@@ -600,12 +600,12 @@ a{color:inherit;text-decoration:none}
   background: rgba(255,255,255,0.72) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(99,102,241,0.18) !important;
+  border: 1px solid rgba(56,189,248,0.18) !important;
 }
 
 /* DOT GRID on how-it-works section */
 .how-it-works {
-  background-image: radial-gradient(circle, rgba(99,102,241,0.12) 1px, transparent 1px) !important;
+  background-image: radial-gradient(circle, rgba(56,189,248,0.12) 1px, transparent 1px) !important;
   background-size: 28px 28px !important;
   background-color: #f8faff !important;
 }
@@ -616,7 +616,7 @@ a{color:inherit;text-decoration:none}
   100% { background-position: 200% center; }
 }
 .btn--primary, .cta__btn, a[href*="auth/login"].btn {
-  background: linear-gradient(90deg, #4338ca, #7c3aed, #6366f1, #4338ca) !important;
+  background: linear-gradient(90deg, #0ea5e9, #0284c7, #38bdf8, #0ea5e9) !important;
   background-size: 300% auto !important;
   animation: shimmer 4s linear infinite !important;
   border: none !important;
@@ -625,8 +625,8 @@ a{color:inherit;text-decoration:none}
 
 /* GLOWING BORDER animation on featured plan */
 @keyframes borderGlow {
-  0%,100% { box-shadow: 0 0 0 1px rgba(99,102,241,0.5), 0 8px 32px rgba(99,102,241,0.18); }
-  50%      { box-shadow: 0 0 0 2px rgba(124,58,237,0.7), 0 12px 40px rgba(124,58,237,0.28); }
+  0%,100% { box-shadow: 0 0 0 1px rgba(56,189,248,0.5), 0 8px 32px rgba(56,189,248,0.18); }
+  50%      { box-shadow: 0 0 0 2px rgba(14,165,233,0.6), 0 12px 40px rgba(14,165,233,0.22); }
 }
 .plan--featured {
   animation: borderGlow 3s ease-in-out infinite !important;
@@ -640,7 +640,7 @@ a{color:inherit;text-decoration:none}
 
 /* HERO H1 — subtle text shimmer */
 .hero__title {
-  background: linear-gradient(135deg, #fff 0%, #c7d2fe 40%, #fff 60%, #e0e7ff 100%);
+  background: linear-gradient(135deg, #fff 0%, #bae6fd 40%, #fff 60%, #e0f2fe 100%);
   background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -664,7 +664,7 @@ a{color:inherit;text-decoration:none}
 .section + .section,
 .how-it-works + section,
 section + .how-it-works {
-  border-top: 1px solid rgba(99,102,241,0.08);
+  border-top: 1px solid rgba(56,189,248,0.07);
 }
 
 
@@ -685,13 +685,13 @@ body { background: var(--bg) !important; }
 .blog-preview { background: var(--bg) !important; }
 .pricing { background: var(--bg) !important; }
 .testimonial-strip { background: var(--bg-1) !important; }
-.cta-final { background: linear-gradient(135deg,rgba(99,102,241,0.15) 0%,rgba(124,58,237,0.08) 60%, var(--bg) 100%) !important; }
+.cta-final { background: linear-gradient(135deg,rgba(56,189,248,0.15) 0%,rgba(14,165,233,0.08) 60%, var(--bg) 100%) !important; }
 .footer { background: var(--bg) !important; }
 .section { background: transparent !important; }
 .section:nth-of-type(even) { background: var(--bg-1) !important; }
 .how-it-works {
   background-color: var(--bg-1) !important;
-  background-image: radial-gradient(circle, rgba(99,102,241,0.1) 1px, transparent 1px) !important;
+  background-image: radial-gradient(circle, rgba(56,189,248,0.1) 1px, transparent 1px) !important;
   background-size: 28px 28px !important;
 }
 
@@ -711,8 +711,8 @@ body { background: var(--bg) !important; }
 /* Plan cards — dark */
 .plan { background: var(--bg-card) !important; border-color: var(--border) !important; }
 .plan--featured {
-  background: linear-gradient(135deg,rgba(99,102,241,0.14) 0%,rgba(124,58,237,0.08) 100%) !important;
-  border-color: rgba(99,102,241,0.45) !important;
+  background: linear-gradient(135deg,rgba(56,189,248,0.12) 0%,rgba(14,165,233,0.08) 100%) !important;
+  border-color: rgba(56,189,248,0.45) !important;
 }
 .plan__cta { color: var(--text-dim) !important; border-color: var(--border) !important; }
 .plan__cta:hover { border-color: var(--accent) !important; color: var(--accent-2) !important; }
@@ -788,11 +788,11 @@ body { background: var(--bg) !important; }
 }
 .hero-mockup__bar {
   height: 100%; border-radius: 4px;
-  background: linear-gradient(90deg, #6366f1, #818cf8);
+  background: linear-gradient(90deg, #38bdf8, #7dd3fc);
   transition: width 1.2s ease;
 }
 .hero-mockup__bar--good { background: linear-gradient(90deg, #059669, #34d399); }
-.hero-mockup__bar--mid  { background: linear-gradient(90deg, #6366f1, #818cf8); }
+.hero-mockup__bar--mid  { background: linear-gradient(90deg, #38bdf8, #7dd3fc); }
 .hero-mockup__bar--low  { background: linear-gradient(90deg, #dc2626, #f87171); }
 .hero-mockup__score {
   font-size: 0.78rem; font-family: var(--font-mono); font-weight: 600;
@@ -825,8 +825,8 @@ section + section,
 }
 .section-label {
   color: var(--accent-2) !important;
-  background: rgba(99,102,241,0.12) !important;
-  border-color: rgba(99,102,241,0.25) !important;
+  background: rgba(56,189,248,0.12) !important;
+  border-color: rgba(56,189,248,0.22) !important;
 }
 
 /* Scrollbar dark */
@@ -879,7 +879,7 @@ section + section,
 .footer__bottom span { color: rgba(241,245,249,0.4) !important; }
 
 /* Blog preview tags */
-.preview-card__tag { background: rgba(99,102,241,0.2) !important; color: #a5b4fc !important; }
+.preview-card__tag { background: rgba(56,189,248,0.2) !important; color: #7dd3fc !important; }
 
 /* Dividers readable */
 .plan__divider { border-color: rgba(255,255,255,0.08) !important; }
@@ -894,6 +894,71 @@ section + section,
 
 /* Platform label */
 .platforms__label { color: rgba(241,245,249,0.5) !important; }
+
+
+/* Improved hero mockup */
+.hero-mockup {
+  margin: 44px auto 0;
+  max-width: 640px;
+  background: rgba(13,17,23,0.7) !important;
+  border: 1px solid rgba(56,189,248,0.2) !important;
+  border-radius: 14px;
+  padding: 20px 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-align: left;
+}
+.hero-mockup__header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.hero-mockup__title {
+  font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.9) !important;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero-mockup__tag {
+  font-size: 0.68rem; font-weight: 700; padding: 3px 10px;
+  border-radius: 100px; background: rgba(74,222,128,0.18);
+  color: #4ade80 !important; border: 1px solid rgba(74,222,128,0.28);
+  animation: pulse 2s infinite;
+}
+.hero-mockup__rows { display: flex; flex-direction: column; gap: 10px; }
+.hero-mockup__row { display: flex; align-items: center; gap: 12px; }
+.hero-mockup__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 5px;
+  font-size: 0.6rem; font-weight: 800; color: #fff; flex-shrink: 0;
+}
+.hero-mockup__platform {
+  display: flex !important; align-items: center !important; gap: 8px !important;
+  font-size: 0.82rem !important; color: rgba(255,255,255,0.88) !important;
+  font-weight: 500 !important; min-width: 120px;
+}
+.hero-mockup__bar-wrap {
+  flex: 1; height: 6px; background: rgba(255,255,255,0.08);
+  border-radius: 4px; overflow: hidden;
+}
+.hero-mockup__bar { height: 100%; border-radius: 4px; }
+.hero-mockup__bar--good { background: linear-gradient(90deg,#059669,#34d399); }
+.hero-mockup__bar--mid  { background: linear-gradient(90deg,#0ea5e9,#38bdf8); }
+.hero-mockup__bar--low  { background: linear-gradient(90deg,#dc2626,#f87171); }
+.hero-mockup__score {
+  font-size: 0.88rem !important; font-family: var(--font-mono) !important;
+  font-weight: 700 !important; color: #fff !important; min-width: 52px; text-align: right;
+}
+.hero-mockup__score-label {
+  font-size: 0.62rem; font-weight: 400; color: rgba(255,255,255,0.38);
+}
+.hero-mockup__footer {
+  margin-top: 14px; padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.hero-mockup__stat {
+  font-size: 0.77rem !important; color: rgba(255,255,255,0.62) !important;
+}
+.hero-mockup__stat strong { color: #fff !important; margin-right: 3px; }
+@media(max-width:600px){ .hero-mockup { display: none; } }
 
 </style>
 </head>
@@ -921,7 +986,7 @@ section + section,
       <a href="/generative-engine-optimization-guide.html">GEO Guide</a>
       <a href="/blog-index.html">Blog</a>
       <a href="#about">About</a>
-      <a href="/updates/" style="color:#6366f1!important;font-weight:600">Updates</a>
+      <a href="/updates/" style="color:#38bdf8!important;font-weight:600">Updates</a>
     </div>
     <a href="https://dashboard.jeevanai.co.in/auth/login">Free Scan →</a>
   </div>
@@ -948,38 +1013,45 @@ section + section,
 <!-- Product scan mockup -->
 <div class="hero-mockup">
   <div class="hero-mockup__header">
-    <span class="hero-mockup__title">AI Visibility Scan — your brand</span>
-    <span class="hero-mockup__tag">Live results</span>
+    <span class="hero-mockup__title">AI Visibility Scan</span>
+    <span class="hero-mockup__tag">&#9679; Live results</span>
   </div>
   <div class="hero-mockup__rows">
     <div class="hero-mockup__row">
-      <span class="hero-mockup__platform">ChatGPT</span>
+      <span class="hero-mockup__platform">
+        <span class="hero-mockup__icon" style="background:#10a37f">G</span>ChatGPT
+      </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--mid" style="width:38%"></div></div>
-      <span class="hero-mockup__score">38</span>
+      <span class="hero-mockup__score">38<span class="hero-mockup__score-label">/100</span></span>
     </div>
     <div class="hero-mockup__row">
-      <span class="hero-mockup__platform">Perplexity</span>
+      <span class="hero-mockup__platform">
+        <span class="hero-mockup__icon" style="background:#20808d">P</span>Perplexity
+      </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--mid" style="width:52%"></div></div>
-      <span class="hero-mockup__score">52</span>
+      <span class="hero-mockup__score">52<span class="hero-mockup__score-label">/100</span></span>
     </div>
     <div class="hero-mockup__row">
-      <span class="hero-mockup__platform">Gemini</span>
+      <span class="hero-mockup__platform">
+        <span class="hero-mockup__icon" style="background:#4285f4">Ge</span>Gemini
+      </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--low" style="width:24%"></div></div>
-      <span class="hero-mockup__score">24</span>
+      <span class="hero-mockup__score">24<span class="hero-mockup__score-label">/100</span></span>
     </div>
     <div class="hero-mockup__row">
-      <span class="hero-mockup__platform">Google AI Mode</span>
+      <span class="hero-mockup__platform">
+        <span class="hero-mockup__icon" style="background:#ea4335">AI</span>Google AI
+      </span>
       <div class="hero-mockup__bar-wrap"><div class="hero-mockup__bar hero-mockup__bar--good" style="width:71%"></div></div>
-      <span class="hero-mockup__score">71</span>
+      <span class="hero-mockup__score">71<span class="hero-mockup__score-label">/100</span></span>
     </div>
   </div>
   <div class="hero-mockup__footer">
-    <span class="hero-mockup__stat"><strong>3</strong>buying factors missing</span>
-    <span class="hero-mockup__stat"><strong>+47pts</strong>potential with fixes</span>
-    <span class="hero-mockup__stat"><strong>2</strong>competitors ahead</span>
+    <span class="hero-mockup__stat"><strong>3</strong> buying factors missing</span>
+    <span class="hero-mockup__stat" style="color:#f87171"><strong>+47 pts</strong> fixable</span>
+    <span class="hero-mockup__stat"><strong>2</strong> competitors ahead</span>
   </div>
 </div>
-  </div>
 </section>
 
 <!-- PLATFORMS -->
@@ -1001,12 +1073,12 @@ section + section,
     <h2 id="team-heading" style="font-family:'Inter var','Inter',system-ui,sans-serif;font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:#f1f5f9;text-align:center;margin-bottom:8px;letter-spacing:-0.02em">Built by People Who Built AI From the Inside</h2>
     <p style="color:rgba(241,245,249,0.72);font-size:1rem;text-align:center;max-width:540px;margin:0 auto 52px;line-height:1.6">Jeevan AI was started by practitioners who worked inside the AI and search systems they now help brands navigate.</p>
     <div style="max-width:720px;margin:0 auto">
-      <a href="/team/shiv.html" style="display:flex;align-items:flex-start;gap:28px;background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:32px 36px;transition:border-color 0.2s,box-shadow 0.2s;text-decoration:none;color:inherit" onmouseover="this.style.borderColor='rgba(99,102,241,0.45)';this.style.boxShadow='0 4px 20px rgba(99,102,241,0.08)'" onmouseout="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
-        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#4338ca,#7c3aed);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#fff;flex-shrink:0">S</div>
+      <a href="/team/shiv.html" style="display:flex;align-items:flex-start;gap:28px;background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:32px 36px;transition:border-color 0.2s,box-shadow 0.2s;text-decoration:none;color:inherit" onmouseover="this.style.borderColor='rgba(56,189,248,0.45)';this.style.boxShadow='0 4px 20px rgba(56,189,248,0.07)'" onmouseout="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#0ea5e9,#0284c7);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#fff;flex-shrink:0">S</div>
         <div style="flex:1">
           <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
             <span style="font-size:1.15rem;font-weight:700;color:#111827">Shiv</span>
-            <span style="font-size:0.78rem;font-weight:600;color:#6366f1;background:rgba(99,102,241,0.1);padding:3px 10px;border-radius:100px">Co-Founder &amp; CPO</span>
+            <span style="font-size:0.78rem;font-weight:600;color:#38bdf8;background:rgba(56,189,248,0.1);padding:3px 10px;border-radius:100px">Co-Founder &amp; CPO</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px">
             <span style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#1877f2;background:#e7f0ff;border:1px solid #bfd5f9;padding:3px 10px;border-radius:100px"><span style="width:6px;height:6px;border-radius:50%;background:#1877f2;display:inline-block"></span>Meta</span>
@@ -1014,7 +1086,7 @@ section + section,
             <span style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#1a7f37;background:#e6f4ea;border:1px solid #a8d5b5;padding:3px 10px;border-radius:100px"><span style="width:6px;height:6px;border-radius:50%;background:#34a853;display:inline-block"></span>Google</span>
           </div>
           <p style="font-size:0.95rem;color:#4b5563;line-height:1.65;margin:0">A decade building AI citation systems, search infrastructure, and recommendation engines at Meta, Microsoft, and Google. Shiv brings firsthand knowledge of how AI platforms decide which brands to recommend, giving Jeevan AI an architecture advantage that starts inside the systems it monitors.</p>
-          <span style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:9px 18px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.82rem;font-weight:600;box-shadow:0 2px 6px rgba(99,102,241,0.35)">View full profile &#8594;</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:9px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#0284c7);color:#fff;font-size:0.82rem;font-weight:600;box-shadow:0 2px 6px rgba(56,189,248,0.28)">View full profile &#8594;</span>
         </div>
       </a>
     </div>
@@ -1100,7 +1172,7 @@ section + section,
       <p style="font-size:0.975rem;color:var(--text-dim);line-height:1.7;margin-bottom:0">AI systems score every brand on five specific buying decision factors before deciding who to recommend. Most tools measure whether you appeared. Jeevan AI measures which factor is causing you to be skipped — and what content closes that specific gap.</p>
       <div class="factors__list">
         <div class="factor-item">
-          <div class="factor-item__icon" style="background:rgba(99,102,241,0.1)">🛡️</div>
+          <div class="factor-item__icon" style="background:rgba(56,189,248,0.1)">🛡️</div>
           <div class="factor-item__body"><div class="factor-item__name">Trust</div><div class="factor-item__desc">Third-party validation, reviews, editorial, community signal</div></div>
           <div class="factor-item__bar-wrap"><div class="factor-item__bar" style="width:72%"></div></div>
         </div>
@@ -1132,10 +1204,10 @@ section + section,
           <div class="scan-card__title">AI Visibility Score — Sample Brand</div>
           <div class="scan-card__badge">Live scan</div>
         </div>
-        <div class="scan-row"><div class="scan-row__platform">ChatGPT</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:58%;background:linear-gradient(to right,rgba(99,102,241,0.8),rgba(99,102,241,0.4))"></div></div><div class="scan-row__score" style="color:#818cf8">58</div></div>
+        <div class="scan-row"><div class="scan-row__platform">ChatGPT</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:58%;background:linear-gradient(to right,rgba(99,102,241,0.8),rgba(56,189,248,0.4))"></div></div><div class="scan-row__score" style="color:#7dd3fc">58</div></div>
         <div class="scan-row"><div class="scan-row__platform">Gemini</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:72%;background:linear-gradient(to right,rgba(79,247,158,0.8),rgba(79,247,158,0.4))"></div></div><div class="scan-row__score" style="color:#4ff79e">72</div></div>
         <div class="scan-row"><div class="scan-row__platform">Perplexity</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:34%;background:linear-gradient(to right,rgba(255,80,80,0.8),rgba(255,80,80,0.4))"></div></div><div class="scan-row__score" style="color:rgba(255,80,80,0.9)">34</div></div>
-        <div class="scan-row"><div class="scan-row__platform">Claude</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:61%;background:linear-gradient(to right,rgba(99,102,241,0.7),rgba(99,102,241,0.35))"></div></div><div class="scan-row__score" style="color:#818cf8">61</div></div>
+        <div class="scan-row"><div class="scan-row__platform">Claude</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:61%;background:linear-gradient(to right,rgba(56,189,248,0.7),rgba(56,189,248,0.28))"></div></div><div class="scan-row__score" style="color:#7dd3fc">61</div></div>
         <div class="scan-row"><div class="scan-row__platform">AI Mode</div><div class="scan-row__bar-wrap"><div class="scan-row__bar" style="width:47%;background:linear-gradient(to right,rgba(247,183,79,0.8),rgba(247,183,79,0.4))"></div></div><div class="scan-row__score" style="color:#f7b74f">47</div></div>
         <div style="margin-top:20px;padding:14px;background:rgba(255,80,80,0.06);border:1px solid rgba(255,80,80,0.2);border-radius:8px">
           <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,80,80,0.8);margin-bottom:5px">Critical gap identified</div>
