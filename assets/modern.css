@@ -518,3 +518,95 @@ details[open] summary::after {
   color: #f1f5f9 !important;
   font-weight: 600 !important;
 }
+
+
+/* =====================================================
+   ROOT VAR OVERRIDE — beats page-level :root declarations
+   All pages define --text:#111827 etc in their own <style>.
+   Using !important on custom properties overrides them.
+   ===================================================== */
+:root {
+  --bg:          #0d1117 !important;
+  --bg-1:        #161b22 !important;
+  --bg-card:     #1c2128 !important;
+  --bg-card-hover:#21262d !important;
+  --border:      rgba(255,255,255,0.09) !important;
+  --border-hover:rgba(56,189,248,0.55) !important;
+  --accent:      #38bdf8 !important;
+  --accent-dim:  rgba(56,189,248,0.15) !important;
+  --accent-2:    #7dd3fc !important;
+  --tag-bg:      rgba(56,189,248,0.15) !important;
+  --tag-text:    #7dd3fc !important;
+  --text:        #f1f5f9 !important;
+  --text-dim:    rgba(241,245,249,0.80) !important;
+  --text-muted:  rgba(241,245,249,0.55) !important;
+  --font-sans:   'Inter','Inter var',system-ui,sans-serif !important;
+}
+
+/* Override hardcoded light-mode colors from individual pages */
+
+/* Dark paragraph text (#374151, #4b5563, #6b7280, #1f2937, #111827) */
+p, li, td, th, blockquote, figcaption, dd, dt,
+.answer-block p, .prose p, .content p, .post p,
+[class*="answer"] p, [class*="block"] p {
+  color: rgba(241,245,249,0.82) !important;
+}
+
+/* h2/h3 that use var(--text) — now resolves to white via root override
+   but also hardcode just in case */
+h1, h2, h3, h4, h5, h6,
+.answer-block h2, .answer-block h3 {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+}
+
+/* Query cards — was #f9fafb (near white) */
+.query-card, [class*="query-card"],
+[style*="background:#f9fafb"], [style*="background: #f9fafb"],
+[style*="background:#f3f4f6"], [style*="background: #f3f4f6"],
+[style*="background:#f8fafc"], [style*="background: #f8fafc"] {
+  background: #1c2128 !important;
+  border-color: rgba(56,189,248,0.15) !important;
+}
+.query-card p, .query-card span, .query-card__text {
+  color: rgba(241,245,249,0.82) !important;
+}
+
+/* Answer block links */
+.answer-block a {
+  color: #38bdf8 !important;
+}
+
+/* Any element with hardcoded dark text colors */
+[style*="color:#374151"] { color: rgba(241,245,249,0.82) !important; }
+[style*="color:#4b5563"] { color: rgba(241,245,249,0.72) !important; }
+[style*="color:#6b7280"] { color: rgba(241,245,249,0.60) !important; }
+[style*="color:#1f2937"] { color: #f1f5f9 !important; }
+[style*="color:#111827"] { color: #f1f5f9 !important; }
+[style*="color:#000"]    { color: #f1f5f9 !important; }
+[style*="color:black"]   { color: #f1f5f9 !important; }
+
+/* Any element with hardcoded white/light backgrounds */
+[style*="background:#fff"],
+[style*="background: #fff"],
+[style*="background:white"],
+[style*="background: white"],
+[style*="background-color:#fff"],
+[style*="background-color: #fff"],
+[style*="background-color:white"] {
+  background: #1c2128 !important;
+  color: #f1f5f9 !important;
+}
+[style*="background:#f9fafb"],
+[style*="background:#f3f4f6"],
+[style*="background:#e5e7eb"],
+[style*="background:#d1d5db"] {
+  background: #161b22 !important;
+}
+
+/* Borders that are light gray */
+[style*="border-color:#e5e7eb"],
+[style*="border:#e5e7eb"],
+[style*="border: 1px solid #e5e7eb"] {
+  border-color: rgba(255,255,255,0.09) !important;
+}
