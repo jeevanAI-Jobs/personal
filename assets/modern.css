@@ -339,7 +339,7 @@ img, video, iframe, embed, object { max-width: 100% !important; height: auto; }
 /* Remove any fixed left margins/padding from content areas */
 .content, .post-content, .article-content,
 .main-content, .page-content, .post-body {
-  margin-left: 0 !important;
+  margin-left: 0;
   padding-left: clamp(16px, 4vw, 48px) !important;
   padding-right: clamp(16px, 4vw, 48px) !important;
 }
