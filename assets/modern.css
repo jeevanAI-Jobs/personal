@@ -1000,3 +1000,53 @@ table td {
 .footer span, .footer p {
   color: var(--text-muted) !important;
 }
+
+/* ── Brand report pages (report/brand-ai-search-visibility/) ───────────── */
+/* Navbar - was light glass */
+.nav{background:rgba(13,17,23,0.96)!important;border-color:rgba(255,255,255,0.07)!important}
+.nav__logo,.nav__logo *{color:#f1f5f9!important}
+.nav__cta{color:#fff!important}
+
+/* Light-colored CTA strip */
+.improve-cta{background:rgba(22,163,74,0.08)!important;border-color:rgba(134,239,172,0.2)!important}
+.improve-cta-text .label{color:#4ade80!important}
+.improve-cta-text .title{color:#86efac!important}
+.improve-cta-text .sub{color:rgba(134,239,172,0.75)!important}
+
+/* Pill tags - light backgrounds with dark text */
+.tag-red{background:rgba(220,38,38,0.15)!important;color:#fca5a5!important}
+.tag-purple{background:rgba(99,102,241,0.15)!important;color:#a5b4fc!important}
+.tag-green{background:rgba(22,163,74,0.15)!important;color:#86efac!important}
+.tag-blue{background:rgba(59,130,246,0.15)!important;color:#93c5fd!important}
+
+/* Methodology box */
+.meth-box{background:rgba(99,102,241,0.05)!important;border-color:rgba(99,102,241,0.18)!important}
+.meth-label{color:#a5b4fc!important}
+.meth-intro{color:#94a3b8!important}
+.meth-factor{background:rgba(255,255,255,0.04)!important;border-color:rgba(255,255,255,0.08)!important}
+.meth-factor-name{color:#e2e8f0!important}
+.meth-factor-desc{color:#94a3b8!important}
+
+/* Analyst note - light yellow */
+.analyst-note{background:rgba(251,191,36,0.05)!important;border-color:rgba(251,191,36,0.18)!important}
+.analyst-note-label,.analyst-note-label *{color:#fbbf24!important}
+.analyst-note-text{color:#fde68a!important}
+
+/* Muted text in divs (not p/span, so not caught by body rules) */
+.gap-why,.cat-finding,.comp-relation,.faq-a,.ai-context-label,.meth-intro{color:#94a3b8!important}
+.gap-topic,.cat-name,.faq-q,.comp-brand{color:#f1f5f9!important}
+.section-head h2{color:#f1f5f9!important}
+
+/* Competitor link */
+.comp-domain{color:#64748b!important}
+.comp-cta{color:#818cf8!important}
+
+/* AI context box label */
+.ai-context-label{color:#64748b!important}
+
+/* Source tag */
+.source-tag{background:rgba(99,102,241,0.15)!important;color:#a5b4fc!important}
+
+/* Footer */
+.footer{color:#475569!important;border-color:rgba(255,255,255,0.06)!important}
+.footer a{color:#475569!important}
