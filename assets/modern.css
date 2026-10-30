@@ -871,3 +871,132 @@ a[style*="background:#ffffff"]:hover {
   border-color: rgba(255,255,255,0.08) !important;
   color: #f1f5f9 !important;
 }
+
+
+/* ===================================================
+   BLOG PAGE OVERRIDES — fix light-bg elements on dark theme
+   =================================================== */
+
+/* Article header — was background:#fafafa, now dark */
+.article-header {
+  background: var(--bg-1) !important;
+  border-bottom-color: var(--border) !important;
+}
+.article-header h1 {
+  color: var(--text) !important;
+}
+.article-header__tag {
+  color: var(--accent) !important;
+  background: var(--accent-dim) !important;
+}
+.article-header__meta {
+  color: var(--text-muted) !important;
+}
+
+/* Article body text */
+.article-body p, .article-body li {
+  color: var(--text-dim) !important;
+}
+.article-body h2, .article-body h3 {
+  color: var(--text) !important;
+}
+.article-body strong {
+  color: var(--text) !important;
+}
+
+/* Callout box — was light blue, now dark-tinted */
+.callout {
+  background: rgba(56,189,248,0.06) !important;
+  border-color: rgba(56,189,248,0.25) !important;
+  border-left-color: #38bdf8 !important;
+}
+.callout p {
+  color: #e2e8f0 !important;
+}
+
+/* Example box — was light yellow, now dark-tinted amber */
+.example-box {
+  background: rgba(251,191,36,0.06) !important;
+  border-color: rgba(251,191,36,0.2) !important;
+}
+.example-box__label {
+  color: #fbbf24 !important;
+}
+.example-box p {
+  color: #e2e8f0 !important;
+}
+
+/* Insight box — was light gray */
+.insight-box {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+.insight-box__label {
+  color: var(--accent) !important;
+}
+.insight-box p {
+  color: var(--text-dim) !important;
+}
+
+/* FAQ items — was light gray */
+.faq-item {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+.faq-item h3 {
+  color: var(--text) !important;
+}
+.faq-item p {
+  color: var(--text-dim) !important;
+}
+
+/* Related links section */
+.related-links {
+  background: var(--bg-1) !important;
+  border-top-color: var(--border) !important;
+}
+.related-links h3 {
+  color: var(--text-muted) !important;
+}
+.link-card {
+  background: var(--bg-card) !important;
+  border-color: var(--border) !important;
+}
+.link-card h4 {
+  color: var(--text) !important;
+}
+.link-card__tag {
+  color: var(--accent) !important;
+}
+
+/* Tables in articles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th {
+  background: var(--bg-card) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+table td {
+  color: var(--text-dim) !important;
+  border-color: var(--border) !important;
+}
+
+/* Comparison tables / data tables */
+.compare-table th, .data-table th {
+  background: var(--bg-card) !important;
+  color: var(--text) !important;
+}
+.compare-table td, .data-table td {
+  color: var(--text-dim) !important;
+}
+
+/* Footer */
+.footer {
+  border-top-color: var(--border) !important;
+}
+.footer span, .footer p {
+  color: var(--text-muted) !important;
+}
