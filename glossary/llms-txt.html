@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S6X8Q5EY8E');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is llms.txt? Definition and Whether It Affects AI Visibility | Jeevan AI</title>
+<meta name="description" content="llms.txt is a proposed file format for websites to communicate content access preferences to AI crawlers. Learn what it is, whether it works, and what the evidence suggests.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/glossary/llms-txt">
+<meta property="og:title" content="What Is llms.txt? Definition and Whether It Affects AI Visibility">
+<meta property="og:description" content="llms.txt is a proposed file format for websites to communicate content access preferences to AI crawlers. Learn what it is, whether it works, and what the evidence suggests.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/glossary/llms-txt">
+<meta property="og:site_name" content="Jeevan AI">
+<meta property="article:published_time" content="2026-10-31">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "llms.txt",
+  "description": "llms.txt is a proposed plain-text file that website owners place at their domain root to communicate content access preferences and structured summaries to AI crawlers and large language models, modeled loosely on the robots.txt convention.",
+  "inDefinedTermSet": "https://jeevanai.co.in/glossary",
+  "url": "https://jeevanai.co.in/glossary/llms-txt"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is llms.txt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "llms.txt is a proposed file format, placed at a site's root (e.g. yourdomain.com/llms.txt), that gives AI systems a structured summary of a site's content and optionally signals which sections the site owner wishes AI systems to use or avoid. It is not an official web standard and major AI platforms have not confirmed they actively read it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does llms.txt improve AI visibility?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Available evidence is limited. As of 2026, none of the major AI platforms (ChatGPT, Perplexity, Gemini) have officially confirmed that they read or act on llms.txt files. Some practitioners report using it as a structured content summary without expecting direct ranking effects. The honest assessment is that its practical effect on AI visibility is uncertain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between llms.txt and robots.txt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "robots.txt is an established standard, honored by all major web crawlers, for signaling which pages should or should not be crawled by bots. llms.txt is a proposed, unofficial convention specifically aimed at AI systems. robots.txt has well-documented effects; llms.txt does not yet have confirmed adoption by major AI platforms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I add llms.txt to my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Adding it is low-effort and low-risk. If AI systems do start reading it, having one in place may be beneficial. If they do not, the file does no harm. For a data-backed look at whether it appears to affect AI visibility, see the dedicated guide."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--bg:#fff;--border:#e5e7eb;--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--text-dim:#4b5563;--text-muted:#9ca3af;--tag-bg:rgba(99,102,241,0.1);--tag-text:#4f46e5;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:1180px;--prose-w:760px}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+  .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+  .nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+  .nav__links{display:flex;align-items:center;gap:6px}
+  .nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim)}
+  .nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+  .nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.875rem;font-weight:600}
+  .hero{background:linear-gradient(135deg,#0f172a 0%,#312e81 100%);padding:56px 24px 50px}
+  .hero__inner{max-width:var(--prose-w);margin:0 auto}
+  .hero__crumb{font-size:0.8rem;color:rgba(255,255,255,0.6);margin-bottom:18px}
+  .hero__crumb a{color:rgba(255,255,255,0.6)}
+  .hero__label{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#c7d2fe;background:rgba(255,255,255,0.12);padding:5px 12px;border-radius:100px;margin-bottom:14px}
+  .hero h1{font-family:var(--font-serif);font-size:clamp(1.8rem,3.4vw,2.5rem);color:#fff;line-height:1.18;margin-bottom:14px}
+  .hero p{font-size:1.08rem;color:rgba(255,255,255,0.85);line-height:1.6}
+  .wrap{max-width:var(--prose-w);margin:0 auto;padding:48px 24px 80px}
+  .definition{background:#f9fafb;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:32px}
+  .definition strong{display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);margin-bottom:8px}
+  .definition p{font-size:1.1rem;line-height:1.7;color:#1f2937;margin:0}
+  .wrap h2{font-family:var(--font-serif);font-size:1.5rem;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+  .wrap h3{font-size:1.15rem;margin:22px 0 8px}
+  .wrap p{font-size:1.06rem;line-height:1.85;color:#374151;margin-bottom:16px}
+  .wrap a{color:#4f46e5;text-decoration:underline;text-underline-offset:2px}
+  .wrap ul,.wrap ol{margin:12px 0 18px;padding-left:22px}
+  .wrap li{font-size:1.04rem;line-height:1.75;color:#374151;margin-bottom:8px}
+  .data-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.95rem}
+  .data-table th{background:#f3f4f6;padding:11px 14px;text-align:left;border-bottom:2px solid #e5e7eb;font-weight:600}
+  .data-table td{padding:11px 14px;border-bottom:1px solid #f3f4f6;color:#374151;vertical-align:top}
+  .data-table tr:last-child td{border-bottom:none}
+  .callout{background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.2);border-radius:10px;padding:18px 22px;margin:22px 0}
+  .callout p{margin:0;color:#1a1730;line-height:1.7}
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+  .faq-item:last-child{border-bottom:none}
+  .faq-q{font-weight:600;margin-bottom:8px}
+  .faq-a{color:#4b5563;line-height:1.75}
+  .cta-strip{border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.06),transparent 60%);padding:56px 24px;text-align:center}
+  .cta-strip h2{font-family:var(--font-serif);font-size:1.8rem;margin-bottom:12px}
+  .cta-strip p{color:var(--text-dim);margin-bottom:22px}
+  .btn-primary{display:inline-flex;padding:13px 26px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-weight:600}
+  .footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center}
+  .footer p{font-size:0.85rem;color:var(--text-muted)}
+  .footer a{color:var(--text-dim)}
+  @media(max-width:620px){.nav__links{display:none}}
+</style>
+  <link rel="stylesheet" href="/assets/modern.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
+    <div class="nav__links">
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/blog-index.html">Blog</a>
+      <a href="/index.html#about">About</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Get Started</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero__inner">
+    <div class="hero__crumb"><a href="/index.html">Home</a> / <a href="/glossary/">Glossary</a> / llms.txt</div>
+    <span class="hero__label">Glossary</span>
+    <h1>What Is llms.txt?</h1>
+    <p>A clear definition of llms.txt, how it differs from robots.txt, and what available evidence suggests about its effect on AI visibility.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="definition">
+    <strong>Definition</strong>
+    <p>llms.txt is a proposed plain-text file that website owners place at their domain root to communicate content access preferences and structured summaries to AI crawlers and large language models, modeled loosely on the robots.txt convention.</p>
+  </div>
+
+  <h2 id="overview">llms.txt in Plain Terms</h2>
+  <p>The robots.txt file has existed since 1994 as a way for site owners to tell web crawlers which pages to index or skip. As AI systems began crawling the web to build training datasets and power retrieval-augmented responses, some practitioners proposed an equivalent file specifically for AI: llms.txt.</p>
+  <p>The idea is that a site owner could place a plain-text file at their domain root that tells AI crawlers what the site is about, which sections contain the most relevant content, and optionally which sections should not be used in AI training or responses. The format was proposed by Jeremy Howard and has been discussed in AI and SEO communities, but as of late 2026 it remains unofficial and unconfirmed by major AI platforms.</p>
+
+  <h2 id="how-it-works">What an llms.txt File Contains</h2>
+  <p>A typical llms.txt file includes:</p>
+  <ul>
+    <li>A brief description of the site and its purpose</li>
+    <li>Links to key sections or documents the owner wants AI systems to prioritize</li>
+    <li>Optionally, an extended version (llms-full.txt) with more detailed content summaries</li>
+    <li>Optionally, signals about which content should not be used for AI training</li>
+  </ul>
+  <p>The format is intentionally simple: plain text, readable by both machines and humans. Jeevan AI's own llms.txt file at jeevanai.co.in/llms.txt follows this convention.</p>
+
+  <h2 id="why-matters">What the Evidence Suggests</h2>
+  <p>Published analysis of whether llms.txt files affect AI citation or recommendation rates is limited. Jeevan AI published a data-backed look at whether adding an llms.txt file correlates with measurable changes in AI visibility scores, which you can read in the <a href="/blog/does-llms-txt-work-data.html">does llms.txt work</a> article. The short version: the effect, if any, appears modest compared to foundational factors like entity authority and content quality.</p>
+  <p>The safest current recommendation is to add one if you have a structured overview to offer, treat it as a signal rather than a solution, and focus primary effort on the factors with clearer evidence behind them.</p>
+
+  <h2 id="compare">llms.txt vs. robots.txt</h2>
+  <table class="data-table">
+    <thead><tr><th>File</th><th>Purpose</th><th>Standard?</th><th>Confirmed AI adoption?</th></tr></thead>
+    <tbody>
+      <tr><td>robots.txt</td><td>Crawl directives for all bots</td><td>Yes (RFC 9309)</td><td>Yes, universally</td></tr>
+      <tr><td>llms.txt</td><td>Content summary and AI-specific access preferences</td><td>No (proposed)</td><td>Unconfirmed by major platforms</td></tr>
+      <tr><td>sitemap.xml</td><td>URL index for search crawlers</td><td>Yes</td><td>Partially</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <p class="faq-q">What is llms.txt?</p>
+    <p class="faq-a">llms.txt is a proposed file at a website's root that gives AI crawlers a structured summary of site content and access preferences. It follows the spirit of robots.txt but targets AI systems specifically. It is not yet an official standard.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Do major AI platforms read llms.txt?</p>
+    <p class="faq-a">As of late 2026, no major AI platform (ChatGPT, Perplexity, Gemini, Claude) has officially confirmed reading or acting on llms.txt. Some practitioners add it as a low-cost potential signal while the ecosystem develops.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Is llms.txt worth adding to my site?</p>
+    <p class="faq-a">Adding it is low-effort. If AI systems adopt it as a standard, having one in place may help. If they do not, the file causes no harm. It should not replace higher-impact work like building entity authority and earning citations.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">Where can I see an example llms.txt?</p>
+    <p class="faq-a">Jeevan AI's own llms.txt is published at jeevanai.co.in/llms.txt and covers the site's main content areas and purpose.</p>
+  </div>
+
+</main>
+
+<section class="cta-strip">
+  <h2>Check What AI Systems Actually Know About Your Brand.</h2>
+  <p>A scan shows what AI says about your brand today, which is more actionable than any file format.</p>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Start Free Scan</a>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 Jeevan AI &middot; <a href="/index.html">Home</a> &middot; <a href="/blog-index.html">Blog</a> &middot; <a href="/glossary/answer-engine-optimization.html">What Is AEO?</a> &middot; <a href="/privacy.html">Privacy</a></p>
+</footer>
+
+<script src="/assets/modern.js" defer></script>
+</body>
+</html>
