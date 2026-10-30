@@ -115,6 +115,23 @@ a{color:inherit;text-decoration:none}
 .btn-copy.copied{background:#dcfce7;color:#059669}
 
 .footer-simple{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
+
+  /* Report directory hub */
+  #directoryState{display:none;padding:40px 24px 80px;max-width:1000px;margin:0 auto}
+  .dir-hero{text-align:center;margin-bottom:36px}
+  .dir-hero h1{font-family:var(--font-serif);font-size:clamp(1.6rem,3.5vw,2.4rem);color:#f1f5f9;margin-bottom:10px}
+  .dir-hero p{font-size:1rem;color:#94a3b8;max-width:540px;margin:0 auto 18px}
+  .dir-count{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#7dd3fc;background:rgba(56,189,248,0.1);padding:4px 14px;border-radius:100px}
+  .dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+  .dir-card{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#1c2128;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;text-decoration:none;transition:border-color 0.18s,transform 0.15s}
+  .dir-card:hover{border-color:rgba(56,189,248,0.35);transform:translateY(-2px)}
+  .dir-brand{font-size:0.9rem;font-weight:600;color:#f1f5f9}
+  .dir-arrow{font-size:0.9rem;color:#38bdf8;flex-shrink:0}
+  .dir-cta{text-align:center;margin-top:32px;padding:24px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:12px}
+  .dir-cta p{font-size:0.9rem;color:#94a3b8;margin-bottom:12px}
+  .btn-indigo{display:inline-block;padding:10px 22px;border-radius:8px;background:#6366f1;color:#fff;font-weight:700;font-size:0.875rem;text-decoration:none}
+  @media(max-width:540px){.dir-grid{grid-template-columns:1fr}}
+
 </style>
   <link rel="stylesheet" href="/assets/modern.css">
 </head>
@@ -416,6 +433,11 @@ function render(data){
   document.getElementById('reportContent').style.display='block';
 }
 
+function showDirectory(){
+  document.getElementById('loadingState').style.display='none';
+  document.getElementById('directoryState').style.display='block';
+}
+
 function showError(msg){
   document.getElementById('loadingState').style.display='none';
   if(msg) document.getElementById('errorMsg').innerHTML=msg;
@@ -437,7 +459,7 @@ function copyLink(){
 (async function(){
   var params=new URLSearchParams(window.location.search);
   var brand=params.get('brand')||"";
-  if(!brand){showError("No brand parameter in URL. Run an analysis to generate a report.");return;}
+  if(!brand){showDirectory();return;}
 
   // Redirect ?brand=slug → /report/slug/ (static pages)
   window.location.replace('/report/'+encodeURIComponent(brand)+'/');
