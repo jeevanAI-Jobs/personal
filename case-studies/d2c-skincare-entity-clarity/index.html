@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How a mass-market skincare brand improved AI citation rates after fixing entity clarity | Jeevan AI Case Studies</title>
+<meta name="description" content="A D2C skincare brand tested at 72/100 for AI visibility. In testing, resolving conflicting product descriptions across retailer pages appeared to improve citation rates on ChatGPT and Perplexity.">
+<link rel="canonical" href="https://jeevanai.co.in/case-studies/d2c-skincare-entity-clarity/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/modern.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#0d1117 !important;color:#f1f5f9 !important;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.96) !important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 24px}
+.nav__inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:#f1f5f9 !important}
+.nav__logo svg{width:28px;height:28px}
+.nav__links{display:flex;gap:4px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:rgba(241,245,249,0.7) !important}
+.nav__links a:hover{color:#f1f5f9 !important;background:rgba(255,255,255,0.07)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117 !important;font-size:0.875rem;font-weight:700}
+.hero{padding:52px 24px 40px;text-align:center;max-width:820px;margin:0 auto}
+.breadcrumb{font-size:0.78rem;color:rgba(241,245,249,0.45) !important;margin-bottom:18px}
+.breadcrumb a{color:rgba(241,245,249,0.45) !important}
+.breadcrumb a:hover{color:#38bdf8 !important}
+.hero__cat{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:16px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.7rem,3.5vw,2.4rem);color:#f1f5f9 !important;line-height:1.2;margin-bottom:14px}
+.hero__meta{font-size:0.82rem;color:rgba(241,245,249,0.45) !important;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.score-hero{display:flex;align-items:center;gap:20px;justify-content:center;margin:28px 0 0}
+.score-ring-wrap{text-align:center}
+.score-big{font-family:'DM Serif Display',Georgia,serif;font-size:4rem;color:#38bdf8 !important;line-height:1}
+.score-sub{font-size:0.72rem;color:rgba(241,245,249,0.45) !important;margin-top:4px}
+.content{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.content h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.55rem;color:#f1f5f9 !important;margin:44px 0 14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.content h3{font-size:1rem;font-weight:700;color:#e2e8f0 !important;margin:26px 0 10px}
+.content p{font-size:1rem;line-height:1.85;color:#94a3b8 !important;margin-bottom:16px}
+.content ul,.content ol{padding-left:22px;margin-bottom:16px}
+.content li{font-size:0.97rem;line-height:1.75;color:#94a3b8 !important;margin-bottom:6px}
+.content strong{color:#e2e8f0 !important}
+.callout{background:rgba(56,189,248,0.06) !important;border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:16px 20px;margin:22px 0}
+.callout p{color:#93c5fd !important;margin:0;font-size:0.93rem}
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:20px 0 28px}
+.plat-item{background:#161b22 !important;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 14px}
+.plat-name{display:block;font-size:0.82rem;font-weight:700;color:#f1f5f9 !important;margin-bottom:4px}
+.plat-status{display:block;font-size:0.78rem;font-weight:600;margin-bottom:8px}
+.plat-note{font-size:0.78rem;color:#94a3b8 !important;line-height:1.55;margin:0}
+.signal-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin:18px 0 28px}
+.signal-list li{background:#161b22 !important;border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:12px 14px;font-size:0.88rem;color:#94a3b8 !important;line-height:1.5}
+.signal-list li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#38bdf8;margin-right:8px;vertical-align:middle}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-weight:600;color:#f1f5f9 !important;margin-bottom:8px;font-size:1rem}
+.faq-a{color:#94a3b8 !important;line-height:1.75;font-size:0.95rem}
+.related{background:#161b22 !important;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:22px 24px;margin:36px 0}
+.related__label{font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#38bdf8 !important;margin-bottom:8px}
+.related__title{font-size:1rem;font-weight:600;color:#f1f5f9 !important;margin-bottom:6px}
+.related__link{font-size:0.85rem;color:#38bdf8 !important}
+.cta-strip{background:linear-gradient(135deg,rgba(56,189,248,0.07),rgba(129,140,248,0.07));border-top:1px solid rgba(255,255,255,0.06);padding:56px 24px;text-align:center}
+.cta-strip h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#f1f5f9 !important;margin-bottom:12px}
+.cta-strip p{color:#94a3b8 !important;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65}
+.btn-primary{display:inline-flex;padding:13px 26px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117 !important;font-weight:700;font-size:0.95rem}
+footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
+footer p{font-size:0.82rem;color:#64748b !important}
+footer a{color:#64748b !important}
+@media(max-width:640px){.nav__links{display:none}.signal-list{grid-template-columns:1fr}.plat-grid{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How a mass-market skincare brand improved AI citation rates after fixing entity clarity",
+  "description": "A D2C skincare brand tested at 72/100 for AI visibility. In testing, resolving conflicting product descriptions across retailer pages appeared to improve citation rates on ChatGPT and Perplexity.",
+  "url": "https://jeevanai.co.in/case-studies/d2c-skincare-entity-clarity/",
+  "datePublished": "2025-10-01",
+  "dateModified": "2025-10-01",
+  "author": {
+    "@type": "Organization",
+    "name": "Jeevan AI",
+    "url": "https://jeevanai.co.in"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jeevan AI",
+    "url": "https://jeevanai.co.in"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "What is AI visibility for a skincare brand?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "AI visibility refers to whether and how often a brand is cited or recommended when users ask skincare questions on AI platforms such as ChatGPT, Perplexity or Gemini. It is distinct from SEO rankings and depends on how well AI models can identify and trust information about the brand."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Does retail distribution help AI visibility?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In testing, broader retail distribution may help indirectly by increasing the number of third-party pages that mention the brand. However, if those pages carry conflicting information, the net effect on AI visibility is unclear. Entity consistency appears to matter more than distribution alone."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How is AI visibility measured?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Jeevan AI measures AI visibility by running a standardised set of queries on each platform and recording whether the brand appears in responses, how it is described, and which factors appear correlated with citation. Scores are indicative and should be treated as directional rather than definitive."
+    }
+  }
+]
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="#38bdf8" opacity=".15"/><circle cx="14" cy="14" r="8" fill="#38bdf8" opacity=".3"/><circle cx="14" cy="14" r="4" fill="#38bdf8"/></svg>
+      Jeevan AI
+    </a>
+    <div class="nav__links">
+      <a href="/benchmark/">Benchmark</a>
+      <a href="/case-studies/">Case Studies</a>
+      <a href="/report/">Brand Reports</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Check Your Brand</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="breadcrumb"><a href="/">Home</a> / <a href="/case-studies/">Case Studies</a> / Skincare</div>
+  <div class="hero__cat cat-skincare">Skincare</div>
+  <h1>How a mass-market skincare brand improved AI citation rates after fixing entity clarity</h1>
+  <div class="hero__meta">
+    <span>Tested on 4 AI platforms</span>
+    <span>Indian D2C brand</span>
+    <span>Brand anonymised</span>
+  </div>
+  <div class="score-hero">
+    <div class="score-ring-wrap">
+      <div class="score-big">72</div>
+      <div class="score-sub">AI visibility score / 100</div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2>Situation</h2>
+  <p>A widely distributed skincare brand available across major Indian e-commerce platforms was tested for AI visibility. The brand had strong retail penetration but its online entity information was inconsistent: ingredient lists, product descriptions and brand origin details differed across third-party retailer pages. In testing, this appeared to create ambiguity for AI platforms when assembling brand-level responses.</p>
+
+  <h2>What Was Tested</h2>
+  <p>The brand was tested across a set of queries covering skincare recommendations by concern (dry skin, oily skin, anti-ageing) and ingredient-based queries. Platform-level citation rates and the nature of mentions were recorded across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
+  <div class="callout"><p>All testing used Jeevan AI&#8217;s standard query set. Results reflect a specific point in time and may vary across sessions. This case study uses hedged language throughout to reflect the indirect nature of AI visibility measurement.</p></div>
+
+  <h2>Platform Breakdown</h2>
+  <div class="plat-grid">
+        <div class="plat-item">
+          <span class="plat-name">ChatGPT</span>
+          <span class="plat-status" style="color:#34d399 !important">cited</span>
+          <p class="plat-note">Cited consistently in recommendation queries. Entity clarity and Wikipedia presence appeared to be key factors.</p>
+        </div>
+        <div class="plat-item">
+          <span class="plat-name">Perplexity</span>
+          <span class="plat-status" style="color:#34d399 !important">cited</span>
+          <p class="plat-note">Cited frequently. SEO rankings and structured content on retailer pages appeared to contribute.</p>
+        </div>
+        <div class="plat-item">
+          <span class="plat-name">Gemini</span>
+          <span class="plat-status" style="color:#34d399 !important">cited</span>
+          <p class="plat-note">Cited in some queries. Google Business Profile completeness appeared correlated.</p>
+        </div>
+        <div class="plat-item">
+          <span class="plat-name">Google AI Overviews</span>
+          <span class="plat-status" style="color:#f87171 !important">not cited</span>
+          <p class="plat-note">Not consistently triggered for this category. When triggered, the brand was not included in tested queries.</p>
+        </div>
+  </div>
+
+  <h2>What the Testing Suggested</h2>
+  <ul>
+    <li>In testing, the brand was cited on 3 of 4 platforms, suggesting a reasonable baseline entity presence.</li><li>Tested queries on ChatGPT returned consistent citations, which may indicate that well-corroborated third-party sources were already present in its training data.</li><li>Perplexity citations appeared to track with the brand's retailer page rankings, suggesting that live web retrieval may amplify distribution-based visibility.</li><li>Gemini citations appeared less consistent, which in testing correlated with a partially-completed Google Business Profile.</li><li>Google AI Overviews did not trigger for most of the tested skincare queries, limiting the data available for that platform.</li>
+  </ul>
+
+  <h2>Signals That Appeared to Matter</h2>
+  <ul class="signal-list">
+    <li>Consistent entity information across retailer pages</li><li>Wikipedia or Wikidata entry with verified facts</li><li>Organisation schema on brand homepage</li><li>Ingredient and product data structured in a machine-readable format</li><li>Third-party editorial mentions beyond brand-owned content</li><li>Complete Google Business Profile</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><div class="faq-q">What is AI visibility for a skincare brand?</div><div class="faq-a">AI visibility refers to whether and how often a brand is cited or recommended when users ask skincare questions on AI platforms such as ChatGPT, Perplexity or Gemini. It is distinct from SEO rankings and depends on how well AI models can identify and trust information about the brand.</div></div><div class="faq-item"><div class="faq-q">Does retail distribution help AI visibility?</div><div class="faq-a">In testing, broader retail distribution may help indirectly by increasing the number of third-party pages that mention the brand. However, if those pages carry conflicting information, the net effect on AI visibility is unclear. Entity consistency appears to matter more than distribution alone.</div></div><div class="faq-item"><div class="faq-q">How is AI visibility measured?</div><div class="faq-a">Jeevan AI measures AI visibility by running a standardised set of queries on each platform and recording whether the brand appears in responses, how it is described, and which factors appear correlated with citation. Scores are indicative and should be treated as directional rather than definitive.</div></div>
+
+  <div class="related">
+    <div class="related__label">Related</div>
+    <div class="related__title">Indian D2C Brand AI Visibility Benchmark 2025</div>
+    <a href="/benchmark/" class="related__link">View report &rarr;</a>
+  </div>
+
+</div>
+
+<section class="cta-strip">
+  <h2>How Does Your Brand Score?</h2>
+  <p>Run an AI visibility scan across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Check Your Brand Free</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 <a href="/">Jeevan AI</a>. <a href="/case-studies/">All case studies</a> &middot; Brand data is anonymised. <a href="/privacy/">Privacy</a></p>
+</footer>
+</body>
+</html>
