@@ -1050,3 +1050,9 @@ table td {
 /* Footer */
 .footer{color:#475569!important;border-color:rgba(255,255,255,0.06)!important}
 .footer a{color:#475569!important}
+
+/* ── Brand report card backgrounds missed by [class*="card"] ───────────── */
+.cat,.ai-context,.fix-item{background:#1c2128!important;border-color:rgba(255,255,255,0.07)!important}
+.bar{background:#21262d!important}
+.cat-score{color:#94a3b8!important}
+.score-ring{box-shadow:0 0 0 4px rgba(255,255,255,0.1)!important}
