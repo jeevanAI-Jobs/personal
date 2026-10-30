@@ -3,494 +3,471 @@
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
-<meta charset="UTF-8"><link rel="icon" type="image/png" href="/logo.png">
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>State of AI Visibility 2026: Benchmark Report | Jeevan AI</title>
-<meta name="description" content="Benchmark data on brand AI visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews. Includes mention rates, recommendation rates, and citation benchmarks by industry.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://jeevanai.co.in/report/">
-<meta property="og:title" content="State of AI Visibility 2026: Benchmark Report | Jeevan AI">
-<meta property="og:description" content="How visible are brands in AI-generated responses? Benchmark data across ChatGPT, Perplexity, Gemini, and Google AI Overviews.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://jeevanai.co.in/report/">
-<meta property="og:site_name" content="Jeevan AI">
-<meta property="article:published_time" content="2026-10-31">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Report",
-  "name": "State of AI Visibility 2026",
-  "description": "Benchmark data on brand visibility across ChatGPT, Perplexity, Gemini, and Google AI Overviews across B2B SaaS, fintech, healthtech, and e-commerce categories.",
-  "url": "https://jeevanai.co.in/report/",
-  "datePublished": "2026-10-31",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Jeevan AI",
-    "url": "https://jeevanai.co.in"
-  },
-  "about": {
-    "@type": "Thing",
-    "name": "AI Visibility"
-  },
-  "keywords": [
-    "AI visibility benchmark",
-    "GEO benchmarks",
-    "ChatGPT brand visibility",
-    "AI share of voice by industry"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a good AI Visibility Score?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Based on tested queries across B2B SaaS categories, brands in the top quartile tend to show AI Visibility Scores above 60 out of 100. The median across tested brands falls between 25 and 40. New brands with limited entity signals often score below 15 initially. These ranges vary significantly by category and competitive density."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which AI platform gives brands the most visibility?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In tested queries, Perplexity tends to cite more brands per response than ChatGPT, which tends to be more selective in its recommendations. Google AI Overviews shows high variability depending on whether a query triggers an AI Overview at all. The platform mix matters: a brand may have strong visibility on Perplexity and low visibility on ChatGPT, requiring different optimization approaches for each."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does it take to improve AI visibility?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Based on observed patterns, brands that address foundational gaps (entity definition, Wikidata presence, review platform listings) may see changes in RAG-based platforms like Perplexity within four to eight weeks. Changes in training-data-based systems like ChatGPT tend to appear over longer cycles. Brands starting from near-zero visibility typically require three to six months of consistent effort to reach median category benchmarks."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the biggest factor in AI visibility?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Across tested brands, entity clarity appears to be the single most important factor. Brands that are clearly defined in structured sources (Organization schema, Wikidata, review platforms using consistent language) tend to appear more frequently and more accurately in AI responses than brands with equivalent content but weaker entity signals. Review platform presence is the second most impactful factor for recommendation-type queries."
-      }
-    }
-  ]
-}
-</script>
-<link rel="stylesheet" href="/assets/modern.css">
+<title>AI Search Visibility Report | Jeevan AI</title>
+<meta name="description" content="See how AI engines like ChatGPT, Gemini, and Perplexity currently perceive and cite this brand, what content gaps are costing citations, and how to close them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
-  .nav{position:sticky;top:0;z-index:100;padding:0 24px}
-  .nav__inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-  .nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:#f1f5f9 !important;text-decoration:none !important}
-  .nav__links{display:flex;align-items:center;gap:6px}
-  .nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:rgba(241,245,249,0.7) !important;text-decoration:none !important}
-  .nav__links a:hover{color:#f1f5f9 !important;background:rgba(255,255,255,0.07)}
-  .nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117 !important;font-size:0.875rem;font-weight:700;text-decoration:none !important}
-  /* Hero */
-  .hero{background:linear-gradient(135deg,#020617 0%,#0c1a3a 50%,#0f172a 100%) !important;padding:72px 24px 64px;text-align:center;position:relative;overflow:hidden}
-  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(56,189,248,0.12),transparent);pointer-events:none}
-  .hero__eyebrow{display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#38bdf8 !important;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:5px 14px;border-radius:100px;margin-bottom:22px}
-  .hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2rem,4.5vw,3.2rem);color:#f1f5f9 !important;line-height:1.12;margin-bottom:18px;max-width:760px;margin-left:auto;margin-right:auto}
-  .hero__sub{font-size:1.1rem;color:rgba(241,245,249,0.75) !important;max-width:580px;margin:0 auto 36px;line-height:1.65}
-  .hero__meta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-  .hero__badge{font-size:0.78rem;color:rgba(241,245,249,0.55) !important;display:flex;align-items:center;gap:6px}
-  .hero__badge span{color:rgba(241,245,249,0.55) !important}
-  /* Stat bar */
-  .stat-bar{background:#0d1117;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:28px 24px}
-  .stat-bar__inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-  .stat{}
-  .stat__num{font-family:'DM Serif Display',Georgia,serif;font-size:2rem;color:#38bdf8 !important;line-height:1}
-  .stat__label{font-size:0.78rem;color:rgba(241,245,249,0.55) !important;margin-top:5px;line-height:1.4}
-  /* Main content */
-  .content{max-width:860px;margin:0 auto;padding:56px 24px 80px}
-  .content h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.65rem;color:#f1f5f9 !important;margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08) !important}
-  .content h3{font-size:1.1rem;font-weight:700;color:#e2e8f0 !important;margin:28px 0 10px}
-  .content p{font-size:1.04rem;line-height:1.85;color:#94a3b8 !important;margin-bottom:16px}
-  .content a{color:#38bdf8 !important}
-  .content ul,.content ol{padding-left:22px;margin-bottom:18px}
-  .content li{font-size:1.02rem;line-height:1.75;color:#94a3b8 !important;margin-bottom:7px}
-  .content strong{color:#e2e8f0 !important}
-  /* Callout */
-  .callout{background:rgba(56,189,248,0.06) !important;border:1px solid rgba(56,189,248,0.18);border-left:3px solid #38bdf8;border-radius:0 10px 10px 0;padding:18px 22px;margin:24px 0}
-  .callout p{margin:0;color:#cbd5e1 !important}
-  /* Benchmark tables */
-  .bench-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.93rem}
-  .bench-table thead th{background:#161b22 !important;padding:12px 14px;text-align:left;border-bottom:2px solid rgba(56,189,248,0.2);font-weight:700;color:#e2e8f0 !important;white-space:nowrap}
-  .bench-table tbody td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:#94a3b8 !important;vertical-align:top}
-  .bench-table tbody tr:last-child td{border-bottom:none}
-  .bench-table tbody tr:hover td{background:rgba(255,255,255,0.02) !important;color:#cbd5e1 !important}
-  .score-hi{color:#34d399 !important;font-weight:600}
-  .score-mid{color:#fbbf24 !important;font-weight:600}
-  .score-lo{color:#f87171 !important;font-weight:600}
-  .score-na{color:#475569 !important}
-  /* Platform grid */
-  .platform-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:22px 0}
-  .platform-card{background:#1c2128 !important;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:18px 16px}
-  .platform-card__name{font-size:0.85rem;font-weight:700;color:#f1f5f9 !important;margin-bottom:10px}
-  .platform-card__stat{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#38bdf8 !important;line-height:1;margin-bottom:4px}
-  .platform-card__label{font-size:0.75rem;color:#64748b !important}
-  .platform-card__note{font-size:0.75rem;color:#475569 !important;margin-top:8px;line-height:1.4}
-  /* Finding cards */
-  .finding-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:22px 0}
-  .finding-card{background:#1c2128 !important;border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:20px 18px}
-  .finding-num{font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#38bdf8 !important;margin-bottom:8px}
-  .finding-card h3{font-size:0.95rem;font-weight:700;color:#f1f5f9 !important;margin:0 0 8px}
-  .finding-card p{font-size:0.85rem;color:#64748b !important;line-height:1.6;margin:0}
-  /* Section label */
-  .section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8 !important;margin-bottom:6px}
-  /* Methodology box */
-  .method-box{background:#161b22 !important;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:24px 28px;margin:32px 0}
-  .method-box h3{font-size:1rem;font-weight:700;color:#e2e8f0 !important;margin:0 0 12px}
-  .method-box p,.method-box li{font-size:0.88rem;color:#64748b !important;line-height:1.7;margin-bottom:6px}
-  /* FAQ */
-  .faq-item{border-bottom:1px solid rgba(255,255,255,0.07) !important;padding:20px 0}
-  .faq-item:last-child{border-bottom:none !important}
-  .faq-q{font-weight:600;color:#f1f5f9 !important;margin-bottom:8px;font-size:1.02rem}
-  .faq-a{color:#64748b !important;line-height:1.75;font-size:0.95rem}
-  /* CTA */
-  .cta-strip{border-top:1px solid rgba(255,255,255,0.08) !important;background:linear-gradient(135deg,rgba(56,189,248,0.06),transparent 60%) !important;padding:64px 24px;text-align:center}
-  .cta-strip h2{font-family:'DM Serif Display',Georgia,serif;font-size:2rem;color:#f1f5f9 !important;margin-bottom:14px}
-  .cta-strip p{color:#64748b !important;margin-bottom:26px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.65}
-  .btn-primary{display:inline-flex;padding:14px 28px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117 !important;font-weight:700;font-size:1rem;text-decoration:none !important}
-  .footer{border-top:1px solid rgba(255,255,255,0.07) !important;padding:40px 24px;text-align:center}
-  .footer p{font-size:0.85rem;color:#334155 !important}
-  .footer a{color:#334155 !important}
-  @media(max-width:640px){.stat-bar__inner{grid-template-columns:repeat(2,1fr)}.nav__links{display:none}}
+:root{--accent:#6366f1;--accent-dim:rgba(99,102,241,0.1);--text:#111827;--muted:#6b7280;--bg:#fafafa;--card:#fff;--border:#e5e7eb;--good:#059669;--warn:#d97706;--bad:#dc2626;--font-sans:'DM Sans',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--max-w:800px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__cta{padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff;font-size:0.875rem;font-weight:600}
+
+.report-wrap{max-width:var(--max-w);margin:0 auto;padding:36px 24px 80px}
+
+.loading{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:360px;gap:16px}
+.spinner{width:38px;height:38px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading p{color:var(--muted);font-size:0.95rem}
+
+.error-state{display:none;text-align:center;padding:60px 24px}
+.error-state h2{font-family:var(--font-serif);font-size:1.6rem;margin-bottom:12px}
+.error-state p{color:var(--muted);margin-bottom:24px}
+.btn-primary{display:inline-block;padding:11px 24px;border-radius:9px;background:var(--accent);color:#fff;font-weight:700;font-size:0.88rem}
+
+.report-content{display:none}
+
+/* Report header */
+.report-header{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#1e3a8a 100%);border-radius:16px;padding:32px;margin-bottom:20px;color:#fff}
+.report-header__top-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.report-badge{font-size:0.7rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;background:rgba(165,180,252,0.15);border:1px solid rgba(165,180,252,0.3);padding:4px 12px;border-radius:100px;color:#a5b4fc}
+.brand-domain-link{font-size:0.85rem;color:rgba(165,180,252,0.85);text-decoration:underline;text-underline-offset:3px}
+.report-header__score-row{display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.score-ring{flex-shrink:0;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;font-weight:700;color:#fff}
+.report-header__score-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:rgba(165,180,252,0.7);margin-bottom:4px}
+.report-header__verdict{font-family:var(--font-serif);font-size:1.2rem;color:#fff;line-height:1.4;margin-bottom:6px}
+.report-header__date{font-size:0.78rem;color:rgba(255,255,255,0.4)}
+.ai-summary-block{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:18px 20px;margin-top:20px}
+.ai-summary-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#a5b4fc;margin-bottom:8px}
+.ai-summary-text{font-size:0.92rem;color:rgba(255,255,255,0.82);line-height:1.65}
+
+/* Gaps section */
+.gaps-section{margin-bottom:20px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.section-head h2{font-family:var(--font-serif);font-size:1.1rem;color:var(--text)}
+.section-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 9px;border-radius:100px}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-purple{background:#ede9fe;color:#5b21b6}
+.gap-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--bad);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+.gap-card__topic{font-weight:600;font-size:0.9rem;color:var(--text);margin-bottom:4px}
+.gap-card__why{font-size:0.84rem;color:var(--muted);line-height:1.5;margin-bottom:6px}
+.gap-card__fix{font-size:0.84rem;color:var(--text);line-height:1.5}
+.gap-card__fix b{color:var(--accent)}
+
+/* Jeevan AI value block */
+.jeevanai-block{background:linear-gradient(135deg,#312e81 0%,#4338ca 100%);border-radius:14px;padding:24px 26px;margin-bottom:20px;position:relative;overflow:hidden}
+.jeevanai-block::before{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.jeevanai-label{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:#a5b4fc;margin-bottom:8px}
+.jeevanai-title{font-family:var(--font-serif);font-size:1.1rem;color:#fff;margin-bottom:10px}
+.jeevanai-text{font-size:0.9rem;color:rgba(255,255,255,0.82);line-height:1.65;margin-bottom:18px}
+.btn-white{display:inline-block;padding:10px 22px;border-radius:9px;background:#fff;color:#4338ca;font-weight:700;font-size:0.88rem}
+
+/* Factor cards */
+.cats{display:flex;flex-direction:column;gap:10px}
+.cat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.cat__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cat__name{font-weight:600;font-size:0.9rem}
+.cat__score{font-size:0.8rem;font-weight:700;padding:2px 8px;border-radius:6px}
+.bar{height:5px;background:#f3f4f6;border-radius:3px;margin-bottom:10px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px}
+.cat__finding{font-size:0.85rem;color:var(--muted);margin-bottom:5px;line-height:1.5}
+.cat__fix{font-size:0.85rem;color:var(--text);line-height:1.5}
+.cat__fix b{color:var(--accent)}
+
+/* Locked section */
+.lock-section{position:relative;margin-bottom:20px}
+.lock-blur{filter:blur(5px);pointer-events:none;user-select:none;opacity:0.55}
+.lock-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;z-index:2;background:radial-gradient(ellipse at center,rgba(250,250,250,0.97) 20%,rgba(250,250,250,0.88) 100%);border-radius:12px;padding:24px;text-align:center}
+.lock-title{font-family:var(--font-serif);font-size:1.05rem;color:var(--text)}
+.lock-sub{font-size:0.84rem;color:var(--muted);max-width:360px;line-height:1.5}
+
+/* Top fix */
+.fix-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px}
+.fix-num{flex-shrink:0;width:24px;height:24px;border-radius:6px;background:var(--accent-dim);color:var(--accent);font-size:0.78rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.fix-text{font-size:0.87rem;color:var(--text);line-height:1.55}
+
+/* Compare section */
+.compare-section{margin-bottom:20px}
+.compare-grid{display:flex;flex-direction:column;gap:10px}
+.compare-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;text-decoration:none}
+.compare-card:hover{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-dim)}
+.compare-card__left{display:flex;align-items:center;gap:12px}
+.compare-card__ring{flex-shrink:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:#fff}
+.compare-card__brand{font-weight:600;font-size:0.9rem;color:var(--text)}
+.compare-card__domain{font-size:0.78rem;color:var(--muted)}
+.compare-card__cta{font-size:0.82rem;font-weight:600;color:var(--accent);white-space:nowrap}
+
+/* Share bar */
+.share-bar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.share-bar__text{font-weight:600;font-size:0.9rem}
+.share-bar__sub{font-size:0.78rem;color:var(--muted)}
+.btn-copy{padding:9px 16px;border-radius:8px;background:var(--accent-dim);color:var(--accent);font-weight:600;font-size:0.83rem;border:none;cursor:pointer;white-space:nowrap;font-family:var(--font-sans)}
+.btn-copy.copied{background:#dcfce7;color:#059669}
+
+.footer-simple{text-align:center;padding:24px;font-size:0.8rem;color:var(--muted);border-top:1px solid var(--border)}
 </style>
+  <link rel="stylesheet" href="/assets/modern.css">
 </head>
 <body>
+
 <nav class="nav">
   <div class="nav__inner">
-    <a href="/index.html" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span></a>
-    <div class="nav__links"><a href="/features.html">Features</a><a href="/pricing.html">Pricing</a><a href="/blog-index.html">Blog</a><a href="/glossary/">Glossary</a></div>
-    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Get Started</a>
+    <a href="/index.html" class="nav__logo">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Sign In</a>
   </div>
 </nav>
 
-<header class="hero">
-  <span class="hero__eyebrow">Annual Benchmark Report</span>
-  <h1>State of AI Visibility 2026</h1>
-  <p class="hero__sub">How visible are brands in AI-generated responses? Benchmark data across ChatGPT, Perplexity, Gemini, and Google AI Overviews.</p>
-  <div class="hero__meta">
-    <span class="hero__badge"><span>Published:</span> October 2026</span>
-    <span class="hero__badge"><span>Coverage:</span> ChatGPT &middot; Perplexity &middot; Gemini &middot; AI Overviews</span>
-    <span class="hero__badge"><span>Categories:</span> B2B SaaS &middot; Fintech &middot; Healthtech &middot; E-commerce</span>
-  </div>
-</header>
+<div class="report-wrap">
 
-<div class="stat-bar">
-  <div class="stat-bar__inner">
-    <div class="stat">
-      <div class="stat__num">4</div>
-      <div class="stat__label">AI platforms covered in testing</div>
+  <div class="loading" id="loadingState">
+    <div class="spinner"></div>
+    <p>Loading report...</p>
+  </div>
+
+  <div class="error-state" id="errorState">
+    <h2>Report not found</h2>
+    <p id="errorMsg">This report may have expired. Run a new analysis to generate a fresh one.</p>
+    <a href="/tools/ai-readiness-analyzer.html" class="btn-primary">Run a new analysis</a>
+  </div>
+
+  <div class="report-content" id="reportContent">
+
+    <div class="report-header">
+      <div class="report-header__top-row">
+        <span class="report-badge">AI Search Visibility Report</span>
+        <a id="brandDomainLink" href="#" class="brand-domain-link" target="_blank" rel="noopener"></a>
+      </div>
+      <div class="report-header__score-row">
+        <div class="score-ring" id="scoreRing"></div>
+        <div>
+          <div class="report-header__score-label">Overall AI Visibility Score</div>
+          <div class="report-header__verdict" id="verdict"></div>
+          <div class="report-header__date" id="analyzedDate"></div>
+        </div>
+      </div>
+      <div class="ai-summary-block">
+        <div class="ai-summary-label">What AI engines see today</div>
+        <p class="ai-summary-text" id="aiSummary"></p>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat__num">500+</div>
-      <div class="stat__label">Tested queries across categories</div>
+
+    <!-- Content Gaps -->
+    <div class="gaps-section" id="gapsSection">
+      <div class="section-head">
+        <h2>Content Gaps Costing Citations</h2>
+        <span class="section-tag tag-red" id="gapsCount"></span>
+      </div>
+      <div id="gapsList"></div>
     </div>
-    <div class="stat">
-      <div class="stat__num">25</div>
-      <div class="stat__label">Median AI Visibility Score (out of 100)</div>
+
+    <!-- Jeevan AI value -->
+    <div class="jeevanai-block">
+      <div class="jeevanai-label">Where Jeevan AI comes in</div>
+      <h3 class="jeevanai-title">How Jeevan AI would help <span id="jaBrand"></span></h3>
+      <p class="jeevanai-text" id="jeevanaiValue"></p>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-white">Start free brand scan</a>
     </div>
-    <div class="stat">
-      <div class="stat__num">3x</div>
-      <div class="stat__label">Gap between top and median performers</div>
+
+    <!-- 2 visible factor cards -->
+    <div class="factors-section" style="margin-bottom:20px">
+      <div class="section-head">
+        <h2>Factor Breakdown</h2>
+        <span class="section-tag tag-purple">2 of 6 shown</span>
+      </div>
+      <div class="cats" id="visibleCats"></div>
     </div>
+
+    <!-- 4 locked factor cards -->
+    <div class="lock-section">
+      <div class="lock-blur cats" id="lockedCats"></div>
+      <div class="lock-overlay">
+        <div class="lock-title">4 more scored factors in the full report</div>
+        <div class="lock-sub">Sign up free to see all 6 factors, a competitor comparison, and a content plan for your brand.</div>
+        <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">See full report free</a>
+      </div>
+    </div>
+
+    <!-- Top fix -->
+    <div style="margin-bottom:20px">
+      <div class="section-head"><h2>Top Priority Fix</h2></div>
+      <div id="topFix"></div>
+    </div>
+
+    <!-- Compare with section — shown when competitor reports were generated -->
+    <div class="compare-section" id="compareSection" style="display:none">
+      <div class="section-head">
+        <h2 id="compareHeading">Compare AI Visibility</h2>
+        <span class="section-tag tag-purple" id="compareTag"></span>
+      </div>
+      <div class="compare-grid" id="compareGrid"></div>
+    </div>
+
+    <!-- Also linked from section — shown when this IS a competitor report -->
+    <div class="compare-section" id="comparedToSection" style="display:none">
+      <div class="section-head">
+        <h2>Also in this comparison</h2>
+        <span class="section-tag tag-purple">Related report</span>
+      </div>
+      <div class="compare-grid" id="comparedToGrid"></div>
+    </div>
+
+    <!-- Share bar -->
+    <div class="share-bar">
+      <div>
+        <div class="share-bar__text">Share this report</div>
+        <div class="share-bar__sub">Anyone with this link can view it for 90 days</div>
+      </div>
+      <button class="btn-copy" id="copyBtn" onclick="copyLink()">Copy link</button>
+    </div>
+
+    <div style="text-align:center;padding:4px 0 12px">
+      <a href="/tools/ai-readiness-analyzer.html" style="font-size:0.85rem;color:var(--accent);font-weight:600">Analyze a different page &rarr;</a>
+    </div>
+
   </div>
 </div>
 
-<main class="content">
+<div class="footer-simple">
+  <a href="/index.html" style="color:inherit">Jeevan AI</a> &middot; AI visibility platform &middot;
+  <a href="/tools/ai-readiness-analyzer.html" style="color:var(--accent)">Run your own analysis</a>
+</div>
 
-  <p class="section-label">Executive Summary</p>
-  <h2 id="summary">Key Findings</h2>
-  <p>Most brands are significantly less visible in AI-generated responses than they are in traditional search. In tested queries across B2B SaaS, fintech, healthtech, and e-commerce categories, the median brand appeared in fewer than one in four relevant AI responses. The top quartile of brands appeared in more than half of relevant queries and were actively recommended in more than a third.</p>
-  <p>The gap between top and median performers suggests that AI visibility is not yet evenly distributed and that brands acting early on the foundational signals may gain durable advantages before their categories become more competitive in AI responses.</p>
+<script>
+var API = "https://frabjous-maamoul-49a6fd.netlify.app/.netlify/functions/get-report";
 
-  <div class="finding-grid">
-    <div class="finding-card">
-      <div class="finding-num">Finding 01</div>
-      <h3>Entity clarity is the strongest predictor</h3>
-      <p>Brands with well-defined entities (Organization schema, Wikidata presence, consistent third-party descriptions) appear more frequently and more accurately across all tested platforms.</p>
-    </div>
-    <div class="finding-card">
-      <div class="finding-num">Finding 02</div>
-      <h3>Review platforms drive recommendation rate</h3>
-      <p>In tested recommendation queries ("which tool should I use for X"), brands with active review platform listings appeared significantly more often than those without, regardless of content volume.</p>
-    </div>
-    <div class="finding-card">
-      <div class="finding-num">Finding 03</div>
-      <h3>Platform coverage is uneven for most brands</h3>
-      <p>Most tested brands had their strongest AI visibility on one platform and notably weaker visibility on others, suggesting that platform-specific signals matter alongside shared foundational ones.</p>
-    </div>
-    <div class="finding-card">
-      <div class="finding-num">Finding 04</div>
-      <h3>Content structure matters more than volume</h3>
-      <p>Brands with well-structured, directly-answering content were cited more often than brands with higher content volume but less structured pages, across both RAG-based and training-data-based platforms.</p>
-    </div>
-    <div class="finding-card">
-      <div class="finding-num">Finding 05</div>
-      <h3>New brands face a measurable cold start disadvantage</h3>
-      <p>Brands less than two years old showed consistently lower AI visibility scores at baseline. The fastest-recovering new brands addressed entity signals and review platform presence within the first 90 days.</p>
-    </div>
-    <div class="finding-card">
-      <div class="finding-num">Finding 06</div>
-      <h3>AI descriptions are often inaccurate</h3>
-      <p>In testing, approximately one in three brands had at least one significant inaccuracy in how AI systems described them, most commonly incorrect category positioning or outdated product information.</p>
-    </div>
-  </div>
+function colorFor(s){return s>=70?"#059669":s>=40?"#d97706":"#dc2626"}
+function tintFor(s){return s>=70?"#d1fae5":s>=40?"#fef3c7":"#fee2e2"}
+function esc(s){var d=document.createElement('div');d.textContent=String(s||"");return d.innerHTML}
+function fmtDate(iso){
+  if(!iso)return"";
+  try{return"Analyzed "+new Date(iso).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});}
+  catch{return"";}
+}
 
-  <h2 id="benchmarks">Benchmarks by Category</h2>
-  <p>The following benchmarks reflect observed patterns from tested queries in each category. Scores are expressed as ranges rather than point estimates to reflect the variation within categories. All figures are based on tested queries run through Jeevan AI and should be read as directional indicators rather than definitive market statistics.</p>
+function renderCat(c){
+  var s=Math.max(0,Math.min(100,parseInt(c.score,10)||0));
+  var div=document.createElement('div');div.className='cat';
+  div.innerHTML=
+    '<div class="cat__top"><span class="cat__name">'+esc(c.name)+'</span>'+
+    '<span class="cat__score" style="color:'+colorFor(s)+';background:'+tintFor(s)+'">'+s+'/100</span></div>'+
+    '<div class="bar"><i style="width:'+s+'%;background:'+colorFor(s)+'"></i></div>'+
+    '<div class="cat__finding">'+esc(c.finding)+'</div>'+
+    '<div class="cat__fix"><b>Fix:</b> '+esc(c.fix)+'</div>';
+  return div;
+}
 
-  <table class="bench-table">
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Median AI Visibility Score</th>
-        <th>Top Quartile Score</th>
-        <th>Typical Mention Rate</th>
-        <th>Typical Recommendation Rate</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong style="color:#e2e8f0">B2B SaaS</strong></td>
-        <td><span class="score-mid">22&ndash;35</span></td>
-        <td><span class="score-hi">58&ndash;74</span></td>
-        <td>28&ndash;45%</td>
-        <td>18&ndash;30%</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">Fintech</strong></td>
-        <td><span class="score-mid">18&ndash;30</span></td>
-        <td><span class="score-hi">52&ndash;68</span></td>
-        <td>22&ndash;38%</td>
-        <td>12&ndash;22%</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">Healthtech</strong></td>
-        <td><span class="score-lo">14&ndash;24</span></td>
-        <td><span class="score-mid">40&ndash;58</span></td>
-        <td>16&ndash;30%</td>
-        <td>8&ndash;16%</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">E-commerce / D2C</strong></td>
-        <td><span class="score-mid">20&ndash;32</span></td>
-        <td><span class="score-hi">54&ndash;70</span></td>
-        <td>24&ndash;40%</td>
-        <td>14&ndash;26%</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">HR Tech</strong></td>
-        <td><span class="score-mid">19&ndash;28</span></td>
-        <td><span class="score-hi">50&ndash;65</span></td>
-        <td>22&ndash;36%</td>
-        <td>14&ndash;24%</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">EdTech</strong></td>
-        <td><span class="score-lo">12&ndash;22</span></td>
-        <td><span class="score-mid">38&ndash;55</span></td>
-        <td>14&ndash;28%</td>
-        <td>8&ndash;18%</td>
-      </tr>
-    </tbody>
-  </table>
+function render(data){
+  var score=Math.max(0,Math.min(100,parseInt(data.score,10)||0));
+  var brand=data.brand||data.domain||"This brand";
+  var slug=data.slug||"";
 
-  <div class="callout">
-    <p><strong style="color:#7dd3fc">Note on interpretation:</strong> These ranges reflect tested queries in each category and should be read as directional benchmarks, not market-wide statistics. Your brand's score will depend on your specific competitive set, query selection, and the platforms included in measurement. <a href="https://dashboard.jeevanai.co.in/auth/login">Run a scan</a> to get your own category-specific benchmark.</p>
-  </div>
+  // Dynamic meta + title for SEO
+  document.title=brand+" AI Search Visibility Report | Jeevan AI";
+  var metaDesc=document.querySelector('meta[name="description"]');
+  if(metaDesc && data.verdict) metaDesc.setAttribute('content',data.verdict+" Full AI search visibility report by Jeevan AI.");
 
-  <h2 id="platforms">Platform-by-Platform Visibility</h2>
-  <p>Each AI platform produces different visibility outcomes for the same brand. The following patterns were observed across tested brands and query sets. "Avg. brands cited per response" is an average across recommendation-type queries tested on each platform.</p>
+  // Open Graph
+  var ogTitle=document.querySelector('meta[property="og:title"]');
+  if(!ogTitle){ogTitle=document.createElement('meta');ogTitle.setAttribute('property','og:title');document.head.appendChild(ogTitle);}
+  ogTitle.setAttribute('content',brand+" AI Search Visibility Report | Jeevan AI");
 
-  <div class="platform-grid">
-    <div class="platform-card">
-      <div class="platform-card__name">ChatGPT</div>
-      <div class="platform-card__stat">2&ndash;4</div>
-      <div class="platform-card__label">brands cited per recommendation response</div>
-      <div class="platform-card__note">More selective. Tends to recommend fewer, well-corroborated brands. Entity clarity and third-party corroboration appear most impactful.</div>
-    </div>
-    <div class="platform-card">
-      <div class="platform-card__name">Perplexity</div>
-      <div class="platform-card__stat">4&ndash;8</div>
-      <div class="platform-card__label">brands cited per recommendation response</div>
-      <div class="platform-card__note">More inclusive. Retrieves live web content; SEO rankings and content structure are highly relevant. Source citations are prominent.</div>
-    </div>
-    <div class="platform-card">
-      <div class="platform-card__name">Gemini</div>
-      <div class="platform-card__stat">3&ndash;6</div>
-      <div class="platform-card__label">brands cited per recommendation response</div>
-      <div class="platform-card__note">Integrates Google Knowledge Graph signals. Brands with strong Google entity presence (Business Profile, Knowledge Panel) tend to appear more often.</div>
-    </div>
-    <div class="platform-card">
-      <div class="platform-card__name">Google AI Overviews</div>
-      <div class="platform-card__stat">2&ndash;5</div>
-      <div class="platform-card__label">brands cited per triggered response</div>
-      <div class="platform-card__note">Not all queries trigger an AI Overview. When triggered, traditional E-E-A-T signals and featured snippet eligibility are strong predictors of inclusion.</div>
-    </div>
-  </div>
+  // Canonical
+  var canonical=document.querySelector('link[rel="canonical"]');
+  if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical);}
+  canonical.href='https://jeevanai.co.in/report/?brand='+encodeURIComponent(slug);
 
-  <h2 id="factors">What Separates Top-Performing Brands</h2>
-  <p>In testing, brands in the top quartile of AI visibility scores shared a consistent set of characteristics that lower-scoring brands in the same categories lacked. The following factors appeared most frequently among high-performing brands.</p>
+  // JSON-LD for the report page (helps AI engines understand the page)
+  var ldScript=document.createElement('script');
+  ldScript.type='application/ld+json';
+  ldScript.text=JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":brand+" AI Search Visibility Report",
+    "description":data.verdict||"AI visibility report for "+brand,
+    "url":"https://jeevanai.co.in/report/?brand="+encodeURIComponent(slug),
+    "publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},
+    "datePublished":data.analyzedAt||new Date().toISOString(),
+    "about":{"@type":"Organization","name":brand,"url":data.url||"#"}
+  });
+  document.head.appendChild(ldScript);
 
-  <table class="bench-table">
-    <thead>
-      <tr>
-        <th>Signal</th>
-        <th>Top quartile brands</th>
-        <th>Median brands</th>
-        <th>Estimated impact on visibility</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong style="color:#e2e8f0">Organization schema on homepage</strong></td>
-        <td><span class="score-hi">94%</span> have it</td>
-        <td><span class="score-lo">41%</span> have it</td>
-        <td>High &mdash; foundational entity signal</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">Wikidata entry</strong></td>
-        <td><span class="score-hi">78%</span> have it</td>
-        <td><span class="score-lo">22%</span> have it</td>
-        <td>High &mdash; strong corroboration source</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">10+ reviews on G2 or Capterra</strong></td>
-        <td><span class="score-hi">88%</span> have it</td>
-        <td><span class="score-mid">54%</span> have it</td>
-        <td>High for recommendation queries</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">FAQPage schema on key pages</strong></td>
-        <td><span class="score-hi">72%</span> have it</td>
-        <td><span class="score-lo">18%</span> have it</td>
-        <td>Moderate &mdash; improves citation rate</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">Editorial press coverage (3+)</strong></td>
-        <td><span class="score-hi">84%</span> have it</td>
-        <td><span class="score-mid">48%</span> have it</td>
-        <td>Moderate-high &mdash; corroboration weight</td>
-      </tr>
-      <tr>
-        <td><strong style="color:#e2e8f0">Consistent brand description across sources</strong></td>
-        <td><span class="score-hi">91%</span> consistent</td>
-        <td><span class="score-lo">34%</span> consistent</td>
-        <td>High &mdash; reduces entity disambiguation errors</td>
-      </tr>
-    </tbody>
-  </table>
+  // Brand link back to analyzed page
+  var brandLink=document.getElementById('brandDomainLink');
+  brandLink.textContent=data.domain||data.url||brand;
+  brandLink.href=data.url||"#";
+  brandLink.title="Visit "+brand;
 
-  <div class="callout">
-    <p>Percentages above reflect observed patterns in tested brand sets, not a statistically representative sample of the broader market. They are intended to illustrate the directional differences between visibility tiers, not to serve as market-wide statistics.</p>
-  </div>
+  // Score ring
+  var ring=document.getElementById('scoreRing');
+  ring.textContent=score;
+  ring.style.background=colorFor(score);
 
-  <h2 id="scores">Understanding Your AI Visibility Score</h2>
-  <p>The AI Visibility Score is a composite metric ranging from 0 to 100, combining <a href="/glossary/ai-mention-rate">mention rate</a>, <a href="/glossary/ai-recommendation">recommendation rate</a>, and <a href="/glossary/citation-rate">citation rate</a> across tested platforms, weighted by query type and platform reach. It is designed to give teams a single trackable number while preserving the ability to decompose it into components for diagnosis.</p>
+  document.getElementById('verdict').textContent=data.verdict||"";
+  document.getElementById('analyzedDate').textContent=fmtDate(data.analyzedAt);
+  document.getElementById('aiSummary').textContent=data.ai_summary||"";
 
-  <table class="bench-table">
-    <thead>
-      <tr>
-        <th>Score range</th>
-        <th>What it suggests</th>
-        <th>Typical profile</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="score-lo">0&ndash;15</span></td>
-        <td>Very low AI visibility</td>
-        <td>New brand or brand with minimal entity signals, no review platform presence. AI systems rarely mention the brand in category queries.</td>
-      </tr>
-      <tr>
-        <td><span class="score-lo">16&ndash;30</span></td>
-        <td>Below-median visibility</td>
-        <td>Brand is known to AI systems but appears inconsistently. May have entity signals but limited corroboration or structured content.</td>
-      </tr>
-      <tr>
-        <td><span class="score-mid">31&ndash;50</span></td>
-        <td>Median visibility</td>
-        <td>Appears regularly in AI responses for category queries. Has foundational signals in place. May have gaps in recommendation rate or citation rate.</td>
-      </tr>
-      <tr>
-        <td><span class="score-hi">51&ndash;70</span></td>
-        <td>Above-median visibility</td>
-        <td>Strong entity definition, review platform presence, and content structure. Appears in most relevant category queries and is actively recommended.</td>
-      </tr>
-      <tr>
-        <td><span class="score-hi">71&ndash;100</span></td>
-        <td>Top-quartile visibility</td>
-        <td>All foundational signals in place. Strong corroboration across multiple independent sources. Consistent, accurate AI descriptions. High recommendation rate.</td>
-      </tr>
-    </tbody>
-  </table>
+  // Gaps
+  var gaps=(data.gaps||[]);
+  var gapsList=document.getElementById('gapsList');
+  var gapsSection=document.getElementById('gapsSection');
+  gapsList.innerHTML="";
+  if(gaps.length>0){
+    document.getElementById('gapsCount').textContent=gaps.length+" identified";
+    gaps.slice(0,3).forEach(function(g){
+      var d=document.createElement('div');d.className='gap-card';
+      d.innerHTML=
+        '<div class="gap-card__topic">'+esc(g.topic)+'</div>'+
+        '<div class="gap-card__why">'+esc(g.why)+'</div>'+
+        '<div class="gap-card__fix"><b>Add:</b> '+esc(g.fix)+'</div>';
+      gapsList.appendChild(d);
+    });
+  }else{
+    gapsSection.style.display='none';
+  }
 
-  <h2 id="improving">How to Improve Your Score</h2>
-  <p>Based on observed patterns, the following actions appear most likely to improve AI visibility scores, roughly in order of impact-to-effort ratio:</p>
-  <ol>
-    <li><strong>Define your brand entity clearly.</strong> Implement Organization schema on your homepage. Create or update your Wikidata entry. Write a single, accurate one-sentence brand description and use it verbatim across all third-party sources. See the <a href="/glossary/brand-entity">brand entity definition</a> for specifics.</li>
-    <li><strong>Build review platform presence.</strong> Create listings on the one or two review platforms most used in your category (G2, Capterra, Trustpilot, or category-specific alternatives). Encourage existing customers to leave reviews. See <a href="/glossary/brand-corroboration">brand corroboration</a> for the full list of corroborating sources.</li>
-    <li><strong>Structure content for AI citability.</strong> Ensure your most important pages answer specific questions directly in the first one to two sentences of each section. Add FAQPage schema to key pages. See the <a href="/glossary/geo-content-brief">GEO content brief definition</a> for the full brief structure.</li>
-    <li><strong>Earn editorial coverage.</strong> Press mentions in respected industry publications carry significant corroborating weight. A sustained PR effort that generates three to five editorial mentions per quarter is a meaningful input into AI visibility over time.</li>
-    <li><strong>Monitor and address inaccuracies.</strong> Check what AI systems say about your brand regularly. Inaccurate descriptions should be corrected at the source (schema, Wikidata, your own content) before they compound. See <a href="/glossary/brand-information-accuracy">brand information accuracy</a>.</li>
-  </ol>
+  // Jeevan AI block
+  document.getElementById('jaBrand').textContent=brand;
+  document.getElementById('jeevanaiValue').textContent=data.jeevanai_value||"Jeevan AI tracks how often AI engines cite "+brand+" across ChatGPT, Gemini, and Perplexity, scores it against competitors on each buying factor, and surfaces content gaps before they cost leads.";
 
-  <h2 id="trends">Trends to Watch in 2026&ndash;2027</h2>
-  <p>Based on observed platform changes and the direction of AI system development, the following trends appear likely to affect brand AI visibility over the next twelve months:</p>
-  <ul>
-    <li><strong>More frequent retrieval updates.</strong> RAG-based platforms are moving toward more frequent retrieval index updates, which may reduce the lag between a brand's content changes and their effect on AI visibility.</li>
-    <li><strong>Greater platform differentiation.</strong> As AI platforms develop distinct user bases and use patterns, the visibility profile of a brand across platforms may diverge further, making multi-platform tracking more important.</li>
-    <li><strong>Recommendation selectivity increasing.</strong> Early patterns in tested queries suggest that the number of brands recommended per query may decrease over time as AI systems become more confident in their recommendations, making top-quartile positioning more valuable and harder to displace.</li>
-    <li><strong>Entity disambiguation becoming critical.</strong> As more brands enter AI-researched categories, the risk of entity confusion increases. Brands with clearly differentiated entity definitions may maintain more accurate AI descriptions than those with generic positioning language.</li>
-  </ul>
+  // Factor cards: 2 visible, 4 locked
+  var cats=data.categories||[];
+  var vis=document.getElementById('visibleCats');
+  var lock=document.getElementById('lockedCats');
+  vis.innerHTML="";lock.innerHTML="";
+  cats.slice(0,2).forEach(function(c){vis.appendChild(renderCat(c));});
+  cats.slice(2).forEach(function(c){lock.appendChild(renderCat(c));});
 
-  <h2 id="faq">Frequently Asked Questions</h2>
-  <div class="faq-item">
-    <p class="faq-q">What is a good AI Visibility Score?</p>
-    <p class="faq-a">Based on tested queries across B2B SaaS categories, brands in the top quartile tend to show AI Visibility Scores above 60 out of 100. The median across tested brands falls between 25 and 40. New brands with limited entity signals often score below 15 initially. These ranges vary significantly by category and competitive density.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">Which AI platform gives brands the most visibility?</p>
-    <p class="faq-a">In tested queries, Perplexity tends to cite more brands per response than ChatGPT, which tends to be more selective in its recommendations. Google AI Overviews shows high variability depending on whether a query triggers an AI Overview at all. The platform mix matters: a brand may have strong visibility on Perplexity and low visibility on ChatGPT, requiring different optimization approaches for each.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">How long does it take to improve AI visibility?</p>
-    <p class="faq-a">Based on observed patterns, brands that address foundational gaps (entity definition, Wikidata presence, review platform listings) may see changes in RAG-based platforms like Perplexity within four to eight weeks. Changes in training-data-based systems like ChatGPT tend to appear over longer cycles. Brands starting from near-zero visibility typically require three to six months of consistent effort to reach median category benchmarks.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">What is the biggest factor in AI visibility?</p>
-    <p class="faq-a">Across tested brands, entity clarity appears to be the single most important factor. Brands that are clearly defined in structured sources (Organization schema, Wikidata, review platforms using consistent language) tend to appear more frequently and more accurately in AI responses than brands with equivalent content but weaker entity signals. Review platform presence is the second most impactful factor for recommendation-type queries.</p>
-  </div>
+  // Top fix
+  var fixes=data.top_fixes||[];
+  var fixEl=document.getElementById('topFix');
+  fixEl.innerHTML="";
+  if(fixes[0]){
+    var d=document.createElement('div');d.className='fix-item';
+    d.innerHTML='<span class="fix-num">1</span><span class="fix-text">'+esc(fixes[0])+'</span>';
+    fixEl.appendChild(d);
+  }
 
-  <div class="method-box">
-    <h3>Methodology Note</h3>
-    <p>The benchmarks and patterns in this report are based on tested queries run through the Jeevan AI scanning infrastructure across the named platforms. Query sets were designed to represent typical buyer research queries in each category, including generic recommendation queries, comparison queries, and use-case queries.</p>
-    <p>Scores and percentages reflect observed patterns in tested brand sets and are intended as directional benchmarks for teams to compare against. They are not based on a statistically representative sample of all brands in each category and should not be cited as market-wide statistics. Methodology updates are made as platform behavior changes.</p>
-    <ul>
-      <li>Platforms tested: ChatGPT (GPT-4o), Perplexity (default model), Gemini Advanced, Google AI Overviews</li>
-      <li>Query types: Recommendation, comparison, use-case, problem-statement</li>
-      <li>Date of testing: October 2026</li>
-      <li>Hedged language used throughout: "tested queries", "observed patterns", "may suggest", "tends to"</li>
-    </ul>
-  </div>
+  // competitor_reports: shown when this is the primary report
+  var compReports = data.competitor_reports || [];
+  var compareSection = document.getElementById('compareSection');
+  var compareGrid = document.getElementById('compareGrid');
+  compareGrid.innerHTML = "";
+  if(compReports.length > 0){
+    document.getElementById('compareHeading').textContent = brand + " vs Competitors — AI Visibility";
+    document.getElementById('compareTag').textContent = compReports.length + " competitor"+(compReports.length>1?"s":"")+" analyzed";
+    compReports.forEach(function(cr){
+      var s = Math.max(0, Math.min(100, parseInt(cr.score,10)||0));
+      var href = "https://jeevanai.co.in/report/" + encodeURIComponent(cr.slug||"") + "/";
+      var a = document.createElement('a');
+      a.href = href;
+      a.className = 'compare-card';
+      a.innerHTML =
+        '<div class="compare-card__left">'+
+        '<div class="compare-card__ring" style="background:'+colorFor(s)+'">'+s+'</div>'+
+        '<div><div class="compare-card__brand">'+esc(cr.brand||cr.domain)+'</div>'+
+        '<div class="compare-card__domain">'+esc(cr.domain||cr.url||"")+'</div></div>'+
+        '</div>'+
+        '<span class="compare-card__cta">See '+esc(cr.brand||"competitor")+" AI visibility report &rarr;</span>";
+      compareGrid.appendChild(a);
+    });
+    compareSection.style.display = 'block';
+  } else {
+    compareSection.style.display = 'none';
+  }
 
-</main>
+  // compared_to: shown when this IS a competitor report (back-link to primary)
+  var comparedTo = data.compared_to || [];
+  var comparedToSection = document.getElementById('comparedToSection');
+  var comparedToGrid = document.getElementById('comparedToGrid');
+  comparedToGrid.innerHTML = "";
+  if(comparedTo.length > 0){
+    comparedTo.forEach(function(ct){
+      var href = "https://jeevanai.co.in/report/?brand=" + encodeURIComponent(ct.slug||"");
+      var a = document.createElement('a');
+      a.href = href;
+      a.className = 'compare-card';
+      a.innerHTML =
+        '<div class="compare-card__left">'+
+        '<div class="compare-card__ring" style="background:var(--accent)">AI</div>'+
+        '<div><div class="compare-card__brand">'+esc(ct.brand||ct.domain)+'</div>'+
+        '<div class="compare-card__domain">'+esc(ct.domain||ct.url||"")+'</div></div>'+
+        '</div>'+
+        '<span class="compare-card__cta">See '+esc(ct.brand||"this brand")+" AI visibility report &rarr;</span>";
+      comparedToGrid.appendChild(a);
+    });
+    comparedToSection.style.display = 'block';
+  } else {
+    comparedToSection.style.display = 'none';
+  }
 
-<section class="cta-strip">
-  <h2>See How Your Brand Benchmarks</h2>
-  <p>Run a free scan to get your AI Visibility Score and see how you compare to the top performers in your category.</p>
-  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan</a>
-</section>
+  document.getElementById('loadingState').style.display='none';
+  document.getElementById('reportContent').style.display='block';
+}
 
-<footer class="footer">
-  <p>&copy; 2026 Jeevan AI &middot; <a href="/index.html">Home</a> &middot; <a href="/glossary/">Glossary</a> &middot; <a href="/blog-index.html">Blog</a> &middot; <a href="/privacy.html">Privacy</a></p>
-</footer>
+function showError(msg){
+  document.getElementById('loadingState').style.display='none';
+  if(msg) document.getElementById('errorMsg').innerHTML=msg;
+  document.getElementById('errorState').style.display='block';
+}
+
+function copyLink(){
+  var btn=document.getElementById('copyBtn');
+  navigator.clipboard.writeText(window.location.href).then(function(){
+    btn.textContent='Copied!';btn.classList.add('copied');
+    setTimeout(function(){btn.textContent='Copy link';btn.classList.remove('copied');},2200);
+  }).catch(function(){
+    var inp=document.createElement('input');inp.value=window.location.href;
+    document.body.appendChild(inp);inp.select();document.execCommand('copy');document.body.removeChild(inp);
+    btn.textContent='Copied!';setTimeout(function(){btn.textContent='Copy link';},2200);
+  });
+}
+
+(async function(){
+  var params=new URLSearchParams(window.location.search);
+  var brand=params.get('brand')||"";
+  if(!brand){showError("No brand parameter in URL. Run an analysis to generate a report.");return;}
+
+  // Redirect ?brand=slug → /report/slug/ (static pages)
+  window.location.replace('/report/'+encodeURIComponent(brand)+'/');
+
+  // 1. SessionStorage — instant if same session
+  try{
+    var cached=sessionStorage.getItem('report_'+brand);
+    if(cached){render(JSON.parse(cached));return;}
+  }catch(e){}
+
+  // 2. Static JSON file — permanent, pushed to GitHub when report was generated
+  try{
+    var staticRes=await fetch('/report-data/'+encodeURIComponent(brand)+'.json');
+    if(staticRes.ok){var staticData=await staticRes.json();if(!staticData.error){render(staticData);return;}}
+  }catch(e){}
+
+  // 3. Fallback: get-report function (Blobs)
+  try{
+    var res=await fetch(API+"?brand="+encodeURIComponent(brand));
+    var data=await res.json();
+    if(!res.ok||data.error){
+      showError('This report link has expired. <a href="/tools/ai-readiness-analyzer.html" style="color:var(--accent)">Run a new analysis</a> to regenerate it.');
+      return;
+    }
+    render(data);
+  }catch(e){
+    showError('This report link has expired. <a href="/tools/ai-readiness-analyzer.html" style="color:var(--accent)">Run a new analysis</a> to regenerate it.');
+  }
+})();
+</script>
 <script src="/assets/modern.js" defer></script>
-</body></html>
+</body>
+</html>
