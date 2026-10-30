@@ -1056,3 +1056,11 @@ table td {
 .bar{background:#21262d!important}
 .cat-score{color:#94a3b8!important}
 .score-ring{box-shadow:0 0 0 4px rgba(255,255,255,0.1)!important}
+
+/* ── AI readiness analyzer (tools/ai-readiness-analyzer.html) ─────────── */
+.share-bar{background:#1c2128!important;border:1px solid rgba(255,255,255,0.07)!important;border-radius:12px!important}
+.share-bar__label{color:#f1f5f9!important}
+.share-bar__sub{color:#94a3b8!important}
+.cache-notice{background:rgba(251,191,36,0.05)!important;border-color:rgba(251,191,36,0.2)!important}
+.btn-reanalyze{background:#21262d!important;color:#fbbf24!important;border-color:rgba(251,191,36,0.3)!important}
+.result-cta{background:linear-gradient(135deg,rgba(99,102,241,0.12),rgba(124,58,237,0.08))!important;border:1px solid rgba(99,102,241,0.2)!important;border-radius:14px!important}
