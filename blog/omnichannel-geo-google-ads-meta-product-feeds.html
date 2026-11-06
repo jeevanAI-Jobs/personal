@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omnichannel GEO: Aligning Google Merchant Center, Meta Catalogues, and Product Schema for AI Citations</title>
+<meta name="description" content="How to synchronise product data across Google Merchant Center, Meta catalogues, product page schema, and knowledge bases so AI systems represent your products accurately.">
+<link rel="canonical" href="https://jeevanai.co.in/blog/omnichannel-geo-google-ads-meta-product-feeds.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/modern.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#0d1117!important;color:#f1f5f9!important;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 24px}
+.nav__inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:#f1f5f9!important}
+.nav__logo svg{width:28px;height:28px}
+.nav__links{display:flex;gap:4px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:rgba(241,245,249,0.7)!important}
+.nav__links a:hover{color:#f1f5f9!important;background:rgba(255,255,255,0.07)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-size:0.875rem;font-weight:700}
+.hero{background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);padding:56px 24px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero__inner{max-width:760px;margin:0 auto}
+.hero__tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:4px 12px;border-radius:100px;margin-bottom:18px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3.8vw,2.6rem);color:#f1f5f9!important;line-height:1.18;margin-bottom:14px}
+.hero__sub{font-size:1.02rem;color:rgba(241,245,249,0.7)!important;line-height:1.65;margin-bottom:20px}
+.hero__meta{font-size:0.78rem;color:rgba(241,245,249,0.4)!important;display:flex;gap:14px;flex-wrap:wrap}
+.prose{max-width:760px;margin:0 auto!important;padding:44px 24px 80px}
+.prose h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;color:#f1f5f9!important;margin:44px 0 14px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.prose h3{font-size:1.02rem;font-weight:700;color:#e2e8f0!important;margin:28px 0 10px}
+.prose p{font-size:1rem;line-height:1.85;color:#94a3b8!important;margin-bottom:16px}
+.prose ul,.prose ol{padding-left:22px;margin-bottom:16px}
+.prose li{font-size:0.97rem;line-height:1.75;color:#94a3b8!important;margin-bottom:7px}
+.prose strong{color:#e2e8f0!important}
+.prose a{color:#38bdf8!important}
+.callout{background:rgba(56,189,248,0.06)!important;border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:16px 20px;margin:22px 0}
+.callout p{color:#93c5fd!important;margin:0;font-size:0.93rem}
+.warn-callout{background:rgba(251,191,36,0.06)!important;border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:16px 20px;margin:22px 0}
+.warn-callout p{color:#fde68a!important;margin:0;font-size:0.93rem}
+.data-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.88rem}
+.data-table th{background:#161b22!important;color:#e2e8f0!important;padding:11px 14px;text-align:left;border-bottom:2px solid rgba(56,189,248,0.2);white-space:nowrap}
+.data-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:#94a3b8!important;vertical-align:top}
+.data-table tr:hover td{background:rgba(255,255,255,0.02)!important}
+.step-block{background:#161b22!important;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px 20px;margin:12px 0}
+.step-block__num{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;margin-bottom:6px}
+.step-block__title{font-size:1rem;font-weight:700;color:#f1f5f9!important;margin-bottom:6px}
+.step-block p{color:#94a3b8!important;font-size:0.9rem;margin:0}
+.check-list{list-style:none;padding:0}
+.check-list li{padding:10px 14px;border-left:3px solid #38bdf8;background:#161b22!important;border-radius:0 8px 8px 0;margin-bottom:8px;color:#94a3b8!important;font-size:0.93rem}
+.cta-strip{background:linear-gradient(135deg,rgba(56,189,248,0.07),rgba(129,140,248,0.07));border-top:1px solid rgba(255,255,255,0.06);padding:52px 24px;text-align:center}
+.cta-strip h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#f1f5f9!important;margin-bottom:12px}
+.cta-strip p{color:#94a3b8!important;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65}
+.btn-primary{display:inline-flex;padding:13px 26px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-weight:700;font-size:0.95rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 0}
+.faq-q{font-weight:600;color:#f1f5f9!important;margin-bottom:8px;font-size:1rem}
+.faq-a{color:#94a3b8!important;line-height:1.75;font-size:0.95rem}
+footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
+footer p{font-size:0.82rem;color:#64748b!important}
+footer a{color:#64748b!important}
+@media(max-width:640px){.nav__links{display:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Omnichannel GEO: Aligning Google Merchant Center, Meta Catalogues, and Product Schema for AI Citations",
+  "description":"How to synchronise product data across Google Merchant Center, Meta catalogues, product page schema, and knowledge bases so AI systems represent your products accurately.",
+  "url":"https://jeevanai.co.in/blog/omnichannel-geo-google-ads-meta-product-feeds.html",
+  "datePublished":"2026-11-06",
+  "dateModified":"2026-11-06",
+  "author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},
+  "publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"}
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this apply to service businesses as well as product e-commerce?","acceptedAnswer":{"@type":"Answer","text":"Yes. Service businesses should ensure consistency across Schema markup, Google Business Profile, service page descriptions, and directory listings. Consistency in how the service is named and categorised reduces entity confusion in AI responses."}},{"@type":"Question","name":"Which feed inconsistencies matter most for AI citations?","acceptedAnswer":{"@type":"Answer","text":"Product name inconsistency and category mismatch have the highest impact. Brand field omissions are common and easy to fix. Pricing inconsistency can cause AI systems to hedge on pricing claims."}},{"@type":"Question","name":"How do I know if feed inconsistencies are affecting AI recommendations?","acceptedAnswer":{"@type":"Answer","text":"Run test queries on Perplexity and note whether your products appear, what names and descriptions are used, and whether information matches your website. Discrepancies are almost always traceable to feed or schema inconsistencies."}}]}</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="#38bdf8" opacity=".15"/><circle cx="14" cy="14" r="8" fill="#38bdf8" opacity=".3"/><circle cx="14" cy="14" r="4" fill="#38bdf8"/></svg>
+      Jeevan AI
+    </a>
+    <div class="nav__links">
+      <a href="/benchmark/">Benchmark</a>
+      <a href="/blog/">Blog</a>
+      <a href="/case-studies/">Case Studies</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Check Your Brand</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__tag">E-commerce</div>
+    <h1>Omnichannel GEO: Aligning Google Merchant Center, Meta Catalogues, and Product Schema for AI Citations</h1>
+    <p class="hero__sub">Inconsistent product data across your merchant feeds, schema, and catalogues creates entity confusion that reduces AI citation probability. Here is how to fix the alignment.</p>
+    <div class="hero__meta"><span>November 2026</span><span>7 min read</span></div>
+  </div>
+</section>
+<article class="prose">
+
+<p>AI recommendations do not operate in isolation from your paid advertising and product data ecosystem. The same metadata that powers your Google Shopping listings, your Meta product catalogue, and your merchant feed also contributes to how AI systems understand and represent your products in conversational responses.</p>
+<p>This guide covers how to align those data layers so they reinforce each other rather than conflict.</p>
+
+<h2>Why AI Systems Read Your Product Data</h2>
+<p>Retrieval-augmented AI platforms like Perplexity actively crawl and index product pages, structured data, and merchant feeds. When a user asks about products in your category, the AI constructs its response from multiple sources simultaneously: web content, structured schema, review aggregators, and in some cases directly from merchant feeds that have been ingested through platform partnerships.</p>
+<p>The issue most brands encounter is that their product data exists in several places with inconsistent descriptions, pricing, and category classifications. A product listed with one name in Google Merchant Center, a slightly different name on the website, and a third variation in the Meta catalogue creates entity confusion that reduces citation probability.</p>
+
+<h2>The Four Data Layers That Matter</h2>
+
+<h3>Layer 1: Google Merchant Center Feeds</h3>
+<p>Google Merchant Center feeds define how your products appear in Google Shopping, and increasingly in Google AI Mode responses. The feed&rsquo;s <code>title</code>, <code>description</code>, <code>google_product_category</code>, and <code>brand</code> fields are the most important for AI representation purposes.</p>
+<p>Common mistakes that reduce AI citation quality:</p>
+<ul>
+<li>Keyword-stuffed titles that describe the product differently than your website does ("Organic Aloe Vera Gel 200ml Face Moisturiser SPF30 Anti-Aging" vs "Aloe Vera SPF30 Moisturiser" on the product page)</li>
+<li>Category misclassification to avoid competition in a subcategory, which creates a mismatch between how you describe your product and how buyers search for it in AI prompts</li>
+<li>Missing brand field, which prevents the product from being attributed to your brand entity in AI responses</li>
+</ul>
+
+<h3>Layer 2: Meta Product Catalogue</h3>
+<p>Meta&rsquo;s product catalogue feeds dynamic ads and increasingly influences how Facebook and Instagram shopping surfaces products to users. The same consistency principle applies: your <code>name</code>, <code>description</code>, <code>category</code>, and <code>brand</code> fields should match your website and your Merchant Center feed.</p>
+<p>AI systems that crawl social commerce signals use these descriptions as evidence of how a brand categorises its own products. Inconsistency between your Meta catalogue and your website description is a signal that dilutes entity clarity.</p>
+
+<h3>Layer 3: Product Page Schema</h3>
+<p>Your product pages should carry <code>Product</code> schema with consistent <code>name</code>, <code>brand</code>, <code>description</code>, <code>category</code>, and <code>offers</code> fields. The <code>brand</code> property should reference your Organisation entity using the same name that appears in your Merchant Center and Meta feeds.</p>
+
+<div class="callout"><p>The single most impactful change for most e-commerce brands is ensuring that the product <code>name</code> in schema, the Merchant Center title, and the H1 on the product page are either identical or clearly consistent variations. Retrieval systems use name consistency as a primary signal for entity matching.</p></div>
+
+<h3>Layer 4: Customer Support Knowledge Base</h3>
+<p>AI systems increasingly draw on customer support content when constructing product responses. A knowledge base article that explains what your product does, who it is for, and how it compares to alternatives is a citable source. If your knowledge base uses different product names or category language than your commerce channels, it creates additional entity confusion.</p>
+
+<h2>Synchronisation Checklist</h2>
+<ul class="check-list">
+<li>Product names consistent across website H1, Product schema, Merchant Center title, Meta catalogue name</li>
+<li>Brand field populated in Merchant Center and Meta catalogue, matching Organisation schema name</li>
+<li>Google product category accurately reflects buyer intent, not internal category logic</li>
+<li>Product schema includes <code>offers</code> with current pricing, <code>aggregateRating</code> where reviews exist</li>
+<li>Knowledge base product descriptions use same category language as commerce channels</li>
+<li>Canonical URLs consistent across all data sources (no www vs non-www, no trailing slash inconsistency)</li>
+</ul>
+
+<h2>Sponsored AI Placements: What Currently Exists</h2>
+<p>Sponsored AI placements are emerging but limited. Google AI Mode has begun surfacing sponsored product cards in some categories. Meta is testing AI-powered product recommendations in certain ad formats. For most brands, these are supplementary to organic AI citations rather than a replacement for them.</p>
+<p>The important distinction is that sponsored placements require consistent, high-quality product data to deliver relevant results. A brand with inconsistent feeds will find that sponsored AI placements surface incorrect or mismatched information even when the placement is paid for. The data synchronisation work described here is a prerequisite for effective paid AI placements, not an alternative to them.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-q">Does this apply to service businesses as well as product e-commerce?</div><div class="faq-a">Yes, with modifications. Service businesses do not use Merchant Center or Meta product catalogues in the same way, but the same consistency principle applies across their Schema markup, Google Business Profile, service page descriptions, and any directory or aggregator listings. Consistency in how the service is named and categorised across sources is what reduces entity confusion in AI responses.</div></div>
+<div class="faq-item"><div class="faq-q">Which feed inconsistencies matter most for AI citations?</div><div class="faq-a">In testing, product name inconsistency and category mismatch are the highest-impact issues. Brand field omissions are common and straightforward to fix. Pricing inconsistency between feeds and product pages can cause AI systems to hedge on pricing claims or avoid citing specific prices, which reduces the actionability of the response for buyers.</div></div>
+<div class="faq-item"><div class="faq-q">How do I know if my feed inconsistencies are affecting AI recommendations?</div><div class="faq-a">Run test queries for your product category on Perplexity and note whether your products are cited, what names and descriptions are used, and whether the information matches your current website. Discrepancies between what AI says about your products and what your website says are almost always traceable to feed or schema inconsistencies.</div></div>
+
+</article>
+<section class="cta-strip">
+  <h2>See How Your Brand Shows Up in AI Answers</h2>
+  <p>Run a free AI visibility scan across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Check Your Brand Free</a>
+</section>
+<footer><p>&copy; 2026 <a href="/">Jeevan AI</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></p></footer>
+</body></html>
