@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Reverse-Engineer the Reddit Citation Graph Driving AI Recommendations in Your Category</title>
+<meta name="description" content="An audit framework for identifying which subreddits AI platforms cite most when answering questions in your product category, with a step-by-step citation concentration analysis.">
+<link rel="canonical" href="https://jeevanai.co.in/blog/reddit-subreddit-citation-graph-reverse-engineer.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/modern.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#0d1117!important;color:#f1f5f9!important;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 24px}
+.nav__inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:#f1f5f9!important}
+.nav__logo svg{width:28px;height:28px}
+.nav__links{display:flex;gap:4px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:rgba(241,245,249,0.7)!important}
+.nav__links a:hover{color:#f1f5f9!important;background:rgba(255,255,255,0.07)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-size:0.875rem;font-weight:700}
+.hero{background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);padding:56px 24px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero__inner{max-width:760px;margin:0 auto}
+.hero__tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:4px 12px;border-radius:100px;margin-bottom:18px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3.8vw,2.6rem);color:#f1f5f9!important;line-height:1.18;margin-bottom:14px}
+.hero__sub{font-size:1.02rem;color:rgba(241,245,249,0.7)!important;line-height:1.65;margin-bottom:20px}
+.hero__meta{font-size:0.78rem;color:rgba(241,245,249,0.4)!important;display:flex;gap:14px;flex-wrap:wrap}
+.prose{max-width:760px;margin:0 auto!important;padding:44px 24px 80px}
+.prose h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;color:#f1f5f9!important;margin:44px 0 14px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.prose h3{font-size:1.02rem;font-weight:700;color:#e2e8f0!important;margin:28px 0 10px}
+.prose p{font-size:1rem;line-height:1.85;color:#94a3b8!important;margin-bottom:16px}
+.prose ul,.prose ol{padding-left:22px;margin-bottom:16px}
+.prose li{font-size:0.97rem;line-height:1.75;color:#94a3b8!important;margin-bottom:7px}
+.prose strong{color:#e2e8f0!important}
+.prose a{color:#38bdf8!important}
+.callout{background:rgba(56,189,248,0.06)!important;border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:16px 20px;margin:22px 0}
+.callout p{color:#93c5fd!important;margin:0;font-size:0.93rem}
+.warn-callout{background:rgba(251,191,36,0.06)!important;border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:16px 20px;margin:22px 0}
+.warn-callout p{color:#fde68a!important;margin:0;font-size:0.93rem}
+.data-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.88rem}
+.data-table th{background:#161b22!important;color:#e2e8f0!important;padding:11px 14px;text-align:left;border-bottom:2px solid rgba(56,189,248,0.2);white-space:nowrap}
+.data-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:#94a3b8!important;vertical-align:top}
+.data-table tr:hover td{background:rgba(255,255,255,0.02)!important}
+.step-block{background:#161b22!important;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px 20px;margin:12px 0}
+.step-block__num{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;margin-bottom:6px}
+.step-block__title{font-size:1rem;font-weight:700;color:#f1f5f9!important;margin-bottom:6px}
+.step-block p{color:#94a3b8!important;font-size:0.9rem;margin:0}
+.check-list{list-style:none;padding:0}
+.check-list li{padding:10px 14px;border-left:3px solid #38bdf8;background:#161b22!important;border-radius:0 8px 8px 0;margin-bottom:8px;color:#94a3b8!important;font-size:0.93rem}
+.cta-strip{background:linear-gradient(135deg,rgba(56,189,248,0.07),rgba(129,140,248,0.07));border-top:1px solid rgba(255,255,255,0.06);padding:52px 24px;text-align:center}
+.cta-strip h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#f1f5f9!important;margin-bottom:12px}
+.cta-strip p{color:#94a3b8!important;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65}
+.btn-primary{display:inline-flex;padding:13px 26px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-weight:700;font-size:0.95rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 0}
+.faq-q{font-weight:600;color:#f1f5f9!important;margin-bottom:8px;font-size:1rem}
+.faq-a{color:#94a3b8!important;line-height:1.75;font-size:0.95rem}
+footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
+footer p{font-size:0.82rem;color:#64748b!important}
+footer a{color:#64748b!important}
+@media(max-width:640px){.nav__links{display:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"How to Reverse-Engineer the Reddit Citation Graph Driving AI Recommendations in Your Category",
+  "description":"An audit framework for identifying which subreddits AI platforms cite most when answering questions in your product category, with a step-by-step citation concentration analysis.",
+  "url":"https://jeevanai.co.in/blog/reddit-subreddit-citation-graph-reverse-engineer.html",
+  "datePublished":"2026-11-06",
+  "dateModified":"2026-11-06",
+  "author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},
+  "publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"}
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this only work for Perplexity, or can I audit ChatGPT citations too?","acceptedAnswer":{"@type":"Answer","text":"Perplexity is easiest because it shows inline citation URLs. ChatGPT does not consistently show citations. For ChatGPT, you can infer sources by comparing claims with relevant Reddit threads, but it is less direct."}},{"@type":"Question","name":"How often should I run this audit?","acceptedAnswer":{"@type":"Answer","text":"Quarterly is reasonable for most categories. Fast-moving categories or recent product launches benefit from monthly audits to track whether new threads are entering the citation pool."}},{"@type":"Question","name":"What if the most-cited subreddit is hostile to my brand?","acceptedAnswer":{"@type":"Answer","text":"This signals that existing community perception is negative and AI systems are likely citing that. The long-term fix is building authentic reputation in that community, not avoiding it."}}]}</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="#38bdf8" opacity=".15"/><circle cx="14" cy="14" r="8" fill="#38bdf8" opacity=".3"/><circle cx="14" cy="14" r="4" fill="#38bdf8"/></svg>
+      Jeevan AI
+    </a>
+    <div class="nav__links">
+      <a href="/benchmark/">Benchmark</a>
+      <a href="/blog/">Blog</a>
+      <a href="/case-studies/">Case Studies</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Check Your Brand</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__tag">Research</div>
+    <h1>How to Reverse-Engineer the Reddit Citation Graph Driving AI Recommendations in Your Category</h1>
+    <p class="hero__sub">Some of what ChatGPT says about your product category came from Reddit. This guide shows you which subreddits, which threads, and what it means for your brand.</p>
+    <div class="hero__meta"><span>November 2026</span><span>7 min read</span></div>
+  </div>
+</section>
+<article class="prose">
+
+<p>When ChatGPT or Perplexity answers a question about your product category, some of that answer came from Reddit. The question is: which subreddits, which threads, and which claims made it in?</p>
+<p>Knowing the answer is not about brand monitoring in the traditional sense. It is about understanding the community layer of the retrieval graph that AI systems draw on when they assemble recommendations in your category.</p>
+
+<h2>Why Reddit Has Outsized Influence in AI Retrieval</h2>
+<p>Reddit is one of the most cited sources in AI-generated product recommendations. The reasons are structural rather than accidental:</p>
+<ul>
+<li>Reddit threads contain long, unstructured comparisons between products written by actual users, which retrieval systems extract as evidence of community consensus</li>
+<li>High-upvote threads on product subreddits signal consensus in a way that AI retrieval systems can interpret as authority</li>
+<li>Reddit content is indexed by web crawlers used by Perplexity and similar retrieval-augmented platforms</li>
+<li>The sheer volume of product discussion on Reddit gives it statistical weight in citation probability calculations</li>
+</ul>
+<p>The practical implication is that the subreddit community most active in discussing your product category has more influence over what AI systems say about it than most brands realise.</p>
+
+<h2>How to Audit the Citation Graph for Your Category</h2>
+<p>Reverse-engineering which subreddits are driving AI citations in your category requires a structured audit process. Here is the approach:</p>
+
+<div class="step-block"><div class="step-block__num">Step 1</div><div class="step-block__title">Run a prompt panel across retrieval-augmented platforms</div><p>Use Perplexity (which shows inline citations) to run fifteen to twenty representative queries about your product category. Record every Reddit URL that appears in the citations panel. Do this across multiple query phrasings to capture variance.</p></div>
+
+<div class="step-block"><div class="step-block__num">Step 2</div><div class="step-block__title">Extract and classify the Reddit URLs</div><p>For each cited Reddit URL, record: the subreddit, the thread title, the approximate age of the thread, the upvote count if visible, and whether your brand or a competitor is mentioned in the cited passage. This gives you a citation inventory.</p></div>
+
+<div class="step-block"><div class="step-block__num">Step 3</div><div class="step-block__title">Calculate subreddit citation concentration</div><p>Group citations by subreddit and calculate what percentage of your total category citations come from each one. In most categories, two or three subreddits account for sixty to eighty percent of citations. These are your high-leverage communities.</p></div>
+
+<div class="step-block"><div class="step-block__num">Step 4</div><div class="step-block__title">Assess brand presence in cited threads</div><p>For the top three subreddits by citation count, review the actual threads being cited. Is your brand mentioned? Are competitors mentioned more frequently? Is the sentiment around your brand positive, neutral or negative in the cited passages?</p></div>
+
+<h2>What the Citation Graph Reveals</h2>
+<p>Once you have run this audit, the data typically reveals one of three patterns:</p>
+<table class="data-table">
+<thead><tr><th>Pattern</th><th>What you see</th><th>Implication</th></tr></thead>
+<tbody>
+<tr><td><strong>Competitor dominance</strong></td><td>A competitor is mentioned in most cited threads; you rarely appear</td><td>The community that AI systems cite has established a competitor as the default recommendation. Building presence in that specific community is the priority.</td></tr>
+<tr><td><strong>Category mentions, no brands</strong></td><td>Cited threads discuss the problem but rarely recommend specific products</td><td>The citation graph is not yet brand-specific. Authoritative, helpful answers to common questions in these threads can establish first-mover advantage.</td></tr>
+<tr><td><strong>Wrong community cited</strong></td><td>AI cites threads from a tangential subreddit, not the core community for your category</td><td>The core community may have low indexing or low thread quality. Consider whether the right subreddit for your category is discoverable and active.</td></tr>
+</tbody>
+</table>
+
+<div class="warn-callout"><p>The goal of this audit is diagnosis, not manipulation. Attempting to flood a subreddit with promotional content to shift citation patterns typically backfires: community moderators remove promotional posts, which signals to AI systems that the content lacks organic authority.</p></div>
+
+<h2>Thread Characteristics That Drive Citation Probability</h2>
+<p>Not all Reddit threads are equally likely to be cited by AI systems. The characteristics that increase citation probability in Perplexity and similar retrieval platforms include:</p>
+<ul>
+<li><strong>Age and longevity.</strong> Threads that are two to five years old and still indexed tend to have higher citation rates than very recent threads, because they have accumulated upvotes and engagement signals over time.</li>
+<li><strong>Specific, comparative claims.</strong> Threads where users make specific comparisons ("I tried X and Y, here is what I found") are cited more frequently than general discussion threads, because they contain extractable factual assertions.</li>
+<li><strong>High upvote-to-comment ratio on individual answers.</strong> A specific answer within a thread that has high relative upvotes is treated as a consensus signal.</li>
+<li><strong>Subreddit domain authority.</strong> Larger subreddits with higher domain authority in your category carry more citation weight per thread than smaller, newer ones.</li>
+</ul>
+
+<h2>Connecting the Audit to Action</h2>
+<p>The audit output gives you a prioritised community map. The action is not to game that community but to contribute genuinely to it over time. See the guide on <a href="/blog/reddit-ai-citation-source-strategy.html">building Reddit presence that gets cited</a> for the engagement principles that follow from this audit. The audit tells you where to focus; that guide covers how to contribute in a way that earns organic citation authority.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-q">Does this only work for Perplexity, or can I audit ChatGPT citations too?</div><div class="faq-a">Perplexity is the easiest platform for this audit because it shows inline citation URLs for every response. ChatGPT does not consistently show citations unless SearchGPT mode is active. For ChatGPT, you can infer citation sources by comparing what the model claims with what appears in relevant Reddit threads, but it is less direct than Perplexity&rsquo;s citation panel.</div></div>
+<div class="faq-item"><div class="faq-q">How often should I run this audit?</div><div class="faq-a">Quarterly is a reasonable cadence for most categories. If you are in a fast-moving category or have recently launched a product, monthly audits help you track whether community discussion is shifting and whether new threads are entering the citation pool.</div></div>
+<div class="faq-item"><div class="faq-q">What if the most-cited subreddit is hostile to my brand?</div><div class="faq-a">This is a signal that the existing community perception is negative, and that AI systems are likely citing that negative perception in relevant responses. The long-term fix is building authentic reputation in that community, not avoiding it. Brands that disengage from communities that discuss them tend to see the negative signal compound over time.</div></div>
+
+</article>
+<section class="cta-strip">
+  <h2>See How Your Brand Shows Up in AI Answers</h2>
+  <p>Run a free AI visibility scan across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Check Your Brand Free</a>
+</section>
+<footer><p>&copy; 2026 <a href="/">Jeevan AI</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></p></footer>
+</body></html>
