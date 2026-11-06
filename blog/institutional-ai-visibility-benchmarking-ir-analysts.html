@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Institutional AI Visibility Benchmarking for Public Companies and Regulated Firms</title>
+<meta name="description" content="How equity analysts and IR directors can benchmark a company's AI representation against its official peer group, covering entity consistency in filings, ESG data, and Wikidata.">
+<link rel="canonical" href="https://jeevanai.co.in/blog/institutional-ai-visibility-benchmarking-ir-analysts.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/modern.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#0d1117!important;color:#f1f5f9!important;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 24px}
+.nav__inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:#f1f5f9!important}
+.nav__logo svg{width:28px;height:28px}
+.nav__links{display:flex;gap:4px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:rgba(241,245,249,0.7)!important}
+.nav__links a:hover{color:#f1f5f9!important;background:rgba(255,255,255,0.07)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-size:0.875rem;font-weight:700}
+.hero{background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);padding:56px 24px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero__inner{max-width:760px;margin:0 auto}
+.hero__tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:4px 12px;border-radius:100px;margin-bottom:18px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3.8vw,2.6rem);color:#f1f5f9!important;line-height:1.18;margin-bottom:14px}
+.hero__sub{font-size:1.02rem;color:rgba(241,245,249,0.7)!important;line-height:1.65;margin-bottom:20px}
+.hero__meta{font-size:0.78rem;color:rgba(241,245,249,0.4)!important;display:flex;gap:14px;flex-wrap:wrap}
+.prose{max-width:760px;margin:0 auto!important;padding:44px 24px 80px}
+.prose h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;color:#f1f5f9!important;margin:44px 0 14px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.prose h3{font-size:1.02rem;font-weight:700;color:#e2e8f0!important;margin:28px 0 10px}
+.prose p{font-size:1rem;line-height:1.85;color:#94a3b8!important;margin-bottom:16px}
+.prose ul,.prose ol{padding-left:22px;margin-bottom:16px}
+.prose li{font-size:0.97rem;line-height:1.75;color:#94a3b8!important;margin-bottom:7px}
+.prose strong{color:#e2e8f0!important}
+.prose a{color:#38bdf8!important}
+.callout{background:rgba(56,189,248,0.06)!important;border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:16px 20px;margin:22px 0}
+.callout p{color:#93c5fd!important;margin:0;font-size:0.93rem}
+.warn-callout{background:rgba(251,191,36,0.06)!important;border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:16px 20px;margin:22px 0}
+.warn-callout p{color:#fde68a!important;margin:0;font-size:0.93rem}
+.data-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.88rem}
+.data-table th{background:#161b22!important;color:#e2e8f0!important;padding:11px 14px;text-align:left;border-bottom:2px solid rgba(56,189,248,0.2);white-space:nowrap}
+.data-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:#94a3b8!important;vertical-align:top}
+.data-table tr:hover td{background:rgba(255,255,255,0.02)!important}
+.step-block{background:#161b22!important;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px 20px;margin:12px 0}
+.step-block__num{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;margin-bottom:6px}
+.step-block__title{font-size:1rem;font-weight:700;color:#f1f5f9!important;margin-bottom:6px}
+.step-block p{color:#94a3b8!important;font-size:0.9rem;margin:0}
+.check-list{list-style:none;padding:0}
+.check-list li{padding:10px 14px;border-left:3px solid #38bdf8;background:#161b22!important;border-radius:0 8px 8px 0;margin-bottom:8px;color:#94a3b8!important;font-size:0.93rem}
+.cta-strip{background:linear-gradient(135deg,rgba(56,189,248,0.07),rgba(129,140,248,0.07));border-top:1px solid rgba(255,255,255,0.06);padding:52px 24px;text-align:center}
+.cta-strip h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#f1f5f9!important;margin-bottom:12px}
+.cta-strip p{color:#94a3b8!important;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65}
+.btn-primary{display:inline-flex;padding:13px 26px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-weight:700;font-size:0.95rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 0}
+.faq-q{font-weight:600;color:#f1f5f9!important;margin-bottom:8px;font-size:1rem}
+.faq-a{color:#94a3b8!important;line-height:1.75;font-size:0.95rem}
+footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
+footer p{font-size:0.82rem;color:#64748b!important}
+footer a{color:#64748b!important}
+@media(max-width:640px){.nav__links{display:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Institutional AI Visibility Benchmarking for Public Companies and Regulated Firms",
+  "description":"How equity analysts and IR directors can benchmark a company's AI representation against its official peer group, covering entity consistency in filings, ESG data, and Wikidata.",
+  "url":"https://jeevanai.co.in/blog/institutional-ai-visibility-benchmarking-ir-analysts.html",
+  "datePublished":"2026-11-06",
+  "dateModified":"2026-11-06",
+  "author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},
+  "publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"}
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this apply to private companies seeking institutional investment?","acceptedAnswer":{"@type":"Answer","text":"Yes. Crunchbase entries, Pitchbook profiles, press releases and trade publication coverage work the same way as filings. Inconsistency across them produces the same misattribution problems."}},{"@type":"Question","name":"How often do institutional investors use AI for company research?","acceptedAnswer":{"@type":"Answer","text":"Usage of tools like Perplexity for preliminary company research has grown among junior analysts. The risk is that an inaccurate AI representation shapes which questions they ask or which peer group they start with."}},{"@type":"Question","name":"Can we request corrections to how AI models describe our company?","acceptedAnswer":{"@type":"Answer","text":"Not directly. The practical approach is ensuring that authoritative sources the model uses accurately reflect your current position, through Wikidata, Organisation schema, and consistent filing language."}}]}</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="#38bdf8" opacity=".15"/><circle cx="14" cy="14" r="8" fill="#38bdf8" opacity=".3"/><circle cx="14" cy="14" r="4" fill="#38bdf8"/></svg>
+      Jeevan AI
+    </a>
+    <div class="nav__links">
+      <a href="/benchmark/">Benchmark</a>
+      <a href="/blog/">Blog</a>
+      <a href="/case-studies/">Case Studies</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Check Your Brand</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__tag">Enterprise</div>
+    <h1>Institutional AI Visibility Benchmarking for Public Companies and Regulated Firms</h1>
+    <p class="hero__sub">When an analyst opens Perplexity to research your company, what they read is shaped by signals most IR teams have never audited. Here is how to benchmark and fix it.</p>
+    <div class="hero__meta"><span>November 2026</span><span>8 min read</span></div>
+  </div>
+</section>
+<article class="prose">
+
+<p>When an equity analyst opens Perplexity to research a company before an earnings call, or when an institutional investor uses Claude to synthesize an ESG position across a peer group, the AI response they receive is shaped by signals that most corporate communications teams have never considered.</p>
+<p>This guide covers how public companies and regulated firms can benchmark their conversational AI presence against their official peer groups, and what structural gaps typically cause model misattribution in financial synthesis engines.</p>
+
+<h2>Why Institutional Buyers Use AI Differently Than Consumers</h2>
+<p>A consumer searching for a product recommendation wants a shortlist. An institutional researcher using AI wants a synthesized position: how does this company compare to its peers on a specific metric, what do analysts say, what do the filings disclose, and are there any contradictions between the company's stated position and what surfaces in third-party sources?</p>
+<p>This is a fundamentally different retrieval task. The AI model is not just deciding whether to mention your brand. It is constructing a comparative representation of your company within a defined peer group. How accurately that representation reflects your actual position depends on the quality and consistency of your entity signals across sources that institutional retrieval systems trust.</p>
+
+<h2>The Four Sources That Shape Institutional AI Representation</h2>
+<h3>1. Regulatory Filings and Financial Databases</h3>
+<p>Perplexity and Claude both have strong training data coverage of SEC filings, annual reports, and financial wire services. If your company description in a 10-K uses different language than your website, or if your peer group is defined differently across filings and investor presentations, the model will encounter conflicting entity signals.</p>
+<p>In testing, queries about companies with inconsistent self-categorisation in filings tend to produce hedged or inaccurate peer-group responses, with models defaulting to whichever categorisation appears most frequently across sources rather than the most recent or authoritative one.</p>
+
+<h3>2. Analyst Coverage and Research Notes</h3>
+<p>Companies with meaningful sell-side analyst coverage benefit from a secondary layer of authoritative entity grounding. Analyst notes that describe a company's peer group, competitive position, and financial metrics contribute to the entity graph that AI models use when constructing comparative responses.</p>
+<p>Smaller companies or those with limited analyst coverage may find that AI models rely more heavily on company-generated content, which can amplify any inconsistencies in self-description.</p>
+
+<h3>3. ESG and Sustainability Registries</h3>
+<p>Retrieval-augmented AI systems increasingly draw on ESG data sources when responding to queries about sustainability positioning, climate commitments, and governance structures. Companies whose ESG data appears only in PDF annual reports without structured web presence tend to be underrepresented in AI responses to ESG-specific queries.</p>
+<p>Structured ESG data on your investor relations page, consistent with TCFD or GRI framework language, contributes meaningfully to how AI models represent your sustainability position.</p>
+
+<h3>4. Wikidata and Structured Reference Sources</h3>
+<p>Institutional AI queries often cross-reference structured reference data to verify entity identity and peer-group membership. A company without a Wikidata entry, or with an outdated one that places it in a different industry classification than its current operations, may be excluded from peer-group responses entirely.</p>
+
+<h2>Benchmarking Your Position Against Your Peer Group</h2>
+<p>A practical institutional AI visibility benchmark involves running a structured set of comparative queries across ChatGPT, Perplexity, and Claude, using the same peer group definition your investor relations materials use. The key metrics to track:</p>
+<table class="data-table">
+<thead><tr><th>Metric</th><th>What it measures</th><th>Target</th></tr></thead>
+<tbody>
+<tr><td><strong>Peer-group inclusion rate</strong></td><td>Percentage of queries where you appear in the same response as your stated peers</td><td>Consistent with your market position</td></tr>
+<tr><td><strong>Representation accuracy</strong></td><td>Whether the description the model gives matches your current investor narrative</td><td>No material discrepancies</td></tr>
+<tr><td><strong>Sentiment parity</strong></td><td>Whether your sentiment profile is comparable to peers in the same responses</td><td>Neutral to positive, comparable to peers</td></tr>
+<tr><td><strong>ESG representation</strong></td><td>Accuracy of sustainability-related claims in model responses</td><td>Reflects disclosed positions</td></tr>
+<tr><td><strong>Financial metric accuracy</strong></td><td>Whether figures cited by the model are from current or outdated filings</td><td>Current fiscal year data</td></tr>
+</tbody>
+</table>
+
+<h2>Common Failure Patterns for Regulated Firms</h2>
+<ul>
+<li><strong>Stale category classification.</strong> A company that pivoted from one sector to another two years ago may still be classified in its original category in AI responses, because historical filings and older analyst notes outnumber newer ones in training data.</li>
+<li><strong>Peer-group drift.</strong> If your stated peer group changed after a strategic reorientation but your Wikidata entry and older investor presentations still reference the original peers, models may construct responses using the outdated group.</li>
+<li><strong>Disclosure inconsistency.</strong> When ESG commitments stated in a sustainability report conflict with language in annual filings, models may surface the conflict rather than the commitment, producing hedged or qualified responses.</li>
+<li><strong>Missing structured data.</strong> Financial services and healthcare firms often have strong regulatory presence but weak structured web data. Models may accurately describe your regulatory standing while mischaracterising your competitive position.</li>
+</ul>
+
+<div class="callout"><p>In testing, the platforms that handle institutional queries most reliably are those with consistent entity descriptions across investor filings, Wikidata, the company website Organisation schema, and at least two authoritative third-party sources using the same peer-group classification.</p></div>
+
+<h2>Remediation Steps for IR and Corporate Communications Teams</h2>
+<ul class="check-list">
+<li>Audit entity consistency: compare how your company is described in filings, on your website, in Wikidata, and in analyst coverage</li>
+<li>Update your Wikidata entry with current industry classification, peer group members (via the "competitor of" property), and financial registry links</li>
+<li>Add Organisation schema to your investor relations page with current SIC/NAICS codes and sameAs links to your regulatory filings profile</li>
+<li>Ensure ESG commitments use consistent, structured language across your sustainability report and your investor relations web pages</li>
+<li>Run the benchmark quarterly, using the same query set each time, to track whether your representation improves or degrades after model updates</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-q">Does this apply to private companies seeking institutional investment?</div><div class="faq-a">Yes. While private companies lack SEC filings, the same principles apply to Crunchbase entries, Pitchbook profiles, press releases, and trade publication coverage. Institutional investors using AI to research private companies rely heavily on these sources, and inconsistency across them produces the same misattribution problems as it does for public companies.</div></div>
+<div class="faq-item"><div class="faq-q">How often do institutional investors actually use AI for company research?</div><div class="faq-a">In testing and anecdotal reporting from IR professionals, usage of tools like Perplexity for preliminary company research has grown significantly among junior analysts and research associates. The risk is not that AI replaces the analyst, but that an inaccurate AI representation shapes the questions an analyst asks or the peer group they begin with.</div></div>
+<div class="faq-item"><div class="faq-q">Can we request corrections to how AI models describe our company?</div><div class="faq-a">Not directly. AI models update their representations through retraining and retrieval cycles, not through individual correction requests. The practical approach is to ensure that the authoritative sources the model uses to construct its responses accurately reflect your current position. That is what this guide addresses.</div></div>
+
+</article>
+<section class="cta-strip">
+  <h2>See How Your Brand Shows Up in AI Answers</h2>
+  <p>Run a free AI visibility scan across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Check Your Brand Free</a>
+</section>
+<footer><p>&copy; 2026 <a href="/">Jeevan AI</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></p></footer>
+</body></html>
