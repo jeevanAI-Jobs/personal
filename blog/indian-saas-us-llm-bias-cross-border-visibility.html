@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Indian SaaS Companies Overcome US-Centric LLM Bias in AI Recommendations</title>
+<meta name="description" content="Indian B2B SaaS products targeting North American enterprise buyers face a structural entity gap in Western LLMs. Five actions that close the cross-border visibility gap.">
+<link rel="canonical" href="https://jeevanai.co.in/blog/indian-saas-us-llm-bias-cross-border-visibility.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/modern.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#0d1117!important;color:#f1f5f9!important;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 24px}
+.nav__inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:#f1f5f9!important}
+.nav__logo svg{width:28px;height:28px}
+.nav__links{display:flex;gap:4px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:rgba(241,245,249,0.7)!important}
+.nav__links a:hover{color:#f1f5f9!important;background:rgba(255,255,255,0.07)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-size:0.875rem;font-weight:700}
+.hero{background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);padding:56px 24px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero__inner{max-width:760px;margin:0 auto}
+.hero__tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:4px 12px;border-radius:100px;margin-bottom:18px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3.8vw,2.6rem);color:#f1f5f9!important;line-height:1.18;margin-bottom:14px}
+.hero__sub{font-size:1.02rem;color:rgba(241,245,249,0.7)!important;line-height:1.65;margin-bottom:20px}
+.hero__meta{font-size:0.78rem;color:rgba(241,245,249,0.4)!important;display:flex;gap:14px;flex-wrap:wrap}
+.prose{max-width:760px;margin:0 auto!important;padding:44px 24px 80px}
+.prose h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;color:#f1f5f9!important;margin:44px 0 14px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.prose h3{font-size:1.02rem;font-weight:700;color:#e2e8f0!important;margin:28px 0 10px}
+.prose p{font-size:1rem;line-height:1.85;color:#94a3b8!important;margin-bottom:16px}
+.prose ul,.prose ol{padding-left:22px;margin-bottom:16px}
+.prose li{font-size:0.97rem;line-height:1.75;color:#94a3b8!important;margin-bottom:7px}
+.prose strong{color:#e2e8f0!important}
+.prose a{color:#38bdf8!important}
+.callout{background:rgba(56,189,248,0.06)!important;border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:16px 20px;margin:22px 0}
+.callout p{color:#93c5fd!important;margin:0;font-size:0.93rem}
+.warn-callout{background:rgba(251,191,36,0.06)!important;border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:16px 20px;margin:22px 0}
+.warn-callout p{color:#fde68a!important;margin:0;font-size:0.93rem}
+.data-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.88rem}
+.data-table th{background:#161b22!important;color:#e2e8f0!important;padding:11px 14px;text-align:left;border-bottom:2px solid rgba(56,189,248,0.2);white-space:nowrap}
+.data-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:#94a3b8!important;vertical-align:top}
+.data-table tr:hover td{background:rgba(255,255,255,0.02)!important}
+.step-block{background:#161b22!important;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px 20px;margin:12px 0}
+.step-block__num{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;margin-bottom:6px}
+.step-block__title{font-size:1rem;font-weight:700;color:#f1f5f9!important;margin-bottom:6px}
+.step-block p{color:#94a3b8!important;font-size:0.9rem;margin:0}
+.check-list{list-style:none;padding:0}
+.check-list li{padding:10px 14px;border-left:3px solid #38bdf8;background:#161b22!important;border-radius:0 8px 8px 0;margin-bottom:8px;color:#94a3b8!important;font-size:0.93rem}
+.cta-strip{background:linear-gradient(135deg,rgba(56,189,248,0.07),rgba(129,140,248,0.07));border-top:1px solid rgba(255,255,255,0.06);padding:52px 24px;text-align:center}
+.cta-strip h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#f1f5f9!important;margin-bottom:12px}
+.cta-strip p{color:#94a3b8!important;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65}
+.btn-primary{display:inline-flex;padding:13px 26px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-weight:700;font-size:0.95rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 0}
+.faq-q{font-weight:600;color:#f1f5f9!important;margin-bottom:8px;font-size:1rem}
+.faq-a{color:#94a3b8!important;line-height:1.75;font-size:0.95rem}
+footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
+footer p{font-size:0.82rem;color:#64748b!important}
+footer a{color:#64748b!important}
+@media(max-width:640px){.nav__links{display:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"How Indian SaaS Companies Overcome US-Centric LLM Bias in AI Recommendations",
+  "description":"Indian B2B SaaS products targeting North American enterprise buyers face a structural entity gap in Western LLMs. Five actions that close the cross-border visibility gap.",
+  "url":"https://jeevanai.co.in/blog/indian-saas-us-llm-bias-cross-border-visibility.html",
+  "datePublished":"2026-11-06",
+  "dateModified":"2026-11-06",
+  "author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},
+  "publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"}
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does it take to close the cross-border entity gap?","acceptedAnswer":{"@type":"Answer","text":"In testing, brands executing the five actions consistently saw measurable improvement in US-context citation rates within three to six months. G2 reviews and schema changes are fast; earned editorial coverage takes longer but has the highest impact."}},{"@type":"Question","name":"Does this only apply to US-targeting, or does it affect UK and European markets too?","acceptedAnswer":{"@type":"Answer","text":"The same mechanism applies. For UK enterprise buyers, UK-specific publications and G2 categories matter more. For EU markets, GDPR compliance documentation and European trade publication coverage carry additional weight."}},{"@type":"Question","name":"Does having a US-based team member or office help?","acceptedAnswer":{"@type":"Answer","text":"Yes, indirectly. A US address, US LinkedIn employees, and local registrations contribute to entity graph density. But review platforms and publication coverage matter more than the office itself."}}]}</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="#38bdf8" opacity=".15"/><circle cx="14" cy="14" r="8" fill="#38bdf8" opacity=".3"/><circle cx="14" cy="14" r="4" fill="#38bdf8"/></svg>
+      Jeevan AI
+    </a>
+    <div class="nav__links">
+      <a href="/benchmark/">Benchmark</a>
+      <a href="/blog/">Blog</a>
+      <a href="/case-studies/">Case Studies</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Check Your Brand</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__tag">India SaaS</div>
+    <h1>How Indian SaaS Companies Overcome US-Centric LLM Bias in AI Recommendations</h1>
+    <p class="hero__sub">Western LLMs systematically underrepresent Indian SaaS in US enterprise recommendations. This is not a product problem. It is an entity graph problem with a specific fix.</p>
+    <div class="hero__meta"><span>November 2026</span><span>8 min read</span></div>
+  </div>
+</section>
+<article class="prose">
+
+<p>An Indian B2B SaaS product targeting mid-market companies in North America faces a structural disadvantage in AI recommendations that has nothing to do with product quality. Western LLMs are trained on data that skews heavily toward North American corporate entities, creating a systematic gap in how Indian-origin software companies appear in AI-generated vendor shortlists.</p>
+<p>This guide explains the specific mechanisms behind that gap and what can be done about it.</p>
+
+<h2>Why Western LLMs Underrepresent Indian SaaS</h2>
+<p>The underrepresentation is not intentional. It follows from the data distribution that large language models are trained on. The key factors:</p>
+
+<h3>Entity Graph Density</h3>
+<p>North American software companies accumulate entity signals across a dense network of sources: Gartner Magic Quadrant evaluations, Forrester Wave reports, G2 and Capterra profiles with US-based reviews, TechCrunch and Forbes coverage, LinkedIn company pages with US-routed employee networks, and Wikidata entries cross-linked to US corporate registries.</p>
+<p>An Indian SaaS company of equivalent quality typically has a thinner presence across these same sources, particularly in the US-routed review and analyst ecosystems. The result is a smaller entity footprint in the data the model trains on.</p>
+
+<h3>IP Routing in Retrieval Systems</h3>
+<p>Retrieval-augmented platforms like Perplexity route queries through geographically distributed servers. When a US-based enterprise user queries for a vendor recommendation, the retrieval system may weight results from US-indexed sources more heavily. Indian company pages with Indian hosting and Indian IP routing may receive lower retrieval weight in US-targeted queries.</p>
+
+<h3>Review and Rating Source Skew</h3>
+<p>G2 and Capterra both weight reviews from "verified users" in relevant markets. An Indian SaaS product with strong domestic reviews but limited US-based reviews may score lower on these platforms for US-targeted queries, reducing its citation probability when AI platforms pull from these aggregators.</p>
+
+<h2>The Cross-Border Entity Gap: What It Looks Like in Practice</h2>
+<p>In testing across product categories where strong Indian SaaS products compete with Western alternatives, a consistent pattern emerges: the Indian product appears in AI recommendations for queries phrased in an Indian context ("best CRM for Indian SMBs") but drops out for queries phrased in a US enterprise context ("best CRM for US mid-market companies"), even when the product explicitly targets US customers and has US clients.</p>
+<p>This gap is addressable. The fix involves anchoring your entity in Western data sources systematically.</p>
+
+<h2>Five Actions That Close the Cross-Border Entity Gap</h2>
+
+<div class="step-block"><div class="step-block__num">Action 1</div><div class="step-block__title">Register with the Delaware C-Corp or relevant US corporate registry</div><p>Many Indian SaaS companies that target the US market already have a US entity. If yours does, that entity&rsquo;s registration is a node in the US corporate entity graph. Ensure your Wikidata entry and your Organisation schema reference both entities with consistent descriptions, and link the US entity to your main website.</p></div>
+
+<div class="step-block"><div class="step-block__num">Action 2</div><div class="step-block__title">Build G2 and Capterra profiles with US-market framing</div><p>Your product category, description, and feature list on G2 and Capterra should use US enterprise framing: compliance standards relevant to US buyers (SOC 2, GDPR, HIPAA if relevant), US-standard pricing currency, and US support hours. Actively request reviews from US customers. These profiles are primary citation sources for AI recommendations in US enterprise contexts.</p></div>
+
+<div class="step-block"><div class="step-block__num">Action 3</div><div class="step-block__title">Earn coverage in US-indexed technology publications</div><p>A single article in a US-indexed technology publication that accurately describes your product category and competitive position contributes meaningfully to your entity graph in Western training data. Product Hunt launches, contributed articles to US SaaS blogs, and coverage in newsletters like The Information or Morning Brew SaaS verticals all count.</p></div>
+
+<div class="step-block"><div class="step-block__num">Action 4</div><div class="step-block__title">Add multi-region JSON-LD schema</div><p>Your Organisation schema should include <code>areaServed</code> properties specifying your target markets, and <code>sameAs</code> links to your G2, Capterra, Crunchbase, and LinkedIn profiles. These signals tell retrieval systems that your entity is relevant to US enterprise queries, not just Indian market queries.</p></div>
+
+<div class="step-block"><div class="step-block__num">Action 5</div><div class="step-block__title">Participate in US-based community discussions</div><p>US enterprise buyers discuss vendor options on specific subreddits, Hacker News threads, and industry Slack communities. Genuine, helpful participation in these communities creates US-routed discussion signals that AI retrieval systems pick up. Even a small number of well-received contributions in the right communities can shift your citation probability for US-context queries.</p></div>
+
+<h2>Tracking Whether the Gap Is Closing</h2>
+<p>Run a consistent set of test queries monthly, using both Indian-context and US-context phrasings for the same buyer intent. The metric to track is not absolute citation count but parity: the gap between how often you appear in Indian-context queries versus US-context queries for the same product category.</p>
+<p>A closing gap means your US entity signals are accumulating. A widening gap means a competitor is growing their Western entity footprint faster than you are.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-q">How long does it take to close the cross-border entity gap?</div><div class="faq-a">In testing, brands that consistently executed the five actions above saw measurable improvement in US-context citation rates within three to six months. The speed depends on how quickly your US-routed entity signals accumulate. G2 reviews and schema changes are fast to implement; earned editorial coverage takes longer but has the highest impact.</div></div>
+<div class="faq-item"><div class="faq-q">Does this only apply to US-targeting, or does it affect UK and European markets too?</div><div class="faq-a">The same mechanism applies to European markets, though the specific sources differ. For UK enterprise buyers, coverage in The Register, Computer Weekly, and UK-specific G2 categories matters more than US publications. For EU markets, GDPR compliance documentation and European trade publication coverage carry additional weight.</div></div>
+<div class="faq-item"><div class="faq-q">Does having a US-based team member or office help?</div><div class="faq-a">Yes, indirectly. A US office generates US-routed entity signals: a US address on your website, LinkedIn employees in the US, local business registrations. These signals contribute to the entity graph density that Western AI models use to assess geographic relevance. But the signals that matter most are still the review platforms and publication coverage, not the office itself.</div></div>
+
+</article>
+<section class="cta-strip">
+  <h2>See How Your Brand Shows Up in AI Answers</h2>
+  <p>Run a free AI visibility scan across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Check Your Brand Free</a>
+</section>
+<footer><p>&copy; 2026 <a href="/">Jeevan AI</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></p></footer>
+</body></html>
