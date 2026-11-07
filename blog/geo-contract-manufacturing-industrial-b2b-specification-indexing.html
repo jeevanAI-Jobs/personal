@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEO for Contract Manufacturers and Industrial B2B: Specification Indexing for Procurement Queries</title>
+<meta name="description" content="How contract manufacturers and industrial suppliers structure tolerance specs, certifications, and capability matrices so AI systems can match them against precision procurement queries.">
+<link rel="canonical" href="https://jeevanai.co.in/blog/geo-contract-manufacturing-industrial-b2b-specification-indexing.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/modern.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;background:#0d1117!important;color:#f1f5f9!important;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,17,23,0.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 24px}
+.nav__inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:#f1f5f9!important}
+.nav__logo svg{width:28px;height:28px}
+.nav__links{display:flex;gap:4px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:rgba(241,245,249,0.7)!important}
+.nav__links a:hover{color:#f1f5f9!important;background:rgba(255,255,255,0.07)}
+.nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-size:0.875rem;font-weight:700}
+.hero{background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);padding:56px 24px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.hero__inner{max-width:760px;margin:0 auto}
+.hero__tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:4px 12px;border-radius:100px;margin-bottom:18px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.8rem,3.8vw,2.6rem);color:#f1f5f9!important;line-height:1.18;margin-bottom:14px}
+.hero__sub{font-size:1.02rem;color:rgba(241,245,249,0.7)!important;line-height:1.65;margin-bottom:20px}
+.hero__meta{font-size:0.78rem;color:rgba(241,245,249,0.4)!important;display:flex;gap:14px;flex-wrap:wrap}
+.prose{max-width:760px;margin:0 auto!important;padding:44px 24px 80px}
+.prose h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;color:#f1f5f9!important;margin:44px 0 14px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.prose h3{font-size:1.02rem;font-weight:700;color:#e2e8f0!important;margin:28px 0 10px}
+.prose p{font-size:1rem;line-height:1.85;color:#94a3b8!important;margin-bottom:16px}
+.prose ul,.prose ol{padding-left:22px;margin-bottom:16px}
+.prose li{font-size:0.97rem;line-height:1.75;color:#94a3b8!important;margin-bottom:7px}
+.prose strong{color:#e2e8f0!important}
+.prose a{color:#38bdf8!important}
+.callout{background:rgba(56,189,248,0.06)!important;border:1px solid rgba(56,189,248,0.18);border-radius:10px;padding:16px 20px;margin:22px 0}
+.callout p{color:#93c5fd!important;margin:0;font-size:0.93rem}
+.warn-callout{background:rgba(251,191,36,0.06)!important;border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:16px 20px;margin:22px 0}
+.warn-callout p{color:#fde68a!important;margin:0;font-size:0.93rem}
+.data-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.88rem}
+.data-table th{background:#161b22!important;color:#e2e8f0!important;padding:11px 14px;text-align:left;border-bottom:2px solid rgba(56,189,248,0.2);white-space:nowrap}
+.data-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,0.05);color:#94a3b8!important;vertical-align:top}
+.data-table tr:hover td{background:rgba(255,255,255,0.02)!important}
+.step-block{background:#161b22!important;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:18px 20px;margin:12px 0}
+.step-block__num{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#38bdf8!important;margin-bottom:6px}
+.step-block__title{font-size:1rem;font-weight:700;color:#f1f5f9!important;margin-bottom:6px}
+.step-block p{color:#94a3b8!important;font-size:0.9rem;margin:0}
+.check-list{list-style:none;padding:0}
+.check-list li{padding:10px 14px;border-left:3px solid #38bdf8;background:#161b22!important;border-radius:0 8px 8px 0;margin-bottom:8px;color:#94a3b8!important;font-size:0.93rem}
+.cta-strip{background:linear-gradient(135deg,rgba(56,189,248,0.07),rgba(129,140,248,0.07));border-top:1px solid rgba(255,255,255,0.06);padding:52px 24px;text-align:center}
+.cta-strip h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;color:#f1f5f9!important;margin-bottom:12px}
+.cta-strip p{color:#94a3b8!important;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.65}
+.btn-primary{display:inline-flex;padding:13px 26px;border-radius:8px;background:linear-gradient(135deg,#38bdf8,#818cf8);color:#0d1117!important;font-weight:700;font-size:0.95rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.07);padding:18px 0}
+.faq-q{font-weight:600;color:#f1f5f9!important;margin-bottom:8px;font-size:1rem}
+.faq-a{color:#94a3b8!important;line-height:1.75;font-size:0.95rem}
+footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
+footer p{font-size:0.82rem;color:#64748b!important}
+footer a{color:#64748b!important}
+@media(max-width:640px){.nav__links{display:none}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"GEO for Contract Manufacturers and Industrial B2B: Specification Indexing for Procurement Queries","description":"How contract manufacturers and industrial suppliers structure tolerance specs, certifications, and capability matrices so AI systems can match them against precision procurement queries.","url":"https://jeevanai.co.in/blog/geo-contract-manufacturing-industrial-b2b-specification-indexing.html","datePublished":"2026-11-07","dateModified":"2026-11-07","author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"}}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this approach apply to job shops as well as large contract manufacturers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Job shops often have an advantage: narrower, precisely documentable capabilities. A specialist job shop can build highly specific capability pages that match precision queries more reliably than a large diversified manufacturer."}},{"@type":"Question","name":"How often should capability pages be updated?","acceptedAnswer":{"@type":"Answer","text":"When equipment changes, certifications are renewed, or new materials and processes are added. AI systems may cite capability pages for extended periods; outdated specifications create procurement problems."}},{"@type":"Question","name":"What about NDA requirements?","acceptedAnswer":{"@type":"Answer","text":"Focus on process, material, and certification capabilities that are typically not NDA-restricted. Client-specific capabilities can be described at a process level without revealing the client or application."}}]}</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="#38bdf8" opacity=".15"/><circle cx="14" cy="14" r="8" fill="#38bdf8" opacity=".3"/><circle cx="14" cy="14" r="4" fill="#38bdf8"/></svg>
+      Jeevan AI
+    </a>
+    <div class="nav__links">
+      <a href="/benchmark/">Benchmark</a>
+      <a href="/blog/">Blog</a>
+      <a href="/case-studies/">Case Studies</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Check Your Brand</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__tag">Manufacturing</div>
+    <h1>GEO for Contract Manufacturers and Industrial B2B: Specification Indexing for Procurement Queries</h1>
+    <p class="hero__sub">Procurement engineers use AI to find suppliers by specification. Most manufacturing websites cannot be matched against those queries. Here is how to fix that.</p>
+    <div class="hero__meta"><span>November 2026</span><span>8 min read</span></div>
+  </div>
+</section>
+<article class="prose">
+
+<p>When a procurement engineer prompts an AI system for "ISO 9001 certified contract manufacturers with aluminium die casting and ±0.005 inch tolerance capability," they are running a technical specification query that most manufacturing websites are structurally unable to answer well.</p>
+<p>This guide covers how contract manufacturers and industrial B2B suppliers can organise their capability data so AI systems can extract and match it against precision specification queries.</p>
+
+<h2>How Procurement Engineers Use AI Differently</h2>
+<p>Industrial procurement queries are specification-first. The buyer knows exactly what they need and is asking the AI to find suppliers that meet those specifications. This is different from consumer or even standard B2B queries, where the buyer may be evaluating options without firm requirements.</p>
+<p>The implication is significant: a contract manufacturer whose website accurately describes its capabilities in specification language will be matched against procurement queries that its competitors with vaguer marketing copy will not appear in, regardless of brand recognition.</p>
+
+<h2>The Specification Data Problem</h2>
+<p>Most manufacturing websites describe capabilities in marketing language: "precision machining," "advanced manufacturing processes," "high-quality components." This language is not matchable against specification queries that ask for tolerance ranges, material grades, certifications, and equipment specifications.</p>
+<p>AI retrieval systems cannot infer that "advanced precision machining" means "±0.001 inch tolerance CNC turning." If the tolerance is not stated explicitly, the system cannot match it against a query that specifies it.</p>
+<div class="warn-callout"><p>Converting marketing capability descriptions to specification-language capability descriptions is typically the highest-impact change a contract manufacturer can make for AI procurement visibility. It does not require new content creation, only restructuring of existing capability information into a format AI systems can extract.</p></div>
+
+<h2>What to Document and How to Structure It</h2>
+<p>A specification-ready capabilities page for a contract manufacturer should cover:</p>
+<table class="data-table">
+<thead><tr><th>Capability area</th><th>What to specify</th><th>Format</th></tr></thead>
+<tbody>
+<tr><td>Machining processes</td><td>Process names, equipment makes/models, working envelope, tolerance ranges</td><td>Table per process type</td></tr>
+<tr><td>Materials</td><td>Specific alloy grades, polymer grades, hardness ranges processed</td><td>Bulleted list with standard material designations (e.g., 6061-T6, 316L SS)</td></tr>
+<tr><td>Certifications</td><td>ISO 9001, AS9100, IATF 16949, NADCAP, with certificate numbers and expiry</td><td>Table with issuing body and validity</td></tr>
+<tr><td>Finishing processes</td><td>Anodising specifications, plating types with thickness ranges, surface finishes</td><td>Table with standard designations (MIL-spec, Ra values)</td></tr>
+<tr><td>Quality systems</td><td>CMM equipment, inspection methods, first-article inspection process, PPAP capability</td><td>Prose with specific equipment names</td></tr>
+<tr><td>Lead times and MOQs</td><td>Typical production lead times, prototype capability, minimum order quantities</td><td>Table by production type</td></tr>
+</tbody>
+</table>
+
+<h2>Industrial Directory Presence</h2>
+<p>ThomasNet and GlobalSpec are the primary directories that AI retrieval systems use to verify industrial entity capabilities. A complete, accurate profile on both platforms is a prerequisite for appearing in AI responses to procurement queries. Key requirements:</p>
+<ul>
+<li>Company description using standard industry terminology and process names</li>
+<li>Complete NAICS and SIC code classifications that accurately reflect your processes</li>
+<li>All certifications listed with issuing bodies</li>
+<li>Materials and processes listed using standard industry designations, not marketing descriptions</li>
+<li>Geographic service area accurately defined</li>
+</ul>
+<p>Engineering forums and manufacturing communities on Reddit (r/manufacturing, r/machinists, r/engineering) are increasingly indexed by AI retrieval platforms for industrial queries. Genuine participation in technical discussions that mention your capability areas creates additional entity nodes in the retrieval graph.</p>
+
+<h2>Schema for Manufacturing Entities</h2>
+<p>Standard <code>Organization</code> schema applies, with additions:</p>
+<ul>
+<li><code>hasCredential</code> linking to each certification page or issuing body verification URL</li>
+<li><code>knowsAbout</code> linking to your capability-specific pages</li>
+<li><code>areaServed</code> defining your geographic service range</li>
+<li><code>sameAs</code> linking to your ThomasNet and GlobalSpec profiles</li>
+</ul>
+<p>For manufacturers with significant equipment, listing key equipment names (make, model, working envelope) on capability pages allows AI systems to match equipment-specific queries: "manufacturers with Mazak 5-axis over 1000mm travel" can only be answered if that specification is stated on your website or profile.</p>
+<p>For the foundational schema setup that applies before sector-specific work, see the <a href="/blog/ai-visibility-for-solo-founders-no-marketing-team.html">technical visibility foundation guide</a> covering Organisation schema, Wikidata, and sameAs configuration.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-q">Does this approach apply to job shops as well as large contract manufacturers?</div><div class="faq-a">Yes, and job shops often have an advantage: their capability range is typically narrower and more precisely documentable than large diversified manufacturers. A job shop that specialises in specific processes can build highly specific capability pages that match against precision queries more reliably than a large manufacturer with broader but less precisely documented capabilities.</div></div>
+<div class="faq-item"><div class="faq-q">How often should capability pages be updated?</div><div class="faq-a">When equipment changes (new additions or disposals), when certifications are renewed or new certifications are achieved, and when you add new materials or processes. AI retrieval systems may cite your capability pages for extended periods; outdated specifications that no longer match your actual capabilities create procurement problems when buyers contact you based on AI-cited information.</div></div>
+<div class="faq-item"><div class="faq-q">What about NDA requirements that restrict capability disclosure?</div><div class="faq-a">Many contract manufacturers work under NDA arrangements that restrict disclosure of specific client names and sometimes of specific capabilities developed for clients. The structured capability approach described here focuses on process, material, and certification capabilities that are typically not NDA-restricted. Client-specific capabilities developed under NDA can be described at a process level without revealing the client or the application.</div></div>
+
+</article>
+<section class="cta-strip">
+  <h2>See How Your Brand Shows Up in AI Answers</h2>
+  <p>Run a free AI visibility scan across ChatGPT, Perplexity, Gemini and Google AI Overviews.</p>
+  <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Check Your Brand Free</a>
+</section>
+<footer><p>&copy; 2026 <a href="/">Jeevan AI</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></p></footer>
+</body></html>
