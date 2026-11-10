@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S6X8Q5EY8E');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowing Which Citations Actually Matter: Inside AI Source Tracking (2026)</title>
+<meta name="description" content="Being cited by an AI platform is not one thing. Here is how tracking which sources get picked, and marking which ones actually matter, turns a list of links into a real signal.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog/citation-tracking-source-marking-ai-search">
+<meta property="og:title" content="Knowing Which Citations Actually Matter: Inside AI Source Tracking (2026)">
+<meta property="og:description" content="Being cited by an AI platform is not one thing. Here is how tracking which sources get picked, and marking which ones actually matter, turns a list of links into a real signal.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/blog/citation-tracking-source-marking-ai-search">
+<meta property="og:site_name" content="Jeevan AI">
+<meta property="article:published_time" content="2026-11-10">
+<meta property="article:author" content="Jeevan AI">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Knowing Which Citations Actually Matter: Inside AI Source Tracking",
+  "description": "Being cited by an AI platform is not one thing. Here is how tracking which sources get picked, and marking which ones actually matter, turns a list of links into a real signal.",
+  "author": { "@type": "Person", "name": "Saran Shraj" },
+  "publisher": { "@type": "Organization", "name": "Jeevan AI", "url": "https://jeevanai.co.in",
+    "logo": { "@type": "ImageObject", "url": "https://jeevanai.co.in/assets/logo.png" } },
+  "datePublished": "2026-11-10",
+  "dateModified": "2026-11-10",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jeevanai.co.in/blog/citation-tracking-source-marking-ai-search" },
+  "keywords": ["ai citation tracking", "ai search source marking", "which sources ai cites", "geo citation monitoring", "jeevan ai citations"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What counts as a citation in AI search visibility tracking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A citation is any source an AI platform's answer draws on or lists for a given query, surfaced through that platform's own API annotations. What it means differs by platform: on ChatGPT a citation is usually an inline link a reader can click, while on other platforms it may only indicate that a page was used as a source without a visible link, so the same word covers a narrower or broader signal depending on which tool you're looking at."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why mark some citations instead of tracking every one equally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A brand can be cited dozens of times a month across review sites, forums, directories and its own pages, and not all of those citations carry the same weight for a buying decision. Marking a citation as placed, meaning the team put it there deliberately, or as important, meaning it shows up on a query that matters for revenue, turns a long undifferentiated list into something a small team can actually act on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can marking citations influence what the AI platforms themselves show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Marking a citation as placed or important is an internal label for your own team, it does not change how ChatGPT, Gemini, Perplexity or any other platform ranks or selects sources. What it changes is how your team prioritizes which of those real citations to protect, promote, or follow up on."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg:#ffffff; --bg-card:#ffffff; --border:#e5e7eb; --border-hover:rgba(99,102,241,0.45);
+    --accent:#6366f1; --accent-dim:rgba(99,102,241,0.1); --text:#111827; --text-dim:#4b5563;
+    --text-muted:#9ca3af; --tag-bg:rgba(99,102,241,0.1); --tag-text:#4f46e5; --white:#ffffff;
+    --radius:12px; --radius-sm:8px; --font-sans:'DM Sans','Inter',system-ui,sans-serif;
+    --font-serif:'DM Serif Display',Georgia,serif; --font-mono:'JetBrains Mono',monospace; --max-w:1180px; --prose-w:720px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+  .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+  .nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+  .nav__links{display:flex;align-items:center;gap:6px}
+  .nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}
+  .nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+  .nav__links a.active{color:var(--accent)}
+  .nav__cta{padding:8px 18px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.875rem;font-weight:600}
+  .article-hero{background:linear-gradient(135deg,#1e3a8a 0%,#4338ca 45%,#7c3aed 100%);padding:60px 24px 64px;border-bottom:1px solid var(--border)}
+  .article-hero__inner{max-width:var(--prose-w);margin:0 auto}
+  .article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:rgba(255,255,255,0.72);margin-bottom:24px}
+  .article-hero__breadcrumb a{color:rgba(255,255,255,0.72)}
+  .article-hero__meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+  .post-tag{padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:rgba(255,255,255,0.16);color:#fff}
+  .post-date,.read-time{font-size:0.8rem;color:rgba(255,255,255,0.6)}
+  .article-hero__title{font-family:var(--font-serif);font-size:clamp(1.9rem,3.5vw,2.6rem);line-height:1.18;letter-spacing:-0.02em;color:#fff;margin-bottom:18px}
+  .article-hero__subtitle{font-size:1.1rem;color:rgba(255,255,255,0.85);line-height:1.6;max-width:620px}
+  .article-wrap{max-width:var(--max-w);margin:0 auto;padding:56px 24px 90px;display:grid;grid-template-columns:var(--prose-w) 1fr;gap:60px;align-items:start}
+  .article-prose{max-width:var(--prose-w)}
+  .summary-block{background:#f9fafb;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:18px 22px;margin-bottom:36px}
+  .summary-block p{font-size:1rem;color:var(--text-dim);line-height:1.65;margin:0}
+  .article-intro p{font-size:1.12rem;line-height:1.8;color:#374151;margin-bottom:18px}
+  .article-section{margin-top:14px}
+  .article-section h2{font-family:var(--font-serif);font-size:1.5rem;color:#111827;margin:34px 0 12px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;line-height:1.25}
+  .article-section h3{font-size:1.2rem;color:#1f2937;margin:22px 0 8px}
+  .article-section p{font-size:1.08rem;line-height:1.85;color:#374151;margin-bottom:16px}
+  .article-section a{color:#4f46e5;text-decoration:underline;text-underline-offset:2px}
+  .article-section ol,.article-section ul{margin:14px 0 18px 2px;padding-left:20px}
+  .article-section li{font-size:1.06rem;line-height:1.7;color:#374151;margin-bottom:10px}
+  .callout{background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(124,58,237,0.03));border:1px solid rgba(99,102,241,0.2);border-radius:10px;padding:18px 22px;margin:22px 0}
+  .callout p{margin:0;color:#1a1730;font-size:1.02rem;line-height:1.7}
+  .article-divider{border:none;border-top:1px solid var(--border);margin:36px 0}
+  .faq-section h2{font-family:var(--font-serif);font-size:1.5rem;color:#111827;margin-bottom:18px}
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+  .faq-item:last-child{border-bottom:none}
+  .faq-q{font-size:1.05rem;font-weight:600;color:#111827;margin-bottom:8px}
+  .faq-a{font-size:1rem;color:#4b5563;line-height:1.75;margin:0}
+  .article-conclusion p{font-size:1.08rem;line-height:1.85;color:#374151;margin-bottom:16px}
+  .inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07),rgba(99,102,241,0.03));border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-top:24px}
+  .inline-cta__text strong{font-size:1.05rem;color:#111827} .inline-cta__text p{font-size:0.9rem;color:#6b7280;margin-top:4px}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;font-size:0.9rem;font-weight:600;white-space:nowrap}
+  .article-sidebar{position:sticky;top:88px}
+  .sidebar-toc,.sidebar-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;margin-bottom:22px;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+  .sidebar-toc h4{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:14px}
+  .toc-list{list-style:none} .toc-list li{padding:4px 0} .toc-list a{font-size:0.85rem;color:var(--text-dim)} .toc-list a:hover{color:var(--accent)}
+  .sidebar-card h4{font-size:0.98rem;color:#111827;margin-bottom:8px} .sidebar-card p{font-size:0.85rem;color:var(--text-dim);margin-bottom:16px;line-height:1.55}
+  .btn-outline-sm{display:inline-flex;justify-content:center;width:100%;padding:9px 18px;border-radius:8px;border:1px solid var(--border);color:#4f46e5;font-size:0.82rem;font-weight:600;margin-top:10px}
+  .related-section{border-top:1px solid var(--border);padding:56px 24px}
+  .related-section__inner{max-width:var(--max-w);margin:0 auto}
+  .related-section h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:24px}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .related-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+  .related-card .post-tag{background:var(--tag-bg);color:var(--tag-text);margin-bottom:12px;display:inline-block}
+  .related-card h4{font-size:0.98rem;color:#111827;margin-bottom:8px;line-height:1.4} .related-card p{font-size:0.85rem;color:var(--text-dim);line-height:1.55;margin-bottom:14px}
+  .related-link{font-size:0.82rem;font-weight:600;color:var(--accent)}
+  .cta-strip{border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.06),transparent 60%);padding:64px 24px;text-align:center}
+  .cta-strip__inner{max-width:640px;margin:0 auto}
+  .cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:#111827;margin-bottom:12px}
+  .cta-strip__sub{color:var(--text-dim);margin-bottom:28px}
+  .footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center}
+  .footer p{font-size:0.85rem;color:var(--text-muted)} .footer a{color:var(--text-dim)}
+  @media(max-width:1024px){.article-wrap{grid-template-columns:1fr;gap:40px}.article-sidebar{position:static}.related-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.nav__links{display:none}.related-grid{grid-template-columns:1fr}.inline-cta{flex-direction:column}}
+</style>
+  <link rel="stylesheet" href="/assets/modern.css">
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="/index.html" class="nav__logo" aria-label="Jeevan AI home">
+      <img src="/logo.png" alt="Jeevan AI" style="width:36px;height:36px;border-radius:8px;object-fit:cover"><span>Jeevan AI</span>
+    </a>
+    <div class="nav__links">
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/blog-index.html" class="active">Blog</a>
+      <a href="/index.html#about">About</a>
+    </div>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Run Free Scan</a>
+  </div>
+</nav>
+
+<header class="article-hero">
+  <div class="article-hero__inner">
+    <nav class="article-hero__breadcrumb" aria-label="Breadcrumb">
+      <a href="/index.html">Home</a><span>&#8250;</span><a href="/blog-index.html">Blog</a><span>&#8250;</span><span>Use Case</span>
+    </nav>
+    <div class="article-hero__meta">
+      <span class="post-tag">Use Case</span>
+      <span class="post-date">November 10, 2026</span>
+      <span class="read-time">&middot; 8 min read</span>
+    </div>
+    <h1 class="article-hero__title">Knowing Which Citations Actually Matter: Inside AI Source Tracking</h1>
+    <p class="article-hero__subtitle">Being cited by an AI platform is not one thing. A list of every source that got picked is a start. Knowing which ones you put there on purpose, and which ones sit on a query that actually matters, is what makes the list useful.</p>
+  </div>
+</header>
+
+<div class="article-wrap">
+  <main class="article-prose" id="article-content">
+
+    <div class="summary-block">
+      <p>Jeevan AI's Citations view lists every source an AI platform's answer drew on for your tracked queries, what counts as a citation differs by platform, and then lets a team mark which of those sources it placed deliberately and which ones matter most for revenue. Without that second layer, a growing citation list just becomes noise nobody checks.</p>
+    </div>
+
+    <div class="article-intro">
+      <p>The first time a team sees their brand's citations pulled from a real AI visibility scan, the reaction is usually relief. There are citations. The brand is being used as a source somewhere. That feeling lasts about as long as it takes to scroll the list and realize thirty citations across forums, review aggregators, a years-old press release and one Reddit thread do not tell you anything about which of them is actually doing work for the business.</p>
+      <p>A citation count on its own answers "are we visible at all." It does not answer "did the page we worked hard on get picked," or "is this citation sitting on a query that could close a deal." Those are different questions, and most citation tracking stops before it reaches them.</p>
+      <p>This is the use case behind Jeevan AI's <a href="/blog/ai-visibility-audit-sources-list-indian-brands.html">Citations tracking and source marking</a>: not just showing what got cited, but letting a team say which citations they actually care about.</p>
+    </div>
+
+    <section class="article-section" id="what-a-citation-is">
+      <h2>What "citation" means, and why it is not the same thing on every platform</h2>
+      <p>A citation, in this context, is any source an AI platform's answer draws on or lists for a given query, surfaced through that platform's own API annotations rather than guessed at from the visible text.</p>
+      <p>The word covers different things depending on the platform. On ChatGPT, a citation is usually a real inline link a reader can click through to. On other platforms, a citation can mean a page was used as a source for an answer without ever surfacing as a visible, clickable link in the UI, the platform's own annotation says the source was consulted, but the end user never sees it listed. Treating every platform's citation as "a link that drove a click" is wrong often enough to mislead a team that has not accounted for the difference.</p>
+      <p>Jeevan AI's Citations view carries this distinction through rather than flattening it, each citation is labeled by the platform it came from and worded as "listed as a source" rather than implying a visible link exists everywhere.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="how-jeevan-ai-makes-it-easy">
+      <h2>How Jeevan AI makes a long citation list usable</h2>
+      <p>A raw list of citations scales badly. The fix is not more data, it is a way to separate what matters from what doesn't, without losing the underlying list.</p>
+      <h3>Mark a citation as placed</h3>
+      <p>When a citation is a page or listing the team actually put there on purpose, a guest post, an updated profile, a submitted press release, marking it as placed turns an anonymous entry in a feed into a record of deliberate work that paid off. Over time this becomes a track record: which outreach and content efforts actually resulted in a real AI citation, and which didn't.</p>
+      <h3>Flag a citation as important</h3>
+      <p>Separately, a citation can be flagged as important when it shows up on a query that matters, a high-intent buying question, a comparison query against a specific competitor, a question tied to a deal currently in progress. Placed and important are deliberately separate labels: a citation can be one, both, or neither. A source the team placed might turn out to sit on a low-value query. A source the team never touched might show up, unprompted, on the exact question that matters most.</p>
+      <h3>Rows that don't bury the signal</h3>
+      <p>The Citations view itself was decluttered specifically so the placed and important chips stay visible and scannable instead of getting lost in a dense table, each shows as its own small chip rather than another column competing for attention, and the citation list itself is filterable by domain and by how often a source shows up.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <div class="inline-cta">
+      <div class="inline-cta__text">
+        <strong>See your brand's real citations, not a guess</strong>
+        <p>Run a free scan and get every source cited across ChatGPT, Gemini, Perplexity and more, labeled by platform.</p>
+      </div>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan</a>
+    </div>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="discipline-not-one-time">
+      <h2>Why this needs a habit, not a one-time cleanup</h2>
+      <p>The temptation with any new tracking view is to open it once, mark the obvious handful of citations, and move on. That gets a team maybe a third of the value. Citations change between scans, for reasons that have nothing to do with anything the team did, platforms rotate which sources they draw from, pages get re-crawled, older content ages out.</p>
+      <p>A team that revisits the Citations view after every scan, marking new placements as they land and flagging new important citations as new high-intent queries surface, builds a record that actually tracks reality. A team that marks once and never returns ends up with a stale snapshot that quietly stops matching what is really happening.</p>
+      <p>The discipline here is smaller than the content-publishing cadence in other parts of the product, it is closer to a five-minute check after each scan than a weekly sprint. But skipped consistently, it decays the same way any unmaintained list does: technically present, practically useless.</p>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-section" id="why-this-beats-manual">
+      <h2>Why this beats manually grepping through AI answers for mentions</h2>
+      <p>The manual alternative, someone on the team running the same handful of queries by hand across a few AI tools and noting down what got mentioned, breaks down fast. It does not scale past a handful of queries, it has no memory of what was checked last time, and it has no way to distinguish a citation that matters from one that doesn't, because there is no structured record to mark in the first place.</p>
+      <p>Structured, platform-labeled, markable citation tracking turns an informal "I think we got mentioned somewhere" into an actual answerable question: which sources, on which queries, on which platforms, and which of those are the ones worth protecting or replicating. That answer compounds. A manual spot-check starts over every time.</p>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <p class="faq-q">What counts as a citation in AI search visibility tracking?</p>
+        <p class="faq-a">A citation is any source an AI platform's answer draws on or lists for a given query, surfaced through that platform's own API annotations. What it means differs by platform: on ChatGPT a citation is usually an inline link a reader can click, while on other platforms it may only indicate that a page was used as a source without a visible link, so the same word covers a narrower or broader signal depending on which tool you're looking at.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Why mark some citations instead of tracking every one equally?</p>
+        <p class="faq-a">A brand can be cited dozens of times a month across review sites, forums, directories and its own pages, and not all of those citations carry the same weight for a buying decision. Marking a citation as placed, meaning the team put it there deliberately, or as important, meaning it shows up on a query that matters for revenue, turns a long undifferentiated list into something a small team can actually act on.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Can marking citations influence what the AI platforms themselves show?</p>
+        <p class="faq-a">No. Marking a citation as placed or important is an internal label for your own team, it does not change how ChatGPT, Gemini, Perplexity or any other platform ranks or selects sources. What it changes is how your team prioritizes which of those real citations to protect, promote, or follow up on.</p>
+      </div>
+    </section>
+
+    <hr class="article-divider">
+
+    <section class="article-conclusion">
+      <p>A citation count is a vanity metric until something separates the sources that matter from the ones that happen to exist. Jeevan AI's citation tracking carries the platform-specific meaning of "citation" through honestly instead of flattening it, and its placed and important marking turns a growing, undifferentiated list into a record a team can actually act on.</p>
+      <p>The tool does the labeling. The habit of revisiting it after every scan, and being honest about which citations genuinely matter versus which ones just look good, is what keeps that record useful month over month.</p>
+
+      <div class="inline-cta">
+        <div class="inline-cta__text">
+          <strong>Find out where your brand is actually being cited</strong>
+          <p>Free scan across ChatGPT, Gemini, Perplexity, Claude and Google AI Mode. No credit card.</p>
+        </div>
+        <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan</a>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="article-sidebar">
+    <div class="sidebar-toc">
+      <h4>In this article</h4>
+      <ul class="toc-list">
+        <li><a href="#what-a-citation-is">What a citation means</a></li>
+        <li><a href="#how-jeevan-ai-makes-it-easy">How Jeevan AI makes it easy</a></li>
+        <li><a href="#discipline-not-one-time">Why this needs a habit</a></li>
+        <li><a href="#why-this-beats-manual">Why this beats manual</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>See Your Real Citations</h4>
+      <p>Run a free scan and get every source cited for your brand, labeled by platform and ready to mark.</p>
+      <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary" style="width:100%;justify-content:center;margin-bottom:0">Run Free Scan</a>
+      <a href="/blog-index.html" class="btn-outline-sm">Read More Articles</a>
+    </div>
+  </aside>
+</div>
+
+<section class="related-section">
+  <div class="related-section__inner">
+    <h3>Continue reading</h3>
+    <div class="related-grid">
+      <article class="related-card">
+        <span class="post-tag">Use Case</span>
+        <h4>From AI Visibility Gap to Published Fix: Inside the Content Pipeline</h4>
+        <p>How a flagged gap becomes a prioritized brief and a published page, and why the loop needs to repeat.</p>
+        <a href="/blog/ai-visibility-gap-to-content-pipeline.html" class="related-link">Read article &rarr;</a>
+      </article>
+      <article class="related-card">
+        <span class="post-tag">Use Case</span>
+        <h4>Watching Competitors' Own Ads Instead of Guessing at Their Strategy</h4>
+        <p>How live ad intelligence and share of voice turn competitor guesswork into something trackable.</p>
+        <a href="/blog/competitor-ad-intelligence-share-of-voice.html" class="related-link">Read article &rarr;</a>
+      </article>
+      <article class="related-card">
+        <span class="post-tag">GEO Strategy</span>
+        <h4>How to Become a Source AI Wants to Cite</h4>
+        <p>The structural and content habits that make a page citable by AI models in the first place.</p>
+        <a href="/blog/become-source-ai-wants-to-cite.html" class="related-link">Read article &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-strip__inner">
+    <h2 class="cta-strip__title">See where your brand is actually being cited</h2>
+    <p class="cta-strip__sub">Jeevan AI tracks real citations across ChatGPT, Gemini, Perplexity, Claude and Google AI Mode, then lets you mark which ones actually matter.</p>
+    <a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Run Free Scan</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 Jeevan AI | <a href="/index.html">Home</a> &middot; <a href="/blog-index.html">Blog</a> &middot; <a href="/pricing.html">Pricing</a></p>
+</footer>
+
+<script src="/assets/modern.js" defer></script>
+</body>
+</html>
