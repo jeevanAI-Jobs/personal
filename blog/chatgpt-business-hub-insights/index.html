@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Business Hub Insights Explained: Mentions, Clicks and Discovery Topics | Jeevan AI</title>
+<meta name="description" content="What Business Hub Insights actually counts, what it leaves out, why a blank is not a zero, how to log it, reconcile it with GA4, and turn discovery topics into a content plan that may improve how ChatGPT cites you.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog/chatgpt-business-hub-insights">
+<meta property="og:title" content="ChatGPT Business Hub Insights Explained: Mentions, Clicks and Discovery Topics">
+<meta property="og:description" content="What each Insights number counts, what it leaves out, and a practical system to log it, reconcile it with GA4 and turn discovery topics into a content plan.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/blog/chatgpt-business-hub-insights">
+<meta property="og:site_name" content="Jeevan AI">
+<meta property="article:published_time" content="2026-11-18">
+<meta property="article:author" content="Jeevan AI">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"ChatGPT Business Hub Insights Explained: Mentions, Clicks and Discovery Topics","description":"What Business Hub Insights counts, what it leaves out, how to log it, reconcile it with GA4 and turn discovery topics into a content plan.","author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in","logo":{"@type":"ImageObject","url":"https://jeevanai.co.in/logo.png"}},"datePublished":"2026-11-18","dateModified":"2026-11-18","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeevanai.co.in/blog/chatgpt-business-hub-insights"},"keywords":["Business Hub Insights","ChatGPT mentions","ChatGPT website clicks","discovery topics ChatGPT","ChatGPT referral traffic GA4","measure ChatGPT visibility","ChatGPT citation tracking"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jeevanai.co.in/"},{"@type":"ListItem","position":2,"name":"ChatGPT Visibility Hub","item":"https://jeevanai.co.in/chatgpt-visibility"},{"@type":"ListItem","position":3,"name":"Business Hub Insights","item":"https://jeevanai.co.in/blog/chatgpt-business-hub-insights"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What counts as a mention in ChatGPT Business Hub?","acceptedAnswer":{"@type":"Answer","text":"For an online business, a mention counts when ChatGPT references the business's website; the brand name alone does not count. For a local business, a mention counts when ChatGPT shows a result for that location, even if the customer does not open the listing or visit the website."}},
+{"@type":"Question","name":"Why is my Business Hub insight blank?","acceptedAnswer":{"@type":"Answer","text":"OpenAI says a blank metric can mean activity has not reached the reporting threshold, data is still being collected, or reporting is unavailable. It does not necessarily mean zero activity. If a metric stays blank, OpenAI suggests contacting support."}},
+{"@type":"Question","name":"Can I see the prompts people used to find my business?","acceptedAnswer":{"@type":"Answer","text":"No. Businesses do not receive individual prompts or consumer conversations, including chats with their own Business Agent. Discovery topics group common themes in ChatGPT answers that mentioned or cited the business; they are aggregate categories, not prompts or a direct measure of intent."}},
+{"@type":"Question","name":"How far back does Business Hub Insights go?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's help center says Insights show aggregate activity over the past 28 days. Because the window rolls forward, keep your own weekly log if you want a history."}},
+{"@type":"Question","name":"Why do Business Hub clicks not match GA4 ChatGPT traffic?","acceptedAnswer":{"@type":"Answer","text":"They measure different things. Business Hub records clicks inside ChatGPT. GA4 records sessions that load your analytics tag and are attributed to a source. Consent banners, blocked scripts, redirects, in-app browsers and missing referrers can all cause a click to arrive unattributed or not be recorded, so the two numbers are best compared as a trend rather than expected to match."}}
+]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--bg-card:#ffffff;--bg-card-hover:#f9fafb;--border:#e5e7eb;--accent:#d97706;--accent-dim:rgba(217,119,6,0.1);--text:#111827;--text-dim:#4b5563;--text-muted:#9ca3af;--white:#ffffff;--radius:12px;--radius-sm:8px;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--font-mono:'JetBrains Mono',monospace;--max-w:1180px;--prose-w:720px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__links a.active{color:#6366f1}
+.nav__cta{padding:8px 18px;border-radius:8px;background:#6366f1;color:#fff;font-size:0.875rem;font-weight:600;transition:opacity 0.2s}
+.nav__cta:hover{opacity:0.88}
+.article-hero{background:linear-gradient(135deg,#78350f 0%,#b45309 50%,#d97706 100%);padding:64px 24px 72px}
+.article-hero__inner{max-width:var(--prose-w);margin:0 auto}
+.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:28px;color:#fff}
+.article-hero__breadcrumb a{color:#fff;opacity:0.8}.article-hero__breadcrumb a:hover{opacity:1}
+.article-hero__breadcrumb span{color:rgba(255,255,255,0.5)}
+.article-hero__meta{display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.article-hero__meta span{color:rgba(255,255,255,0.58)}
+.post-tag{padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:rgba(255,255,255,0.15);color:#fff}
+.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.9rem,3.5vw,2.6rem);line-height:1.18;letter-spacing:-0.02em;color:#fff;margin-bottom:20px}
+.article-hero__subtitle{font-size:1.1rem;color:rgba(255,255,255,0.84);line-height:1.65;margin-bottom:0;max-width:620px}
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:64px 24px 96px;display:grid;grid-template-columns:var(--prose-w) 1fr;gap:64px;align-items:start}
+.article-prose{max-width:var(--prose-w)}
+.summary-block{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:40px}
+.summary-block p{font-size:0.95rem;color:var(--text-dim);line-height:1.65;margin:0}
+.article-intro p,.article-section p,.article-conclusion p{font-size:1.05rem;line-height:1.85;color:#374151;margin-bottom:1.3rem}
+.article-intro{margin-bottom:48px}
+.article-section{margin-bottom:48px}
+.article-section h2{font-family:var(--font-serif);font-size:1.5rem;line-height:1.25;color:#111827;margin-bottom:16px;margin-top:2.5rem;padding-bottom:0.5rem;border-bottom:2px solid #e5e7eb}
+.article-section h3{font-size:1.2rem;font-weight:600;color:#1f2937;margin:1.75rem 0 0.6rem}
+.citation-ready{background:linear-gradient(135deg,rgba(217,119,6,0.06) 0%,rgba(217,119,6,0.02) 100%);border:1px solid rgba(217,119,6,0.2);border-radius:8px;padding:18px 22px;margin-bottom:20px}
+.citation-ready p{font-size:0.95rem;line-height:1.7;color:var(--text);margin:0}
+.insight-box{background:#fff8f0;border:1px solid #fed7aa;border-left:3px solid #f97316;border-radius:0 8px 8px 0;padding:18px 22px;margin:24px 0}
+.insight-box p{font-size:0.925rem;color:#7c2d12;line-height:1.65;margin:0}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+.stat-card{background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:20px}
+.stat-card__num{font-size:2rem;font-weight:800;color:var(--accent);font-family:var(--font-mono);line-height:1;margin-bottom:6px}
+.stat-card__label{font-size:0.78rem;font-weight:600;color:#111827;margin-bottom:6px}
+.stat-card__desc{font-size:0.78rem;color:var(--text-dim);line-height:1.5}
+.spec-card{background:#f9fafb;border:1px solid var(--border);border-radius:12px;padding:24px;margin:16px 0}
+.spec-card__header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+.spec-card__title{font-size:1rem;font-weight:700;color:#111827}
+.spec-card__salary{padding:4px 12px;border-radius:100px;background:rgba(217,119,6,0.1);color:var(--accent);font-size:0.8rem;font-weight:700;white-space:nowrap}
+.spec-card p{font-size:0.9rem;color:var(--text-dim);line-height:1.65;margin-bottom:10px}
+.spec-card p:last-child{margin-bottom:0}
+.spec-card__skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.skill-tag{padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:600;background:rgba(217,119,6,0.08);color:#92400e;border:1px solid rgba(217,119,6,0.15)}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.875rem}
+.data-table th{text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);background:#fffbeb;color:#92400e;font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em}
+.data-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--text-dim);vertical-align:top;line-height:1.5}
+.data-table tr:last-child td{border-bottom:none}
+.data-table td:first-child{font-weight:600;color:var(--text)}
+.step-list{list-style:none;counter-reset:step-counter;padding:0;margin:20px 0}
+.step-list li{counter-increment:step-counter;display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);font-size:0.975rem;color:var(--text-dim);line-height:1.65}
+.step-list li:last-child{border-bottom:none}
+.step-list li::before{content:counter(step-counter);min-width:28px;height:28px;border-radius:50%;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.3);color:var(--accent);font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-list li strong{color:var(--text)}
+.article-divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+.faq-section{margin-bottom:48px}
+.faq-section h2{font-family:var(--font-serif);font-size:1.4rem;color:#111827;margin-bottom:24px}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:0.975rem;font-weight:600;color:#111827;margin-bottom:10px;line-height:1.45}
+.faq-a{font-size:0.925rem;color:var(--text-dim);line-height:1.7;margin:0}
+.article-conclusion{margin-bottom:48px}
+.inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,rgba(99,102,241,0.03) 100%);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.inline-cta__text p{font-size:0.875rem;color:var(--text-muted);margin-top:4px}
+.inline-cta__text strong{font-size:1rem;color:#111827}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;background:linear-gradient(135deg,#6366f1 0%,#7c3aed 100%);color:#fff;font-size:0.875rem;font-weight:600;white-space:nowrap;transition:opacity 0.2s;box-shadow:0 2px 6px rgba(99,102,241,0.38)}
+.btn-primary:hover{opacity:0.93}
+.article-sidebar{position:sticky;top:88px}
+.sidebar-toc{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px}
+.sidebar-toc h4{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:16px}
+.toc-list{list-style:none}
+.toc-list li{padding:4px 0}
+.toc-list a{font-size:0.82rem;color:var(--text-dim);transition:color 0.2s;line-height:1.4;display:block}
+.toc-list a:hover{color:#6366f1}
+.sidebar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+.sidebar-card h4{font-size:0.95rem;font-weight:600;color:#111827;margin-bottom:8px;line-height:1.4}
+.sidebar-card p{font-size:0.8rem;color:var(--text-dim);margin-bottom:18px;line-height:1.55}
+.btn-outline-sm{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:transparent;color:#4f46e5;font-size:0.8rem;font-weight:500;transition:all 0.2s;cursor:pointer;width:100%;justify-content:center}
+.btn-outline-sm:hover{border-color:#6366f1;color:#6366f1}
+.related-section{border-top:1px solid var(--border);padding:64px 24px}
+.related-section__inner{max-width:var(--max-w);margin:0 auto}
+.related-section h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:28px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color 0.2s,transform 0.2s}
+.related-card:hover{border-color:rgba(217,119,6,0.45);transform:translateY(-2px)}
+.related-card .post-tag{margin-bottom:12px;display:inline-block;background:rgba(217,119,6,0.1);color:var(--accent)}
+.related-card h4{font-size:0.95rem;font-weight:600;color:#111827;line-height:1.4;margin-bottom:8px}
+.related-card p{font-size:0.82rem;color:var(--text-dim);line-height:1.55;margin-bottom:16px}
+.related-link{font-size:0.8rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px;transition:gap 0.2s}
+.related-link:hover{gap:10px}
+.cta-strip{border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.06) 0%,transparent 60%);padding:72px 24px}
+.cta-strip__inner{max-width:640px;margin:0 auto;text-align:center}
+.cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:#111827;margin-bottom:12px}
+.cta-strip__sub{color:var(--text-dim);margin-bottom:32px;font-size:1rem}
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px}
+.footer__inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer__brand{font-size:0.875rem;color:var(--text-muted)}
+.footer__links{display:flex;gap:20px}
+.footer__links a{font-size:0.875rem;color:var(--text-muted);transition:color 0.2s}
+.footer__links a:hover{color:var(--text)}
+.content-link{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:2px;transition:text-decoration-color 0.2s}
+.content-link:hover{text-decoration-color:#6366f1}
+@media(max-width:900px){.article-wrap{grid-template-columns:1fr}.article-sidebar{display:none}.stat-grid{grid-template-columns:1fr 1fr}.related-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.stat-grid{grid-template-columns:1fr}.nav__links{display:none}}
+:root{--accent:#0f766e;--accent-dim:rgba(13,148,136,0.1)}
+.article-hero{background:linear-gradient(135deg,#042f2e 0%,#0f766e 55%,#14b8a6 100%)}
+.citation-ready{background:linear-gradient(135deg,rgba(13,148,136,0.07) 0%,rgba(13,148,136,0.02) 100%);border:1px solid rgba(13,148,136,0.25)}
+.data-table th{background:#f0fdfa;color:#115e59}
+.step-list li::before{background:rgba(13,148,136,0.1);border:1px solid rgba(13,148,136,0.3)}
+.related-card:hover{border-color:rgba(13,148,136,0.45)}
+.related-card .post-tag{background:rgba(13,148,136,0.1)}
+.article-section ul.bullets,.article-section ol.bullets{margin:0 0 1.3rem 1.3rem;color:#374151;font-size:1.02rem;line-height:1.8}
+.article-section ul.bullets li,.article-section ol.bullets li{margin-bottom:6px}
+.warn-box{background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #ef4444;border-radius:0 8px 8px 0;padding:18px 22px;margin:24px 0}
+.warn-box p{font-size:0.925rem;color:#7f1d1d;line-height:1.65;margin:0}
+.india-box{background:#fffbeb;border:1px solid #fde68a;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0}
+.india-box h3{margin-top:0!important;font-size:1.05rem!important}
+.india-box p,.india-box li{font-size:0.95rem;color:#78350f;line-height:1.7}
+.india-box ul{margin:8px 0 0 1.2rem}
+.yes{color:#047857;font-weight:600}.no{color:#b91c1c;font-weight:600}.part{color:#b45309;font-weight:600}
+.example{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:0.93rem;color:#334155;line-height:1.7}
+.example strong{color:#0f172a}
+code{font-family:var(--font-mono);font-size:0.86em;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:4px;padding:1px 5px;color:#0f172a}
+.sources-list{margin:12px 0 0 1.2rem;font-size:0.88rem;color:var(--text-dim);line-height:1.8}
+.sources-list a{color:#0f766e;text-decoration:underline;text-underline-offset:2px}
+.hub-banner{display:block;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 18px;margin:0 0 32px;font-size:0.92rem;color:#115e59}
+.hub-banner strong{color:#0f766e}
+.nav__links a.active{color:#4f46e5}.nav__cta{background:#4f46e5}
+:root{--text-muted:#6b7280}.content-link{color:#4338ca}
+.article-prose,.article-wrap>*,.hub-wrap>*{min-width:0}.related-card .post-tag{color:#0f766e!important;background:#ccfbf1!important}p code,li code{overflow-wrap:anywhere;word-break:break-word}
+</style>
+
+</head>
+<body>
+<nav class="nav">
+<div class="nav__inner">
+<a href="/" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" width="28" height="28">Jeevan AI</a>
+<div class="nav__links">
+<a href="/blog-index.html" class="active">Blog</a>
+<a href="/chatgpt-visibility">ChatGPT Visibility Hub</a>
+<a href="/#features">Features</a>
+<a href="/#pricing">Pricing</a>
+</div>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Go to Dashboard</a>
+</div>
+</nav>
+
+<section class="article-hero">
+<div class="article-hero__inner">
+<div class="article-hero__breadcrumb">
+<a href="/">Home</a><span>/</span><a href="/chatgpt-visibility">ChatGPT Visibility Hub</a><span>/</span><span>Business Hub Insights</span>
+</div>
+<div class="article-hero__meta">
+<span class="post-tag">Measurement</span>
+<span>November 18, 2026</span>
+<span>·</span>
+<span>17 min read</span>
+</div>
+<h1 class="article-hero__title">Business Hub Insights Explained: What Mentions, Clicks and Discovery Topics Really Tell You</h1>
+<p class="article-hero__subtitle">ChatGPT now gives brands first-party numbers. They are valuable and narrow at the same time. Here is exactly what each one counts, what it misses, and a system to turn them into decisions.</p>
+</div>
+</section>
+
+<div class="article-wrap">
+<main class="article-prose">
+<a href="/chatgpt-visibility" class="hub-banner">Part of the <strong>ChatGPT Visibility Hub</strong>. New to Business Hub? Start with the <strong>complete setup guide</strong> linked below.</a>
+
+<div class="summary-block">
+<p><strong>Short version.</strong> Business Hub Insights shows three aggregated numbers for the past 28 days: mentions, website clicks and discovery topics. For online businesses, a "mention" only counts when ChatGPT references your website, not when it names your brand. You never see prompts, conversations or competitors, and blanks are not zeros. Used with your own weekly log, analytics and a buyer-question panel, the numbers can show which topics already earn citations and where to build next. Used alone, they may badly understate how ChatGPT talks about you.</p>
+</div>
+
+<div class="article-intro" id="intro">
+<p>For most of the history of AI search, every visibility number a brand had was an estimate from outside: tools asking ChatGPT sample questions and counting answers. With <a href="/blog/chatgpt-business-hub-guide" class="content-link">Businesses in ChatGPT</a>, OpenAI now reports activity from its own systems to verified businesses. That is a genuine shift, and the first instinct of many teams will be to put "ChatGPT mentions" straight into a monthly report.</p>
+<p>Before you do, read the definitions. OpenAI has been careful about what these numbers mean, and the gaps between what they count and what marketers assume they count are large enough to change decisions.</p>
+</div>
+
+<div class="article-section" id="what-it-shows">
+<h2>What Insights Shows, in OpenAI's Own Definitions</h2>
+<p>Insights becomes available after your claim and Persona identity verification are both approved. You open your business in Business Hub and select Insights. OpenAI's help center describes it as aggregate activity over the past 28 days:</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Metric</th><th>What OpenAI counts</th><th>What that implies</th></tr></thead>
+<tbody>
+<tr><td>Mentions (online business)</td><td>ChatGPT references the business's website. The brand name alone does not count.</td><td>A measure of citation of your site, not of brand presence in answers</td></tr>
+<tr><td>Mentions (local business)</td><td>ChatGPT shows a result for that location, even if nobody opens it.</td><td>Closer to an impression count</td></tr>
+<tr><td>Website clicks</td><td>How often people click through to your website.</td><td>Recorded in ChatGPT; not the same as a visit in your analytics</td></tr>
+<tr><td>Discovery topics</td><td>Common themes in ChatGPT answers that mentioned or cited your business.</td><td>Themes of answers, not prompts, and not a direct measure of intent</td></tr>
+</tbody>
+</table>
+</div>
+<p>OpenAI adds three conditions that matter for interpretation: insights are aggregated, they only appear when there are enough conversations to meet privacy thresholds, and counts "may be incomplete."</p>
+<div class="citation-ready">
+<p><strong>Key definition:</strong> In Business Hub, a mention for an online business means ChatGPT referenced your website. If ChatGPT recommends your brand by name but cites a review site, a marketplace or a news article instead, that recommendation does not appear in your mention count.</p>
+</div>
+</div>
+
+<div class="article-section" id="what-it-misses">
+<h2>What Insights Leaves Out</h2>
+<ul class="bullets">
+<li><strong>Prompts and conversations.</strong> Businesses never receive individual prompts or consumer conversations, including chats with their own Business Agent.</li>
+<li><strong>Brand-name-only appearances.</strong> For online businesses, naming without a website reference records nothing.</li>
+<li><strong>Competitors.</strong> No share of voice, no list of who else appeared in the same answers.</li>
+<li><strong>How you were described.</strong> No sentiment, position in the answer, or accuracy check.</li>
+<li><strong>Which other sources were cited</strong> alongside or instead of your site.</li>
+<li><strong>Other AI engines.</strong> Gemini, Perplexity, Claude, Copilot and Google's AI surfaces are outside its scope.</li>
+<li><strong>Long history.</strong> The window is the past 28 days. Anything older is gone unless you record it.</li>
+<li><strong>Small numbers.</strong> Activity below the reporting threshold shows as blank.</li>
+</ul>
+<p>None of this is a criticism. OpenAI designed Insights to protect user privacy and says so plainly. It simply means Insights is one instrument, not the dashboard of record for AI visibility.</p>
+</div>
+
+<div class="article-section" id="citation-gap">
+<h2>The Citation Gap: The Most Useful Number Is One You Calculate</h2>
+<p>Because mentions only count website references, the most informative signal comes from comparing Insights with how often ChatGPT names you at all. Run a fixed panel of real buyer questions in ChatGPT (manually or with a tracker) and record two things per answer: was the brand named, and was your website cited.</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Pattern you see</th><th>What it may mean</th><th>Where to act</th></tr></thead>
+<tbody>
+<tr><td>Often named, rarely cited</td><td>ChatGPT knows you from third-party sources, but your own pages are not the reference it uses</td><td>Build pages that answer the exact questions buyers ask; improve structure and schema</td></tr>
+<tr><td>Rarely named, sometimes cited</td><td>Your site is used as a source for facts, but you are not on shortlists</td><td>Earn presence in reviews, comparisons and community discussion</td></tr>
+<tr><td>Named and cited</td><td>Strong position for those topics</td><td>Protect it: keep facts current, extend to adjacent topics</td></tr>
+<tr><td>Neither</td><td>Not yet part of ChatGPT's picture of the category</td><td>Start with entity basics and third-party coverage</td></tr>
+</tbody>
+</table>
+</div>
+<p>Two simple ratios help track this over time:</p>
+<ul class="bullets">
+<li><strong>Click rate</strong> = website clicks / mentions. A falling rate with steady mentions may point to weak landing pages for the topics you are cited on, or answers that satisfy users without a click.</li>
+<li><strong>Citation share of your panel</strong> = panel answers citing your site / panel answers naming you. Rising share suggests your own content is becoming the reference.</li>
+</ul>
+<p>Our guides on <a href="/blog/competitor-benchmarking-chatgpt-step-by-step" class="content-link">benchmarking competitors in ChatGPT</a> and <a href="/blog/what-is-ai-share-of-voice" class="content-link">AI share of voice</a> explain how to build that question panel.</p>
+</div>
+
+<div class="article-section" id="blanks">
+<h2>Blank Metrics: A Decision Tree</h2>
+<p>OpenAI states that a blank can mean the reporting threshold was not met, data is still being collected, or reporting is unavailable, and that it does not necessarily mean zero. Work through it in order:</p>
+<ol class="step-list">
+<li><strong>Is Persona approved?</strong> Insights stay locked until it is. Check the profile overview for "Complete verification with Persona".</li>
+<li><strong>Was the profile verified recently?</strong> Data may still be collecting. Wait at least one full 28-day window before drawing conclusions.</li>
+<li><strong>Is your volume likely small?</strong> If your panel shows ChatGPT rarely cites your site, you are probably below the privacy threshold. Record "below threshold", not zero.</li>
+<li><strong>Is one metric blank and another not?</strong> Clicks can fall below threshold while mentions do not. Treat each separately.</li>
+<li><strong>Still blank after weeks of real traffic in analytics?</strong> Contact OpenAI Support with the step, any error and a screenshot with sensitive information removed.</li>
+</ol>
+<div class="warn-box">
+<p><strong>Reporting rule:</strong> never write a blank into a report as 0. Write "not reported (below threshold or pending)". A zero that later becomes a number looks like growth that did not happen.</p>
+</div>
+</div>
+
+<div class="article-section" id="log">
+<h2>Build a Weekly Log Before Anything Else</h2>
+<p>Because Insights is a rolling 28-day view, the only way to see a trend is to record it yourself. Take a reading on the same weekday each week:</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Column</th><th>Source</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Reading date</td><td>You</td><td>Same weekday each week</td></tr>
+<tr><td>Mentions (28d)</td><td>Business Hub</td><td>Blank written as "NR"</td></tr>
+<tr><td>Website clicks (28d)</td><td>Business Hub</td><td>Blank written as "NR"</td></tr>
+<tr><td>Click rate</td><td>Calculated</td><td>Only when both are reported</td></tr>
+<tr><td>Top discovery topics</td><td>Business Hub</td><td>Copy names exactly; topic names may change</td></tr>
+<tr><td>ChatGPT sessions (28d)</td><td>GA4</td><td>Same 28-day window</td></tr>
+<tr><td>Key conversions from ChatGPT (28d)</td><td>GA4</td><td>Leads, trials, orders</td></tr>
+<tr><td>Panel: named / cited</td><td>Your question panel</td><td>Same questions every time</td></tr>
+<tr><td>Changes shipped</td><td>You</td><td>New pages, profile edits, feed updates, PR</td></tr>
+</tbody>
+</table>
+</div>
+<p>The last column is the one teams skip and later regret. Without it, you cannot connect a change in the numbers to anything you did.</p>
+</div>
+
+<div class="article-section" id="ga4">
+<h2>Reconciling Business Hub Clicks With GA4</h2>
+<p>Business Hub records clicks inside ChatGPT. GA4 records sessions that load your tag and are attributed to a source. The two will rarely match, and that is expected. Common reasons a recorded click does not show up as a ChatGPT session in analytics:</p>
+<ul class="bullets">
+<li>The visitor declined analytics cookies, or a blocker stopped the tag.</li>
+<li>A redirect (for example http to https, or a country redirect) dropped the referrer.</li>
+<li>The click opened in an app's in-app browser that passed no referrer.</li>
+<li>The landing page loaded slowly and the visitor left before the tag fired.</li>
+<li>Your channel grouping does not recognise ChatGPT as a source, so sessions sit under Referral or Direct.</li>
+</ul>
+<h3>Setup that makes the comparison meaningful</h3>
+<ol class="step-list">
+<li><strong>Create a custom channel group</strong> in GA4 with an "AI assistants" channel matching sources such as <code>chatgpt.com</code>, <code>chat.openai.com</code> and other assistants you care about. Place it above Referral so it wins.</li>
+<li><strong>Build a landing page report</strong> filtered to that channel. Pages that receive ChatGPT traffic are usually the pages ChatGPT cites.</li>
+<li><strong>Compare the same 28-day window</strong> as Business Hub, and track the ratio over time rather than the gap on any single day.</li>
+<li><strong>Treat Business Hub clicks as the closer-to-source number</strong> and GA4 as the number connected to conversions. You need both.</li>
+</ol>
+<p>Our FAQ on <a href="/questions-about-tracking-ai-referral-traffic" class="content-link">tracking AI referral traffic</a> covers more edge cases, and <a href="/blog/ai-search-traffic-converts-better-than-organic" class="content-link">why AI traffic may convert differently</a> explains why the conversion column matters.</p>
+</div>
+
+<div class="article-section" id="topics">
+<h2>Turning Discovery Topics Into a Content Plan</h2>
+<p>Discovery topics are the most strategic part of Insights, and the easiest to misuse. OpenAI describes them as common themes in ChatGPT answers that mentioned or cited your business. They are not the questions people typed, and they do not directly measure what customers wanted. They tell you which subjects ChatGPT already associates with your site.</p>
+<p>A practical method:</p>
+<ol class="step-list">
+<li><strong>List each topic</strong> with its share of mentions from your weekly log.</li>
+<li><strong>Map it to the page most likely being cited.</strong> Use your GA4 landing page report for the AI channel to confirm.</li>
+<li><strong>Classify it:</strong> strong (a dedicated, detailed page exists), thin (only a passing mention), or missing (no page).</li>
+<li><strong>Act by class:</strong> refresh strong pages with current facts; expand thin pages into full answers; create pages for adjacent topics buyers ask about.</li>
+<li><strong>Compare with your target topics.</strong> The topics you want to be known for but do not see are the real gap list.</li>
+</ol>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Discovery topic (example)</th><th>Cited page</th><th>Status</th><th>Next action</th></tr></thead>
+<tbody>
+<tr><td>Sunscreen for oily skin</td><td>/sunscreen-oily-skin</td><td class="yes">Strong</td><td>Add ingredient comparison table, refresh prices</td></tr>
+<tr><td>Fragrance-free moisturisers</td><td>/moisturisers</td><td class="part">Thin</td><td>Create a dedicated guide with skin-type answers</td></tr>
+<tr><td>Return policy</td><td>/returns</td><td class="yes">Strong</td><td>Keep identical to profile returns setting</td></tr>
+<tr><td>(Target, not seen) Sunscreen for sensitive skin</td><td>None</td><td class="no">Missing</td><td>New page, then seek third-party reviews mentioning it</td></tr>
+</tbody>
+</table>
+</div>
+<p>The example rows are illustrative. If you want help writing pages that are easy for AI systems to cite, see our <a href="/blog/how-to-write-geo-content-brief" class="content-link">GEO content brief guide</a> and <a href="/blog/schema-markup-ai-visibility" class="content-link">schema guide</a>.</p>
+</div>
+
+<div class="article-section" id="profile-signals">
+<h2>Using Insights to Fix Your Profile and Feed</h2>
+<ul class="bullets">
+<li><strong>Clicks fall while mentions hold:</strong> check that your profile's website field and the pages being cited still load fast and answer the topic directly.</li>
+<li><strong>Mentions concentrate in one topic:</strong> your description may be too narrow. Make sure the profile description covers every core line you sell, in plain category terms.</li>
+<li><strong>A topic you no longer offer keeps appearing:</strong> update the cited page and your profile, then fix third-party pages still describing the old offer.</li>
+<li><strong>Product topics appear but clicks are low:</strong> confirm feed prices and availability match your site. OpenAI notes changes can take time to show.</li>
+</ul>
+</div>
+
+<div class="article-section" id="agent-insights">
+<h2>Agent Insights</h2>
+<p>If you run a Business Agent, the same privacy rule applies: no individual chats or transcripts. For Sponsored Business Agents in Ads Manager, OpenAI says the Insights tab can show patterns across conversations, such as the most common questions, where available, and that an insights agent can help explore them once an agent passes 25 conversations. Treat recurring questions as a list of pages your website should answer more clearly.</p>
+</div>
+
+<div class="article-section" id="beyond">
+<h2>Filling the Gaps Insights Cannot Cover</h2>
+<p>Insights answers "how often did ChatGPT reference our site, and did people click". The questions leadership usually asks are broader: are we on the shortlist, who is recommended instead, what do answers say about us, and is it the same in other assistants. Those need an outside view:</p>
+<ul class="bullets">
+<li>A fixed panel of buyer questions run regularly across ChatGPT, Gemini, Perplexity, Claude and Google AI Mode (<a href="/blog/multi-llm-brand-monitoring" class="content-link">multi-LLM monitoring</a>).</li>
+<li>The sources each answer cites, so you know where to earn coverage (<a href="/blog/ai-citations-vs-backlinks-brand-authority" class="content-link">AI citations vs backlinks</a>).</li>
+<li>Competitor presence in the same answers (<a href="/blog/competitive-ai-brand-audit" class="content-link">competitive AI brand audit</a>).</li>
+<li>Accuracy checks on how you are described (<a href="/blog/ai-describing-product-wrong" class="content-link">fixing wrong AI descriptions</a>).</li>
+</ul>
+<p>When the outside view and Insights disagree, the disagreement is itself a finding. Many named appearances but few recorded mentions suggests ChatGPT trusts other sources about you more than your own site.</p>
+</div>
+
+<div class="article-section" id="reporting">
+<h2>How to Report It to Leadership</h2>
+<p>Use labels that match what the number counts. A monthly summary might read:</p>
+<div class="example">
+<strong>ChatGPT website references (Business Hub, last 28 days):</strong> 412, up from 350.<br>
+<strong>Clicks to our site from ChatGPT:</strong> 96 (click rate 23%). GA4 shows 71 AI-assistant sessions over the same window.<br>
+<strong>Top cited themes:</strong> sunscreen for oily skin (44%), returns and delivery (18%).<br>
+<strong>Buyer-question panel (40 questions, 5 assistants):</strong> named in 31%, our site cited in 12%.<br>
+<strong>Interpretation:</strong> ChatGPT appears to rely on third-party pages when it names us. Next month: two new guides for missing themes, and review outreach.<br>
+<em>Figures are illustrative.</em>
+</div>
+<p>Avoid "AI visibility up 18%" when the number is website references in one assistant. Precise labels protect the credibility of the whole program.</p>
+</div>
+
+<hr class="article-divider">
+
+<div class="faq-section" id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><p class="faq-q">What counts as a mention in Business Hub?</p><p class="faq-a">For an online business, a mention counts when ChatGPT references the business's website; the brand name alone does not count. For a local business, a mention counts when ChatGPT shows a result for that location, even if nobody opens it.</p></div>
+<div class="faq-item"><p class="faq-q">Why is my insight blank?</p><p class="faq-a">OpenAI says a blank can mean the reporting threshold was not met, data is still being collected, or reporting is unavailable. It does not necessarily mean zero.</p></div>
+<div class="faq-item"><p class="faq-q">Can I see the prompts people used?</p><p class="faq-a">No. Businesses do not receive prompts or conversations, including chats with their own agent. Discovery topics are aggregate themes of answers.</p></div>
+<div class="faq-item"><p class="faq-q">How far back does the data go?</p><p class="faq-a">The past 28 days. Keep a weekly log if you want history.</p></div>
+<div class="faq-item"><p class="faq-q">Why do Business Hub clicks not match GA4?</p><p class="faq-a">Business Hub records clicks in ChatGPT; GA4 records attributed sessions that load your tag. Consent, blockers, redirects, in-app browsers and channel grouping all create gaps. Compare trends, not single numbers.</p></div>
+<div class="faq-item"><p class="faq-q">Do Insights show competitors?</p><p class="faq-a">No. There is no share of voice or list of other businesses in the same answers. Use a buyer-question panel or an AI visibility tool for that.</p></div>
+</div>
+
+<div class="article-section" id="sources">
+<h2>Sources</h2>
+<p>Definitions come from OpenAI's published documentation, read on November 18, 2026. The program is in beta and details may change.</p>
+<ul class="sources-list">
+<li><a href="https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt" target="_blank" rel="noopener">OpenAI Help Center: Setting up your business on ChatGPT</a> (Understand your profile insights, FAQ)</li>
+<li><a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener">OpenAI: Introducing Businesses in ChatGPT</a></li>
+<li><a href="https://help.openai.com/en/articles/20001651-setting-up-a-sponsored-business-agent-in-ads-manager" target="_blank" rel="noopener">OpenAI Help Center: Setting up a Sponsored Business Agent</a></li>
+</ul>
+</div>
+
+<div class="inline-cta">
+<div class="inline-cta__text">
+<strong>Get the outside view Business Hub cannot show</strong>
+<p>Jeevan AI runs your buyer questions across five AI engines and shows where you are named, cited, and who is recommended instead.</p>
+</div>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Go to Dashboard &#8594;</a>
+</div>
+</main>
+
+<aside class="article-sidebar">
+<div class="sidebar-toc">
+<h4>In This Article</h4>
+<ul class="toc-list">
+<li><a href="#what-it-shows">What Insights shows</a></li>
+<li><a href="#what-it-misses">What it leaves out</a></li>
+<li><a href="#citation-gap">The citation gap</a></li>
+<li><a href="#blanks">Blank metrics</a></li>
+<li><a href="#log">Weekly log</a></li>
+<li><a href="#ga4">Reconciling with GA4</a></li>
+<li><a href="#topics">Discovery topics to content</a></li>
+<li><a href="#profile-signals">Fixing profile and feed</a></li>
+<li><a href="#agent-insights">Agent insights</a></li>
+<li><a href="#beyond">Filling the gaps</a></li>
+<li><a href="#reporting">Reporting to leadership</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="sidebar-card">
+<h4>Named but not cited?</h4>
+<p>Jeevan AI shows which sources AI engines cite when they talk about your category.</p>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-outline-sm">Go to Dashboard &#8594;</a>
+</div>
+</aside>
+</div>
+
+<section class="related-section">
+<div class="related-section__inner">
+<h3>Keep Reading</h3>
+<div class="related-grid">
+<a href="/blog/chatgpt-business-hub-guide" class="related-card"><span class="post-tag">Business Hub</span><h4>ChatGPT Business Hub: The Complete Guide</h4><p>Who can claim, verification, Persona, profile fields, product feeds, Business Agents and the India picture.</p><span class="related-link">Read guide &#8594;</span></a>
+<a href="/chatgpt-visibility" class="related-card"><span class="post-tag">Hub</span><h4>ChatGPT Visibility Hub</h4><p>Every guide to getting your brand named and recommended in ChatGPT, organized by stage.</p><span class="related-link">Open the hub &#8594;</span></a>
+<a href="/blog/chatgpt-brand-tracking-india-b2b-saas-2026" class="related-card"><span class="post-tag">Tracking</span><h4>How to Track Your Brand in ChatGPT and Perplexity</h4><p>Building a repeatable tracking routine for AI answers.</p><span class="related-link">Read article &#8594;</span></a>
+</div>
+</div>
+</section>
+
+<section class="cta-strip">
+<div class="cta-strip__inner">
+<p class="cta-strip__title">One dashboard for every AI engine</p>
+<p class="cta-strip__sub">Business Hub covers ChatGPT website references. Jeevan AI covers names, citations and competitors across ChatGPT, Gemini, Perplexity, Claude and Google AI Mode.</p>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Go to Dashboard &#8594;</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer__inner">
+<span class="footer__brand">&#169; 2026 Jeevan AI. All rights reserved.</span>
+<nav class="footer__links">
+<a href="/blog-index.html">Blog</a>
+<a href="/chatgpt-visibility">ChatGPT Visibility</a>
+<a href="/compare/index.html">Compare</a>
+<a href="/#features">Features</a>
+<a href="https://dashboard.jeevanai.co.in/auth/login">Sign In</a>
+</nav>
+</div>
+</footer>
+</body>
+</html>
