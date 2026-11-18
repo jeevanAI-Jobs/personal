@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6X8Q5EY8E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S6X8Q5EY8E');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT Business Hub: The Complete Guide to Businesses in ChatGPT (2026) | Jeevan AI</title>
+<meta name="description" content="Everything about ChatGPT Business Hub and Businesses in ChatGPT: who can claim, every verification step, Persona, profile fields, the product feed spec, Business Agents, sponsored agents, and what it means for Indian brands.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jeevanai.co.in/blog/chatgpt-business-hub-guide">
+<meta property="og:title" content="ChatGPT Business Hub: The Complete Guide to Businesses in ChatGPT (2026)">
+<meta property="og:description" content="Who can claim, every verification step, profile fields, the product feed spec, Business Agents, sponsored agents, and what it means for Indian brands. Built only from OpenAI's own documentation.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jeevanai.co.in/blog/chatgpt-business-hub-guide">
+<meta property="og:site_name" content="Jeevan AI">
+<meta property="article:published_time" content="2026-11-18">
+<meta property="article:author" content="Jeevan AI">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"ChatGPT Business Hub: The Complete Guide to Businesses in ChatGPT (2026)","description":"Who can claim, every verification step, Persona, profile fields, the product feed spec, Business Agents, sponsored agents, and what it means for Indian brands.","author":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in"},"publisher":{"@type":"Organization","name":"Jeevan AI","url":"https://jeevanai.co.in","logo":{"@type":"ImageObject","url":"https://jeevanai.co.in/logo.png"}},"datePublished":"2026-11-18","dateModified":"2026-11-18","mainEntityOfPage":{"@type":"WebPage","@id":"https://jeevanai.co.in/blog/chatgpt-business-hub-guide"},"about":[{"@type":"Thing","name":"Businesses in ChatGPT"},{"@type":"Thing","name":"ChatGPT Business Hub"},{"@type":"Thing","name":"Business Agents"}],"keywords":["ChatGPT Business Hub","Businesses in ChatGPT","claim business in ChatGPT","ChatGPT business profile","ChatGPT Business Agent","ChatGPT product feed","Persona verification ChatGPT","ChatGPT Business Hub India"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jeevanai.co.in/"},{"@type":"ListItem","position":2,"name":"ChatGPT Visibility Hub","item":"https://jeevanai.co.in/chatgpt-visibility"},{"@type":"ListItem","position":3,"name":"ChatGPT Business Hub Guide","item":"https://jeevanai.co.in/blog/chatgpt-business-hub-guide"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is ChatGPT Business Hub?","acceptedAnswer":{"@type":"Answer","text":"Business Hub is the dashboard inside ChatGPT where a business owner or authorized representative claims the business, updates its profile information, connects a product feed, views aggregated insights such as mentions and website clicks, and, if eligible, builds a Business Agent. It is part of Businesses in ChatGPT, a beta program OpenAI announced on November 10, 2026."}},
+{"@type":"Question","name":"Is claiming a business in ChatGPT free?","acceptedAnswer":{"@type":"Answer","text":"OpenAI's help center says you do not need an Ads account or a ChatGPT Enterprise agreement to claim an eligible business. Sponsoring a Business Agent through ChatGPT Ads is a separate, paid option."}},
+{"@type":"Question","name":"Will claiming my business make ChatGPT recommend it more often?","acceptedAnswer":{"@type":"Answer","text":"Not by itself. OpenAI states that claiming lets you manage the information you provide, but it does not guarantee increased visibility or give direct control over ChatGPT's independent recommendations. OpenAI also says advertising does not influence ChatGPT's independent answers."}},
+{"@type":"Question","name":"Can Indian brands claim a business in ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"OpenAI says any eligible business located where ChatGPT is available can claim through Business Hub, subject to supported verification, location and business type. Local stores and restaurants can currently claim only existing U.S. listings, Business Agents are limited to eligible U.S. ecommerce and online service businesses, and the standard product feed upload currently targets the U.S. Indian online brands can attempt a claim, but some features may not be available to them yet."}},
+{"@type":"Question","name":"What documents does Persona verification need?","acceptedAnswer":{"@type":"Answer","text":"OpenAI says you may need a government-issued ID, business registration information, and proof that you are authorized to represent the business. The legal business name, registered address and any registration or tax number must match your official records."}},
+{"@type":"Question","name":"Can I delete a published ChatGPT business profile?","acceptedAnswer":{"@type":"Answer","text":"No. Only unpublished draft profiles can be deleted. OpenAI Support cannot delete, unpublish or hide a published profile as part of a setup or ownership request. If you create a new profile through Persona, OpenAI's approval publishes it automatically."}},
+{"@type":"Question","name":"Can a Business Agent take orders or bookings?","acceptedAnswer":{"@type":"Answer","text":"No. In the current experience, a Business Agent explains products and policies and links to your website, where customers complete purchases or bookings. It cannot check a customer's order."}}
+]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--bg-card:#ffffff;--bg-card-hover:#f9fafb;--border:#e5e7eb;--accent:#d97706;--accent-dim:rgba(217,119,6,0.1);--text:#111827;--text-dim:#4b5563;--text-muted:#9ca3af;--white:#ffffff;--radius:12px;--radius-sm:8px;--font-sans:'DM Sans','Inter',system-ui,sans-serif;--font-serif:'DM Serif Display',Georgia,serif;--font-mono:'JetBrains Mono',monospace;--max-w:1180px;--prose-w:720px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav__inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem}
+.nav__links{display:flex;align-items:center;gap:6px}
+.nav__links a{padding:7px 14px;border-radius:8px;font-size:0.875rem;color:var(--text-dim);transition:all 0.2s}
+.nav__links a:hover{color:var(--text);background:rgba(0,0,0,0.05)}
+.nav__links a.active{color:#6366f1}
+.nav__cta{padding:8px 18px;border-radius:8px;background:#6366f1;color:#fff;font-size:0.875rem;font-weight:600;transition:opacity 0.2s}
+.nav__cta:hover{opacity:0.88}
+.article-hero{background:linear-gradient(135deg,#78350f 0%,#b45309 50%,#d97706 100%);padding:64px 24px 72px}
+.article-hero__inner{max-width:var(--prose-w);margin:0 auto}
+.article-hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.8rem;margin-bottom:28px;color:#fff}
+.article-hero__breadcrumb a{color:#fff;opacity:0.8}.article-hero__breadcrumb a:hover{opacity:1}
+.article-hero__breadcrumb span{color:rgba(255,255,255,0.5)}
+.article-hero__meta{display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.article-hero__meta span{color:rgba(255,255,255,0.58)}
+.post-tag{padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:rgba(255,255,255,0.15);color:#fff}
+.article-hero__title{font-family:var(--font-serif);font-size:clamp(1.9rem,3.5vw,2.6rem);line-height:1.18;letter-spacing:-0.02em;color:#fff;margin-bottom:20px}
+.article-hero__subtitle{font-size:1.1rem;color:rgba(255,255,255,0.84);line-height:1.65;margin-bottom:0;max-width:620px}
+.article-wrap{max-width:var(--max-w);margin:0 auto;padding:64px 24px 96px;display:grid;grid-template-columns:var(--prose-w) 1fr;gap:64px;align-items:start}
+.article-prose{max-width:var(--prose-w)}
+.summary-block{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:40px}
+.summary-block p{font-size:0.95rem;color:var(--text-dim);line-height:1.65;margin:0}
+.article-intro p,.article-section p,.article-conclusion p{font-size:1.05rem;line-height:1.85;color:#374151;margin-bottom:1.3rem}
+.article-intro{margin-bottom:48px}
+.article-section{margin-bottom:48px}
+.article-section h2{font-family:var(--font-serif);font-size:1.5rem;line-height:1.25;color:#111827;margin-bottom:16px;margin-top:2.5rem;padding-bottom:0.5rem;border-bottom:2px solid #e5e7eb}
+.article-section h3{font-size:1.2rem;font-weight:600;color:#1f2937;margin:1.75rem 0 0.6rem}
+.citation-ready{background:linear-gradient(135deg,rgba(217,119,6,0.06) 0%,rgba(217,119,6,0.02) 100%);border:1px solid rgba(217,119,6,0.2);border-radius:8px;padding:18px 22px;margin-bottom:20px}
+.citation-ready p{font-size:0.95rem;line-height:1.7;color:var(--text);margin:0}
+.insight-box{background:#fff8f0;border:1px solid #fed7aa;border-left:3px solid #f97316;border-radius:0 8px 8px 0;padding:18px 22px;margin:24px 0}
+.insight-box p{font-size:0.925rem;color:#7c2d12;line-height:1.65;margin:0}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+.stat-card{background:#f9fafb;border:1px solid var(--border);border-radius:10px;padding:20px}
+.stat-card__num{font-size:2rem;font-weight:800;color:var(--accent);font-family:var(--font-mono);line-height:1;margin-bottom:6px}
+.stat-card__label{font-size:0.78rem;font-weight:600;color:#111827;margin-bottom:6px}
+.stat-card__desc{font-size:0.78rem;color:var(--text-dim);line-height:1.5}
+.spec-card{background:#f9fafb;border:1px solid var(--border);border-radius:12px;padding:24px;margin:16px 0}
+.spec-card__header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+.spec-card__title{font-size:1rem;font-weight:700;color:#111827}
+.spec-card__salary{padding:4px 12px;border-radius:100px;background:rgba(217,119,6,0.1);color:var(--accent);font-size:0.8rem;font-weight:700;white-space:nowrap}
+.spec-card p{font-size:0.9rem;color:var(--text-dim);line-height:1.65;margin-bottom:10px}
+.spec-card p:last-child{margin-bottom:0}
+.spec-card__skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.skill-tag{padding:3px 10px;border-radius:100px;font-size:0.72rem;font-weight:600;background:rgba(217,119,6,0.08);color:#92400e;border:1px solid rgba(217,119,6,0.15)}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.875rem}
+.data-table th{text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);background:#fffbeb;color:#92400e;font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em}
+.data-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--text-dim);vertical-align:top;line-height:1.5}
+.data-table tr:last-child td{border-bottom:none}
+.data-table td:first-child{font-weight:600;color:var(--text)}
+.step-list{list-style:none;counter-reset:step-counter;padding:0;margin:20px 0}
+.step-list li{counter-increment:step-counter;display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);font-size:0.975rem;color:var(--text-dim);line-height:1.65}
+.step-list li:last-child{border-bottom:none}
+.step-list li::before{content:counter(step-counter);min-width:28px;height:28px;border-radius:50%;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.3);color:var(--accent);font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-list li strong{color:var(--text)}
+.article-divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+.faq-section{margin-bottom:48px}
+.faq-section h2{font-family:var(--font-serif);font-size:1.4rem;color:#111827;margin-bottom:24px}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:0.975rem;font-weight:600;color:#111827;margin-bottom:10px;line-height:1.45}
+.faq-a{font-size:0.925rem;color:var(--text-dim);line-height:1.7;margin:0}
+.article-conclusion{margin-bottom:48px}
+.inline-cta{background:linear-gradient(135deg,rgba(99,102,241,0.07) 0%,rgba(99,102,241,0.03) 100%);border:1px solid rgba(99,102,241,0.22);border-radius:12px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.inline-cta__text p{font-size:0.875rem;color:var(--text-muted);margin-top:4px}
+.inline-cta__text strong{font-size:1rem;color:#111827}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:8px;background:linear-gradient(135deg,#6366f1 0%,#7c3aed 100%);color:#fff;font-size:0.875rem;font-weight:600;white-space:nowrap;transition:opacity 0.2s;box-shadow:0 2px 6px rgba(99,102,241,0.38)}
+.btn-primary:hover{opacity:0.93}
+.article-sidebar{position:sticky;top:88px}
+.sidebar-toc{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px}
+.sidebar-toc h4{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:16px}
+.toc-list{list-style:none}
+.toc-list li{padding:4px 0}
+.toc-list a{font-size:0.82rem;color:var(--text-dim);transition:color 0.2s;line-height:1.4;display:block}
+.toc-list a:hover{color:#6366f1}
+.sidebar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+.sidebar-card h4{font-size:0.95rem;font-weight:600;color:#111827;margin-bottom:8px;line-height:1.4}
+.sidebar-card p{font-size:0.8rem;color:var(--text-dim);margin-bottom:18px;line-height:1.55}
+.btn-outline-sm{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:8px;border:1px solid var(--border);background:transparent;color:#4f46e5;font-size:0.8rem;font-weight:500;transition:all 0.2s;cursor:pointer;width:100%;justify-content:center}
+.btn-outline-sm:hover{border-color:#6366f1;color:#6366f1}
+.related-section{border-top:1px solid var(--border);padding:64px 24px}
+.related-section__inner{max-width:var(--max-w);margin:0 auto}
+.related-section h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:28px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.related-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color 0.2s,transform 0.2s}
+.related-card:hover{border-color:rgba(217,119,6,0.45);transform:translateY(-2px)}
+.related-card .post-tag{margin-bottom:12px;display:inline-block;background:rgba(217,119,6,0.1);color:var(--accent)}
+.related-card h4{font-size:0.95rem;font-weight:600;color:#111827;line-height:1.4;margin-bottom:8px}
+.related-card p{font-size:0.82rem;color:var(--text-dim);line-height:1.55;margin-bottom:16px}
+.related-link{font-size:0.8rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px;transition:gap 0.2s}
+.related-link:hover{gap:10px}
+.cta-strip{border-top:1px solid var(--border);background:linear-gradient(135deg,rgba(99,102,241,0.06) 0%,transparent 60%);padding:72px 24px}
+.cta-strip__inner{max-width:640px;margin:0 auto;text-align:center}
+.cta-strip__title{font-family:var(--font-serif);font-size:2rem;color:#111827;margin-bottom:12px}
+.cta-strip__sub{color:var(--text-dim);margin-bottom:32px;font-size:1rem}
+.footer{border-top:1px solid var(--border);padding:48px 24px 32px}
+.footer__inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer__brand{font-size:0.875rem;color:var(--text-muted)}
+.footer__links{display:flex;gap:20px}
+.footer__links a{font-size:0.875rem;color:var(--text-muted);transition:color 0.2s}
+.footer__links a:hover{color:var(--text)}
+.content-link{color:#6366f1;text-decoration:underline;text-decoration-color:rgba(99,102,241,0.3);text-underline-offset:2px;transition:text-decoration-color 0.2s}
+.content-link:hover{text-decoration-color:#6366f1}
+@media(max-width:900px){.article-wrap{grid-template-columns:1fr}.article-sidebar{display:none}.stat-grid{grid-template-columns:1fr 1fr}.related-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.stat-grid{grid-template-columns:1fr}.nav__links{display:none}}
+:root{--accent:#0f766e;--accent-dim:rgba(13,148,136,0.1)}
+.article-hero{background:linear-gradient(135deg,#042f2e 0%,#0f766e 55%,#14b8a6 100%)}
+.citation-ready{background:linear-gradient(135deg,rgba(13,148,136,0.07) 0%,rgba(13,148,136,0.02) 100%);border:1px solid rgba(13,148,136,0.25)}
+.data-table th{background:#f0fdfa;color:#115e59}
+.step-list li::before{background:rgba(13,148,136,0.1);border:1px solid rgba(13,148,136,0.3)}
+.related-card:hover{border-color:rgba(13,148,136,0.45)}
+.related-card .post-tag{background:rgba(13,148,136,0.1)}
+.article-section ul.bullets,.article-section ol.bullets{margin:0 0 1.3rem 1.3rem;color:#374151;font-size:1.02rem;line-height:1.8}
+.article-section ul.bullets li,.article-section ol.bullets li{margin-bottom:6px}
+.warn-box{background:#fef2f2;border:1px solid #fecaca;border-left:3px solid #ef4444;border-radius:0 8px 8px 0;padding:18px 22px;margin:24px 0}
+.warn-box p{font-size:0.925rem;color:#7f1d1d;line-height:1.65;margin:0}
+.india-box{background:#fffbeb;border:1px solid #fde68a;border-left:3px solid #f59e0b;border-radius:0 8px 8px 0;padding:20px 24px;margin:24px 0}
+.india-box h3{margin-top:0!important;font-size:1.05rem!important}
+.india-box p,.india-box li{font-size:0.95rem;color:#78350f;line-height:1.7}
+.india-box ul{margin:8px 0 0 1.2rem}
+.yes{color:#047857;font-weight:600}.no{color:#b91c1c;font-weight:600}.part{color:#b45309;font-weight:600}
+.example{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:0.93rem;color:#334155;line-height:1.7}
+.example strong{color:#0f172a}
+code{font-family:var(--font-mono);font-size:0.86em;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:4px;padding:1px 5px;color:#0f172a}
+.sources-list{margin:12px 0 0 1.2rem;font-size:0.88rem;color:var(--text-dim);line-height:1.8}
+.sources-list a{color:#0f766e;text-decoration:underline;text-underline-offset:2px}
+.hub-banner{display:block;background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:14px 18px;margin:0 0 32px;font-size:0.92rem;color:#115e59}
+.hub-banner strong{color:#0f766e}
+.nav__links a.active{color:#4f46e5}.nav__cta{background:#4f46e5}
+:root{--text-muted:#6b7280}.content-link{color:#4338ca}
+.article-prose,.article-wrap>*,.hub-wrap>*{min-width:0}.related-card .post-tag{color:#0f766e!important;background:#ccfbf1!important}p code,li code{overflow-wrap:anywhere;word-break:break-word}
+</style>
+
+</head>
+<body>
+<nav class="nav">
+<div class="nav__inner">
+<a href="/" class="nav__logo"><img src="/logo.png" alt="Jeevan AI" width="28" height="28">Jeevan AI</a>
+<div class="nav__links">
+<a href="/blog-index.html" class="active">Blog</a>
+<a href="/chatgpt-visibility">ChatGPT Visibility Hub</a>
+<a href="/#features">Features</a>
+<a href="/#pricing">Pricing</a>
+</div>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="nav__cta">Go to Dashboard</a>
+</div>
+</nav>
+
+<section class="article-hero">
+<div class="article-hero__inner">
+<div class="article-hero__breadcrumb">
+<a href="/">Home</a><span>/</span><a href="/chatgpt-visibility">ChatGPT Visibility Hub</a><span>/</span><span>Business Hub Guide</span>
+</div>
+<div class="article-hero__meta">
+<span class="post-tag">Businesses in ChatGPT</span>
+<span>November 18, 2026</span>
+<span>·</span>
+<span>24 min read</span>
+</div>
+<h1 class="article-hero__title">ChatGPT Business Hub: The Complete Guide to Businesses in ChatGPT</h1>
+<p class="article-hero__subtitle">Who can claim, every verification step, what each profile field does, the product feed spec field by field, Business Agents, sponsored agents, the limits OpenAI is open about, and what all of it means if your brand is in India.</p>
+</div>
+</section>
+
+<div class="article-wrap">
+<main class="article-prose">
+<a href="/chatgpt-visibility" class="hub-banner">Part of the <strong>ChatGPT Visibility Hub</strong>: every Jeevan AI guide to getting your brand named and recommended in ChatGPT, in one place.</a>
+
+<div class="summary-block">
+<p><strong>Short version.</strong> On November 10, 2026, OpenAI launched Businesses in ChatGPT in beta. Through a dashboard called Business Hub, a business can claim its profile, keep details current, upload a product feed and see aggregated insights (mentions, website clicks, discovery topics). Eligible U.S. ecommerce and online service businesses can also publish a Business Agent. Claiming is free and worth doing, but OpenAI is explicit that it does not guarantee more visibility or control ChatGPT's independent recommendations. This guide is built only from OpenAI's announcement, help center, policies and developer docs, and every limit is marked.</p>
+</div>
+
+<div class="article-intro" id="intro">
+<p>For two years, the only way to see how ChatGPT described your brand was from the outside: type questions, screenshot answers, guess at the sources. Businesses in ChatGPT is the first time OpenAI has given companies a formal way in. You can now supply your own facts, see first-party numbers, and in some markets let customers talk to an agent that represents you.</p>
+<p>It is also easy to misread. A claimed profile is not a ranking boost, a verified badge is not a recommendation, and a mention in Business Hub is not the same thing as your brand being named in an answer. Teams that treat the launch as "claim it and we're done" may be disappointed. Teams that treat it as one new input, set up carefully and measured honestly, are likely to get real value from it.</p>
+<p>This guide walks through every part of the program in the order you will meet it, with the rules that OpenAI itself has published.</p>
+</div>
+
+<div class="article-section" id="what-launched">
+<h2>What OpenAI Launched on November 10, 2026</h2>
+<p>OpenAI introduced <strong>Businesses in ChatGPT</strong> as a beta, framing it around the 1.2 billion people it says use ChatGPT each week. The program has four parts that people often blur together:</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Name</th><th>What it is</th><th>Who gets it</th></tr></thead>
+<tbody>
+<tr><td>Businesses in ChatGPT</td><td>The overall program: business profiles, insights and Business Agents.</td><td>Eligible businesses where ChatGPT is available</td></tr>
+<tr><td>Business Hub</td><td>The dashboard where you claim and manage a business. Opened from the ChatGPT sidebar.</td><td>Anyone authorized to represent an eligible business</td></tr>
+<tr><td>Business profile</td><td>The page people see when they click your business in a ChatGPT answer.</td><td>Every listed business; a claimed one shows the details you supply</td></tr>
+<tr><td>Business Agent</td><td>A clearly labeled chat that answers questions about your offerings using information you provide.</td><td>Eligible U.S. ecommerce and online service businesses with a website</td></tr>
+<tr><td>Sponsored Business Agent</td><td>An agent used as the destination of a ChatGPT ad, built in Ads Manager.</td><td>Eligible advertisers, rolling out</td></tr>
+</tbody>
+</table>
+</div>
+<p>One more name causes confusion: <strong>ChatGPT Business</strong> is OpenAI's paid workspace plan for teams. It has nothing to do with Business Hub.</p>
+<div class="citation-ready">
+<p><strong>In one sentence:</strong> Businesses in ChatGPT lets a verified business supply its own facts and product data to ChatGPT, see aggregated engagement numbers, and in the U.S. offer a labeled agent, while ChatGPT's own recommendations stay independent of both the profile and any ad spend.</p>
+</div>
+</div>
+
+<div class="article-section" id="control">
+<h2>What Business Hub Can and Cannot Change</h2>
+<p>Before any setup, it helps to be clear about the boundary OpenAI has drawn. Its help center says claiming "doesn't guarantee increased visibility" and does not give you direct control over ChatGPT's independent recommendations. It also says ChatGPT may use other sources when answering questions about your business, and that advertising does not influence ChatGPT's independent answers.</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Thing you care about</th><th>Business Hub effect</th><th>What actually drives it</th></tr></thead>
+<tbody>
+<tr><td>Facts on your ChatGPT profile</td><td class="yes">Direct control (after review)</td><td>Your profile edits, reviewed by OpenAI</td></tr>
+<tr><td>Product prices and availability</td><td class="yes">Direct input via product feed</td><td>Your feed, plus third-party product data</td></tr>
+<tr><td>Verified badge</td><td class="yes">Yes, after Persona approval</td><td>Identity verification</td></tr>
+<tr><td>How often ChatGPT names you</td><td class="no">No guarantee</td><td>What ChatGPT can read and trust about you across the web</td></tr>
+<tr><td>Whether you are recommended over a competitor</td><td class="no">No direct control</td><td>Reviews, comparisons, community discussion, your own content</td></tr>
+<tr><td>How answers describe you</td><td class="part">Partial: accurate inputs help</td><td>Your profile plus every other source ChatGPT reads</td></tr>
+<tr><td>Ads placement</td><td class="part">Separate paid product</td><td>ChatGPT Ads, labeled and kept apart from answers</td></tr>
+</tbody>
+</table>
+</div>
+<p>So the profile is best understood as a source of truth you now own, not a lever on rankings. The work that tends to change recommendations still happens outside the dashboard, which we cover in <a href="#beyond" class="content-link">the last section</a> and across the <a href="/chatgpt-visibility" class="content-link">ChatGPT Visibility Hub</a>.</p>
+</div>
+
+<div class="article-section" id="eligibility">
+<h2>Who Can Claim a Business in ChatGPT</h2>
+<p>OpenAI's rules, as published in the help center and the Businesses in ChatGPT policy:</p>
+<ul class="bullets">
+<li><strong>You must own the business or be authorized to represent it.</strong> Impersonation, fake or duplicate profiles and misrepresented ownership are prohibited.</li>
+<li><strong>No ad account or Enterprise agreement is needed.</strong> Existing Enterprise customers and advertisers can also go through their OpenAI representative.</li>
+<li><strong>Availability depends on location and business type.</strong> Eligible businesses can claim an existing listing or add one "where ChatGPT is available and the required verification is supported."</li>
+<li><strong>Local stores and restaurants can currently claim only an existing U.S. listing.</strong> If you run an eligible online business and cannot find yourself, you may see an option to add it.</li>
+<li><strong>Some categories are held back.</strong> OpenAI may decline businesses whose offerings raise safety or integrity concerns, and may hold off on other categories until safeguards are ready. Eligibility can change over time.</li>
+<li><strong>Business Agents have separate, stricter requirements:</strong> eligible U.S. ecommerce or online service businesses with a website that meet the industry rules in the Business Agents Policy. A verified profile alone does not establish agent eligibility.</li>
+</ul>
+
+<div class="india-box" id="india">
+<h3>What this means for Indian brands right now</h3>
+<p>Reading OpenAI's documents together, an Indian brand's position at launch looks like this:</p>
+<ul>
+<li><strong>Online D2C and SaaS brands</strong> can attempt a claim, since ChatGPT is available in India and online businesses may add a listing. Whether your category and verification path are open is decided in the product, so expect some trial and possibly a wait.</li>
+<li><strong>Local stores, clinics and restaurants in India</strong> cannot claim yet. The rule is "existing U.S. listing" only.</li>
+<li><strong>Business Agents</strong> are U.S. only. An Indian brand selling into the U.S. through a U.S.-eligible business may qualify; an India-only brand does not, today.</li>
+<li><strong>Product feeds:</strong> OpenAI's feed spec says the standard upload "currently targets the US" and that other markets need OpenAI to confirm the integration. A feed for an India-only catalog may not reach Indian shoppers yet.</li>
+<li><strong>Insights</strong> are still useful: if you can claim, mentions, website clicks and discovery topics show how ChatGPT cites your site, wherever the users are.</li>
+</ul>
+<p style="margin-top:10px">Practical takeaway: claim if you can, prepare your documents and profile copy even if you cannot, and put most of your effort into the off-site signals that drive recommendations in every market. See also our <a href="/blog/ai-visibility-d2c-india" class="content-link">D2C India</a> and <a href="/markets/india" class="content-link">India market</a> guides.</p>
+</div>
+</div>
+
+<div class="article-section" id="before">
+<h2>Before You Claim: A Preparation Checklist</h2>
+<p>Most claim problems in OpenAI's own troubleshooting notes come from mismatches: the wrong account, a name that does not match registration documents, a domain that does not match the feed. Ten minutes of preparation avoids most of them.</p>
+<ol class="step-list">
+<li><strong>Pick the owning ChatGPT account on purpose.</strong> Later invitations for teammates and agencies depend on the account that claimed the business, and for a claim made inside a ChatGPT workspace, invitees may need to be members of that workspace. Use a company-controlled account, not a personal login someone may leave with.</li>
+<li><strong>Confirm your legal name, registered address and registration or tax number.</strong> Persona checks these against official records. Write them down exactly as they appear on your registration documents.</li>
+<li><strong>Decide your verification route.</strong> If the public phone number or email on your listing goes to someone else, plan to use the website domain (DNS TXT record) or Shopify instead.</li>
+<li><strong>Get DNS access lined up.</strong> If an agency or IT team manages your domain, ask them in advance to add a TXT record when you send it.</li>
+<li><strong>Gather identity documents.</strong> OpenAI lists a government-issued ID, business registration information and proof that you are authorized to represent the business.</li>
+<li><strong>Draft your profile copy</strong> (description, category, delivery and returns details) so it matches your website word for word on facts. More on this <a href="#profile" class="content-link">below</a>.</li>
+<li><strong>Audit how you are described elsewhere.</strong> If your name, category or description differ across your site, LinkedIn, marketplaces and directories, fix that first. ChatGPT reads those sources too.</li>
+</ol>
+</div>
+
+<div class="article-section" id="claim">
+<h2>How to Claim Your Business, Step by Step</h2>
+<ol class="step-list">
+<li><strong>Open Business Hub.</strong> Sign in to ChatGPT and open Business Hub from the sidebar. Search for your business by name.</li>
+<li><strong>Select the matching listing</strong> and confirm the ChatGPT account you will use to manage it.</li>
+<li><strong>Choose a verification method</strong> from the ones shown for that listing (methods vary by listing) and follow the prompts.</li>
+<li><strong>Wait for claim approval.</strong> OpenAI reviews the claim and emails a decision or a request for more information. You can cancel while it is under review.</li>
+<li><strong>Complete Persona identity verification</strong> to unlock editing, insights, feeds and agents (next section).</li>
+</ol>
+<h3>The four verification methods</h3>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Method</th><th>How it works</th><th>Best when</th></tr></thead>
+<tbody>
+<tr><td>Business phone</td><td>Choose a text message or automated call, then enter the code sent to the number shown on the listing.</td><td>You control the public phone line</td></tr>
+<tr><td>Business email</td><td>Get a code sent to the email address associated with the business.</td><td>The listed email is a shared inbox you can read</td></tr>
+<tr><td>Website domain</td><td>Add the TXT record shown in ChatGPT to your DNS, copying type, host and value exactly, then select Verify domain. DNS can take time to update.</td><td>The phone or email on the listing is wrong or not yours; also needed later for product uploads</td></tr>
+<tr><td>Shopify store</td><td>Connect Shopify, review permissions, sign in to the store for the business.</td><td>You sell on Shopify</td></tr>
+</tbody>
+</table>
+</div>
+<h3>When things do not go to plan</h3>
+<ul class="bullets">
+<li><strong>Cannot receive the code:</strong> check which other methods the listing offers. Domain verification lets you prove control without changing the public phone number.</li>
+<li><strong>Already claimed by someone else:</strong> open the profile, use the more options menu and select Dispute ownership, then verify with Persona. OpenAI notes that claiming or disputing does not change the profile's visibility.</li>
+<li><strong>"Contact support" shown:</strong> the listing is locked; request access through OpenAI Support.</li>
+<li><strong>Enterprise tenant listing:</strong> if a listing requires a tenant admin, the designated admin of your ChatGPT Enterprise workspace must start the claim. Your Ads admin or web admin may be a different person.</li>
+<li><strong>Finding a claim you started:</strong> sign in with the same account, open Business Hub, select Business and open the existing profile. For a personal invitation, use its link and the exact email it was sent to. Do not forward personal invitations.</li>
+</ul>
+</div>
+
+<div class="article-section" id="persona">
+<h2>Persona Identity Verification: What It Unlocks and How to Pass It</h2>
+<p>There are two separate approvals, and teams often stop after the first. The claim proves your connection to the business. Persona, the identity provider OpenAI uses, proves who you are. Until Persona is approved you cannot publish profile changes, view insights, connect a product feed or create an agent, even if you already verified the domain or connected Shopify.</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>What you can do</th><th>Claim approved</th><th>Persona approved</th><th>Agent published</th></tr></thead>
+<tbody>
+<tr><td>See the business in Business Hub</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+<tr><td>Blue verified badge</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+<tr><td>Publish profile changes</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+<tr><td>View insights</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+<tr><td>Connect a product feed</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+<tr><td>Customers can chat with you</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes (U.S. eligible only)</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Getting the legal name right</h3>
+<p>OpenAI's instruction is to use the legal name on your official registration documents in the legal-name field, and your trading name in a separate trade-name or "doing business as" field if there is one. The registered address and any registration or tax number must match your records too.</p>
+<div class="example"><strong>Example (illustrative):</strong> a skincare brand sells as <em>Leafline</em> but is registered as <em>Leafline Naturals Private Limited</em>. The legal-name field gets "Leafline Naturals Private Limited". "Leafline" goes in the trade-name field if offered. The address is the registered office address, not the warehouse.</div>
+<p><strong>For Indian companies</strong>, OpenAI has not published a country-specific document list. The documents that usually correspond to its three categories are a director's government ID, the Certificate of Incorporation, your GSTIN if a tax number is asked for, and a board resolution or authorization letter if the person verifying is not a director. Treat this as preparation, not a confirmed requirement: Persona shows what it needs during the flow.</p>
+<div class="warn-box">
+<p><strong>Two irreversible steps to know about.</strong> First, if you use Persona to create a <em>new</em> profile, OpenAI's approval publishes it automatically, with no separate publish step. Second, only unpublished drafts can be deleted: OpenAI Support cannot delete, unpublish or hide a published profile as part of a setup or ownership request. Get the details right before you submit.</p>
+</div>
+<p>If Persona fails or expires, follow the email instructions and resubmit corrected information if Try again is available. Submitting to Persona does not mean you are approved; features stay locked until the approval email arrives.</p>
+</div>
+
+<div class="article-section" id="profile">
+<h2>Writing Your Profile for a Model, Not a Brochure</h2>
+<p>After both approvals, you can update your website, business description, product or service category, logo, delivery policy and return policy, and add a cover photo and other optional details. OpenAI reviews and publishes changes, and updates can take time to appear in a listing or an answer.</p>
+<p>The description is the field to spend time on. ChatGPT may draw on it when it is relevant, so write it as plain, checkable facts a model can repeat accurately:</p>
+<ol class="bullets">
+<li><strong>What you are</strong> in category language a buyer would use.</li>
+<li><strong>What you sell</strong>, with your main product lines or service types.</li>
+<li><strong>Who it is for</strong> and where you serve or ship.</li>
+<li><strong>Verifiable proof</strong>: certifications, years operating, notable facts you can link to.</li>
+</ol>
+<div class="example"><strong>Weak:</strong> "India's most loved, revolutionary skincare brand transforming millions of lives."<br><strong>Stronger:</strong> "Leafline makes fragrance-free sunscreens and moisturisers for oily and acne-prone skin. Products are dermatologically tested, priced between ₹349 and ₹899, and ship across India. Founded in 2021 in Bengaluru."</div>
+<h3>What the policy does not allow</h3>
+<p>The Businesses in ChatGPT policy requires information to be truthful and current. It specifically prohibits false or misleading claims about prices, availability, qualifications or likely results; fabricated reviews or endorsements; unsupported guarantees; claims that hide fees or conditions; using photos or logos you lack rights to; and links that do not lead where they say. OpenAI may decline content, limit profile management or remove a profile, and businesses remain responsible for what they submit even though OpenAI does not verify every detail.</p>
+<p>Two practical rules follow. Keep delivery and returns settings identical to your website, because a mismatch creates two conflicting "facts". And remember the profile is one source among many; if an outdated directory or review page says something different, fix it there too. Our guide on <a href="/blog/ai-describing-product-wrong" class="content-link">correcting what AI says about your product</a> covers that process.</p>
+</div>
+
+<div class="article-section" id="feeds">
+<h2>Product Feeds, Field by Field</h2>
+<p>If you sell products, you can connect a feed so ChatGPT has your prices and availability. There are three routes: a Shopify connection, a CSV file upload that follows OpenAI's product feed specification, or a hosted feed URL that opens the file itself. OpenAI notes that eligible Shopify products are already integrated into ChatGPT through Shopify Catalog, and that connecting a feed "doesn't publish an agent or guarantee that ChatGPT recommends your products."</p>
+<h3>The 11 required fields</h3>
+<p>OpenAI's developer spec asks for one row per purchasable item or variant, with nine basic fields plus two geo fields:</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>Field</th><th>What it must contain</th><th>Common mistake</th></tr></thead>
+<tbody>
+<tr><td><code>item_id</code></td><td>Stable unique ID per item or variant; never reused for a different item</td><td>Regenerating IDs on every export</td></tr>
+<tr><td><code>title</code></td><td>Product name including the selected variant (aim for 150 characters or less)</td><td>Keyword-stuffed titles</td></tr>
+<tr><td><code>description</code></td><td>Factual plain-text description (aim for 5,000 characters or less)</td><td>Marketing slogans with no specs</td></tr>
+<tr><td><code>url</code></td><td>Stable product page, with the variant selected when possible</td><td>URLs on a domain different from the claimed profile</td></tr>
+<tr><td><code>brand</code></td><td>Brand as shown on the product page</td><td>Placeholder values</td></tr>
+<tr><td><code>seller_name</code></td><td>Name of the seller supplying the offer</td><td>Leaving it blank on marketplace rows</td></tr>
+<tr><td><code>image_url</code></td><td>Direct image URL (JPEG or PNG) showing this variant</td><td>Linking to a gallery page instead of an image</td></tr>
+<tr><td><code>availability</code></td><td><code>in_stock</code>, <code>out_of_stock</code>, <code>pre_order</code>, <code>backorder</code> or <code>unknown</code></td><td>Empty values, which reject the row</td></tr>
+<tr><td><code>price</code></td><td>Amount and ISO currency, e.g. <code>79.99 USD</code></td><td>Thousands separators or missing currency code</td></tr>
+<tr><td><code>target_countries</code></td><td>Uppercase ISO country codes configured for your feed</td><td>Assuming empty means worldwide</td></tr>
+<tr><td><code>store_country</code></td><td>Country of the seller's store</td><td>Using it as a regional price override</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Rules that quietly decide data quality</h3>
+<ul class="bullets">
+<li><strong>Variants:</strong> each variant gets its own row with a distinct <code>item_id</code>, a shared <code>group_id</code>, <code>listing_has_variations=true</code> and a <code>variant_dict</code> such as <code>{"color":"Black","size":"10"}</code>.</li>
+<li><strong>Sale prices:</strong> <code>sale_price</code> must be above zero, strictly below <code>price</code>, in the same currency. Update the feed when a sale starts or ends; dates in the feed do not schedule changes.</li>
+<li><strong>Returns:</strong> <code>accepts_returns</code>, <code>return_deadline_in_days</code> and a <code>return_policy</code> URL are separate fields. A policy link does not set the boolean. For final-sale items, send <code>accepts_returns=false</code>.</li>
+<li><strong>Reviews:</strong> <code>review_count</code> and <code>star_rating</code> (0 to 5, two decimals) must describe the same review population. Omit a rating when there are no reviews.</li>
+<li><strong>Unknowns:</strong> omit unknown optional values. Do not write placeholder strings like "null" or "n/a"; an empty value does not mean zero or false.</li>
+<li><strong>Search eligibility:</strong> <code>is_eligible_search</code> defaults to true. OpenAI states that eligibility does not guarantee display.</li>
+<li><strong>Ads and checkout</strong> are separate: <code>is_ads_eligible</code> is off unless set, and checkout needs a separately enabled integration.</li>
+</ul>
+<h3>Why uploads fail</h3>
+<p>OpenAI's troubleshooting points to three causes: a product URL on a domain that does not match the profile's website, Persona verification still pending, and a missing or wrong DNS TXT record when the claim offers domain verification. Check the upload's Issues view after the first import, and keep a hosted feed URL working so future changes import automatically.</p>
+<p>For D2C context on how ChatGPT picks products and merchants, OpenAI's shopping documentation says it weighs structured metadata from first-party and third-party providers, reviews and the user's own context, and ranks merchants on factors like availability, price, quality and whether they are the maker or primary seller. Our <a href="/blog/chatgpt-recommend-ecommerce-store-geo-guide" class="content-link">ecommerce GEO checklist</a> goes deeper on the off-feed side.</p>
+</div>
+
+<div class="article-section" id="agents">
+<h2>Business Agents: What They Can Do, and What They Cannot</h2>
+<p>When your business appears in an answer, a user can open your profile and, if you have published an agent, start a separate conversation with it. OpenAI describes that chat as clearly labeled, separate from the user's original conversation and distinct from ChatGPT's independent answers.</p>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>A Business Agent can</th><th>A Business Agent cannot</th></tr></thead>
+<tbody>
+<tr><td>Explain your products, services and policies</td><td>Complete purchases, make bookings or check an order</td></tr>
+<tr><td>Help compare your options against a user's needs</td><td>Use your ChatGPT plugin's data or capabilities</td></tr>
+<tr><td>Link to relevant pages on your website</td><td>Pretend to be human, independent, or endorsed by OpenAI</td></tr>
+<tr><td>Offer an optional follow-up through an approved feature</td><td>Pressure users, create false urgency or keep pushing after a no</td></tr>
+<tr><td>Describe your business in your own voice</td><td>Invent prices, reviews, guarantees or results</td></tr>
+<tr><td>Give general information</td><td>Give advice that legally requires a professional license</td></tr>
+</tbody>
+</table>
+</div>
+<p>The Business Agents Policy also bars asking for unnecessary or high-risk personal data (health details, government IDs, financial or login credentials), sharing user information or submitting forms without explicit authorization through an approved feature, and instructing the agent to downplay a user's safety concern.</p>
+<h3>Building one</h3>
+<ol class="step-list">
+<li><strong>Confirm eligibility:</strong> both approvals done, U.S. ecommerce or online service business, a website, and an eligible industry.</li>
+<li><strong>Open your business in the Business tab.</strong> Shopify merchants may find a draft agent already created.</li>
+<li><strong>Review the information the agent will use</strong>, such as product details and the return policy.</li>
+<li><strong>Write instructions</strong> that follow the policy: tone, when to ask clarifying questions, what to say when it does not know.</li>
+<li><strong>Preview with real customer questions</strong> and fix the source information when an answer is wrong.</li>
+<li><strong>Publish.</strong> Customers can only chat with a published agent.</li>
+</ol>
+<h3>A ten-question test set before you publish</h3>
+<p>OpenAI suggests previewing with common questions. We recommend a fixed set you rerun after every change:</p>
+<ol class="bullets">
+<li>Can I return an item I bought on sale?</li>
+<li>Which of your products suits [specific need]?</li>
+<li>What is the difference between [product A] and [product B]?</li>
+<li>Do you ship to [location], and how long does it take?</li>
+<li>Is this in stock in [size or variant]?</li>
+<li>Are you cheaper than [competitor]? (the agent should not invent comparisons)</li>
+<li>Will you launch [unannounced product] next month? (it should say there is no confirmed date)</li>
+<li>Is this safe if I have [medical condition]? (it should not give licensed advice)</li>
+<li>Can you place the order for me? (it should link to your site)</li>
+<li>Are you a real person? (it should say it is an AI representing the business)</li>
+</ol>
+</div>
+
+<div class="article-section" id="sponsored">
+<h2>Sponsored Business Agents and ChatGPT Ads</h2>
+<p>Businesses can also use an agent as the destination of a ChatGPT ad. OpenAI's Ads Manager documentation describes how this works today:</p>
+<ul class="bullets">
+<li><strong>Separate builder:</strong> sponsored agents are built in Agent builder inside Ads Manager, rolling out to eligible ad accounts. Settings do not yet sync with an agent built in Business Hub; you reuse the information manually.</li>
+<li><strong>Campaign setting:</strong> the agent attaches to a campaign with the Conversion optimization objective through a setting called Enable agent chats. Users then see Start chat and Visit site.</li>
+<li><strong>Billing:</strong> no separate charge per conversation or message; the campaign's billing applies.</li>
+<li><strong>Data:</strong> advertisers get impressions, clicks and, where available, patterns across conversations, with deeper exploration once an agent passes 25 conversations. No transcripts.</li>
+<li><strong>Separation:</strong> OpenAI says ads do not influence ChatGPT's answers and sponsored placements are labeled.</li>
+</ul>
+<p>Whether ads make sense is a separate decision from claiming. Our <a href="/blog/chatgpt-ads-vs-organic-ai-citations" class="content-link">ads vs organic citations framework</a> and <a href="/blog/how-to-set-up-chatgpt-ads-campaign" class="content-link">campaign setup guide</a> cover that choice.</p>
+</div>
+
+<div class="article-section" id="insights">
+<h2>Insights in Brief</h2>
+<p>After both approvals, the Insights view shows aggregated activity over the past 28 days: mentions, website clicks and discovery topics. For an online business, a mention counts only when ChatGPT references your website; naming the brand alone does not count. For a local business, a mention counts when ChatGPT shows a result for that location. Businesses never see individual prompts or conversations, including chats with their own agent, and a blank metric does not necessarily mean zero.</p>
+<p>These definitions change how you should read the numbers. We wrote a full guide to <a href="/blog/chatgpt-business-hub-insights" class="content-link">reading Business Hub Insights and turning them into a content plan</a>.</p>
+</div>
+
+<div class="article-section" id="teams">
+<h2>Teams, Agencies and Multi-Brand Companies</h2>
+<ul class="bullets">
+<li>The admin who claimed the business can add teammates and grant an agency access to manage the business or its agent. Each person uses their own ChatGPT account.</li>
+<li>Each distinct brand has its own profile, even within one company. There is no parent profile that manages every brand or automatically claims its locations.</li>
+<li>For brands on a managed claim process, location profiles stay locked by default. Ask your OpenAI account contact about the supported path before anyone self-serves.</li>
+</ul>
+</div>
+
+<div class="article-section" id="mistakes">
+<h2>Eight Mistakes to Avoid</h2>
+<ol class="step-list">
+<li><strong>Claiming from a personal account</strong> that later leaves the company with access.</li>
+<li><strong>Stopping after the claim</strong> and never completing Persona, so nothing is editable or measurable.</li>
+<li><strong>Creating a new profile through Persona with unchecked details</strong>, which publishes on approval and cannot be deleted.</li>
+<li><strong>Using the brand name in the legal-name field</strong> instead of the registered entity name.</li>
+<li><strong>Writing marketing claims into the description</strong> that the policy treats as unsupported guarantees.</li>
+<li><strong>Uploading a feed with URLs on another domain</strong> (a marketplace, a staging site) than the claimed profile.</li>
+<li><strong>Reporting "mentions" as "AI visibility"</strong> when they only count website references in ChatGPT.</li>
+<li><strong>Assuming the profile fixes recommendations</strong> and pausing the off-site work that actually moves them.</li>
+</ol>
+</div>
+
+<div class="article-section" id="plan">
+<h2>A 30-Day Rollout Plan</h2>
+<div style="overflow-x:auto">
+<table class="data-table">
+<thead><tr><th>When</th><th>What to do</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td>Days 1 to 3</td><td>Run a baseline: ask ChatGPT 20 real buyer questions in your category and note whether you are named, cited and described correctly.</td><td>Baseline sheet</td></tr>
+<tr><td>Days 1 to 5</td><td>Pick the owning account, gather documents, fix name and description inconsistencies across your site and listings.</td><td>Ready-to-claim pack</td></tr>
+<tr><td>Days 5 to 10</td><td>Claim, verify (domain or Shopify preferred), complete Persona.</td><td>Verified profile</td></tr>
+<tr><td>Days 10 to 15</td><td>Write and publish profile details; connect and validate the product feed if relevant.</td><td>Accurate profile and feed</td></tr>
+<tr><td>Days 15 to 20</td><td>If eligible, build an agent, run the ten-question test set, publish.</td><td>Published agent</td></tr>
+<tr><td>Days 20 to 30</td><td>Start a weekly insights log, compare clicks with analytics, map discovery topics to pages.</td><td>Measurement routine</td></tr>
+<tr><td>Day 30</td><td>Rerun the 20-question baseline across ChatGPT and other assistants.</td><td>First comparison</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="article-section" id="beyond">
+<h2>What Still Decides Whether ChatGPT Recommends You</h2>
+<p>OpenAI is consistent across every document: the profile is your information, and ChatGPT's recommendations stay independent. In our tested queries, the brands that ChatGPT tends to recommend share a pattern that has nothing to do with a dashboard: they are discussed in the places ChatGPT reads, in language that matches how buyers ask. That usually means:</p>
+<ul class="bullets">
+<li>Third-party reviews and comparison pages that mention you with specifics (<a href="/blog/social-proof-ai-recommendations" class="content-link">why social proof matters</a>).</li>
+<li>Community discussion on forums and Reddit-style threads (<a href="/blog/what-ai-uses-to-recommend-brands" class="content-link">what AI uses to recommend brands</a>).</li>
+<li>Your own pages answering buyer questions directly, with clean structure and schema (<a href="/blog/schema-markup-ai-visibility" class="content-link">schema for AI visibility</a>).</li>
+<li>A consistent entity: the same name, category and facts everywhere (<a href="/blog/entity-building-knowledge-graph-ai-visibility" class="content-link">entity building</a>).</li>
+</ul>
+<p>The full map of that work, from diagnosis to measurement, is in the <a href="/chatgpt-visibility" class="content-link">ChatGPT Visibility Hub</a>.</p>
+</div>
+
+<hr class="article-divider">
+
+<div class="faq-section" id="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><p class="faq-q">What is ChatGPT Business Hub?</p><p class="faq-a">Business Hub is the dashboard inside ChatGPT where a business owner or authorized representative claims the business, updates its profile, connects a product feed, views aggregated insights and, if eligible, builds a Business Agent. It is part of Businesses in ChatGPT, a beta OpenAI announced on November 10, 2026.</p></div>
+<div class="faq-item"><p class="faq-q">Is claiming a business in ChatGPT free?</p><p class="faq-a">You do not need an Ads account or a ChatGPT Enterprise agreement to claim an eligible business. Sponsoring a Business Agent through ChatGPT Ads is a separate, paid option.</p></div>
+<div class="faq-item"><p class="faq-q">Will claiming make ChatGPT recommend my business more often?</p><p class="faq-a">Not by itself. OpenAI says claiming does not guarantee increased visibility or give direct control over ChatGPT's independent recommendations, and that advertising does not influence those answers.</p></div>
+<div class="faq-item"><p class="faq-q">Can Indian brands claim a business in ChatGPT?</p><p class="faq-a">Eligible online businesses where ChatGPT is available can attempt a claim, subject to supported verification and business type. Local stores and restaurants can currently claim only existing U.S. listings, Business Agents are U.S. only, and the standard product feed upload currently targets the U.S.</p></div>
+<div class="faq-item"><p class="faq-q">What documents does Persona verification need?</p><p class="faq-a">OpenAI says you may need a government-issued ID, business registration information and proof that you are authorized to represent the business. Names, addresses and registration or tax numbers must match your official records.</p></div>
+<div class="faq-item"><p class="faq-q">Can I delete a published profile?</p><p class="faq-a">No. Only unpublished drafts can be deleted, and OpenAI Support cannot delete, unpublish or hide a published profile as part of a setup or ownership request.</p></div>
+<div class="faq-item"><p class="faq-q">Do I need Shopify?</p><p class="faq-a">No. Shopify speeds up verification and feeds, but any eligible business can claim, upload a CSV feed or use a hosted feed URL, and eligible U.S. businesses can build an agent without Shopify.</p></div>
+<div class="faq-item"><p class="faq-q">Can a Business Agent take orders or bookings?</p><p class="faq-a">No. It explains products and policies and links to your website, where customers complete purchases or bookings. It cannot check an order.</p></div>
+<div class="faq-item"><p class="faq-q">Why have my profile changes not appeared yet?</p><p class="faq-a">OpenAI reviews and publishes changes, updates can take time to show in a listing or an answer, and ChatGPT may also draw on other sources.</p></div>
+</div>
+
+<div class="article-section" id="sources">
+<h2>Sources</h2>
+<p>Every rule in this guide comes from OpenAI's own published material, read on November 18, 2026. The program is in beta and details may change.</p>
+<ul class="sources-list">
+<li><a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener">OpenAI: Introducing Businesses in ChatGPT</a></li>
+<li><a href="https://help.openai.com/en/articles/20001635-setting-up-your-business-on-chatgpt" target="_blank" rel="noopener">OpenAI Help Center: Setting up your business on ChatGPT</a></li>
+<li><a href="https://openai.com/policies/businesses-in-chatgpt/" target="_blank" rel="noopener">OpenAI: Businesses in ChatGPT policy</a></li>
+<li><a href="https://openai.com/policies/business-agents-policy/" target="_blank" rel="noopener">OpenAI: Business Agents Policy</a></li>
+<li><a href="https://developers.openai.com/commerce/specs/file-upload/products" target="_blank" rel="noopener">OpenAI Developers: Product feed schema</a></li>
+<li><a href="https://help.openai.com/en/articles/11128490-shopping-with-chatgpt-search" target="_blank" rel="noopener">OpenAI Help Center: Shopping with ChatGPT Search</a></li>
+<li><a href="https://help.openai.com/en/articles/20001651-setting-up-a-sponsored-business-agent-in-ads-manager" target="_blank" rel="noopener">OpenAI Help Center: Setting up a Sponsored Business Agent</a></li>
+</ul>
+</div>
+
+<div class="inline-cta">
+<div class="inline-cta__text">
+<strong>See what ChatGPT says about you beyond Business Hub</strong>
+<p>Jeevan AI tracks whether ChatGPT, Gemini, Perplexity, Claude and Google AI Mode name your brand, which sources they cite, and who they recommend instead.</p>
+</div>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Go to Dashboard &#8594;</a>
+</div>
+</main>
+
+<aside class="article-sidebar">
+<div class="sidebar-toc">
+<h4>In This Guide</h4>
+<ul class="toc-list">
+<li><a href="#what-launched">What launched</a></li>
+<li><a href="#control">What it can and cannot change</a></li>
+<li><a href="#eligibility">Who can claim</a></li>
+<li><a href="#india">Indian brands</a></li>
+<li><a href="#before">Preparation checklist</a></li>
+<li><a href="#claim">Claim step by step</a></li>
+<li><a href="#persona">Persona verification</a></li>
+<li><a href="#profile">Writing the profile</a></li>
+<li><a href="#feeds">Product feeds</a></li>
+<li><a href="#agents">Business Agents</a></li>
+<li><a href="#sponsored">Sponsored agents</a></li>
+<li><a href="#insights">Insights</a></li>
+<li><a href="#mistakes">Mistakes to avoid</a></li>
+<li><a href="#plan">30-day plan</a></li>
+<li><a href="#beyond">What decides recommendations</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</div>
+<div class="sidebar-card">
+<h4>Measure ChatGPT beyond your profile</h4>
+<p>Business Hub counts website references. Jeevan AI shows where you are named, cited and compared across five AI engines.</p>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-outline-sm">Go to Dashboard &#8594;</a>
+</div>
+</aside>
+</div>
+
+<section class="related-section">
+<div class="related-section__inner">
+<h3>Keep Reading</h3>
+<div class="related-grid">
+<a href="/blog/chatgpt-business-hub-insights" class="related-card"><span class="post-tag">Business Hub</span><h4>Business Hub Insights: Mentions, Clicks and Discovery Topics Explained</h4><p>What each number counts, what it leaves out, and how to turn it into a content plan.</p><span class="related-link">Read article &#8594;</span></a>
+<a href="/chatgpt-visibility" class="related-card"><span class="post-tag">Hub</span><h4>ChatGPT Visibility Hub</h4><p>Every guide to getting your brand named and recommended in ChatGPT, organized by stage.</p><span class="related-link">Open the hub &#8594;</span></a>
+<a href="/blog/chatgpt-brand-recommendation-strategy-2026" class="related-card"><span class="post-tag">GEO Playbook</span><h4>How ChatGPT Decides Which Brands to Recommend</h4><p>The signals behind ChatGPT's recommendations and how to build them.</p><span class="related-link">Read article &#8594;</span></a>
+</div>
+</div>
+</section>
+
+<section class="cta-strip">
+<div class="cta-strip__inner">
+<p class="cta-strip__title">Claimed your profile? Now see the whole picture.</p>
+<p class="cta-strip__sub">Jeevan AI shows how often AI engines name you, which sources they trust, and which competitors they recommend instead.</p>
+<a href="https://dashboard.jeevanai.co.in/auth/login" class="btn-primary">Go to Dashboard &#8594;</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer__inner">
+<span class="footer__brand">&#169; 2026 Jeevan AI. All rights reserved.</span>
+<nav class="footer__links">
+<a href="/blog-index.html">Blog</a>
+<a href="/chatgpt-visibility">ChatGPT Visibility</a>
+<a href="/compare/index.html">Compare</a>
+<a href="/#features">Features</a>
+<a href="https://dashboard.jeevanai.co.in/auth/login">Sign In</a>
+</nav>
+</div>
+</footer>
+</body>
+</html>
