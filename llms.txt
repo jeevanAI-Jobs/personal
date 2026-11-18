@@ -23,6 +23,9 @@ Jeevan AI is a Generative Engine Optimization (GEO) platform built for B2B SaaS 
 
 ## Key Guides and Educational Content
 
+- [ChatGPT Visibility Hub](https://jeevanai.co.in/chatgpt-visibility): Every guide to getting a brand named, cited and recommended in ChatGPT, organized by stage
+- [ChatGPT Business Hub: Complete Guide](https://jeevanai.co.in/blog/chatgpt-business-hub-guide): Businesses in ChatGPT (launched Nov 10, 2026): eligibility, claiming, Persona, profile, product feeds, Business Agents, India availability
+- [Business Hub Insights Explained](https://jeevanai.co.in/blog/chatgpt-business-hub-insights): What mentions, website clicks and discovery topics count and how to use them
 - [GEO Complete Guide](https://jeevanai.co.in/generative-engine-optimization-guide.html): Comprehensive guide to Generative Engine Optimization
 - [GEO vs SEO Difference](https://jeevanai.co.in/blog/geo-vs-seo-difference): How GEO differs from traditional SEO
 - [Why ChatGPT Recommends Competitor](https://jeevanai.co.in/blog/why-chatgpt-recommends-competitor): Root causes and fixes
