@@ -1182,3 +1182,11 @@ button.faq-q { color: #04121f !important; }
 
 /* Muted labels that were #9ca3af on light leftovers stay readable on dark */
 .sidebar-toc h4, .related-section h3 { color: rgba(241,245,249,0.7) !important; }
+
+/* Homepage updates bar sits on a sky-blue gradient: dark text reads better than white */
+.updates-bar, .updates-bar a, .updates-bar span, .updates-bar__badge, .updates-bar__hide {
+  color: #04121f !important;
+  -webkit-text-fill-color: #04121f !important;
+}
+/* Substack link on the light orange card */
+.substack-link--orange { color: #c2410c !important; -webkit-text-fill-color: #c2410c !important; }
