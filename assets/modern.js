@@ -79,33 +79,70 @@
   });
 })();
 
-// ── Readable text: ensure no element has white-on-white or dark-on-dark ──
-(function() {
-  // Force body text color
-  document.body.style.color = '#f1f5f9';
-
-  // Fix any element with light background getting dark text
-  var all = document.querySelectorAll('*');
-  all.forEach(function(el) {
-    var cs = window.getComputedStyle(el);
-    var bg = cs.backgroundColor;
-    // If background is near-white but text is near-white too — fix text
-    if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') {
-      var rgb = bg.match(/\d+/g);
-      if (!rgb) return;
-      var brightness = (parseInt(rgb[0])*299 + parseInt(rgb[1])*587 + parseInt(rgb[2])*114) / 1000;
-      var textColor = cs.color;
-      var textRgb = textColor.match(/\d+/g);
-      if (!textRgb) return;
-      var textBrightness = (parseInt(textRgb[0])*299 + parseInt(textRgb[1])*587 + parseInt(textRgb[2])*114) / 1000;
-      // If both bright (white on white) — fix text to dark
-      if (brightness > 180 && textBrightness > 180) {
-        el.style.color = '#1a1a2e';
+// ── Readable text guard (2026-11-18) ─────────────────────────────────
+// Every page carries its own inline CSS and modern.css layers a dark theme on
+// top, so some text ends up light-on-light or dark-on-dark. This walks every
+// element that holds text, finds the colour actually behind it (walking up to
+// the first opaque background or gradient), and if the WCAG contrast ratio is
+// below 3.5 it switches the text to light or dark, whichever reads better.
+// It runs on load, again after late content renders, and on DOM changes
+// (tool results, FAQ toggles).
+(function () {
+  var MIN = 3.5, LIGHT = [241, 245, 249], DARK = [17, 24, 39];
+  function parse(s) {
+    var m = s && s.match(/rgba?\(([^)]+)\)/);
+    if (!m) return null;
+    var p = m[1].split(/[ ,\/]+/).filter(Boolean).map(Number);
+    return [p[0], p[1], p[2], p.length > 3 ? p[3] : 1];
+  }
+  function lum(c) {
+    function f(v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); }
+    return 0.2126 * f(c[0]) + 0.7152 * f(c[1]) + 0.0722 * f(c[2]);
+  }
+  function ratio(a, b) { var x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
+  function blend(fg, bg) { return [0, 1, 2].map(function (i) { return fg[i] * fg[3] + bg[i] * (1 - fg[3]); }); }
+  function backdrop(el) {
+    for (var e = el; e && e.nodeType === 1; e = e.parentElement) {
+      var s = getComputedStyle(e);
+      if (s.backgroundImage && s.backgroundImage !== 'none') {
+        var m = s.backgroundImage.match(/rgba?\([^)]+\)/g);
+        if (!m) return null; // a real image: leave text alone
+        var cols = m.map(parse).filter(function (c) { return c[3] > 0.3; });
+        if (cols.length) return cols;
       }
-      // If both dark (dark on dark) — fix text to light
-      if (brightness < 60 && textBrightness < 60) {
-        el.style.color = '#f1f5f9';
-      }
+      var b = parse(s.backgroundColor);
+      if (b && b[3] > 0.5) return [b];
     }
-  });
+    return [parse(getComputedStyle(document.body).backgroundColor) || [13, 17, 23, 1]];
+  }
+  function fix(root) {
+    var w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT), n, seen = new Set();
+    while ((n = w.nextNode())) {
+      if (n.nodeValue.trim().length < 2) continue;
+      var el = n.parentElement;
+      if (!el || seen.has(el) || /^(SCRIPT|STYLE|NOSCRIPT|OPTION|TEXTAREA|CODE|PRE)$/.test(el.tagName)) continue;
+      seen.add(el);
+      var cs = getComputedStyle(el);
+      if (cs.visibility === 'hidden' || cs.display === 'none') continue;
+      var tf = cs.webkitTextFillColor;
+      if (tf && /rgba\(0, 0, 0, 0\)|transparent/.test(tf)) continue; // gradient text
+      // -webkit-text-fill-color wins over color when set, so measure what is painted
+      var fg = parse(tf && tf !== cs.color ? tf : cs.color), bgs = backdrop(el);
+      if (!fg || !bgs) continue;
+      var best = 0;
+      bgs.forEach(function (c) { best = Math.max(best, ratio(fg[3] < 1 ? blend(fg, c) : fg, c)); });
+      if (best >= MIN) continue;
+      var avg = [0, 1, 2].map(function (i) { return bgs.reduce(function (s, c) { return s + c[i]; }, 0) / bgs.length; });
+      var pick = ratio(LIGHT, avg) >= ratio(DARK, avg) ? LIGHT : DARK;
+      var c = 'rgb(' + pick.join(',') + ')';
+      el.style.setProperty('color', c, 'important');
+      el.style.setProperty('-webkit-text-fill-color', c, 'important');
+    }
+  }
+  function run() { try { fix(document.body); } catch (e) {} }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+  window.addEventListener('load', function () { run(); setTimeout(run, 1200); });
+  var t;
+  new MutationObserver(function () { clearTimeout(t); t = setTimeout(run, 250); })
+    .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'open'] });
 })();
