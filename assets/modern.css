@@ -1144,3 +1144,41 @@ table td {
 /* Generic catch-all: any div/section with inline white bg */
 [style*="background: #fff"],[style*="background:#fff"],[style*="background: white"],[style*="background-color: #fff"]{background:#1c2128!important}
 [style*="color: #111"],[style*="color:#111"],[style*="color: #374"],[style*="color: #1f"]{color:#94a3b8!important}
+
+/* ===================================================
+   READABILITY FIXES (2026-11-18)
+   Loaded last, so these win over the earlier patches above.
+   Found by a contrast audit of every page in Search Console.
+   =================================================== */
+
+/* Footer: the brand-report patch set footer text to #475569, unreadable on the dark footer */
+footer, .footer, .site-footer,
+footer p, footer span, footer li, footer h4, footer h5,
+.footer p, .footer span, .footer li, .footer h4, .footer h5 { color: rgba(241,245,249,0.72) !important; }
+footer a, .footer a, .site-footer a { color: rgba(241,245,249,0.82) !important; }
+footer a:hover, .footer a:hover, .site-footer a:hover { color: #38bdf8 !important; }
+/* Some pages redefine --text-dim as #475569 in their own :root, so set colours explicitly */
+.footer__col h5, .footer__col h4 { color: rgba(241,245,249,0.6) !important; }
+.footer__col li a, .footer__links a, .footer__inner a { color: rgba(241,245,249,0.82) !important; }
+.nav__links a, nav .nav__links a, header .nav__links a { color: rgba(241,245,249,0.82) !important; }
+.nav__links a:hover { color: #f1f5f9 !important; }
+
+/* Sky-blue buttons: white text on #38bdf8 is too faint, use dark text */
+.nav__cta, nav a.nav__cta, .nav a.nav__cta, header a.nav__cta,
+.btn-primary, a.btn-primary, button.btn-primary,
+.inline-cta .btn-primary, .inline-cta a[class*="btn"],
+.cta-strip .btn-primary, .sidebar-card .btn-primary {
+  color: #04121f !important;
+  -webkit-text-fill-color: #04121f !important;
+  font-weight: 600 !important;
+}
+.nav__cta *, .btn-primary * { color: inherit !important; }
+
+/* FAQ toggles that sit on a sky background */
+button.faq-q { color: #04121f !important; }
+
+/* Bold text inside dark sections should follow the light body text */
+.cta-strip__title, .cta-final h2, .cta-final p { color: #f1f5f9 !important; }
+
+/* Muted labels that were #9ca3af on light leftovers stay readable on dark */
+.sidebar-toc h4, .related-section h3 { color: rgba(241,245,249,0.7) !important; }
